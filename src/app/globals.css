@@ -43,3 +43,16 @@
     transform: translateY(0);
   }
 }
+
+/* Blog prose: adaptación al diseño Dekorama */
+.prose-blog {
+  @apply prose prose-lg max-w-none;
+  @apply prose-headings:font-semibold prose-headings:text-black;
+  @apply prose-p:text-gray-600 prose-p:leading-relaxed;
+  @apply prose-a:text-black prose-a:underline prose-a:decoration-black/30 prose-a:underline-offset-2 hover:prose-a:decoration-black;
+  @apply prose-strong:text-black prose-strong:font-semibold;
+  @apply prose-ul:text-gray-600 prose-li:leading-relaxed;
+  @apply prose-blockquote:border-l-black prose-blockquote:bg-gray-bg prose-blockquote:py-1 prose-blockquote:px-4 prose-blockquote:rounded-r;
+  @apply prose-img:rounded-lg prose-img:shadow-md prose-img:w-full prose-img:h-auto;
+  @apply prose-table:text-gray-600 prose-th:bg-gray-bg prose-th:font-semibold prose-th:text-black prose-th:px-4 prose-th:py-3 prose-td:px-4 prose-td:py-3;
+}

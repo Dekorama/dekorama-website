@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { businessDescription } from '@/lib/site'
 
 export default function Footer() {
   return (
@@ -11,7 +12,7 @@ export default function Footer() {
               <p className="text-sm text-gray-500 mt-1">Razón social</p>
             </div>
             <p className="text-gray-400 leading-relaxed">
-              Transformamos espacios en hogares que enamoran. Reformas integrales y diseño de interiores en la Costa del Sol.
+              {businessDescription}
             </p>
             <p className="text-gray-400 text-sm">
               <span className="block font-medium text-gray-300 mt-2">Tienda:</span>
@@ -50,6 +51,11 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Empresa</h3>
             <ul className="space-y-2 text-gray-400">
+              <li>
+                <Link href="/blog" className="hover:text-white transition-colors">
+                  Blog
+                </Link>
+              </li>
               <li>
                 <Link href="/#proceso" className="hover:text-white transition-colors">
                   Nuestro proceso

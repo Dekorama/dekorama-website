@@ -5,6 +5,7 @@ import WhatsAppButton from '@/components/WhatsAppButton'
 import CookieBanner from '@/components/CookieBanner'
 import GoogleTagManager from '@/components/GoogleTagManager'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+import { metaDescription, businessDescription } from '@/lib/site'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dekorama.es'
 
@@ -14,8 +15,7 @@ export const metadata = {
     default: 'Dekorama | Reformas Integrales, Cocinas y Baños | Costa del Sol, Málaga',
     template: '%s | Dekorama',
   },
-  description:
-    'Reformas integrales, cocinas a medida y baños de diseño en la Costa del Sol. Presupuesto sin compromiso. Visita gratuita. Expertos en Málaga y Marbella.',
+  description: metaDescription,
   keywords: [
     'reformas integrales Costa del Sol',
     'cocinas a medida Málaga',
@@ -34,14 +34,13 @@ export const metadata = {
     url: SITE_URL,
     siteName: 'Dekorama',
     title: 'Dekorama | Reformas Integrales, Cocinas y Baños | Costa del Sol',
-    description:
-      'Reformas integrales, cocinas a medida y baños de diseño en la Costa del Sol. Presupuesto sin compromiso. Visita gratuita.',
+    description: metaDescription,
     images: [{ url: '/dekorama-favicon.png', width: 512, height: 512, alt: 'Dekorama' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Dekorama | Reformas Integrales y Diseño | Costa del Sol',
-    description: 'Reformas integrales, cocinas y baños de diseño. Costa del Sol, Málaga.',
+    description: metaDescription,
   },
   robots: {
     index: true,
@@ -57,9 +56,31 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  const localBusinessJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Dekorama',
+    description: businessDescription,
+    url: SITE_URL,
+    telephone: '+34628571537',
+    email: 'info@dekorama.es',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Las Ventas, Av. Tivoli, 17, C.C., Local 5',
+      addressLocality: 'Benalmádena',
+      postalCode: '29631',
+      addressRegion: 'Málaga',
+      addressCountry: 'ES',
+    },
+  }
+
   return (
     <html lang="es">
       <body className="min-h-screen bg-white">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
         <GoogleTagManager />
         <GoogleAnalytics />
         <Header />
