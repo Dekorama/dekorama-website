@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { businessDescription } from '@/lib/site'
+import { footerDescription } from '@/lib/site'
 
 export default function Footer() {
   return (
@@ -12,7 +12,7 @@ export default function Footer() {
               <p className="text-sm text-gray-500 mt-1">Razón social</p>
             </div>
             <p className="text-gray-400 leading-relaxed">
-              {businessDescription}
+              {footerDescription}
             </p>
             <p className="text-gray-400 text-sm">
               <span className="block font-medium text-gray-300 mt-2">Tienda:</span>

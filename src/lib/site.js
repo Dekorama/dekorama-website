@@ -21,3 +21,9 @@ function truncateForMeta(text, maxLength = META_DESCRIPTION_MAX_LENGTH) {
 }
 
 export const metaDescription = truncateForMeta(businessDescription)
+
+/**
+ * Versión corta para el pie de página. Mantiene el mensaje principal sin saturar el footer.
+ */
+export const footerDescription =
+  'Materiales para construcción y servicios de obras en la Costa del Sol. Más de 20 años ofreciendo productos de calidad, reformas y diseño de interiores.'
