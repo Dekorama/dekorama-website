@@ -60,10 +60,13 @@ export async function POST(request) {
 
     if (!res.ok) {
       const errData = await res.json().catch(() => ({}))
-      console.error('Brevo error:', res.status, errData)
+      // Log enough to debug in production (Vercel/host logs); avoid logging full API key
+      console.error('Brevo API error:', res.status, JSON.stringify(errData))
+      // 400/401/403 = config; 429 = rate limit; 5xx = Brevo issue
+      const status = res.status >= 500 ? 502 : 500
       return NextResponse.json(
         { error: 'No se pudo enviar el mensaje. Inténtelo de nuevo o contacte por teléfono.' },
-        { status: 502 }
+        { status }
       )
     }
 

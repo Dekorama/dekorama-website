@@ -17,6 +17,10 @@ export default function CookieBanner() {
     if (typeof window !== 'undefined') {
       localStorage.setItem(STORAGE_KEY, 'accepted')
       setVisible(false)
+      // Envía evento a GTM para activar Analytics u otros tags solo con consentimiento
+      if (window.dataLayer) {
+        window.dataLayer.push({ event: 'cookie_consent_accepted' })
+      }
     }
   }
 
