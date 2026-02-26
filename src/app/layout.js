@@ -4,6 +4,7 @@ import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import CookieBanner from '@/components/CookieBanner'
 import GoogleTagManager from '@/components/GoogleTagManager'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dekorama.es'
 
@@ -60,6 +61,7 @@ export default function RootLayout({ children }) {
     <html lang="es">
       <body className="min-h-screen bg-white">
         <GoogleTagManager />
+        <GoogleAnalytics />
         <Header />
         <main>{children}</main>
         <Footer />
