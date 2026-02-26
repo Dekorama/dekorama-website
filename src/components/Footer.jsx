@@ -6,9 +6,18 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div className="space-y-4">
-            <div className="text-2xl font-bold">DEKORAMA</div>
+            <div>
+              <div className="text-2xl font-bold">Dekorama</div>
+              <p className="text-sm text-gray-500 mt-1">Razón social</p>
+            </div>
             <p className="text-gray-400 leading-relaxed">
               Transformamos espacios en hogares que enamoran. Reformas integrales y diseño de interiores en la Costa del Sol.
+            </p>
+            <p className="text-gray-400 text-sm">
+              <span className="block font-medium text-gray-300 mt-2">Tienda:</span>
+              Las Ventas, Avenida Tivoli, 17<br />
+              Centro Comercial, Local 5<br />
+              29631 Benalmádena, Málaga
             </p>
           </div>
 
@@ -62,7 +71,10 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contacto</h3>
             <ul className="space-y-2 text-gray-400">
-              <li>Costa del Sol, Málaga</li>
+              <li className="leading-relaxed">
+                Las Ventas, Av. Tivoli, 17<br />
+                C.C., Local 5, 29631 Benalmádena, Málaga
+              </li>
               <li>
                 <a href="tel:+34628571537" className="hover:text-white transition-colors">
                   +34 628 571 537

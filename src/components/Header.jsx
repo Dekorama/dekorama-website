@@ -63,7 +63,7 @@ export default function Header() {
               href="/#contacto"
               className="px-4 py-2 text-sm font-medium bg-black text-white hover:bg-gray-800 transition-colors rounded-sm"
             >
-              Consulta gratuita
+              Visita gratuita
             </Link>
           </nav>
 
@@ -72,7 +72,7 @@ export default function Header() {
               href="/#contacto"
               className="px-3 py-1.5 text-xs sm:text-sm font-medium bg-black text-white rounded-sm hover:bg-gray-800 transition-colors"
             >
-              Consulta gratuita
+              Visita gratuita
             </Link>
             <button
               type="button"
@@ -131,7 +131,7 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
                 className="block w-full py-3 px-4 text-center text-sm font-medium bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
               >
-                Consulta gratuita
+                Visita gratuita
               </Link>
             </div>
           </div>

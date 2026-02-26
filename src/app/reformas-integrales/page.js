@@ -5,7 +5,7 @@ import { images } from '@/data/images'
 export const metadata = {
   title: 'Reformas Integrales',
   description:
-    'Reformas integrales en la Costa del Sol: diseño personalizado, gestión de permisos y acabados premium. Transformación completa de tu hogar con garantía de 5 años.',
+    'Reformas integrales en la Costa del Sol: diseño personalizado, gestión de permisos y acabados premium. Transformación completa de tu hogar. Visita gratuita.',
   openGraph: {
     title: 'Reformas Integrales | Dekorama Costa del Sol',
     description:
@@ -35,12 +35,12 @@ export default function ReformasIntegralesPage() {
   ]
 
   const fases = [
-    { numero: '01', titulo: 'Estudio y diseño', descripcion: 'Análisis del espacio, diseño 3D personalizado y planificación detallada del proyecto.' },
+    { numero: '01', titulo: 'Estudio y diseño', descripcion: 'Análisis del espacio y planificación detallada del proyecto.' },
     { numero: '02', titulo: 'Desmontaje y preparación', descripcion: 'Retirada de elementos existentes y preparación de la estructura para la reforma.' },
     { numero: '03', titulo: 'Instalaciones', descripcion: 'Renovación de fontanería, electricidad, climatización y sistemas de seguridad.' },
     { numero: '04', titulo: 'Albañilería y acabados', descripcion: 'Construcción, revestimientos, pintura y colocación de pavimentos.' },
     { numero: '05', titulo: 'Carpintería y mobiliario', descripcion: 'Instalación de armarios, puertas, ventanas y elementos de carpintería a medida.' },
-    { numero: '06', titulo: 'Limpieza y entrega', descripcion: 'Limpieza profesional y entrega del proyecto con garantía de 5 años.' },
+    { numero: '06', titulo: 'Limpieza y entrega', descripcion: 'Limpieza profesional y entrega del proyecto. No damos la obra por terminada hasta que quede perfecta.' },
   ]
 
   return (
@@ -111,9 +111,9 @@ export default function ReformasIntegralesPage() {
       <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-black text-white">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-semibold">¿Listo para transformar tu hogar?</h2>
-          <p className="text-xl text-gray-300">Solicita una consulta gratuita y recibe un presupuesto detallado sin compromiso</p>
+          <p className="text-xl text-gray-300">Solicita una visita gratuita y recibe un presupuesto detallado sin compromiso</p>
           <Link href="/#contacto" className="inline-block px-8 py-4 bg-white text-black font-medium hover:bg-gray-100 transition-all duration-300 hover:scale-105">
-            Solicitar consulta gratuita
+            Solicitar visita gratuita
           </Link>
         </div>
       </section>

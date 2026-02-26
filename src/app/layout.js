@@ -15,7 +15,7 @@ export const metadata = {
     template: '%s | Dekorama',
   },
   description:
-    'Reformas integrales, cocinas a medida y baños de diseño en la Costa del Sol. Presupuesto sin compromiso, garantía 5 años. Expertos en Málaga y Marbella.',
+    'Reformas integrales, cocinas a medida y baños de diseño en la Costa del Sol. Presupuesto sin compromiso. Visita gratuita. Expertos en Málaga y Marbella.',
   keywords: [
     'reformas integrales Costa del Sol',
     'cocinas a medida Málaga',
@@ -35,7 +35,7 @@ export const metadata = {
     siteName: 'Dekorama',
     title: 'Dekorama | Reformas Integrales, Cocinas y Baños | Costa del Sol',
     description:
-      'Reformas integrales, cocinas a medida y baños de diseño en la Costa del Sol. Presupuesto sin compromiso, garantía 5 años.',
+      'Reformas integrales, cocinas a medida y baños de diseño en la Costa del Sol. Presupuesto sin compromiso. Visita gratuita.',
     images: [{ url: '/dekorama-favicon.png', width: 512, height: 512, alt: 'Dekorama' }],
   },
   twitter: {

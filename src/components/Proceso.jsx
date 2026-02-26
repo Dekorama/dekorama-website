@@ -1,10 +1,11 @@
 export default function Proceso() {
   const pasos = [
-    { numero: '01', titulo: 'Consulta inicial', descripcion: 'Reunión gratuita para conocer tus necesidades y el espacio a reformar' },
-    { numero: '02', titulo: 'Diseño 3D y presupuesto', descripcion: 'Creamos el diseño en 3D y te presentamos un presupuesto detallado y cerrado' },
-    { numero: '03', titulo: 'Planificación', descripcion: 'Organizamos todos los detalles: materiales, plazos y fases de ejecución' },
-    { numero: '04', titulo: 'Ejecución', descripcion: 'Nuestro equipo trabaja con precisión y limpieza, respetando los plazos acordados' },
-    { numero: '05', titulo: 'Entrega y garantía', descripcion: 'Revisión final contigo y entrega con garantía de 5 años en todos los trabajos' },
+    { numero: '01', titulo: 'Consulta inicial', descripcion: 'Visita gratuita para conocer tus necesidades y el espacio a reformar' },
+    { numero: '02', titulo: 'Presupuesto', descripcion: 'Te presentamos un presupuesto detallado y sin compromiso' },
+    { numero: '03', titulo: 'Aceptación de presupuesto 3D', descripcion: 'Aprobación del presupuesto en 3D para que todo quede conforme antes de empezar' },
+    { numero: '04', titulo: 'Planificación', descripcion: 'Organizamos todos los detalles: materiales, plazos y fases de ejecución' },
+    { numero: '05', titulo: 'Ejecución', descripcion: 'Nuestro equipo trabaja con precisión y limpieza, respetando los plazos acordados' },
+    { numero: '06', titulo: 'Entrega', descripcion: 'Revisión final contigo. No damos la obra por terminada hasta que quede perfecta' },
   ]
 
   return (

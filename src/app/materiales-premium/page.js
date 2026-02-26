@@ -54,7 +54,7 @@ export default function MaterialesPremiumPage() {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-semibold">¿Hablamos de tu proyecto?</h2>
           <Link href="/#contacto" className="inline-block px-8 py-4 bg-white text-black font-medium hover:bg-gray-100 transition-all duration-300 hover:scale-105">
-            Solicitar consulta gratuita
+            Solicitar visita gratuita
           </Link>
         </div>
       </section>

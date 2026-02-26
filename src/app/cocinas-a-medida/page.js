@@ -5,7 +5,7 @@ import { images } from '@/data/images'
 export const metadata = {
   title: 'Cocinas a Medida',
   description:
-    'Cocinas a medida en la Costa del Sol: diseño 3D, electrodomésticos integrados y materiales premium. Presupuesto sin compromiso en Málaga y Marbella.',
+    'Cocinas a medida en la Costa del Sol: electrodomésticos integrados y materiales premium. Presupuesto sin compromiso en Málaga y Marbella.',
   openGraph: {
     title: 'Cocinas a Medida | Dekorama Costa del Sol',
     description: 'Cocinas de diseño exclusivo adaptadas a tu espacio. Calidad y funcionalidad.',
@@ -48,7 +48,7 @@ export default function CocinasMedidaPage() {
             Cocinas que son el corazón de tu hogar
           </h2>
           <p className="text-gray-600 leading-relaxed text-lg">
-            Diseñamos cocinas a medida con los mejores materiales, electrodomésticos integrados y soluciones de almacenaje inteligente. Incluimos diseño 3D para que veas el resultado antes de empezar.
+            Diseñamos cocinas a medida con los mejores materiales, electrodomésticos integrados y soluciones de almacenaje inteligente.
           </p>
         </div>
       </section>
@@ -57,7 +57,7 @@ export default function CocinasMedidaPage() {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-semibold">¿Listo para tu nueva cocina?</h2>
           <Link href="/#contacto" className="inline-block px-8 py-4 bg-white text-black font-medium hover:bg-gray-100 transition-all duration-300 hover:scale-105">
-            Solicitar consulta gratuita
+            Solicitar visita gratuita
           </Link>
         </div>
       </section>

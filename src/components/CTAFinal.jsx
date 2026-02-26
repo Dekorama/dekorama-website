@@ -149,7 +149,7 @@ export default function CTAFinal() {
             disabled={status === 'loading'}
             className="w-full px-8 py-4 bg-black text-white font-medium hover:bg-gray-800 transition-all duration-300 hover:scale-[1.02] disabled:opacity-70 disabled:pointer-events-none disabled:scale-100"
           >
-            {status === 'loading' ? 'Enviando…' : 'Solicitar consulta gratuita'}
+            {status === 'loading' ? 'Enviando…' : 'Solicitar visita gratuita'}
           </button>
         </form>
 

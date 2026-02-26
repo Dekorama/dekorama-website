@@ -5,7 +5,7 @@ import { images } from '@/data/images'
 export const metadata = {
   title: 'Baños Completos',
   description:
-    'Reforma de baños completos en la Costa del Sol: diseño 3D, fontanería, mamparas y muebles a medida. Garantía 5 años. Presupuesto gratuito en Málaga.',
+    'Reforma de baños completos en la Costa del Sol: fontanería, mamparas y muebles a medida. Presupuesto gratuito en Málaga.',
   openGraph: {
     title: 'Baños Completos | Dekorama Costa del Sol',
     description: 'Baños de diseño con las últimas tendencias. Relax y bienestar.',
@@ -48,7 +48,7 @@ export default function BanosCompletosPage() {
             Baños que inspiran tranquilidad
           </h2>
           <p className="text-gray-600 leading-relaxed text-lg">
-            Desde el diseño 3D hasta la entrega final: fontanería, revestimientos, mamparas, muebles a medida y acabados premium. Garantía de 5 años en todos nuestros trabajos.
+            Desde la planificación hasta la entrega final: fontanería, revestimientos, mamparas, muebles a medida y acabados premium. No damos la obra por terminada hasta que quede perfecta.
           </p>
         </div>
       </section>
@@ -57,7 +57,7 @@ export default function BanosCompletosPage() {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-semibold">¿Listo para renovar tu baño?</h2>
           <Link href="/#contacto" className="inline-block px-8 py-4 bg-white text-black font-medium hover:bg-gray-100 transition-all duration-300 hover:scale-105">
-            Solicitar consulta gratuita
+            Solicitar visita gratuita
           </Link>
         </div>
       </section>
