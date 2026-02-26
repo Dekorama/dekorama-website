@@ -2,6 +2,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import CookieBanner from '@/components/CookieBanner'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dekorama.es'
 
@@ -60,6 +61,7 @@ export default function RootLayout({ children }) {
         <Header />
         <main>{children}</main>
         <Footer />
+        <CookieBanner />
         <WhatsAppButton />
       </body>
     </html>
