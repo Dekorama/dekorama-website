@@ -13,7 +13,11 @@ out/
 # Misc
 .DS_Store
 *.pem
+.env
 .env*.local
+
+# Cursor / debug
+.cursor/
 
 # Debug
 npm-debug.log*

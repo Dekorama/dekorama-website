@@ -14,6 +14,12 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    if (isMenuOpen) document.body.style.overflow = 'hidden'
+    else document.body.style.overflow = ''
+    return () => { document.body.style.overflow = '' }
+  }, [isMenuOpen])
+
   const navLinks = [
     { label: 'Servicios', href: '/#servicios' },
     { label: 'Proyectos', href: '/proyectos' },
@@ -28,7 +34,7 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-14 sm:h-16 md:h-[4.25rem]">
           <Link
             href="/"
             className="flex items-center hover:opacity-80 transition-opacity shrink-0"
@@ -36,50 +42,51 @@ export default function Header() {
             <Image
               src="/dekorama-logo-cropped.svg"
               alt="Dekorama"
-              width={200}
-              height={52}
-              className="h-11 md:h-12 w-auto object-contain"
+              width={160}
+              height={42}
+              className="h-7 sm:h-8 md:h-9 w-auto object-contain"
               priority
             />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-600 hover:text-black transition-colors font-medium"
+                className="text-gray-600 hover:text-black transition-colors font-medium text-[15px]"
               >
                 {link.label}
               </Link>
             ))}
             <Link
               href="/#contacto"
-              className="px-6 py-2.5 bg-black text-white font-medium hover:bg-gray-800 transition-all duration-300 hover:scale-105"
+              className="px-4 py-2 text-sm font-medium bg-black text-white hover:bg-gray-800 transition-colors rounded-sm"
             >
               Consulta gratuita
             </Link>
           </nav>
 
-          <div className="flex items-center gap-4 md:hidden">
+          <div className="flex items-center gap-2 sm:gap-3 md:hidden">
             <Link
               href="/#contacto"
-              className="px-4 py-2 bg-black text-white text-sm font-medium rounded"
+              className="px-3 py-1.5 text-xs sm:text-sm font-medium bg-black text-white rounded-sm hover:bg-gray-800 transition-colors"
             >
               Consulta gratuita
             </Link>
             <button
               type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-black"
+              className="p-2 -mr-2 text-black hover:bg-gray-100 rounded-md transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
               aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+              aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               ) : (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               )}
@@ -88,36 +95,48 @@ export default function Header() {
         </div>
       </div>
 
-      {isMenuOpen && (
-        <>
-          <div
-            className="fixed inset-0 bg-black/20 z-40 md:hidden"
-            onClick={() => setIsMenuOpen(false)}
-            aria-hidden
-          />
-          <div className="fixed top-20 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 md:hidden py-6 px-4">
-            <nav className="flex flex-col gap-4">
+      {/* Mobile menu overlay + panel */}
+      <div
+        className={`fixed inset-0 z-40 md:hidden transition-opacity duration-200 ${
+          isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        aria-hidden={!isMenuOpen}
+      >
+        <div
+          className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"
+          onClick={() => setIsMenuOpen(false)}
+          aria-hidden
+        />
+        <div
+          className={`absolute top-0 right-0 bottom-0 w-full max-w-sm bg-white shadow-xl transition-transform duration-300 ease-out ${
+            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          <div className="flex flex-col h-full pt-16 pb-8 px-6">
+            <nav className="flex flex-col gap-1" role="navigation" aria-label="Menú principal">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-lg font-medium text-gray-700 hover:text-black py-2"
+                  className="py-3.5 px-3 text-base font-medium text-gray-800 hover:text-black hover:bg-gray-50 rounded-lg transition-colors -mx-3"
                 >
                   {link.label}
                 </Link>
               ))}
+            </nav>
+            <div className="mt-auto pt-6 border-t border-gray-200">
               <Link
                 href="/#contacto"
                 onClick={() => setIsMenuOpen(false)}
-                className="mt-4 px-6 py-3 bg-black text-white font-medium text-center hover:bg-gray-800"
+                className="block w-full py-3 px-4 text-center text-sm font-medium bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
               >
                 Consulta gratuita
               </Link>
-            </nav>
+            </div>
           </div>
-        </>
-      )}
+        </div>
+      </div>
     </header>
   )
 }
