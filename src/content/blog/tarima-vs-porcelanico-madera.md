@@ -20,7 +20,6 @@ El **porcelánico de imitación madera** (o *wood look*) es una baldosa cerámic
 ## Diferencias principales
 
 | Aspecto | Tarima | Porcelánico madera |
-|--------|--------|---------------------|
 | **Material** | Madera natural o multicapa | Cerámica (porcelánico) |
 | **Resistencia al agua** | Limitada; no recomendable en baños o zonas muy húmedas | Muy alta; ideal en baños, cocinas y terrazas |
 | **Mantenimiento** | Requiere tratamientos periódicos (aceite/barniz) | Muy bajo; basta con fregar |

@@ -1,7 +1,11 @@
-import Link from 'next/link'
-import { footerDescription } from '@/lib/site'
+'use client'
+
+import { Link } from '@/i18n/navigation'
+import { useTranslations } from 'next-intl'
 
 export default function Footer() {
+  const t = useTranslations('footer')
+
   return (
     <footer className="bg-black text-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -9,73 +13,77 @@ export default function Footer() {
           <div className="space-y-4">
             <div>
               <div className="text-2xl font-bold">Dekorama</div>
-              <p className="text-sm text-gray-500 mt-1">Razón social</p>
             </div>
             <p className="text-gray-400 leading-relaxed">
-              {footerDescription}
+              {t('description')}
             </p>
             <p className="text-gray-400 text-sm">
-              <span className="block font-medium text-gray-300 mt-2">Tienda:</span>
-              Las Ventas, Avenida Tivoli, 17<br />
-              Centro Comercial, Local 5<br />
-              29631 Benalmádena, Málaga
+              <span className="block font-medium text-gray-300 mt-2">{t('store')}</span>
+              {t('address').split('\n').map((line, i) => (
+                <span key={i}>{line}<br /></span>
+              ))}
             </p>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Servicios</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('services')}</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
                 <Link href="/reformas-integrales" className="hover:text-white transition-colors">
-                  Reformas Integrales
+                  {t('reformas')}
                 </Link>
               </li>
               <li>
                 <Link href="/cocinas-a-medida" className="hover:text-white transition-colors">
-                  Cocinas a medida
+                  {t('cocinas')}
                 </Link>
               </li>
               <li>
                 <Link href="/banos-completos" className="hover:text-white transition-colors">
-                  Baños completos
+                  {t('banos')}
                 </Link>
               </li>
               <li>
                 <Link href="/materiales-premium" className="hover:text-white transition-colors">
-                  Materiales premium
+                  {t('materiales')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/catalogo" className="hover:text-white transition-colors">
+                  {t('catalog')}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Empresa</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('company')}</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
                 <Link href="/blog" className="hover:text-white transition-colors">
-                  Blog
+                  {t('blog')}
                 </Link>
               </li>
               <li>
                 <Link href="/#proceso" className="hover:text-white transition-colors">
-                  Nuestro proceso
+                  {t('ourProcess')}
                 </Link>
               </li>
               <li>
                 <Link href="/proyectos" className="hover:text-white transition-colors">
-                  Proyectos
+                  {t('projects')}
                 </Link>
               </li>
               <li>
                 <Link href="/#servicios" className="hover:text-white transition-colors">
-                  Servicios
+                  {t('services')}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contacto</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('contact')}</h3>
             <ul className="space-y-2 text-gray-400">
               <li className="leading-relaxed">
                 Las Ventas, Av. Tivoli, 17<br />
@@ -122,16 +130,16 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
-          <div>© {new Date().getFullYear()} Dekorama. Todos los derechos reservados.</div>
+          <div>© {new Date().getFullYear()} Dekorama. {t('copyright')}</div>
           <div className="flex gap-6">
             <Link href="/politica-privacidad" className="hover:text-white transition-colors">
-              Política de Privacidad
+              {t('privacy')}
             </Link>
             <Link href="/aviso-legal" className="hover:text-white transition-colors">
-              Aviso Legal
+              {t('legal')}
             </Link>
             <Link href="/cookies" className="hover:text-white transition-colors">
-              Cookies
+              {t('cookies')}
             </Link>
           </div>
         </div>

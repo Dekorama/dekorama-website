@@ -1,6 +1,7 @@
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { images } from '@/data/images'
+import { baseUrl } from '@/lib/site'
 
 export const metadata = {
   title: 'Baños Completos',
@@ -11,6 +12,7 @@ export const metadata = {
     description: 'Baños de diseño con las últimas tendencias. Relax y bienestar.',
     url: '/banos-completos',
   },
+  alternates: { canonical: `${baseUrl}/banos-completos` },
 }
 
 export default function BanosCompletosPage() {

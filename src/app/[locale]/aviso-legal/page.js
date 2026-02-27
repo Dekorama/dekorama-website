@@ -1,8 +1,11 @@
+import { baseUrl } from '@/lib/site'
+
 export const metadata = {
   title: 'Aviso Legal',
   description:
     'Aviso legal y condiciones de uso del sitio web de Dekorama. Datos identificativos, propiedad intelectual y legislación aplicable.',
   robots: { index: true, follow: true },
+  alternates: { canonical: `${baseUrl}/aviso-legal` },
 }
 
 export default function AvisoLegalPage() {

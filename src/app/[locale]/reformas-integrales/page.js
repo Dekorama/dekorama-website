@@ -1,6 +1,7 @@
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { images } from '@/data/images'
+import { baseUrl } from '@/lib/site'
 
 export const metadata = {
   title: 'Reformas Integrales',
@@ -12,6 +13,7 @@ export const metadata = {
       'Reformas integrales con diseño personalizado y acabados premium. Málaga, Marbella y Costa del Sol.',
     url: '/reformas-integrales',
   },
+  alternates: { canonical: `${baseUrl}/reformas-integrales` },
 }
 
 export default function ReformasIntegralesPage() {

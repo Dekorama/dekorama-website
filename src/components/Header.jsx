@@ -1,10 +1,17 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
+import { useTranslations, useLocale } from 'next-intl'
+import { Link, usePathname } from '@/i18n/navigation'
 
 export default function Header() {
+  const t = useTranslations('nav')
+  const tAria = useTranslations('aria')
+  const locale = useLocale()
+  const pathname = usePathname()
+  // Ensure we never pass a path that already contains the locale (prevents /en/en)
+  const pathnameForLocale = pathname.replace(/^\/(es|en)(\/|$)/, '$2') || '/'
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -21,11 +28,12 @@ export default function Header() {
   }, [isMenuOpen])
 
   const navLinks = [
-    { label: 'Servicios', href: '/#servicios' },
-    { label: 'Proyectos', href: '/proyectos' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'Proceso', href: '/#proceso' },
-    { label: 'Contacto', href: '/#contacto' },
+    { label: t('services'), href: '/#servicios' },
+    { label: t('catalog'), href: '/catalogo' },
+    { label: t('projects'), href: '/proyectos' },
+    { label: t('blog'), href: '/blog' },
+    { label: t('process'), href: '/#proceso' },
+    { label: t('contact'), href: '/#contacto' },
   ]
 
   return (
@@ -55,31 +63,61 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-600 hover:text-black transition-colors font-medium text-[15px]"
+                className="text-gray-600 hover:text-black focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 rounded-sm transition-colors font-medium text-[15px]"
               >
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/#contacto"
-              className="px-4 py-2 text-sm font-medium bg-black text-white hover:bg-gray-800 transition-colors rounded-sm"
-            >
-              Visita gratuita
-            </Link>
+            <div className="flex items-center gap-3">
+              <span className="flex items-center gap-1 text-sm font-medium text-gray-500">
+                <Link
+                  href={pathnameForLocale}
+                  locale="es"
+                  className={locale === 'es' ? 'text-black font-semibold' : 'hover:text-black transition-colors'}
+                  aria-current={locale === 'es' ? 'true' : undefined}
+                >
+                  ES
+                </Link>
+                <span aria-hidden>|</span>
+                <Link
+                  href={pathnameForLocale}
+                  locale="en"
+                  className={locale === 'en' ? 'text-black font-semibold' : 'hover:text-black transition-colors'}
+                  aria-current={locale === 'en' ? 'true' : undefined}
+                >
+                  EN
+                </Link>
+              </span>
+              <Link
+                href="/#contacto"
+                className="px-4 py-2 text-sm font-medium bg-black text-white hover:bg-gray-800 focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 focus-visible:ring-offset-white transition-colors rounded-sm"
+              >
+                {t('freeVisit')}
+              </Link>
+            </div>
           </nav>
 
           <div className="flex items-center gap-2 sm:gap-3 md:hidden">
+            <span className="flex items-center gap-1 text-xs sm:text-sm">
+              <Link href={pathnameForLocale} locale="es" className={locale === 'es' ? 'font-semibold text-black' : 'text-gray-500'}>
+                ES
+              </Link>
+              <span>|</span>
+              <Link href={pathnameForLocale} locale="en" className={locale === 'en' ? 'font-semibold text-black' : 'text-gray-500'}>
+                EN
+              </Link>
+            </span>
             <Link
               href="/#contacto"
               className="px-3 py-1.5 text-xs sm:text-sm font-medium bg-black text-white rounded-sm hover:bg-gray-800 transition-colors"
             >
-              Visita gratuita
+              {t('freeVisit')}
             </Link>
             <button
               type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2 -mr-2 text-black hover:bg-gray-100 rounded-md transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
-              aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+              aria-label={isMenuOpen ? tAria('closeMenu') : tAria('openMenu')}
               aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? (
@@ -132,7 +170,7 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
                 className="block w-full py-3 px-4 text-center text-sm font-medium bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
               >
-                Visita gratuita
+                {t('freeVisit')}
               </Link>
             </div>
           </div>

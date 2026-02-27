@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "services": "Servicios",
+    "catalog": "Catálogo",
+    "projects": "Proyectos",
+    "blog": "Blog",
+    "process": "Proceso",
+    "contact": "Contacto",
+    "freeVisit": "Visita gratuita"
+  },
+  "hero": {
+    "title": "Transformamos espacios en hogares que enamoran",
+    "subtitle": "Materiales de calidad, reformas integrales, cocinas y baños de diseño en la Costa del Sol",
+    "experience": "Más de 20 años en la Costa del Sol",
+    "requestConsultation": "Solicitar consulta",
+    "viewProjects": "Ver proyectos"
+  },
+  "footer": {
+    "description": "Materiales para reforma y acabados en la Costa del Sol: porcelánicos, grifería, platos de ducha, iluminación, mamparas y más. Reformas integrales, cocinas y baños de diseño. Más de 20 años de experiencia.",
+    "store": "Tienda:",
+    "address": "Las Ventas, Avenida Tivoli, 17\nCentro Comercial, Local 5\n29631 Benalmádena, Málaga",
+    "services": "Servicios",
+    "company": "Empresa",
+    "ourProcess": "Nuestro proceso",
+    "contact": "Contacto",
+    "reformas": "Reformas Integrales",
+    "cocinas": "Cocinas a medida",
+    "banos": "Baños completos",
+    "materiales": "Materiales premium",
+    "catalog": "Catálogo",
+    "blog": "Blog",
+    "projects": "Proyectos",
+    "privacy": "Política de Privacidad",
+    "legal": "Aviso Legal",
+    "cookies": "Cookies",
+    "copyright": "Todos los derechos reservados."
+  },
+  "cta": {
+    "requestFreeVisit": "Solicitar visita gratuita",
+    "requestQuote": "Pedir presupuesto",
+    "viewProjects": "Ver proyectos",
+    "readyToTransform": "¿Listo para transformar tu espacio?",
+    "tellUsProject": "Cuéntanos tu proyecto y te respondemos sin compromiso. Incluye todos los detalles que quieras para que podamos orientarte mejor.",
+    "projectInMind": "¿Tienes un proyecto en mente?",
+    "requestVisitNoCommitment": "Solicita una visita gratuita y te asesoramos sin compromiso",
+    "wouldYouLikeAdvice": "¿Te gustaría que te asesoremos?",
+    "freeVisitAndQuote": "Visita gratuita y presupuesto sin compromiso",
+    "viewMoreArticles": "Ver más artículos"
+  },
+  "form": {
+    "name": "Nombre *",
+    "phone": "Teléfono *",
+    "email": "Email *",
+    "projectType": "Tipo de reforma",
+    "projectTypeOptions": {
+      "placeholder": "Tipo de reforma",
+      "integral": "Reforma integral",
+      "cocina": "Cocina a medida",
+      "bano": "Baño completo",
+      "otro": "Otro"
+    },
+    "descriptionPlaceholder": "Describe tu proyecto o lo que necesitas (opcional)",
+    "submit": "Solicitar visita gratuita",
+    "sending": "Enviando…",
+    "successTitle": "Mensaje enviado correctamente.",
+    "successSubtitle": "Te contestaremos lo antes posible.",
+    "errorGeneric": "No se pudo enviar. Inténtelo de nuevo.",
+    "errorConnection": "Error de conexión. Inténtelo de nuevo o contacte por teléfono."
+  },
+  "aria": {
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
+  },
+  "beneficios": {
+    "title": "La reforma que siempre quisiste, sin sorpresas",
+    "freeVisit": "Visita gratuita",
+    "freeVisitDesc": "Te visitamos sin compromiso para valorar tu proyecto y asesorarte en persona",
+    "perfectWork": "Obra perfecta o no salimos",
+    "perfectWorkDesc": "No damos la obra por terminada hasta que quede perfecta. Tu satisfacción es nuestro compromiso",
+    "budget": "Presupuesto",
+    "budgetDesc": "Presupuesto detallado y sin compromiso para que sepas exactamente en qué inviertes",
+    "budget3d": "Aceptación de presupuesto 3D",
+    "budget3dDesc": "Aprobación clara del presupuesto en 3D antes de comenzar, para que todo quede conforme"
+  },
+  "servicios": {
+    "title": "Todo lo que necesitas bajo un mismo techo",
+    "viewMore": "Ver más",
+    "viewCatalog": "Ver catálogo",
+    "reformas": "Reformas Integrales",
+    "reformasDesc": "Transformación completa de tu hogar con diseño personalizado y acabados premium",
+    "cocinas": "Cocinas a medida",
+    "cocinasDesc": "Diseño exclusivo adaptado a tu espacio y estilo de vida",
+    "banos": "Baños completos",
+    "banosDesc": "Espacios de relax y bienestar con las últimas tendencias en diseño",
+    "materiales": "Materiales premium",
+    "materialesDesc": "Porcelánicos, grifería, platos de ducha, iluminación, mamparas y materiales de exterior de primeras marcas"
+  },
+  "proceso": {
+    "title": "Cómo trabajamos: Simple, claro, sin complicaciones",
+    "step1Title": "Consulta inicial",
+    "step1Desc": "Visita gratuita para conocer tus necesidades y el espacio a reformar",
+    "step2Title": "Presupuesto",
+    "step2Desc": "Te presentamos un presupuesto detallado y sin compromiso",
+    "step3Title": "Aceptación de presupuesto 3D",
+    "step3Desc": "Aprobación del presupuesto en 3D para que todo quede conforme antes de empezar",
+    "step4Title": "Planificación",
+    "step4Desc": "Organizamos todos los detalles: materiales, plazos y fases de ejecución",
+    "step5Title": "Ejecución",
+    "step5Desc": "Nuestro equipo trabaja con precisión y limpieza, respetando los plazos acordados",
+    "step6Title": "Entrega",
+    "step6Desc": "Revisión final contigo. No damos la obra por terminada hasta que quede perfecta"
+  },
+  "testimonios": {
+    "title": "Lo que dicen nuestros clientes",
+    "onGoogle": "en Google",
+    "reviews": "46 reseñas",
+    "ariaReviews": "Ver 4.8 estrellas y reseñas en Google",
+    "detail1": "Google · hace 4 meses",
+    "detail2": "Google · hace 1 año",
+    "detail3": "Google · hace 1 año"
+  },
+  "galeria": {
+    "title": "Proyectos que hablan por nosotros",
+    "viewAllProjects": "Ver todos los proyectos"
+  }
+}

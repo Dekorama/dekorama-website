@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "services": "Services",
+    "catalog": "Catalog",
+    "projects": "Projects",
+    "blog": "Blog",
+    "process": "Process",
+    "contact": "Contact",
+    "freeVisit": "Free visit"
+  },
+  "hero": {
+    "title": "We turn spaces into homes you'll love",
+    "subtitle": "Quality materials, full renovations, custom kitchens and bathrooms on the Costa del Sol",
+    "experience": "Over 20 years on the Costa del Sol",
+    "requestConsultation": "Request consultation",
+    "viewProjects": "View projects"
+  },
+  "footer": {
+    "description": "Materials for renovation and finishes on the Costa del Sol: porcelain tiles, taps, shower trays, lighting, screens and more. Full renovations, custom kitchens and bathrooms. Over 20 years of experience.",
+    "store": "Store:",
+    "address": "Las Ventas, Avenida Tivoli, 17\nShopping Centre, Unit 5\n29631 Benalmádena, Málaga",
+    "services": "Services",
+    "company": "Company",
+    "ourProcess": "Our process",
+    "contact": "Contact",
+    "reformas": "Full Renovations",
+    "cocinas": "Custom Kitchens",
+    "banos": "Complete Bathrooms",
+    "materiales": "Premium Materials",
+    "catalog": "Catalog",
+    "blog": "Blog",
+    "projects": "Projects",
+    "privacy": "Privacy Policy",
+    "legal": "Legal Notice",
+    "cookies": "Cookies",
+    "copyright": "All rights reserved."
+  },
+  "cta": {
+    "requestFreeVisit": "Request free visit",
+    "requestQuote": "Request quote",
+    "viewProjects": "View projects",
+    "readyToTransform": "Ready to transform your space?",
+    "tellUsProject": "Tell us about your project and we'll get back to you with no obligation. Include as much detail as you like so we can help you better.",
+    "projectInMind": "Have a project in mind?",
+    "requestVisitNoCommitment": "Request a free visit and we'll advise you with no obligation",
+    "wouldYouLikeAdvice": "Would you like our advice?",
+    "freeVisitAndQuote": "Free visit and quote with no obligation",
+    "viewMoreArticles": "View more articles"
+  },
+  "form": {
+    "name": "Name *",
+    "phone": "Phone *",
+    "email": "Email *",
+    "projectType": "Type of renovation",
+    "projectTypeOptions": {
+      "placeholder": "Type of renovation",
+      "integral": "Full renovation",
+      "cocina": "Custom kitchen",
+      "bano": "Complete bathroom",
+      "otro": "Other"
+    },
+    "descriptionPlaceholder": "Describe your project or what you need (optional)",
+    "submit": "Request free visit",
+    "sending": "Sending…",
+    "successTitle": "Message sent successfully.",
+    "successSubtitle": "We'll get back to you as soon as possible.",
+    "errorGeneric": "Could not send. Please try again.",
+    "errorConnection": "Connection error. Please try again or contact us by phone."
+  },
+  "aria": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "beneficios": {
+    "title": "The renovation you always wanted, no surprises",
+    "freeVisit": "Free visit",
+    "freeVisitDesc": "We visit you with no obligation to assess your project and advise you in person",
+    "perfectWork": "Perfect result or we don't leave",
+    "perfectWorkDesc": "We don't consider the job done until it's perfect. Your satisfaction is our commitment",
+    "budget": "Quote",
+    "budgetDesc": "Detailed quote with no obligation so you know exactly what you're investing in",
+    "budget3d": "3D quote approval",
+    "budget3dDesc": "Clear approval of the 3D quote before we start, so everything is agreed"
+  },
+  "servicios": {
+    "title": "Everything you need under one roof",
+    "viewMore": "View more",
+    "viewCatalog": "View catalog",
+    "reformas": "Full Renovations",
+    "reformasDesc": "Complete transformation of your home with custom design and premium finishes",
+    "cocinas": "Custom Kitchens",
+    "cocinasDesc": "Exclusive design tailored to your space and lifestyle",
+    "banos": "Complete Bathrooms",
+    "banosDesc": "Relaxing spaces with the latest design trends",
+    "materiales": "Premium Materials",
+    "materialesDesc": "Porcelain tiles, taps, shower trays, lighting, screens and exterior materials from top brands"
+  },
+  "proceso": {
+    "title": "How we work: Simple, clear, no fuss",
+    "step1Title": "Initial consultation",
+    "step1Desc": "Free visit to understand your needs and the space to renovate",
+    "step2Title": "Quote",
+    "step2Desc": "We present a detailed quote with no obligation",
+    "step3Title": "3D quote approval",
+    "step3Desc": "Approval of the 3D quote before we start, so everything is agreed",
+    "step4Title": "Planning",
+    "step4Desc": "We organise all the details: materials, timelines and execution phases",
+    "step5Title": "Execution",
+    "step5Desc": "Our team works with precision and care, meeting the agreed deadlines",
+    "step6Title": "Handover",
+    "step6Desc": "Final review with you. We don't consider the job done until it's perfect"
+  },
+  "testimonios": {
+    "title": "What our clients say",
+    "onGoogle": "on Google",
+    "reviews": "46 reviews",
+    "ariaReviews": "View 4.8 stars and reviews on Google",
+    "detail1": "Google · 4 months ago",
+    "detail2": "Google · 1 year ago",
+    "detail3": "Google · 1 year ago"
+  },
+  "galeria": {
+    "title": "Projects that speak for us",
+    "viewAllProjects": "View all projects"
+  }
+}

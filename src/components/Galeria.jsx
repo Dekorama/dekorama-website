@@ -1,11 +1,13 @@
 'use client'
 
 import { useEffect } from 'react'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { images } from '@/data/images'
+import { useTranslations } from 'next-intl'
 
 export default function Galeria() {
+  const t = useTranslations('galeria')
   useEffect(() => {
     const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }
     const observer = new IntersectionObserver((entries) => {
@@ -24,7 +26,7 @@ export default function Galeria() {
     <section id="proyectos" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-gray-bg">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-16">
-          Proyectos que hablan por nosotros
+          {t('title')}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
           {images.gallery.map((proyecto, index) => (
@@ -52,7 +54,7 @@ export default function Galeria() {
             href="/proyectos"
             className="inline-block px-8 py-4 border-2 border-black text-black font-medium hover:bg-black hover:text-white transition-all duration-300"
           >
-            Ver todos los proyectos
+            {t('viewAllProjects')}
           </Link>
         </div>
       </div>

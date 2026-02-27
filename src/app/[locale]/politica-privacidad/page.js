@@ -1,8 +1,11 @@
+import { baseUrl } from '@/lib/site'
+
 export const metadata = {
   title: 'Política de Privacidad',
   description:
     'Política de privacidad y protección de datos de Dekorama. Información sobre el tratamiento de datos personales en reformas y contacto.',
   robots: { index: true, follow: true },
+  alternates: { canonical: `${baseUrl}/politica-privacidad` },
 }
 
 export default function PoliticaPrivacidadPage() {

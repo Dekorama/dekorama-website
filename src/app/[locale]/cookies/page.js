@@ -1,8 +1,11 @@
+import { baseUrl } from '@/lib/site'
+
 export const metadata = {
   title: 'Política de Cookies',
   description:
     'Política de cookies de Dekorama: tipos de cookies, gestión del consentimiento y cómo gestionar o eliminar cookies en dekorama.es.',
   robots: { index: true, follow: true },
+  alternates: { canonical: `${baseUrl}/cookies` },
 }
 
 export default function CookiesPage() {

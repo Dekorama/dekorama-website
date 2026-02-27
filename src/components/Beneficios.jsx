@@ -1,4 +1,10 @@
+'use client'
+
+import { useTranslations } from 'next-intl'
+
 export default function Beneficios() {
+  const t = useTranslations('beneficios')
+
   const beneficios = [
     {
       icon: (
@@ -7,8 +13,8 @@ export default function Beneficios() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
       ),
-      title: 'Visita gratuita',
-      description: 'Te visitamos sin compromiso para valorar tu proyecto y asesorarte en persona',
+      title: t('freeVisit'),
+      description: t('freeVisitDesc'),
     },
     {
       icon: (
@@ -16,8 +22,8 @@ export default function Beneficios() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       ),
-      title: 'Obra perfecta o no salimos',
-      description: 'No damos la obra por terminada hasta que quede perfecta. Tu satisfacción es nuestro compromiso',
+      title: t('perfectWork'),
+      description: t('perfectWorkDesc'),
     },
     {
       icon: (
@@ -25,8 +31,8 @@ export default function Beneficios() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
         </svg>
       ),
-      title: 'Presupuesto',
-      description: 'Presupuesto detallado y sin compromiso para que sepas exactamente en qué inviertes',
+      title: t('budget'),
+      description: t('budgetDesc'),
     },
     {
       icon: (
@@ -34,8 +40,8 @@ export default function Beneficios() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      title: 'Aceptación de presupuesto 3D',
-      description: 'Aprobación clara del presupuesto en 3D antes de comenzar, para que todo quede conforme',
+      title: t('budget3d'),
+      description: t('budget3dDesc'),
     },
   ]
 
@@ -43,7 +49,7 @@ export default function Beneficios() {
     <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-gray-bg">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-16">
-          La reforma que siempre quisiste, sin sorpresas
+          {t('title')}
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8">
           {beneficios.map((beneficio, index) => (

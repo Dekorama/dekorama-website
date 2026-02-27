@@ -1,25 +1,35 @@
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { getPosts } from '@/lib/blog'
+import { baseUrl } from '@/lib/site'
 
-export const metadata = {
-  title: 'Blog',
-  description:
-    'Tendencias en porcelánico, reformas y diseño de interiores. Consejos y novedades de Dekorama en la Costa del Sol.',
-  openGraph: {
-    title: 'Blog | Dekorama Costa del Sol',
-    description: 'Tendencias en porcelánico, tarima y reformas. Consejos de nuestros expertos.',
-    url: '/blog',
-  },
+export async function generateMetadata({ params }) {
+  const { locale } = await Promise.resolve(params)
+  const isEn = locale === 'en'
+  return {
+    title: 'Blog',
+    description: isEn
+      ? 'Trends in porcelain tile, renovations and interior design. Tips and news from Dekorama on the Costa del Sol.'
+      : 'Tendencias en porcelánico, reformas y diseño de interiores. Consejos y novedades de Dekorama en la Costa del Sol.',
+    openGraph: {
+      title: 'Blog | Dekorama Costa del Sol',
+      description: isEn ? 'Trends in porcelain, wood-look tile and renovations.' : 'Tendencias en porcelánico, tarima y reformas. Consejos de nuestros expertos.',
+      url: locale === 'en' ? `${baseUrl}/en/blog` : `${baseUrl}/es/blog`,
+    },
+    alternates: {
+      canonical: locale === 'en' ? `${baseUrl}/en/blog` : `${baseUrl}/es/blog`,
+      languages: { es: `${baseUrl}/es/blog`, en: `${baseUrl}/en/blog` },
+    },
+  }
 }
 
-function formatDate(dateStr) {
-  const d = new Date(dateStr)
-  return d.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })
-}
-
-export default function BlogPage() {
+export default function BlogPage({ params }) {
   const posts = getPosts()
+  const { locale } = params || {}
+  const formatDate = (dateStr) => {
+    const d = new Date(dateStr)
+    return d.toLocaleDateString(locale === 'en' ? 'en-GB' : 'es-ES', { year: 'numeric', month: 'long', day: 'numeric' })
+  }
 
   return (
     <div className="min-h-screen bg-white pt-20">
@@ -48,7 +58,7 @@ export default function BlogPage() {
                   {post.coverImage ? (
                     <Image
                       src={post.coverImage}
-                      alt=""
+                      alt={post.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                       sizes="(max-width: 768px) 100vw, 50vw"

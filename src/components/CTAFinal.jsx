@@ -1,16 +1,20 @@
 'use client'
 
 import { useState } from 'react'
+import { Link } from '@/i18n/navigation'
+import { useTranslations } from 'next-intl'
 
 const TIPO_REFORMA_OPTIONS = [
-  { value: '', label: 'Tipo de reforma' },
-  { value: 'integral', label: 'Reforma integral' },
-  { value: 'cocina', label: 'Cocina a medida' },
-  { value: 'bano', label: 'Baño completo' },
-  { value: 'otro', label: 'Otro' },
+  { value: '', labelKey: 'placeholder' },
+  { value: 'integral', labelKey: 'integral' },
+  { value: 'cocina', labelKey: 'cocina' },
+  { value: 'bano', labelKey: 'bano' },
+  { value: 'otro', labelKey: 'otro' },
 ]
 
 export default function CTAFinal() {
+  const t = useTranslations('form')
+  const tCta = useTranslations('cta')
   const [formData, setFormData] = useState({
     nombre: '',
     telefono: '',
@@ -34,14 +38,14 @@ export default function CTAFinal() {
       const data = await res.json().catch(() => ({}))
       if (!res.ok) {
         setStatus('error')
-        setErrorMessage(data.error || 'No se pudo enviar. Inténtelo de nuevo.')
+        setErrorMessage(data.error || t('errorGeneric'))
         return
       }
       setStatus('success')
       setFormData({ nombre: '', telefono: '', email: '', tipoReforma: '', descripcion: '' })
     } catch {
       setStatus('error')
-      setErrorMessage('Error de conexión. Inténtelo de nuevo o contacte por teléfono.')
+      setErrorMessage(t('errorConnection'))
     }
   }
 
@@ -50,22 +54,22 @@ export default function CTAFinal() {
   }
 
   const inputClass =
-    'w-full px-6 py-4 border border-gray-300 bg-white focus:outline-none focus:border-black transition-colors rounded'
+    'w-full px-6 py-4 border border-gray-300 bg-white focus:outline-none focus:border-black focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-colors rounded-sm'
 
   return (
     <section id="contacto" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-gray-bg">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-4">
-          ¿Listo para transformar tu espacio?
+          {tCta('readyToTransform')}
         </h2>
         <p className="text-gray-600 text-center mb-12 max-w-xl mx-auto leading-relaxed">
-          Cuéntanos tu proyecto y te respondemos sin compromiso. Incluye todos los detalles que quieras para que podamos orientarte mejor.
+          {tCta('tellUsProject')}
         </p>
 
         {status === 'success' && (
           <div className="mb-8 p-6 bg-black text-white text-center rounded-lg">
-            <p className="font-medium">Mensaje enviado correctamente.</p>
-            <p className="text-sm text-gray-300 mt-1">Te contestaremos lo antes posible.</p>
+            <p className="font-medium">{t('successTitle')}</p>
+            <p className="text-sm text-gray-300 mt-1">{t('successSubtitle')}</p>
           </div>
         )}
 
@@ -80,7 +84,7 @@ export default function CTAFinal() {
             <input
               type="text"
               name="nombre"
-              placeholder="Nombre *"
+              placeholder={t('name')}
               value={formData.nombre}
               onChange={handleChange}
               className={inputClass}
@@ -90,7 +94,7 @@ export default function CTAFinal() {
             <input
               type="tel"
               name="telefono"
-              placeholder="Teléfono *"
+              placeholder={t('phone')}
               value={formData.telefono}
               onChange={handleChange}
               className={inputClass}
@@ -98,17 +102,17 @@ export default function CTAFinal() {
               disabled={status === 'loading'}
             />
           </div>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email *"
-            value={formData.email}
+            <input
+              type="email"
+              name="email"
+              placeholder={t('email')}
+              value={formData.email}
             onChange={handleChange}
             className={inputClass}
             required
             disabled={status === 'loading'}
           />
-          <div className="relative">
+            <div className="relative">
             <select
               name="tipoReforma"
               value={formData.tipoReforma}
@@ -119,7 +123,7 @@ export default function CTAFinal() {
             >
               {TIPO_REFORMA_OPTIONS.map((opt) => (
                 <option key={opt.value || 'placeholder'} value={opt.value}>
-                  {opt.label}
+                  {t(`projectTypeOptions.${opt.labelKey}`)}
                 </option>
               ))}
             </select>
@@ -136,7 +140,7 @@ export default function CTAFinal() {
             <textarea
               id="descripcion"
               name="descripcion"
-              placeholder="Describe tu proyecto o lo que necesitas (opcional)"
+              placeholder={t('descriptionPlaceholder')}
               value={formData.descripcion}
               onChange={handleChange}
               rows={4}
@@ -147,9 +151,9 @@ export default function CTAFinal() {
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="w-full px-8 py-4 bg-black text-white font-medium hover:bg-gray-800 transition-all duration-300 hover:scale-[1.02] disabled:opacity-70 disabled:pointer-events-none disabled:scale-100"
+            className="w-full px-8 py-4 bg-black text-white font-medium hover:bg-gray-800 focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-300 hover:scale-[1.02] disabled:opacity-70 disabled:pointer-events-none disabled:scale-100 rounded-sm"
           >
-            {status === 'loading' ? 'Enviando…' : 'Solicitar visita gratuita'}
+            {status === 'loading' ? t('sending') : t('submit')}
           </button>
         </form>
 
@@ -158,7 +162,7 @@ export default function CTAFinal() {
             href="https://wa.me/34628571537"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 text-gray-700 hover:text-black transition-colors group"
+            className="flex items-center gap-3 text-gray-700 hover:text-black focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 rounded-full transition-colors group"
           >
             <div className="w-12 h-12 rounded-full bg-whatsapp flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -167,7 +171,7 @@ export default function CTAFinal() {
             </div>
             <span className="font-medium">+34 628 571 537</span>
           </a>
-          <a href="tel:+34628571537" className="flex items-center gap-3 text-gray-700 hover:text-black transition-colors group">
+          <a href="tel:+34628571537" className="flex items-center gap-3 text-gray-700 hover:text-black focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 rounded-full transition-colors group">
             <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />

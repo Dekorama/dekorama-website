@@ -1,7 +1,8 @@
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { getPostBySlug, getPostSlugs } from '@/lib/blog'
+import { baseUrl } from '@/lib/site'
 
 export async function generateStaticParams() {
   return getPostSlugs().map((slug) => ({ slug }))
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }) {
       description: post.excerpt,
       url: `/blog/${post.slug}`,
     },
+    alternates: { canonical: `${baseUrl}/blog/${post.slug}` },
   }
 }
 
@@ -32,8 +34,40 @@ export default async function BlogPostPage({ params }) {
   const post = await getPostBySlug(slug)
   if (!post) notFound()
 
+  const postUrl = `${baseUrl}/blog/${post.slug}`
+
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    author: { '@type': 'Organization', name: 'Dekorama', url: baseUrl },
+    publisher: { '@type': 'Organization', name: 'Dekorama', url: baseUrl },
+    url: postUrl,
+    ...(post.coverImage && { image: post.coverImage }),
+  }
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Inicio', item: baseUrl },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${baseUrl}/blog` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: postUrl },
+    ],
+  }
+
   return (
     <div className="min-h-screen bg-white pt-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <article>
         <header className="relative bg-gray-bg">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-8 md:pt-16 md:pb-12">
@@ -66,7 +100,7 @@ export default async function BlogPostPage({ params }) {
             <div className="relative aspect-[16/9] md:aspect-[21/9] rounded-xl overflow-hidden shadow-lg">
               <Image
                 src={post.coverImage}
-                alt=""
+                alt={post.title}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 1024px"

@@ -4,7 +4,10 @@
  * Para mantener sincronía con Google Business, copia este mismo texto en la descripción de tu ficha de Google.
  */
 export const businessDescription =
-  '¡Bienvenido a nuestra tienda de materiales para construcción y servicios de obras en la Costa del Sol! En Dekorama, ofrecemos una amplia selección de productos de alta calidad para tus proyectos. Encuentra porcelanicos, cerámicas, pavimentos, grifos, accesorios para baños, sanitarios, muebles, cocinas y mucho más. También contamos con servicios de obras, reformas y diseño de interiores. Nuestro equipo altamente experimentado está listo para brindarte asesoramiento personalizado y un servicio excepcional. Con mas de 20 años en la industria, somos líderes en la Costa del Sol, proporcionando productos de calidad y soluciones integrales. Confía en nosotros para cumplir tus expectativas.'
+  '¡Bienvenido a Dekorama! Tienda de materiales para reforma y acabados en la Costa del Sol. Ofrecemos porcelánicos, cerámicas, pavimentos, grifería, platos de ducha, iluminación, mamparas y materiales de exterior, además de servicios de reformas integrales, cocinas y baños de diseño. Asesoramiento personalizado y más de 20 años en la industria. Productos de primeras marcas para que tu reforma supere expectativas.'
+
+/** URL base del sitio para canonical, OG y sitemap */
+export const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dekorama.es'
 
 const META_DESCRIPTION_MAX_LENGTH = 155
 
@@ -26,4 +29,4 @@ export const metaDescription = truncateForMeta(businessDescription)
  * Versión corta para el pie de página. Mantiene el mensaje principal sin saturar el footer.
  */
 export const footerDescription =
-  'Materiales para construcción y servicios de obras en la Costa del Sol. Más de 20 años ofreciendo productos de calidad, reformas y diseño de interiores.'
+  'Materiales para reforma y acabados en la Costa del Sol: porcelánicos, grifería, platos de ducha, iluminación, mamparas y más. Reformas integrales, cocinas y baños de diseño. Más de 20 años de experiencia.'
