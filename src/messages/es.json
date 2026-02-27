@@ -1,4 +1,21 @@
 {
+  "cookieBanner": {
+    "message": "Usamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra",
+    "policyLink": "política de cookies",
+    "accept": "Aceptar",
+    "ariaLabel": "Aviso de cookies"
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "blog": "Blog"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Tendencias en porcelánico, reformas y diseño de interiores. Consejos y novedades de nuestro equipo.",
+    "readMore": "Leer más",
+    "backToBlog": "Volver al blog",
+    "postNotFound": "Entrada no encontrada"
+  },
   "nav": {
     "services": "Servicios",
     "catalog": "Catálogo",
@@ -122,5 +139,203 @@
   "galeria": {
     "title": "Proyectos que hablan por nosotros",
     "viewAllProjects": "Ver todos los proyectos"
+  },
+  "legal": {
+    "lastUpdated": "Última actualización",
+    "cookies": {
+      "title": "Política de Cookies",
+      "description": "Política de cookies de Dekorama: tipos de cookies, gestión del consentimiento y cómo gestionar o eliminar cookies en dekorama.es.",
+      "s1Title": "1. ¿Qué son las cookies?",
+      "s1Body": "Las cookies son pequeños archivos de texto que los sitios web almacenan en su dispositivo (ordenador, tablet o móvil) cuando los visita. Permiten que el sitio recuerde sus acciones y preferencias durante un tiempo, para que no tenga que volver a configurarlas en cada visita.",
+      "s2Title": "2. Uso de cookies en este sitio",
+      "s2Body": "El sitio web de Dekorama puede utilizar cookies técnicas necesarias para el correcto funcionamiento de la página (por ejemplo, para recordar preferencias de visualización o para gestionar la sesión). Asimismo, podrían utilizarse cookies de análisis para conocer cómo los usuarios interactúan con el sitio y mejorar la experiencia, siempre que haya sido informado y, en su caso, haya dado su consentimiento.",
+      "s3Title": "3. Tipos de cookies que podemos utilizar",
+      "s3Item1": "Cookies técnicas: Necesarias para el funcionamiento del sitio. No requieren consentimiento.",
+      "s3Item2": "Cookies de preferencias: Permiten recordar opciones elegidas por el usuario (idioma, región, etc.).",
+      "s3Item3": "Cookies de análisis: Permiten medir el uso del sitio (por ejemplo, con herramientas como Google Analytics) para mejorar nuestros contenidos y servicios. Pueden requerir su consentimiento según la normativa.",
+      "s4Title": "4. Cómo gestionar o eliminar las cookies",
+      "s4Body": "Puede configurar su navegador para que rechace las cookies o le avise cuando un sitio intente instalarlas. También puede eliminar las cookies ya almacenadas desde las opciones de su navegador. Tenga en cuenta que bloquear o eliminar cookies puede afectar al correcto funcionamiento de algunas partes del sitio.",
+      "s4Body2": "Las instrucciones para gestionar cookies suelen encontrarse en el menú de Ayuda o Configuración de cada navegador (Chrome, Firefox, Safari, Edge, etc.).",
+      "s5Title": "5. Consentimiento",
+      "s5Body": "Al continuar navegando por este sitio web tras haber sido informado de esta política de cookies, entendemos que acepta el uso de las cookies que hemos descrito, en los términos indicados. Si no está de acuerdo, puede configurar su navegador o abandonar el sitio.",
+      "s6Title": "6. Actualizaciones",
+      "s6Body": "Dekorama puede modificar esta política de cookies para adaptarla a cambios normativos o en las cookies utilizadas. Se recomienda revisar esta página periódicamente.",
+      "s7Title": "7. Contacto",
+      "s7Body": "Para cualquier duda sobre el uso de cookies puede contactarnos en info@dekorama.es o en el teléfono +34 628 571 537."
+    },
+    "privacy": {
+      "title": "Política de Privacidad",
+      "description": "Política de privacidad y protección de datos de Dekorama. Información sobre el tratamiento de datos personales en reformas y contacto.",
+      "s1Title": "1. Responsable del tratamiento",
+      "s1Body": "Dekorama, con domicilio en Costa del Sol, Málaga, es el responsable del tratamiento de los datos personales que nos facilite a través de este sitio web (dekorama.es), del formulario de contacto, correo electrónico o teléfono.",
+      "s2Title": "2. Finalidad del tratamiento",
+      "s2Body": "Los datos personales que nos proporcione se utilizarán para gestionar las solicitudes de información y consultas sobre nuestros servicios de reformas integrales, cocinas, baños y diseño de interiores; para enviar presupuestos y comunicaciones comerciales si nos ha dado su consentimiento; y para cumplir con las obligaciones legales que nos apliquen.",
+      "s3Title": "3. Legitimación",
+      "s3Body": "La base legal para el tratamiento de sus datos es su consentimiento al enviar el formulario o contactarnos, la ejecución de un contrato o precontrato cuando solicite un presupuesto o servicio, y el legítimo interés de Dekorama para responder a sus consultas y mejorar nuestros servicios.",
+      "s4Title": "4. Conservación de los datos",
+      "s4Body": "Conservaremos sus datos mientras mantenga una relación comercial con nosotros o mientras no solicite su supresión. En todo caso, los plazos legales de conservación que apliquen serán respetados.",
+      "s5Title": "5. Destinatarios y transferencias",
+      "s5Body": "No cederemos sus datos a terceros salvo obligación legal. Los datos podrán ser tratados por proveedores de servicios que actúen como encargados del tratamiento (por ejemplo, hosting o herramientas de correo), con las garantías adecuadas.",
+      "s6Title": "6. Derechos",
+      "s6Body": "Puede ejercer sus derechos de acceso, rectificación, supresión, limitación del tratamiento, portabilidad y oposición dirigiéndose a info@dekorama.es, indicando el derecho que desea ejercer. Tiene derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es) si considera que el tratamiento no se ajusta a la normativa.",
+      "s7Title": "7. Seguridad",
+      "s7Body": "Hemos adoptado las medidas técnicas y organizativas necesarias para garantizar la seguridad e integridad de sus datos personales y evitar su alteración, pérdida o acceso no autorizado.",
+      "s8Title": "8. Contacto",
+      "s8Body": "Para cualquier duda sobre esta política de privacidad puede contactarnos en info@dekorama.es o en el teléfono +34 628 571 537."
+    },
+    "aviso": {
+      "title": "Aviso Legal",
+      "description": "Aviso legal y condiciones de uso del sitio web de Dekorama. Datos identificativos, propiedad intelectual y legislación aplicable.",
+      "s1Title": "1. Datos identificativos",
+      "s1Body": "En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se informa que el titular de este sitio web es Dekorama, dedicada a la realización de reformas integrales, diseño de interiores, cocinas y baños en la Costa del Sol (Málaga). Para contactar puede utilizar el correo electrónico info@dekorama.es o el teléfono +34 628 571 537.",
+      "s2Title": "2. Objeto y aceptación",
+      "s2Body": "El presente aviso legal regula el uso del sitio web de Dekorama. La navegación por el sitio web atribuye la condición de usuario e implica la aceptación plena de todas y cada una de las disposiciones incluidas en este Aviso Legal.",
+      "s3Title": "3. Condiciones de uso",
+      "s3Body": "El usuario se compromete a hacer un uso adecuado de los contenidos y servicios que Dekorama ofrece a través de este sitio web y a no emplearlos para actividades ilícitas o contrarias a la buena fe. Queda prohibida la reproducción, distribución o comunicación pública de los contenidos del sitio sin autorización expresa del titular.",
+      "s4Title": "4. Propiedad intelectual e industrial",
+      "s4Body": "Dekorama es titular o tiene las licencias necesarias sobre los derechos de propiedad intelectual e industrial de los contenidos del sitio web (textos, imágenes, diseños, logotipos, etc.). Su uso no autorizado constituye una vulneración de la normativa aplicable.",
+      "s5Title": "5. Exclusión de responsabilidad",
+      "s5Body": "Dekorama no se hace responsable de los daños y perjuicios de cualquier naturaleza que pudieran derivarse de la disponibilidad o accesibilidad del sitio, de la interrupción en el funcionamiento o de los fallos en los sistemas o en las informaciones contenidas, ni de la introducción de virus o elementos lesivos por parte de terceros.",
+      "s6Title": "6. Enlaces",
+      "s6Body": "En el caso de que el sitio web contenga enlaces a otros sitios, Dekorama no ejerce ningún control sobre los mismos y no asume responsabilidad por su contenido. La inclusión de enlaces no implica la existencia de relación alguna con los titulares de los sitios enlazados.",
+      "s7Title": "7. Legislación aplicable y jurisdicción",
+      "s7Body": "La relación entre Dekorama y el usuario se regirá por la normativa española vigente. Para la resolución de cualquier controversia, las partes se someterán a los Juzgados y Tribunales del domicilio del usuario o de Málaga, a elección de Dekorama.",
+      "s8Title": "8. Contacto",
+      "s8Body": "Para cualquier consulta sobre este Aviso Legal puede dirigirse a info@dekorama.es."
+    }
+  },
+  "pages": {
+    "reformas": {
+      "title": "Reformas Integrales en la Costa del Sol",
+      "description": "Reformas integrales de viviendas y locales en la Costa del Sol. Diseño personalizado, materiales premium y ejecución profesional. Presupuesto detallado sin compromiso.",
+      "h1": "Reformas Integrales con Diseño Personalizado",
+      "intro": "Transformamos tu vivienda por completo con un proyecto a medida, desde el diseño hasta los acabados finales. Gestionamos todos los gremios para que tú solo tengas que preocuparte de elegir.",
+      "caracteristicas": {
+        "title": "¿Qué incluye una reforma integral con Dekorama?",
+        "item1Title": "Diseño completo en 3D",
+        "item1Desc": "Visualiza tu proyecto antes de empezar con un modelado 3D realista de todos los espacios",
+        "item2Title": "Gestión integral",
+        "item2Desc": "Coordinamos todos los gremios: albañilería, fontanería, electricidad, carpintería y acabados",
+        "item3Title": "Materiales premium",
+        "item3Desc": "Trabajamos con primeras marcas de porcelánicos, grifería, iluminación y carpintería",
+        "item4Title": "Garantía de satisfacción",
+        "item4Desc": "No damos la obra por terminada hasta que quede perfecta y estés 100% satisfecho"
+      },
+      "fases": {
+        "title": "Fases de una Reforma Integral",
+        "fase1Title": "1. Consulta y mediciones",
+        "fase1Desc": "Visitamos tu vivienda, valoramos el estado actual y tomamos medidas precisas",
+        "fase2Title": "2. Proyecto y diseño 3D",
+        "fase2Desc": "Creamos un proyecto completo en 3D para que visualices el resultado final",
+        "fase3Title": "3. Presupuesto detallado",
+        "fase3Desc": "Te entregamos un presupuesto cerrado, sin sorpresas finales",
+        "fase4Title": "4. Demolición y obra civil",
+        "fase4Desc": "Retiramos lo existente y ejecutamos la nueva distribución",
+        "fase5Title": "5. Instalaciones",
+        "fase5Desc": "Realizamos las instalaciones de fontanería, electricidad, climatización",
+        "fase6Title": "6. Acabados y entrega",
+        "fase6Desc": "Aplicamos los revestimientos, pinturas y carpinterías. Revisión final contigo"
+      }
+    },
+    "cocinas": {
+      "title": "Cocinas a Medida en la Costa del Sol",
+      "description": "Diseño de cocinas a medida en la Costa del Sol. Fabricación personalizada, electrodomésticos de primeras marcas y acabados premium. Consulta gratuita.",
+      "h1": "Cocinas a Medida que se Adaptan a Ti",
+      "intro": "Diseñamos y fabricamos tu cocina ideal adaptada a tu espacio, estilo y forma de cocinar. Desde el diseño hasta la instalación, nos encargamos de todo.",
+      "porque": {
+        "title": "¿Por qué elegir nuestras cocinas?",
+        "item1Title": "Diseño personalizado",
+        "item1Desc": "Cada cocina es única. Adaptamos el diseño a tu espacio y tu forma de vivir",
+        "item2Title": "Materiales de calidad",
+        "item2Desc": "Trabajamos con SANTOS, SILESTONE, NEOLITH y las mejores marcas del sector",
+        "item3Title": "Electrodomésticos premium",
+        "item3Desc": "BOSCH, SIEMENS, NEFF... Tú eliges la marca y nosotros lo integramos perfectamente",
+        "item4Title": "Garantía total",
+        "item4Desc": "Garantizamos materiales, instalación y acabados. Tu satisfacción es nuestra prioridad"
+      },
+      "proceso": {
+        "title": "Proceso de Diseño y Fabricación",
+        "paso1": "Consulta gratuita en nuestro showroom o en tu hogar",
+        "paso2": "Diseño 3D personalizado con varias propuestas",
+        "paso3": "Selección de materiales, acabados y electrodomésticos",
+        "paso4": "Fabricación a medida en talleres especializados",
+        "paso5": "Instalación profesional por nuestro equipo",
+        "paso6": "Revisión final y garantía de satisfacción"
+      }
+    },
+    "banos": {
+      "title": "Baños Completos en la Costa del Sol",
+      "description": "Diseño y reforma de baños completos en la Costa del Sol. Porcelánicos de primeras marcas, grifería premium y diseño personalizado. Presupuesto sin compromiso.",
+      "h1": "Baños Completos con Diseño Exclusivo",
+      "intro": "Creamos baños únicos donde el diseño y la funcionalidad se encuentran. Desde baños minimalistas hasta espacios de lujo con acabados premium.",
+      "porque": {
+        "title": "¿Por qué confiar en nosotros para tu baño?",
+        "item1Title": "Especialistas en baño",
+        "item1Desc": "Más de 10 años diseñando y reformando baños en la Costa del Sol",
+        "item2Title": "Porcelánicos exclusivos",
+        "item2Desc": "PORCELANOSA, MARAZZI, KERABEN, APARICI... Las mejores colecciones a tu alcance",
+        "item3Title": "Grifería y sanitarios premium",
+        "item3Desc": "GROHE, HANSGROHE, ROCA, GEBERIT... Calidad que dura décadas",
+        "item4Title": "Obra perfecta",
+        "item4Desc": "Nuestros profesionales cuidan cada detalle hasta el acabado final"
+      },
+      "incluye": {
+        "title": "¿Qué incluye un baño completo?",
+        "item1": "Demolición y retirada de escombros",
+        "item2": "Fontanería y electricidad completas",
+        "item3": "Alicatado y revestimientos",
+        "item4": "Plato de ducha o bañera",
+        "item5": "Mampara de calidad",
+        "item6": "Sanitarios y grifería",
+        "item7": "Muebles de baño a medida",
+        "item8": "Iluminación LED y espejos"
+      }
+    },
+    "materiales": {
+      "title": "Materiales Premium para Reformas",
+      "description": "Venta de materiales premium para reformas en la Costa del Sol. Porcelánicos, grifería, platos de ducha, iluminación LED, mamparas y materiales de exterior.",
+      "h1": "Materiales Premium para Tu Reforma",
+      "intro": "En nuestro showroom encontrarás las mejores marcas de porcelánicos, grifería, sanitarios, iluminación y todo lo que necesitas para tu proyecto.",
+      "categorias": {
+        "title": "¿Qué ofrecemos?",
+        "porcelanicos": "Porcelánicos",
+        "porcelanicosDesc": "PORCELANOSA, MARAZZI, KERABEN, APARICI, ROCA. Suelos y revestimientos de última generación",
+        "griferia": "Grifería",
+        "griferiaDesc": "GROHE, HANSGROHE, ROCA. Grifos de cocina, baño y ducha con diseño y durabilidad",
+        "ducha": "Platos de ducha",
+        "duchaDesc": "ROCA, FIORA, PROFILTEK. Resina, carga mineral y porcelánicos de todas las medidas",
+        "iluminacion": "Iluminación LED",
+        "iluminacionDesc": "Focos empotrables, tiras LED, downlights, proyectores. Eficiencia y diseño",
+        "mamparas": "Mamparas y cerramientos",
+        "mamparasDesc": "PROFILTEK, GME, KASSANDRA. Vidrio templado con tratamientos antical",
+        "exterior": "Materiales de exterior",
+        "exteriorDesc": "Porcelánicos antideslizantes, pérgolas, tarimas, cerramientos y mobiliario de exterior"
+      },
+      "visita": "Ven a visitarnos",
+      "visitaDesc": "Te asesoramos personalmente en nuestro showroom de Benalmádena. Trae tu proyecto y te ayudamos a escoger los mejores materiales."
+    },
+    "catalogo": {
+      "title": "Catálogo Online de Materiales",
+      "description": "Catálogo online de materiales premium para reformas. Porcelánicos, grifería, sanitarios, iluminación y más. Dekorama, Costa del Sol.",
+      "h1": "Bienvenido al catálogo",
+      "intro": "Explora nuestra selección de porcelánicos, grifería, sanitarios, platos de ducha, iluminación y materiales de exterior. Las mejores marcas al mejor precio.",
+      "cta": "Ver catálogo online",
+      "visitShowroom": "O visítanos en nuestro showroom en Benalmádena y te asesoramos en persona."
+    },
+    "proyectos": {
+      "title": "Proyectos de Reformas Integrales",
+      "description": "Proyectos de reformas integrales, cocinas y baños realizados por Dekorama en la Costa del Sol. Galería de obras terminadas.",
+      "h1": "Proyectos que hablan por nosotros",
+      "intro": "Cada reforma es un proyecto único. Estos son algunos de los trabajos que hemos realizado en la Costa del Sol.",
+      "backHome": "Volver al inicio",
+      "requestConsultation": "Solicitar consulta"
+    }
+  },
+  "imageTypes": {
+    "Reforma integral": "Reforma integral",
+    "Cocina a medida": "Cocina a medida",
+    "Baño completo": "Baño completo",
+    "Diseño de interiores": "Diseño de interiores",
+    "Baño de diseño": "Baño de diseño"
   }
 }

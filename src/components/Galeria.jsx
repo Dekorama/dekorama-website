@@ -8,6 +8,7 @@ import { useTranslations } from 'next-intl'
 
 export default function Galeria() {
   const t = useTranslations('galeria')
+  const tTypes = useTranslations('imageTypes')
   useEffect(() => {
     const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }
     const observer = new IntersectionObserver((entries) => {
@@ -36,14 +37,14 @@ export default function Galeria() {
             >
               <Image
                 src={proyecto.src}
-                alt={proyecto.tipo}
+                alt={tTypes(proyecto.tipo)}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/70 transition-all duration-300 flex items-center justify-center">
                 <div className="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="text-xl font-semibold">{proyecto.tipo}</div>
+                  <div className="text-xl font-semibold">{tTypes(proyecto.tipo)}</div>
                 </div>
               </div>
             </div>

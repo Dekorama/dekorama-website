@@ -20,7 +20,6 @@ const staticPaths = [
 
 /** @returns {import('next').MetadataRoute.Sitemap} */
 export default function sitemap() {
-  const slugs = getPostSlugs()
   const entries = []
 
   for (const locale of LOCALES) {
@@ -33,6 +32,9 @@ export default function sitemap() {
         priority,
       })
     }
+    
+    // Get locale-specific slugs
+    const slugs = getPostSlugs(locale)
     for (const slug of slugs) {
       entries.push({
         url: `${BASE_URL}${prefix}/blog/${slug}`,

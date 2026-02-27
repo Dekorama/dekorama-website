@@ -1,4 +1,21 @@
 {
+  "cookieBanner": {
+    "message": "We use cookies to improve your experience. By continuing, you accept our",
+    "policyLink": "cookie policy",
+    "accept": "Accept",
+    "ariaLabel": "Cookie notice"
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "blog": "Blog"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Trends in porcelain tile, renovations and interior design. Tips and news from our team.",
+    "readMore": "Read more",
+    "backToBlog": "Back to blog",
+    "postNotFound": "Post not found"
+  },
   "nav": {
     "services": "Services",
     "catalog": "Catalog",
@@ -122,5 +139,203 @@
   "galeria": {
     "title": "Projects that speak for us",
     "viewAllProjects": "View all projects"
+  },
+  "legal": {
+    "lastUpdated": "Last updated",
+    "cookies": {
+      "title": "Cookie Policy",
+      "description": "Dekorama cookie policy: types of cookies, consent management and how to manage or delete cookies on dekorama.es.",
+      "s1Title": "1. What are cookies?",
+      "s1Body": "Cookies are small text files that websites store on your device (computer, tablet or mobile) when you visit them. They allow the site to remember your actions and preferences for a period of time, so you don't have to set them again on each visit.",
+      "s2Title": "2. Use of cookies on this site",
+      "s2Body": "The Dekorama website may use technical cookies necessary for the proper functioning of the page (for example, to remember display preferences or to manage the session). Analysis cookies may also be used to understand how users interact with the site and improve the experience, provided you have been informed and, where applicable, have given your consent.",
+      "s3Title": "3. Types of cookies we may use",
+      "s3Item1": "Technical cookies: Necessary for the site to function. They do not require consent.",
+      "s3Item2": "Preference cookies: They allow the site to remember options chosen by the user (language, region, etc.).",
+      "s3Item3": "Analysis cookies: They allow us to measure site usage (for example, with tools such as Google Analytics) to improve our content and services. They may require your consent under applicable regulations.",
+      "s4Title": "4. How to manage or delete cookies",
+      "s4Body": "You can set your browser to reject cookies or to warn you when a site tries to install them. You can also delete cookies already stored from your browser options. Please note that blocking or deleting cookies may affect the proper functioning of some parts of the site.",
+      "s4Body2": "Instructions for managing cookies can usually be found in the Help or Settings menu of each browser (Chrome, Firefox, Safari, Edge, etc.).",
+      "s5Title": "5. Consent",
+      "s5Body": "By continuing to browse this website after being informed of this cookie policy, we understand that you accept the use of the cookies we have described, on the terms indicated. If you do not agree, you can configure your browser or leave the site.",
+      "s6Title": "6. Updates",
+      "s6Body": "Dekorama may modify this cookie policy to adapt it to regulatory changes or changes in the cookies used. We recommend reviewing this page periodically.",
+      "s7Title": "7. Contact",
+      "s7Body": "For any questions about the use of cookies, you can contact us at info@dekorama.es or by phone at +34 628 571 537."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "Dekorama privacy and data protection policy. Information on the processing of personal data for renovations and contact.",
+      "s1Title": "1. Data controller",
+      "s1Body": "Dekorama, with registered office on the Costa del Sol, Málaga, is the data controller for the personal data you provide to us through this website (dekorama.es), the contact form, email or phone.",
+      "s2Title": "2. Purpose of processing",
+      "s2Body": "The personal data you provide will be used to manage requests for information and enquiries about our full renovation, kitchen, bathroom and interior design services; to send quotes and commercial communications if you have given us your consent; and to comply with any legal obligations that apply to us.",
+      "s3Title": "3. Legal basis",
+      "s3Body": "The legal basis for processing your data is your consent when submitting the form or contacting us, the performance of a contract or pre-contract when you request a quote or service, and Dekorama's legitimate interest in responding to your enquiries and improving our services.",
+      "s4Title": "4. Data retention",
+      "s4Body": "We will retain your data for as long as you maintain a commercial relationship with us or until you request its deletion. In any case, applicable legal retention periods will be respected.",
+      "s5Title": "5. Recipients and transfers",
+      "s5Body": "We will not disclose your data to third parties except where required by law. Data may be processed by service providers acting as processors (for example, hosting or email tools), with appropriate safeguards.",
+      "s6Title": "6. Rights",
+      "s6Body": "You may exercise your rights of access, rectification, erasure, restriction of processing, portability and objection by writing to info@dekorama.es, stating the right you wish to exercise. You have the right to lodge a complaint with the Spanish Data Protection Agency (www.aepd.es) if you consider that the processing does not comply with the regulations.",
+      "s7Title": "7. Security",
+      "s7Body": "We have adopted the technical and organisational measures necessary to ensure the security and integrity of your personal data and to prevent its alteration, loss or unauthorised access.",
+      "s8Title": "8. Contact",
+      "s8Body": "For any questions about this privacy policy, you can contact us at info@dekorama.es or by phone at +34 628 571 537."
+    },
+    "aviso": {
+      "title": "Legal Notice",
+      "description": "Legal notice and terms of use of the Dekorama website. Identifying details, intellectual property and applicable legislation.",
+      "s1Title": "1. Identifying details",
+      "s1Body": "In compliance with Article 10 of Law 34/2002 of 11 July on Information Society Services and Electronic Commerce (LSSI-CE), we inform you that the owner of this website is Dekorama, dedicated to full renovations, interior design, kitchens and bathrooms on the Costa del Sol (Málaga). To contact us you can use the email info@dekorama.es or the phone +34 628 571 537.",
+      "s2Title": "2. Purpose and acceptance",
+      "s2Body": "This legal notice governs the use of the Dekorama website. Browsing the website confers the status of user and implies full acceptance of each and every provision included in this Legal Notice.",
+      "s3Title": "3. Terms of use",
+      "s3Body": "The user undertakes to make appropriate use of the content and services that Dekorama offers through this website and not to use them for illegal activities or those contrary to good faith. The reproduction, distribution or public communication of the content of the site without express authorisation from the owner is prohibited.",
+      "s4Title": "4. Intellectual and industrial property",
+      "s4Body": "Dekorama owns or has the necessary licences for the intellectual and industrial property rights of the content of the website (texts, images, designs, logos, etc.). Unauthorised use constitutes a breach of applicable regulations.",
+      "s5Title": "5. Disclaimer",
+      "s5Body": "Dekorama shall not be liable for any damage that may arise from the availability or accessibility of the site, from interruptions in operation or from failures in the systems or information contained therein, or from the introduction of viruses or harmful elements by third parties.",
+      "s6Title": "6. Links",
+      "s6Body": "If the website contains links to other sites, Dekorama has no control over them and assumes no responsibility for their content. The inclusion of links does not imply any relationship with the owners of the linked sites.",
+      "s7Title": "7. Applicable law and jurisdiction",
+      "s7Body": "The relationship between Dekorama and the user shall be governed by current Spanish legislation. For the resolution of any dispute, the parties shall submit to the Courts and Tribunals of the user's domicile or of Málaga, at Dekorama's choice.",
+      "s8Title": "8. Contact",
+      "s8Body": "For any queries regarding this Legal Notice, you may contact info@dekorama.es."
+    }
+  },
+  "pages": {
+    "reformas": {
+      "title": "Full Renovations on the Costa del Sol",
+      "description": "Full renovations of homes and premises on the Costa del Sol. Custom design, premium materials and professional execution. Detailed quote at no obligation.",
+      "h1": "Full Renovations with Custom Design",
+      "intro": "We completely transform your home with a tailored project, from design to final finishes. We manage all trades so you only have to worry about choosing.",
+      "caracteristicas": {
+        "title": "What does a full renovation with Dekorama include?",
+        "item1Title": "Complete 3D design",
+        "item1Desc": "Visualise your project before starting with realistic 3D modelling of all spaces",
+        "item2Title": "Full management",
+        "item2Desc": "We coordinate all trades: masonry, plumbing, electricity, carpentry and finishes",
+        "item3Title": "Premium materials",
+        "item3Desc": "We work with top brands in porcelain tiles, taps, lighting and carpentry",
+        "item4Title": "Satisfaction guarantee",
+        "item4Desc": "We don't consider the job done until it's perfect and you're 100% satisfied"
+      },
+      "fases": {
+        "title": "Phases of a Full Renovation",
+        "fase1Title": "1. Consultation and measurements",
+        "fase1Desc": "We visit your home, assess the current state and take precise measurements",
+        "fase2Title": "2. Project and 3D design",
+        "fase2Desc": "We create a complete 3D project so you can visualise the final result",
+        "fase3Title": "3. Detailed quote",
+        "fase3Desc": "We give you a fixed quote with no final surprises",
+        "fase4Title": "4. Demolition and civil works",
+        "fase4Desc": "We remove the existing and execute the new layout",
+        "fase5Title": "5. Installations",
+        "fase5Desc": "We carry out plumbing, electrical and air conditioning installations",
+        "fase6Title": "6. Finishes and handover",
+        "fase6Desc": "We apply coatings, paints and carpentry. Final review with you"
+      }
+    },
+    "cocinas": {
+      "title": "Custom Kitchens on the Costa del Sol",
+      "description": "Custom kitchen design on the Costa del Sol. Bespoke manufacturing, top brand appliances and premium finishes. Free consultation.",
+      "h1": "Custom Kitchens That Adapt to You",
+      "intro": "We design and manufacture your ideal kitchen adapted to your space, style and way of cooking. From design to installation, we take care of everything.",
+      "porque": {
+        "title": "Why choose our kitchens?",
+        "item1Title": "Custom design",
+        "item1Desc": "Every kitchen is unique. We adapt the design to your space and lifestyle",
+        "item2Title": "Quality materials",
+        "item2Desc": "We work with SANTOS, SILESTONE, NEOLITH and the best brands in the sector",
+        "item3Title": "Premium appliances",
+        "item3Desc": "BOSCH, SIEMENS, NEFF... You choose the brand and we integrate it perfectly",
+        "item4Title": "Total guarantee",
+        "item4Desc": "We guarantee materials, installation and finishes. Your satisfaction is our priority"
+      },
+      "proceso": {
+        "title": "Design and Manufacturing Process",
+        "paso1": "Free consultation in our showroom or at your home",
+        "paso2": "Custom 3D design with several proposals",
+        "paso3": "Selection of materials, finishes and appliances",
+        "paso4": "Bespoke manufacturing in specialist workshops",
+        "paso5": "Professional installation by our team",
+        "paso6": "Final review and satisfaction guarantee"
+      }
+    },
+    "banos": {
+      "title": "Complete Bathrooms on the Costa del Sol",
+      "description": "Design and renovation of complete bathrooms on the Costa del Sol. Top brand porcelain tiles, premium taps and custom design. Quote at no obligation.",
+      "h1": "Complete Bathrooms with Exclusive Design",
+      "intro": "We create unique bathrooms where design and functionality meet. From minimalist bathrooms to luxury spaces with premium finishes.",
+      "porque": {
+        "title": "Why trust us for your bathroom?",
+        "item1Title": "Bathroom specialists",
+        "item1Desc": "Over 10 years designing and renovating bathrooms on the Costa del Sol",
+        "item2Title": "Exclusive porcelain tiles",
+        "item2Desc": "PORCELANOSA, MARAZZI, KERABEN, APARICI... The best collections within your reach",
+        "item3Title": "Premium taps and sanitaryware",
+        "item3Desc": "GROHE, HANSGROHE, ROCA, GEBERIT... Quality that lasts decades",
+        "item4Title": "Perfect work",
+        "item4Desc": "Our professionals take care of every detail to the final finish"
+      },
+      "incluye": {
+        "title": "What does a complete bathroom include?",
+        "item1": "Demolition and debris removal",
+        "item2": "Complete plumbing and electricity",
+        "item3": "Tiling and coatings",
+        "item4": "Shower tray or bathtub",
+        "item5": "Quality shower screen",
+        "item6": "Sanitaryware and taps",
+        "item7": "Custom bathroom furniture",
+        "item8": "LED lighting and mirrors"
+      }
+    },
+    "materiales": {
+      "title": "Premium Materials for Renovations",
+      "description": "Sale of premium materials for renovations on the Costa del Sol. Porcelain tiles, taps, shower trays, LED lighting, shower screens and exterior materials.",
+      "h1": "Premium Materials for Your Renovation",
+      "intro": "In our showroom you'll find the best brands of porcelain tiles, taps, sanitaryware, lighting and everything you need for your project.",
+      "categorias": {
+        "title": "What do we offer?",
+        "porcelanicos": "Porcelain tiles",
+        "porcelanicosDesc": "PORCELANOSA, MARAZZI, KERABEN, APARICI, ROCA. Latest generation floors and wall coverings",
+        "griferia": "Taps",
+        "griferiaDesc": "GROHE, HANSGROHE, ROCA. Kitchen, bathroom and shower taps with design and durability",
+        "ducha": "Shower trays",
+        "duchaDesc": "ROCA, FIORA, PROFILTEK. Resin, mineral load and porcelain in all sizes",
+        "iluminacion": "LED lighting",
+        "iluminacionDesc": "Recessed spotlights, LED strips, downlights, projectors. Efficiency and design",
+        "mamparas": "Shower screens and enclosures",
+        "mamparasDesc": "PROFILTEK, GME, KASSANDRA. Tempered glass with anti-limescale treatments",
+        "exterior": "Exterior materials",
+        "exteriorDesc": "Non-slip porcelain tiles, pergolas, decking, enclosures and outdoor furniture"
+      },
+      "visita": "Come and visit us",
+      "visitaDesc": "We advise you personally in our Benalmádena showroom. Bring your project and we'll help you choose the best materials."
+    },
+    "catalogo": {
+      "title": "Online Materials Catalogue",
+      "description": "Online catalogue of premium materials for renovations. Porcelain tiles, taps, sanitaryware, lighting and more. Dekorama, Costa del Sol.",
+      "h1": "Welcome to the catalogue",
+      "intro": "Explore our selection of porcelain tiles, taps, sanitaryware, shower trays, lighting and exterior materials. The best brands at the best price.",
+      "cta": "View online catalogue",
+      "visitShowroom": "Or visit us at our showroom in Benalmádena and we'll advise you in person."
+    },
+    "proyectos": {
+      "title": "Full Renovation Projects",
+      "description": "Full renovation, kitchen and bathroom projects carried out by Dekorama on the Costa del Sol. Gallery of completed works.",
+      "h1": "Projects that speak for us",
+      "intro": "Every renovation is a unique project. These are some of the works we have carried out on the Costa del Sol.",
+      "backHome": "Back to home",
+      "requestConsultation": "Request consultation"
+    }
+  },
+  "imageTypes": {
+    "Reforma integral": "Full Renovation",
+    "Cocina a medida": "Custom Kitchen",
+    "Baño completo": "Complete Bathroom",
+    "Diseño de interiores": "Interior Design",
+    "Baño de diseño": "Designer Bathroom"
   }
 }

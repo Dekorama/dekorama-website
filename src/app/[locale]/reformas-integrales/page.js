@@ -2,47 +2,61 @@ import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { images } from '@/data/images'
 import { baseUrl } from '@/lib/site'
+import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 
-export const metadata = {
-  title: 'Reformas Integrales',
-  description:
-    'Reformas integrales en la Costa del Sol: diseño personalizado, gestión de permisos y acabados premium. Transformación completa de tu hogar. Visita gratuita.',
-  openGraph: {
-    title: 'Reformas Integrales | Dekorama Costa del Sol',
-    description:
-      'Reformas integrales con diseño personalizado y acabados premium. Málaga, Marbella y Costa del Sol.',
-    url: '/reformas-integrales',
-  },
-  alternates: { canonical: `${baseUrl}/reformas-integrales` },
+export async function generateMetadata({ params }) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'pages.reformas' })
+  
+  return {
+    title: t('title'),
+    description: t('description'),
+    openGraph: {
+      title: t('title'),
+      description: t('description'),
+      url: `/${locale}/reformas-integrales`,
+    },
+    alternates: { 
+      canonical: `${baseUrl}/${locale}/reformas-integrales`,
+      languages: {
+        'es': `${baseUrl}/es/reformas-integrales`,
+        'en': `${baseUrl}/en/reformas-integrales`,
+      }
+    },
+  }
 }
 
 export default function ReformasIntegralesPage() {
+  const t = useTranslations('pages.reformas')
+  const tCta = useTranslations('cta')
+  
   const caracteristicas = [
     {
-      title: 'Diseño personalizado',
-      description: 'Cada proyecto es único. Creamos espacios adaptados a tu estilo de vida y necesidades.',
+      title: t('caracteristicas.item1Title'),
+      description: t('caracteristicas.item1Desc'),
     },
     {
-      title: 'Transformación completa',
-      description: 'Reformamos desde la estructura hasta los acabados finales, incluyendo instalaciones.',
+      title: t('caracteristicas.item2Title'),
+      description: t('caracteristicas.item2Desc'),
     },
     {
-      title: 'Gestión integral',
-      description: 'Nos encargamos de todo: permisos, coordinación de gremios y seguimiento del proyecto.',
+      title: t('caracteristicas.item3Title'),
+      description: t('caracteristicas.item3Desc'),
     },
     {
-      title: 'Acabados premium',
-      description: 'Trabajamos con los mejores materiales y marcas del mercado para garantizar calidad.',
+      title: t('caracteristicas.item4Title'),
+      description: t('caracteristicas.item4Desc'),
     },
   ]
 
   const fases = [
-    { numero: '01', titulo: 'Estudio y diseño', descripcion: 'Análisis del espacio y planificación detallada del proyecto.' },
-    { numero: '02', titulo: 'Desmontaje y preparación', descripcion: 'Retirada de elementos existentes y preparación de la estructura para la reforma.' },
-    { numero: '03', titulo: 'Instalaciones', descripcion: 'Renovación de fontanería, electricidad, climatización y sistemas de seguridad.' },
-    { numero: '04', titulo: 'Albañilería y acabados', descripcion: 'Construcción, revestimientos, pintura y colocación de pavimentos.' },
-    { numero: '05', titulo: 'Carpintería y mobiliario', descripcion: 'Instalación de armarios, puertas, ventanas y elementos de carpintería a medida.' },
-    { numero: '06', titulo: 'Limpieza y entrega', descripcion: 'Limpieza profesional y entrega del proyecto. No damos la obra por terminada hasta que quede perfecta.' },
+    { numero: '01', titulo: t('fases.fase1Title'), descripcion: t('fases.fase1Desc') },
+    { numero: '02', titulo: t('fases.fase2Title'), descripcion: t('fases.fase2Desc') },
+    { numero: '03', titulo: t('fases.fase3Title'), descripcion: t('fases.fase3Desc') },
+    { numero: '04', titulo: t('fases.fase4Title'), descripcion: t('fases.fase4Desc') },
+    { numero: '05', titulo: t('fases.fase5Title'), descripcion: t('fases.fase5Desc') },
+    { numero: '06', titulo: t('fases.fase6Title'), descripcion: t('fases.fase6Desc') },
   ]
 
   return (
@@ -52,22 +66,22 @@ export default function ReformasIntegralesPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight">
-                Reformas Integrales
+                {t('h1')}
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Transformamos tu hogar de principio a fin con diseño personalizado y acabados de lujo
+                {t('intro')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Link href="/#contacto" className="px-8 py-4 bg-black text-white font-medium hover:bg-gray-800 transition-all duration-300 hover:scale-105 text-center">
-                  Solicitar presupuesto
+                  {tCta('requestQuote')}
                 </Link>
                 <Link href="/proyectos" className="px-8 py-4 border-2 border-black text-black font-medium hover:bg-black hover:text-white transition-all duration-300 text-center">
-                  Ver proyectos
+                  {tCta('viewProjects')}
                 </Link>
               </div>
             </div>
             <div className="relative h-96 md:h-[500px] rounded-lg overflow-hidden">
-              <Image src={images.services.reformas} alt="Reforma integral" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+              <Image src={images.services.reformas} alt={t('h1')} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
             </div>
           </div>
         </div>
@@ -76,7 +90,7 @@ export default function ReformasIntegralesPage() {
       <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-16">
-            ¿Por qué elegir nuestras reformas integrales?
+            {t('caracteristicas.title')}
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {caracteristicas.map((item, index) => (
@@ -92,7 +106,7 @@ export default function ReformasIntegralesPage() {
       <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-gray-bg">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-16">
-            Nuestro proceso paso a paso
+            {t('fases.title')}
           </h2>
           <div className="space-y-12 md:space-y-16">
             {fases.map((fase, index) => (
@@ -112,10 +126,10 @@ export default function ReformasIntegralesPage() {
 
       <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-black text-white">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="text-3xl md:text-4xl font-semibold">¿Listo para transformar tu hogar?</h2>
-          <p className="text-xl text-gray-300">Solicita una visita gratuita y recibe un presupuesto detallado sin compromiso</p>
+          <h2 className="text-3xl md:text-4xl font-semibold">{tCta('readyToTransform')}</h2>
+          <p className="text-xl text-gray-300">{tCta('freeVisitAndQuote')}</p>
           <Link href="/#contacto" className="inline-block px-8 py-4 bg-white text-black font-medium hover:bg-gray-100 transition-all duration-300 hover:scale-105">
-            Solicitar visita gratuita
+            {tCta('requestFreeVisit')}
           </Link>
         </div>
       </section>

@@ -10,8 +10,7 @@ export default function Header() {
   const tAria = useTranslations('aria')
   const locale = useLocale()
   const pathname = usePathname()
-  // Ensure we never pass a path that already contains the locale (prevents /en/en)
-  const pathnameForLocale = pathname.replace(/^\/(es|en)(\/|$)/, '$2') || '/'
+  // usePathname from next-intl already returns the pathname without the locale prefix
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -71,7 +70,7 @@ export default function Header() {
             <div className="flex items-center gap-3">
               <span className="flex items-center gap-1 text-sm font-medium text-gray-500">
                 <Link
-                  href={pathnameForLocale}
+                  href={pathname}
                   locale="es"
                   className={locale === 'es' ? 'text-black font-semibold' : 'hover:text-black transition-colors'}
                   aria-current={locale === 'es' ? 'true' : undefined}
@@ -80,7 +79,7 @@ export default function Header() {
                 </Link>
                 <span aria-hidden>|</span>
                 <Link
-                  href={pathnameForLocale}
+                  href={pathname}
                   locale="en"
                   className={locale === 'en' ? 'text-black font-semibold' : 'hover:text-black transition-colors'}
                   aria-current={locale === 'en' ? 'true' : undefined}
@@ -99,11 +98,11 @@ export default function Header() {
 
           <div className="flex items-center gap-2 sm:gap-3 md:hidden">
             <span className="flex items-center gap-1 text-xs sm:text-sm">
-              <Link href={pathnameForLocale} locale="es" className={locale === 'es' ? 'font-semibold text-black' : 'text-gray-500'}>
+              <Link href={pathname} locale="es" className={locale === 'es' ? 'font-semibold text-black' : 'text-gray-500'}>
                 ES
               </Link>
               <span>|</span>
-              <Link href={pathnameForLocale} locale="en" className={locale === 'en' ? 'font-semibold text-black' : 'text-gray-500'}>
+              <Link href={pathname} locale="en" className={locale === 'en' ? 'font-semibold text-black' : 'text-gray-500'}>
                 EN
               </Link>
             </span>

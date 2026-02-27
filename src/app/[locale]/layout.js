@@ -45,10 +45,14 @@ export async function generateMetadata({ params }) {
     twitter: { card: 'summary_large_image', title, description },
     robots: { index: true, follow: true },
     alternates: {
-      canonical: isEn ? `${baseUrl}/en` : baseUrl,
-      languages: { es: baseUrl, en: `${baseUrl}/en` },
+      canonical: isEn ? `${baseUrl}/en` : `${baseUrl}/es`,
+      languages: { es: `${baseUrl}/es`, en: `${baseUrl}/en` },
     },
   }
+}
+
+export async function generateStaticParams() {
+  return [{ locale: 'es' }, { locale: 'en' }]
 }
 
 export default async function LocaleLayout({ children, params }) {

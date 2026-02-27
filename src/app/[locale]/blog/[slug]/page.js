@@ -1,40 +1,69 @@
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
+import { getTranslations } from 'next-intl/server'
 import { getPostBySlug, getPostSlugs } from '@/lib/blog'
+import { getSlugForLocale } from '@/lib/blogSlugMap'
 import { baseUrl } from '@/lib/site'
 
 export async function generateStaticParams() {
-  return getPostSlugs().map((slug) => ({ slug }))
+  const locales = ['es', 'en']
+  const params = []
+  
+  for (const locale of locales) {
+    const slugs = getPostSlugs(locale)
+    for (const slug of slugs) {
+      params.push({ locale, slug })
+    }
+  }
+  
+  return params
 }
 
 export async function generateMetadata({ params }) {
-  const { slug } = await Promise.resolve(params)
-  const post = await getPostBySlug(slug)
-  if (!post) return { title: 'Entrada no encontrada' }
+  const { locale, slug } = await Promise.resolve(params)
+  const post = await getPostBySlug(slug, locale)
+  const t = await getTranslations('blog')
+  if (!post) return { title: t('postNotFound') }
+  
+  // Get the alternate locale slug
+  const esSlug = getSlugForLocale(slug, 'es', locale)
+  const enSlug = getSlugForLocale(slug, 'en', locale)
+  
+  const canonicalUrl = locale === 'en' ? `${baseUrl}/en/blog/${slug}` : `${baseUrl}/es/blog/${slug}`
+  
   return {
     title: post.title,
     description: post.excerpt,
     openGraph: {
       title: `${post.title} | Blog Dekorama`,
       description: post.excerpt,
-      url: `/blog/${post.slug}`,
+      url: canonicalUrl,
     },
-    alternates: { canonical: `${baseUrl}/blog/${post.slug}` },
+    alternates: {
+      canonical: canonicalUrl,
+      languages: { 
+        es: `${baseUrl}/es/blog/${esSlug}`, 
+        en: `${baseUrl}/en/blog/${enSlug}` 
+      },
+    },
   }
 }
 
-function formatDate(dateStr) {
-  const d = new Date(dateStr)
-  return d.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })
-}
-
 export default async function BlogPostPage({ params }) {
-  const { slug } = await Promise.resolve(params)
-  const post = await getPostBySlug(slug)
+  const { locale, slug } = await Promise.resolve(params)
+  const post = await getPostBySlug(slug, locale)
   if (!post) notFound()
 
-  const postUrl = `${baseUrl}/blog/${post.slug}`
+  const t = await getTranslations('blog')
+  const tCta = await getTranslations('cta')
+  const tBreadcrumb = await getTranslations('breadcrumb')
+  const postUrl = locale === 'en' ? `${baseUrl}/en/blog/${post.slug}` : `${baseUrl}/es/blog/${post.slug}`
+
+  const formatDate = (dateStr) => {
+    const d = new Date(dateStr)
+    return d.toLocaleDateString(locale === 'en' ? 'en-GB' : 'es-ES', { year: 'numeric', month: 'long', day: 'numeric' })
+  }
 
   const articleJsonLd = {
     '@context': 'https://schema.org',
@@ -52,8 +81,8 @@ export default async function BlogPostPage({ params }) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Inicio', item: baseUrl },
-      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${baseUrl}/blog` },
+      { '@type': 'ListItem', position: 1, name: tBreadcrumb('home'), item: locale === 'en' ? `${baseUrl}/en` : `${baseUrl}/es` },
+      { '@type': 'ListItem', position: 2, name: tBreadcrumb('blog'), item: locale === 'en' ? `${baseUrl}/en/blog` : `${baseUrl}/es/blog` },
       { '@type': 'ListItem', position: 3, name: post.title, item: postUrl },
     ],
   }
@@ -78,7 +107,7 @@ export default async function BlogPostPage({ params }) {
               <svg className="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
-              Volver al blog
+              {t('backToBlog')}
             </Link>
             <time
               dateTime={post.date}
@@ -120,20 +149,20 @@ export default async function BlogPostPage({ params }) {
 
       <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-black text-white">
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          <h2 className="text-2xl md:text-3xl font-semibold">¿Te gustaría que te asesoremos?</h2>
-          <p className="text-gray-300">Visita gratuita y presupuesto sin compromiso</p>
+          <h2 className="text-2xl md:text-3xl font-semibold">{tCta('wouldYouLikeAdvice')}</h2>
+          <p className="text-gray-300">{tCta('freeVisitAndQuote')}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/#contacto"
               className="inline-block px-8 py-4 bg-white text-black font-medium hover:bg-gray-100 transition-all duration-300 hover:scale-105 rounded-sm"
             >
-              Solicitar visita gratuita
+              {tCta('requestFreeVisit')}
             </Link>
             <Link
               href="/blog"
               className="inline-block px-8 py-4 border-2 border-white text-white font-medium hover:bg-white hover:text-black transition-all duration-300 rounded-sm"
             >
-              Ver más artículos
+              {tCta('viewMoreArticles')}
             </Link>
           </div>
         </div>

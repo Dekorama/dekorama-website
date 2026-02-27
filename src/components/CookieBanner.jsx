@@ -1,11 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 
 const STORAGE_KEY = 'dekorama-cookie-consent'
 
 export default function CookieBanner() {
+  const t = useTranslations('cookieBanner')
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -29,14 +31,14 @@ export default function CookieBanner() {
   return (
     <div
       role="dialog"
-      aria-label="Aviso de cookies"
+      aria-label={t('ariaLabel')}
       className="fixed bottom-0 left-0 right-0 z-50 bg-black text-white px-4 py-4 sm:px-6 sm:py-5 shadow-[0_-4px_20px_rgba(0,0,0,0.15)] animate-[slideUp_0.3s_ease-out]"
     >
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-          Usamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra{' '}
+          {t('message')}{' '}
           <Link href="/cookies" className="text-white underline hover:no-underline font-medium">
-            política de cookies
+            {t('policyLink')}
           </Link>
           .
         </p>
@@ -45,7 +47,7 @@ export default function CookieBanner() {
           onClick={accept}
           className="flex-shrink-0 px-6 py-2.5 bg-white text-black font-medium hover:bg-gray-100 transition-colors rounded-sm"
         >
-          Aceptar
+          {t('accept')}
         </button>
       </div>
     </div>
