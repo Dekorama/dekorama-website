@@ -44,4 +44,4 @@ Hardwood flooring provides **warmth to the touch** and a **natural variation** o
 - **Hardwood Flooring**: better in dry areas, warmer and more natural sensation; requires more maintenance and is not suitable for humid areas without a specific product and installation.
 - **Wood-Look Porcelain**: better in kitchens, bathrooms, and high-traffic or humid areas; low maintenance and great durability, with aesthetics very similar to wood.
 
-If you're deciding between hardwood and wood-look porcelain for your renovation, at **Dekorama** we help you choose based on the room, usage, and your budget. [Request your free visit](/#contacto) and we'll advise you with no obligation.
+If you're deciding between hardwood and wood-look porcelain for your renovation, at **Dekorama** we help you choose based on the room, usage, and your budget. [Request your complimentary visit](/#contacto) and we'll advise you personally.

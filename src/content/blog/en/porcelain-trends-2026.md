@@ -39,4 +39,4 @@ The palette leans toward **beige, terracotta, sand, and earth tones**. It moves 
 - **Warm palette**: beige, terracotta, and earth tones.
 - **Matte finish** and discreet textures for a current and easy-to-maintain look.
 
-If you're thinking about changing the floor or wall covering in your home, at **Dekorama** we advise you with the latest trends and the best materials. [Request your free visit](/#contacto) and we'll help you choose the porcelain that best fits your project.
+If you're thinking about changing the floor or wall covering in your home, at **Dekorama** we advise you with the latest trends and the best materials. [Request your complimentary visit](/#contacto) and we'll help you choose the porcelain that best fits your project.

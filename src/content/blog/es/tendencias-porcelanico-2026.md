@@ -39,4 +39,4 @@ El acabado **mate** sigue siendo el más demandado: menos reflejos, aspecto más
 - **Paleta cálida**: beige, terracota y tonos tierra.
 - **Acabado mate** y texturas discretas para un look actual y fácil de mantener.
 
-Si estás pensando en cambiar el suelo o el revestimiento de tu hogar, en **Dekorama** te asesoramos con las últimas tendencias y los mejores materiales. [Solicita tu visita gratuita](/#contacto) y te ayudamos a elegir el porcelánico que mejor encaja con tu proyecto.
+Si estás pensando en cambiar el suelo o el revestimiento de tu hogar, en **Dekorama** te asesoramos con las últimas tendencias y los mejores materiales. [Solicita tu visita sin costo](/#contacto) y te ayudamos a elegir el porcelánico que mejor encaja con tu proyecto.

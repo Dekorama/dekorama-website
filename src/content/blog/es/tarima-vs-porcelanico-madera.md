@@ -44,4 +44,4 @@ La tarima aporta **calidez al tacto** y una **variación natural** de tonos y ve
 - **Tarima**: mejor en zonas secas, sensación más cálida y natural; requiere más mantenimiento y no es adecuada para zonas húmedas sin un producto y una instalación específicos.
 - **Porcelánico madera**: mejor en cocinas, baños y zonas de mucho paso o con humedad; bajo mantenimiento y gran durabilidad, con una estética muy similar a la madera.
 
-Si dudas entre tarima y porcelánico de madera para tu reforma, en **Dekorama** te ayudamos a elegir en función de la habitación, el uso y tu presupuesto. [Pide tu visita gratuita](/#contacto) y te asesoramos sin compromiso.
+Si dudas entre tarima y porcelánico de madera para tu reforma, en **Dekorama** te ayudamos a elegir en función de la habitación, el uso y tu presupuesto. [Pide tu visita sin costo](/#contacto) y te asesoramos personalmente.

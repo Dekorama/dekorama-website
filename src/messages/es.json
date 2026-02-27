@@ -23,12 +23,12 @@
     "blog": "Blog",
     "process": "Proceso",
     "contact": "Contacto",
-    "freeVisit": "Visita gratuita"
+    "freeVisit": "Visita sin costo"
   },
   "hero": {
     "title": "Transformamos espacios en hogares que enamoran",
-    "subtitle": "Materiales de calidad, reformas integrales, cocinas y baños de diseño en la Costa del Sol",
-    "experience": "Más de 10 años en la Costa del Sol",
+    "subtitle": "Materiales de calidad, reformas integrales, cocinas y baños de diseño",
+    "experience": "Más de 10 años de experiencia",
     "requestConsultation": "Solicitar consulta",
     "viewProjects": "Ver proyectos"
   },
@@ -53,15 +53,15 @@
     "copyright": "Todos los derechos reservados."
   },
   "cta": {
-    "requestFreeVisit": "Solicitar visita gratuita",
+    "requestFreeVisit": "Solicitar visita sin costo",
     "requestQuote": "Pedir presupuesto",
     "viewProjects": "Ver proyectos",
     "readyToTransform": "¿Listo para transformar tu espacio?",
-    "tellUsProject": "Cuéntanos tu proyecto y te respondemos sin compromiso. Incluye todos los detalles que quieras para que podamos orientarte mejor.",
+    "tellUsProject": "Cuéntanos tu proyecto y te respondemos rápidamente. Incluye todos los detalles que quieras para que podamos orientarte mejor.",
     "projectInMind": "¿Tienes un proyecto en mente?",
-    "requestVisitNoCommitment": "Solicita una visita gratuita y te asesoramos sin compromiso",
+    "requestVisitNoCommitment": "Solicita una visita sin costo y te asesoramos personalmente",
     "wouldYouLikeAdvice": "¿Te gustaría que te asesoremos?",
-    "freeVisitAndQuote": "Visita gratuita y presupuesto sin compromiso",
+    "freeVisitAndQuote": "Visita sin costo y presupuesto detallado",
     "viewMoreArticles": "Ver más artículos"
   },
   "form": {
@@ -77,7 +77,7 @@
       "otro": "Otro"
     },
     "descriptionPlaceholder": "Describe tu proyecto o lo que necesitas (opcional)",
-    "submit": "Solicitar visita gratuita",
+    "submit": "Solicitar visita sin costo",
     "sending": "Enviando…",
     "successTitle": "Mensaje enviado correctamente.",
     "successSubtitle": "Te contestaremos lo antes posible.",
@@ -90,12 +90,12 @@
   },
   "beneficios": {
     "title": "La reforma que siempre quisiste, sin sorpresas",
-    "freeVisit": "Visita gratuita",
-    "freeVisitDesc": "Te visitamos sin compromiso para valorar tu proyecto y asesorarte en persona",
+    "freeVisit": "Visita sin costo",
+    "freeVisitDesc": "Te visitamos sin costo para valorar tu proyecto y asesorarte en persona",
     "perfectWork": "Obra perfecta o no salimos",
     "perfectWorkDesc": "No damos la obra por terminada hasta que quede perfecta. Tu satisfacción es nuestro compromiso",
     "budget": "Presupuesto",
-    "budgetDesc": "Presupuesto detallado y sin compromiso para que sepas exactamente en qué inviertes",
+    "budgetDesc": "Presupuesto detallado y transparente para que sepas exactamente en qué inviertes",
     "budget3d": "Aceptación de presupuesto 3D",
     "budget3dDesc": "Aprobación clara del presupuesto en 3D antes de comenzar, para que todo quede conforme"
   },
@@ -115,9 +115,9 @@
   "proceso": {
     "title": "Cómo trabajamos: Simple, claro, sin complicaciones",
     "step1Title": "Consulta inicial",
-    "step1Desc": "Visita gratuita para conocer tus necesidades y el espacio a reformar",
+    "step1Desc": "Visita sin costo para conocer tus necesidades y el espacio a reformar",
     "step2Title": "Presupuesto",
-    "step2Desc": "Te presentamos un presupuesto detallado y sin compromiso",
+    "step2Desc": "Te presentamos un presupuesto detallado y transparente",
     "step3Title": "Aceptación de presupuesto 3D",
     "step3Desc": "Aprobación del presupuesto en 3D para que todo quede conforme antes de empezar",
     "step4Title": "Planificación",
@@ -207,7 +207,7 @@
   "pages": {
     "reformas": {
       "title": "Reformas Integrales en la Costa del Sol",
-      "description": "Reformas integrales de viviendas y locales en la Costa del Sol. Diseño personalizado, materiales premium y ejecución profesional. Presupuesto detallado sin compromiso.",
+      "description": "Reformas integrales de viviendas y locales en la Costa del Sol. Diseño personalizado, materiales premium y ejecución profesional. Presupuesto detallado y transparente.",
       "h1": "Reformas Integrales con Diseño Personalizado",
       "intro": "Transformamos tu vivienda por completo con un proyecto a medida, desde el diseño hasta los acabados finales. Gestionamos todos los gremios para que tú solo tengas que preocuparte de elegir.",
       "caracteristicas": {
@@ -239,7 +239,7 @@
     },
     "cocinas": {
       "title": "Cocinas a Medida en la Costa del Sol",
-      "description": "Diseño de cocinas a medida en la Costa del Sol. Fabricación personalizada, electrodomésticos de primeras marcas y acabados premium. Consulta gratuita.",
+      "description": "Diseño de cocinas a medida en la Costa del Sol. Fabricación personalizada, electrodomésticos de primeras marcas y acabados premium. Consulta sin costo.",
       "h1": "Cocinas a Medida que se Adaptan a Ti",
       "intro": "Diseñamos y fabricamos tu cocina ideal adaptada a tu espacio, estilo y forma de cocinar. Desde el diseño hasta la instalación, nos encargamos de todo.",
       "porque": {
@@ -255,7 +255,7 @@
       },
       "proceso": {
         "title": "Proceso de Diseño y Fabricación",
-        "paso1": "Consulta gratuita en nuestro showroom o en tu hogar",
+        "paso1": "Consulta sin costo en nuestro showroom o en tu hogar",
         "paso2": "Diseño 3D personalizado con varias propuestas",
         "paso3": "Selección de materiales, acabados y electrodomésticos",
         "paso4": "Fabricación a medida en talleres especializados",
@@ -265,7 +265,7 @@
     },
     "banos": {
       "title": "Baños Completos en la Costa del Sol",
-      "description": "Diseño y reforma de baños completos en la Costa del Sol. Porcelánicos de primeras marcas, grifería premium y diseño personalizado. Presupuesto sin compromiso.",
+      "description": "Diseño y reforma de baños completos en la Costa del Sol. Porcelánicos de primeras marcas, grifería premium y diseño personalizado. Presupuesto detallado.",
       "h1": "Baños Completos con Diseño Exclusivo",
       "intro": "Creamos baños únicos donde el diseño y la funcionalidad se encuentran. Desde baños minimalistas hasta espacios de lujo con acabados premium.",
       "porque": {

@@ -23,12 +23,12 @@
     "blog": "Blog",
     "process": "Process",
     "contact": "Contact",
-    "freeVisit": "Free visit"
+    "freeVisit": "Complimentary visit"
   },
   "hero": {
     "title": "We turn spaces into homes you'll love",
-    "subtitle": "Quality materials, full renovations, custom kitchens and bathrooms on the Costa del Sol",
-    "experience": "Over 10 years on the Costa del Sol",
+    "subtitle": "Quality materials, full renovations, custom kitchens and bathrooms",
+    "experience": "Over 10 years of experience",
     "requestConsultation": "Request consultation",
     "viewProjects": "View projects"
   },
@@ -53,15 +53,15 @@
     "copyright": "All rights reserved."
   },
   "cta": {
-    "requestFreeVisit": "Request free visit",
+    "requestFreeVisit": "Request complimentary visit",
     "requestQuote": "Request quote",
     "viewProjects": "View projects",
     "readyToTransform": "Ready to transform your space?",
-    "tellUsProject": "Tell us about your project and we'll get back to you with no obligation. Include as much detail as you like so we can help you better.",
+    "tellUsProject": "Tell us about your project and we'll get back to you promptly. Include as much detail as you like so we can help you better.",
     "projectInMind": "Have a project in mind?",
-    "requestVisitNoCommitment": "Request a free visit and we'll advise you with no obligation",
+    "requestVisitNoCommitment": "Request a complimentary visit and we'll advise you personally",
     "wouldYouLikeAdvice": "Would you like our advice?",
-    "freeVisitAndQuote": "Free visit and quote with no obligation",
+    "freeVisitAndQuote": "Complimentary visit and detailed quote",
     "viewMoreArticles": "View more articles"
   },
   "form": {
@@ -77,7 +77,7 @@
       "otro": "Other"
     },
     "descriptionPlaceholder": "Describe your project or what you need (optional)",
-    "submit": "Request free visit",
+    "submit": "Request complimentary visit",
     "sending": "Sending…",
     "successTitle": "Message sent successfully.",
     "successSubtitle": "We'll get back to you as soon as possible.",
@@ -90,12 +90,12 @@
   },
   "beneficios": {
     "title": "The renovation you always wanted, no surprises",
-    "freeVisit": "Free visit",
-    "freeVisitDesc": "We visit you with no obligation to assess your project and advise you in person",
+    "freeVisit": "Complimentary visit",
+    "freeVisitDesc": "We visit you at no cost to assess your project and advise you in person",
     "perfectWork": "Perfect result or we don't leave",
     "perfectWorkDesc": "We don't consider the job done until it's perfect. Your satisfaction is our commitment",
     "budget": "Quote",
-    "budgetDesc": "Detailed quote with no obligation so you know exactly what you're investing in",
+    "budgetDesc": "Detailed and transparent quote so you know exactly what you're investing in",
     "budget3d": "3D quote approval",
     "budget3dDesc": "Clear approval of the 3D quote before we start, so everything is agreed"
   },
@@ -115,9 +115,9 @@
   "proceso": {
     "title": "How we work: Simple, clear, no fuss",
     "step1Title": "Initial consultation",
-    "step1Desc": "Free visit to understand your needs and the space to renovate",
+    "step1Desc": "Complimentary visit to understand your needs and the space to renovate",
     "step2Title": "Quote",
-    "step2Desc": "We present a detailed quote with no obligation",
+    "step2Desc": "We present a detailed and transparent quote",
     "step3Title": "3D quote approval",
     "step3Desc": "Approval of the 3D quote before we start, so everything is agreed",
     "step4Title": "Planning",
@@ -207,7 +207,7 @@
   "pages": {
     "reformas": {
       "title": "Full Renovations on the Costa del Sol",
-      "description": "Full renovations of homes and premises on the Costa del Sol. Custom design, premium materials and professional execution. Detailed quote at no obligation.",
+      "description": "Full renovations of homes and premises on the Costa del Sol. Custom design, premium materials and professional execution. Detailed and transparent quote.",
       "h1": "Full Renovations with Custom Design",
       "intro": "We completely transform your home with a tailored project, from design to final finishes. We manage all trades so you only have to worry about choosing.",
       "caracteristicas": {
@@ -239,7 +239,7 @@
     },
     "cocinas": {
       "title": "Custom Kitchens on the Costa del Sol",
-      "description": "Custom kitchen design on the Costa del Sol. Bespoke manufacturing, top brand appliances and premium finishes. Free consultation.",
+      "description": "Custom kitchen design on the Costa del Sol. Bespoke manufacturing, top brand appliances and premium finishes. Complimentary consultation.",
       "h1": "Custom Kitchens That Adapt to You",
       "intro": "We design and manufacture your ideal kitchen adapted to your space, style and way of cooking. From design to installation, we take care of everything.",
       "porque": {
@@ -255,7 +255,7 @@
       },
       "proceso": {
         "title": "Design and Manufacturing Process",
-        "paso1": "Free consultation in our showroom or at your home",
+        "paso1": "Complimentary consultation in our showroom or at your home",
         "paso2": "Custom 3D design with several proposals",
         "paso3": "Selection of materials, finishes and appliances",
         "paso4": "Bespoke manufacturing in specialist workshops",
@@ -265,7 +265,7 @@
     },
     "banos": {
       "title": "Complete Bathrooms on the Costa del Sol",
-      "description": "Design and renovation of complete bathrooms on the Costa del Sol. Top brand porcelain tiles, premium taps and custom design. Quote at no obligation.",
+      "description": "Design and renovation of complete bathrooms on the Costa del Sol. Top brand porcelain tiles, premium taps and custom design. Detailed quote.",
       "h1": "Complete Bathrooms with Exclusive Design",
       "intro": "We create unique bathrooms where design and functionality meet. From minimalist bathrooms to luxury spaces with premium finishes.",
       "porque": {
