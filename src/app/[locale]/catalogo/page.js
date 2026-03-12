@@ -1,4 +1,4 @@
-const CATALOG_LINK = 'https://tr.ee/19OHI9P1VN'
+const CATALOG_LINK = 'https://docsend.com/view/vbk8cc9avqdkmjnw'
 import { baseUrl } from '@/lib/site'
 import { Link } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
