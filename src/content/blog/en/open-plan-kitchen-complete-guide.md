@@ -56,7 +56,7 @@ One of the keys to a successful open-plan kitchen lies in how the **floor and vi
 
 ### Continuous flooring
 
-The most impactful option: the **same porcelain tile throughout** — kitchen and living room — with minimal grout lines. This creates a visual continuity that makes the space feel even larger. Formats of 60x120 cm or above are the most effective.
+The most impactful option: the **same porcelain tile throughout** kitchen and living room with minimal grout lines. This creates a visual continuity that makes the space feel even larger. Formats of 60x120 cm or above are the most effective.
 
 If existing living room flooring is being retained, make sure the new kitchen material matches well in tone and format, or plan a deliberate transition strip in brass or steel.
 
@@ -73,7 +73,7 @@ In an open-plan kitchen, the worktop is visible from the living area — so it m
 In an open-plan kitchen, the units are visible from the living area. The styles that work best:
 - **Matt lacquer in white or grey**: clean, bright, very versatile
 - **Walnut or oak-effect with flat doors**: warmth without visual clutter
-- **Two-tone combinations**: lower units in a darker tone, uppers in white — or vice versa
+- **Two-tone combinations**: lower units in a darker tone, uppers in white or vice versa
 
 Avoid units with heavy mouldings or relief detailing: in an open-plan space, clean lines are what works.
 

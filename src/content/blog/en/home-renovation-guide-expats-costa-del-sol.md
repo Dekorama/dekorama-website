@@ -5,7 +5,7 @@ date: "2026-05-11"
 coverImage: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80"
 ---
 
-Buying a property on the Costa del Sol is one thing — getting it renovated to the standard you expect is another challenge entirely. Whether you've just purchased a resale apartment in Fuengirola, an older villa in Marbella, or a townhouse in Benalmádena, this guide will walk you through what to expect, what to budget, and how to get the renovation done right.
+Buying a property on the Costa del Sol is one thing getting it renovated to the standard you expect is another challenge entirely. Whether you've just purchased a resale apartment in Fuengirola, an older villa in Marbella, or a townhouse in Benalmádena, this guide will walk you through what to expect, what to budget, and how to get the renovation done right.
 
 ## Why renovating in Spain is different
 
