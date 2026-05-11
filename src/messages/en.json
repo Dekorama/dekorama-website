@@ -337,5 +337,118 @@
     "Baño completo": "Complete Bathroom",
     "Diseño de interiores": "Interior Design",
     "Baño de diseño": "Designer Bathroom"
+  },
+  "partners": {
+    "meta": {
+      "title": "B2B Partner Programme | Dekorama Group",
+      "description": "Join Dekorama's partner programme. Earn commissions, access a premium catalogue and get dedicated support — for architects, interior designers and contractors on the Costa del Sol."
+    },
+    "hero": {
+      "eyebrow": "B2B Partner Programme",
+      "title": "You refer. We supply. You earn.",
+      "subtitle": "No paperwork. No risk. Automatic commissions on every project your clients place.",
+      "audience": "Architects · Interior Designers · Contractors · Sector Professionals",
+      "ctaPrimary": "Join the programme",
+      "ctaSecondary": "Calculate my commission"
+    },
+    "why": {
+      "title": "Why partner with Dekorama Group",
+      "stat1Label": "Costa del Sol",
+      "stat1Value": "High-demand market",
+      "stat2Label": "ES + EN",
+      "stat2Value": "Bilingual catalogue",
+      "stat3Label": "100%",
+      "stat3Value": "Commission transparency",
+      "intro": "Dekorama Group is the premium reference on the Costa del Sol for high-end projects. We work with architects and interior designers offering an exclusive selection of porcelain tiles, bathroom furniture, tapware and lighting.",
+      "feature1Title": "Full project follow-through",
+      "feature1Desc": "We don't just supply materials — we provide complete on-site coordination, a unique differentiator that closes larger contracts.",
+      "feature2Title": "Physical showroom in Benalmádena",
+      "feature2Desc": "An inspiration space where your clients can see and touch the materials. The tactile experience is the best sales argument.",
+      "feature3Title": "Response within 2 hours",
+      "feature3Desc": "Guaranteed response time for every lead referred by our partners. Your reputation is ours."
+    },
+    "benefits": {
+      "title": "Partner programme benefits",
+      "b1Title": "Sales commission",
+      "b1Desc": "Earn automatically on every purchase your referred clients make.",
+      "b2Title": "Zero investment",
+      "b2Desc": "No risk. No paperwork. Immediate access to the full catalogue.",
+      "b3Title": "Dedicated advisor",
+      "b3Desc": "Personalised support always. One direct point of contact for every project.",
+      "b4Title": "Premium catalogue",
+      "b4Desc": "Early access to new collections before public launch.",
+      "b5Title": "Monthly report",
+      "b5Desc": "Full transparency. Commission details and active projects on the 1st of every month.",
+      "b6Title": "Visibility",
+      "b6Desc": "Co-marketing and publication of your projects on Dekorama's website and social media."
+    },
+    "tiers": {
+      "title": "Programme tiers",
+      "subtitle": "The programme has three tiers based on the annual purchase volume of your referred clients. Benefits grow in proportion to the value you bring.",
+      "notice": "Tier review is carried out every 6 months. Once a higher tier is reached, benefits activate immediately in the next billing cycle.",
+      "colLevel": "Tier",
+      "colVolume": "Annual volume",
+      "colBenefits": "Benefits",
+      "silverVolume": "€0 – €10,000",
+      "silverBenefits": "5% commission · Digital catalogue · WhatsApp Business support",
+      "goldVolume": "€10,000 – €30,000",
+      "goldBenefits": "10% commission · Dedicated advisor · Early access to new arrivals · Quarterly review",
+      "platinumVolume": "Over €30,000",
+      "platinumBenefits": "15% commission · Co-marketing · Exclusive events · Additional client discounts · Private showroom visit"
+    },
+    "calculator": {
+      "title": "Calculate your estimated commission",
+      "subtitle": "Enter the estimated monthly purchase volume you expect to generate to see your estimated annual commission.",
+      "label": "Estimated monthly client volume (€)",
+      "annualLabel": "Estimated annual volume",
+      "tierLabel": "Your tier",
+      "rateLabel": "Commission rate",
+      "earnLabel": "Estimated annual commission",
+      "disclaimer": "Indicative estimate only. Actual commission is calculated on the verified monthly purchase volume."
+    },
+    "howTo": {
+      "title": "How to become a partner",
+      "step1Title": "Contact us",
+      "step1Desc": "Book a 15-minute call or send us a message with your professional profile.",
+      "step2Title": "Register as a partner",
+      "step2Desc": "3-step process. No bureaucracy. Immediate access to the full catalogue.",
+      "step3Title": "Refer your clients",
+      "step3Desc": "Your client visits the showroom or requests a quote online with your referral code.",
+      "step4Title": "Collect your commission",
+      "step4Desc": "Automatic report on the 1st of every month. Prompt transfer. Full transparency."
+    },
+    "tools": {
+      "title": "Partner tools",
+      "t1Title": "Monthly commission report",
+      "t1Desc": "Automatic email on the 1st of each month with commission details, active projects and next-month projection.",
+      "t2Title": "Technical product training",
+      "t2Desc": "Quarterly sessions on new arrivals, premium market trends and practical application case studies.",
+      "t3Title": "VIP access to new arrivals",
+      "t3Desc": "Exclusive invitations to new collection presentations before public launch.",
+      "t4Title": "Co-marketing & visibility",
+      "t4Desc": "Publication of your projects on Dekorama's website and social media with mention of your studio or firm."
+    },
+    "showroom": {
+      "title": "Bring your clients to the showroom",
+      "body": "Our showroom in Benalmádena is available for private visits with your clients. Architects and interior designers who bring clients to the physical space close more projects and at higher value.",
+      "international": "For international clients we also offer video call consultations.",
+      "cta": "Book a private visit"
+    },
+    "contact": {
+      "title": "Ready to join the programme?",
+      "subtitle": "Book a 15-minute call or tell us about your profile. We respond within 2 hours.",
+      "namePlaceholder": "Full name *",
+      "companyPlaceholder": "Company / Studio *",
+      "phonePlaceholder": "Phone *",
+      "emailPlaceholder": "Email *",
+      "messagePlaceholder": "Tell us about yourself and your professional activity (optional)",
+      "submit": "Request information",
+      "sending": "Sending…",
+      "successTitle": "Message sent successfully.",
+      "successSubtitle": "We will contact you within 2 hours.",
+      "errorGeneric": "Could not send. Please try again.",
+      "orWhatsApp": "Or write to us directly on WhatsApp",
+      "whatsAppCta": "Open WhatsApp"
+    }
   }
 }

@@ -337,5 +337,118 @@
     "Baño completo": "Baño completo",
     "Diseño de interiores": "Diseño de interiores",
     "Baño de diseño": "Baño de diseño"
+  },
+  "partners": {
+    "meta": {
+      "title": "Programa de Partners B2B | Dekorama Group",
+      "description": "Únete al programa de partners de Dekorama. Comisiones por ventas, catálogo premium y soporte dedicado para arquitectos, interioristas y reformistas en la Costa del Sol."
+    },
+    "hero": {
+      "eyebrow": "Programa de Partners B2B",
+      "title": "Tú recomiendas. Nosotros suministramos. Tú cobras.",
+      "subtitle": "Sin papeleo. Sin riesgo. Comisiones automáticas en cada proyecto de tus clientes.",
+      "audience": "Arquitectos · Interioristas · Reformistas · Profesionales del Sector",
+      "ctaPrimary": "Unirme al programa",
+      "ctaSecondary": "Calcular mi comisión"
+    },
+    "why": {
+      "title": "Por qué asociarse con Dekorama Group",
+      "stat1Label": "Costa del Sol",
+      "stat1Value": "Mercado de alta demanda",
+      "stat2Label": "ES + EN",
+      "stat2Value": "Catálogo bilingüe",
+      "stat3Label": "100%",
+      "stat3Value": "Transparencia en comisiones",
+      "intro": "Dekorama Group es el referente en la Costa del Sol para proyectos de alta gama. Colaboramos con arquitectos e interioristas ofreciendo una selección exclusiva de porcelánicos, muebles de baño, grifería e iluminación.",
+      "feature1Title": "Servicio integral diferencial",
+      "feature1Desc": "No solo suministramos materiales: ofrecemos seguimiento completo de obra, un diferencial único en el mercado que cierra contratos más grandes.",
+      "feature2Title": "Showroom físico en Benalmádena",
+      "feature2Desc": "Espacio de inspiración donde tus clientes pueden ver y tocar los materiales. La experiencia táctil es el mejor argumento de venta.",
+      "feature3Title": "Respuesta en menos de 2 horas",
+      "feature3Desc": "Velocidad de respuesta garantizada para cada lead referido por nuestros partners. Tu reputación es la nuestra."
+    },
+    "benefits": {
+      "title": "Beneficios del programa de partners",
+      "b1Title": "Comisión por ventas",
+      "b1Desc": "Gana en cada compra de tus clientes referidos, de forma automática.",
+      "b2Title": "Sin inversión",
+      "b2Desc": "Cero riesgo. Cero papeleo. Acceso inmediato al catálogo completo.",
+      "b3Title": "Asesor dedicado",
+      "b3Desc": "Soporte personalizado siempre. Un punto de contacto directo para cada proyecto.",
+      "b4Title": "Catálogo premium",
+      "b4Desc": "Acceso anticipado a novedades antes de su lanzamiento público.",
+      "b5Title": "Informe mensual",
+      "b5Desc": "Transparencia total. Detalle de comisiones y proyectos activos el día 1 de cada mes.",
+      "b6Title": "Visibilidad",
+      "b6Desc": "Co-marketing y publicación de tus proyectos en web y redes sociales de Dekorama."
+    },
+    "tiers": {
+      "title": "Niveles del programa",
+      "subtitle": "El programa se estructura en tres niveles según el volumen anual de compras de tus clientes referidos. Los beneficios crecen de forma proporcional al valor que aportas.",
+      "notice": "La revisión de nivel se realiza cada 6 meses. Una vez alcanzado un nivel superior, los beneficios se activan de inmediato en el siguiente ciclo de facturación.",
+      "colLevel": "Nivel",
+      "colVolume": "Volumen anual",
+      "colBenefits": "Beneficios",
+      "silverVolume": "0 – 10.000 €",
+      "silverBenefits": "Comisión 5% · Catálogo digital · Soporte WhatsApp Business",
+      "goldVolume": "10.000 – 30.000 €",
+      "goldBenefits": "Comisión 10% · Asesor dedicado · Acceso anticipado a novedades · Revisión trimestral",
+      "platinumVolume": "Más de 30.000 €",
+      "platinumBenefits": "Comisión 15% · Co-marketing · Eventos exclusivos · Descuentos adicionales · Visita privada al showroom"
+    },
+    "calculator": {
+      "title": "Calcula tu comisión estimada",
+      "subtitle": "Introduce el volumen mensual de compras que estimas generar para ver tu comisión anual estimada.",
+      "label": "Volumen mensual estimado de tus clientes (€)",
+      "annualLabel": "Volumen anual estimado",
+      "tierLabel": "Tu nivel",
+      "rateLabel": "Comisión",
+      "earnLabel": "Comisión anual estimada",
+      "disclaimer": "Estimación orientativa. La comisión real se calcula sobre el volumen real de compras verificado mensualmente."
+    },
+    "howTo": {
+      "title": "Cómo convertirse en partner",
+      "step1Title": "Contacta con nosotros",
+      "step1Desc": "Reserva una llamada de 15 minutos o envíanos un mensaje con tu perfil profesional.",
+      "step2Title": "Alta como Partner",
+      "step2Desc": "Proceso en 3 pasos. Sin burocracia. Acceso inmediato al catálogo completo.",
+      "step3Title": "Recomienda a tus clientes",
+      "step3Desc": "Tu cliente visita el showroom o solicita presupuesto online con tu referencia.",
+      "step4Title": "Cobra tu comisión",
+      "step4Desc": "Informe automático el día 1 de cada mes. Transferencia puntual. Total transparencia."
+    },
+    "tools": {
+      "title": "Herramientas para partners",
+      "t1Title": "Informe mensual de comisiones",
+      "t1Desc": "Email automático el día 1 de cada mes con detalle de comisiones, proyectos activos y proyección del mes siguiente.",
+      "t2Title": "Formación técnica de producto",
+      "t2Desc": "Sesiones trimestrales sobre novedades, tendencias del mercado premium y casos prácticos de aplicación.",
+      "t3Title": "Acceso VIP a novedades",
+      "t3Desc": "Invitaciones exclusivas a presentaciones de nuevas colecciones antes de su lanzamiento público.",
+      "t4Title": "Co-marketing y visibilidad",
+      "t4Desc": "Publicación de tus proyectos en web y redes sociales de Dekorama con mención de tu estudio o firma."
+    },
+    "showroom": {
+      "title": "Dirige a tus clientes al showroom",
+      "body": "Nuestro showroom en Benalmádena está disponible para visitas privadas con tus clientes. Los arquitectos e interioristas que traen a sus clientes al espacio físico cierran más proyectos y de mayor valor.",
+      "international": "Para clientes internacionales también ofrecemos consultas por videollamada.",
+      "cta": "Reservar visita privada"
+    },
+    "contact": {
+      "title": "¿Listo para unirte al programa?",
+      "subtitle": "Reserva una llamada de 15 minutos o cuéntanos tu perfil. Te respondemos en menos de 2 horas.",
+      "namePlaceholder": "Nombre completo *",
+      "companyPlaceholder": "Empresa / Estudio *",
+      "phonePlaceholder": "Teléfono *",
+      "emailPlaceholder": "Email *",
+      "messagePlaceholder": "Cuéntanos sobre ti y tu actividad profesional (opcional)",
+      "submit": "Solicitar información",
+      "sending": "Enviando…",
+      "successTitle": "Mensaje enviado correctamente.",
+      "successSubtitle": "Te contactaremos en menos de 2 horas.",
+      "errorGeneric": "No se pudo enviar. Inténtelo de nuevo.",
+      "orWhatsApp": "O escríbenos directamente por WhatsApp",
+      "whatsAppCta": "Abrir WhatsApp"
+    }
   }
 }
