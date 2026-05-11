@@ -13,6 +13,15 @@ const dmSans = DM_Sans({
   variable: '--font-sans',
 })
 
+export const metadata = {
+  metadataBase: new URL('https://www.dekoramagroup.com'),
+  icons: {
+    icon: '/dekorama-favicon.png',
+    apple: '/dekorama-favicon.png',
+    shortcut: '/dekorama-favicon.png',
+  },
+}
+
 export default function RootLayout({ children }) {
   return (
     <html lang="es" className={`${playfair.variable} ${dmSans.variable}`} suppressHydrationWarning>

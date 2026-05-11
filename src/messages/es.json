@@ -130,7 +130,7 @@
   "testimonios": {
     "title": "Lo que dicen nuestros clientes",
     "onGoogle": "en Google",
-    "reviews": "46 reseñas",
+    "reviews": "53 reseñas",
     "ariaReviews": "Ver 4.8 estrellas y reseñas en Google",
     "detail1": "Google · hace 4 meses",
     "detail2": "Google · hace 1 año",
@@ -292,8 +292,8 @@
       }
     },
     "materiales": {
-      "title": "Materiales Premium para Reformas",
-      "description": "Venta de materiales premium para reformas en la Costa del Sol. Porcelánicos, grifería, platos de ducha, iluminación LED, mamparas y materiales de exterior.",
+      "title": "Materiales Premium para Reformas | Benalmádena, Costa del Sol",
+      "description": "Venta de materiales premium para reformas en Benalmádena y la Costa del Sol. Porcelánicos, grifería, platos de ducha, iluminación LED, mamparas y materiales de exterior.",
       "h1": "Materiales Premium para Tu Reforma",
       "intro": "En nuestro showroom encontrarás las mejores marcas de porcelánicos, grifería, sanitarios, iluminación y todo lo que necesitas para tu proyecto.",
       "categorias": {
@@ -315,16 +315,16 @@
       "visitaDesc": "Te asesoramos personalmente en nuestro showroom de Benalmádena. Trae tu proyecto y te ayudamos a escoger los mejores materiales."
     },
     "catalogo": {
-      "title": "Catálogo Online de Materiales",
-      "description": "Catálogo online de materiales premium para reformas. Porcelánicos, grifería, sanitarios, iluminación y más. Dekorama, Costa del Sol.",
+      "title": "Catálogo de Porcelánicos y Materiales | Benalmádena, Costa del Sol",
+      "description": "Catálogo online de materiales premium para reformas en Benalmádena y la Costa del Sol. Porcelánicos, grifería, sanitarios, iluminación y más. Dekorama.",
       "h1": "Bienvenido al catálogo",
       "intro": "Explora nuestra selección de porcelánicos, grifería, sanitarios, platos de ducha, iluminación y materiales de exterior. Las mejores marcas al mejor precio.",
       "cta": "Ver catálogo online",
       "visitShowroom": "O visítanos en nuestro showroom en Benalmádena y te asesoramos en persona."
     },
     "proyectos": {
-      "title": "Proyectos de Reformas Integrales",
-      "description": "Proyectos de reformas integrales, cocinas y baños realizados por Dekorama en la Costa del Sol. Galería de obras terminadas.",
+      "title": "Proyectos de Reformas en Benalmádena y Costa del Sol | Dekorama",
+      "description": "Galería de proyectos de reformas integrales, cocinas y baños realizados por Dekorama en Benalmádena y la Costa del Sol. Obras terminadas.",
       "h1": "Proyectos que hablan por nosotros",
       "intro": "Cada reforma es un proyecto único. Estos son algunos de los trabajos que hemos realizado en la Costa del Sol.",
       "backHome": "Volver al inicio",

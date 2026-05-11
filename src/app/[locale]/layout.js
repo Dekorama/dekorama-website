@@ -62,20 +62,37 @@ export default async function LocaleLayout({ children, params }) {
 
   const localBusinessJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': 'HomeGoodStore',
     name: 'Dekorama',
     description: businessDescription,
     url: baseUrl,
     telephone: '+34628571537',
     email: 'info@dekorama.es',
+    priceRange: '€€',
+    image: `${baseUrl}/dekorama-favicon.png`,
+    logo: `${baseUrl}/dekorama-logo-cropped.svg`,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Las Ventas, Av. Tivoli, 17, C.C., Local 5',
+      streetAddress: 'Avenida Tivoli, 17, Centro Comercial, Local 5',
       addressLocality: 'Benalmádena',
       postalCode: '29631',
       addressRegion: 'Málaga',
       addressCountry: 'ES',
     },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 36.5971,
+      longitude: -4.5164,
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      reviewCount: '53',
+      bestRating: '5',
+    },
+    sameAs: [
+      'https://www.dekoramagroup.com',
+    ],
   }
 
   return (
