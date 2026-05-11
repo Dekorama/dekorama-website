@@ -4,7 +4,7 @@
  * Para mantener sincronía con Google Business, copia este mismo texto en la descripción de tu ficha de Google.
  */
 export const businessDescription =
-  '¡Bienvenido a Dekorama! Tienda de materiales para reforma y acabados en la Costa del Sol. Ofrecemos porcelánicos, cerámicas, pavimentos, grifería, platos de ducha, iluminación, mamparas y materiales de exterior, además de servicios de reformas integrales, cocinas y baños de diseño. Asesoramiento personalizado y más de 20 años en la industria. Productos de primeras marcas para que tu reforma supere expectativas.'
+  '¡Bienvenido a Dekorama! Tienda de materiales para reforma y acabados en la Costa del Sol. Ofrecemos porcelánicos, cerámicas, pavimentos, grifería, platos de ducha, iluminación, mamparas y materiales de exterior, además de servicios de reformas integrales, cocinas y baños de diseño. Asesoramiento personalizado y más de 12 años en la industria. Productos de primeras marcas para que tu reforma supere expectativas.'
 
 /** URL base del sitio para canonical, OG y sitemap */
 export const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dekorama.es'
