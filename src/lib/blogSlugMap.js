@@ -44,6 +44,14 @@ export const blogSlugMap = {
     es: 'banos-pequenos-ideas-ganar-espacio',
     en: 'small-bathrooms-ideas-maximize-space',
   },
+  'cocina-abierta-salon-guia-completa': {
+    es: 'cocina-abierta-salon-guia-completa',
+    en: 'open-plan-kitchen-complete-guide',
+  },
+  'open-plan-kitchen-complete-guide': {
+    es: 'cocina-abierta-salon-guia-completa',
+    en: 'open-plan-kitchen-complete-guide',
+  },
 }
 
 /**
