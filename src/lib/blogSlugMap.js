@@ -20,6 +20,14 @@ export const blogSlugMap = {
     es: 'tendencias-porcelanico-2026',
     en: 'porcelain-trends-2026',
   },
+  'cuanto-cuesta-reformar-piso-villa-costa-del-sol': {
+    es: 'cuanto-cuesta-reformar-piso-villa-costa-del-sol',
+    en: 'home-renovation-guide-expats-costa-del-sol',
+  },
+  'home-renovation-guide-expats-costa-del-sol': {
+    es: 'cuanto-cuesta-reformar-piso-villa-costa-del-sol',
+    en: 'home-renovation-guide-expats-costa-del-sol',
+  },
 }
 
 /**
