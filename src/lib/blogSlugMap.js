@@ -28,6 +28,22 @@ export const blogSlugMap = {
     es: 'cuanto-cuesta-reformar-piso-villa-costa-del-sol',
     en: 'home-renovation-guide-expats-costa-del-sol',
   },
+  'reformar-apartamento-alquiler-vacacional-costa-del-sol': {
+    es: 'reformar-apartamento-alquiler-vacacional-costa-del-sol',
+    en: 'renovate-holiday-rental-apartment-costa-del-sol',
+  },
+  'renovate-holiday-rental-apartment-costa-del-sol': {
+    es: 'reformar-apartamento-alquiler-vacacional-costa-del-sol',
+    en: 'renovate-holiday-rental-apartment-costa-del-sol',
+  },
+  'banos-pequenos-ideas-ganar-espacio': {
+    es: 'banos-pequenos-ideas-ganar-espacio',
+    en: 'small-bathrooms-ideas-maximize-space',
+  },
+  'small-bathrooms-ideas-maximize-space': {
+    es: 'banos-pequenos-ideas-ganar-espacio',
+    en: 'small-bathrooms-ideas-maximize-space',
+  },
 }
 
 /**
