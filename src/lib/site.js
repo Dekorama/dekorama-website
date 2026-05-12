@@ -29,4 +29,4 @@ export const metaDescription = truncateForMeta(businessDescription)
  * Versión corta para el pie de página. Mantiene el mensaje principal sin saturar el footer.
  */
 export const footerDescription =
-  'Materiales para reforma y acabados en la Costa del Sol: porcelánicos, grifería, platos de ducha, iluminación, mamparas y más. Reformas integrales, cocinas y baños de diseño. Más de 20 años de experiencia.'
+  'Materiales para reforma y acabados en la Costa del Sol: porcelánicos, grifería, platos de ducha, iluminación, mamparas y más. Reformas integrales, cocinas y baños de diseño. Más de 10 años de experiencia.'
