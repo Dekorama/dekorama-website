@@ -52,6 +52,14 @@ export const blogSlugMap = {
     es: 'cocina-abierta-salon-guia-completa',
     en: 'open-plan-kitchen-complete-guide',
   },
+  'piscinas-azulejos-verano-2026': {
+    es: 'piscinas-azulejos-verano-2026',
+    en: 'pool-tiles-summer-2026',
+  },
+  'pool-tiles-summer-2026': {
+    es: 'piscinas-azulejos-verano-2026',
+    en: 'pool-tiles-summer-2026',
+  },
 }
 
 /**

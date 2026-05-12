@@ -2,8 +2,8 @@
 const UNSPLASH_BASE = 'https://images.unsplash.com'
 
 export const images = {
-  // Hero: una sola imagen limpia de interior/reforma
-  hero: `${UNSPLASH_BASE}/photo-1600585154526-990dced4db0d?w=1200&q=80`,
+  // Hero: villa mediterránea de lujo — Costa del Sol
+  hero: `${UNSPLASH_BASE}/photo-1512917774080-9991f1c4c750?w=1200&q=80`,
   services: {
     reformas: `${UNSPLASH_BASE}/photo-1600585154340-be6161a56a0c?w=800&q=80`,
     cocinas: `${UNSPLASH_BASE}/photo-1556911220-bff31c812dba?w=800&q=80`,

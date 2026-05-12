@@ -40,7 +40,7 @@ export default function Hero() {
           <div className="relative h-96 md:h-[500px] rounded-lg overflow-hidden">
             <Image
               src={images.hero}
-              alt="Interior reformado - diseño de interiores Costa del Sol"
+              alt="Villa de lujo reformada en la Costa del Sol - Benalmádena, Marbella, Málaga"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
