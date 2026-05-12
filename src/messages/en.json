@@ -317,10 +317,34 @@
     "catalogo": {
       "title": "Porcelain Tiles & Materials Catalogue | Benalmádena, Costa del Sol",
       "description": "Online catalogue of premium renovation materials in Benalmádena and the Costa del Sol. Porcelain tiles, taps, sanitaryware, lighting and more. Dekorama.",
-      "h1": "Welcome to the catalogue",
+      "h1": "Materials that define luxury",
+      "eyebrow": "Exclusive catalogue 2025–2026",
+      "heroSubtitle": "A carefully curated selection of the finest European brands in porcelain tiles, taps, sanitaryware and lighting for high-end projects on the Costa del Sol.",
       "intro": "Explore our selection of porcelain tiles, taps, sanitaryware, shower trays, lighting and exterior materials. The best brands at the best price.",
+      "materialsTitle": "Our materials selection",
+      "materialsSubtitle": "Each category features over 50 references from Europe's leading brands.",
+      "categories": {
+        "tiles": "Porcelain Tiles",
+        "taps": "Taps & Brassware",
+        "sanitaryware": "Sanitaryware",
+        "lighting": "Lighting",
+        "bathroom": "Bathroom Furniture",
+        "exterior": "Outdoor & Exterior"
+      },
+      "statsTitle": "Dekorama in numbers",
+      "stats": {
+        "refs": "200+",
+        "refsLabel": "Exclusive references",
+        "years": "20+",
+        "yearsLabel": "Years of experience",
+        "brands": "Top brands",
+        "brandsLabel": "Europe's finest brands",
+        "advice": "Advice",
+        "adviceLabel": "Personal & complimentary"
+      },
       "cta": "View online catalogue",
-      "visitShowroom": "Or visit us at our showroom in Benalmádena and we'll advise you in person."
+      "ctaSubtitle": "Access the full catalogue with references, finishes and pricing.",
+      "visitShowroom": "Prefer to see it in person? Visit our showroom in Benalmádena — no commitment needed."
     },
     "proyectos": {
       "title": "Renovation Projects in Benalmádena & Costa del Sol | Dekorama",
@@ -336,7 +360,9 @@
     "Cocina a medida": "Custom Kitchen",
     "Baño completo": "Complete Bathroom",
     "Diseño de interiores": "Interior Design",
-    "Baño de diseño": "Designer Bathroom"
+    "Baño de diseño": "Designer Bathroom",
+    "Exteriores": "Outdoor & Exterior",
+    "Proyecto comercial": "Commercial Project"
   },
   "partners": {
     "meta": {
