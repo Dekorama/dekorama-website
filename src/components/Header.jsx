@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { useTranslations, useLocale } from 'next-intl'
 import { Link, usePathname } from '@/i18n/navigation'
+import { getSlugForLocale } from '@/lib/blogSlugMap'
 
 export default function Header() {
   const t = useTranslations('nav')
@@ -34,6 +35,16 @@ export default function Header() {
     { label: t('process'), href: '/#proceso' },
     { label: t('contact'), href: '/#contacto' },
   ]
+
+  // Translate blog post slug when switching locales
+  const getLocalizedPathname = (targetLocale) => {
+    const blogPostMatch = pathname.match(/^\/blog\/(.+)$/)
+    if (blogPostMatch) {
+      const translatedSlug = getSlugForLocale(blogPostMatch[1], targetLocale, locale)
+      return `/blog/${translatedSlug}`
+    }
+    return pathname
+  }
 
   return (
     <header
@@ -70,7 +81,7 @@ export default function Header() {
             <div className="flex items-center gap-3">
               <span className="flex items-center gap-1 text-sm font-medium text-gray-500">
                 <Link
-                  href={pathname}
+                  href={getLocalizedPathname('es')}
                   locale="es"
                   className={locale === 'es' ? 'text-black font-semibold' : 'hover:text-black transition-colors'}
                   aria-current={locale === 'es' ? 'true' : undefined}
@@ -79,7 +90,7 @@ export default function Header() {
                 </Link>
                 <span aria-hidden>|</span>
                 <Link
-                  href={pathname}
+                  href={getLocalizedPathname('en')}
                   locale="en"
                   className={locale === 'en' ? 'text-black font-semibold' : 'hover:text-black transition-colors'}
                   aria-current={locale === 'en' ? 'true' : undefined}
@@ -98,11 +109,11 @@ export default function Header() {
 
           <div className="flex items-center gap-2 sm:gap-3 md:hidden">
             <span className="flex items-center gap-1 text-xs sm:text-sm">
-              <Link href={pathname} locale="es" className={locale === 'es' ? 'font-semibold text-black' : 'text-gray-500'}>
+              <Link href={getLocalizedPathname('es')} locale="es" className={locale === 'es' ? 'font-semibold text-black' : 'text-gray-500'}>
                 ES
               </Link>
               <span>|</span>
-              <Link href={pathname} locale="en" className={locale === 'en' ? 'font-semibold text-black' : 'text-gray-500'}>
+              <Link href={getLocalizedPathname('en')} locale="en" className={locale === 'en' ? 'font-semibold text-black' : 'text-gray-500'}>
                 EN
               </Link>
             </span>

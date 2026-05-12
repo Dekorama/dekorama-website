@@ -1,6 +1,6 @@
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import { getTranslations } from 'next-intl/server'
 import { getPostBySlug, getPostSlugs } from '@/lib/blog'
 import { getSlugForLocale } from '@/lib/blogSlugMap'
@@ -53,7 +53,15 @@ export async function generateMetadata({ params }) {
 export default async function BlogPostPage({ params }) {
   const { locale, slug } = await Promise.resolve(params)
   const post = await getPostBySlug(slug, locale)
-  if (!post) notFound()
+
+  // If slug not found in this locale, try to redirect to the correct locale's slug
+  if (!post) {
+    const correctSlug = getSlugForLocale(slug, locale, locale === 'es' ? 'en' : 'es')
+    if (correctSlug && correctSlug !== slug) {
+      redirect(`/${locale}/blog/${correctSlug}`)
+    }
+    notFound()
+  }
 
   const t = await getTranslations('blog')
   const tCta = await getTranslations('cta')
@@ -102,6 +110,7 @@ export default async function BlogPostPage({ params }) {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-8 md:pt-16 md:pb-12">
             <Link
               href="/blog"
+              locale={locale}
               className="inline-flex items-center text-sm font-medium text-gray-600 hover:text-black transition-colors mb-8"
             >
               <svg className="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -154,12 +163,14 @@ export default async function BlogPostPage({ params }) {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/#contacto"
+              locale={locale}
               className="inline-block px-8 py-4 bg-white text-black font-medium hover:bg-gray-100 transition-all duration-300 hover:scale-105 rounded-sm"
             >
               {tCta('requestFreeVisit')}
             </Link>
             <Link
               href="/blog"
+              locale={locale}
               className="inline-block px-8 py-4 border-2 border-white text-white font-medium hover:bg-white hover:text-black transition-all duration-300 rounded-sm"
             >
               {tCta('viewMoreArticles')}

@@ -54,6 +54,7 @@ export default async function BlogPage({ params }) {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
+                locale={locale}
                 className="group block bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl hover:border-gray-300 transition-all duration-300"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
@@ -101,6 +102,7 @@ export default async function BlogPage({ params }) {
           <p className="text-gray-300">{tCta('requestVisitNoCommitment')}</p>
           <Link
             href="/#contacto"
+            locale={locale}
             className="inline-block px-8 py-4 bg-white text-black font-medium hover:bg-gray-100 transition-all duration-300 hover:scale-105 rounded-sm"
           >
             {tCta('requestFreeVisit')}
