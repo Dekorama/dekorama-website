@@ -62,7 +62,8 @@ export default async function LocaleLayout({ children, params }) {
 
   const localBusinessJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'HomeGoodStore',
+    '@type': 'LocalBusiness',
+    '@id': `${baseUrl}/#business`,
     name: 'Dekorama',
     description: businessDescription,
     url: baseUrl,
