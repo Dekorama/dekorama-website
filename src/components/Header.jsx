@@ -33,7 +33,7 @@ export default function Header() {
     { label: t('projects'), href: '/proyectos' },
     { label: t('blog'), href: '/blog' },
     { label: t('process'), href: '/#proceso' },
-    { label: t('contact'), href: '/#contacto' },
+    { label: t('contact'), href: '/contacto' },
   ]
 
   // Translate blog post slug when switching locales
