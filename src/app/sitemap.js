@@ -1,4 +1,4 @@
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dekorama.es'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dekoramagroup.com'
 
 import { getPostSlugs } from '@/lib/blog'
 
@@ -13,6 +13,7 @@ const staticPaths = [
   { path: '/catalogo', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/proyectos', priority: 0.9, changeFrequency: 'weekly' },
   { path: '/blog', priority: 0.8, changeFrequency: 'weekly' },
+  { path: '/contacto', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/partners', priority: 0.7, changeFrequency: 'monthly' },
   { path: '/politica-privacidad', priority: 0.3, changeFrequency: 'yearly' },
   { path: '/aviso-legal', priority: 0.3, changeFrequency: 'yearly' },
