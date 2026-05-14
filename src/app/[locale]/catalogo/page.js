@@ -62,8 +62,6 @@ export default function CatalogoPage() {
 
       {/* ── HERO ── */}
       <section className="relative bg-black pt-36 pb-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* subtle texture overlay */}
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1615873968403-89e068629265?w=1600&q=30')] bg-cover bg-center opacity-10 pointer-events-none" />
         <div className="relative max-w-3xl mx-auto text-center">
           {/* Badge */}
           <span className="inline-block mb-6 px-4 py-1 border border-[#c9a96e]/60 text-[#c9a96e] text-xs font-semibold tracking-[0.2em] uppercase">
