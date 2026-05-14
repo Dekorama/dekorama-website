@@ -2,7 +2,6 @@ import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { images } from '@/data/images'
 import { baseUrl } from '@/lib/site'
-import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 
 export async function generateMetadata({ params }) {
@@ -27,9 +26,10 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default function MaterialesPremiumPage() {
-  const t = useTranslations('pages.materiales')
-  const tCta = useTranslations('cta')
+export default async function MaterialesPremiumPage({ params }) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'pages.materiales' })
+  const tCta = await getTranslations({ locale, namespace: 'cta' })
   
   const categorias = [
     {
