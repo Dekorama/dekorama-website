@@ -2,7 +2,6 @@ const CATALOG_LINK = 'https://docsend.com/view/vbk8cc9avqdkmjnw'
 import { baseUrl } from '@/lib/site'
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
-import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 
 export async function generateMetadata({ params }) {
@@ -54,8 +53,9 @@ const MATERIAL_CATEGORIES = [
   },
 ]
 
-export default function CatalogoPage() {
-  const t = useTranslations('pages.catalogo')
+export default async function CatalogoPage({ params }) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'pages.catalogo' })
   
   return (
     <div className="min-h-screen bg-white">

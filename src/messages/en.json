@@ -476,5 +476,14 @@
       "orWhatsApp": "Or write to us directly on WhatsApp",
       "whatsAppCta": "Open WhatsApp"
     }
+  },
+  "contactPage": {
+    "metaTitle": "Contact | Dekorama Costa del Sol",
+    "metaDescription": "Contact Dekorama for full renovations, custom kitchens and bathrooms on the Costa del Sol. Complimentary consultation. Visit our showroom in Benalmádena.",
+    "title": "Contact",
+    "subtitle": "Tell us about your project and we'll get back to you as soon as possible. Visit us at our showroom or request a complimentary consultation.",
+    "infoAddress": "Address",
+    "infoPhone": "Phone",
+    "infoEmail": "Email"
   }
 }

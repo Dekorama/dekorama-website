@@ -476,5 +476,14 @@
       "orWhatsApp": "O escríbenos directamente por WhatsApp",
       "whatsAppCta": "Abrir WhatsApp"
     }
+  },
+  "contactPage": {
+    "metaTitle": "Contacto | Dekorama Costa del Sol",
+    "metaDescription": "Contacta con Dekorama para reformas integrales, cocinas y baños a medida en la Costa del Sol. Consulta sin costo. Visítanos en nuestro showroom en Benalmádena.",
+    "title": "Contacto",
+    "subtitle": "Cuéntanos tu proyecto y te responderemos lo antes posible. Visítanos en nuestro showroom o solicita una consulta sin costo.",
+    "infoAddress": "Dirección",
+    "infoPhone": "Teléfono",
+    "infoEmail": "Email"
   }
 }
