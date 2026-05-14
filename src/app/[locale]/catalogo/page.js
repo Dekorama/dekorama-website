@@ -41,7 +41,7 @@ const MATERIAL_CATEGORIES = [
   },
   {
     key: 'lighting',
-    image: 'https://images.unsplash.com/photo-1513506003901-1e6a35c4ce74?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1565814636199-ae8133055c1c?w=600&q=80',
   },
   {
     key: 'bathroom',
