@@ -86,8 +86,9 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">{t('contact')}</h3>
             <ul className="space-y-2 text-gray-400">
               <li className="leading-relaxed">
-                Las Ventas, Av. Tivoli, 17<br />
-                C.C., Local 5, 29631 Benalmádena, Málaga
+                {t('address').split('\n').map((line, i) => (
+                  <span key={i}>{line}<br /></span>
+                ))}
               </li>
               <li>
                 <a href="tel:+34628571537" className="hover:text-white transition-colors">

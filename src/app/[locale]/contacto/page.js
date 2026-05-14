@@ -23,8 +23,10 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default async function ContactoPage() {
-  const t = await getTranslations('contactPage')
+export default async function ContactoPage({ params }) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'contactPage' })
+  const tFooter = await getTranslations({ locale, namespace: 'footer' })
 
   return (
     <div className="min-h-screen bg-white pt-20">
@@ -52,9 +54,9 @@ export default async function ContactoPage() {
             </div>
             <p className="font-semibold text-black">{t('infoAddress')}</p>
             <p className="text-gray-500 text-sm leading-relaxed">
-              Las Ventas, Av. Tivoli, 17<br />
-              C.C., Local 5<br />
-              29631 Benalmádena, Málaga
+              {tFooter('address').split('\n').map((line, i) => (
+                <span key={i}>{line}<br /></span>
+              ))}
             </p>
           </div>
 

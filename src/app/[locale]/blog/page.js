@@ -25,10 +25,10 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function BlogPage({ params }) {
-  const { locale } = await Promise.resolve(params || {})
+  const { locale } = await params
   const posts = getPosts(locale)
-  const t = await getTranslations('blog')
-  const tCta = await getTranslations('cta')
+  const t = await getTranslations({ locale, namespace: 'blog' })
+  const tCta = await getTranslations({ locale, namespace: 'cta' })
   const formatDate = (dateStr) => {
     const d = new Date(dateStr)
     return d.toLocaleDateString(locale === 'en' ? 'en-GB' : 'es-ES', { year: 'numeric', month: 'long', day: 'numeric' })
