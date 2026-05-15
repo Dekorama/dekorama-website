@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl'
 
 const GOOGLE_REVIEWS_URL =
-  'https://www.google.com/search?sa=X&q=Dekorama+Reviews&tbm=lcl&hl=es#lkt=LocalPoiReviews'
+  'https://www.google.com/search?sca_esv=498f31acae8dba9f&rlz=1C5GCEM_enES1180ES1180&sxsrf=ANbL-n45ovXOU4K7gzn7sazY8HybySDHUw:1778875912827&q=dekorama+benalmadena&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOXMZk2BXDn_wSp9zZHH_6O6pdFfhYccHfZ2-Dk4yl_92Zw9AXArCsqRs6aka1djDIOfuTJw%3D&uds=ALYpb_lLt3rF4OntvAcKw6YR8l5VVBsMcczqtsRAOjcYb7ygvr_nsXYI7zqQE_oAKC5GK9unwZbGRqvjEyp8xdxG2U-Ch107_lpvTexeVg-Rkrxu3Tw6rZI&sa=X&ved=2ahUKEwikzIiXjbyUAxWKNvsDHZ3hJ1gQ3PALegQIHBAE'
 
 export default function Testimonios() {
   const t = useTranslations('testimonios')
