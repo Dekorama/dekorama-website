@@ -9,12 +9,12 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          <div className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 mb-12">
+          <div className="space-y-4 lg:col-span-1">
             <div>
               <div className="text-2xl font-bold">Dekorama</div>
             </div>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed text-sm">
               {t('description')}
             </p>
             <p className="text-gray-400 text-sm">
@@ -27,7 +27,7 @@ export default function Footer() {
 
           <div>
             <h3 className="text-lg font-semibold mb-4">{t('services')}</h3>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-2 text-gray-400 text-sm">
               <li>
                 <Link href="/reformas-integrales" className="hover:text-white transition-colors">
                   {t('reformas')}
@@ -57,8 +57,39 @@ export default function Footer() {
           </div>
 
           <div>
+            <h3 className="text-lg font-semibold mb-4">{t('cities')}</h3>
+            <ul className="space-y-2 text-gray-400 text-sm">
+              <li>
+                <Link href="/reformas-marbella" className="hover:text-white transition-colors">
+                  {t('marbella')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/reformas-fuengirola" className="hover:text-white transition-colors">
+                  {t('fuengirola')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/reformas-estepona" className="hover:text-white transition-colors">
+                  {t('estepona')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/reformas-torremolinos" className="hover:text-white transition-colors">
+                  {t('torremolinos')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/porcelanicos-malaga" className="hover:text-white transition-colors">
+                  {t('porcelanicosMalaga')}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
             <h3 className="text-lg font-semibold mb-4">{t('company')}</h3>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-2 text-gray-400 text-sm">
               <li>
                 <Link href="/blog" className="hover:text-white transition-colors">
                   {t('blog')}
@@ -84,7 +115,7 @@ export default function Footer() {
 
           <div>
             <h3 className="text-lg font-semibold mb-4">{t('contact')}</h3>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-2 text-gray-400 text-sm">
               <li className="leading-relaxed">
                 {t('address').split('\n').map((line, i) => (
                   <span key={i}>{line}<br /></span>

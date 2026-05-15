@@ -85,6 +85,20 @@ export default async function LocaleLayout({ children, params }) {
       latitude: 36.5971,
       longitude: -4.5164,
     },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '09:00',
+        closes: '18:00',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: 'Saturday',
+        opens: '10:00',
+        closes: '14:00',
+      },
+    ],
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.8',
@@ -93,6 +107,53 @@ export default async function LocaleLayout({ children, params }) {
     },
     sameAs: [
       'https://www.dekoramagroup.com',
+      'https://www.instagram.com/grupodekorama',
+      'https://www.facebook.com/grupodekorama',
+      'https://es.pinterest.com/dekoramagroup',
+    ],
+  }
+
+  const websiteJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${baseUrl}/#website`,
+    name: 'Dekorama',
+    url: baseUrl,
+    description: businessDescription,
+    publisher: {
+      '@id': `${baseUrl}/#business`,
+    },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${baseUrl}/${locale}/blog?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
+    inLanguage: [resolvedLocale === 'en' ? 'en-GB' : 'es-ES'],
+  }
+
+  const organizationJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${baseUrl}/#organization`,
+    name: 'Dekorama',
+    url: baseUrl,
+    logo: `${baseUrl}/dekorama-logo-cropped.svg`,
+    description: businessDescription,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+34-628-571-537',
+      contactType: 'customer service',
+      email: 'info@dekorama.es',
+      areaServed: ['ES', 'GB'],
+      availableLanguage: ['Spanish', 'English'],
+    },
+    sameAs: [
+      'https://www.instagram.com/grupodekorama',
+      'https://www.facebook.com/grupodekorama',
+      'https://es.pinterest.com/dekoramagroup',
     ],
   }
 
@@ -102,6 +163,14 @@ export default async function LocaleLayout({ children, params }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
       />
       <GoogleTagManager />
       <GoogleAnalytics />

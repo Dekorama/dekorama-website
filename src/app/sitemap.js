@@ -15,6 +15,13 @@ const staticPaths = [
   { path: '/blog', priority: 0.8, changeFrequency: 'weekly' },
   { path: '/contacto', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/partners', priority: 0.7, changeFrequency: 'monthly' },
+  // Páginas por ciudad (SEO local crítico)
+  { path: '/reformas-marbella', priority: 0.95, changeFrequency: 'monthly' },
+  { path: '/reformas-fuengirola', priority: 0.95, changeFrequency: 'monthly' },
+  { path: '/reformas-estepona', priority: 0.95, changeFrequency: 'monthly' },
+  { path: '/reformas-torremolinos', priority: 0.95, changeFrequency: 'monthly' },
+  { path: '/porcelanicos-malaga', priority: 0.9, changeFrequency: 'monthly' },
+  // Páginas legales
   { path: '/politica-privacidad', priority: 0.3, changeFrequency: 'yearly' },
   { path: '/aviso-legal', priority: 0.3, changeFrequency: 'yearly' },
   { path: '/cookies', priority: 0.3, changeFrequency: 'yearly' },

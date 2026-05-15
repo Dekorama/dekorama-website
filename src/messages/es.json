@@ -26,7 +26,7 @@
     "freeVisit": "Visita sin costo"
   },
   "hero": {
-    "title": "Reformas integrales y materiales de diseño en la Costa del Sol",
+    "title": "Reformas Costa del Sol | Porcelánicos Benalmádena",
     "subtitle": "Tu empresa de confianza en Benalmádena, Marbella, Fuengirola y Torremolinos. Porcelánico, cocinas y baños de lujo para tu vivienda o villa.",
     "experience": "Más de 10 años reformando hogares en Málaga",
     "requestConsultation": "Solicitar visita gratuita",
@@ -37,6 +37,7 @@
     "store": "Tienda:",
     "address": "Las Ventas, Avenida Tivoli, 17\nCentro Comercial, Local 5\n29631 Benalmádena, Málaga",
     "services": "Servicios",
+    "cities": "Ciudades",
     "company": "Empresa",
     "ourProcess": "Nuestro proceso",
     "contact": "Contacto",
@@ -45,6 +46,11 @@
     "banos": "Baños completos",
     "materiales": "Materiales premium",
     "catalog": "Catálogo",
+    "marbella": "Marbella",
+    "fuengirola": "Fuengirola",
+    "estepona": "Estepona",
+    "torremolinos": "Torremolinos",
+    "porcelanicosMalaga": "Porcelánicos Málaga",
     "blog": "Blog",
     "projects": "Proyectos",
     "privacy": "Política de Privacidad",
@@ -292,7 +298,7 @@
       }
     },
     "materiales": {
-      "title": "Materiales Premium para Reformas | Benalmádena, Costa del Sol",
+      "title": "Materiales Premium Reformas | Benalmádena Málaga",
       "description": "Venta de materiales premium para reformas en Benalmádena y la Costa del Sol. Porcelánicos, grifería, platos de ducha, iluminación LED, mamparas y materiales de exterior.",
       "h1": "Materiales Premium para Tu Reforma",
       "intro": "En nuestro showroom encontrarás las mejores marcas de porcelánicos, grifería, sanitarios, iluminación y todo lo que necesitas para tu proyecto.",
@@ -315,7 +321,7 @@
       "visitaDesc": "Te asesoramos personalmente en nuestro showroom de Benalmádena. Trae tu proyecto y te ayudamos a escoger los mejores materiales."
     },
     "catalogo": {
-      "title": "Catálogo de Porcelánicos y Materiales | Benalmádena, Costa del Sol",
+      "title": "Catálogo Porcelánicos | Dekorama Costa del Sol",
       "description": "Catálogo online de materiales premium para reformas en Benalmádena y la Costa del Sol. Porcelánicos, grifería, sanitarios, iluminación y más. Dekorama.",
       "h1": "Materiales que definen el lujo",
       "eyebrow": "Catálogo exclusivo 2025–2026",
@@ -347,7 +353,7 @@
       "visitShowroom": "¿Prefieres verlo en persona? Visítanos en nuestro showroom en Benalmádena y te asesoramos sin compromiso."
     },
     "proyectos": {
-      "title": "Proyectos de Reformas en Benalmádena y Costa del Sol | Dekorama",
+      "title": "Proyectos Reformas Costa del Sol | Dekorama",
       "description": "Galería de proyectos de reformas integrales, cocinas y baños realizados por Dekorama en Benalmádena y la Costa del Sol. Obras terminadas.",
       "h1": "Proyectos que hablan por nosotros",
       "intro": "Cada reforma es un proyecto único. Estos son algunos de los trabajos que hemos realizado en la Costa del Sol.",
@@ -485,5 +491,84 @@
     "infoAddress": "Dirección",
     "infoPhone": "Teléfono",
     "infoEmail": "Email"
+  },
+  "ciudades": {
+    "marbella": {
+      "title": "Reformas Integrales Marbella | Dekorama",
+      "description": "Reformas integrales de lujo en Marbella. Cocinas, baños y diseño de interiores con materiales premium. Presupuesto sin costo para tu villa o apartamento.",
+      "h1": "Reformas Integrales en Marbella",
+      "intro": "Especialistas en reformas de alto standing en Marbella y alrededores. Transformamos villas, apartamentos y espacios comerciales con diseño exclusivo y materiales de primeras marcas.",
+      "whyUs": "Tu empresa de reformas de confianza en Marbella",
+      "whyUsDesc": "Más de 10 años ejecutando proyectos en Marbella, Puerto Banús, Nueva Andalucía y San Pedro Alcántara. Conocemos las particularidades del mercado de lujo de la zona y trabajamos con los más altos estándares de calidad.",
+      "servicesTitle": "Nuestros servicios en Marbella",
+      "zonesTitle": "Zonas de actuación en Marbella",
+      "zonesDesc": "Centro de Marbella, Puerto Banús, Nueva Andalucía, San Pedro Alcántara, Golden Mile, Sierra Blanca, Las Chapas, Elviria y toda la zona este y oeste de Marbella."
+    },
+    "fuengirola": {
+      "title": "Reformas Integrales Fuengirola | Dekorama",
+      "description": "Reformas integrales en Fuengirola. Especialistas en cocinas, baños y renovación completa de apartamentos. Consulta gratuita y presupuesto personalizado.",
+      "h1": "Reformas Integrales en Fuengirola",
+      "intro": "Transformamos tu hogar en Fuengirola con reformas integrales personalizadas. Desde diseño hasta ejecución, nos encargamos de todo para que solo te preocupes de disfrutar el resultado.",
+      "whyUs": "Expertos en reformas en Fuengirola",
+      "whyUsDesc": "Conocemos perfectamente la zona de Fuengirola, Los Boliches, Torreblanca y Carvajal. Amplia experiencia en reformas de apartamentos turísticos y residenciales.",
+      "servicesTitle": "Servicios de reforma en Fuengirola",
+      "zonesTitle": "Zonas de servicio en Fuengirola",
+      "zonesDesc": "Centro de Fuengirola, Los Boliches, Torreblanca, Carvajal, Reserva del Higuerón y todas las urbanizaciones de Fuengirola."
+    },
+    "estepona": {
+      "title": "Reformas Integrales Estepona | Dekorama",
+      "description": "Reformas integrales en Estepona. Cocinas a medida, baños completos y diseño de interiores. Materiales premium y acabados de lujo para tu vivienda.",
+      "h1": "Reformas Integrales en Estepona",
+      "intro": "Especialistas en reformas de calidad en Estepona. Diseñamos y ejecutamos proyectos completos con materiales premium y acabados profesionales que destacan.",
+      "whyUs": "Reformas de alto nivel en Estepona",
+      "whyUsDesc": "Experiencia en todo tipo de reformas en Estepona, desde apartamentos hasta villas de lujo. Atención personalizada y compromiso con la excelencia en cada proyecto.",
+      "servicesTitle": "Servicios en Estepona",
+      "zonesTitle": "Cobertura en Estepona",
+      "zonesDesc": "Centro de Estepona, Puerto de Estepona, Selwo, Cancelada, Villacana, El Padrón y toda la costa de Estepona hasta Casares."
+    },
+    "torremolinos": {
+      "title": "Reformas Integrales Torremolinos | Dekorama",
+      "description": "Reformas integrales en Torremolinos. Cocinas, baños y renovación completa de viviendas. Presupuesto detallado y obra sin sorpresas.",
+      "h1": "Reformas Integrales en Torremolinos",
+      "intro": "Renovamos tu hogar en Torremolinos con reformas integrales de principio a fin. Diseño personalizado, materiales de calidad y ejecución profesional garantizada.",
+      "whyUs": "Tu mejor opción para reformar en Torremolinos",
+      "whyUsDesc": "Amplio conocimiento de la zona de Torremolinos, La Carihuela, Bajondillo y Playamar. Reformas tanto para residentes como para propiedades de alquiler vacacional.",
+      "servicesTitle": "Qué ofrecemos en Torremolinos",
+      "zonesTitle": "Áreas de servicio en Torremolinos",
+      "zonesDesc": "Centro de Torremolinos, La Carihuela, Bajondillo, Playamar, Montemar, Los Álamos y toda la costa de Torremolinos."
+    },
+    "porcelanicos": {
+      "title": "Porcelánicos Málaga | Dekorama Costa del Sol",
+      "description": "Venta de porcelánicos de primeras marcas en Málaga y Costa del Sol. PORCELANOSA, MARAZZI, KERABEN, APARICI. Showroom en Benalmádena. Asesoramiento profesional.",
+      "h1": "Porcelánicos de Primeras Marcas en Málaga",
+      "intro": "Descubre nuestra amplia selección de porcelánicos para suelos y paredes. Las mejores marcas europeas al mejor precio, con asesoramiento personalizado en nuestro showroom de Benalmádena.",
+      "marcasTitle": "Marcas de porcelánicos que trabajamos",
+      "marcasDesc": "Trabajamos exclusivamente con las mejores marcas de porcelánicos del mercado: PORCELANOSA, MARAZZI, KERABEN, APARICI, ROCA, VIVES, GRESPANIA. Calidad europea garantizada.",
+      "categoriasTitle": "Categorías de porcelánicos disponibles",
+      "cat1": "Porcelánico imitación madera",
+      "cat1Desc": "Acabado realista, durabilidad superior. Ideal para salones y dormitorios.",
+      "cat2": "Porcelánico imitación mármol",
+      "cat2Desc": "Elegancia del mármol sin mantenimiento. Perfecto para baños y cocinas.",
+      "cat3": "Porcelánico gran formato",
+      "cat3Desc": "Piezas hasta 120x280cm. Mínimas juntas, máximo impacto visual.",
+      "cat4": "Porcelánico exterior antideslizante",
+      "cat4Desc": "Resistente a heladas y altas temperaturas. Seguro para terrazas y piscinas.",
+      "ventajasTitle": "Por qué elegir porcelánico",
+      "ventaja1": "Resistencia extrema",
+      "ventaja1Desc": "Dureza superior al mármol natural. No se raya ni se mancha.",
+      "ventaja2": "Mantenimiento mínimo",
+      "ventaja2Desc": "Sin necesidad de tratamientos especiales. Limpieza simple con agua.",
+      "ventaja3": "Gran variedad de diseños",
+      "ventaja3Desc": "Imitaciones de madera, piedra, cemento, mármol. Cualquier estilo es posible.",
+      "showroomTitle": "Visita nuestro showroom en Benalmádena",
+      "showroomDesc": "Ven a tocar y ver nuestros porcelánicos en persona. Te asesoramos sin compromiso y te ayudamos a elegir el mejor material para tu proyecto. Fácil acceso desde Málaga, Marbella, Fuengirola, Torremolinos y toda la Costa del Sol."
+    },
+    "commonCTA": "Solicitar visita gratuita",
+    "commonServices": {
+      "service1": "Reformas integrales completas",
+      "service2": "Cocinas a medida de diseño",
+      "service3": "Baños completos con porcelánicos premium",
+      "service4": "Suministro e instalación de materiales"
+    }
   }
 }

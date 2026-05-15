@@ -37,6 +37,7 @@
     "store": "Store:",
     "address": "Las Ventas, Avenida Tivoli, 17\nShopping Centre, Unit 5\n29631 Benalmádena, Málaga",
     "services": "Services",
+    "cities": "Cities",
     "company": "Company",
     "ourProcess": "Our process",
     "contact": "Contact",
@@ -45,6 +46,11 @@
     "banos": "Complete Bathrooms",
     "materiales": "Premium Materials",
     "catalog": "Catalog",
+    "marbella": "Marbella",
+    "fuengirola": "Fuengirola",
+    "estepona": "Estepona",
+    "torremolinos": "Torremolinos",
+    "porcelanicosMalaga": "Porcelain Tiles Málaga",
     "blog": "Blog",
     "projects": "Projects",
     "privacy": "Privacy Policy",
@@ -315,7 +321,7 @@
       "visitaDesc": "We advise you personally in our Benalmádena showroom. Bring your project and we'll help you choose the best materials."
     },
     "catalogo": {
-      "title": "Porcelain Tiles & Materials Catalogue | Benalmádena, Costa del Sol",
+      "title": "Tiles & Materials Catalogue | Costa del Sol",
       "description": "Online catalogue of premium renovation materials in Benalmádena and the Costa del Sol. Porcelain tiles, taps, sanitaryware, lighting and more. Dekorama.",
       "h1": "Materials that define luxury",
       "eyebrow": "Exclusive catalogue 2025–2026",
@@ -347,7 +353,7 @@
       "visitShowroom": "Prefer to see it in person? Visit our showroom in Benalmádena — no commitment needed."
     },
     "proyectos": {
-      "title": "Renovation Projects in Benalmádena & Costa del Sol | Dekorama",
+      "title": "Renovation Projects Costa del Sol | Dekorama",
       "description": "Gallery of full renovation, kitchen and bathroom projects by Dekorama in Benalmádena and the Costa del Sol. Completed works.",
       "h1": "Projects that speak for us",
       "intro": "Every renovation is a unique project. These are some of the works we have carried out on the Costa del Sol.",
@@ -485,5 +491,84 @@
     "infoAddress": "Address",
     "infoPhone": "Phone",
     "infoEmail": "Email"
+  },
+  "ciudades": {
+    "marbella": {
+      "title": "Full Renovations Marbella | Dekorama",
+      "description": "Luxury full renovations in Marbella. Kitchens, bathrooms and interior design with premium materials. Complimentary quote for your villa or apartment.",
+      "h1": "Full Renovations in Marbella",
+      "intro": "Specialists in high-end renovations in Marbella and surroundings. We transform villas, apartments and commercial spaces with exclusive design and top-brand materials.",
+      "whyUs": "Your trusted renovation company in Marbella",
+      "whyUsDesc": "Over 10 years executing projects in Marbella, Puerto Banús, Nueva Andalucía and San Pedro Alcántara. We know the particularities of the luxury market in the area and work to the highest quality standards.",
+      "servicesTitle": "Our services in Marbella",
+      "zonesTitle": "Service areas in Marbella",
+      "zonesDesc": "Marbella Centre, Puerto Banús, Nueva Andalucía, San Pedro Alcántara, Golden Mile, Sierra Blanca, Las Chapas, Elviria and the entire east and west of Marbella."
+    },
+    "fuengirola": {
+      "title": "Full Renovations Fuengirola | Dekorama",
+      "description": "Full renovations in Fuengirola. Specialists in kitchens, bathrooms and complete apartment renovation. Free consultation and personalised quote.",
+      "h1": "Full Renovations in Fuengirola",
+      "intro": "We transform your home in Fuengirola with personalised full renovations. From design to execution, we take care of everything so you only have to worry about enjoying the result.",
+      "whyUs": "Renovation experts in Fuengirola",
+      "whyUsDesc": "We know the Fuengirola area perfectly, Los Boliches, Torreblanca and Carvajal. Extensive experience in holiday and residential apartment renovations.",
+      "servicesTitle": "Renovation services in Fuengirola",
+      "zonesTitle": "Service areas in Fuengirola",
+      "zonesDesc": "Fuengirola Centre, Los Boliches, Torreblanca, Carvajal, Reserva del Higuerón and all Fuengirola developments."
+    },
+    "estepona": {
+      "title": "Full Renovations Estepona | Dekorama",
+      "description": "Full renovations in Estepona. Custom kitchens, complete bathrooms and interior design. Premium materials and luxury finishes for your home.",
+      "h1": "Full Renovations in Estepona",
+      "intro": "Quality renovation specialists in Estepona. We design and execute complete projects with premium materials and professional finishes that stand out.",
+      "whyUs": "High-level renovations in Estepona",
+      "whyUsDesc": "Experience in all types of renovations in Estepona, from apartments to luxury villas. Personalised attention and commitment to excellence in every project.",
+      "servicesTitle": "Services in Estepona",
+      "zonesTitle": "Coverage in Estepona",
+      "zonesDesc": "Estepona Centre, Estepona Port, Selwo, Cancelada, Villacana, El Padrón and the entire Estepona coast to Casares."
+    },
+    "torremolinos": {
+      "title": "Full Renovations Torremolinos | Dekorama",
+      "description": "Full renovations in Torremolinos. Kitchens, bathrooms and complete home renovation. Detailed quote and work without surprises.",
+      "h1": "Full Renovations in Torremolinos",
+      "intro": "We renovate your home in Torremolinos with full renovations from start to finish. Custom design, quality materials and guaranteed professional execution.",
+      "whyUs": "Your best option for renovating in Torremolinos",
+      "whyUsDesc": "Extensive knowledge of the Torremolinos area, La Carihuela, Bajondillo and Playamar. Renovations for both residents and holiday rental properties.",
+      "servicesTitle": "What we offer in Torremolinos",
+      "zonesTitle": "Service areas in Torremolinos",
+      "zonesDesc": "Torremolinos Centre, La Carihuela, Bajondillo, Playamar, Montemar, Los Álamos and the entire Torremolinos coast."
+    },
+    "porcelanicos": {
+      "title": "Porcelain Tiles Málaga | Dekorama Costa del Sol",
+      "description": "Sale of top-brand porcelain tiles in Málaga and Costa del Sol. PORCELANOSA, MARAZZI, KERABEN, APARICI. Showroom in Benalmádena. Professional advice.",
+      "h1": "Top-Brand Porcelain Tiles in Málaga",
+      "intro": "Discover our wide selection of porcelain tiles for floors and walls. The best European brands at the best price, with personalised advice in our Benalmádena showroom.",
+      "marcasTitle": "Porcelain tile brands we work with",
+      "marcasDesc": "We work exclusively with the best porcelain tile brands on the market: PORCELANOSA, MARAZZI, KERABEN, APARICI, ROCA, VIVES, GRESPANIA. Guaranteed European quality.",
+      "categoriasTitle": "Available porcelain tile categories",
+      "cat1": "Wood-effect porcelain tiles",
+      "cat1Desc": "Realistic finish, superior durability. Ideal for living rooms and bedrooms.",
+      "cat2": "Marble-effect porcelain tiles",
+      "cat2Desc": "Marble elegance without maintenance. Perfect for bathrooms and kitchens.",
+      "cat3": "Large-format porcelain tiles",
+      "cat3Desc": "Pieces up to 120x280cm. Minimal joints, maximum visual impact.",
+      "cat4": "Non-slip outdoor porcelain tiles",
+      "cat4Desc": "Frost and high-temperature resistant. Safe for terraces and pools.",
+      "ventajasTitle": "Why choose porcelain tiles",
+      "ventaja1": "Extreme resistance",
+      "ventaja1Desc": "Harder than natural marble. Does not scratch or stain.",
+      "ventaja2": "Minimal maintenance",
+      "ventaja2Desc": "No special treatments needed. Simple cleaning with water.",
+      "ventaja3": "Great variety of designs",
+      "ventaja3Desc": "Wood, stone, cement, marble imitations. Any style is possible.",
+      "showroomTitle": "Visit our showroom in Benalmádena",
+      "showroomDesc": "Come and see and touch our porcelain tiles in person. We advise you at no obligation and help you choose the best material for your project. Easy access from Málaga, Marbella, Fuengirola, Torremolinos and the entire Costa del Sol."
+    },
+    "commonCTA": "Request free visit",
+    "commonServices": {
+      "service1": "Complete full renovations",
+      "service2": "Custom design kitchens",
+      "service3": "Complete bathrooms with premium porcelain tiles",
+      "service4": "Supply and installation of materials"
+    }
   }
 }

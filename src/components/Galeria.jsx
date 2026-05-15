@@ -39,6 +39,9 @@ export default function Galeria() {
             const title = locale === 'es' ? proyecto.titleEs : proyecto.titleEn
             const desc = locale === 'es' ? proyecto.descEs : proyecto.descEn
             const category = tTypes(proyecto.category)
+            const altText = locale === 'es' 
+              ? `${category} ${title} - Dekorama Costa del Sol Málaga`
+              : `${category} ${title} - Dekorama Costa del Sol Malaga`
             
             return (
               <div
@@ -47,7 +50,7 @@ export default function Galeria() {
               >
                 <Image
                   src={proyecto.src}
-                  alt={title}
+                  alt={altText}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

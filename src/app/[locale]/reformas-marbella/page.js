@@ -1,0 +1,253 @@
+import { Link } from '@/i18n/navigation'
+import Image from 'next/image'
+import { images } from '@/data/images'
+import { baseUrl } from '@/lib/site'
+import { getTranslations } from 'next-intl/server'
+import CTAFinal from '@/components/CTAFinal'
+
+export async function generateMetadata({ params }) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'ciudades.marbella' })
+  
+  return {
+    title: t('title'),
+    description: t('description'),
+    openGraph: {
+      title: t('title'),
+      description: t('description'),
+      url: `/${locale}/reformas-marbella`,
+    },
+    alternates: { 
+      canonical: `${baseUrl}/${locale}/reformas-marbella`,
+      languages: {
+        'es': `${baseUrl}/es/reformas-marbella`,
+        'en': `${baseUrl}/en/reformas-marbella`,
+      }
+    },
+  }
+}
+
+export default async function ReformasMarbellaPage({ params }) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'ciudades.marbella' })
+  const tCommon = await getTranslations({ locale, namespace: 'ciudades' })
+  
+  const serviciosJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Reformas Integrales',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Dekorama',
+      '@id': `${baseUrl}/#business`,
+    },
+    areaServed: {
+      '@type': 'City',
+      name: 'Marbella',
+      '@id': 'https://www.wikidata.org/wiki/Q15088',
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Servicios de Reforma en Marbella',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: locale === 'es' ? 'Reformas integrales completas' : 'Complete full renovations',
+            description: locale === 'es' 
+              ? 'Reforma completa de viviendas y villas en Marbella con diseño personalizado'
+              : 'Complete renovation of homes and villas in Marbella with custom design',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: locale === 'es' ? 'Cocinas a medida de diseño' : 'Custom design kitchens',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: locale === 'es' ? 'Baños completos con porcelánicos premium' : 'Complete bathrooms with premium tiles',
+          },
+        },
+      ],
+    },
+  }
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: locale === 'es' ? 'Inicio' : 'Home',
+        item: `${baseUrl}/${locale}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: locale === 'es' ? 'Reformas Marbella' : 'Renovations Marbella',
+        item: `${baseUrl}/${locale}/reformas-marbella`,
+      },
+    ],
+  }
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviciosJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      
+      <div className="min-h-screen bg-white pt-20">
+        {/* Hero Section */}
+        <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+          <div className="max-w-7xl mx-auto">
+            <nav className="text-sm text-gray-500 mb-8">
+              <Link href="/" className="hover:text-black transition-colors">
+                {locale === 'es' ? 'Inicio' : 'Home'}
+              </Link>
+              {' / '}
+              <span className="text-black font-medium">
+                {locale === 'es' ? 'Reformas Marbella' : 'Renovations Marbella'}
+              </span>
+            </nav>
+            
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-6">
+                  {t('h1')}
+                </h1>
+                <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                  {t('intro')}
+                </p>
+                <Link
+                  href="/#contacto"
+                  className="inline-block px-8 py-4 bg-black text-white font-medium hover:bg-gray-800 transition-all duration-300"
+                >
+                  {tCommon('commonCTA')}
+                </Link>
+              </div>
+              <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                <Image
+                  src={images.hero}
+                  alt="Reformas integrales Marbella - Dekorama"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Us Section */}
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-semibold text-black mb-6">
+              {t('whyUs')}
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              {t('whyUsDesc')}
+            </p>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-12">
+              {t('servicesTitle')}
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[1, 2, 3, 4].map((num) => (
+                <div key={num} className="bg-white p-8 rounded-lg">
+                  <h3 className="text-xl font-semibold text-black mb-3">
+                    {tCommon(`commonServices.service${num}`)}
+                  </h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Zones Section */}
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-semibold text-black mb-6 text-center">
+              {t('zonesTitle')}
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed text-center">
+              {t('zonesDesc')}
+            </p>
+          </div>
+        </section>
+
+        {/* Related Services */}
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-semibold text-black mb-8 text-center">
+              {locale === 'es' ? 'Servicios relacionados' : 'Related services'}
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <Link
+                href="/reformas-integrales"
+                className="bg-white p-6 rounded-lg hover:shadow-lg transition-shadow"
+              >
+                <h3 className="text-lg font-semibold text-black mb-2">
+                  {locale === 'es' ? 'Reformas Integrales' : 'Full Renovations'}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {locale === 'es' 
+                    ? 'Descubre nuestro servicio completo de reformas'
+                    : 'Discover our complete renovation service'
+                  }
+                </p>
+              </Link>
+              <Link
+                href="/cocinas-a-medida"
+                className="bg-white p-6 rounded-lg hover:shadow-lg transition-shadow"
+              >
+                <h3 className="text-lg font-semibold text-black mb-2">
+                  {locale === 'es' ? 'Cocinas a Medida' : 'Custom Kitchens'}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {locale === 'es' 
+                    ? 'Diseños exclusivos adaptados a tu espacio'
+                    : 'Exclusive designs tailored to your space'
+                  }
+                </p>
+              </Link>
+              <Link
+                href="/banos-completos"
+                className="bg-white p-6 rounded-lg hover:shadow-lg transition-shadow"
+              >
+                <h3 className="text-lg font-semibold text-black mb-2">
+                  {locale === 'es' ? 'Baños Completos' : 'Complete Bathrooms'}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {locale === 'es' 
+                    ? 'Espacios de relax con materiales premium'
+                    : 'Relaxing spaces with premium materials'
+                  }
+                </p>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Final */}
+        <CTAFinal />
+      </div>
+    </>
+  )
+}

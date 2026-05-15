@@ -42,6 +42,9 @@ export default function ProyectosPage() {
               const title = locale === 'es' ? project.titleEs : project.titleEn
               const desc = locale === 'es' ? project.descEs : project.descEn
               const category = tTypes(project.category)
+              const altText = locale === 'es' 
+                ? `${category} ${title} - Dekorama Costa del Sol Málaga`
+                : `${category} ${title} - Dekorama Costa del Sol Malaga`
               return (
                 <div
                   key={index}
@@ -49,7 +52,7 @@ export default function ProyectosPage() {
                 >
                   <Image
                     src={project.src}
-                    alt={title}
+                    alt={altText}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
