@@ -18,6 +18,7 @@
   },
   "nav": {
     "services": "Services",
+    "materials": "Materials",
     "catalog": "Catalog",
     "projects": "Projects",
     "blog": "Blog",
@@ -319,6 +320,49 @@
       },
       "visita": "Come and visit us",
       "visitaDesc": "We advise you personally in our Benalmádena showroom. Bring your project and we'll help you choose the best materials."
+    },
+    "materialesHub": {
+      "title": "Bathroom and Kitchen Materials | Dekorama Benalmádena",
+      "description": "Discover the materials we sell in our Benalmádena store: taps, shower screens, sanitary ware, bathtubs, shower trays and porcelain tiles. Direct access to each category.",
+      "eyebrow": "Materials showroom",
+      "h1": "Everything we sell for bathrooms, kitchens and renovations",
+      "intro": "We grouped the most searched categories from our store into one page so the visitor can quickly see what we sell and jump straight into each specialist section.",
+      "tag1": "Physical store in Benalmádena",
+      "tag2": "Premium brands",
+      "tag3": "Materials or full renovation",
+      "primaryCta": "View full showroom",
+      "secondaryCta": "Request advice",
+      "heroAlt": "Dekorama materials showroom in Benalmádena",
+      "gridTitle": "Featured categories",
+      "gridIntro": "Each category links to its own dedicated page to capture commercial searches and make navigation easier for users looking for a specific product.",
+      "catalogCta": "View catalog",
+      "viewCategory": "View category",
+      "supportTitle": "We sell materials and also deliver the renovation",
+      "supportDescription": "If the client only wants materials, they can visit our showroom. If they want a full solution, we combine product, design, installation and works with the same team.",
+      "supportCard1Label": "Materials only",
+      "supportCard1Text": "We help choose taps, shower screens, sanitary ware, porcelain tiles and shower trays based on size, style and budget.",
+      "supportCard2Label": "Turnkey",
+      "supportCard2Text": "We can also install the materials and execute the complete bathroom, kitchen or home renovation.",
+      "grifos": {
+        "title": "Taps and fittings",
+        "description": "Basin, shower, bathtub and kitchen taps from Grohe, Hansgrohe and Roca. Direct store sales and installation option."
+      },
+      "mamparas": {
+        "title": "Shower screens",
+        "description": "Fixed, sliding and corner screens with tempered glass and anti-lime treatment. Brands such as Profiltek, GME and Kassandra."
+      },
+      "sanitarios": {
+        "title": "Toilets and sanitary ware",
+        "description": "Wall-hung toilets, floor-standing models, bidets and basins from Roca, Duravit and Villeroy & Boch for modern or classic bathrooms."
+      },
+      "baneras": {
+        "title": "Bathtubs and shower trays",
+        "description": "Acrylic and freestanding bathtubs plus resin, mineral cast or porcelain shower trays with optional installation."
+      },
+      "porcelanicos": {
+        "title": "Porcelain tiles and wall coverings",
+        "description": "Floor and wall porcelain for interior and exterior spaces in stone, marble, cement or wood finishes."
+      }
     },
     "catalogo": {
       "title": "Tiles & Materials Catalogue | Costa del Sol",

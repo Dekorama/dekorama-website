@@ -10,6 +10,14 @@ export const images = {
     banos: `${UNSPLASH_BASE}/photo-1552321554-5fefe8c9ef14?w=800&q=80&fm=webp`,
     materiales: `${UNSPLASH_BASE}/photo-1615873968403-89e068629265?w=800&q=80&fm=webp`,
   },
+  materials: {
+    showroom: '/icons/showroom.svg',
+    grifos: '/icons/grifos.svg',
+    mamparas: '/icons/mamparas.svg',
+    sanitarios: '/icons/sanitarios.svg',
+    baneras: '/icons/baneras.svg',
+    porcelanicos: '/icons/porcelanicos.svg',
+  },
   // Galería: solo tipo de proyecto, sin ubicaciones. Imágenes que cargan bien.
   gallery: [
     { src: `${UNSPLASH_BASE}/photo-1600585154340-be6161a56a0c?w=600&q=80&fm=webp`, tipo: 'Reforma integral' },

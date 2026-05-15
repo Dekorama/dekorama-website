@@ -18,6 +18,7 @@
   },
   "nav": {
     "services": "Servicios",
+    "materials": "Materiales",
     "catalog": "Catálogo",
     "projects": "Proyectos",
     "blog": "Blog",
@@ -26,7 +27,7 @@
     "freeVisit": "Visita sin costo"
   },
   "hero": {
-    "title": "Reformas Costa del Sol | Porcelánicos Benalmádena",
+    "title": "Reformas integrales y materiales de diseño en la Costa del Sol",
     "subtitle": "Tu empresa de confianza en Benalmádena, Marbella, Fuengirola y Torremolinos. Porcelánico, cocinas y baños de lujo para tu vivienda o villa.",
     "experience": "Más de 10 años reformando hogares en Málaga",
     "requestConsultation": "Solicitar visita gratuita",
@@ -319,6 +320,49 @@
       },
       "visita": "Ven a visitarnos",
       "visitaDesc": "Te asesoramos personalmente en nuestro showroom de Benalmádena. Trae tu proyecto y te ayudamos a escoger los mejores materiales."
+    },
+    "materialesHub": {
+      "title": "Materiales para Baños y Cocinas | Dekorama Benalmádena",
+      "description": "Descubre los materiales que vendemos en nuestra tienda de Benalmádena: grifos, mamparas, sanitarios, bañeras, platos de ducha y porcelánicos. Acceso directo a cada categoría.",
+      "eyebrow": "Showroom de materiales",
+      "h1": "Todo lo que vendemos para baños, cocinas y reformas",
+      "intro": "Hemos reunido en una sola página las categorías más buscadas de nuestra tienda para que el cliente vea rápido qué vendemos y entre directamente a cada sección especializada.",
+      "tag1": "Tienda física en Benalmádena",
+      "tag2": "Marcas premium",
+      "tag3": "Compra o reforma completa",
+      "primaryCta": "Ver showroom completo",
+      "secondaryCta": "Pedir asesoramiento",
+      "heroAlt": "Showroom de materiales Dekorama en Benalmádena",
+      "gridTitle": "Categorías destacadas",
+      "gridIntro": "Cada categoría enlaza con su página específica para captar búsquedas comerciales y facilitar al usuario la navegación hacia el producto exacto que necesita.",
+      "catalogCta": "Ver catálogo",
+      "viewCategory": "Ver categoría",
+      "supportTitle": "Vendemos materiales y también ejecutamos la reforma",
+      "supportDescription": "Si el cliente solo quiere comprar materiales, puede venir al showroom. Si quiere solución completa, combinamos producto, diseño, instalación y obra con el mismo equipo.",
+      "supportCard1Label": "Solo materiales",
+      "supportCard1Text": "Te ayudamos a elegir grifos, mamparas, sanitarios, porcelánicos y platos de ducha según medida, estilo y presupuesto.",
+      "supportCard2Label": "Llave en mano",
+      "supportCard2Text": "También podemos instalar los materiales y ejecutar la reforma completa de baño, cocina o vivienda.",
+      "grifos": {
+        "title": "Grifos y grifería",
+        "description": "Grifos para lavabo, ducha, bañera y cocina de Grohe, Hansgrohe y Roca. Venta directa desde tienda y opción de instalación."
+      },
+      "mamparas": {
+        "title": "Mamparas de ducha",
+        "description": "Mamparas fijas, correderas y angulares con vidrio templado y tratamiento antical. Marcas como Profiltek, GME y Kassandra."
+      },
+      "sanitarios": {
+        "title": "Inodoros y sanitarios",
+        "description": "Inodoros suspendidos, de suelo, bidés y lavabos de Roca, Duravit y Villeroy & Boch para baños modernos o clásicos."
+      },
+      "baneras": {
+        "title": "Bañeras y platos de ducha",
+        "description": "Bañeras acrílicas, exentas y platos de ducha de resina, carga mineral o porcelánico con instalación opcional."
+      },
+      "porcelanicos": {
+        "title": "Porcelánicos y revestimientos",
+        "description": "Suelos y paredes porcelánicas para interior y exterior con acabados piedra, mármol, cemento o madera."
+      }
     },
     "catalogo": {
       "title": "Catálogo Porcelánicos | Dekorama Costa del Sol",

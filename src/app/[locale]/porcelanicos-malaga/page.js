@@ -51,7 +51,7 @@ export default async function PorcelanicosMalagaPage({ params }) {
         '@id': `${baseUrl}/#business`,
       },
     },
-    image: images.services.materiales,
+    image: images.materials.porcelanicos,
   }
 
   const breadcrumbJsonLd = {
@@ -109,7 +109,7 @@ export default async function PorcelanicosMalagaPage({ params }) {
               </div>
               <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                 <Image
-                  src={images.services.materiales}
+                  src={images.materials.porcelanicos}
                   alt="Porcelánicos Málaga - Dekorama"
                   fill
                   className="object-cover"

@@ -6,6 +6,7 @@ const LOCALES = ['es', 'en']
 
 const staticPaths = [
   { path: '', priority: 1, changeFrequency: 'weekly' },
+  { path: '/materiales', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/reformas-integrales', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/cocinas-a-medida', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/banos-completos', priority: 0.9, changeFrequency: 'monthly' },

@@ -234,5 +234,6 @@ export default async function ReformasIntegralesPage({ params }) {
         </div>
       </section>
     </div>
+    </>
   )
 }
