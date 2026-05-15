@@ -127,8 +127,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@dekorama.es" className="hover:text-white transition-colors">
-                  info@dekorama.es
+                <a href="mailto:info@dekoramagroup.com" className="hover:text-white transition-colors">
+                  info@dekoramagroup.com
                 </a>
               </li>
             </ul>

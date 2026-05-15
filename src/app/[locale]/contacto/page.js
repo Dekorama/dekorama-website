@@ -79,8 +79,8 @@ export default async function ContactoPage({ params }) {
               </svg>
             </div>
             <p className="font-semibold text-black">{t('infoEmail')}</p>
-            <a href="mailto:info@dekorama.es" className="text-gray-500 text-sm hover:text-black transition-colors">
-              info@dekorama.es
+            <a href="mailto:info@dekoramagroup.com" className="text-gray-500 text-sm hover:text-black transition-colors">
+              info@dekoramagroup.com
             </a>
           </div>
         </div>
