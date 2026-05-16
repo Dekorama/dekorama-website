@@ -63,4 +63,12 @@ export const projects = [
     descEn: 'Large outdoor terrace with multicolour wood-effect porcelain and a pergola structure with integrated lighting.',
     category: 'Proyecto comercial',
   },
+  {
+    src: '/projects/508a8f7d-7dde-466e-baf1-8f2feb68e4ac.JPG',
+    titleEs: 'Proyecto de reforma',
+    titleEn: 'Renovation project',
+    descEs: 'Proyecto de reforma con materiales de alta calidad y acabados premium.',
+    descEn: 'Renovation project with high-quality materials and premium finishes.',
+    category: 'Reforma integral',
+  },
 ]
