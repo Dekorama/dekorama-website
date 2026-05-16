@@ -37,7 +37,7 @@ export default function CTASection({
       <div className="max-w-7xl mx-auto text-center">
         {/* Title */}
         {title && (
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
             {title}
           </h2>
         )}

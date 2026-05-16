@@ -13,9 +13,9 @@ export default function Proceso() {
   }))
 
   return (
-    <section id="proceso" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8">
+    <section id="proceso" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-16 tracking-tight">
           {t('title')}
         </h2>
         <div className="relative">
@@ -27,7 +27,7 @@ export default function Proceso() {
                   {paso.numero}
                 </div>
                 <div className="flex-1 pt-2">
-                  <h3 className="text-xl md:text-2xl font-semibold text-black mb-3">{paso.titulo}</h3>
+                  <h3 className="text-2xl font-semibold text-black mb-3 tracking-tight">{paso.titulo}</h3>
                   <p className="text-gray-600 leading-relaxed">{paso.descripcion}</p>
                 </div>
               </div>

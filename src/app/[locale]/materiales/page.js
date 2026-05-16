@@ -102,7 +102,7 @@ export default async function MaterialesPage({ params }) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
-      <div className="min-h-screen bg-white pt-20">
+      <div className="min-h-screen bg-white">
         <section className="bg-gray-50 px-4 pb-16 pt-8 sm:px-6 lg:px-8 md:pb-24 md:pt-16">
           <div className="mx-auto max-w-7xl">
             <nav className="mb-8 text-sm text-gray-500">
@@ -118,7 +118,7 @@ export default async function MaterialesPage({ params }) {
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-500">
                   {t('eyebrow')}
                 </p>
-                <h1 className="text-4xl font-bold leading-tight text-black md:text-5xl lg:text-6xl">
+                <h1 className="text-4xl font-bold leading-tight text-black md:text-5xl lg:text-6xl tracking-tight">
                   {t('h1')}
                 </h1>
                 <p className="max-w-2xl text-lg leading-relaxed text-gray-600 md:text-xl">
@@ -130,10 +130,10 @@ export default async function MaterialesPage({ params }) {
                   <span className="rounded-full border border-gray-300 px-4 py-2">{t('tag3')}</span>
                 </div>
                 <div className="flex flex-col gap-4 sm:flex-row">
-                  <Link href="/materiales-premium" className="px-8 py-4 text-center font-medium text-white bg-black transition-colors hover:bg-gray-800">
+                  <Link href="/materiales-premium" className="btn-primary text-center">
                     {t('primaryCta')}
                   </Link>
-                  <Link href="/#contacto" className="border border-black px-8 py-4 text-center font-medium text-black transition-colors hover:bg-black hover:text-white">
+                  <Link href="/#contacto" className="btn-secondary text-center">
                     {t('secondaryCta')}
                   </Link>
                 </div>

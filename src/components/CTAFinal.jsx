@@ -54,10 +54,10 @@ export default function CTAFinal() {
   }
 
   return (
-    <section id="contacto" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-gray-bg">
+    <section id="contacto" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-bg">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-4">
-          {tCta('readyToTransform')}
+        <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-4 tracking-tight">
+          {tCta('readyToTransform')
         </h2>
         <p className="text-gray-600 text-center mb-12 max-w-xl mx-auto leading-relaxed">
           {tCta('tellUsProject')}

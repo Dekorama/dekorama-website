@@ -77,10 +77,10 @@ export default function PartnerCalculator() {
               className={`rounded-xl p-4 text-center transition-all duration-300 ${
                 isActive
                   ? t_item.key === 'PLATINUM'
-                    ? 'bg-black text-white shadow-lg scale-105'
+                    ? 'bg-black text-white shadow-md'
                     : t_item.key === 'GOLD'
-                    ? 'bg-yellow-400 text-black shadow-lg scale-105'
-                    : 'bg-gray-200 text-black shadow-lg scale-105'
+                    ? 'bg-yellow-400 text-black shadow-md'
+                    : 'bg-gray-200 text-black shadow-md'
                   : 'bg-gray-50 text-gray-400 opacity-50'
               }`}
             >

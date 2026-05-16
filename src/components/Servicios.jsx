@@ -22,9 +22,9 @@ export default function Servicios() {
   ]
 
   return (
-    <section id="servicios" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-accent/5">
+    <section id="servicios" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-accent/5">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-16 tracking-tight">
           {t('title')}
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
@@ -46,7 +46,7 @@ export default function Servicios() {
                   </div>
                 </Link>
                 <div className="flex-1 flex flex-col pt-6">
-                  <h3 className="text-2xl font-semibold text-black mb-3">{t(svc.key)}</h3>
+                  <h3 className="text-2xl font-semibold text-black mb-3 tracking-tight">{t(svc.key)}</h3>
                   <p className="text-gray-600 mb-6 leading-relaxed flex-1">{t(`${svc.key}Desc`)}</p>
                   <div className="flex flex-wrap gap-4">
                     <Link
@@ -86,7 +86,7 @@ export default function Servicios() {
                   />
                 </div>
                 <div className="flex-1 flex flex-col pt-6">
-                  <h3 className="text-2xl font-semibold text-black mb-3">{t(svc.key)}</h3>
+                  <h3 className="text-2xl font-semibold text-black mb-3 tracking-tight">{t(svc.key)}</h3>
                   <p className="text-gray-600 mb-6 leading-relaxed flex-1">{t(`${svc.key}Desc`)}</p>
                   <span className="text-black font-medium inline-flex items-center gap-2 group-hover:gap-4 transition-all duration-300">
                     {t('viewMore')}

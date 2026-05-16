@@ -29,9 +29,9 @@ export default function Galeria() {
   }, [])
 
   return (
-    <section id="proyectos" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-gray-bg">
+    <section id="proyectos" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-bg">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-16 tracking-tight">
           {t('title')}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">

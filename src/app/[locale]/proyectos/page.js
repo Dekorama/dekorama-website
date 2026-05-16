@@ -68,7 +68,7 @@ export default function ProyectosPage() {
                     <span className="inline-block text-xs font-semibold tracking-widest uppercase text-white/60 mb-2 border border-white/30 px-2 py-0.5 w-fit">
                       {category}
                     </span>
-                    <h3 className="text-white font-bold text-2xl leading-snug mb-2">
+                    <h3 className="text-white font-bold text-2xl leading-snug mb-2 tracking-tight">
                       {title}
                     </h3>
                     <p className="text-white/75 text-sm leading-relaxed">

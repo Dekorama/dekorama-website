@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight tracking-tight">
               {t('title')}
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">

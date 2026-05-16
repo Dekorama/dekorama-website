@@ -39,7 +39,7 @@ export default function ServiceGrid({ items = [], className = '' }) {
           )}
 
           {/* Title */}
-          <h3 className="text-2xl font-semibold text-black mb-4">
+          <h3 className="text-2xl font-semibold text-black mb-4 tracking-tight">
             {item.title}
           </h3>
 

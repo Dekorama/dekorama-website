@@ -51,7 +51,7 @@ export default function RelatedLinks({ links = [], className = '' }) {
           )}
 
           {/* Title */}
-          <h3 className="text-2xl font-semibold text-black mb-3 group-hover:text-gray-800 transition-colors duration-300">
+          <h3 className="text-2xl font-semibold text-black mb-3 group-hover:text-gray-800 transition-colors duration-300 tracking-tight">
             {link.title}
           </h3>
 
