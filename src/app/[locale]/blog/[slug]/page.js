@@ -135,7 +135,7 @@ export default async function BlogPostPage({ params }) {
 
         {post.coverImage && (
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4 md:-mt-6">
-            <div className="relative aspect-[16/9] md:aspect-[21/9] rounded-xl overflow-hidden shadow-lg">
+            <div className="relative aspect-[16/9] md:aspect-[21/9] rounded-xl overflow-hidden shadow-sm">
               <Image
                 src={post.coverImage}
                 alt={post.title}
@@ -164,7 +164,7 @@ export default async function BlogPostPage({ params }) {
             <Link
               href="/#contacto"
               locale={locale}
-              className="inline-block px-8 py-4 bg-white text-black font-medium hover:bg-gray-100 transition-all duration-300 hover:scale-105 rounded-sm"
+              className="btn-primary inline-block"
             >
               {tCta('requestFreeVisit')}
             </Link>

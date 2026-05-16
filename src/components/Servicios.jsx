@@ -32,26 +32,26 @@ export default function Servicios() {
             svc.catalogLink ? (
               <div
                 key={svc.key}
-                className="group h-full flex flex-col overflow-hidden rounded-lg hover:shadow-xl transition-all duration-300 bg-white"
+                className="card group h-full flex flex-col"
               >
                 <Link href={svc.link} className="block flex-shrink-0">
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-64 overflow-hidden rounded-lg">
                     <Image
                       src={imagesList[index]}
                       alt={t(`${svc.key}`)}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover transition-opacity duration-300 group-hover:opacity-90"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
                 </Link>
-                <div className="p-8 bg-white flex-1 flex flex-col">
+                <div className="flex-1 flex flex-col pt-6">
                   <h3 className="text-2xl font-semibold text-black mb-3">{t(svc.key)}</h3>
                   <p className="text-gray-600 mb-6 leading-relaxed flex-1">{t(`${svc.key}Desc`)}</p>
                   <div className="flex flex-wrap gap-4">
                     <Link
                       href={svc.link}
-                      className="text-black font-medium inline-flex items-center gap-2 hover:gap-4 transition-all"
+                      className="text-black font-medium inline-flex items-center gap-2 hover:gap-4 transition-all duration-300"
                     >
                       {t('viewMore')}
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -60,7 +60,7 @@ export default function Servicios() {
                     </Link>
                     <Link
                       href={svc.catalogLink}
-                      className="text-gray-600 font-medium inline-flex items-center gap-2 hover:text-black hover:gap-4 transition-all"
+                      className="text-gray-600 font-medium inline-flex items-center gap-2 hover:text-black hover:gap-4 transition-all duration-300"
                     >
                       {t('viewCatalog')}
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -74,21 +74,21 @@ export default function Servicios() {
               <Link
                 key={svc.key}
                 href={svc.link}
-                className="group h-full flex flex-col cursor-pointer overflow-hidden rounded-lg hover:shadow-xl transition-all duration-300"
+                className="card-interactive group h-full flex flex-col cursor-pointer"
               >
-                <div className="relative h-64 overflow-hidden flex-shrink-0">
+                <div className="relative h-64 overflow-hidden flex-shrink-0 rounded-lg">
                   <Image
                     src={imagesList[index]}
                     alt={t(svc.key)}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover transition-opacity duration-300 group-hover:opacity-90"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
-                <div className="p-8 bg-white flex-1 flex flex-col">
+                <div className="flex-1 flex flex-col pt-6">
                   <h3 className="text-2xl font-semibold text-black mb-3">{t(svc.key)}</h3>
                   <p className="text-gray-600 mb-6 leading-relaxed flex-1">{t(`${svc.key}Desc`)}</p>
-                  <span className="text-black font-medium inline-flex items-center gap-2 group-hover:gap-4 transition-all">
+                  <span className="text-black font-medium inline-flex items-center gap-2 group-hover:gap-4 transition-all duration-300">
                     {t('viewMore')}
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

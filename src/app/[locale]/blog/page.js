@@ -3,6 +3,8 @@ import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 import { getPosts } from '@/lib/blog'
 import { baseUrl } from '@/lib/site'
+import Breadcrumb, { generateBreadcrumbSchema } from '@/components/Breadcrumb'
+import CTASection from '@/components/CTASection'
 
 export async function generateMetadata({ params }) {
   const { locale } = await Promise.resolve(params)
@@ -28,20 +30,34 @@ export default async function BlogPage({ params }) {
   const { locale } = await params
   const posts = getPosts(locale)
   const t = await getTranslations({ locale, namespace: 'blog' })
+  const tCommon = await getTranslations({ locale, namespace: 'breadcrumb' })
   const tCta = await getTranslations({ locale, namespace: 'cta' })
   const formatDate = (dateStr) => {
     const d = new Date(dateStr)
     return d.toLocaleDateString(locale === 'en' ? 'en-GB' : 'es-ES', { year: 'numeric', month: 'long', day: 'numeric' })
   }
 
+  const breadcrumbItems = [
+    { label: tCommon('home'), href: `/${locale}` },
+    { label: tCommon('blog'), href: null }
+  ]
+
+  const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbItems, baseUrl)
+
   return (
-    <div className="min-h-screen bg-white pt-20">
-      <section className="pt-12 pb-16 md:pt-20 md:pb-24 px-4 sm:px-6 lg:px-8 bg-gray-bg">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+    <div className="min-h-screen bg-white">
+      <section className="section-header">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb items={breadcrumbItems} />
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4 tracking-tight">
             {t('title')}
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl">
+          <p className="text-xl text-gray-600 max-w-2xl leading-relaxed">
             {t('subtitle')}
           </p>
         </div>
@@ -55,7 +71,7 @@ export default async function BlogPage({ params }) {
                 key={post.slug}
                 href={`/blog/${post.slug}`}
                 locale={locale}
-                className="group block bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl hover:border-gray-300 transition-all duration-300"
+                className="group block bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-md hover:border-gray-300 transition-all duration-300"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   {post.coverImage ? (
@@ -63,7 +79,7 @@ export default async function BlogPage({ params }) {
                       src={post.coverImage}
                       alt={post.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover transition-opacity duration-300 group-hover:opacity-90"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   ) : (
@@ -96,19 +112,18 @@ export default async function BlogPage({ params }) {
         </div>
       </section>
 
-      <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-black text-white">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          <h2 className="text-2xl md:text-3xl font-semibold">{tCta('projectInMind')}</h2>
-          <p className="text-gray-300">{tCta('requestVisitNoCommitment')}</p>
-          <Link
-            href="/#contacto"
-            locale={locale}
-            className="inline-block px-8 py-4 bg-white text-black font-medium hover:bg-gray-100 transition-all duration-300 hover:scale-105 rounded-sm"
-          >
-            {tCta('requestFreeVisit')}
-          </Link>
-        </div>
-      </section>
+      <CTASection
+        title={tCta('projectInMind')}
+        description={tCta('requestVisitNoCommitment')}
+        buttons={[
+          {
+            text: tCta('requestFreeVisit'),
+            href: `/${locale}#contacto`,
+            variant: 'primary'
+          }
+        ]}
+      />
     </div>
+    </>
   )
 }

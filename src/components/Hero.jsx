@@ -24,13 +24,13 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link
                 href="/#contacto"
-                className="px-8 py-4 bg-black text-white font-medium hover:bg-gray-800 transition-all duration-300 hover:scale-105 text-center"
+                className="btn-primary text-center"
               >
                 {t('requestConsultation')}
               </Link>
               <Link
                 href="/proyectos"
-                className="px-8 py-4 border-2 border-black text-black font-medium hover:bg-black hover:text-white transition-all duration-300 text-center"
+                className="btn-secondary text-center"
               >
                 {t('viewProjects')}
               </Link>

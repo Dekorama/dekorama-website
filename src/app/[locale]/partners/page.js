@@ -276,7 +276,7 @@ export default function PartnersPage() {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button
                 onClick={scrollToContact}
-                className="px-8 py-4 bg-white text-black font-semibold hover:bg-gray-100 transition-all duration-300 hover:scale-105 rounded-lg text-center"
+                className="btn-primary text-center"
               >
                 {t('hero.ctaPrimary')}
               </button>
@@ -349,7 +349,7 @@ export default function PartnersPage() {
             {benefits.map((b, i) => (
               <div
                 key={i}
-                className="bg-white rounded-xl p-8 space-y-4 hover:shadow-lg transition-shadow duration-300 group"
+                className="bg-white rounded-xl p-8 space-y-4 hover:shadow-md transition-shadow duration-300 group"
               >
                 <div className="inline-flex items-center justify-center w-12 h-12 bg-gray-bg rounded-lg text-black group-hover:bg-black group-hover:text-white transition-colors duration-300">
                   {b.icon}
@@ -425,7 +425,7 @@ export default function PartnersPage() {
                   {step.num}
                 </div>
                 <div className="pt-3">
-                  <h3 className="text-xl font-semibold text-black mb-2">{step.title}</h3>
+                  <h3 className="text-2xl font-semibold text-black mb-2">{step.title}</h3>
                   <p className="text-gray-500 leading-relaxed">{step.desc}</p>
                 </div>
               </div>
@@ -442,7 +442,7 @@ export default function PartnersPage() {
           </h2>
           <div className="grid sm:grid-cols-2 gap-6">
             {tools.map((tool, i) => (
-              <div key={i} className="bg-white rounded-xl p-8 flex gap-5 hover:shadow-lg transition-shadow duration-300">
+              <div key={i} className="bg-white rounded-xl p-8 flex gap-5 hover:shadow-md transition-shadow duration-300">
                 <div className="flex-shrink-0 text-black mt-1">{tool.icon}</div>
                 <div>
                   <h3 className="font-semibold text-black text-base mb-2">{tool.title}</h3>
@@ -462,7 +462,7 @@ export default function PartnersPage() {
           <p className="text-gray-400 text-base">{t('showroom.international')}</p>
           <button
             onClick={scrollToContact}
-            className="inline-block px-8 py-4 bg-white text-black font-semibold hover:bg-gray-100 transition-all duration-300 hover:scale-105 rounded-lg"
+            className="btn-primary inline-block"
           >
             {t('showroom.cta')}
           </button>

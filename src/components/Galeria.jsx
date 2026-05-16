@@ -52,7 +52,7 @@ export default function Galeria() {
                   src={proyecto.src}
                   alt={altText}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover transition-opacity duration-300 group-hover:opacity-90"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/70 transition-all duration-300 flex items-center justify-center">
@@ -69,7 +69,7 @@ export default function Galeria() {
         <div className="text-center">
           <Link
             href="/proyectos"
-            className="inline-block px-8 py-4 border-2 border-black text-black font-medium hover:bg-black hover:text-white transition-all duration-300"
+            className="btn-secondary inline-block"
           >
             {t('viewAllProjects')}
           </Link>

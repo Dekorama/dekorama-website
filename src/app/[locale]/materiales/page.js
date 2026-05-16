@@ -172,7 +172,7 @@ export default async function MaterialesPage({ params }) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="group overflow-hidden rounded-2xl border border-gray-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                  className="group overflow-hidden rounded-2xl border border-gray-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden bg-gray-50 flex items-center justify-center border-b border-gray-100">
                     <Image
@@ -180,7 +180,7 @@ export default async function MaterialesPage({ params }) {
                       alt={item.title}
                       width={96}
                       height={96}
-                      className="text-gray-400 group-hover:text-black transition-colors duration-500"
+                      className="text-gray-400 group-hover:text-black transition-colors duration-300"
                     />
                   </div>
                   <div className="space-y-4 p-6">

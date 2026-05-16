@@ -3,7 +3,10 @@ import Image from 'next/image'
 import { images } from '@/data/images'
 import { baseUrl } from '@/lib/site'
 import { getTranslations } from 'next-intl/server'
-import CTAFinal from '@/components/CTAFinal'
+import PageHeader from '@/components/PageHeader'
+import ServiceGrid from '@/components/ServiceGrid'
+import RelatedLinks from '@/components/RelatedLinks'
+import CTASection from '@/components/CTASection'
 
 export async function generateMetadata({ params }) {
   const { locale } = await params
@@ -32,6 +35,8 @@ export async function generateMetadata({ params }) {
 
 export default async function MamparasDuchaPage({ params }) {
   const { locale } = await params
+  const tCta = await getTranslations({ locale, namespace: 'cta' })
+  const tCommon = await getTranslations({ locale, namespace: 'breadcrumb' })
   
   const productJsonLd = {
     '@context': 'https://schema.org',
@@ -66,116 +71,98 @@ export default async function MamparasDuchaPage({ params }) {
     image: images.materials.mamparas,
   }
 
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: locale === 'es' ? 'Inicio' : 'Home',
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: locale === 'es' ? 'Tienda de Materiales' : 'Materials Store',
-        item: `${baseUrl}/${locale}/materiales-premium`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: locale === 'es' ? 'Mamparas de Ducha' : 'Shower Screens',
-        item: `${baseUrl}/${locale}/mamparas-ducha-benalmadena`,
-      },
-    ],
-  }
+  const caracteristicas = [
+    {
+      title: locale === 'es' ? 'Medición a domicilio gratuita' : 'Free home measurement',
+      description: locale === 'es'
+        ? 'Nuestro técnico toma medidas en tu baño sin costo. Garantizamos ajuste perfecto.'
+        : 'Our technician takes measurements in your bathroom at no cost. We guarantee perfect fit.',
+    },
+    {
+      title: locale === 'es' ? 'Mamparas a medida' : 'Custom screens',
+      description: locale === 'es'
+        ? 'Fabricamos según tus medidas exactas. Para platos estándar y especiales.'
+        : 'We manufacture to your exact measurements. For standard and special trays.',
+    },
+    {
+      title: locale === 'es' ? 'Instalación profesional incluible' : 'Professional installation available',
+      description: locale === 'es'
+        ? 'Instaladores especializados con años de experiencia. Montaje perfecto y sellado garantizado.'
+        : 'Specialized installers with years of experience. Perfect assembly and guaranteed sealing.',
+    },
+    {
+      title: locale === 'es' ? 'Garantía total' : 'Full warranty',
+      description: locale === 'es'
+        ? 'Garantía del fabricante de hasta 10 años. Si hay problema, lo solucionamos.'
+        : "Manufacturer's warranty of up to 10 years. If there's a problem, we solve it.",
+    },
+  ]
+
+  const relatedServices = [
+    {
+      title: locale === 'es' ? 'Baños Completos' : 'Complete Bathrooms',
+      description: locale === 'es' ? 'Reforma integral de tu baño con acabados premium' : 'Complete bathroom renovation with premium finishes',
+      href: `/${locale}/banos-completos`,
+      image: images.services.banos,
+    },
+    {
+      title: locale === 'es' ? 'Materiales Premium' : 'Premium Materials',
+      description: locale === 'es' ? 'Grifería, sanitarios, iluminación y más' : 'Taps, sanitaryware, lighting and more',
+      href: `/${locale}/materiales-premium`,
+      image: images.services.materiales,
+    },
+    {
+      title: locale === 'es' ? 'Platos de Ducha' : 'Shower Trays',
+      description: locale === 'es' ? 'Resina, carga mineral, todas las medidas' : 'Resin, mineral cast, all sizes',
+      href: `/${locale}/baneras-platos-ducha-benalmadena`,
+      image: images.materials.baneras,
+    },
+  ]
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       
-      <div className="min-h-screen bg-white pt-20">
-        {/* Hero Section */}
-        <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
-          <div className="max-w-7xl mx-auto">
-            <nav className="text-sm text-gray-500 mb-8">
-              <Link href="/" className="hover:text-black transition-colors">
-                {locale === 'es' ? 'Inicio' : 'Home'}
-              </Link>
-              {' / '}
-              <Link href="/materiales-premium" className="hover:text-black transition-colors">
-                {locale === 'es' ? 'Tienda' : 'Store'}
-              </Link>
-              {' / '}
-              <span className="text-black font-medium">
-                {locale === 'es' ? 'Mamparas' : 'Shower Screens'}
-              </span>
-            </nav>
-            
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-6">
-                  {locale === 'es' 
-                    ? 'Mamparas de Ducha en Benalmádena'
-                    : 'Shower Screens in Benalmádena'
-                  }
-                </h1>
-                <p className="text-lg text-gray-600 leading-relaxed mb-4">
-                  {locale === 'es'
-                    ? 'Mamparas Profiltek, GME y Kassandra en nuestro showroom. Vidrio templado 8mm con tratamiento antical. Fijas, correderas, angulares y plegables.'
-                    : 'Profiltek, GME and Kassandra screens in our showroom. 8mm tempered glass with anti-lime treatment. Fixed, sliding, corner and folding.'
-                  }
-                </p>
-                <div className="bg-white p-4 rounded-lg mb-8 inline-block">
-                  <p className="text-sm text-gray-600 mb-2">
-                    {locale === 'es' ? 'Incluye:' : 'Includes:'}
-                  </p>
-                  <ul className="space-y-1 text-sm">
-                    <li className="flex items-center gap-2">
-                      <span className="text-green-600">✓</span>
-                      {locale === 'es' ? 'Vidrio templado 8mm' : '8mm tempered glass'}
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-green-600">✓</span>
-                      {locale === 'es' ? 'Tratamiento antical' : 'Anti-lime treatment'}
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-green-600">✓</span>
-                      {locale === 'es' ? 'Perfiles de aluminio' : 'Aluminium profiles'}
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-green-600">✓</span>
-                      {locale === 'es' ? 'Instalación opcional' : 'Optional installation'}
-                    </li>
-                  </ul>
-                </div>
-                <Link
-                  href="/#contacto"
-                  className="inline-block px-8 py-4 bg-black text-white font-medium hover:bg-gray-800 transition-all duration-300"
-                >
-                  {locale === 'es' ? 'Visitar tienda o pedir presupuesto' : 'Visit store or request quote'}
-                </Link>
-              </div>
-              <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-                <Image
-                  src={images.materials.mamparas}
-                  alt={locale === 'es' ? 'Mamparas ducha Benalmádena' : 'Shower screens Benalmádena'}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+      <div className="min-h-screen bg-white">
+      
+      {/* ── PAGE HEADER ── */}
+      <PageHeader
+        breadcrumbItems={[
+          { label: tCommon('home'), href: `/${locale}` },
+          { label: locale === 'es' ? 'Mamparas de Ducha' : 'Shower Screens', href: null }
+        ]}
+        title={locale === 'es' ? 'Mamparas de Ducha en Benalmádena' : 'Shower Screens in Benalmádena'}
+        subtitle={locale === 'es'
+          ? 'Mamparas Profiltek, GME y Kassandra en nuestro showroom. Vidrio templado 8mm con tratamiento antical. Fijas, correderas, angulares y plegables.'
+          : 'Profiltek, GME and Kassandra screens in our showroom. 8mm tempered glass with anti-lime treatment. Fixed, sliding, corner and folding.'
+        }
+        heroImage={images.materials.mamparas}
+        heroImageAlt={locale === 'es' ? 'Mamparas ducha Benalmádena' : 'Shower screens Benalmádena'}
+        ctaPrimary={{
+          text: locale === 'es' ? 'Visitar tienda o pedir presupuesto' : 'Visit store or request quote',
+          href: `/${locale}#contacto`
+        }}
+        ctaSecondary={{
+          text: locale === 'es' ? 'Ver materiales premium' : 'View premium materials',
+          href: `/${locale}/materiales-premium`
+        }}
+        baseUrl={baseUrl}
+      />
+
+      {/* ── POR QUÉ ELEGIRNOS ── */}
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-12 md:mb-16">
+            {locale === 'es' ? '¿Por qué comprar mamparas en Dekorama?' : 'Why buy screens at Dekorama?'}
+          </h2>
+          <ServiceGrid items={caracteristicas} columns={4} />
+        </div>
+      </section>
 
         {/* Tipos de mamparas */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-12">
               {locale === 'es' ? 'Tipos de mamparas disponibles' : 'Available screen types'}
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -205,8 +192,8 @@ export default async function MamparasDuchaPage({ params }) {
                     : 'Folding panels. Ideal for very small bathrooms or bathtubs. Full access when open.'
                 },
               ].map((item, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-black mb-3">{item.title}</h3>
+                <div key={index} className="bg-white p-6 rounded-lg">
+                  <h3 className="text-2xl font-semibold text-black mb-3">{item.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               ))}
@@ -215,9 +202,9 @@ export default async function MamparasDuchaPage({ params }) {
         </section>
 
         {/* Marcas */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-6">
               {locale === 'es' ? 'Marcas líderes en mamparas' : 'Leading screen brands'}
             </h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -257,9 +244,9 @@ export default async function MamparasDuchaPage({ params }) {
         </section>
 
         {/* Opciones y acabados */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-12">
               {locale === 'es' ? 'Opciones y acabados' : 'Options and finishes'}
             </h2>
             <div className="grid md:grid-cols-2 gap-12">
@@ -306,16 +293,22 @@ export default async function MamparasDuchaPage({ params }) {
         {/* Ventajas */}
         <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-12">
-              {locale === 'es' ? '¿Por qué comprar mamparas en Dekorama?' : 'Why buy screens at Dekorama?'}
+            <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-12">
+              {locale === 'es' ? 'Completa tu baño' : 'Complete your bathroom'}
             </h2>
             <div className="space-y-6">
               {[
                 {
-                  title: locale === 'es' ? 'Medición a domicilio gratuita' : 'Free home measurement',
+                  title: locale === 'es' ? 'Grifos de ducha' : 'Shower taps',
                   desc: locale === 'es'
-                    ? 'Nuestro técnico toma medidas en tu baño sin costo. Garantizamos ajuste perfecto.'
-                    : 'Our technician takes measurements in your bathroom at no cost. We guarantee perfect fit.'
+                    ? 'Grifos termostáticos Grohe y Hansgrohe con regulación de temperatura.'
+                    : 'Grohe and Hansgrohe thermostatic taps with temperature control.'
+                },
+                {
+                  title: locale === 'es' ? 'Platos de ducha' : 'Shower trays',
+                  desc: locale === 'es'
+                    ? 'Resina, carga mineral, todas las medidas. Platos extraplanos 2-3 cm.'
+                    : 'Resin, mineral cast, all sizes. Ultra-flat trays 2-3 cm.'
                 },
                 {
                   title: locale === 'es' ? 'Mamparas a medida' : 'Custom screens',
@@ -324,16 +317,10 @@ export default async function MamparasDuchaPage({ params }) {
                     : 'We manufacture to your exact measurements. For standard and special trays.'
                 },
                 {
-                  title: locale === 'es' ? 'Instalación profesional incluible' : 'Professional installation available',
+                  title: locale === 'es' ? 'Reforma completa' : 'Complete renovation',
                   desc: locale === 'es'
-                    ? 'Instaladores especializados con años de experiencia. Montaje perfecto y sellado garantizado.'
-                    : 'Specialized installers with years of experience. Perfect assembly and guaranteed sealing.'
-                },
-                {
-                  title: locale === 'es' ? 'Garantía total' : 'Full warranty',
-                  desc: locale === 'es'
-                    ? 'Garantía del fabricante de hasta 10 años. Si hay problema, lo solucionamos.'
-                    : 'Manufacturer\'s warranty of up to 10 years. If there\'s a problem, we solve it.'
+                    ? 'Reforma llave en mano de tu baño: alicatado, fontanería, electricidad, muebles.'
+                    : 'Turnkey bathroom renovation: tiling, plumbing, electrical, furniture.'
                 },
               ].map((item, index) => (
                 <div key={index} className="flex gap-4 items-start">
@@ -341,7 +328,7 @@ export default async function MamparasDuchaPage({ params }) {
                     {index + 1}
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-black mb-2">{item.title}</h3>
+                    <h3 className="text-2xl font-semibold text-black mb-2">{item.title}</h3>
                     <p className="text-gray-600 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
@@ -350,51 +337,28 @@ export default async function MamparasDuchaPage({ params }) {
           </div>
         </section>
 
-        {/* Related products/services */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        {/* ── RELATED SERVICES ── */}
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-semibold text-black mb-8 text-center">
-              {locale === 'es' ? 'Completa tu baño' : 'Complete your bathroom'}
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-8 md:mb-12 text-center">
+              {locale === 'es' ? 'Servicios relacionados' : 'Related services'}
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <Link href="/venta-grifos-benalmadena" className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
-                <h3 className="text-lg font-semibold text-black mb-2">
-                  {locale === 'es' ? 'Grifos de ducha' : 'Shower taps'}
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  {locale === 'es' 
-                    ? 'Grifos termostáticos Grohe y Hansgrohe'
-                    : 'Grohe and Hansgrohe thermostatic taps'
-                  }
-                </p>
-              </Link>
-              <Link href="/baneras-platos-ducha-benalmadena" className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
-                <h3 className="text-lg font-semibold text-black mb-2">
-                  {locale === 'es' ? 'Platos de ducha' : 'Shower trays'}
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  {locale === 'es' 
-                    ? 'Resina, carga mineral, todas las medidas'
-                    : 'Resin, mineral cast, all sizes'
-                  }
-                </p>
-              </Link>
-              <Link href="/banos-completos" className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
-                <h3 className="text-lg font-semibold text-black mb-2">
-                  {locale === 'es' ? 'Reforma completa' : 'Complete renovation'}
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  {locale === 'es' 
-                    ? 'Reforma llave en mano de tu baño'
-                    : 'Turnkey renovation of your bathroom'
-                  }
-                </p>
-              </Link>
-            </div>
+            <RelatedLinks links={relatedServices} />
           </div>
         </section>
 
-        <CTAFinal />
+        {/* ── CTA FINAL ── */}
+        <CTASection
+          title={tCta('readyToTransform')}
+          description={tCta('freeVisitAndQuote')}
+          buttons={[
+            {
+              text: tCta('requestFreeVisit'),
+              href: `/${locale}#contacto`,
+              variant: 'primary'
+            }
+          ]}
+        />
       </div>
     </>
   )

@@ -3,7 +3,10 @@ import Image from 'next/image'
 import { images } from '@/data/images'
 import { baseUrl } from '@/lib/site'
 import { getTranslations } from 'next-intl/server'
-import CTAFinal from '@/components/CTAFinal'
+import PageHeader from '@/components/PageHeader'
+import ServiceGrid from '@/components/ServiceGrid'
+import RelatedLinks from '@/components/RelatedLinks'
+import CTASection from '@/components/CTASection'
 
 export async function generateMetadata({ params }) {
   const { locale } = await params
@@ -32,6 +35,8 @@ export async function generateMetadata({ params }) {
 
 export default async function BanerasPlatosDuchaPage({ params }) {
   const { locale } = await params
+  const tCta = await getTranslations({ locale, namespace: 'cta' })
+  const tCommon = await getTranslations({ locale, namespace: 'breadcrumb' })
   
   const productJsonLd = {
     '@context': 'https://schema.org',
@@ -66,37 +71,59 @@ export default async function BanerasPlatosDuchaPage({ params }) {
     image: images.materials.baneras,
   }
 
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: locale === 'es' ? 'Inicio' : 'Home',
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: locale === 'es' ? 'Tienda de Materiales' : 'Materials Store',
-        item: `${baseUrl}/${locale}/materiales-premium`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: locale === 'es' ? 'Bañeras y Platos de Ducha' : 'Bathtubs and Shower Trays',
-        item: `${baseUrl}/${locale}/baneras-platos-ducha-benalmadena`,
-      },
-    ],
-  }
+  const caracteristicas = [
+    {
+      title: locale === 'es' ? 'Todas las medidas' : 'All sizes',
+      description: locale === 'es'
+        ? 'Platos de 70x70 hasta 200x80 cm. Bañeras desde 100 hasta 180 cm. Medidas especiales por encargo.'
+        : 'Trays from 70x70 to 200x80 cm. Bathtubs from 100 to 180 cm. Special sizes on request.',
+    },
+    {
+      title: locale === 'es' ? 'Instalación experta' : 'Expert installation',
+      description: locale === 'es'
+        ? 'Instaladores con formación de fábrica. Garantía de montaje correcto. Impermeabilización certificada.'
+        : 'Installers with factory training. Guaranteed correct assembly. Certified waterproofing.',
+    },
+    {
+      title: locale === 'es' ? 'Mejor precio garantizado' : 'Best price guaranteed',
+      description: locale === 'es'
+        ? 'Trabajamos directamente con fabricantes. Si encuentras más barato, igualamos precio.'
+        : 'We work directly with manufacturers. If you find cheaper, we match the price.',
+    },
+    {
+      title: locale === 'es' ? 'Reforma integral opcional' : 'Full renovation optional',
+      description: locale === 'es'
+        ? 'Si lo necesitas, hacemos reforma completa de baño: alicatado, fontanería, electricidad, muebles.'
+        : 'If needed, we do complete bathroom renovation: tiling, plumbing, electrical, furniture.',
+    },
+  ]
+
+  const relatedServices = [
+    {
+      title: locale === 'es' ? 'Baños Completos' : 'Complete Bathrooms',
+      description: locale === 'es' ? 'Reforma integral de tu baño con acabados premium' : 'Complete bathroom renovation with premium finishes',
+      href: `/${locale}/banos-completos`,
+      image: images.services.banos,
+    },
+    {
+      title: locale === 'es' ? 'Materiales Premium' : 'Premium Materials',
+      description: locale === 'es' ? 'Grifería, sanitarios, iluminación y más' : 'Taps, sanitaryware, lighting and more',
+      href: `/${locale}/materiales-premium`,
+      image: images.services.materiales,
+    },
+    {
+      title: locale === 'es' ? 'Mamparas de Ducha' : 'Shower Screens',
+      description: locale === 'es' ? 'Profiltek, GME. Fijas, correderas, angulares' : 'Profiltek, GME. Fixed, sliding, corner',
+      href: `/${locale}/mamparas-ducha-benalmadena`,
+      image: images.materials.mamparas,
+    },
+  ]
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       
-      <div className="min-h-screen bg-white pt-20">
+      <div className="min-h-screen bg-white">
         {/* Hero Section */}
         <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto">
@@ -173,9 +200,9 @@ export default async function BanerasPlatosDuchaPage({ params }) {
         </section>
 
         {/* Tipos de bañeras */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-4">
               {locale === 'es' ? 'Bañeras disponibles' : 'Available bathtubs'}
             </h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -223,8 +250,8 @@ export default async function BanerasPlatosDuchaPage({ params }) {
                     : 'Reduced sizes from 100x70 cm. For small bathrooms. With or without seat.'
                 },
               ].map((item, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-black mb-3">{item.title}</h3>
+                <div key={index} className="bg-white p-6 rounded-lg">
+                  <h3 className="text-2xl font-semibold text-black mb-3">{item.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               ))}
@@ -233,9 +260,9 @@ export default async function BanerasPlatosDuchaPage({ params }) {
         </section>
 
         {/* Tipos de platos de ducha */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-4">
               {locale === 'es' ? 'Platos de ducha disponibles' : 'Available shower trays'}
             </h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -273,7 +300,7 @@ export default async function BanerasPlatosDuchaPage({ params }) {
                       {locale === 'es' ? 'MÁS VENDIDO' : 'BEST SELLER'}
                     </span>
                   )}
-                  <h3 className={`text-xl font-semibold mb-3 ${item.popular ? 'text-white' : 'text-black'}`}>
+                  <h3 className={`text-2xl font-semibold mb-3 ${item.popular ? 'text-white' : 'text-black'}`}>
                     {item.title}
                   </h3>
                   <p className={`text-sm leading-relaxed ${item.popular ? 'text-gray-300' : 'text-gray-600'}`}>
@@ -286,9 +313,9 @@ export default async function BanerasPlatosDuchaPage({ params }) {
         </section>
 
         {/* Marcas */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-12">
               {locale === 'es' ? 'Marcas de confianza' : 'Trusted brands'}
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
@@ -312,7 +339,7 @@ export default async function BanerasPlatosDuchaPage({ params }) {
                     : 'German premium. Enamelled steel bathtubs. Exceptional durability. Award-winning designs.'
                 },
               ].map((item, index) => (
-                <div key={index} className="bg-gray-50 p-8 rounded-lg text-center">
+                <div key={index} className="bg-white p-8 rounded-lg text-center">
                   <h3 className="text-2xl font-bold text-black mb-3">{item.brand}</h3>
                   <p className="text-gray-600">{item.desc}</p>
                 </div>
@@ -322,9 +349,9 @@ export default async function BanerasPlatosDuchaPage({ params }) {
         </section>
 
         {/* Servicio cambio bañera por ducha */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-semibold text-black mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
               {locale === 'es' ? 'Cambio de bañera por plato de ducha' : 'Bathtub to shower tray conversion'}
             </h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
@@ -357,98 +384,28 @@ export default async function BanerasPlatosDuchaPage({ params }) {
           </div>
         </section>
 
-        {/* Ventajas */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-12">
-              {locale === 'es' ? 'Por qué comprar en Dekorama' : 'Why buy at Dekorama'}
-            </h2>
-            <div className="space-y-6">
-              {[
-                {
-                  title: locale === 'es' ? 'Todas las medidas' : 'All sizes',
-                  desc: locale === 'es'
-                    ? 'Platos de 70x70 hasta 200x80 cm. Bañeras desde 100 hasta 180 cm. Medidas especiales por encargo.'
-                    : 'Trays from 70x70 to 200x80 cm. Bathtubs from 100 to 180 cm. Special sizes on request.'
-                },
-                {
-                  title: locale === 'es' ? 'Instalación experta' : 'Expert installation',
-                  desc: locale === 'es'
-                    ? 'Instaladores con formación de fábrica. Garantía de montaje correcto. Impermeabilización certificada.'
-                    : 'Installers with factory training. Guaranteed correct assembly. Certified waterproofing.'
-                },
-                {
-                  title: locale === 'es' ? 'Mejor precio garantizado' : 'Best price guaranteed',
-                  desc: locale === 'es'
-                    ? 'Trabajamos directamente con fabricantes. Si encuentras más barato, igualamos precio.'
-                    : 'We work directly with manufacturers. If you find cheaper, we match the price.'
-                },
-                {
-                  title: locale === 'es' ? 'Reforma integral opcional' : 'Full renovation optional',
-                  desc: locale === 'es'
-                    ? 'Si lo necesitas, hacemos reforma completa de baño: alicatado, fontanería, electricidad, muebles.'
-                    : 'If needed, we do complete bathroom renovation: tiling, plumbing, electrical, furniture.'
-                },
-              ].map((item, index) => (
-                <div key={index} className="flex gap-4 items-start">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold">
-                    {index + 1}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-black mb-2">{item.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Related products/services */}
+        {/* ── RELATED SERVICES ── */}
         <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-semibold text-black mb-8 text-center">
-              {locale === 'es' ? 'Completa tu baño' : 'Complete your bathroom'}
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-8 md:mb-12 text-center">
+              {locale === 'es' ? 'Servicios relacionados' : 'Related services'}
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <Link href="/mamparas-ducha-benalmadena" className="bg-white p-6 rounded-lg hover:shadow-lg transition-shadow">
-                <h3 className="text-lg font-semibold text-black mb-2">
-                  {locale === 'es' ? 'Mamparas de ducha' : 'Shower screens'}
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  {locale === 'es' 
-                    ? 'Profiltek, GME. Fijas, correderas, angulares.'
-                    : 'Profiltek, GME. Fixed, sliding, corner.'
-                  }
-                </p>
-              </Link>
-              <Link href="/venta-grifos-benalmadena" className="bg-white p-6 rounded-lg hover:shadow-lg transition-shadow">
-                <h3 className="text-lg font-semibold text-black mb-2">
-                  {locale === 'es' ? 'Grifos de ducha y bañera' : 'Shower and bathtub taps'}
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  {locale === 'es' 
-                    ? 'Grohe, Hansgrohe, Roca. Termostáticos.'
-                    : 'Grohe, Hansgrohe, Roca. Thermostatic.'
-                  }
-                </p>
-              </Link>
-              <Link href="/banos-completos" className="bg-white p-6 rounded-lg hover:shadow-lg transition-shadow">
-                <h3 className="text-lg font-semibold text-black mb-2">
-                  {locale === 'es' ? 'Reforma completa' : 'Complete renovation'}
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  {locale === 'es' 
-                    ? 'Reforma llave en mano de tu baño'
-                    : 'Turnkey renovation of your bathroom'
-                  }
-                </p>
-              </Link>
-            </div>
+            <RelatedLinks links={relatedServices} />
           </div>
         </section>
 
-        <CTAFinal />
+        {/* ── CTA FINAL ── */}
+        <CTASection
+          title={tCta('readyToTransform')}
+          description={tCta('freeVisitAndQuote')}
+          buttons={[
+            {
+              text: tCta('requestFreeVisit'),
+              href: `/${locale}#contacto`,
+              variant: 'primary'
+            }
+          ]}
+        />
       </div>
     </>
   )

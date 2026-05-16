@@ -51,16 +51,16 @@ export default function Beneficios() {
         <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-16">
           {t('title')}
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {beneficios.map((beneficio, index) => (
             <div
               key={index}
-              className="text-center space-y-4 p-8 hover:bg-white transition-all duration-300 rounded-lg group cursor-default"
+              className="card text-center"
             >
-              <div className="flex justify-center text-black group-hover:scale-110 transition-transform duration-300">
+              <div className="flex justify-center text-black mb-4">
                 {beneficio.icon}
               </div>
-              <h3 className="text-xl font-semibold text-black">{beneficio.title}</h3>
+              <h3 className="text-2xl font-semibold text-black mb-3">{beneficio.title}</h3>
               <p className="text-gray-600 leading-relaxed">{beneficio.description}</p>
             </div>
           ))}

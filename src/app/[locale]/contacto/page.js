@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server'
 import { baseUrl } from '@/lib/site'
 import CTAFinal from '@/components/CTAFinal'
+import Breadcrumb, { generateBreadcrumbSchema } from '@/components/Breadcrumb'
 
 export async function generateMetadata({ params }) {
   const { locale } = await Promise.resolve(params)
@@ -26,19 +27,35 @@ export async function generateMetadata({ params }) {
 export default async function ContactoPage({ params }) {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'contactPage' })
+  const tCommon = await getTranslations({ locale, namespace: 'breadcrumb' })
   const tFooter = await getTranslations({ locale, namespace: 'footer' })
 
+  const breadcrumbItems = [
+    { label: tCommon('home'), href: `/${locale}` },
+    { label: t('title'), href: null }
+  ]
+
+  const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbItems, baseUrl)
+
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+    <div className="min-h-screen bg-white">
       {/* Page header */}
-      <div className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 border-b border-gray-100">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
-            {t('title')}
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            {t('subtitle')}
-          </p>
+      <div className="section-header">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb items={breadcrumbItems} />
+          <div className="max-w-4xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4 tracking-tight">
+              {t('title')}
+            </h1>
+            <p className="text-xl text-gray-600 max-w-2xl leading-relaxed">
+              {t('subtitle')}
+            </p>
+          </div>
         </div>
       </div>
 
@@ -89,5 +106,6 @@ export default async function ContactoPage({ params }) {
       {/* Contact form (reuses existing CTAFinal component) */}
       <CTAFinal />
     </div>
+    </>
   )
 }

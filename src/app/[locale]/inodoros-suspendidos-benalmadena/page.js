@@ -3,7 +3,10 @@ import Image from 'next/image'
 import { images } from '@/data/images'
 import { baseUrl } from '@/lib/site'
 import { getTranslations } from 'next-intl/server'
-import CTAFinal from '@/components/CTAFinal'
+import PageHeader from '@/components/PageHeader'
+import ServiceGrid from '@/components/ServiceGrid'
+import RelatedLinks from '@/components/RelatedLinks'
+import CTASection from '@/components/CTASection'
 
 export async function generateMetadata({ params }) {
   const { locale } = await params
@@ -32,6 +35,8 @@ export async function generateMetadata({ params }) {
 
 export default async function InodorosSuspendidosPage({ params }) {
   const { locale } = await params
+  const tCta = await getTranslations({ locale, namespace: 'cta' })
+  const tCommon = await getTranslations({ locale, namespace: 'breadcrumb' })
   
   const productJsonLd = {
     '@context': 'https://schema.org',
@@ -66,112 +71,98 @@ export default async function InodorosSuspendidosPage({ params }) {
     image: images.materials.sanitarios,
   }
 
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: locale === 'es' ? 'Inicio' : 'Home',
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: locale === 'es' ? 'Tienda de Materiales' : 'Materials Store',
-        item: `${baseUrl}/${locale}/materiales-premium`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: locale === 'es' ? 'Inodoros' : 'Toilets',
-        item: `${baseUrl}/${locale}/inodoros-suspendidos-benalmadena`,
-      },
-    ],
-  }
+  const caracteristicas = [
+    {
+      title: locale === 'es' ? 'Showroom físico en Benalmádena' : 'Physical showroom in Benalmádena',
+      description: locale === 'es'
+        ? 'Ven a nuestra tienda, ve los modelos en exposición y recibe asesoramiento de nuestros expertos.'
+        : 'Come to our store, see the models on display and receive advice from our experts.',
+    },
+    {
+      title: locale === 'es' ? 'Instalación profesional' : 'Professional installation',
+      description: locale === 'es'
+        ? 'Fontaneros certificados con años de experiencia. Instalación de inodoro suspendido con cisterna empotrada incluye obra necesaria.'
+        : 'Certified plumbers with years of experience. Wall-hung toilet installation with concealed cistern includes necessary building work.',
+    },
+    {
+      title: locale === 'es' ? 'Entrega rápida' : 'Fast delivery',
+      description: locale === 'es'
+        ? 'Modelos populares en stock inmediato. Para modelos especiales, entrega en 5-10 días.'
+        : 'Popular models in immediate stock. For special models, delivery in 5-10 days.',
+    },
+    {
+      title: locale === 'es' ? 'Reforma completa opcional' : 'Complete renovation optional',
+      description: locale === 'es'
+        ? 'Si necesitas reforma integral de baño, nos encargamos de todo: alicatado, fontanería, electricidad y acabados.'
+        : 'If you need complete bathroom renovation, we take care of everything: tiling, plumbing, electrical and finishes.',
+    },
+  ]
+
+  const relatedServices = [
+    {
+      title: locale === 'es' ? 'Baños Completos' : 'Complete Bathrooms',
+      description: locale === 'es' ? 'Reforma integral de tu baño con acabados premium' : 'Complete bathroom renovation with premium finishes',
+      href: `/${locale}/banos-completos`,
+      image: images.services.banos,
+    },
+    {
+      title: locale === 'es' ? 'Materiales Premium' : 'Premium Materials',
+      description: locale === 'es' ? 'Grifería, sanitarios, iluminación y más' : 'Taps, sanitaryware, lighting and more',
+      href: `/${locale}/materiales-premium`,
+      image: images.services.materiales,
+    },
+    {
+      title: locale === 'es' ? 'Grifos de Lavabo' : 'Basin Taps',
+      description: locale === 'es' ? 'Grohe, Hansgrohe, Roca. Múltiples acabados' : 'Grohe, Hansgrohe, Roca. Multiple finishes',
+      href: `/${locale}/venta-grifos-benalmadena`,
+      image: images.materials.grifos,
+    },
+  ]
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       
-      <div className="min-h-screen bg-white pt-20">
-        {/* Hero Section */}
-        <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
-          <div className="max-w-7xl mx-auto">
-            <nav className="text-sm text-gray-500 mb-8">
-              <Link href="/" className="hover:text-black transition-colors">
-                {locale === 'es' ? 'Inicio' : 'Home'}
-              </Link>
-              {' / '}
-              <Link href="/materiales-premium" className="hover:text-black transition-colors">
-                {locale === 'es' ? 'Tienda' : 'Store'}
-              </Link>
-              {' / '}
-              <span className="text-black font-medium">
-                {locale === 'es' ? 'Inodoros' : 'Toilets'}
-              </span>
-            </nav>
-            
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-6">
-                  {locale === 'es' 
-                    ? 'Inodoros en Benalmádena - Roca, Duravit'
-                    : 'Toilets in Benalmádena - Roca, Duravit'
-                  }
-                </h1>
-                <p className="text-lg text-gray-600 leading-relaxed mb-4">
-                  {locale === 'es'
-                    ? 'Inodoros suspendidos y de suelo en nuestra tienda de Benalmádena. Roca, Duravit, Villeroy & Boch. Descarga dual 3/6L para máximo ahorro de agua.'
-                    : 'Wall-hung and floor-standing toilets in our Benalmádena store. Roca, Duravit, Villeroy & Boch. Dual flush 3/6L for maximum water saving.'
-                  }
-                </p>
-                <div className="bg-white p-4 rounded-lg mb-8 inline-block">
-                  <p className="text-sm text-gray-600 mb-2">
-                    {locale === 'es' ? 'Servicios disponibles:' : 'Available services:'}
-                  </p>
-                  <ul className="space-y-1 text-sm">
-                    <li className="flex items-center gap-2">
-                      <span className="text-green-600">✓</span>
-                      {locale === 'es' ? 'Venta de inodoros' : 'Toilet sales'}
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-green-600">✓</span>
-                      {locale === 'es' ? 'Instalación profesional' : 'Professional installation'}
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-green-600">✓</span>
-                      {locale === 'es' ? 'Reforma completa de baño' : 'Complete bathroom renovation'}
-                    </li>
-                  </ul>
-                </div>
-                <Link
-                  href="/#contacto"
-                  className="inline-block px-8 py-4 bg-black text-white font-medium hover:bg-gray-800 transition-all duration-300"
-                >
-                  {locale === 'es' ? 'Visitar tienda o pedir presupuesto' : 'Visit store or request quote'}
-                </Link>
-              </div>
-              <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-                <Image
-                  src={images.materials.sanitarios}
-                  alt={locale === 'es' ? 'Inodoros Benalmádena' : 'Toilets Benalmádena'}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+      <div className="min-h-screen bg-white">
+      
+      {/* ── PAGE HEADER ── */}
+      <PageHeader
+        breadcrumbItems={[
+          { label: tCommon('home'), href: `/${locale}` },
+          { label: locale === 'es' ? 'Inodoros' : 'Toilets', href: null }
+        ]}
+        title={locale === 'es' ? 'Inodoros en Benalmádena - Roca, Duravit' : 'Toilets in Benalmádena - Roca, Duravit'}
+        subtitle={locale === 'es'
+          ? 'Inodoros suspendidos y de suelo en nuestra tienda de Benalmádena. Roca, Duravit, Villeroy & Boch. Descarga dual 3/6L para máximo ahorro de agua.'
+          : 'Wall-hung and floor-standing toilets in our Benalmádena store. Roca, Duravit, Villeroy & Boch. Dual flush 3/6L for maximum water saving.'
+        }
+        heroImage={images.materials.sanitarios}
+        heroImageAlt={locale === 'es' ? 'Inodoros Benalmádena' : 'Toilets Benalmádena'}
+        ctaPrimary={{
+          text: locale === 'es' ? 'Visitar tienda o pedir presupuesto' : 'Visit store or request quote',
+          href: `/${locale}#contacto`
+        }}
+        ctaSecondary={{
+          text: locale === 'es' ? 'Ver materiales premium' : 'View premium materials',
+          href: `/${locale}/materiales-premium`
+        }}
+        baseUrl={baseUrl}
+      />
+
+      {/* ── POR QUÉ ELEGIRNOS ── */}
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-12 md:mb-16">
+            {locale === 'es' ? 'Compra con confianza en Dekorama' : 'Buy with confidence at Dekorama'}
+          </h2>
+          <ServiceGrid items={caracteristicas} columns={4} />
+        </div>
+      </section>
 
         {/* Tipos de inodoros */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-12">
               {locale === 'es' ? 'Tipos de inodoros disponibles' : 'Available toilet types'}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
@@ -195,7 +186,7 @@ export default async function InodorosSuspendidosPage({ params }) {
                     : ['Installation without building work', 'Decorative visible tank', 'Horizontal or vertical outlet', 'Compact models available']
                 },
               ].map((item, index) => (
-                <div key={index} className="bg-gray-50 p-8 rounded-lg">
+                <div key={index} className="bg-white p-8 rounded-lg">
                   <h3 className="text-2xl font-semibold text-black mb-3">{item.title}</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">{item.desc}</p>
                   <ul className="space-y-2">
@@ -213,9 +204,9 @@ export default async function InodorosSuspendidosPage({ params }) {
         </section>
 
         {/* Marcas */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-6">
               {locale === 'es' ? 'Marcas premium de sanitarios' : 'Premium sanitary ware brands'}
             </h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -255,9 +246,9 @@ export default async function InodorosSuspendidosPage({ params }) {
         </section>
 
         {/* Características técnicas */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-12">
               {locale === 'es' ? 'Características técnicas' : 'Technical features'}
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -287,8 +278,8 @@ export default async function InodorosSuspendidosPage({ params }) {
                   desc: locale === 'es' ? 'Modelos de 48-52 cm de fondo para baños pequeños.' : '48-52 cm depth models for small bathrooms.'
                 },
               ].map((item, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-lg font-semibold text-black mb-2">{item.title}</h3>
+                <div key={index} className="bg-white p-6 rounded-lg">
+                  <h3 className="text-2xl font-semibold text-black mb-2">{item.title}</h3>
                   <p className="text-gray-600 text-sm">{item.desc}</p>
                 </div>
               ))}
@@ -297,36 +288,36 @@ export default async function InodorosSuspendidosPage({ params }) {
         </section>
 
         {/* Ventajas */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-12">
-              {locale === 'es' ? 'Compra con confianza en Dekorama' : 'Buy with confidence at Dekorama'}
+            <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-12">
+              {locale === 'es' ? 'Completa tu baño' : 'Complete your bathroom'}
             </h2>
             <div className="space-y-6">
               {[
                 {
-                  title: locale === 'es' ? 'Showroom físico en Benalmádena' : 'Physical showroom in Benalmádena',
+                  title: locale === 'es' ? 'Venta de bañeras y platos' : 'Bathtubs and trays sales',
                   desc: locale === 'es'
-                    ? 'Ven a nuestra tienda, ve los modelos en exposición y recibe asesoramiento de nuestros expertos.'
-                    : 'Come to our store, see the models on display and receive advice from our experts.'
+                    ? 'Bañeras Roca, Fiora, Kaldewei y platos de ducha en resina, carga mineral y porcelánicos.'
+                    : 'Roca, Fiora, Kaldewei bathtubs and resin, mineral cast and porcelain shower trays.'
                 },
                 {
-                  title: locale === 'es' ? 'Instalación profesional' : 'Professional installation',
+                  title: locale === 'es' ? 'Grifos de lavabo' : 'Basin taps',
                   desc: locale === 'es'
-                    ? 'Fontaneros certificados con años de experiencia. Instalación de inodoro suspendido con cisterna empotrada incluye obra necesaria.'
-                    : 'Certified plumbers with years of experience. Wall-hung toilet installation with concealed cistern includes necessary building work.'
+                    ? 'Grifos Grohe, Hansgrohe y Roca. Múltiples acabados: cromado, negro mate, dorado.'
+                    : 'Grohe, Hansgrohe and Roca taps. Multiple finishes: chrome, matt black, gold.'
                 },
                 {
-                  title: locale === 'es' ? 'Entrega rápida' : 'Fast delivery',
+                  title: locale === 'es' ? 'Mamparas de ducha' : 'Shower screens',
                   desc: locale === 'es'
-                    ? 'Modelos populares en stock inmediato. Para modelos especiales, entrega en 5-10 días.'
-                    : 'Popular models in immediate stock. For special models, delivery in 5-10 days.'
+                    ? 'Mamparas Profiltek, GME. Fijas, correderas, angulares. Vidrio templado 8mm.'
+                    : 'Profiltek, GME screens. Fixed, sliding, corner. 8mm tempered glass.'
                 },
                 {
-                  title: locale === 'es' ? 'Reforma completa opcional' : 'Complete renovation optional',
+                  title: locale === 'es' ? 'Reforma completa' : 'Complete renovation',
                   desc: locale === 'es'
-                    ? 'Si necesitas reforma integral de baño, nos encargamos de todo: alicatado, fontanería, electricidad y acabados.'
-                    : 'If you need complete bathroom renovation, we take care of everything: tiling, plumbing, electrical and finishes.'
+                    ? 'Reforma llave en mano de tu baño: alicatado, fontanería, electricidad, muebles.'
+                    : 'Turnkey bathroom renovation: tiling, plumbing, electrical, furniture.'
                 },
               ].map((item, index) => (
                 <div key={index} className="flex gap-4 items-start">
@@ -334,7 +325,7 @@ export default async function InodorosSuspendidosPage({ params }) {
                     {index + 1}
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-black mb-2">{item.title}</h3>
+                    <h3 className="text-2xl font-semibold text-black mb-2">{item.title}</h3>
                     <p className="text-gray-600 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
@@ -343,51 +334,28 @@ export default async function InodorosSuspendidosPage({ params }) {
           </div>
         </section>
 
-        {/* Related products/services */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        {/* ── RELATED SERVICES ── */}
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-semibold text-black mb-8 text-center">
-              {locale === 'es' ? 'Completa tu baño' : 'Complete your bathroom'}
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-8 md:mb-12 text-center">
+              {locale === 'es' ? 'Servicios relacionados' : 'Related services'}
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <Link href="/venta-grifos-benalmadena" className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
-                <h3 className="text-lg font-semibold text-black mb-2">
-                  {locale === 'es' ? 'Grifos de lavabo' : 'Basin taps'}
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  {locale === 'es' 
-                    ? 'Grohe, Hansgrohe, Roca. Múltiples acabados.'
-                    : 'Grohe, Hansgrohe, Roca. Multiple finishes.'
-                  }
-                </p>
-              </Link>
-              <Link href="/mamparas-ducha-benalmadena" className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
-                <h3 className="text-lg font-semibold text-black mb-2">
-                  {locale === 'es' ? 'Mamparas' : 'Shower screens'}
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  {locale === 'es' 
-                    ? 'Profiltek, GME. Fijas, correderas, angulares.'
-                    : 'Profiltek, GME. Fixed, sliding, corner.'
-                  }
-                </p>
-              </Link>
-              <Link href="/banos-completos" className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
-                <h3 className="text-lg font-semibold text-black mb-2">
-                  {locale === 'es' ? 'Reforma completa' : 'Complete renovation'}
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  {locale === 'es' 
-                    ? 'Reforma llave en mano de tu baño'
-                    : 'Turnkey renovation of your bathroom'
-                  }
-                </p>
-              </Link>
-            </div>
+            <RelatedLinks links={relatedServices} />
           </div>
         </section>
 
-        <CTAFinal />
+        {/* ── CTA FINAL ── */}
+        <CTASection
+          title={tCta('readyToTransform')}
+          description={tCta('freeVisitAndQuote')}
+          buttons={[
+            {
+              text: tCta('requestFreeVisit'),
+              href: `/${locale}#contacto`,
+              variant: 'primary'
+            }
+          ]}
+        />
       </div>
     </>
   )

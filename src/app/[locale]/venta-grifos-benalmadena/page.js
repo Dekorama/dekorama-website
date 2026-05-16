@@ -3,7 +3,10 @@ import Image from 'next/image'
 import { images } from '@/data/images'
 import { baseUrl } from '@/lib/site'
 import { getTranslations } from 'next-intl/server'
-import CTAFinal from '@/components/CTAFinal'
+import PageHeader from '@/components/PageHeader'
+import ServiceGrid from '@/components/ServiceGrid'
+import RelatedLinks from '@/components/RelatedLinks'
+import CTASection from '@/components/CTASection'
 
 export async function generateMetadata({ params }) {
   const { locale } = await params
@@ -33,6 +36,8 @@ export async function generateMetadata({ params }) {
 
 export default async function VentaGrifosPage({ params }) {
   const { locale } = await params
+  const tCta = await getTranslations({ locale, namespace: 'cta' })
+  const tCommon = await getTranslations({ locale, namespace: 'breadcrumb' })
   
   const productJsonLd = {
     '@context': 'https://schema.org',
@@ -67,108 +72,98 @@ export default async function VentaGrifosPage({ params }) {
     image: images.materials.grifos,
   }
 
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: locale === 'es' ? 'Inicio' : 'Home',
-        item: `${baseUrl}/${locale}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: locale === 'es' ? 'Tienda de Materiales' : 'Materials Store',
-        item: `${baseUrl}/${locale}/materiales-premium`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: locale === 'es' ? 'Grifos' : 'Taps',
-        item: `${baseUrl}/${locale}/venta-grifos-benalmadena`,
-      },
-    ],
-  }
+  const caracteristicas = [
+    {
+      title: locale === 'es' ? 'Showroom físico' : 'Physical showroom',
+      description: locale === 'es'
+        ? 'Ven a nuestra tienda en Benalmádena, prueba los grifos, compara acabados y recibe asesoramiento experto.'
+        : 'Come to our Benalmádena store, test the taps, compare finishes and receive expert advice.',
+    },
+    {
+      title: locale === 'es' ? 'Mejor precio garantizado' : 'Best price guaranteed',
+      description: locale === 'es'
+        ? 'Trabajamos directamente con fabricantes. Si encuentras un precio mejor, te lo igualamos.'
+        : "We work directly with manufacturers. If you find a better price, we'll match it.",
+    },
+    {
+      title: locale === 'es' ? 'Directo de fábrica' : 'Direct from factory',
+      description: locale === 'es'
+        ? 'Trabajamos bajo pedido directo de fábrica para asegurar acabados y referencias exactas. Plazo habitual de entrega: 7-14 días.'
+        : 'We work with direct factory orders to secure the exact finish and reference. Typical delivery time: 7-14 days.',
+    },
+    {
+      title: locale === 'es' ? 'Instalación profesional opcional' : 'Optional professional installation',
+      description: locale === 'es'
+        ? 'Si lo prefieres, instalamos los grifos con garantía total. También ofrecemos reforma completa de baño o cocina.'
+        : 'If you prefer, we install the taps with full warranty. We also offer complete bathroom or kitchen renovation.',
+    },
+  ]
+
+  const relatedServices = [
+    {
+      title: locale === 'es' ? 'Baños Completos' : 'Complete Bathrooms',
+      description: locale === 'es' ? 'Reforma integral de tu baño con acabados premium' : 'Complete bathroom renovation with premium finishes',
+      href: `/${locale}/banos-completos`,
+      image: images.services.banos,
+    },
+    {
+      title: locale === 'es' ? 'Materiales Premium' : 'Premium Materials',
+      description: locale === 'es' ? 'Grifería, sanitarios, iluminación y más' : 'Taps, sanitaryware, lighting and more',
+      href: `/${locale}/materiales-premium`,
+      image: images.services.materiales,
+    },
+    {
+      title: locale === 'es' ? 'Mamparas de Ducha' : 'Shower Screens',
+      description: locale === 'es' ? 'Profiltek, GME, Kassandra. Vidrio templado 8mm' : 'Profiltek, GME, Kassandra. 8mm tempered glass',
+      href: `/${locale}/mamparas-ducha-benalmadena`,
+      image: images.materials.mamparas,
+    },
+  ]
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       
-      <div className="min-h-screen bg-white pt-20">
-        {/* Hero Section */}
-        <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
-          <div className="max-w-7xl mx-auto">
-            <nav className="text-sm text-gray-500 mb-8">
-              <Link href="/" className="hover:text-black transition-colors">
-                {locale === 'es' ? 'Inicio' : 'Home'}
-              </Link>
-              {' / '}
-              <Link href="/materiales-premium" className="hover:text-black transition-colors">
-                {locale === 'es' ? 'Tienda' : 'Store'}
-              </Link>
-              {' / '}
-              <span className="text-black font-medium">
-                {locale === 'es' ? 'Grifos' : 'Taps'}
-              </span>
-            </nav>
-            
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-6">
-                  {locale === 'es' 
-                    ? 'Venta de Grifos en Benalmádena'
-                    : 'Taps Sale in Benalmádena'
-                  }
-                </h1>
-                <p className="text-lg text-gray-600 leading-relaxed mb-4">
-                  {locale === 'es'
-                    ? 'Grifos Grohe, Hansgrohe y Roca en nuestro showroom de Benalmádena. Amplia selección de grifos de lavabo, ducha termostáticos, bañera y cocina extraíbles.'
-                    : 'Grohe, Hansgrohe and Roca taps in our Benalmádena showroom. Wide selection of basin, thermostatic shower, bathtub and pull-out kitchen taps.'
-                  }
-                </p>
-                <div className="mb-8 w-fit rounded-lg bg-white p-4">
-                  <p className="text-sm text-gray-600 mb-2">
-                    {locale === 'es' ? 'Dos opciones disponibles:' : 'Two options available:'}
-                  </p>
-                  <ul className="space-y-1 text-sm">
-                    <li className="flex items-center gap-2">
-                      <span className="text-green-600">✓</span>
-                      {locale === 'es' ? 'Solo compra de grifos' : 'Taps purchase only'}
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-green-600">✓</span>
-                      {locale === 'es' ? 'Compra + instalación profesional' : 'Purchase + professional installation'}
-                    </li>
-                  </ul>
-                </div>
-                <Link
-                  href="/#contacto"
-                  className="inline-block px-8 py-4 bg-black text-white font-medium hover:bg-gray-800 transition-all duration-300"
-                >
-                  {locale === 'es' ? 'Visitar tienda o pedir presupuesto' : 'Visit store or request quote'}
-                </Link>
-              </div>
-              <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-                <Image
-                  src={images.materials.grifos}
-                  alt={locale === 'es' ? 'Grifos Grohe y Roca Benalmádena' : 'Grohe and Roca taps Benalmádena'}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+      <div className="min-h-screen bg-white">
+      
+      {/* ── PAGE HEADER ── */}
+      <PageHeader
+        breadcrumbItems={[
+          { label: tCommon('home'), href: `/${locale}` },
+          { label: locale === 'es' ? 'Grifos' : 'Taps', href: null }
+        ]}
+        title={locale === 'es' ? 'Venta de Grifos en Benalmádena' : 'Taps Sale in Benalmádena'}
+        subtitle={locale === 'es'
+          ? 'Grifos Grohe, Hansgrohe y Roca en nuestro showroom de Benalmádena. Amplia selección de grifos de lavabo, ducha termostáticos, bañera y cocina extraíbles.'
+          : 'Grohe, Hansgrohe and Roca taps in our Benalmádena showroom. Wide selection of basin, thermostatic shower, bathtub and pull-out kitchen taps.'
+        }
+        heroImage={images.materials.grifos}
+        heroImageAlt={locale === 'es' ? 'Grifos Grohe y Roca Benalmádena' : 'Grohe and Roca taps Benalmádena'}
+        ctaPrimary={{
+          text: locale === 'es' ? 'Visitar tienda o pedir presupuesto' : 'Visit store or request quote',
+          href: `/${locale}#contacto`
+        }}
+        ctaSecondary={{
+          text: locale === 'es' ? 'Ver materiales premium' : 'View premium materials',
+          href: `/${locale}/materiales-premium`
+        }}
+        baseUrl={baseUrl}
+      />
+
+      {/* ── POR QUÉ ELEGIRNOS ── */}
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-12 md:mb-16">
+            {locale === 'es' ? '¿Por qué comprar en Dekorama?' : 'Why buy at Dekorama?'}
+          </h2>
+          <ServiceGrid items={caracteristicas} columns={4} />
+        </div>
+      </section>
 
         {/* Tipos de grifos */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-12">
               {locale === 'es' ? 'Tipos de grifos disponibles' : 'Available tap types'}
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -198,8 +193,8 @@ export default async function VentaGrifosPage({ params }) {
                     : 'Pull-out with hose, high spout, with spray. Integrated filtering systems available.'
                 },
               ].map((item, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-black mb-3">{item.title}</h3>
+                <div key={index} className="bg-white p-6 rounded-lg">
+                  <h3 className="text-2xl font-semibold text-black mb-3">{item.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               ))}
@@ -208,9 +203,9 @@ export default async function VentaGrifosPage({ params }) {
         </section>
 
         {/* Marcas */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-6">
               {locale === 'es' ? 'Trabajamos con las mejores marcas' : 'We work with the best brands'}
             </h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -250,36 +245,36 @@ export default async function VentaGrifosPage({ params }) {
         </section>
 
         {/* Ventajas */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-12">
-              {locale === 'es' ? '¿Por qué comprar en Dekorama?' : 'Why buy at Dekorama?'}
+            <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-12">
+              {locale === 'es' ? 'También te puede interesar' : 'You might also be interested in'}
             </h2>
             <div className="space-y-6">
               {[
                 {
-                  title: locale === 'es' ? 'Showroom físico' : 'Physical showroom',
+                  title: locale === 'es' ? 'Mamparas de ducha' : 'Shower screens',
                   desc: locale === 'es'
-                    ? 'Ven a nuestra tienda en Benalmádena, prueba los grifos, compara acabados y recibe asesoramiento experto.'
-                    : 'Come to our Benalmádena store, test the taps, compare finishes and receive expert advice.'
+                    ? 'Profiltek, GME, Kassandra. Vidrio templado 8mm. Fijas, correderas, angulares.'
+                    : 'Profiltek, GME, Kassandra. 8mm tempered glass. Fixed, sliding, corner.'
                 },
                 {
-                  title: locale === 'es' ? 'Mejor precio garantizado' : 'Best price guaranteed',
+                  title: locale === 'es' ? 'Inodoros suspendidos' : 'Wall-hung toilets',
                   desc: locale === 'es'
-                    ? 'Trabajamos directamente con fabricantes. Si encuentras un precio mejor, te lo igualamos.'
-                    : 'We work directly with manufacturers. If you find a better price, we\'ll match it.'
+                    ? 'Roca, Duravit. Descarga dual eco. Instalación profesional disponible.'
+                    : 'Roca, Duravit. Eco dual flush. Professional installation available.'
                 },
                 {
-                  title: locale === 'es' ? 'Directo de fábrica' : 'Direct from factory',
+                  title: locale === 'es' ? 'Bañeras y platos de ducha' : 'Bathtubs and shower trays',
                   desc: locale === 'es'
-                    ? 'Trabajamos bajo pedido directo de fábrica para asegurar acabados y referencias exactas. Plazo habitual de entrega: 7-14 días.'
-                    : 'We work with direct factory orders to secure the exact finish and reference. Typical delivery time: 7-14 days.'
+                    ? 'Roca, Fiora, Kaldewei. Todas las medidas. Instalación incluida.'
+                    : 'Roca, Fiora, Kaldewei. All sizes. Installation included.'
                 },
                 {
-                  title: locale === 'es' ? 'Instalación profesional opcional' : 'Optional professional installation',
+                  title: locale === 'es' ? 'Reforma completa de baño' : 'Complete bathroom renovation',
                   desc: locale === 'es'
-                    ? 'Si lo prefieres, instalamos los grifos con garantía total. También ofrecemos reforma completa de baño o cocina.'
-                    : 'If you prefer, we install the taps with full warranty. We also offer complete bathroom or kitchen renovation.'
+                    ? 'Reforma llave en mano con instalación de todos los materiales.'
+                    : 'Turnkey renovation with installation of all materials.'
                 },
               ].map((item, index) => (
                 <div key={index} className="flex gap-4 items-start">
@@ -287,7 +282,7 @@ export default async function VentaGrifosPage({ params }) {
                     {index + 1}
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-black mb-2">{item.title}</h3>
+                    <h3 className="text-2xl font-semibold text-black mb-2">{item.title}</h3>
                     <p className="text-gray-600 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
@@ -296,51 +291,28 @@ export default async function VentaGrifosPage({ params }) {
           </div>
         </section>
 
-        {/* Related products/services */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        {/* ── RELATED SERVICES ── */}
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-semibold text-black mb-8 text-center">
-              {locale === 'es' ? 'También te puede interesar' : 'You might also be interested in'}
+            <h2 className="text-2xl md:text-3xl font-bold text-black mb-8 md:mb-12 text-center">
+              {locale === 'es' ? 'Servicios relacionados' : 'Related services'}
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <Link href="/mamparas-ducha-benalmadena" className="bg-white p-6 rounded-lg hover:shadow-lg transition-shadow">
-                <h3 className="text-lg font-semibold text-black mb-2">
-                  {locale === 'es' ? 'Mamparas de ducha' : 'Shower screens'}
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  {locale === 'es' 
-                    ? 'Profiltek, GME, Kassandra. Vidrio templado 8mm.'
-                    : 'Profiltek, GME, Kassandra. 8mm tempered glass.'
-                  }
-                </p>
-              </Link>
-              <Link href="/inodoros-suspendidos-benalmadena" className="bg-white p-6 rounded-lg hover:shadow-lg transition-shadow">
-                <h3 className="text-lg font-semibold text-black mb-2">
-                  {locale === 'es' ? 'Inodoros suspendidos' : 'Wall-hung toilets'}
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  {locale === 'es' 
-                    ? 'Roca, Duravit. Descarga dual eco.'
-                    : 'Roca, Duravit. Eco dual flush.'
-                  }
-                </p>
-              </Link>
-              <Link href="/banos-completos" className="bg-white p-6 rounded-lg hover:shadow-lg transition-shadow">
-                <h3 className="text-lg font-semibold text-black mb-2">
-                  {locale === 'es' ? 'Reforma completa de baño' : 'Complete bathroom renovation'}
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  {locale === 'es' 
-                    ? 'Reforma llave en mano con instalación incluida'
-                    : 'Turnkey renovation with installation included'
-                  }
-                </p>
-              </Link>
-            </div>
+            <RelatedLinks links={relatedServices} />
           </div>
         </section>
 
-        <CTAFinal />
+        {/* ── CTA FINAL ── */}
+        <CTASection
+          title={tCta('readyToTransform')}
+          description={tCta('freeVisitAndQuote')}
+          buttons={[
+            {
+              text: tCta('requestFreeVisit'),
+              href: `/${locale}#contacto`,
+              variant: 'primary'
+            }
+          ]}
+        />
       </div>
     </>
   )
