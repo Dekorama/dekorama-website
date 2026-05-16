@@ -86,9 +86,8 @@ export default function Servicios() {
                 </div>
               </motion.div>
             ) : (
-              <motion.div variants={staggerItem}>
+              <motion.div key={svc.key} variants={staggerItem}>
               <Link
-                key={svc.key}
                 href={svc.link}
                 className="card-interactive group h-full flex flex-col cursor-pointer"
               >
