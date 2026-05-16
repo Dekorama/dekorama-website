@@ -119,16 +119,21 @@ export default async function CatalogoPage({ params }) {
 
       {/* ── STATS BAR ── */}
       <section className="bg-black py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
           {[
             { value: t('stats.refs'), label: t('stats.refsLabel') },
             { value: t('stats.years'), label: t('stats.yearsLabel') },
             { value: t('stats.brands'), label: t('stats.brandsLabel') },
             { value: t('stats.advice'), label: t('stats.adviceLabel') },
           ].map(({ value, label }) => (
-            <div key={label} className="flex flex-col items-center gap-2">
-              <span className="text-4xl md:text-5xl font-bold text-white">{value}</span>
-              <span className="text-sm text-white/70 tracking-wide leading-relaxed">{label}</span>
+            <div 
+              key={label} 
+              className="bg-white/5 backdrop-blur-sm rounded-xl p-10 md:p-12 border border-white/10 hover:border-white/20 transition-all duration-300 hover:bg-white/10"
+            >
+              <div className="flex flex-col items-center gap-4 text-center">
+                <span className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">{value}</span>
+                <span className="text-sm md:text-base text-white/90 leading-relaxed">{label}</span>
+              </div>
             </div>
           ))}
         </div>
