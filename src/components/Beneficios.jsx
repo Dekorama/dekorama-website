@@ -1,6 +1,8 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import { motion } from 'framer-motion'
+import { fadeUp, staggerContainer, staggerItem, viewportOptions } from '@/lib/animations'
 
 export default function Beneficios() {
   const t = useTranslations('beneficios')
@@ -48,23 +50,36 @@ export default function Beneficios() {
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-bg">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-16 tracking-tight">
+        <motion.h2 
+          className="text-3xl md:text-4xl font-semibold text-black text-center mb-16 tracking-tight"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOptions}
+          variants={fadeUp}
+        >
           {t('title')}
-        </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+        </motion.h2>
+        <motion.div 
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOptions}
+          variants={staggerContainer}
+        >
           {beneficios.map((beneficio, index) => (
-            <div
+            <motion.div
               key={index}
               className="card text-center"
+              variants={staggerItem}
             >
               <div className="flex justify-center text-black mb-4">
                 {beneficio.icon}
               </div>
               <h3 className="text-2xl font-semibold text-black mb-3 tracking-tight">{beneficio.title}</h3>
               <p className="text-gray-600 leading-relaxed">{beneficio.description}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )

@@ -1,6 +1,10 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import Breadcrumb, { generateBreadcrumbSchema } from './Breadcrumb'
+import { motion } from 'framer-motion'
+import { fadeUp, heroText, viewportOptions } from '@/lib/animations'
 
 /**
  * PageHeader Component - Unified Header for All Pages
@@ -76,19 +80,39 @@ export default function PageHeader({
 
           {/* Centered Content */}
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 tracking-tight">
+            <motion.h1 
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 tracking-tight"
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportOptions}
+              variants={heroText}
+            >
               {title}
-            </h1>
+            </motion.h1>
             
             {subtitle && (
-              <p className="text-xl text-gray-600 leading-relaxed mb-10">
+              <motion.p 
+                className="text-xl text-gray-600 leading-relaxed mb-10"
+                initial="hidden"
+                whileInView="visible"
+                viewport={viewportOptions}
+                variants={heroText}
+                transition={{ delay: 0.1 }}
+              >
                 {subtitle}
-              </p>
+              </motion.p>
             )}
 
             {/* CTAs */}
             {(ctaPrimary || ctaSecondary) && (
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+                initial="hidden"
+                whileInView="visible"
+                viewport={viewportOptions}
+                variants={heroText}
+                transition={{ delay: 0.2 }}
+              >
                 {ctaPrimary && (
                   <Link href={ctaPrimary.href} className="btn-primary">
                     {ctaPrimary.text}
@@ -99,7 +123,7 @@ export default function PageHeader({
                     {ctaSecondary.text}
                   </Link>
                 )}
-              </div>
+              </motion.div>
             )}
           </div>
         </div>
@@ -123,19 +147,39 @@ export default function PageHeader({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column: Content */}
           <div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 tracking-tight">
+            <motion.h1 
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 tracking-tight"
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportOptions}
+              variants={heroText}
+            >
               {title}
-            </h1>
+            </motion.h1>
             
             {subtitle && (
-              <p className="text-xl text-gray-600 leading-relaxed mb-10">
+              <motion.p 
+                className="text-xl text-gray-600 leading-relaxed mb-10"
+                initial="hidden"
+                whileInView="visible"
+                viewport={viewportOptions}
+                variants={heroText}
+                transition={{ delay: 0.1 }}
+              >
                 {subtitle}
-              </p>
+              </motion.p>
             )}
 
             {/* CTAs */}
             {(ctaPrimary || ctaSecondary) && (
-              <div className="flex flex-col sm:flex-row gap-4">
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-4"
+                initial="hidden"
+                whileInView="visible"
+                viewport={viewportOptions}
+                variants={heroText}
+                transition={{ delay: 0.2 }}
+              >
                 {ctaPrimary && (
                   <Link href={ctaPrimary.href} className="btn-primary">
                     {ctaPrimary.text}
@@ -146,12 +190,19 @@ export default function PageHeader({
                     {ctaSecondary.text}
                   </Link>
                 )}
-              </div>
+              </motion.div>
             )}
           </div>
 
           {/* Right Column: Hero Image */}
-          <div className="relative aspect-[4/3] lg:aspect-[3/2] rounded-xl overflow-hidden">
+          <motion.div 
+            className="relative aspect-[4/3] lg:aspect-[3/2] rounded-xl overflow-hidden"
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOptions}
+            variants={fadeUp}
+            transition={{ delay: 0.2 }}
+          >
             <Image
               src={heroImage}
               alt={heroImageAlt}
@@ -160,7 +211,7 @@ export default function PageHeader({
               priority
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 640px"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

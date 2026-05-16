@@ -99,11 +99,19 @@ export function generateBreadcrumbSchema(items, baseUrl) {
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    'itemListElement': items.map((item, index) => ({
-      '@type': 'ListItem',
-      'position': index + 1,
-      'name': item.label,
-      'item': item.href ? `${baseUrl}${item.href}` : undefined
-    }))
+    'itemListElement': items.map((item, index) => {
+      const listItem = {
+        '@type': 'ListItem',
+        'position': index + 1,
+        'name': item.label
+      }
+      
+      // Only add 'item' property if href exists
+      if (item.href) {
+        listItem.item = `${baseUrl}${item.href}`
+      }
+      
+      return listItem
+    })
   }
 }

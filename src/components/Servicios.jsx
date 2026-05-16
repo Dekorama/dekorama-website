@@ -4,6 +4,8 @@ import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { images } from '@/data/images'
 import { useTranslations } from 'next-intl'
+import { motion } from 'framer-motion'
+import { fadeUp, staggerContainer, staggerItem, viewportOptions } from '@/lib/animations'
 
 const serviceKeys = [
   { key: 'reformas', link: '/reformas-integrales', catalogLink: null },
@@ -24,15 +26,28 @@ export default function Servicios() {
   return (
     <section id="servicios" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-accent/5">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-16 tracking-tight">
+        <motion.h2 
+          className="text-3xl md:text-4xl font-semibold text-black text-center mb-16 tracking-tight"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOptions}
+          variants={fadeUp}
+        >
           {t('title')}
-        </h2>
-        <div className="grid md:grid-cols-2 gap-8">
+        </motion.h2>
+        <motion.div 
+          className="grid md:grid-cols-2 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOptions}
+          variants={staggerContainer}
+        >
           {serviceKeys.map((svc, index) =>
             svc.catalogLink ? (
-              <div
+              <motion.div
                 key={svc.key}
                 className="card group h-full flex flex-col"
+                variants={staggerItem}
               >
                 <Link href={svc.link} className="block flex-shrink-0">
                   <div className="relative h-64 overflow-hidden rounded-lg">
@@ -69,8 +84,9 @@ export default function Servicios() {
                     </Link>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ) : (
+              <motion.div variants={staggerItem}>
               <Link
                 key={svc.key}
                 href={svc.link}
@@ -96,9 +112,10 @@ export default function Servicios() {
                   </span>
                 </div>
               </Link>
+              </motion.div>
             )
           )}
-        </div>
+        </motion.div>
       </div>
     </section>
   )

@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import { Link } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
+import { motion } from 'framer-motion'
+import { fadeUp, viewportOptions } from '@/lib/animations'
 
 const TIPO_REFORMA_OPTIONS = [
   { value: '', labelKey: 'placeholder' },
@@ -56,12 +58,25 @@ export default function CTAFinal() {
   return (
     <section id="contacto" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-bg">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-4 tracking-tight">
-          {tCta('readyToTransform')
-        </h2>
-        <p className="text-gray-600 text-center mb-12 max-w-xl mx-auto leading-relaxed">
+        <motion.h2 
+          className="text-3xl md:text-4xl font-semibold text-black text-center mb-4 tracking-tight"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOptions}
+          variants={fadeUp}
+        >
+          {tCta('readyToTransform')}
+        </motion.h2>
+        <motion.p 
+          className="text-gray-600 text-center mb-12 max-w-xl mx-auto leading-relaxed"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOptions}
+          variants={fadeUp}
+          transition={{ delay: 0.1 }}
+        >
           {tCta('tellUsProject')}
-        </p>
+        </motion.p>
 
         {status === 'success' && (
           <div className="mb-8 p-6 bg-black text-white text-center rounded-lg">
@@ -76,7 +91,15 @@ export default function CTAFinal() {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-6 mb-12">
+        <motion.form 
+          onSubmit={handleSubmit} 
+          className="space-y-6 mb-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOptions}
+          variants={fadeUp}
+          transition={{ delay: 0.2 }}
+        >
           <div className="grid md:grid-cols-2 gap-6">
             <input
               type="text"
@@ -152,9 +175,16 @@ export default function CTAFinal() {
           >
             {status === 'loading' ? t('sending') : t('submit')}
           </button>
-        </form>
+        </motion.form>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8 border-t border-gray-300">
+        <motion.div 
+          className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8 border-t border-gray-300"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOptions}
+          variants={fadeUp}
+          transition={{ delay: 0.3 }}
+        >
           <a
             href="https://wa.me/34628571537"
             target="_blank"
@@ -176,7 +206,7 @@ export default function CTAFinal() {
             </div>
             <span className="font-medium">+34 628 571 537</span>
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

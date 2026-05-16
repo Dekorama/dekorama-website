@@ -1,3 +1,8 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import { staggerContainer, staggerItem, viewportOptions } from '@/lib/animations'
+
 /**
  * ServiceGrid Component
  * 
@@ -25,11 +30,18 @@ export default function ServiceGrid({ items = [], className = '' }) {
   }
 
   return (
-    <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${className}`}>
+    <motion.div 
+      className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${className}`}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOptions}
+      variants={staggerContainer}
+    >
       {items.map((item, index) => (
-        <div 
+        <motion.div 
           key={index}
           className="card"
+          variants={staggerItem}
         >
           {/* Icon */}
           {item.icon && (
@@ -47,8 +59,8 @@ export default function ServiceGrid({ items = [], className = '' }) {
           <p className="text-gray-600 leading-relaxed">
             {item.description}
           </p>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   )
 }

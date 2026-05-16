@@ -1,5 +1,9 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { staggerContainer, staggerItem, viewportOptions } from '@/lib/animations'
 
 /**
  * RelatedLinks Component
@@ -30,12 +34,18 @@ export default function RelatedLinks({ links = [], className = '' }) {
   }
 
   return (
-    <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 ${className}`}>
+    <motion.div 
+      className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 ${className}`}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOptions}
+      variants={staggerContainer}
+    >
       {links.map((link, index) => (
+        <motion.div key={index} variants={staggerItem}>
         <Link
-          key={index}
           href={link.href}
-          className="card-interactive group"
+          className="card-interactive group block"
         >
           {/* Image */}
           {link.image && (
@@ -80,7 +90,8 @@ export default function RelatedLinks({ links = [], className = '' }) {
             </svg>
           </div>
         </Link>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   )
 }

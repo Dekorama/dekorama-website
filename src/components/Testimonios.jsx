@@ -1,6 +1,8 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import { motion } from 'framer-motion'
+import { fadeUp, staggerContainer, staggerItem, viewportOptions } from '@/lib/animations'
 
 const GOOGLE_REVIEWS_URL =
   'https://www.google.com/search?sca_esv=498f31acae8dba9f&rlz=1C5GCEM_enES1180ES1180&sxsrf=ANbL-n45ovXOU4K7gzn7sazY8HybySDHUw:1778875912827&q=dekorama+benalmadena&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOXMZk2BXDn_wSp9zZHH_6O6pdFfhYccHfZ2-Dk4yl_92Zw9AXArCsqRs6aka1djDIOfuTJw%3D&uds=ALYpb_lLt3rF4OntvAcKw6YR8l5VVBsMcczqtsRAOjcYb7ygvr_nsXYI7zqQE_oAKC5GK9unwZbGRqvjEyp8xdxG2U-Ch107_lpvTexeVg-Rkrxu3Tw6rZI&sa=X&ved=2ahUKEwikzIiXjbyUAxWKNvsDHZ3hJ1gQ3PALegQIHBAE'
@@ -38,14 +40,27 @@ export default function Testimonios() {
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-bg">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-semibold text-black text-center mb-16 tracking-tight">
+        <motion.h2 
+          className="text-3xl md:text-4xl font-semibold text-black text-center mb-16 tracking-tight"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOptions}
+          variants={fadeUp}
+        >
           {t('title')}
-        </h2>
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        </motion.h2>
+        <motion.div 
+          className="grid md:grid-cols-3 gap-8 mb-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOptions}
+          variants={staggerContainer}
+        >
           {testimonios.map((testimonio, index) => (
-            <div
+            <motion.div
               key={index}
               className="card"
+              variants={staggerItem}
             >
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
@@ -59,10 +74,16 @@ export default function Testimonios() {
                   <div className="text-sm text-gray-600">{t(testimonio.detalleKey)}</div>
                 )}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-        <div className="text-center">
+        </motion.div>
+        <motion.div 
+          className="text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOptions}
+          variants={fadeUp}
+        >
           <a
             href={GOOGLE_REVIEWS_URL}
             target="_blank"
@@ -76,7 +97,7 @@ export default function Testimonios() {
             <span className="text-gray-400">•</span>
             <span className="text-gray-600">{t('reviews')}</span>
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
