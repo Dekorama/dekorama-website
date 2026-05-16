@@ -37,8 +37,8 @@ export default function ProyectosPage() {
 
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-100">\n            {projects.map((project, index) => {
-              const num = String(index + 1).padStart(2, '0')
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-100">
+            {projects.map((project, index) => {
               const title = locale === 'es' ? project.titleEs : project.titleEn
               const desc = locale === 'es' ? project.descEs : project.descEn
               const category = tTypes(project.category)
@@ -57,11 +57,6 @@ export default function ProyectosPage() {
                     className="object-cover transition-opacity duration-300 group-hover:opacity-90"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
-
-                  {/* Number badge — always visible */}
-                  <div className="absolute top-4 left-4 z-10 text-white/60 text-xs font-mono tracking-widest select-none">
-                    {num}
-                  </div>
 
                   {/* Overlay — slides up on hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out flex flex-col justify-end p-6">
