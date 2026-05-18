@@ -53,7 +53,6 @@ export default async function AvisoLegalPage({ params }) {
       </section>
 
         </div>
-      </section>
 
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="space-y-8 text-gray-700 leading-relaxed">
@@ -98,7 +97,6 @@ export default async function AvisoLegalPage({ params }) {
           </section>
         </div>
       </article>
-    </div>
     </>
   )
 }
