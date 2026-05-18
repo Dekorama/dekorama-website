@@ -1,9 +1,7 @@
 'use client'
 
-import { useState, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import PartnerCalculator from '@/components/PartnerCalculator'
-import { Link } from '@/i18n/navigation'
 
 // ─── Icons ────────────────────────────────────────────────────────────────────
 
@@ -109,120 +107,10 @@ function IconWhatsApp() {
   )
 }
 
-// ─── Contact Form ──────────────────────────────────────────────────────────────
-
-function PartnerContactForm() {
-  const t = useTranslations('partners.contact')
-  const [status, setStatus] = useState('idle') // idle | sending | success | error
-  const [form, setForm] = useState({ name: '', company: '', phone: '', email: '', message: '' })
-
-  const handleChange = (e) => setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setStatus('sending')
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: form.name,
-          phone: form.phone,
-          email: form.email,
-          projectType: 'Partner B2B',
-          description: `Empresa/Estudio: ${form.company}\n\n${form.message}`,
-        }),
-      })
-      if (!res.ok) throw new Error()
-      setStatus('success')
-    } catch {
-      setStatus('error')
-    }
-  }
-
-  if (status === 'success') {
-    return (
-      <div className="text-center py-16 space-y-3">
-        <div className="text-4xl">✓</div>
-        <p className="text-xl font-semibold text-black">{t('successTitle')}</p>
-        <p className="text-gray-500">{t('successSubtitle')}</p>
-      </div>
-    )
-  }
-
-  return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid sm:grid-cols-2 gap-4">
-        <input
-          name="name"
-          type="text"
-          required
-          value={form.name}
-          onChange={handleChange}
-          placeholder={t('namePlaceholder')}
-          className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:border-black focus:outline-none transition-colors"
-        />
-        <input
-          name="company"
-          type="text"
-          required
-          value={form.company}
-          onChange={handleChange}
-          placeholder={t('companyPlaceholder')}
-          className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:border-black focus:outline-none transition-colors"
-        />
-      </div>
-      <div className="grid sm:grid-cols-2 gap-4">
-        <input
-          name="phone"
-          type="tel"
-          required
-          value={form.phone}
-          onChange={handleChange}
-          placeholder={t('phonePlaceholder')}
-          className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:border-black focus:outline-none transition-colors"
-        />
-        <input
-          name="email"
-          type="email"
-          required
-          value={form.email}
-          onChange={handleChange}
-          placeholder={t('emailPlaceholder')}
-          className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:border-black focus:outline-none transition-colors"
-        />
-      </div>
-      <textarea
-        name="message"
-        rows={4}
-        value={form.message}
-        onChange={handleChange}
-        placeholder={t('messagePlaceholder')}
-        className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:border-black focus:outline-none transition-colors resize-none"
-      />
-      {status === 'error' && (
-        <p className="text-red-500 text-sm">{t('errorGeneric')}</p>
-      )}
-      <button
-        type="submit"
-        disabled={status === 'sending'}
-        className="w-full py-4 bg-black text-white font-semibold hover:bg-gray-800 transition-colors disabled:opacity-50 rounded-lg"
-      >
-        {status === 'sending' ? t('sending') : t('submit')}
-      </button>
-    </form>
-  )
-}
-
 // ─── Page ──────────────────────────────────────────────────────────────────────
 
 export default function PartnersPage() {
   const t = useTranslations('partners')
-  const contactRef = useRef(null)
-
-  const scrollToContact = () => {
-    contactRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
 
   const benefits = [
     { icon: <IconMoney />, title: t('benefits.b1Title'), desc: t('benefits.b1Desc') },
@@ -274,12 +162,14 @@ export default function PartnersPage() {
               {t('hero.audience')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button
-                onClick={scrollToContact}
+              <a
+                href="https://wa.me/34628571537"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary text-center"
               >
                 {t('hero.ctaPrimary')}
-              </button>
+              </a>
               <a
                 href="#calculadora"
                 className="px-8 py-4 border border-gray-600 text-white font-semibold hover:border-white transition-all duration-300 rounded-lg text-center"
@@ -460,53 +350,48 @@ export default function PartnersPage() {
           <h2 className="text-3xl md:text-4xl font-semibold">{t('showroom.title')}</h2>
           <p className="text-gray-300 text-lg leading-relaxed">{t('showroom.body')}</p>
           <p className="text-gray-400 text-base">{t('showroom.international')}</p>
-          <button
-            onClick={scrollToContact}
+          <a
+            href="https://wa.me/34628571537"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-primary inline-block"
           >
             {t('showroom.cta')}
-          </button>
+          </a>
         </div>
       </section>
 
       {/* ── 9. Contact ──────────────────────────────────────────────────────── */}
-      <section ref={contactRef} id="contacto-partners" className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="contacto-partners" className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-semibold text-black mb-4">{t('contact.title')}</h2>
             <p className="text-gray-500 text-lg max-w-xl mx-auto leading-relaxed">{t('contact.subtitle')}</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-10 items-start">
-            {/* Form */}
-            <div className="bg-gray-bg rounded-2xl p-8">
-              <PartnerContactForm />
+          <div className="max-w-md mx-auto text-center space-y-8">
+            {/* WhatsApp button */}
+            <div className="space-y-4">
+              <a
+                href="https://wa.me/34628571537"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] text-white font-semibold rounded-lg hover:bg-green-600 transition-colors"
+              >
+                <IconWhatsApp />
+                {t('contact.whatsAppCta')}
+              </a>
             </div>
 
-            {/* WhatsApp + info */}
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <p className="text-gray-500 font-medium">{t('contact.orWhatsApp')}</p>
-                <a
-                  href="https://wa.me/34628571537"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] text-white font-semibold rounded-lg hover:bg-green-600 transition-colors"
-                >
-                  <IconWhatsApp />
-                  {t('contact.whatsAppCta')}
-                </a>
-              </div>
-
-              <div className="space-y-2 text-sm text-gray-500">
-                <p className="font-semibold text-black">Dekorama Group</p>
-                <p>Avenida Tivoli, 17, Local 5</p>
-                <p>29631 Benalmádena, Málaga</p>
-                <a href="tel:+34628571537" className="block hover:text-black transition-colors">+34 628 571 537</a>
-                <a href="https://www.dekoramagroup.com" target="_blank" rel="noopener noreferrer" className="block hover:text-black transition-colors">
-                  www.dekoramagroup.com
-                </a>
-              </div>
+            {/* Contact info */}
+            <div className="space-y-2 text-sm text-gray-500">
+              <p className="font-semibold text-black">Dekorama Group</p>
+              <p>Avenida Tivoli, 17, Local 5</p>
+              <p>29631 Benalmádena, Málaga</p>
+              <a href="tel:+34628571537" className="block hover:text-black transition-colors">+34 628 571 537</a>
+              <a href="https://www.dekoramagroup.com" target="_blank" rel="noopener noreferrer" className="block hover:text-black transition-colors">
+                www.dekoramagroup.com
+              </a>
             </div>
           </div>
         </div>
