@@ -14,7 +14,8 @@
  *   GEMINI_API_KEY   From https://aistudio.google.com
  *
  * Optional env vars:
- *   GEMINI_MODEL     Default: gemini-2.0-flash
+ *   GEMINI_MODEL     Default: gemini-2.5-flash
+ *   GEMINI_IMAGE_MODEL Default: gemini-2.5-flash-image
  */
 
 'use strict';
@@ -50,7 +51,7 @@ function parseArgs() {
     keyword: null,
     fromQueue: false,
     dryRun: false,
-    model: process.env.GEMINI_MODEL || 'gemini-2.0-flash',
+    model: process.env.GEMINI_MODEL || 'gemini-2.5-flash',
   };
 
   for (let i = 0; i < args.length; i++) {
@@ -147,6 +148,7 @@ Return the JSON object as specified in your instructions.`;
 // ---------------------------------------------------------------------------
 async function generateCoverImage(keyword, slug, apiKey, dryRun) {
   const OUTPUT_DIR = path.join(ROOT, 'public', 'images', 'blog');
+  const imageModelName = process.env.GEMINI_IMAGE_MODEL || 'gemini-2.5-flash-image';
 
   if (dryRun) {
     console.log('[DRY RUN] Would generate cover image with Gemini.');
@@ -155,7 +157,7 @@ async function generateCoverImage(keyword, slug, apiKey, dryRun) {
 
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({
-    model: 'gemini-2.0-flash-preview-image-generation',
+    model: imageModelName,
   });
 
   const imagePrompt =
@@ -275,6 +277,84 @@ function countWords(text) {
     .split(/\s+/)
     .filter(Boolean)
     .length;
+}
+
+function buildFaqSection(keyword, locale) {
+  if (locale === 'es') {
+    return [
+      '## Preguntas frecuentes',
+      '',
+      `### ¿Cuánto cuesta ${keyword}?`,
+      'El coste depende del tamaño del espacio, la calidad de los materiales y el alcance de la obra. La mejor forma de acertar es pedir una visita y un presupuesto detallado antes de comparar opciones.',
+      '',
+      `### ¿Qué materiales suelen funcionar mejor para ${keyword}?`,
+      'En la mayoría de proyectos conviene priorizar materiales resistentes, fáciles de mantener y adecuados al uso diario. En Dekorama solemos valorar porcelánico, encimeras compactas, grifería fiable y acabados que soporten bien la humedad y el desgaste.',
+      '',
+      `### ¿Cuánto tiempo se tarda en completar ${keyword}?`,
+      'El plazo varía según la obra previa, la disponibilidad de materiales y si hay que tocar instalaciones. En proyectos bien planificados, definir acabados y mediciones antes de empezar ayuda a evitar retrasos innecesarios.',
+    ].join('\n');
+  }
+
+  return [
+    '## Frequently asked questions',
+    '',
+    `### How much does ${keyword} cost?`,
+    'The final cost depends on the size of the project, the specification level and whether plumbing, electrics or layout changes are involved. A site visit and itemised quote are the safest way to compare options properly.',
+    '',
+    `### Which materials work best for ${keyword}?`,
+    'In most cases, durable low-maintenance materials are the best fit. We usually look at porcelain surfaces, reliable fittings, practical worktops and finishes that hold up well to daily use and cleaning.',
+    '',
+    `### How long does ${keyword} usually take?`,
+    'That depends on the scope, the condition of the property and material lead times. Projects move faster when layouts, finishes and measurements are agreed before work starts on site.',
+  ].join('\n');
+}
+
+function ensureFaqSection(body, keyword, locale) {
+  const hasFaq = locale === 'es'
+    ? /^##\s+Preguntas frecuentes/m.test(body)
+    : /^##\s+Frequently asked questions/m.test(body);
+
+  if (hasFaq) return body;
+
+  return `${body.trim()}\n\n${buildFaqSection(keyword, locale)}\n`;
+}
+
+function buildInternalLinksSection(locale) {
+  if (locale === 'es') {
+    return [
+      '## Servicios y materiales relacionados',
+      '',
+      '- [Reformas integrales en la Costa del Sol](/es/reformas-integrales)',
+      '- [Cocinas a medida](/es/cocinas-a-medida)',
+      '- [Baños completos](/es/banos-completos)',
+    ].join('\n');
+  }
+
+  return [
+    '## Related services and materials',
+    '',
+    '- [Full home renovations on the Costa del Sol](/en/reformas-integrales)',
+    '- [Custom kitchens](/en/cocinas-a-medida)',
+    '- [Complete bathroom renovations](/en/banos-completos)',
+  ].join('\n');
+}
+
+function ensureInternalLinks(body, locale) {
+  const linkCount = locale === 'es'
+    ? (body.match(/\]\(\/es\//g) || []).length
+    : (body.match(/\]\(\/en\//g) || []).length;
+
+  if (linkCount >= 2) return body;
+
+  return `${body.trim()}\n\n${buildInternalLinksSection(locale)}\n`;
+}
+
+function normalizeGeneratedPost(parsed, keyword) {
+  parsed.article_es = ensureFaqSection(parsed.article_es, keyword, 'es');
+  parsed.article_en = ensureFaqSection(parsed.article_en, keyword, 'en');
+  parsed.article_es = ensureInternalLinks(parsed.article_es, 'es');
+  parsed.article_en = ensureInternalLinks(parsed.article_en, 'en');
+  return parsed;
 }
 
 function validateArticleBody(body, locale) {
@@ -445,6 +525,8 @@ function printSummary(parsed) {
     console.error(`\nGeneration error: ${err.message}`);
     process.exit(1);
   }
+
+  parsed = normalizeGeneratedPost(parsed, keyword);
 
   try {
     validateGeneratedPost(parsed);
