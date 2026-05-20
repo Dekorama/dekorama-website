@@ -32,6 +32,21 @@ const ROOT = process.cwd();
 const QUEUE_PATH = path.join(ROOT, 'scripts', 'keywords-queue.json');
 const BLOG_DIR = path.join(ROOT, 'src', 'content', 'blog');
 const SLUG_MAP_PATH = path.join(ROOT, 'src', 'lib', 'blogSlugMap.js');
+const ARTICLE_RESPONSE_SCHEMA = {
+  type: 'object',
+  properties: {
+    slug_es: { type: 'string', description: 'Spanish URL slug in lowercase and hyphens only.' },
+    slug_en: { type: 'string', description: 'English URL slug in lowercase and hyphens only.' },
+    title_es: { type: 'string', description: 'Full Spanish SEO title.' },
+    title_en: { type: 'string', description: 'Full English SEO title.' },
+    excerpt_es: { type: 'string', description: 'Spanish excerpt up to 155 characters.' },
+    excerpt_en: { type: 'string', description: 'English excerpt up to 155 characters.' },
+    article_es: { type: 'string', description: 'Spanish markdown article body without frontmatter.' },
+    article_en: { type: 'string', description: 'English markdown article body without frontmatter.' },
+  },
+  required: ['slug_es', 'slug_en', 'title_es', 'title_en', 'excerpt_es', 'excerpt_en', 'article_es', 'article_en'],
+  propertyOrdering: ['slug_es', 'slug_en', 'title_es', 'title_en', 'excerpt_es', 'excerpt_en', 'article_es', 'article_en'],
+};
 
 function blogFilePath(locale, slug) {
   return path.join(BLOG_DIR, locale, `${slug}.md`);
@@ -124,6 +139,8 @@ async function generateArticle(keyword, model) {
     generationConfig: {
       temperature: 0.7,
       maxOutputTokens: 8192,
+      responseMimeType: 'application/json',
+      responseSchema: ARTICLE_RESPONSE_SCHEMA,
     },
   });
 
@@ -394,6 +411,42 @@ function validateGeneratedPost(parsed) {
   validateArticleBody(parsed.article_en, 'en');
 }
 
+function isRecoverableGenerationError(message) {
+  return [
+    'Gemini response is not valid JSON',
+    'Could not parse JSON from Gemini response',
+    'missing required field',
+    'article must contain at least',
+    'article must include at least',
+    'article must end with a FAQ section',
+    'article is too short',
+  ].some((fragment) => message.includes(fragment));
+}
+
+async function generateValidatedPost(keyword, model) {
+  const maxAttempts = parseInt(process.env.GEMINI_GENERATION_MAX_ATTEMPTS || '3', 10);
+  let lastError;
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    try {
+      let parsed = await generateArticle(keyword, model);
+      parsed = normalizeGeneratedPost(parsed, keyword);
+      validateGeneratedPost(parsed);
+      return parsed;
+    } catch (err) {
+      lastError = err;
+
+      if (attempt >= maxAttempts || !isRecoverableGenerationError(err.message)) {
+        throw err;
+      }
+
+      console.warn(`Generation attempt ${attempt} failed (${err.message}). Retrying...`);
+    }
+  }
+
+  throw lastError || new Error('Generation failed without a specific error.');
+}
+
 // ---------------------------------------------------------------------------
 // Write markdown files
 // ---------------------------------------------------------------------------
@@ -520,16 +573,7 @@ function printSummary(parsed) {
 
   let parsed;
   try {
-    parsed = await generateArticle(keyword, opts.model);
-  } catch (err) {
-    console.error(`\nGeneration error: ${err.message}`);
-    process.exit(1);
-  }
-
-  parsed = normalizeGeneratedPost(parsed, keyword);
-
-  try {
-    validateGeneratedPost(parsed);
+    parsed = await generateValidatedPost(keyword, opts.model);
   } catch (err) {
     console.error(`\nGeneration error: ${err.message}`);
     process.exit(1);
