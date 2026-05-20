@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "research:keywords": "node scripts/keyword-research.js",
+    "generate:post": "node scripts/generate-post.js",
+    "generate:post:next": "node scripts/generate-post.js --from-queue"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
@@ -20,9 +23,11 @@
     "remark-html": "^16.0.1"
   },
   "devDependencies": {
+    "@google/generative-ai": "^0.21.0",
     "autoprefixer": "^10.4.16",
     "eslint": "9.39.4",
     "eslint-config-next": "16.2.6",
+    "googleapis": "^144.0.0",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.4.0"
   }
