@@ -133,9 +133,26 @@ jobs:
             echo "en_file=$EN_FILE" >> $GITHUB_OUTPUT
           fi
 
+      - name: Validate build before push
+        id: validate
+        if: steps.generate.outputs.status == 'success' && steps.changes.outputs.has_changes == 'true' && github.event.inputs.dry_run != 'true'
+        run: |
+          set +e
+          npm run build 2>&1 | tee /tmp/build-output.txt
+          BUILD_EXIT_CODE=${PIPESTATUS[0]}
+
+          if [ "$BUILD_EXIT_CODE" -eq 0 ]; then
+            echo "status=success" >> $GITHUB_OUTPUT
+          else
+            echo "status=failed" >> $GITHUB_OUTPUT
+          fi
+
+          echo "exit_code=$BUILD_EXIT_CODE" >> $GITHUB_OUTPUT
+          exit 0
+
       - name: Commit and push to main
         id: publish
-        if: steps.generate.outputs.status == 'success' && steps.changes.outputs.has_changes == 'true' && github.event.inputs.dry_run != 'true'
+        if: steps.generate.outputs.status == 'success' && steps.changes.outputs.has_changes == 'true' && steps.validate.outputs.status == 'success' && github.event.inputs.dry_run != 'true'
         run: |
           set +e
           git config user.name "github-actions[bot]"
@@ -162,7 +179,7 @@ jobs:
 
       - name: Submit new URLs to Google Indexing API
         id: indexing
-        if: steps.generate.outputs.status == 'success' && steps.changes.outputs.has_changes == 'true' && github.event.inputs.dry_run != 'true'
+        if: steps.generate.outputs.status == 'success' && steps.changes.outputs.has_changes == 'true' && steps.validate.outputs.status == 'success' && github.event.inputs.dry_run != 'true'
         env:
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
           NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
@@ -197,6 +214,8 @@ jobs:
           GENERATE_STATUS: ${{ steps.generate.outputs.status }}
           GENERATE_EXIT_CODE: ${{ steps.generate.outputs.exit_code }}
           GENERATE_ERROR: ${{ steps.generate.outputs.error_line }}
+          VALIDATE_STATUS: ${{ steps.validate.outputs.status }}
+          VALIDATE_EXIT_CODE: ${{ steps.validate.outputs.exit_code }}
           PUBLISH_STATUS: ${{ steps.publish.outputs.status }}
           PUBLISH_EXIT_CODE: ${{ steps.publish.outputs.exit_code }}
           INDEXING_STATUS: ${{ steps.indexing.outputs.status }}
@@ -231,7 +250,12 @@ jobs:
             elif [ "${HAS_CHANGES}" != "true" ]; then
               echo "- Push to main: skipped because no repo changes were detected"
               echo "- Google Indexing API: skipped because no repo changes were detected"
+            elif [ "${VALIDATE_STATUS}" != "success" ]; then
+              echo "- Build validation: ${VALIDATE_STATUS:-not-run} (exit code: ${VALIDATE_EXIT_CODE:-n/a})"
+              echo "- Push to main: skipped because build validation failed"
+              echo "- Google Indexing API: skipped because build validation failed"
             else
+              echo "- Build validation: ${VALIDATE_STATUS:-not-run} (exit code: ${VALIDATE_EXIT_CODE:-n/a})"
               echo "- Push to main: ${PUBLISH_STATUS:-not-run} (exit code: ${PUBLISH_EXIT_CODE:-n/a})"
               echo "- Google Indexing API: ${INDEXING_STATUS:-not-run} (exit code: ${INDEXING_EXIT_CODE:-n/a})"
             fi
@@ -255,6 +279,16 @@ jobs:
               cat /tmp/publish-output.txt
             else
               echo "Publish step did not run."
+            fi
+            echo '```'
+
+            echo
+            echo "### Build validation output"
+            echo '```text'
+            if [ -f /tmp/build-output.txt ]; then
+              cat /tmp/build-output.txt
+            else
+              echo "Build validation step did not run."
             fi
             echo '```'
 
@@ -295,4 +329,10 @@ jobs:
         if: steps.publish.outputs.status == 'failed'
         run: |
           echo "Generated files were created, but pushing to main failed. See the run summary for the publish output."
+          exit 1
+
+      - name: Fail workflow if build validation failed
+        if: steps.validate.outputs.status == 'failed'
+        run: |
+          echo "Generated files were created, but the site build failed. The commit was not pushed to main. See the run summary for the build validation output."
           exit 1

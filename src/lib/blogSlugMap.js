@@ -60,6 +60,14 @@ export const blogSlugMap = {
     es: 'piscinas-azulejos-verano-2026',
     en: 'pool-tiles-summer-2026',
   },
+  'reformas-cocina-isla-marbella': {
+    es: 'reformas-cocina-isla-marbella',
+    en: 'kitchen-renovations-island-marbella',
+  },
+  'kitchen-renovations-island-marbella': {
+    es: 'reformas-cocina-isla-marbella',
+    en: 'kitchen-renovations-island-marbella',
+  },
 }
 
 /**
@@ -91,12 +99,4 @@ export function getSlugsByLocale(locale) {
     }
   })
   return Array.from(slugs)
-  'reformas-cocina-isla-marbella': {
-    es: 'reformas-cocina-isla-marbella',
-    en: 'kitchen-renovations-island-marbella',
-  },
-  'kitchen-renovations-island-marbella': {
-    es: 'reformas-cocina-isla-marbella',
-    en: 'kitchen-renovations-island-marbella',
-  },
 }

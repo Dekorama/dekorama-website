@@ -22,6 +22,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const vm = require('vm');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const { buildSystemPrompt } = require('./prompts/system');
 
@@ -497,6 +498,51 @@ function writeMarkdownFiles(parsed, dryRun) {
   }
 }
 
+function findBlogSlugMapInsertIndex(content) {
+  const exportMarker = 'export const blogSlugMap = {';
+  const startIndex = content.indexOf(exportMarker);
+  if (startIndex === -1) {
+    throw new Error('Could not find blogSlugMap export in src/lib/blogSlugMap.js.');
+  }
+
+  const openingBraceIndex = content.indexOf('{', startIndex);
+  let depth = 0;
+
+  for (let index = openingBraceIndex; index < content.length; index += 1) {
+    const char = content[index];
+
+    if (char === '{') {
+      depth += 1;
+    } else if (char === '}') {
+      depth -= 1;
+
+      if (depth === 0) {
+        return index;
+      }
+    }
+  }
+
+  throw new Error('Could not find the closing brace for blogSlugMap in src/lib/blogSlugMap.js.');
+}
+
+function validateBlogSlugMapContent(content) {
+  const exportMarker = 'export const blogSlugMap = {';
+  const startIndex = content.indexOf(exportMarker);
+  if (startIndex === -1) {
+    throw new Error('Could not validate blogSlugMap because the export marker is missing.');
+  }
+
+  const openingBraceIndex = content.indexOf('{', startIndex);
+  const closingBraceIndex = findBlogSlugMapInsertIndex(content);
+  const objectLiteral = content.slice(openingBraceIndex, closingBraceIndex + 1);
+
+  try {
+    new vm.Script(`(${objectLiteral})`);
+  } catch (error) {
+    throw new Error(`Generated blogSlugMap.js would be invalid: ${error.message}`);
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Update blogSlugMap.js
 // ---------------------------------------------------------------------------
@@ -520,19 +566,15 @@ function appendSlugPair(esSlug, enSlug, dryRun) {
     `  },`,
   ].join('\n');
 
-  // Insert before the closing brace of the blogSlugMap object
-  // The pattern is the last `\n}` in the export object (before the helper functions)
-  const insertIndex = content.lastIndexOf('\n}');
-  if (insertIndex === -1) {
-    console.warn('Warning: could not find insertion point in blogSlugMap.js. Skipping slug map update.');
-    return;
-  }
+  const insertIndex = findBlogSlugMapInsertIndex(content);
 
   const updated =
     content.slice(0, insertIndex) +
     '\n' +
     newEntries +
     content.slice(insertIndex);
+
+  validateBlogSlugMapContent(updated);
 
   if (dryRun) {
     console.log('\n[DRY RUN] Would append to src/lib/blogSlugMap.js:');
