@@ -32,6 +32,15 @@ const QUEUE_PATH = path.join(ROOT, 'scripts', 'keywords-queue.json');
 const BLOG_DIR = path.join(ROOT, 'src', 'content', 'blog');
 const SLUG_MAP_PATH = path.join(ROOT, 'src', 'lib', 'blogSlugMap.js');
 
+function blogFilePath(locale, slug) {
+  return path.join(BLOG_DIR, locale, `${slug}.md`);
+}
+
+function slugExistsInMap(slug) {
+  if (!fs.existsSync(SLUG_MAP_PATH)) return false;
+  return fs.readFileSync(SLUG_MAP_PATH, 'utf8').includes(`'${slug}'`);
+}
+
 // ---------------------------------------------------------------------------
 // CLI argument parsing
 // ---------------------------------------------------------------------------
@@ -236,6 +245,75 @@ function sanitizeSlug(slug) {
     .replace(/^-|-$/g, '');
 }
 
+function ensureUniqueSlugPair(esSlug, enSlug) {
+  let attempt = 0;
+
+  while (attempt < 50) {
+    const suffix = attempt === 0 ? '' : `-${attempt + 1}`;
+    const candidateEs = `${esSlug}${suffix}`;
+    const candidateEn = `${enSlug}${suffix}`;
+
+    const hasCollision =
+      fs.existsSync(blogFilePath('es', candidateEs)) ||
+      fs.existsSync(blogFilePath('en', candidateEn)) ||
+      slugExistsInMap(candidateEs) ||
+      slugExistsInMap(candidateEn);
+
+    if (!hasCollision) {
+      return { es: candidateEs, en: candidateEn };
+    }
+
+    attempt += 1;
+  }
+
+  throw new Error('Could not resolve a unique slug pair after 50 attempts.');
+}
+
+function countWords(text) {
+  return text
+    .replace(/[#>*_`|\-]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean)
+    .length;
+}
+
+function validateArticleBody(body, locale) {
+  const label = locale === 'es' ? 'Spanish' : 'English';
+  const wordCount = countWords(body);
+  const h2Count = (body.match(/^##\s+/gm) || []).length;
+  const hasFaq = locale === 'es'
+    ? /^##\s+Preguntas frecuentes/m.test(body)
+    : /^##\s+Frequently asked questions/m.test(body);
+  const internalLinks = locale === 'es'
+    ? (body.match(/\]\(\/es\//g) || []).length
+    : (body.match(/\]\(\/en\//g) || []).length;
+
+  if (/^#\s+/m.test(body)) {
+    throw new Error(`${label} article must not include an H1 heading.`);
+  }
+
+  if (wordCount < 900) {
+    throw new Error(`${label} article is too short (${wordCount} words). Minimum is 900.`);
+  }
+
+  if (h2Count < 5) {
+    throw new Error(`${label} article must contain at least 5 H2 sections.`);
+  }
+
+  if (internalLinks < 2) {
+    throw new Error(`${label} article must include at least 2 internal links.`);
+  }
+
+  if (!hasFaq) {
+    throw new Error(`${label} article must end with a FAQ section.`);
+  }
+}
+
+function validateGeneratedPost(parsed) {
+  validateArticleBody(parsed.article_es, 'es');
+  validateArticleBody(parsed.article_en, 'en');
+}
+
 // ---------------------------------------------------------------------------
 // Write markdown files
 // ---------------------------------------------------------------------------
@@ -271,8 +349,7 @@ function writeMarkdownFiles(parsed, dryRun) {
 
   for (const { filePath, content, label } of files) {
     if (fs.existsSync(filePath)) {
-      console.warn(`Warning: file already exists, skipping: ${filePath}`);
-      continue;
+      throw new Error(`Refusing to overwrite existing blog post: ${filePath}`);
     }
     if (dryRun) {
       console.log(`\n[DRY RUN] Would write ${label}`);
@@ -364,6 +441,25 @@ function printSummary(parsed) {
   let parsed;
   try {
     parsed = await generateArticle(keyword, opts.model);
+  } catch (err) {
+    console.error(`\nGeneration error: ${err.message}`);
+    process.exit(1);
+  }
+
+  try {
+    validateGeneratedPost(parsed);
+  } catch (err) {
+    console.error(`\nGeneration error: ${err.message}`);
+    process.exit(1);
+  }
+
+  try {
+    const uniqueSlugs = ensureUniqueSlugPair(parsed.slug_es, parsed.slug_en);
+    if (uniqueSlugs.es !== parsed.slug_es || uniqueSlugs.en !== parsed.slug_en) {
+      console.log(`Adjusted duplicate slugs to unique values: ${uniqueSlugs.es} ↔ ${uniqueSlugs.en}`);
+      parsed.slug_es = uniqueSlugs.es;
+      parsed.slug_en = uniqueSlugs.en;
+    }
   } catch (err) {
     console.error(`\nGeneration error: ${err.message}`);
     process.exit(1);

@@ -57,6 +57,8 @@ jobs:
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
           GOOGLE_SEARCH_CONSOLE_SITE_URL: ${{ secrets.GOOGLE_SEARCH_CONSOLE_SITE_URL }}
         run: |
+          set +e
+
           if [ -n "${{ github.event.inputs.keyword }}" ]; then
             KEYWORD_FLAG="--keyword \"${{ github.event.inputs.keyword }}\""
           else
@@ -68,9 +70,18 @@ jobs:
             DRY_FLAG="--dry-run"
           fi
 
-          node scripts/generate-post.js $KEYWORD_FLAG $DRY_FLAG | tee /tmp/generate-output.txt
+          node scripts/generate-post.js $KEYWORD_FLAG $DRY_FLAG 2>&1 | tee /tmp/generate-output.txt
+          GENERATE_EXIT_CODE=${PIPESTATUS[0]}
 
-          # Extract slug for PR title
+          if [ "$GENERATE_EXIT_CODE" -eq 0 ]; then
+            echo "status=success" >> $GITHUB_OUTPUT
+          else
+            echo "status=failed" >> $GITHUB_OUTPUT
+          fi
+
+          echo "exit_code=$GENERATE_EXIT_CODE" >> $GITHUB_OUTPUT
+
+          # Extract slugs and titles when available.
           ES_SLUG=$(grep "ES slug:" /tmp/generate-output.txt | awk '{print $NF}' || echo "new-post")
           echo "es_slug=$ES_SLUG" >> $GITHUB_OUTPUT
 
@@ -83,6 +94,15 @@ jobs:
 
           echo "es_url=${{ secrets.NEXT_PUBLIC_SITE_URL }}/es/blog/$ES_SLUG" >> $GITHUB_OUTPUT
           echo "en_url=${{ secrets.NEXT_PUBLIC_SITE_URL }}/en/blog/$EN_SLUG" >> $GITHUB_OUTPUT
+
+          if grep -q "Generation error:" /tmp/generate-output.txt; then
+            ERROR_LINE=$(grep "Generation error:" /tmp/generate-output.txt | tail -1)
+            echo "error_line<<EOF" >> $GITHUB_OUTPUT
+            echo "$ERROR_LINE" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          fi
+
+          exit 0
 
       - name: Check for new files
         id: changes
@@ -102,14 +122,67 @@ jobs:
             echo "EOF"
           } >> $GITHUB_OUTPUT
 
+          ES_FILE="src/content/blog/es/${{ steps.generate.outputs.es_slug }}.md"
+          EN_FILE="src/content/blog/en/${{ steps.generate.outputs.en_slug }}.md"
+
+          if [ -f "$ES_FILE" ]; then
+            echo "es_file=$ES_FILE" >> $GITHUB_OUTPUT
+          fi
+
+          if [ -f "$EN_FILE" ]; then
+            echo "en_file=$EN_FILE" >> $GITHUB_OUTPUT
+          fi
+
       - name: Commit and push to main
-        if: steps.changes.outputs.has_changes == 'true' && github.event.inputs.dry_run != 'true'
+        id: publish
+        if: steps.generate.outputs.status == 'success' && steps.changes.outputs.has_changes == 'true' && github.event.inputs.dry_run != 'true'
         run: |
+          set +e
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add src/content/blog src/lib/blogSlugMap.js public/images/blog scripts/keywords-queue.json
-          git commit -m "content: add SEO post \"${{ steps.generate.outputs.es_slug }}\""
-          git push origin HEAD:main
+          git commit -m "content: add SEO post \"${{ steps.generate.outputs.es_slug }}\"" 2>&1 | tee /tmp/publish-output.txt
+          COMMIT_EXIT_CODE=${PIPESTATUS[0]}
+
+          if [ "$COMMIT_EXIT_CODE" -eq 0 ]; then
+            git push origin HEAD:main 2>&1 | tee -a /tmp/publish-output.txt
+            PUSH_EXIT_CODE=${PIPESTATUS[0]}
+          else
+            PUSH_EXIT_CODE=$COMMIT_EXIT_CODE
+          fi
+
+          if [ "$PUSH_EXIT_CODE" -eq 0 ]; then
+            echo "status=success" >> $GITHUB_OUTPUT
+          else
+            echo "status=failed" >> $GITHUB_OUTPUT
+          fi
+
+          echo "exit_code=$PUSH_EXIT_CODE" >> $GITHUB_OUTPUT
+          exit 0
+
+      - name: Submit new URLs to Google Indexing API
+        id: indexing
+        if: steps.generate.outputs.status == 'success' && steps.changes.outputs.has_changes == 'true' && github.event.inputs.dry_run != 'true'
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          INDEXING_ES_SLUG: ${{ steps.generate.outputs.es_slug }}
+          INDEXING_EN_SLUG: ${{ steps.generate.outputs.en_slug }}
+        run: |
+          set +e
+          node scripts/submit-indexing.js \
+            --es-slug "$INDEXING_ES_SLUG" \
+            --en-slug "$INDEXING_EN_SLUG" 2>&1 | tee /tmp/indexing-output.txt
+          INDEXING_EXIT_CODE=${PIPESTATUS[0]}
+
+          if [ "$INDEXING_EXIT_CODE" -eq 0 ]; then
+            echo "status=success" >> $GITHUB_OUTPUT
+          else
+            echo "status=failed" >> $GITHUB_OUTPUT
+          fi
+
+          echo "exit_code=$INDEXING_EXIT_CODE" >> $GITHUB_OUTPUT
+          exit 0
 
       - name: Publish run summary
         if: always()
@@ -121,6 +194,15 @@ jobs:
           EN_SLUG: ${{ steps.generate.outputs.en_slug }}
           ES_URL: ${{ steps.generate.outputs.es_url }}
           EN_URL: ${{ steps.generate.outputs.en_url }}
+          GENERATE_STATUS: ${{ steps.generate.outputs.status }}
+          GENERATE_EXIT_CODE: ${{ steps.generate.outputs.exit_code }}
+          GENERATE_ERROR: ${{ steps.generate.outputs.error_line }}
+          PUBLISH_STATUS: ${{ steps.publish.outputs.status }}
+          PUBLISH_EXIT_CODE: ${{ steps.publish.outputs.exit_code }}
+          INDEXING_STATUS: ${{ steps.indexing.outputs.status }}
+          INDEXING_EXIT_CODE: ${{ steps.indexing.outputs.exit_code }}
+          ES_FILE: ${{ steps.changes.outputs.es_file }}
+          EN_FILE: ${{ steps.changes.outputs.en_file }}
           KEYWORD: ${{ github.event.inputs.keyword || 'from queue' }}
           DRY_RUN: ${{ github.event.inputs.dry_run }}
         run: |
@@ -129,12 +211,30 @@ jobs:
             echo
             echo "- Keyword: ${KEYWORD}"
             echo "- Dry run: ${DRY_RUN:-false}"
+            echo "- Generation status: ${GENERATE_STATUS:-unknown}"
+            echo "- Generation exit code: ${GENERATE_EXIT_CODE:-n/a}"
             echo "- Changes written: ${HAS_CHANGES:-false}"
             echo "- ES title: ${ES_TITLE:-n/a}"
             echo "- ES slug: ${ES_SLUG:-n/a}"
             echo "- EN slug: ${EN_SLUG:-n/a}"
             echo "- ES URL: ${ES_URL:-n/a}"
             echo "- EN URL: ${EN_URL:-n/a}"
+            if [ -n "${GENERATE_ERROR}" ]; then
+              echo "- Failure reason: ${GENERATE_ERROR}"
+            fi
+            if [ "${GENERATE_STATUS}" != "success" ]; then
+              echo "- Push to main: skipped because blog generation failed"
+              echo "- Google Indexing API: skipped because no new blog files were created"
+            elif [ "${DRY_RUN}" = "true" ]; then
+              echo "- Push to main: skipped because this was a dry run"
+              echo "- Google Indexing API: skipped because this was a dry run"
+            elif [ "${HAS_CHANGES}" != "true" ]; then
+              echo "- Push to main: skipped because no repo changes were detected"
+              echo "- Google Indexing API: skipped because no repo changes were detected"
+            else
+              echo "- Push to main: ${PUBLISH_STATUS:-not-run} (exit code: ${PUBLISH_EXIT_CODE:-n/a})"
+              echo "- Google Indexing API: ${INDEXING_STATUS:-not-run} (exit code: ${INDEXING_EXIT_CODE:-n/a})"
+            fi
             echo
             echo "### Changed files"
             if [ -n "${CHANGED_FILES}" ]; then
@@ -147,16 +247,52 @@ jobs:
             echo '```text'
             cat /tmp/generate-output.txt
             echo '```'
+
+            echo
+            echo "### Publish output"
+            echo '```text'
+            if [ -f /tmp/publish-output.txt ]; then
+              cat /tmp/publish-output.txt
+            else
+              echo "Publish step did not run."
+            fi
+            echo '```'
+
+            echo
+            echo "### Indexing output"
+            echo '```text'
+            if [ -f /tmp/indexing-output.txt ]; then
+              cat /tmp/indexing-output.txt
+            else
+              echo "Indexing step did not run."
+            fi
+            echo '```'
+
+            if [ -n "${ES_FILE}" ] && [ -f "${ES_FILE}" ]; then
+              echo
+              echo "### Spanish blog preview"
+              echo '```markdown'
+              sed -n '1,80p' "${ES_FILE}"
+              echo '```'
+            fi
+
+            if [ -n "${EN_FILE}" ] && [ -f "${EN_FILE}" ]; then
+              echo
+              echo "### English blog preview"
+              echo '```markdown'
+              sed -n '1,80p' "${EN_FILE}"
+              echo '```'
+            fi
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Submit new URLs to Google Indexing API
-        if: steps.changes.outputs.has_changes == 'true' && github.event.inputs.dry_run != 'true'
-        env:
-          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
-          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
-          INDEXING_ES_SLUG: ${{ steps.generate.outputs.es_slug }}
-          INDEXING_EN_SLUG: ${{ steps.generate.outputs.en_slug }}
+      - name: Fail workflow if generation failed
+        if: steps.generate.outputs.status == 'failed'
         run: |
-          node scripts/submit-indexing.js \
-            --es-slug "$INDEXING_ES_SLUG" \
-            --en-slug "$INDEXING_EN_SLUG" || echo "Indexing API submission failed (non-fatal)"
+          echo "Blog generation failed before any files were created. See the run summary for the error and generator output."
+          exit 1
+
+      - name: Fail workflow if publish failed
+        if: steps.publish.outputs.status == 'failed'
+        run: |
+          echo "Generated files were created, but pushing to main failed. See the run summary for the publish output."
+          exit 1

@@ -69,13 +69,18 @@ WRITING STYLE (English):
 
   const articleRequirements = `
 ARTICLE REQUIREMENTS:
-- Body length: 900–1,200 words (not counting frontmatter).
-- Structure: at least 4 H2 sections, use H3 where appropriate for sub-topics.
-- Naturally include 2–3 internal links from the lists below. Use meaningful anchor text.
+- Body length: 900–1,300 words (not counting frontmatter).
+- Structure: 5–7 H2 sections. Use H3 where appropriate for sub-topics.
+- Start with a direct introduction that answers the keyword intent in the first 2 short paragraphs.
+- Include at least one concrete comparison, checklist, price table, or decision framework when useful.
+- Add a final FAQ section with 2–4 concise questions that match real search intent.
+- Naturally include 2–4 internal links from the lists below. Use meaningful anchor text.
 - The article must directly answer the search intent behind the keyword.
   Think: what is the person searching for this actually trying to accomplish or understand?
+- The article should feel like a polished SEO autopilot article similar to the best high-performing content systems: clear headings, practical detail, tight paragraphs, no fluff, no filler transitions.
 - End with a soft CTA paragraph pointing readers toward contacting Dekorama or visiting the showroom.
 - Do NOT include any images or image markdown in the article body.
+- Do NOT include an H1 heading in the body.
 `.trim();
 
   const outputFormat = `
