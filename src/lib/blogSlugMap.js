@@ -91,4 +91,12 @@ export function getSlugsByLocale(locale) {
     }
   })
   return Array.from(slugs)
+  'reformas-cocina-isla-marbella': {
+    es: 'reformas-cocina-isla-marbella',
+    en: 'kitchen-renovations-island-marbella',
+  },
+  'kitchen-renovations-island-marbella': {
+    es: 'reformas-cocina-isla-marbella',
+    en: 'kitchen-renovations-island-marbella',
+  },
 }
