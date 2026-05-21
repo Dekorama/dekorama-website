@@ -33,7 +33,18 @@ const ROOT = process.cwd();
 const QUEUE_PATH = path.join(ROOT, 'scripts', 'keywords-queue.json');
 const BLOG_DIR = path.join(ROOT, 'src', 'content', 'blog');
 const SLUG_MAP_PATH = path.join(ROOT, 'src', 'lib', 'blogSlugMap.js');
-const ARTICLE_RESPONSE_SCHEMA = {
+const SINGLE_LOCALE_RESPONSE_SCHEMA = {
+  type: 'object',
+  properties: {
+    slug: { type: 'string', description: 'URL slug in lowercase and hyphens only.' },
+    title: { type: 'string', description: 'Full SEO title.' },
+    excerpt: { type: 'string', description: 'Excerpt up to 155 characters.' },
+    article: { type: 'string', description: 'Markdown article body without frontmatter.' },
+  },
+  required: ['slug', 'title', 'excerpt', 'article'],
+  propertyOrdering: ['slug', 'title', 'excerpt', 'article'],
+};
+const BILINGUAL_RESPONSE_SCHEMA = {
   type: 'object',
   properties: {
     slug_es: { type: 'string', description: 'Spanish URL slug in lowercase and hyphens only.' },
@@ -124,7 +135,32 @@ function markKeywordDone(keyword) {
 // ---------------------------------------------------------------------------
 // Gemini generation
 // ---------------------------------------------------------------------------
-async function generateArticle(keyword, model) {
+function parseSingleLocaleResponse(raw, locale) {
+  const parsed = parseGeminiResponse(raw, ['slug', 'title', 'excerpt', 'article']);
+  return {
+    slug: sanitizeSlug(parsed.slug),
+    title: parsed.title,
+    excerpt: parsed.excerpt,
+    article: parsed.article,
+    locale,
+  };
+}
+
+function buildLocalePrompt(keyword, locale) {
+  if (locale === 'es') {
+    return `Generate a complete Spanish SEO blog post for this keyword/topic: "${keyword}"
+
+Write only the Spanish version for renovation customers on the Costa del Sol.
+Return the JSON object as specified in your instructions.`;
+  }
+
+  return `Generate a complete English SEO blog post for this keyword/topic: "${keyword}"
+
+Write only the English version for expats and international property owners on the Costa del Sol.
+Return the JSON object as specified in your instructions.`;
+}
+
+async function generateArticlePart(keyword, model, locale) {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     throw new Error(
@@ -136,21 +172,17 @@ async function generateArticle(keyword, model) {
   const genAI = new GoogleGenerativeAI(apiKey);
   const generativeModel = genAI.getGenerativeModel({
     model,
-    systemInstruction: buildSystemPrompt('both'),
+    systemInstruction: buildSystemPrompt(locale),
     generationConfig: {
-      temperature: 0.7,
-      maxOutputTokens: 8192,
+      temperature: 0.4,
+      maxOutputTokens: 4096,
       responseMimeType: 'application/json',
-      responseSchema: ARTICLE_RESPONSE_SCHEMA,
+      responseSchema: SINGLE_LOCALE_RESPONSE_SCHEMA,
     },
   });
 
-  const prompt = `Generate a complete bilingual SEO blog post for this keyword/topic: "${keyword}"
-
-The article must target Spanish renovation customers on the Costa del Sol AND English-speaking expats/investors in the same area.
-Return the JSON object as specified in your instructions.`;
-
-  console.log(`\nCalling Gemini (${model}) for keyword: "${keyword}"...`);
+  const prompt = buildLocalePrompt(keyword, locale);
+  console.log(`\nCalling Gemini (${model}) for ${locale.toUpperCase()} keyword: "${keyword}"...`);
   const startTime = Date.now();
 
   const result = await generativeModel.generateContent(prompt);
@@ -158,7 +190,23 @@ Return the JSON object as specified in your instructions.`;
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
   console.log(`Response received in ${elapsed}s (${raw.length} chars)`);
 
-  return parseGeminiResponse(raw);
+  return parseSingleLocaleResponse(raw, locale);
+}
+
+async function generateArticle(keyword, model) {
+  const spanish = await generateArticlePart(keyword, model, 'es');
+  const english = await generateArticlePart(keyword, model, 'en');
+
+  return {
+    slug_es: spanish.slug,
+    slug_en: english.slug,
+    title_es: spanish.title,
+    title_en: english.title,
+    excerpt_es: spanish.excerpt,
+    excerpt_en: english.excerpt,
+    article_es: spanish.article,
+    article_en: english.article,
+  };
 }
 
 // ---------------------------------------------------------------------------
@@ -211,7 +259,7 @@ async function generateCoverImage(keyword, slug, apiKey, dryRun) {
 // ---------------------------------------------------------------------------
 // Parse Gemini JSON response (handles accidental markdown fences)
 // ---------------------------------------------------------------------------
-function parseGeminiResponse(raw) {
+function parseGeminiResponse(raw, requiredFields) {
   // Strip markdown code fences if present
   let cleaned = raw.trim();
   cleaned = cleaned.replace(/^```json\s*/i, '').replace(/\s*```$/, '');
@@ -236,16 +284,11 @@ function parseGeminiResponse(raw) {
   }
 
   // Validate required fields
-  const required = ['slug_es', 'slug_en', 'title_es', 'title_en', 'excerpt_es', 'excerpt_en', 'article_es', 'article_en'];
-  for (const field of required) {
+  for (const field of requiredFields) {
     if (!parsed[field]) {
       throw new Error(`Gemini response is missing required field: "${field}"`);
     }
   }
-
-  // Sanitize slugs (defensive)
-  parsed.slug_es = sanitizeSlug(parsed.slug_es);
-  parsed.slug_en = sanitizeSlug(parsed.slug_en);
 
   return parsed;
 }
@@ -367,7 +410,73 @@ function ensureInternalLinks(body, locale) {
   return `${body.trim()}\n\n${buildInternalLinksSection(locale)}\n`;
 }
 
+function splitMarkdownTableRow(line) {
+  return line
+    .trim()
+    .replace(/^\|/, '')
+    .replace(/\|$/, '')
+    .split('|')
+    .map((cell) => cell.trim())
+    .filter((cell) => cell.length > 0);
+}
+
+function isMarkdownTableSeparator(line) {
+  const trimmed = line.trim();
+  return /^\|?(\s*:?-{3,}:?\s*\|)+\s*:?-{3,}:?\s*\|?$/.test(trimmed);
+}
+
+function stripInlineMarkdown(text) {
+  return text.replace(/\*\*/g, '').replace(/__/g, '').trim();
+}
+
+function convertMarkdownTableBlock(block) {
+  const lines = block.split('\n').map((line) => line.trim()).filter(Boolean);
+  if (lines.length < 3 || !isMarkdownTableSeparator(lines[1])) {
+    return block;
+  }
+
+  const headers = splitMarkdownTableRow(lines[0]).map(stripInlineMarkdown);
+  const rows = lines.slice(2).map(splitMarkdownTableRow).filter((row) => row.length > 0);
+
+  if (headers.length < 2 || rows.length === 0) {
+    return block;
+  }
+
+  const sections = rows.map((row) => {
+    const title = stripInlineMarkdown(row[0] || headers[0] || 'Option');
+    const bodyLines = [];
+
+    for (let index = 1; index < headers.length; index += 1) {
+      const label = headers[index];
+      const value = row[index];
+      if (label && value) {
+        bodyLines.push(`**${label}:** ${value}`);
+      }
+    }
+
+    if (bodyLines.length === 0 && row[1]) {
+      bodyLines.push(row[1]);
+    }
+
+    return [`### ${title}`, '', ...bodyLines].join('\n');
+  });
+
+  return sections.join('\n\n');
+}
+
+function replaceMarkdownTables(body) {
+  return body.replace(/(^\|.+\|\s*\n^\|?(?:\s*:?-{3,}:?\s*\|)+\s*\n(?:^\|.*\|\s*(?:\n|$))+)/gm, (match) => {
+    return convertMarkdownTableBlock(match);
+  });
+}
+
+function containsMarkdownTable(body) {
+  return /(^\|.+\|\s*\n^\|?(?:\s*:?-{3,}:?\s*\|)+\s*\n(?:^\|.*\|\s*(?:\n|$))+)/gm.test(body);
+}
+
 function normalizeGeneratedPost(parsed, keyword) {
+  parsed.article_es = replaceMarkdownTables(parsed.article_es);
+  parsed.article_en = replaceMarkdownTables(parsed.article_en);
   parsed.article_es = ensureFaqSection(parsed.article_es, keyword, 'es');
   parsed.article_en = ensureFaqSection(parsed.article_en, keyword, 'en');
   parsed.article_es = ensureInternalLinks(parsed.article_es, 'es');
@@ -405,6 +514,10 @@ function validateArticleBody(body, locale) {
   if (!hasFaq) {
     throw new Error(`${label} article must end with a FAQ section.`);
   }
+
+  if (containsMarkdownTable(body)) {
+    throw new Error(`${label} article must not include markdown tables.`);
+  }
 }
 
 function validateGeneratedPost(parsed) {
@@ -421,6 +534,7 @@ function isRecoverableGenerationError(message) {
     'article must include at least',
     'article must end with a FAQ section',
     'article is too short',
+    'article must not include markdown tables',
   ].some((fragment) => message.includes(fragment));
 }
 

@@ -6,6 +6,10 @@
  * @returns {string}
  */
 function buildSystemPrompt(locale) {
+  const isSpanish = locale === 'es';
+  const isEnglish = locale === 'en';
+  const isBilingual = locale === 'both';
+
   const brandContext = `
 You are an expert SEO content writer for DEKORAMA — a premium renovation materials store
 and full-service renovation company on the Costa del Sol (headquarters: Benalmádena, Málaga, Spain).
@@ -72,7 +76,7 @@ ARTICLE REQUIREMENTS:
 - Body length: 900–1,300 words (not counting frontmatter).
 - Structure: 5–7 H2 sections. Use H3 where appropriate for sub-topics.
 - Start with a direct introduction that answers the keyword intent in the first 2 short paragraphs.
-- Include at least one concrete comparison, checklist, price table, or decision framework when useful.
+- Include at least one concrete comparison, checklist, price guide, or decision framework when useful.
 - Add a final FAQ section with 2–4 concise questions that match real search intent.
 - Naturally include 2–4 internal links from the lists below. Use meaningful anchor text.
 - The article must directly answer the search intent behind the keyword.
@@ -81,9 +85,40 @@ ARTICLE REQUIREMENTS:
 - End with a soft CTA paragraph pointing readers toward contacting Dekorama or visiting the showroom.
 - Do NOT include any images or image markdown in the article body.
 - Do NOT include an H1 heading in the body.
+- Do NOT use markdown tables anywhere in the article body. If you need to compare options, use short bullet lists or H3 subsections instead.
 `.trim();
 
-  const outputFormat = `
+  const outputFormat = isSpanish
+    ? `
+OUTPUT FORMAT:
+Return ONLY a single valid JSON object. No markdown code fences. No explanation text before or after.
+Exact structure required:
+
+{
+  "slug": "url-friendly-slug-in-spanish-no-accents",
+  "title": "Título completo en español",
+  "excerpt": "Resumen de máximo 155 caracteres en español",
+  "article": "Complete markdown body in Spanish. No frontmatter. No H1 heading."
+}
+
+SLUG RULES: lowercase, hyphens only, no accents, no special characters, 3–8 words max.
+`.trim()
+    : isEnglish
+      ? `
+OUTPUT FORMAT:
+Return ONLY a single valid JSON object. No markdown code fences. No explanation text before or after.
+Exact structure required:
+
+{
+  "slug": "url-friendly-slug-in-english",
+  "title": "Full title in English",
+  "excerpt": "Summary of maximum 155 characters in English",
+  "article": "Complete markdown body in English. No frontmatter. No H1 heading."
+}
+
+SLUG RULES: lowercase, hyphens only, no accents, no special characters, 3–8 words max.
+`.trim()
+      : `
 OUTPUT FORMAT:
 Return ONLY a single valid JSON object. No markdown code fences. No explanation text before or after.
 Exact structure required:
@@ -102,20 +137,23 @@ Exact structure required:
 SLUG RULES: lowercase, hyphens only, no accents, no special characters, 3–8 words max.
 `.trim();
 
+  const localeSpecificContext = isSpanish
+    ? 'Write only the Spanish version for readers in Spain on the Costa del Sol.'
+    : isEnglish
+      ? 'Write only the English version for expats and international property owners on the Costa del Sol.'
+      : 'Write both the Spanish and English versions in the same response.';
+
   return [
     brandContext,
     '',
+    localeSpecificContext,
+    '',
     articleRequirements,
     '',
-    `INTERNAL LINKS (Spanish):`,
-    internalLinksEs,
-    '',
-    `INTERNAL LINKS (English):`,
-    internalLinksEn,
-    '',
-    toneEs,
-    '',
-    toneEn,
+    ...(isEnglish ? [] : [`INTERNAL LINKS (Spanish):`, internalLinksEs, '']),
+    ...(isSpanish ? [] : [`INTERNAL LINKS (English):`, internalLinksEn, '']),
+    ...(isEnglish ? [] : [toneEs, '']),
+    ...(isSpanish ? [] : [toneEn, '']),
     '',
     outputFormat,
   ].join('\n');
