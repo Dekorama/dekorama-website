@@ -68,7 +68,15 @@ export const blogSlugMap = {
     es: 'reformas-cocina-isla-marbella',
     en: 'kitchen-renovations-island-marbella',
   },
-}
+
+  'porcelanico-exterior-terraza-costa-sol': {
+    es: 'porcelanico-exterior-terraza-costa-sol',
+    en: 'porcelain-tiles-outdoor-terrace-costa-del-sol',
+  },
+  'porcelain-tiles-outdoor-terrace-costa-del-sol': {
+    es: 'porcelanico-exterior-terraza-costa-sol',
+    en: 'porcelain-tiles-outdoor-terrace-costa-del-sol',
+  },}
 
 /**
  * Get the slug for a specific locale
