@@ -275,8 +275,7 @@ function parseGeminiResponse(raw, requiredFields) {
     try {
       parsed = parsePossiblyMalformedJson(extracted);
     } catch {
-      console.error('\n--- RAW RESPONSE ---\n', raw.slice(0, 500));
-      throw new Error(`Could not parse JSON from Gemini response. ${err.message}`);
+      parsed = extractStructuredResponseFields(extracted, requiredFields);
     }
   }
 
@@ -288,6 +287,126 @@ function parseGeminiResponse(raw, requiredFields) {
   }
 
   return parsed;
+}
+
+function extractStructuredResponseFields(input, requiredFields) {
+  const extracted = {};
+
+  for (let index = 0; index < requiredFields.length; index += 1) {
+    const field = requiredFields[index];
+    const nextField = requiredFields[index + 1] || null;
+    const marker = `"${field}"`;
+    const fieldIndex = input.indexOf(marker);
+
+    if (fieldIndex === -1) {
+      console.error('\n--- RAW RESPONSE ---\n', input.slice(0, 500));
+      throw new Error(`Could not recover required field "${field}" from Gemini response.`);
+    }
+
+    const colonIndex = input.indexOf(':', fieldIndex + marker.length);
+    if (colonIndex === -1) {
+      throw new Error(`Could not recover field "${field}" because the separator is missing.`);
+    }
+
+    let valueStart = colonIndex + 1;
+    while (valueStart < input.length && /\s/.test(input[valueStart])) {
+      valueStart += 1;
+    }
+
+    if (input[valueStart] !== '"') {
+      throw new Error(`Could not recover field "${field}" because the value is not a string.`);
+    }
+
+    valueStart += 1;
+    const rawValue = nextField
+      ? extractFieldValueUntilNextMarker(input, valueStart, nextField)
+      : extractLastFieldValue(input, valueStart);
+
+    extracted[field] = decodeJsonLikeString(rawValue);
+  }
+
+  return extracted;
+}
+
+function extractFieldValueUntilNextMarker(input, valueStart, nextField) {
+  const nextMarkerPattern = new RegExp(`",\\s*"${escapeRegExp(nextField)}"\\s*:`, 'g');
+  nextMarkerPattern.lastIndex = valueStart;
+  const match = nextMarkerPattern.exec(input);
+
+  if (!match) {
+    throw new Error(`Could not locate the boundary for field before "${nextField}".`);
+  }
+
+  return input.slice(valueStart, match.index);
+}
+
+function extractLastFieldValue(input, valueStart) {
+  let value = input.slice(valueStart).trim();
+  value = value.replace(/\}\s*$/, '').trimEnd();
+
+  if (value.endsWith('"')) {
+    value = value.slice(0, -1);
+  }
+
+  return value;
+}
+
+function decodeJsonLikeString(input) {
+  let output = '';
+
+  for (let index = 0; index < input.length; index += 1) {
+    const char = input[index];
+
+    if (char !== '\\') {
+      output += char;
+      continue;
+    }
+
+    const next = input[index + 1];
+    if (next === undefined) {
+      output += '\\';
+      continue;
+    }
+
+    if (next === 'n') {
+      output += '\n';
+      index += 1;
+      continue;
+    }
+
+    if (next === 'r') {
+      output += '\r';
+      index += 1;
+      continue;
+    }
+
+    if (next === 't') {
+      output += '\t';
+      index += 1;
+      continue;
+    }
+
+    if (next === '"' || next === '\\' || next === '/') {
+      output += next;
+      index += 1;
+      continue;
+    }
+
+    if (next === 'u' && /^[0-9a-fA-F]{4}$/.test(input.slice(index + 2, index + 6))) {
+      output += String.fromCharCode(parseInt(input.slice(index + 2, index + 6), 16));
+      index += 5;
+      continue;
+    }
+
+    output += next;
+    index += 1;
+  }
+
+  return output;
+}
+
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 function stripMarkdownCodeFences(raw) {
