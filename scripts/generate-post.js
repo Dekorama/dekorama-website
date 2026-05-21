@@ -260,26 +260,23 @@ async function generateCoverImage(keyword, slug, apiKey, dryRun) {
 // Parse Gemini JSON response (handles accidental markdown fences)
 // ---------------------------------------------------------------------------
 function parseGeminiResponse(raw, requiredFields) {
-  // Strip markdown code fences if present
-  let cleaned = raw.trim();
-  cleaned = cleaned.replace(/^```json\s*/i, '').replace(/\s*```$/, '');
-  cleaned = cleaned.replace(/^```\s*/, '').replace(/\s*```$/, '');
-
   let parsed;
+  const cleaned = stripMarkdownCodeFences(raw);
+
   try {
-    parsed = JSON.parse(cleaned);
+    parsed = parsePossiblyMalformedJson(cleaned);
   } catch (err) {
-    // Attempt to extract JSON object from surrounding text
-    const match = cleaned.match(/\{[\s\S]*\}/);
-    if (!match) {
+    const extracted = extractFirstJsonObject(cleaned);
+    if (!extracted) {
       console.error('\n--- RAW RESPONSE ---\n', raw.slice(0, 500));
       throw new Error(`Gemini response is not valid JSON: ${err.message}`);
     }
+
     try {
-      parsed = JSON.parse(match[0]);
+      parsed = parsePossiblyMalformedJson(extracted);
     } catch {
       console.error('\n--- RAW RESPONSE ---\n', raw.slice(0, 500));
-      throw new Error('Could not parse JSON from Gemini response.');
+      throw new Error(`Could not parse JSON from Gemini response. ${err.message}`);
     }
   }
 
@@ -291,6 +288,134 @@ function parseGeminiResponse(raw, requiredFields) {
   }
 
   return parsed;
+}
+
+function stripMarkdownCodeFences(raw) {
+  let cleaned = raw.trim();
+  cleaned = cleaned.replace(/^```json\s*/i, '').replace(/\s*```$/, '');
+  cleaned = cleaned.replace(/^```\s*/, '').replace(/\s*```$/, '');
+  return cleaned;
+}
+
+function parsePossiblyMalformedJson(input) {
+  try {
+    return JSON.parse(input);
+  } catch (initialError) {
+    const sanitized = escapeJsonControlCharactersInStrings(input);
+    if (sanitized === input) {
+      throw initialError;
+    }
+
+    try {
+      return JSON.parse(sanitized);
+    } catch {
+      throw initialError;
+    }
+  }
+}
+
+function escapeJsonControlCharactersInStrings(input) {
+  let output = '';
+  let inString = false;
+  let escaping = false;
+
+  for (const char of input) {
+    if (inString) {
+      if (escaping) {
+        output += char;
+        escaping = false;
+        continue;
+      }
+
+      if (char === '\\') {
+        output += char;
+        escaping = true;
+        continue;
+      }
+
+      if (char === '"') {
+        output += char;
+        inString = false;
+        continue;
+      }
+
+      if (char === '\n') {
+        output += '\\n';
+        continue;
+      }
+
+      if (char === '\r') {
+        output += '\\r';
+        continue;
+      }
+
+      if (char === '\t') {
+        output += '\\t';
+        continue;
+      }
+
+      if (char.charCodeAt(0) < 0x20) {
+        output += `\\u${char.charCodeAt(0).toString(16).padStart(4, '0')}`;
+        continue;
+      }
+
+      output += char;
+      continue;
+    }
+
+    if (char === '"') {
+      inString = true;
+    }
+
+    output += char;
+  }
+
+  return output;
+}
+
+function extractFirstJsonObject(input) {
+  const startIndex = input.indexOf('{');
+  if (startIndex === -1) {
+    return null;
+  }
+
+  let depth = 0;
+  let inString = false;
+  let escaping = false;
+
+  for (let index = startIndex; index < input.length; index += 1) {
+    const char = input[index];
+
+    if (inString) {
+      if (escaping) {
+        escaping = false;
+      } else if (char === '\\') {
+        escaping = true;
+      } else if (char === '"') {
+        inString = false;
+      }
+      continue;
+    }
+
+    if (char === '"') {
+      inString = true;
+      continue;
+    }
+
+    if (char === '{') {
+      depth += 1;
+      continue;
+    }
+
+    if (char === '}') {
+      depth -= 1;
+      if (depth === 0) {
+        return input.slice(startIndex, index + 1);
+      }
+    }
+  }
+
+  return input.slice(startIndex);
 }
 
 function sanitizeSlug(slug) {
