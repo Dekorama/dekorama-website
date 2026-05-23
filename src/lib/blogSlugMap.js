@@ -76,6 +76,14 @@ export const blogSlugMap = {
   'porcelain-tiles-outdoor-terrace-costa-del-sol': {
     es: 'porcelanico-exterior-terraza-costa-sol',
     en: 'porcelain-tiles-outdoor-terrace-costa-del-sol',
+  },
+  'mamparas-ducha-sin-marco-benalmadena': {
+    es: 'mamparas-ducha-sin-marco-benalmadena',
+    en: 'frameless-shower-screens-benalmadena',
+  },
+  'frameless-shower-screens-benalmadena': {
+    es: 'mamparas-ducha-sin-marco-benalmadena',
+    en: 'frameless-shower-screens-benalmadena',
   },}
 
 /**
