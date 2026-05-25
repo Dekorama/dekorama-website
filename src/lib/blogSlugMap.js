@@ -84,6 +84,14 @@ export const blogSlugMap = {
   'frameless-shower-screens-benalmadena': {
     es: 'mamparas-ducha-sin-marco-benalmadena',
     en: 'frameless-shower-screens-benalmadena',
+  },
+  'cuanto-cuesta-reformar-bano-completo-costa-del-sol': {
+    es: 'cuanto-cuesta-reformar-bano-completo-costa-del-sol',
+    en: 'bathroom-renovation-cost-costa-del-sol',
+  },
+  'bathroom-renovation-cost-costa-del-sol': {
+    es: 'cuanto-cuesta-reformar-bano-completo-costa-del-sol',
+    en: 'bathroom-renovation-cost-costa-del-sol',
   },}
 
 /**
