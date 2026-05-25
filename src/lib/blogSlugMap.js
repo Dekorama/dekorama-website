@@ -92,6 +92,14 @@ export const blogSlugMap = {
   'bathroom-renovation-cost-costa-del-sol': {
     es: 'cuanto-cuesta-reformar-bano-completo-costa-del-sol',
     en: 'bathroom-renovation-cost-costa-del-sol',
+  },
+  'como-planificar-reforma-integral-costa-del-sol': {
+    es: 'como-planificar-reforma-integral-costa-del-sol',
+    en: 'how-to-renovate-costa-del-sol-expat',
+  },
+  'how-to-renovate-costa-del-sol-expat': {
+    es: 'como-planificar-reforma-integral-costa-del-sol',
+    en: 'how-to-renovate-costa-del-sol-expat',
   },}
 
 /**
