@@ -79,11 +79,26 @@ export default async function BlogPostPage({ params }) {
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
+    dateModified: post.date,
+    inLanguage: locale === 'en' ? 'en' : 'es',
+    mainEntityOfPage: { '@type': 'WebPage', '@id': postUrl },
     author: { '@type': 'Organization', name: 'Dekorama', url: baseUrl },
     publisher: { '@type': 'Organization', name: 'Dekorama', url: baseUrl },
     url: postUrl,
     ...(post.coverImage && { image: post.coverImage }),
   }
+
+  const faqJsonLd = post.faqs && post.faqs.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: post.faqs.map(({ question, answer }) => ({
+          '@type': 'Question',
+          name: question,
+          acceptedAnswer: { '@type': 'Answer', text: answer },
+        })),
+      }
+    : null
 
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -105,6 +120,12 @@ export default async function BlogPostPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       <article>
         <header className="relative bg-gray-bg">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-8 md:pt-16 md:pb-12">

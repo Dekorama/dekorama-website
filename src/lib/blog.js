@@ -8,6 +8,41 @@ import html from 'remark-html'
 const BLOG_DIR = path.join(process.cwd(), 'src/content/blog')
 
 /**
+ * Extracts FAQ Q&A pairs from markdown content.
+ * Looks for ## FAQ / ## Frequently... / ## Preguntas Frecuentes sections,
+ * then extracts ### Question + answer paragraph pairs.
+ * @param {string} markdown
+ * @returns {{ question: string, answer: string }[]}
+ */
+function extractFaqs(markdown) {
+  const FAQ_HEADING_RE = /^##\s+(?:FAQ|Frequently(?:\s+asked)?\s+questions?|Preguntas\s+[Ff]recuentes?)/i
+  const faqs = []
+
+  // Split by ## headings to isolate FAQ sections
+  const sections = markdown.split(/^(?=##\s)/m)
+  for (const section of sections) {
+    if (!FAQ_HEADING_RE.test(section.split('\n')[0])) continue
+    // Split within FAQ section by ### headings
+    const qaSections = section.split(/^(?=###\s)/m).slice(1)
+    for (const qaSection of qaSections) {
+      const lines = qaSection.split('\n')
+      const question = lines[0].replace(/^###\s+/, '').trim()
+      const rawAnswer = lines.slice(1).join('\n').trim()
+      const answer = rawAnswer
+        .replace(/\*\*(.+?)\*\*/g, '$1')
+        .replace(/\*(.+?)\*/g, '$1')
+        .replace(/\[(.+?)\]\(.+?\)/g, '$1')
+        .replace(/\n+/g, ' ')
+        .trim()
+      if (question && answer && answer.length > 10) {
+        faqs.push({ question, answer })
+      }
+    }
+  }
+  return faqs
+}
+
+/**
  * @param {string} locale - The locale ('es' or 'en')
  * @returns {{ slug: string, title: string, excerpt: string, date: string, coverImage: string }[]}
  */
@@ -52,6 +87,7 @@ export async function getPostBySlug(slug, locale = 'es') {
     date: data.date ?? '',
     coverImage: data.coverImage ?? '',
     contentHtml,
+    faqs: extractFaqs(markdown),
   }
 }
 
