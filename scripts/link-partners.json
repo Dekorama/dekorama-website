@@ -1,0 +1,189 @@
+{
+  "_comment": "Backlink exchange partner registry. Statuses: prospect → contacted → active → paused.",
+  "partners": [
+    {
+      "id": "habitissimo-es",
+      "name": "Habitissimo",
+      "domain": "habitissimo.es",
+      "niches": ["home-improvement", "interior-design"],
+      "language": "es",
+      "status": "prospect",
+      "outboundLinks": [
+        {
+          "url": "https://www.habitissimo.es/presupuestos/reformas-cocina",
+          "anchorText": "presupuestos de reforma de cocina",
+          "contextHint": "when writing about kitchen renovation budgets or planning"
+        }
+      ],
+      "inboundLinks": [
+        {
+          "dekoramaUrl": "/es/cocinas-a-medida",
+          "suggestedAnchor": "cocinas a medida en la Costa del Sol"
+        }
+      ],
+      "articlesLinked": [],
+      "notes": "High-DR Spanish home improvement platform. Great fit for budget/planning articles."
+    },
+    {
+      "id": "idealista-news",
+      "name": "Idealista News",
+      "domain": "idealista.com",
+      "niches": ["real-estate"],
+      "language": "es",
+      "status": "prospect",
+      "outboundLinks": [
+        {
+          "url": "https://www.idealista.com/news/inmobiliario/vivienda/",
+          "anchorText": "mercado inmobiliario en la Costa del Sol",
+          "contextHint": "when writing about property investment or home value on the Costa del Sol"
+        }
+      ],
+      "inboundLinks": [
+        {
+          "dekoramaUrl": "/es/reformas-marbella",
+          "suggestedAnchor": "reformas integrales en Marbella"
+        }
+      ],
+      "articlesLinked": [],
+      "notes": "Leading Spanish real estate portal. Contact via their content partnership programme."
+    },
+    {
+      "id": "think-spain",
+      "name": "Think Spain",
+      "domain": "thinkspain.com",
+      "niches": ["expat-lifestyle", "real-estate"],
+      "language": "en",
+      "status": "prospect",
+      "outboundLinks": [
+        {
+          "url": "https://www.thinkspain.com/news-spain/",
+          "anchorText": "expat property guides for the Costa del Sol",
+          "contextHint": "when writing about home buying or renovation for expats in Spain"
+        }
+      ],
+      "inboundLinks": [
+        {
+          "dekoramaUrl": "/en/reformas-integrales",
+          "suggestedAnchor": "full home renovations on the Costa del Sol"
+        }
+      ],
+      "articlesLinked": [],
+      "notes": "Popular English-language expat property site. High-intent expat audience."
+    },
+    {
+      "id": "andalucia-com",
+      "name": "Andalucia.com",
+      "domain": "andalucia.com",
+      "niches": ["expat-lifestyle"],
+      "language": "en",
+      "status": "prospect",
+      "outboundLinks": [
+        {
+          "url": "https://www.andalucia.com/property/",
+          "anchorText": "property guides for Andalucía",
+          "contextHint": "when writing for expats about buying or renovating property in Andalucía"
+        }
+      ],
+      "inboundLinks": [
+        {
+          "dekoramaUrl": "/en/banos-completos",
+          "suggestedAnchor": "complete bathroom renovations in Málaga"
+        }
+      ],
+      "articlesLinked": [],
+      "notes": "Well-established English-language Andalucía lifestyle and property resource."
+    },
+    {
+      "id": "arquitectura-diseno",
+      "name": "Arquitectura y Diseño",
+      "domain": "arquitecturaydiseno.es",
+      "niches": ["architecture", "interior-design"],
+      "language": "es",
+      "status": "prospect",
+      "outboundLinks": [
+        {
+          "url": "https://www.arquitecturaydiseno.es/",
+          "anchorText": "tendencias en arquitectura y diseño de interiores",
+          "contextHint": "when writing about architecture trends, open-plan spaces, or high-end interior design"
+        }
+      ],
+      "inboundLinks": [
+        {
+          "dekoramaUrl": "/es/materiales-premium",
+          "suggestedAnchor": "materiales premium para reformas de calidad"
+        }
+      ],
+      "articlesLinked": [],
+      "notes": "Spanish architecture and interior design magazine. Strong DR and editorial credibility."
+    },
+    {
+      "id": "porcelanosa-blog",
+      "name": "Porcelanosa Blog",
+      "domain": "blog.porcelanosa.com",
+      "niches": ["materials-suppliers", "interior-design"],
+      "language": "es",
+      "status": "prospect",
+      "outboundLinks": [
+        {
+          "url": "https://blog.porcelanosa.com/",
+          "anchorText": "tendencias en revestimientos y porcelánico",
+          "contextHint": "when writing about tile choices, bathroom materials, or kitchen surfaces"
+        }
+      ],
+      "inboundLinks": [
+        {
+          "dekoramaUrl": "/es/porcelanicos-malaga",
+          "suggestedAnchor": "porcelánicos de gran formato en Málaga"
+        }
+      ],
+      "articlesLinked": [],
+      "notes": "High-authority tile manufacturer blog. Good fit for materials-focused articles."
+    },
+    {
+      "id": "property-costa-del-sol",
+      "name": "Property Costa del Sol",
+      "domain": "propertycostaol.com",
+      "niches": ["real-estate", "expat-lifestyle"],
+      "language": "en",
+      "status": "prospect",
+      "outboundLinks": [
+        {
+          "url": "https://propertycostaol.com/",
+          "anchorText": "properties on the Costa del Sol",
+          "contextHint": "when writing for expats about buying or upgrading a property on the Costa del Sol"
+        }
+      ],
+      "inboundLinks": [
+        {
+          "dekoramaUrl": "/en/reformas-marbella",
+          "suggestedAnchor": "renovation specialists in Marbella"
+        }
+      ],
+      "articlesLinked": [],
+      "notes": "English-language real estate portal focused on Costa del Sol. Outreach via contact form."
+    },
+    {
+      "id": "reformas-habitat",
+      "name": "Reformas Habitat Blog",
+      "domain": "reformashabitat.es",
+      "niches": ["home-improvement"],
+      "language": "es",
+      "status": "prospect",
+      "outboundLinks": [
+        {
+          "url": "https://www.reformashabitat.es/blog/",
+          "anchorText": "consejos de reforma del hogar",
+          "contextHint": "when writing about renovation planning, budgeting, or common renovation mistakes"
+        }
+      ],
+      "inboundLinks": [
+        {
+          "dekoramaUrl": "/es/reformas-integrales",
+          "suggestedAnchor": "empresa de reformas integrales en Benalmádena"
+        }
+      ],
+      "articlesLinked": [],
+      "notes": "Spanish home renovation blog with practical DIY and planning content."
+    }
+  ]
+}

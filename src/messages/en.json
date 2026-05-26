@@ -614,5 +614,51 @@
       "service3": "Complete bathrooms with premium porcelain tiles",
       "service4": "Supply and installation of materials"
     }
+  },
+  "linkExchange": {
+    "meta": {
+      "title": "Link Exchange | Dekorama",
+      "description": "Partner with Dekorama for a contextual backlink exchange. We link to you in our renovation blog, you link back to us. Free, permanent, and topically relevant."
+    },
+    "hero": {
+      "eyebrow": "SEO Partnership",
+      "title": "Grow your authority together",
+      "subtitle": "We publish new renovation and interior design articles every week. We can include a contextual link to your site — and we ask for one in return.",
+      "cta": "Propose a collaboration"
+    },
+    "howIt": {
+      "title": "How it works",
+      "step1Title": "You get in touch",
+      "step1Desc": "Send us a short message with your site URL and a page you want linked to.",
+      "step2Title": "We review fit",
+      "step2Desc": "We check that your site is topically relevant and has genuine readership. No link farms.",
+      "step3Title": "We link to you",
+      "step3Desc": "We include a contextual link to your site in an upcoming blog article where it reads naturally.",
+      "step4Title": "You link back",
+      "step4Desc": "You add a link to a relevant Dekorama page in one of your own articles. That is it — no fees, no contracts."
+    },
+    "whoFor": {
+      "title": "Who is this for?",
+      "desc": "We work with sites that share a topical overlap with home renovation, interior design, or property on the Costa del Sol.",
+      "niche1": "Interior design & decor blogs",
+      "niche2": "Real estate agencies (Málaga / Costa del Sol)",
+      "niche3": "Architecture studios",
+      "niche4": "Tile and building material suppliers",
+      "niche5": "Expat lifestyle and relocation guides",
+      "niche6": "Home improvement and DIY sites"
+    },
+    "rules": {
+      "title": "Our ground rules",
+      "rule1": "Links must be placed contextually inside real article content — not in footers or sidebars.",
+      "rule2": "No link farms, PBNs, or sites built exclusively for link exchange.",
+      "rule3": "Both links must be followed (dofollow). No sponsored or UGC attributes.",
+      "rule4": "Minimum domain age of 12 months and genuine organic traffic.",
+      "rule5": "One exchange per domain. We keep the network small and the links meaningful."
+    },
+    "cta": {
+      "title": "Interested? Let us talk.",
+      "desc": "Send us your site URL and the page you want linked. We will check fit and get back to you within a few days.",
+      "button": "Contact us on WhatsApp"
+    }
   }
 }

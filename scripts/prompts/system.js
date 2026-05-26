@@ -3,9 +3,10 @@
  * Called once per generate-post run.
  *
  * @param {string} locale - 'es' | 'en' | 'both'
+ * @param {{ url: string, anchorText: string, contextHint: string } | null} partnerLink
  * @returns {string}
  */
-function buildSystemPrompt(locale) {
+function buildSystemPrompt(locale, partnerLink = null) {
   const isSpanish = locale === 'es';
   const isEnglish = locale === 'en';
   const isBilingual = locale === 'both';
@@ -143,6 +144,14 @@ SLUG RULES: lowercase, hyphens only, no accents, no special characters, 3–8 wo
       ? 'Write only the English version for expats and international property owners on the Costa del Sol.'
       : 'Write both the Spanish and English versions in the same response.';
 
+  const partnerLinkSection = partnerLink
+    ? `OUTBOUND PARTNER LINK:
+Include this external link exactly once in the article body, placed where it reads naturally and adds genuine value for the reader. Do not add it to the FAQ or the CTA paragraph. Do not label it as "partner" or "sponsored".
+- Anchor text: "${partnerLink.anchorText}"
+- URL: ${partnerLink.url}
+- When to use it: ${partnerLink.contextHint}`
+    : null;
+
   return [
     brandContext,
     '',
@@ -150,6 +159,7 @@ SLUG RULES: lowercase, hyphens only, no accents, no special characters, 3–8 wo
     '',
     articleRequirements,
     '',
+    ...(partnerLinkSection ? [partnerLinkSection, ''] : []),
     ...(isEnglish ? [] : [`INTERNAL LINKS (Spanish):`, internalLinksEs, '']),
     ...(isSpanish ? [] : [`INTERNAL LINKS (English):`, internalLinksEn, '']),
     ...(isEnglish ? [] : [toneEs, '']),

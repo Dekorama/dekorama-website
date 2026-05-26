@@ -614,5 +614,51 @@
       "service3": "Baños completos con porcelánicos premium",
       "service4": "Suministro e instalación de materiales"
     }
+  },
+  "linkExchange": {
+    "meta": {
+      "title": "Intercambio de enlaces | Dekorama",
+      "description": "Colabora con Dekorama en un intercambio de enlaces contextual. Enlazamos a tu web en nuestro blog de reformas y tú enlazas a la nuestra. Gratuito, permanente y temáticamente relevante."
+    },
+    "hero": {
+      "eyebrow": "Colaboración SEO",
+      "title": "Creced juntos en autoridad",
+      "subtitle": "Publicamos nuevos artículos sobre reformas y diseño de interiores cada semana. Podemos incluir un enlace contextual a tu sitio — y a cambio pedimos uno de vuelta.",
+      "cta": "Proponer una colaboración"
+    },
+    "howIt": {
+      "title": "Cómo funciona",
+      "step1Title": "Nos contactas",
+      "step1Desc": "Mándanos un mensaje con la URL de tu sitio y la página que quieres enlazar.",
+      "step2Title": "Revisamos la compatibilidad",
+      "step2Desc": "Comprobamos que tu sitio sea temáticamente relevante y tenga tráfico real. Nada de granjas de enlaces.",
+      "step3Title": "Enlazamos a tu sitio",
+      "step3Desc": "Incluimos un enlace contextual hacia tu web en uno de nuestros próximos artículos, donde encaje de forma natural.",
+      "step4Title": "Tú enlazas a Dekorama",
+      "step4Desc": "Añades un enlace a una página relevante de dekorama.es en uno de tus artículos. Sin cuotas, sin contratos."
+    },
+    "whoFor": {
+      "title": "¿A quién va dirigido?",
+      "desc": "Colaboramos con sitios que compartan temática con reformas del hogar, diseño de interiores o inmobiliario en la Costa del Sol.",
+      "niche1": "Blogs de diseño de interiores y decoración",
+      "niche2": "Agencias inmobiliarias (Málaga / Costa del Sol)",
+      "niche3": "Estudios de arquitectura",
+      "niche4": "Proveedores de azulejos y materiales de construcción",
+      "niche5": "Guías de vida para expatriados",
+      "niche6": "Webs de bricolaje y mejoras del hogar"
+    },
+    "rules": {
+      "title": "Nuestras condiciones",
+      "rule1": "Los enlaces deben colocarse de forma contextual dentro del contenido real del artículo, no en pies de página ni barras laterales.",
+      "rule2": "Sin granjas de enlaces, PBNs ni sitios creados exclusivamente para intercambio de links.",
+      "rule3": "Ambos enlaces deben ser seguidos (dofollow). Sin atributos sponsored ni ugc.",
+      "rule4": "Dominio con al menos 12 meses de antigüedad y tráfico orgánico real.",
+      "rule5": "Un intercambio por dominio. Mantenemos la red pequeña y los enlaces significativos."
+    },
+    "cta": {
+      "title": "¿Te interesa? Hablemos.",
+      "desc": "Envíanos la URL de tu sitio y la página que quieres enlazar. Revisamos la compatibilidad y te respondemos en unos días.",
+      "button": "Escríbenos por WhatsApp"
+    }
   }
 }

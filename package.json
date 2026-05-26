@@ -9,7 +9,10 @@
     "lint": "next lint",
     "research:keywords": "node scripts/keyword-research.js",
     "generate:post": "node scripts/generate-post.js",
-    "generate:post:next": "node scripts/generate-post.js --from-queue"
+    "generate:post:next": "node scripts/generate-post.js --from-queue",
+    "links:audit": "node scripts/link-audit.js",
+    "links:find": "node scripts/find-partners.js",
+    "links:status": "node scripts/find-partners.js --status"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",

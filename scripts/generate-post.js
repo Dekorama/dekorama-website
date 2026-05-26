@@ -33,6 +33,7 @@ const ROOT = process.cwd();
 const QUEUE_PATH = path.join(ROOT, 'scripts', 'keywords-queue.json');
 const BLOG_DIR = path.join(ROOT, 'src', 'content', 'blog');
 const SLUG_MAP_PATH = path.join(ROOT, 'src', 'lib', 'blogSlugMap.js');
+const PARTNERS_PATH = path.join(ROOT, 'scripts', 'link-partners.json');
 const SINGLE_LOCALE_RESPONSE_SCHEMA = {
   type: 'object',
   properties: {
@@ -78,15 +79,17 @@ function parseArgs() {
     keyword: null,
     fromQueue: false,
     dryRun: false,
+    noPartner: false,
     model: process.env.GEMINI_MODEL || 'gemini-2.5-flash',
   };
 
   for (let i = 0; i < args.length; i++) {
     switch (args[i]) {
-      case '--keyword':    opts.keyword = args[++i]; break;
-      case '--from-queue': opts.fromQueue = true; break;
-      case '--dry-run':    opts.dryRun = true; break;
-      case '--model':      opts.model = args[++i]; break;
+      case '--keyword':     opts.keyword = args[++i]; break;
+      case '--from-queue':  opts.fromQueue = true; break;
+      case '--dry-run':     opts.dryRun = true; break;
+      case '--model':       opts.model = args[++i]; break;
+      case '--no-partner':  opts.noPartner = true; break;
     }
   }
 
@@ -99,6 +102,90 @@ function parseArgs() {
   }
 
   return opts;
+}
+
+// ---------------------------------------------------------------------------
+// Partner link helpers
+// ---------------------------------------------------------------------------
+function loadPartners() {
+  if (!fs.existsSync(PARTNERS_PATH)) return [];
+  try {
+    return JSON.parse(fs.readFileSync(PARTNERS_PATH, 'utf8')).partners || [];
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Picks the active partner whose niches best match the keyword.
+ * Falls back to the active partner with the fewest articles linked so far.
+ * Returns null if no active partners exist.
+ *
+ * @param {string} keyword
+ * @returns {{ partner: object, outboundLink: object } | null}
+ */
+function pickPartnerForKeyword(keyword) {
+  const partners = loadPartners();
+  const active = partners.filter((p) => p.status === 'active' && p.outboundLinks?.length > 0);
+  if (active.length === 0) return null;
+
+  const kw = keyword.toLowerCase();
+
+  // Niche hint words so we can score relevance without a heavyweight NLP lib
+  const nicheKeywords = {
+    'real-estate':      ['inmobili', 'propert', 'piso', 'vivienda', 'casa', 'compra', 'venta', 'alquil', 'invert'],
+    'interior-design':  ['diseño', 'design', 'interior', 'deco', 'estilo', 'tendencia', 'aesthetic'],
+    'architecture':     ['arquitec', 'architect', 'plano', 'espacio', 'open plan', 'distribuc'],
+    'materials-suppliers': ['porcelan', 'tile', 'baldosa', 'revestim', 'azulejo', 'encimera', 'grifo', 'suelo'],
+    'expat-lifestyle':  ['expat', 'foreigner', 'extranjero', 'holiday home', 'segunda resid'],
+    'home-improvement': ['reform', 'renovat', 'obra', 'presupuest', 'budget', 'mejora'],
+  };
+
+  function scorePartner(partner) {
+    let score = 0;
+    for (const niche of (partner.niches || [])) {
+      const hints = nicheKeywords[niche] || [];
+      if (hints.some((h) => kw.includes(h))) score += 2;
+    }
+    // Prefer partners with fewer articles already linked (even distribution)
+    score -= (partner.articlesLinked || []).length * 0.1;
+    return score;
+  }
+
+  const sorted = [...active].sort((a, b) => scorePartner(b) - scorePartner(a));
+  const partner = sorted[0];
+  // Pick a random outbound link from that partner
+  const links = partner.outboundLinks;
+  const outboundLink = links[Math.floor(Math.random() * links.length)];
+
+  return { partner, outboundLink };
+}
+
+function trackPartnerLink(partnerId, esSlug, enSlug, dryRun) {
+  if (!fs.existsSync(PARTNERS_PATH)) return;
+
+  let registry;
+  try {
+    registry = JSON.parse(fs.readFileSync(PARTNERS_PATH, 'utf8'));
+  } catch {
+    return;
+  }
+
+  const partner = registry.partners.find((p) => p.id === partnerId);
+  if (!partner) return;
+
+  if (!Array.isArray(partner.articlesLinked)) partner.articlesLinked = [];
+
+  const entry = { slugEs: esSlug, slugEn: enSlug, linkedAt: new Date().toISOString() };
+
+  if (dryRun) {
+    console.log(`[DRY RUN] Would record partner link: ${partnerId} ← ${esSlug} / ${enSlug}`);
+    return;
+  }
+
+  partner.articlesLinked.push(entry);
+  fs.writeFileSync(PARTNERS_PATH, JSON.stringify(registry, null, 2) + '\n');
+  console.log(`Tracked partner link: ${partnerId} ← ${esSlug} / ${enSlug}`);
 }
 
 // ---------------------------------------------------------------------------
@@ -160,7 +247,7 @@ Write only the English version for expats and international property owners on t
 Return the JSON object as specified in your instructions.`;
 }
 
-async function generateArticlePart(keyword, model, locale) {
+async function generateArticlePart(keyword, model, locale, partnerLink = null) {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     throw new Error(
@@ -172,7 +259,7 @@ async function generateArticlePart(keyword, model, locale) {
   const genAI = new GoogleGenerativeAI(apiKey);
   const generativeModel = genAI.getGenerativeModel({
     model,
-    systemInstruction: buildSystemPrompt(locale),
+    systemInstruction: buildSystemPrompt(locale, partnerLink),
     generationConfig: {
       temperature: 0.4,
       maxOutputTokens: 4096,
@@ -193,9 +280,9 @@ async function generateArticlePart(keyword, model, locale) {
   return parseSingleLocaleResponse(raw, locale);
 }
 
-async function generateArticle(keyword, model) {
-  const spanish = await generateArticlePart(keyword, model, 'es');
-  const english = await generateArticlePart(keyword, model, 'en');
+async function generateArticle(keyword, model, partnerLink = null) {
+  const spanish = await generateArticlePart(keyword, model, 'es', partnerLink);
+  const english = await generateArticlePart(keyword, model, 'en', partnerLink);
 
   return {
     slug_es: spanish.slug,
@@ -782,13 +869,13 @@ function isRecoverableGenerationError(message) {
   ].some((fragment) => message.includes(fragment));
 }
 
-async function generateValidatedPost(keyword, model) {
+async function generateValidatedPost(keyword, model, partnerLink = null) {
   const maxAttempts = parseInt(process.env.GEMINI_GENERATION_MAX_ATTEMPTS || '3', 10);
   let lastError;
 
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     try {
-      let parsed = await generateArticle(keyword, model);
+      let parsed = await generateArticle(keyword, model, partnerLink);
       parsed = normalizeGeneratedPost(parsed, keyword);
       validateGeneratedPost(parsed);
       return parsed;
@@ -971,9 +1058,24 @@ function printSummary(parsed) {
     console.log('\n[DRY RUN MODE] No files will be written.\n');
   }
 
+  // Pick a partner link to inject unless --no-partner flag is set
+  let selectedPartner = null;
+  if (!opts.noPartner) {
+    const pick = pickPartnerForKeyword(keyword);
+    if (pick) {
+      selectedPartner = pick;
+      console.log(`Partner link selected: ${pick.partner.name} (${pick.outboundLink.url})`);
+    } else {
+      console.log('No active partners found in link-partners.json — skipping partner link injection.');
+      console.log('Add partners with status "active" to scripts/link-partners.json to enable link exchange.');
+    }
+  }
+
+  const partnerLink = selectedPartner ? selectedPartner.outboundLink : null;
+
   let parsed;
   try {
-    parsed = await generateValidatedPost(keyword, opts.model);
+    parsed = await generateValidatedPost(keyword, opts.model, partnerLink);
   } catch (err) {
     console.error(`\nGeneration error: ${err.message}`);
     process.exit(1);
@@ -1000,6 +1102,10 @@ function printSummary(parsed) {
 
   writeMarkdownFiles(parsed, opts.dryRun);
   appendSlugPair(parsed.slug_es, parsed.slug_en, opts.dryRun);
+
+  if (selectedPartner) {
+    trackPartnerLink(selectedPartner.partner.id, parsed.slug_es, parsed.slug_en, opts.dryRun);
+  }
 
   if (!opts.dryRun && opts.fromQueue) {
     markKeywordDone(keyword);

@@ -16,6 +16,7 @@ const staticPaths = [
   { path: '/blog', priority: 0.8, changeFrequency: 'weekly' },
   { path: '/contacto', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/partners', priority: 0.7, changeFrequency: 'monthly' },
+  { path: '/link-exchange', priority: 0.6, changeFrequency: 'monthly' },
   // Páginas por ciudad (SEO local crítico)
   { path: '/reformas-marbella', priority: 0.95, changeFrequency: 'monthly' },
   { path: '/reformas-fuengirola', priority: 0.95, changeFrequency: 'monthly' },
