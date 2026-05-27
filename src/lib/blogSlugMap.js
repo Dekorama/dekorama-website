@@ -100,6 +100,14 @@ export const blogSlugMap = {
   'how-to-renovate-costa-del-sol-expat': {
     es: 'como-planificar-reforma-integral-costa-del-sol',
     en: 'how-to-renovate-costa-del-sol-expat',
+  },
+  'porcelanico-efecto-cemento-tendencias-2026': {
+    es: 'porcelanico-efecto-cemento-tendencias-2026',
+    en: 'cement-effect-porcelain-tiles-trends-2026',
+  },
+  'cement-effect-porcelain-tiles-trends-2026': {
+    es: 'porcelanico-efecto-cemento-tendencias-2026',
+    en: 'cement-effect-porcelain-tiles-trends-2026',
   },}
 
 /**
