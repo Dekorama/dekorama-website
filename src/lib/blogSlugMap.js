@@ -108,6 +108,14 @@ export const blogSlugMap = {
   'cement-effect-porcelain-tiles-trends-2026': {
     es: 'porcelanico-efecto-cemento-tendencias-2026',
     en: 'cement-effect-porcelain-tiles-trends-2026',
+  },
+  'reforma-bano-marbella-precios-2026': {
+    es: 'reforma-bano-marbella-precios-2026',
+    en: 'marbella-bathroom-renovation-costs-2026',
+  },
+  'marbella-bathroom-renovation-costs-2026': {
+    es: 'reforma-bano-marbella-precios-2026',
+    en: 'marbella-bathroom-renovation-costs-2026',
   },}
 
 /**
