@@ -116,6 +116,14 @@ export const blogSlugMap = {
   'marbella-bathroom-renovation-costs-2026': {
     es: 'reforma-bano-marbella-precios-2026',
     en: 'marbella-bathroom-renovation-costs-2026',
+  },
+  'reforma-cocina-fuengirola-presupuesto-consejos': {
+    es: 'reforma-cocina-fuengirola-presupuesto-consejos',
+    en: 'kitchen-renovation-fuengirola-cost-tips',
+  },
+  'kitchen-renovation-fuengirola-cost-tips': {
+    es: 'reforma-cocina-fuengirola-presupuesto-consejos',
+    en: 'kitchen-renovation-fuengirola-cost-tips',
   },}
 
 /**
