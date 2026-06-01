@@ -23,6 +23,24 @@
 const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
+
+// Load .env.local for local development (no-op in CI where env vars are set directly)
+(function loadEnvLocal() {
+  const envPath = path.join(process.cwd(), '.env.local');
+  if (!fs.existsSync(envPath)) return;
+  for (const line of fs.readFileSync(envPath, 'utf8').split('\n')) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#')) continue;
+    const eqIdx = trimmed.indexOf('=');
+    if (eqIdx === -1) continue;
+    const key = trimmed.slice(0, eqIdx).trim();
+    let val = trimmed.slice(eqIdx + 1).trim();
+    if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+      val = val.slice(1, -1);
+    }
+    if (!(key in process.env)) process.env[key] = val;
+  }
+})();
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const { buildSystemPrompt } = require('./prompts/system');
 
