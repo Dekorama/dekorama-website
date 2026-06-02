@@ -7,6 +7,8 @@ import PageHeader from '@/components/PageHeader'
 import ServiceGrid from '@/components/ServiceGrid'
 import RelatedLinks from '@/components/RelatedLinks'
 import CTASection from '@/components/CTASection'
+import PageFaq from '@/components/PageFaq'
+import { getPageFaqsFromTranslations } from '@/lib/pageFaqs'
 
 export async function generateMetadata({ params }) {
   const { locale } = await params
@@ -52,6 +54,8 @@ export default async function CocinasMedidaPage({ params }) {
     },
     image: images.services.cocinas,
   }
+
+  const faqs = getPageFaqsFromTranslations((key) => t(key), { has: (key) => t.has(key) })
 
   const porque = [
     {
@@ -169,6 +173,8 @@ export default async function CocinasMedidaPage({ params }) {
           <RelatedLinks links={relatedServices} />
         </div>
       </section>
+
+      <PageFaq title={t('faq.title')} faqs={faqs} />
 
       {/* ── CTA FINAL ── */}
       <CTASection

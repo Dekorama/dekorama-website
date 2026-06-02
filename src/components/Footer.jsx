@@ -184,6 +184,9 @@ export default function Footer() {
             <Link href="/cookies" className="hover:text-white transition-colors">
               {t('cookies')}
             </Link>
+            <a href="/llms.txt" className="hover:text-white transition-colors">
+              {t('llmsGuide')}
+            </a>
           </div>
         </div>
       </div>

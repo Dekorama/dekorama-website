@@ -14,7 +14,8 @@
     "subtitle": "Tendencias en porcelánico, reformas y diseño de interiores. Consejos y novedades de nuestro equipo.",
     "readMore": "Leer más",
     "backToBlog": "Volver al blog",
-    "postNotFound": "Entrada no encontrada"
+    "postNotFound": "Entrada no encontrada",
+    "quickAnswer": "Respuesta rápida"
   },
   "nav": {
     "services": "Servicios",
@@ -57,6 +58,7 @@
     "privacy": "Política de Privacidad",
     "legal": "Aviso Legal",
     "cookies": "Cookies",
+    "llmsGuide": "Guía para asistentes IA",
     "copyright": "Todos los derechos reservados."
   },
   "cta": {
@@ -242,6 +244,17 @@
         "fase5Desc": "Realizamos las instalaciones de fontanería, electricidad, climatización",
         "fase6Title": "6. Acabados y entrega",
         "fase6Desc": "Aplicamos los revestimientos, pinturas y carpinterías. Revisión final contigo"
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre reformas integrales",
+        "q1": "¿Cuánto cuesta una reforma integral en la Costa del Sol?",
+        "a1": "Depende de metros, calidades y si se cambia la distribución. Como referencia orientativa, muchas viviendas medias se sitúan entre 40.000 € y 120.000 €. En Dekorama entregamos presupuesto cerrado tras visita y mediciones.",
+        "q2": "¿Cuánto tiempo dura una reforma integral?",
+        "a2": "Suele oscilar entre 2 y 5 meses según alcance, permisos y plazos de materiales. Definir acabados y planos antes de demoler reduce retrasos.",
+        "q3": "¿Gestionáis permisos y comunidad de propietarios?",
+        "a3": "Sí. Te orientamos sobre licencias municipales cuando aplica y coordinamos accesos, ruidos y horarios con la comunidad.",
+        "q4": "¿Trabajáis solo en Benalmádena?",
+        "a4": "No. Tenemos showroom en Benalmádena y ejecutamos reformas en Marbella, Fuengirola, Estepona, Torremolinos y toda la Costa del Sol."
       }
     },
     "cocinas": {
@@ -268,6 +281,17 @@
         "paso4": "Fabricación a medida en talleres especializados",
         "paso5": "Instalación profesional por nuestro equipo",
         "paso6": "Revisión final y garantía de satisfacción"
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre cocinas a medida",
+        "q1": "¿Cuánto cuesta una cocina a medida en la Costa del Sol?",
+        "a1": "Una cocina completa con electrodomésticos de gama media suele partir de unos 12.000 € y puede superar 35.000 € en proyectos de alto standing. El precio final depende de metros, marcas y encimera.",
+        "q2": "¿Cuánto tarda el proceso de diseño a instalación?",
+        "a2": "Entre 6 y 12 semanas es habitual: 1–2 semanas de diseño, 4–8 de fabricación y varios días de montaje en obra.",
+        "q3": "¿Puedo ver la cocina en 3D antes de fabricar?",
+        "a3": "Sí. Trabajamos con diseño 3D para validar distribución, colores y electrodomésticos antes de pasar a taller.",
+        "q4": "¿Instaláis electrodomésticos y fontanería?",
+        "a4": "Sí. Nuestro equipo coordina fontanería, electricidad y encastre de electrodomésticos para una entrega llave en mano."
       }
     },
     "banos": {
@@ -296,6 +320,17 @@
         "item6": "Sanitarios y grifería",
         "item7": "Muebles de baño a medida",
         "item8": "Iluminación LED y espejos"
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre baños completos",
+        "q1": "¿Cuánto cuesta reformar un baño completo en la Costa del Sol?",
+        "a1": "Como guía: entre 5.000 € y 8.000 € en reformas básicas, 8.000 €–15.000 € en gama media y más de 15.000 € en acabados premium. El tamaño y los cambios de instalaciones marcan la diferencia.",
+        "q2": "¿Cuánto tiempo se tarda en reformar un baño?",
+        "a2": "Un baño estándar suele necesitar 2 a 4 semanas de obra si los materiales están confirmados y no hay cambios de distribución complejos.",
+        "q3": "¿Qué marcas de porcelánico y grifería trabajáis?",
+        "a3": "PORCELANOSA, MARAZZI, KERABEN, APARICI en revestimientos; GROHE, HANSGROHE, ROCA y GEBERIT en grifería y sanitarios.",
+        "q4": "¿Incluye mampara, plato de ducha y mueble?",
+        "a4": "Sí, en un baño completo podemos incluir plato o bañera, mampara, sanitarios, grifería y mobiliario a medida según el presupuesto acordado."
       }
     },
     "materiales": {
@@ -546,7 +581,18 @@
       "whyUsDesc": "Más de 10 años ejecutando proyectos en Marbella, Puerto Banús, Nueva Andalucía y San Pedro Alcántara. Conocemos las particularidades del mercado de lujo de la zona y trabajamos con los más altos estándares de calidad.",
       "servicesTitle": "Nuestros servicios en Marbella",
       "zonesTitle": "Zonas de actuación en Marbella",
-      "zonesDesc": "Centro de Marbella, Puerto Banús, Nueva Andalucía, San Pedro Alcántara, Golden Mile, Sierra Blanca, Las Chapas, Elviria y toda la zona este y oeste de Marbella."
+      "zonesDesc": "Centro de Marbella, Puerto Banús, Nueva Andalucía, San Pedro Alcántara, Golden Mile, Sierra Blanca, Las Chapas, Elviria y toda la zona este y oeste de Marbella.",
+      "faq": {
+        "title": "Preguntas frecuentes sobre reformas en Marbella",
+        "q1": "¿Hacéis reformas de villas y apartamentos de lujo en Marbella?",
+        "a1": "Sí. Ejecutamos cocinas, baños y reformas integrales en villas y apartamentos en Marbella, Puerto Banús y Nueva Andalucía con materiales premium.",
+        "q2": "¿Ofrecéis presupuesto sin compromiso en Marbella?",
+        "a2": "Sí. Visitamos la vivienda, tomamos medidas y entregamos presupuesto detallado. También puedes empezar en nuestro showroom de Benalmádena.",
+        "q3": "¿Cuánto tarda una reforma en Marbella?",
+        "a3": "Depende del alcance. Una cocina o baño puede llevar 3–6 semanas; una reforma integral completa suele necesitar varios meses.",
+        "q4": "¿Coordináis gremios y materiales?",
+        "a4": "Sí. Gestionamos albañilería, instalaciones, carpintería y suministro de porcelánico, grifería y acabados desde un solo interlocutor."
+      }
     },
     "fuengirola": {
       "title": "Reformas Integrales Fuengirola | Dekorama",
@@ -557,7 +603,18 @@
       "whyUsDesc": "Conocemos perfectamente la zona de Fuengirola, Los Boliches, Torreblanca y Carvajal. Amplia experiencia en reformas de apartamentos turísticos y residenciales.",
       "servicesTitle": "Servicios de reforma en Fuengirola",
       "zonesTitle": "Zonas de servicio en Fuengirola",
-      "zonesDesc": "Centro de Fuengirola, Los Boliches, Torreblanca, Carvajal, Reserva del Higuerón y todas las urbanizaciones de Fuengirola."
+      "zonesDesc": "Centro de Fuengirola, Los Boliches, Torreblanca, Carvajal, Reserva del Higuerón y todas las urbanizaciones de Fuengirola.",
+      "faq": {
+        "title": "Preguntas frecuentes sobre reformas en Fuengirola",
+        "q1": "¿Reformáis apartamentos turísticos en Fuengirola?",
+        "a1": "Sí. Tenemos experiencia en viviendas de alquiler vacacional y residencia habitual, optimizando materiales resistentes y plazos de obra.",
+        "q2": "¿Cuánto cuesta una reforma integral en Fuengirola?",
+        "a2": "Varía según metros y calidades. Tras la visita entregamos un presupuesto cerrado sin sorpresas finales.",
+        "q3": "¿Trabajáis cocinas y baños sueltos además de reformas completas?",
+        "a3": "Sí. Puedes contratar cocina a medida, baño completo o reforma integral según la fase de tu proyecto.",
+        "q4": "¿Dónde está vuestro showroom más cercano?",
+        "a4": "En Benalmádena (Avenida Tivoli, 17), a pocos minutos en coche desde Fuengirola."
+      }
     },
     "estepona": {
       "title": "Reformas Integrales Estepona | Dekorama",
@@ -568,7 +625,18 @@
       "whyUsDesc": "Experiencia en todo tipo de reformas en Estepona, desde apartamentos hasta villas de lujo. Atención personalizada y compromiso con la excelencia en cada proyecto.",
       "servicesTitle": "Servicios en Estepona",
       "zonesTitle": "Cobertura en Estepona",
-      "zonesDesc": "Centro de Estepona, Puerto de Estepona, Selwo, Cancelada, Villacana, El Padrón y toda la costa de Estepona hasta Casares."
+      "zonesDesc": "Centro de Estepona, Puerto de Estepona, Selwo, Cancelada, Villacana, El Padrón y toda la costa de Estepona hasta Casares.",
+      "faq": {
+        "title": "Preguntas frecuentes sobre reformas en Estepona",
+        "q1": "¿Hacéis reformas en villas frente al mar en Estepona?",
+        "a1": "Sí. Trabajamos en villas y apartamentos en Estepona y alrededores con acabados resistentes a humedad y salitre.",
+        "q2": "¿Ofrecéis diseño de interiores además de obra?",
+        "a2": "Sí. Incluimos asesoramiento de distribución, materiales y coordinación de gremios en reformas integrales.",
+        "q3": "¿Cuánto se tarda en reformar una cocina en Estepona?",
+        "a3": "Suele ser 6–10 semanas entre diseño, fabricación e instalación, según disponibilidad de mobiliario y electrodomésticos.",
+        "q4": "¿Podéis suministrar solo materiales sin obra?",
+        "a4": "Sí. En el showroom de Benalmádena vendemos porcelánico, grifería, platos de ducha y mamparas con asesoramiento profesional."
+      }
     },
     "torremolinos": {
       "title": "Reformas Integrales Torremolinos | Dekorama",
@@ -579,7 +647,18 @@
       "whyUsDesc": "Amplio conocimiento de la zona de Torremolinos, La Carihuela, Bajondillo y Playamar. Reformas tanto para residentes como para propiedades de alquiler vacacional.",
       "servicesTitle": "Qué ofrecemos en Torremolinos",
       "zonesTitle": "Áreas de servicio en Torremolinos",
-      "zonesDesc": "Centro de Torremolinos, La Carihuela, Bajondillo, Playamar, Montemar, Los Álamos y toda la costa de Torremolinos."
+      "zonesDesc": "Centro de Torremolinos, La Carihuela, Bajondillo, Playamar, Montemar, Los Álamos y toda la costa de Torremolinos.",
+      "faq": {
+        "title": "Preguntas frecuentes sobre reformas en Torremolinos",
+        "q1": "¿Reformáis pisos y apartamentos en Torremolinos?",
+        "a1": "Sí. Reformamos viviendas en La Carihuela, Bajondillo, Playamar y centro, tanto para uso propio como alquiler.",
+        "q2": "¿El presupuesto incluye materiales y mano de obra?",
+        "a2": "Sí. Entregamos partida desglosada con materiales, gremios y plazos para que compares con claridad.",
+        "q3": "¿Hacéis baños pequeños y cocinas compactas?",
+        "a3": "Sí. Optimizamos distribución y almacenaje en espacios reducidos, habituales en apartamentos de la costa.",
+        "q4": "¿Cómo solicito una visita en Torremolinos?",
+        "a4": "Llama al +34 628 571 537 o usa el formulario de contacto. Concertamos visita sin costo en tu vivienda."
+      }
     },
     "porcelanicos": {
       "title": "Porcelánicos Málaga | Dekorama Costa del Sol",

@@ -77,8 +77,12 @@ ARTICLE REQUIREMENTS:
 - Body length: 900–1,300 words (not counting frontmatter).
 - Structure: 5–7 H2 sections. Use H3 where appropriate for sub-topics.
 - Start with a direct introduction that answers the keyword intent in the first 2 short paragraphs.
+- Immediately after the introduction, add the first H2 as "## Respuesta rápida" (Spanish) or "## Quick answer" (English): 2–4 sentences with concrete facts (cost range, timeline, location on the Costa del Sol) when relevant.
+- Use at least 2 H2 headings phrased as real questions users ask (e.g. "¿Cuánto cuesta…?", "How long does… take?").
+- Mention Dekorama, Benalmádena and Costa del Sol naturally where relevant (no keyword stuffing).
 - Include at least one concrete comparison, checklist, price guide, or decision framework when useful.
-- Add a final FAQ section with 2–4 concise questions that match real search intent.
+- Add 1–2 links to authoritative non-commercial sources when they add value (permits, standards). Partner links are separate.
+- Add a final FAQ section titled "## Preguntas frecuentes" (Spanish) or "## Frequently asked questions" (English) with 3–5 questions. Each answer must stand alone in under 80 words (no "see above").
 - Naturally include 2–4 internal links from the lists below. Use meaningful anchor text.
 - The article must directly answer the search intent behind the keyword.
   Think: what is the person searching for this actually trying to accomplish or understand?
@@ -99,6 +103,7 @@ Exact structure required:
   "slug": "url-friendly-slug-in-spanish-no-accents",
   "title": "Título completo en español",
   "excerpt": "Resumen de máximo 155 caracteres en español",
+  "keyAnswer": "Una sola frase que responde directamente a la búsqueda (máx. 220 caracteres).",
   "article": "Complete markdown body in Spanish. No frontmatter. No H1 heading."
 }
 
@@ -114,6 +119,7 @@ Exact structure required:
   "slug": "url-friendly-slug-in-english",
   "title": "Full title in English",
   "excerpt": "Summary of maximum 155 characters in English",
+  "keyAnswer": "One sentence that directly answers the search query (max 220 characters).",
   "article": "Complete markdown body in English. No frontmatter. No H1 heading."
 }
 
@@ -131,6 +137,8 @@ Exact structure required:
   "title_en": "Full title in English",
   "excerpt_es": "Resumen de máximo 155 caracteres en español",
   "excerpt_en": "Summary of maximum 155 characters in English",
+  "keyAnswer_es": "Una sola frase en español que responde directamente a la búsqueda (máx. 220 caracteres).",
+  "keyAnswer_en": "One sentence in English that directly answers the search query (max 220 characters).",
   "article_es": "Complete markdown body in Spanish. No frontmatter. No H1 heading.",
   "article_en": "Complete markdown body in English. No frontmatter. No H1 heading."
 }

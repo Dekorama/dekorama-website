@@ -58,10 +58,11 @@ const SINGLE_LOCALE_RESPONSE_SCHEMA = {
     slug: { type: 'string', description: 'URL slug in lowercase and hyphens only.' },
     title: { type: 'string', description: 'Full SEO title.' },
     excerpt: { type: 'string', description: 'Excerpt up to 155 characters.' },
+    keyAnswer: { type: 'string', description: 'One-sentence direct answer for AI extraction (max 220 chars).' },
     article: { type: 'string', description: 'Markdown article body without frontmatter.' },
   },
-  required: ['slug', 'title', 'excerpt', 'article'],
-  propertyOrdering: ['slug', 'title', 'excerpt', 'article'],
+  required: ['slug', 'title', 'excerpt', 'keyAnswer', 'article'],
+  propertyOrdering: ['slug', 'title', 'excerpt', 'keyAnswer', 'article'],
 };
 const BILINGUAL_RESPONSE_SCHEMA = {
   type: 'object',
@@ -72,11 +73,35 @@ const BILINGUAL_RESPONSE_SCHEMA = {
     title_en: { type: 'string', description: 'Full English SEO title.' },
     excerpt_es: { type: 'string', description: 'Spanish excerpt up to 155 characters.' },
     excerpt_en: { type: 'string', description: 'English excerpt up to 155 characters.' },
+    keyAnswer_es: { type: 'string', description: 'Spanish one-sentence direct answer (max 220 chars).' },
+    keyAnswer_en: { type: 'string', description: 'English one-sentence direct answer (max 220 chars).' },
     article_es: { type: 'string', description: 'Spanish markdown article body without frontmatter.' },
     article_en: { type: 'string', description: 'English markdown article body without frontmatter.' },
   },
-  required: ['slug_es', 'slug_en', 'title_es', 'title_en', 'excerpt_es', 'excerpt_en', 'article_es', 'article_en'],
-  propertyOrdering: ['slug_es', 'slug_en', 'title_es', 'title_en', 'excerpt_es', 'excerpt_en', 'article_es', 'article_en'],
+  required: [
+    'slug_es',
+    'slug_en',
+    'title_es',
+    'title_en',
+    'excerpt_es',
+    'excerpt_en',
+    'keyAnswer_es',
+    'keyAnswer_en',
+    'article_es',
+    'article_en',
+  ],
+  propertyOrdering: [
+    'slug_es',
+    'slug_en',
+    'title_es',
+    'title_en',
+    'excerpt_es',
+    'excerpt_en',
+    'keyAnswer_es',
+    'keyAnswer_en',
+    'article_es',
+    'article_en',
+  ],
 };
 
 function blogFilePath(locale, slug) {
@@ -689,6 +714,21 @@ function countWords(text) {
     .length;
 }
 
+const FAQ_HEADING_ES = /^##\s+Preguntas\s+frecuentes/i
+const FAQ_HEADING_EN = /^##\s+Frequently\s+asked\s+questions/i
+const QUICK_ANSWER_ES = /^##\s+Respuesta\s+rápida/i
+const QUICK_ANSWER_EN = /^##\s+Quick\s+answer/i
+
+function countFaqItems(body, locale) {
+  const faqRe = locale === 'es' ? FAQ_HEADING_ES : FAQ_HEADING_EN
+  const sections = body.split(/^(?=##\s)/m)
+  for (const section of sections) {
+    if (!faqRe.test(section.split('\n')[0])) continue
+    return (section.match(/^###\s+/gm) || []).length
+  }
+  return 0
+}
+
 function buildFaqSection(keyword, locale) {
   if (locale === 'es') {
     return [
@@ -702,6 +742,9 @@ function buildFaqSection(keyword, locale) {
       '',
       `### ¿Cuánto tiempo se tarda en completar ${keyword}?`,
       'El plazo varía según la obra previa, la disponibilidad de materiales y si hay que tocar instalaciones. En proyectos bien planificados, definir acabados y mediciones antes de empezar ayuda a evitar retrasos innecesarios.',
+      '',
+      '### ¿Trabajáis en toda la Costa del Sol?',
+      'Sí. Nuestro showroom está en Benalmádena y ejecutamos proyectos en Marbella, Fuengirola, Estepona, Torremolinos y alrededores.',
     ].join('\n');
   }
 
@@ -716,13 +759,41 @@ function buildFaqSection(keyword, locale) {
     '',
     `### How long does ${keyword} usually take?`,
     'That depends on the scope, the condition of the property and material lead times. Projects move faster when layouts, finishes and measurements are agreed before work starts on site.',
+    '',
+    '### Do you work across the Costa del Sol?',
+    'Yes. We are based in Benalmádena and carry out projects in Marbella, Fuengirola, Estepona, Torremolinos and nearby areas.',
   ].join('\n');
 }
 
+function buildQuickAnswerSection(keyword, locale) {
+  if (locale === 'es') {
+    return [
+      '## Respuesta rápida',
+      '',
+      `Para ${keyword} en la Costa del Sol, el precio y el plazo dependen del tamaño del espacio, los materiales y si cambias instalaciones. En Dekorama (Benalmádena) te damos presupuesto cerrado tras visita y mediciones.`,
+    ].join('\n');
+  }
+
+  return [
+    '## Quick answer',
+    '',
+    `For ${keyword} on the Costa del Sol, cost and timeline depend on room size, specification and whether plumbing or layout changes are needed. Dekorama in Benalmádena provides a fixed quote after a site visit.`,
+  ].join('\n');
+}
+
+function ensureQuickAnswerSection(body, keyword, locale) {
+  const hasQuick = locale === 'es' ? QUICK_ANSWER_ES.test(body) : QUICK_ANSWER_EN.test(body)
+  if (hasQuick) return body
+
+  const paragraphs = body.trim().split(/\n\n+/)
+  const introEnd = Math.min(2, paragraphs.length)
+  const intro = paragraphs.slice(0, introEnd).join('\n\n')
+  const rest = paragraphs.slice(introEnd).join('\n\n')
+  return `${intro}\n\n${buildQuickAnswerSection(keyword, locale)}\n\n${rest}`.trim()
+}
+
 function ensureFaqSection(body, keyword, locale) {
-  const hasFaq = locale === 'es'
-    ? /^##\s+Preguntas frecuentes/m.test(body)
-    : /^##\s+Frequently asked questions/m.test(body);
+  const hasFaq = locale === 'es' ? FAQ_HEADING_ES.test(body) : FAQ_HEADING_EN.test(body)
 
   if (hasFaq) return body;
 
@@ -826,10 +897,18 @@ function containsMarkdownTable(body) {
 function normalizeGeneratedPost(parsed, keyword) {
   parsed.article_es = replaceMarkdownTables(parsed.article_es);
   parsed.article_en = replaceMarkdownTables(parsed.article_en);
+  parsed.article_es = ensureQuickAnswerSection(parsed.article_es, keyword, 'es');
+  parsed.article_en = ensureQuickAnswerSection(parsed.article_en, keyword, 'en');
   parsed.article_es = ensureFaqSection(parsed.article_es, keyword, 'es');
   parsed.article_en = ensureFaqSection(parsed.article_en, keyword, 'en');
   parsed.article_es = ensureInternalLinks(parsed.article_es, 'es');
   parsed.article_en = ensureInternalLinks(parsed.article_en, 'en');
+  if (!parsed.keyAnswer_es?.trim()) {
+    parsed.keyAnswer_es = parsed.excerpt_es
+  }
+  if (!parsed.keyAnswer_en?.trim()) {
+    parsed.keyAnswer_en = parsed.excerpt_en
+  }
   return parsed;
 }
 
@@ -837,9 +916,9 @@ function validateArticleBody(body, locale) {
   const label = locale === 'es' ? 'Spanish' : 'English';
   const wordCount = countWords(body);
   const h2Count = (body.match(/^##\s+/gm) || []).length;
-  const hasFaq = locale === 'es'
-    ? /^##\s+Preguntas frecuentes/m.test(body)
-    : /^##\s+Frequently asked questions/m.test(body);
+  const hasFaq = locale === 'es' ? FAQ_HEADING_ES.test(body) : FAQ_HEADING_EN.test(body)
+  const hasQuickAnswer = locale === 'es' ? QUICK_ANSWER_ES.test(body) : QUICK_ANSWER_EN.test(body)
+  const faqCount = countFaqItems(body, locale)
   const internalLinks = locale === 'es'
     ? (body.match(/\]\(\/es\//g) || []).length
     : (body.match(/\]\(\/en\//g) || []).length;
@@ -860,8 +939,16 @@ function validateArticleBody(body, locale) {
     throw new Error(`${label} article must include at least 2 internal links.`);
   }
 
+  if (!hasQuickAnswer) {
+    throw new Error(`${label} article must include a "## Respuesta rápida" or "## Quick answer" section.`);
+  }
+
   if (!hasFaq) {
     throw new Error(`${label} article must end with a FAQ section.`);
+  }
+
+  if (faqCount < 3) {
+    throw new Error(`${label} article must include at least 3 FAQ items (found ${faqCount}).`);
   }
 
   if (containsMarkdownTable(body)) {
@@ -914,18 +1001,21 @@ async function generateValidatedPost(keyword, model, partnerLink = null) {
 // ---------------------------------------------------------------------------
 // Write markdown files
 // ---------------------------------------------------------------------------
-function buildMarkdown(title, excerpt, coverImage, date, body) {
-  return [
+function buildMarkdown(title, excerpt, keyAnswer, coverImage, date, body) {
+  const lines = [
     '---',
     `title: ${JSON.stringify(title)}`,
     `excerpt: ${JSON.stringify(excerpt)}`,
+    `keyAnswer: ${JSON.stringify(keyAnswer)}`,
     `date: "${date}"`,
+    `lastReviewed: "${date}"`,
     `coverImage: "${coverImage}"`,
     '---',
     '',
     body.trim(),
     '',
-  ].join('\n');
+  ]
+  return lines.join('\n')
 }
 
 function writeMarkdownFiles(parsed, dryRun) {
@@ -934,12 +1024,26 @@ function writeMarkdownFiles(parsed, dryRun) {
   const files = [
     {
       filePath: path.join(BLOG_DIR, 'es', `${parsed.slug_es}.md`),
-      content: buildMarkdown(parsed.title_es, parsed.excerpt_es, parsed.coverImage, today, parsed.article_es),
+      content: buildMarkdown(
+        parsed.title_es,
+        parsed.excerpt_es,
+        parsed.keyAnswer_es,
+        parsed.coverImage,
+        today,
+        parsed.article_es,
+      ),
       label: `ES: src/content/blog/es/${parsed.slug_es}.md`,
     },
     {
       filePath: path.join(BLOG_DIR, 'en', `${parsed.slug_en}.md`),
-      content: buildMarkdown(parsed.title_en, parsed.excerpt_en, parsed.coverImage, today, parsed.article_en),
+      content: buildMarkdown(
+        parsed.title_en,
+        parsed.excerpt_en,
+        parsed.keyAnswer_en,
+        parsed.coverImage,
+        today,
+        parsed.article_en,
+      ),
       label: `EN: src/content/blog/en/${parsed.slug_en}.md`,
     },
   ];

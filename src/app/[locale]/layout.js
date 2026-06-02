@@ -123,14 +123,6 @@ export default async function LocaleLayout({ children, params }) {
     publisher: {
       '@id': `${baseUrl}/#business`,
     },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${baseUrl}/${locale}/blog?q={search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
-    },
     inLanguage: [resolvedLocale === 'en' ? 'en-GB' : 'es-ES'],
   }
 

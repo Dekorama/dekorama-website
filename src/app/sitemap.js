@@ -1,6 +1,6 @@
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dekoramagroup.com'
 
-import { getPostSlugs } from '@/lib/blog'
+import { getPostSlugs, getPostLastModified } from '@/lib/blog'
 
 const LOCALES = ['es', 'en']
 
@@ -47,9 +47,10 @@ export default function sitemap() {
     // Get locale-specific slugs
     const slugs = getPostSlugs(locale)
     for (const slug of slugs) {
+      const lastMod = getPostLastModified(locale, slug)
       entries.push({
         url: `${BASE_URL}${prefix}/blog/${slug}`,
-        lastModified: new Date(),
+        lastModified: lastMod ? new Date(lastMod) : new Date(),
         changeFrequency: 'monthly',
         priority: 0.7,
       })

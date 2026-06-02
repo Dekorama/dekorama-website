@@ -14,7 +14,8 @@
     "subtitle": "Trends in porcelain tile, renovations and interior design. Tips and news from our team.",
     "readMore": "Read more",
     "backToBlog": "Back to blog",
-    "postNotFound": "Post not found"
+    "postNotFound": "Post not found",
+    "quickAnswer": "Quick answer"
   },
   "nav": {
     "services": "Services",
@@ -57,6 +58,7 @@
     "privacy": "Privacy Policy",
     "legal": "Legal Notice",
     "cookies": "Cookies",
+    "llmsGuide": "Guide for AI assistants",
     "copyright": "All rights reserved."
   },
   "cta": {
@@ -242,6 +244,17 @@
         "fase5Desc": "We carry out plumbing, electrical and air conditioning installations",
         "fase6Title": "6. Finishes and handover",
         "fase6Desc": "We apply coatings, paints and carpentry. Final review with you"
+      },
+      "faq": {
+        "title": "Frequently asked questions about full renovations",
+        "q1": "How much does a full renovation cost on the Costa del Sol?",
+        "a1": "It depends on size, specification and layout changes. As a broad guide, many mid-size homes fall between €40,000 and €120,000. Dekorama provides a fixed quote after a site visit and measurements.",
+        "q2": "How long does a full renovation take?",
+        "a2": "Typically 2 to 5 months depending on scope, permits and material lead times. Agreeing finishes and drawings before demolition reduces delays.",
+        "q3": "Do you handle permits and the residents' association?",
+        "a3": "Yes. We guide you on municipal licences where required and coordinate access, noise and working hours with the community.",
+        "q4": "Do you only work in Benalmádena?",
+        "a4": "No. Our showroom is in Benalmádena and we carry out projects in Marbella, Fuengirola, Estepona, Torremolinos and across the Costa del Sol."
       }
     },
     "cocinas": {
@@ -268,6 +281,17 @@
         "paso4": "Bespoke manufacturing in specialist workshops",
         "paso5": "Professional installation by our team",
         "paso6": "Final review and satisfaction guarantee"
+      },
+      "faq": {
+        "title": "Frequently asked questions about custom kitchens",
+        "q1": "How much does a custom kitchen cost on the Costa del Sol?",
+        "a1": "A complete kitchen with mid-range appliances often starts around €12,000 and can exceed €35,000 in high-end homes. Final price depends on size, brands and worktop choice.",
+        "q2": "How long from design to installation?",
+        "a2": "6 to 12 weeks is typical: 1–2 weeks for design, 4–8 for manufacturing and several days on site for fitting.",
+        "q3": "Can I see the kitchen in 3D before it is built?",
+        "a3": "Yes. We use 3D design so you can approve layout, colours and appliances before production.",
+        "q4": "Do you install appliances and plumbing?",
+        "a4": "Yes. Our team coordinates plumbing, electrics and appliance fitting for a turnkey handover."
       }
     },
     "banos": {
@@ -296,6 +320,17 @@
         "item6": "Sanitaryware and taps",
         "item7": "Custom bathroom furniture",
         "item8": "LED lighting and mirrors"
+      },
+      "faq": {
+        "title": "Frequently asked questions about complete bathrooms",
+        "q1": "How much does a complete bathroom renovation cost on the Costa del Sol?",
+        "a1": "As a guide: roughly €5,000–€8,000 for basic refreshes, €8,000–€15,000 mid-range and above €15,000 for premium finishes. Size and moving plumbing have the biggest impact.",
+        "q2": "How long does a bathroom renovation take?",
+        "a2": "A standard bathroom usually needs 2 to 4 weeks on site when materials are confirmed and layout changes are limited.",
+        "q3": "Which porcelain and tap brands do you supply?",
+        "a3": "PORCELANOSA, MARAZZI, KERABEN, APARICI for tiles; GROHE, HANSGROHE, ROCA and GEBERIT for taps and sanitaryware.",
+        "q4": "Does a complete bathroom include screen, tray and furniture?",
+        "a4": "Yes. We can include tray or bath, shower screen, sanitaryware, taps and bespoke furniture within the agreed budget."
       }
     },
     "materiales": {
@@ -546,7 +581,18 @@
       "whyUsDesc": "Over 10 years executing projects in Marbella, Puerto Banús, Nueva Andalucía and San Pedro Alcántara. We know the particularities of the luxury market in the area and work to the highest quality standards.",
       "servicesTitle": "Our services in Marbella",
       "zonesTitle": "Service areas in Marbella",
-      "zonesDesc": "Marbella Centre, Puerto Banús, Nueva Andalucía, San Pedro Alcántara, Golden Mile, Sierra Blanca, Las Chapas, Elviria and the entire east and west of Marbella."
+      "zonesDesc": "Marbella Centre, Puerto Banús, Nueva Andalucía, San Pedro Alcántara, Golden Mile, Sierra Blanca, Las Chapas, Elviria and the entire east and west of Marbella.",
+      "faq": {
+        "title": "Frequently asked questions about renovations in Marbella",
+        "q1": "Do you renovate luxury villas and apartments in Marbella?",
+        "a1": "Yes. We deliver kitchens, bathrooms and full renovations in Marbella, Puerto Banús and Nueva Andalucía with premium materials.",
+        "q2": "Do you offer no-obligation quotes in Marbella?",
+        "a2": "Yes. We visit the property, take measurements and provide a detailed quote. You can also start at our Benalmádena showroom.",
+        "q3": "How long does a renovation take in Marbella?",
+        "a3": "It depends on scope. A kitchen or bathroom may take 3–6 weeks; a full renovation often needs several months.",
+        "q4": "Do you coordinate trades and materials?",
+        "a4": "Yes. We manage masonry, installations, carpentry and supply of tiles, taps and finishes from a single point of contact."
+      }
     },
     "fuengirola": {
       "title": "Full Renovations Fuengirola | Dekorama",
@@ -557,7 +603,18 @@
       "whyUsDesc": "We know the Fuengirola area perfectly, Los Boliches, Torreblanca and Carvajal. Extensive experience in holiday and residential apartment renovations.",
       "servicesTitle": "Renovation services in Fuengirola",
       "zonesTitle": "Service areas in Fuengirola",
-      "zonesDesc": "Fuengirola Centre, Los Boliches, Torreblanca, Carvajal, Reserva del Higuerón and all Fuengirola developments."
+      "zonesDesc": "Fuengirola Centre, Los Boliches, Torreblanca, Carvajal, Reserva del Higuerón and all Fuengirola developments.",
+      "faq": {
+        "title": "Frequently asked questions about renovations in Fuengirola",
+        "q1": "Do you renovate holiday rental apartments in Fuengirola?",
+        "a1": "Yes. We work on holiday lets and permanent homes, using durable materials and realistic build schedules.",
+        "q2": "How much does a full renovation cost in Fuengirola?",
+        "a2": "It varies by size and specification. After a site visit we provide a fixed quote with no final surprises.",
+        "q3": "Can I hire you for kitchens or bathrooms only?",
+        "a3": "Yes. You can book a custom kitchen, complete bathroom or full renovation depending on your project stage.",
+        "q4": "Where is your nearest showroom?",
+        "a4": "In Benalmádena (Avenida Tivoli, 17), a short drive from Fuengirola."
+      }
     },
     "estepona": {
       "title": "Full Renovations Estepona | Dekorama",
@@ -568,7 +625,18 @@
       "whyUsDesc": "Experience in all types of renovations in Estepona, from apartments to luxury villas. Personalised attention and commitment to excellence in every project.",
       "servicesTitle": "Services in Estepona",
       "zonesTitle": "Coverage in Estepona",
-      "zonesDesc": "Estepona Centre, Estepona Port, Selwo, Cancelada, Villacana, El Padrón and the entire Estepona coast to Casares."
+      "zonesDesc": "Estepona Centre, Estepona Port, Selwo, Cancelada, Villacana, El Padrón and the entire Estepona coast to Casares.",
+      "faq": {
+        "title": "Frequently asked questions about renovations in Estepona",
+        "q1": "Do you renovate seafront villas in Estepona?",
+        "a1": "Yes. We work on villas and apartments in Estepona with finishes suited to humidity and coastal conditions.",
+        "q2": "Do you offer interior design as well as building work?",
+        "a2": "Yes. Full renovations include layout advice, material selection and trade coordination.",
+        "q3": "How long does a kitchen renovation take in Estepona?",
+        "a3": "Usually 6–10 weeks from design to installation, depending on cabinetry and appliance lead times.",
+        "q4": "Can I buy materials only without installation?",
+        "a4": "Yes. Our Benalmádena showroom sells porcelain, taps, shower trays and screens with professional advice."
+      }
     },
     "torremolinos": {
       "title": "Full Renovations Torremolinos | Dekorama",
@@ -579,7 +647,18 @@
       "whyUsDesc": "Extensive knowledge of the Torremolinos area, La Carihuela, Bajondillo and Playamar. Renovations for both residents and holiday rental properties.",
       "servicesTitle": "What we offer in Torremolinos",
       "zonesTitle": "Service areas in Torremolinos",
-      "zonesDesc": "Torremolinos Centre, La Carihuela, Bajondillo, Playamar, Montemar, Los Álamos and the entire Torremolinos coast."
+      "zonesDesc": "Torremolinos Centre, La Carihuela, Bajondillo, Playamar, Montemar, Los Álamos and the entire Torremolinos coast.",
+      "faq": {
+        "title": "Frequently asked questions about renovations in Torremolinos",
+        "q1": "Do you renovate flats and apartments in Torremolinos?",
+        "a1": "Yes. We work in La Carihuela, Bajondillo, Playamar and the centre, for owner-occupiers and holiday lets.",
+        "q2": "Does the quote include materials and labour?",
+        "a2": "Yes. We provide an itemised breakdown of materials, trades and timelines for clear comparison.",
+        "q3": "Do you handle small bathrooms and compact kitchens?",
+        "a3": "Yes. We optimise layout and storage in smaller coastal apartments.",
+        "q4": "How do I book a visit in Torremolinos?",
+        "a4": "Call +34 628 571 537 or use the contact form. We arrange a complimentary visit at your property."
+      }
     },
     "porcelanicos": {
       "title": "Porcelain Tiles Málaga | Dekorama Costa del Sol",
