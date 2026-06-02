@@ -1,8 +1,11 @@
 ---
-title: "Pool Tiles & Summer 2026: The New Standards Setting the Trend"
-excerpt: "Summer is here and so are pool projects. Discover what materials, formats, and finishes are dominating in 2026 to create modern, safe aquatic spaces."
-date: "2026-05-12"
-coverImage: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80"
+title: 'Pool Tiles & Summer 2026: The New Standards Setting the Trend'
+excerpt: >-
+  Summer is here and so are pool projects. Discover what materials, formats, and
+  finishes are dominating in 2026 to create modern, safe aquatic spaces.
+date: '2026-05-12'
+coverImage: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80'
+category: materiales
 ---
 
 As temperatures rise on the Costa del Sol, pool and terrace projects are surging. In 2026, standards have shifted: **pool materials are more durable, safer, and aesthetically far more sophisticated** than just a few years ago. If you're planning to build or renovate your pool this summer, here's everything you need to know.

@@ -1,10 +1,16 @@
 ---
-title: "Bathroom Renovation Cost Costa del Sol: A Comprehensive Guide for Expats"
-excerpt: "Discover the typical costs for a complete bathroom renovation on the Costa del Sol, covering materials, labour, and permits."
-keyAnswer: "A full bathroom renovation on the Costa del Sol typically costs €5,000–€15,000 depending on size and specification; Dekorama in Benalmádena provides a fixed quote after a site visit."
-lastReviewed: "2026-06-02"
-date: "2026-05-25"
-coverImage: "/images/blog/cuanto-cuesta-reformar-bano-completo-costa-del-sol.png"
+title: 'Bathroom Renovation Cost Costa del Sol: A Comprehensive Guide for Expats'
+excerpt: >-
+  Discover the typical costs for a complete bathroom renovation on the Costa del
+  Sol, covering materials, labour, and permits.
+keyAnswer: >-
+  A full bathroom renovation on the Costa del Sol typically costs €5,000–€15,000
+  depending on size and specification; Dekorama in Benalmádena provides a fixed
+  quote after a site visit.
+lastReviewed: '2026-06-02'
+date: '2026-05-25'
+coverImage: /images/blog/cuanto-cuesta-reformar-bano-completo-costa-del-sol.png
+category: costes
 ---
 
 Planning a complete bathroom renovation on the Costa del Sol involves various factors, and understanding the potential costs is your first step. Generally, you can expect a full bathroom renovation to range from **€5,000 for a basic refresh to €15,000 for a mid-range upgrade**, with luxury projects potentially exceeding €25,000.

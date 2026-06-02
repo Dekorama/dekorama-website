@@ -1,8 +1,11 @@
 ---
-title: "Porcelain Tile Trends in 2026"
-excerpt: "Discover the trends that will define porcelain tile this year: XXL formats, natural textures, and colors that transform spaces."
-date: "2026-02-15"
-coverImage: "https://images.unsplash.com/photo-1615873968403-89e068629265?w=1200&q=80"
+title: Porcelain Tile Trends in 2026
+excerpt: >-
+  Discover the trends that will define porcelain tile this year: XXL formats,
+  natural textures, and colors that transform spaces.
+date: '2026-02-15'
+coverImage: 'https://images.unsplash.com/photo-1615873968403-89e068629265?w=1200&q=80'
+category: materiales
 ---
 
 Porcelain tile continues to be the favorite covering for floors and walls in renovations and new construction. In 2026, trends point to **larger formats**, **nature-inspired finishes**, and **palettes that provide warmth** without sacrificing durability. Let's review the key points you should know.

@@ -1,8 +1,12 @@
 ---
-title: "Piscinas y azulejos de verano 2026: los nuevos estándares que marcan tendencia"
-excerpt: "Llega el verano y con él los proyectos de piscina. Descubre qué materiales, formatos y acabados dominan en 2026 para crear espacios acuáticos modernos y seguros."
-date: "2026-05-12"
-coverImage: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80"
+title: 'Piscinas y azulejos de verano 2026: los nuevos estándares que marcan tendencia'
+excerpt: >-
+  Llega el verano y con él los proyectos de piscina. Descubre qué materiales,
+  formatos y acabados dominan en 2026 para crear espacios acuáticos modernos y
+  seguros.
+date: '2026-05-12'
+coverImage: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80'
+category: materiales
 ---
 
 Con la llegada del calor en la Costa del Sol, los proyectos de piscina y terraza se disparan. En 2026 los estándares han cambiado: **los materiales para piscinas son más duraderos, más seguros y estéticamente mucho más sofisticados** que hace apenas unos años. Si estás pensando en construir o reformar tu piscina este verano, esto es lo que debes saber.

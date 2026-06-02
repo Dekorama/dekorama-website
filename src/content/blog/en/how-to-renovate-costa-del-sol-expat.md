@@ -1,8 +1,11 @@
 ---
-title: "How to Approach Home Renovations on the Costa del Sol: An Expat's Guide"
-excerpt: "Navigating home renovations on the Costa del Sol as an expat can be complex. Learn how to plan, permit, and execute your project successfully."
-date: "2026-05-25"
-coverImage: "/images/blog/como-planificar-reforma-integral-costa-del-sol.png"
+title: 'How to Approach Home Renovations on the Costa del Sol: An Expat''s Guide'
+excerpt: >-
+  Navigating home renovations on the Costa del Sol as an expat can be complex.
+  Learn how to plan, permit, and execute your project successfully.
+date: '2026-05-25'
+coverImage: /images/blog/como-planificar-reforma-integral-costa-del-sol.png
+category: reformas
 ---
 
 The dream of owning a property on the Costa del Sol often comes with the desire to personalise it. For expats and international owners, navigating a home renovation in Spain can seem daunting. Understanding the local process, regulations, and finding reliable professionals is key to a stress-free transformation.

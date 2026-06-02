@@ -1,8 +1,12 @@
 ---
-title: "¿Cuánto cuesta reformar un piso o villa en la Costa del Sol en 2026?"
-excerpt: "Precios reales de reforma integral, cocina y baño en Málaga, Benalmádena, Marbella y Torremolinos. Factores que marcan el presupuesto y cómo evitar sorpresas."
-date: "2026-05-11"
-coverImage: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=1200&q=80"
+title: ¿Cuánto cuesta reformar un piso o villa en la Costa del Sol en 2026?
+excerpt: >-
+  Precios reales de reforma integral, cocina y baño en Málaga, Benalmádena,
+  Marbella y Torremolinos. Factores que marcan el presupuesto y cómo evitar
+  sorpresas.
+date: '2026-05-11'
+coverImage: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=1200&q=80'
+category: costes
 ---
 
 Una de las primeras preguntas que se hace cualquier propietario antes de acometer una reforma es: **¿cuánto me va a costar?** La respuesta depende de muchos factores, pero hay rangos de precio bien definidos en el mercado de la Costa del Sol. En este artículo te explicamos qué puedes esperar según el tipo de intervención, qué variables mueven el presupuesto y cómo evitar las sorpresas más comunes.

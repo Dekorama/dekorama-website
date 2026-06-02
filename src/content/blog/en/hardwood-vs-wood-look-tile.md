@@ -1,8 +1,11 @@
 ---
-title: "Hardwood vs Wood-Look Tile: Key Differences You Should Know"
-excerpt: "Natural hardwood flooring or wood-look porcelain tile? We explain the pros, cons, and when to choose each option."
-date: "2026-02-10"
-coverImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80"
+title: 'Hardwood vs Wood-Look Tile: Key Differences You Should Know'
+excerpt: >-
+  Natural hardwood flooring or wood-look porcelain tile? We explain the pros,
+  cons, and when to choose each option.
+date: '2026-02-10'
+coverImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80'
+category: materiales
 ---
 
 Choosing between **hardwood flooring** (solid or engineered wood) and **wood-look porcelain tile** is one of the most common dilemmas in renovations. Both offer a warm, timeless aesthetic, but their characteristics are very different. Here's a summary of the differences to help you make an informed decision.

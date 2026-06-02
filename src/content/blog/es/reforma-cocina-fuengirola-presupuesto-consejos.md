@@ -1,8 +1,13 @@
 ---
-title: "Reforma de Cocina en Fuengirola: Presupuesto y Consejos Expertos para tu Proyecto"
-excerpt: "Descubre cómo planificar tu reforma de cocina en Fuengirola, optimizar el presupuesto y elegir los mejores materiales con Dekorama."
-date: "2026-06-01"
-coverImage: "/images/blog/reforma-cocina-fuengirola-presupuesto-consejos.png"
+title: >-
+  Reforma de Cocina en Fuengirola: Presupuesto y Consejos Expertos para tu
+  Proyecto
+excerpt: >-
+  Descubre cómo planificar tu reforma de cocina en Fuengirola, optimizar el
+  presupuesto y elegir los mejores materiales con Dekorama.
+date: '2026-06-01'
+coverImage: /images/blog/reforma-cocina-fuengirola-presupuesto-consejos.png
+category: cocinas
 ---
 
 Reformar tu cocina en Fuengirola es una inversión importante que mejora la funcionalidad y el valor de tu hogar. Entender los factores que influyen en el presupuesto y conocer los consejos clave te ayudará a tomar decisiones informadas y a conseguir la cocina de tus sueños sin sorpresas.

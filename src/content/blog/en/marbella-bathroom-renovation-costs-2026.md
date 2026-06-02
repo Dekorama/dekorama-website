@@ -1,8 +1,11 @@
 ---
-title: "Bathroom Renovation Marbella Prices 2026: Your Guide to Costs & Planning"
-excerpt: "Understand bathroom renovation costs in Marbella for 2026. Get a realistic price guide and planning tips for your project."
-date: "2026-06-01"
-coverImage: "/images/blog/reforma-bano-marbella-precios-2026.png"
+title: 'Bathroom Renovation Marbella Prices 2026: Your Guide to Costs & Planning'
+excerpt: >-
+  Understand bathroom renovation costs in Marbella for 2026. Get a realistic
+  price guide and planning tips for your project.
+date: '2026-06-01'
+coverImage: /images/blog/reforma-bano-marbella-precios-2026.png
+category: costes
 ---
 
 Planning a bathroom renovation in Marbella for 2026 involves understanding the various costs and factors that influence your budget. While exact figures for future years are always estimates, current market trends and material prices provide a strong indication of what to expect. This guide will help you navigate the financial aspects and planning stages of your project.

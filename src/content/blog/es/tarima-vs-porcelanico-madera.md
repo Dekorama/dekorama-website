@@ -1,8 +1,11 @@
 ---
-title: "Tarima vs porcelánico de madera: diferencias que debes conocer"
-excerpt: "¿Suelo de madera natural o porcelánico que imita madera? Te explicamos ventajas, inconvenientes y en qué casos elegir cada opción."
-date: "2026-02-10"
-coverImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80"
+title: 'Tarima vs porcelánico de madera: diferencias que debes conocer'
+excerpt: >-
+  ¿Suelo de madera natural o porcelánico que imita madera? Te explicamos
+  ventajas, inconvenientes y en qué casos elegir cada opción.
+date: '2026-02-10'
+coverImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80'
+category: materiales
 ---
 
 Elegir entre **tarima** (madera natural o multicapa) y **porcelánico de imitación madera** es una de las dudas más frecuentes en reformas. Ambos ofrecen un aspecto cálido y atemporal, pero sus características son muy distintas. Te resumimos las diferencias para que puedas decidir con criterio.

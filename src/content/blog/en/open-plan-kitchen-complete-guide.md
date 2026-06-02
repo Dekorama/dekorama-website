@@ -1,8 +1,12 @@
 ---
-title: "Open Plan Kitchen: The Complete Guide to Knocking Through in 2026"
-excerpt: "Thinking of removing the wall between your kitchen and living room? Everything you need to know before you start: structural checks, extraction, materials, costs and common mistakes."
-date: "2026-05-11"
-coverImage: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80"
+title: 'Open Plan Kitchen: The Complete Guide to Knocking Through in 2026'
+excerpt: >-
+  Thinking of removing the wall between your kitchen and living room? Everything
+  you need to know before you start: structural checks, extraction, materials,
+  costs and common mistakes.
+date: '2026-05-11'
+coverImage: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80'
+category: cocinas
 ---
 
 The **open plan kitchen** is the most requested renovation in Spain right now — and on the Costa del Sol, where apartments built in the 1980s and 90s almost universally have small, enclosed kitchens cut off from the living area, demand is particularly strong. The results are transformative: the home feels larger, brighter, and entirely more sociable.

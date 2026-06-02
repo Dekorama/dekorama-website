@@ -1,10 +1,17 @@
 ---
-title: "How to Renovate Your Holiday Rental Apartment on the Costa del Sol"
-excerpt: "A practical guide for property owners on the Costa del Sol: which materials hold up, what guests actually want, and how to get a faster return on your renovation investment."
-keyAnswer: "Renovating a holiday rental on the Costa del Sol often pays back in 2–4 years when you upgrade kitchen, bathroom and hard-wearing floors; Dekorama handles materials and works from Benalmádena."
-lastReviewed: "2026-06-02"
-date: "2026-05-11"
-coverImage: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80"
+title: How to Renovate Your Holiday Rental Apartment on the Costa del Sol
+excerpt: >-
+  A practical guide for property owners on the Costa del Sol: which materials
+  hold up, what guests actually want, and how to get a faster return on your
+  renovation investment.
+keyAnswer: >-
+  Renovating a holiday rental on the Costa del Sol often pays back in 2–4 years
+  when you upgrade kitchen, bathroom and hard-wearing floors; Dekorama handles
+  materials and works from Benalmádena.
+lastReviewed: '2026-06-02'
+date: '2026-05-11'
+coverImage: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80'
+category: reformas
 ---
 
 The Costa del Sol is one of the most active holiday rental markets in Europe. Málaga, Marbella, Benalmádena, Fuengirola, Torremolinos and Nerja are home to tens of thousands of registered tourist apartments, and competition for guests — and five-star reviews — has never been fiercer.

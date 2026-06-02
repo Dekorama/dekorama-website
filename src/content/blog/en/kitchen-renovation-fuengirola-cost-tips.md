@@ -1,8 +1,11 @@
 ---
-title: "Kitchen Renovation Fuengirola: Your Guide to Budgeting and Smart Choices"
-excerpt: "Planning a kitchen renovation in Fuengirola? Get expert tips on budgeting, local considerations, and making smart choices for your Costa del Sol home."
-date: "2026-06-01"
-coverImage: "/images/blog/reforma-cocina-fuengirola-presupuesto-consejos.png"
+title: 'Kitchen Renovation Fuengirola: Your Guide to Budgeting and Smart Choices'
+excerpt: >-
+  Planning a kitchen renovation in Fuengirola? Get expert tips on budgeting,
+  local considerations, and making smart choices for your Costa del Sol home.
+date: '2026-06-01'
+coverImage: /images/blog/reforma-cocina-fuengirola-presupuesto-consejos.png
+category: cocinas
 ---
 
 Embarking on a kitchen renovation in Fuengirola is an exciting step towards enhancing your Costa del Sol property. Understanding the potential costs and navigating the process effectively are key to a successful outcome, especially for expats and international homeowners.

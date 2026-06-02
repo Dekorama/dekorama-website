@@ -1,10 +1,9 @@
-import { Link } from '@/i18n/navigation'
-import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 import { getPosts } from '@/lib/blog'
 import { baseUrl } from '@/lib/site'
 import Breadcrumb, { generateBreadcrumbSchema } from '@/components/Breadcrumb'
 import CTASection from '@/components/CTASection'
+import BlogListing from '@/components/blog/BlogListing'
 
 export async function generateMetadata({ params }) {
   const { locale } = await Promise.resolve(params)
@@ -32,10 +31,6 @@ export default async function BlogPage({ params }) {
   const t = await getTranslations({ locale, namespace: 'blog' })
   const tCommon = await getTranslations({ locale, namespace: 'breadcrumb' })
   const tCta = await getTranslations({ locale, namespace: 'cta' })
-  const formatDate = (dateStr) => {
-    const d = new Date(dateStr)
-    return d.toLocaleDateString(locale === 'en' ? 'en-GB' : 'es-ES', { year: 'numeric', month: 'long', day: 'numeric' })
-  }
 
   const breadcrumbItems = [
     { label: tCommon('home'), href: `/${locale}` },
@@ -65,50 +60,7 @@ export default async function BlogPage({ params }) {
 
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid gap-10 md:grid-cols-2">
-            {posts.map((post) => (
-              <Link
-                key={post.slug}
-                href={`/blog/${post.slug}`}
-                locale={locale}
-                className="group block bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-md hover:border-gray-300 transition-all duration-300"
-              >
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  {post.coverImage ? (
-                    <Image
-                      src={post.coverImage}
-                      alt={post.title}
-                      fill
-                      className="object-cover transition-opacity duration-300 group-hover:opacity-90"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  ) : (
-                    <div className="absolute inset-0 bg-gray-200" />
-                  )}
-                </div>
-                <div className="p-6 md:p-8">
-                  <time
-                    dateTime={post.date}
-                    className="text-sm text-gray-500 font-medium"
-                  >
-                    {formatDate(post.date)}
-                  </time>
-                  <h2 className="mt-2 text-xl md:text-2xl font-semibold text-black group-hover:text-gray-700 transition-colors line-clamp-2">
-                    {post.title}
-                  </h2>
-                  <p className="mt-3 text-gray-600 leading-relaxed line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                  <span className="mt-4 inline-flex items-center text-sm font-medium text-black group-hover:underline">
-                    {t('readMore')}
-                    <svg className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
+          <BlogListing posts={posts} locale={locale} />
         </div>
       </section>
 

@@ -1,10 +1,16 @@
 ---
-title: "Reformas de Cocina con Isla en Marbella: Guía Completa para tu Proyecto Ideal"
-excerpt: "Descubre cómo planificar tu reforma de cocina con isla en Marbella. Consejos de diseño, materiales, costes y permisos para tu hogar en la Costa del Sol."
-keyAnswer: "Una cocina con isla en Marbella suele costar desde unos 12.000 € en proyectos medios y puede superar 35.000 € en alta gama; Dekorama diseña e instala desde Benalmádena."
-lastReviewed: "2026-06-02"
-date: "2026-05-20"
-coverImage: "/images/blog/reformas-cocina-isla-marbella.png"
+title: 'Reformas de Cocina con Isla en Marbella: Guía Completa para tu Proyecto Ideal'
+excerpt: >-
+  Descubre cómo planificar tu reforma de cocina con isla en Marbella. Consejos
+  de diseño, materiales, costes y permisos para tu hogar en la Costa del Sol.
+keyAnswer: >-
+  Una cocina con isla en Marbella suele costar desde unos 12.000 € en proyectos
+  medios y puede superar 35.000 € en alta gama; Dekorama diseña e instala desde
+  Benalmádena.
+lastReviewed: '2026-06-02'
+date: '2026-05-20'
+coverImage: /images/blog/reformas-cocina-isla-marbella.png
+category: cocinas
 ---
 
 Una reforma de cocina con isla en Marbella es mucho más que una simple actualización estética. Es una inversión que transforma el corazón de tu hogar, creando un espacio funcional, social y con un gran valor añadido. La demanda de cocinas con isla ha crecido exponencialmente en la Costa del Sol, reflejando un estilo de vida que valora la conexión familiar y el entretenimiento.

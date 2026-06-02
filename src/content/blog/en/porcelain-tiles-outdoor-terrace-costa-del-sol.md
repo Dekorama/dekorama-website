@@ -1,10 +1,17 @@
 ---
-title: "Porcelain Tiles for Outdoor Terraces on the Costa del Sol: The Ultimate Guide"
-excerpt: "Discover the best porcelain tiles for your outdoor terrace on the Costa del Sol. Learn about durability, style, and installation for a perfect outdoor space."
-keyAnswer: "Outdoor porcelain for terraces on the Costa del Sol typically costs €25–€60/m² for tiles plus installation; Dekorama in Benalmádena advises on slip rating and format."
-lastReviewed: "2026-06-02"
-date: "2026-05-21"
-coverImage: "/images/blog/porcelanico-exterior-terraza-costa-sol.png"
+title: 'Porcelain Tiles for Outdoor Terraces on the Costa del Sol: The Ultimate Guide'
+excerpt: >-
+  Discover the best porcelain tiles for your outdoor terrace on the Costa del
+  Sol. Learn about durability, style, and installation for a perfect outdoor
+  space.
+keyAnswer: >-
+  Outdoor porcelain for terraces on the Costa del Sol typically costs €25–€60/m²
+  for tiles plus installation; Dekorama in Benalmádena advises on slip rating
+  and format.
+lastReviewed: '2026-06-02'
+date: '2026-05-21'
+coverImage: /images/blog/porcelanico-exterior-terraza-costa-sol.png
+category: materiales
 ---
 
 Creating a beautiful and functional outdoor terrace on the Costa del Sol requires materials that can withstand the unique local climate while offering enduring style. Porcelain tiles are an outstanding choice, providing the perfect blend of resilience, low maintenance, and aesthetic versatility for your Spanish outdoor living areas.

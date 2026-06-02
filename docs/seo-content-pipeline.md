@@ -8,7 +8,7 @@ Self-hosted alternative to Soro. Uses Google Gemini Flash to generate bilingual 
 
 1. **Keyword research** — `keyword-research.js` queries Google Search Console for queries ranked 5–20 (near-ranking, highest ROI). Results are written to `scripts/keywords-queue.json`.
 2. **Article generation** — `generate-post.js` sends the keyword to Gemini Flash with a brand-aware system prompt. Gemini returns a JSON object with both language versions.
-3. **File writing** — The script writes two `.md` files to `src/content/blog/es/` and `src/content/blog/en/`, and appends the slug pair to `src/lib/blogSlugMap.js`.
+3. **File writing** — The script writes two `.md` files to `src/content/blog/es/` and `src/content/blog/en/` (with `category` frontmatter for blog filters), and appends the slug pair to `src/lib/blogSlugMap.js`.
 4. **GitHub Actions** — Runs automatically every day at 09:00 UTC, picks the next keyword from the queue, generates a post, and opens a PR for your review before any content goes live.
 
 ---
@@ -202,8 +202,10 @@ src/
       en/                English posts (.md files)
   lib/
     blogSlugMap.js        ES ↔ EN slug mapping (updated by script)
-    blog.js               Blog file reader (no changes needed)
+    blog.js               Blog file reader (categories, filters, listing)
 ```
+
+Each post frontmatter includes `category` (`reformas`, `cocinas`, `banos`, `materiales`, or `costes`). The generator assigns it from the keyword; existing posts use the same field for blog listing filters.
 
 ---
 

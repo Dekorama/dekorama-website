@@ -1,8 +1,11 @@
 ---
-title: "Tendencias de porcelánico en 2026"
-excerpt: "Descubre las tendencias que marcarán el porcelánico este año: formatos XXL, texturas naturales y colores que transforman espacios."
-date: "2026-02-15"
-coverImage: "https://images.unsplash.com/photo-1615873968403-89e068629265?w=1200&q=80"
+title: Tendencias de porcelánico en 2026
+excerpt: >-
+  Descubre las tendencias que marcarán el porcelánico este año: formatos XXL,
+  texturas naturales y colores que transforman espacios.
+date: '2026-02-15'
+coverImage: 'https://images.unsplash.com/photo-1615873968403-89e068629265?w=1200&q=80'
+category: materiales
 ---
 
 El porcelánico sigue siendo el revestimiento favorito para suelos y paredes en reformas y obra nueva. En 2026, las tendencias apuestan por **formatos más grandes**, **acabados que imitan la naturaleza** y **paletas que aportan calidez** sin renunciar a la durabilidad. Repasamos las claves que debes conocer.

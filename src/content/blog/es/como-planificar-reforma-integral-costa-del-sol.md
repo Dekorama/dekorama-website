@@ -1,8 +1,11 @@
 ---
-title: "Cómo Planificar una Reforma Integral en la Costa del Sol: Tu Guía Definitiva"
-excerpt: "Descubre cómo planificar tu reforma integral en la Costa del Sol paso a paso. Desde el presupuesto hasta la elección de materiales y profesionales."
-date: "2026-05-25"
-coverImage: "/images/blog/como-planificar-reforma-integral-costa-del-sol.png"
+title: 'Cómo Planificar una Reforma Integral en la Costa del Sol: Tu Guía Definitiva'
+excerpt: >-
+  Descubre cómo planificar tu reforma integral en la Costa del Sol paso a paso.
+  Desde el presupuesto hasta la elección de materiales y profesionales.
+date: '2026-05-25'
+coverImage: /images/blog/como-planificar-reforma-integral-costa-del-sol.png
+category: reformas
 ---
 
 Planificar una reforma integral es el primer paso crucial para transformar tu hogar en la Costa del Sol. Una buena planificación te ahorra tiempo, dinero y muchos quebraderos de cabeza. Te permite visualizar el resultado final, establecer un presupuesto realista y elegir los profesionales adecuados.

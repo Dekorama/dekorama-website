@@ -1,10 +1,18 @@
 ---
-title: "Kitchen Renovations with an Island in Marbella: Your Complete Guide to a Dream Space"
-excerpt: "Planning a kitchen renovation with an island in Marbella? Get expert tips on design, materials, costs, and local permits for your Costa del Sol home."
-keyAnswer: "A kitchen with an island in Marbella often starts around €12,000 mid-range and can exceed €35,000 for premium specs; Dekorama designs and installs from Benalmádena."
-lastReviewed: "2026-06-02"
-date: "2026-05-20"
-coverImage: "/images/blog/reformas-cocina-isla-marbella.png"
+title: >-
+  Kitchen Renovations with an Island in Marbella: Your Complete Guide to a Dream
+  Space
+excerpt: >-
+  Planning a kitchen renovation with an island in Marbella? Get expert tips on
+  design, materials, costs, and local permits for your Costa del Sol home.
+keyAnswer: >-
+  A kitchen with an island in Marbella often starts around €12,000 mid-range and
+  can exceed €35,000 for premium specs; Dekorama designs and installs from
+  Benalmádena.
+lastReviewed: '2026-06-02'
+date: '2026-05-20'
+coverImage: /images/blog/reformas-cocina-isla-marbella.png
+category: cocinas
 ---
 
 A kitchen renovation with an island in Marbella is much more than a simple aesthetic update. It's an investment that transforms the heart of your home, creating a functional, social space with significant added value. The demand for kitchens with islands has grown exponentially on the Costa del Sol, reflecting a lifestyle that values family connection and entertaining.

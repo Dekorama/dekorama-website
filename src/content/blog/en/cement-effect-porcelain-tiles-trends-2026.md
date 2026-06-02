@@ -1,8 +1,11 @@
 ---
-title: "Cement-Effect Porcelain Tiles: 2026 Trends for Costa del Sol Homes"
-excerpt: "Explore the latest 2026 trends in cement-effect porcelain tiles for modern renovations on the Costa del Sol. Discover styles, benefits, and expert tips."
-date: "2026-05-27"
-coverImage: "/images/blog/porcelanico-efecto-cemento-tendencias-2026.png"
+title: 'Cement-Effect Porcelain Tiles: 2026 Trends for Costa del Sol Homes'
+excerpt: >-
+  Explore the latest 2026 trends in cement-effect porcelain tiles for modern
+  renovations on the Costa del Sol. Discover styles, benefits, and expert tips.
+date: '2026-05-27'
+coverImage: /images/blog/porcelanico-efecto-cemento-tendencias-2026.png
+category: materiales
 ---
 
 Cement-effect porcelain tiles continue to be a cornerstone of modern interior design, offering a sophisticated industrial aesthetic combined with unparalleled durability. As we look towards 2026, these versatile tiles are evolving, presenting new textures, finishes, and applications that homeowners on the Costa del Sol can embrace for their renovation projects.

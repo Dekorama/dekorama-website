@@ -1,8 +1,12 @@
 ---
-title: "Cocina abierta al salón: guía completa para hacer el cambio en 2026"
-excerpt: "¿Quieres derribar el tabique y unir cocina y salón? Todo lo que necesitas saber antes de empezar: obra, materiales, ventilación, precios y los errores que debes evitar."
-date: "2026-05-11"
-coverImage: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80"
+title: 'Cocina abierta al salón: guía completa para hacer el cambio en 2026'
+excerpt: >-
+  ¿Quieres derribar el tabique y unir cocina y salón? Todo lo que necesitas
+  saber antes de empezar: obra, materiales, ventilación, precios y los errores
+  que debes evitar.
+date: '2026-05-11'
+coverImage: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80'
+category: cocinas
 ---
 
 La **cocina abierta al salón** es la reforma más solicitada en España en los últimos años — y en la Costa del Sol, donde predominan apartamentos de los años 80 y 90 con cocinas cerradas y oscuras, todavía más. El resultado es espectacular: la vivienda parece más grande, entra más luz, y el espacio gana en funcionalidad y vida social.

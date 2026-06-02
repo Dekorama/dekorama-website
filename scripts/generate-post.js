@@ -52,6 +52,7 @@ const QUEUE_PATH = path.join(ROOT, 'scripts', 'keywords-queue.json');
 const BLOG_DIR = path.join(ROOT, 'src', 'content', 'blog');
 const SLUG_MAP_PATH = path.join(ROOT, 'src', 'lib', 'blogSlugMap.js');
 const PARTNERS_PATH = path.join(ROOT, 'scripts', 'link-partners.json');
+const BLOG_CATEGORIES = ['reformas', 'cocinas', 'banos', 'materiales', 'costes'];
 const SINGLE_LOCALE_RESPONSE_SCHEMA = {
   type: 'object',
   properties: {
@@ -59,10 +60,15 @@ const SINGLE_LOCALE_RESPONSE_SCHEMA = {
     title: { type: 'string', description: 'Full SEO title.' },
     excerpt: { type: 'string', description: 'Excerpt up to 155 characters.' },
     keyAnswer: { type: 'string', description: 'One-sentence direct answer for AI extraction (max 220 chars).' },
+    category: {
+      type: 'string',
+      description: 'One of: reformas, cocinas, banos, materiales, costes.',
+      enum: BLOG_CATEGORIES,
+    },
     article: { type: 'string', description: 'Markdown article body without frontmatter.' },
   },
   required: ['slug', 'title', 'excerpt', 'keyAnswer', 'article'],
-  propertyOrdering: ['slug', 'title', 'excerpt', 'keyAnswer', 'article'],
+  propertyOrdering: ['slug', 'title', 'excerpt', 'keyAnswer', 'category', 'article'],
 };
 const BILINGUAL_RESPONSE_SCHEMA = {
   type: 'object',
@@ -272,6 +278,7 @@ function parseSingleLocaleResponse(raw, locale) {
     title: parsed.title,
     excerpt: parsed.excerpt,
     article: parsed.article,
+    category: parsed.category,
     locale,
   };
 }
@@ -336,6 +343,7 @@ async function generateArticle(keyword, model, partnerLink = null) {
     excerpt_en: english.excerpt,
     article_es: spanish.article,
     article_en: english.article,
+    category: spanish.category || english.category,
   };
 }
 
@@ -894,6 +902,25 @@ function containsMarkdownTable(body) {
   return /(^\|.+\|\s*\n^\|?(?:\s*:?-{3,}:?\s*\|)+\s*\n(?:^\|.*\|\s*(?:\n|$))+)/gm.test(body);
 }
 
+function inferCategoryFromKeyword(keyword) {
+  const normalized = keyword.toLowerCase();
+
+  if (/cuanto cuesta|precio|presupuesto|coste|cost\b|budget/.test(normalized)) return 'costes';
+  if (/cocina|kitchen|isla|encimera|campana/.test(normalized)) return 'cocinas';
+  if (/bano|baño|ducha|shower|mampara|inodoro|griferia de bano|grifería de baño/.test(normalized)) {
+    return 'banos';
+  }
+  if (/porcelanico|porcelánico|tarima|azulejo|tile|gres|griferia|plato de ducha|iluminacion|material/.test(normalized)) {
+    return 'materiales';
+  }
+  return 'reformas';
+}
+
+function normalizeCategory(value, keyword) {
+  if (typeof value === 'string' && BLOG_CATEGORIES.includes(value)) return value;
+  return inferCategoryFromKeyword(keyword);
+}
+
 function normalizeGeneratedPost(parsed, keyword) {
   parsed.article_es = replaceMarkdownTables(parsed.article_es);
   parsed.article_en = replaceMarkdownTables(parsed.article_en);
@@ -909,6 +936,7 @@ function normalizeGeneratedPost(parsed, keyword) {
   if (!parsed.keyAnswer_en?.trim()) {
     parsed.keyAnswer_en = parsed.excerpt_en
   }
+  parsed.category = normalizeCategory(parsed.category, keyword);
   return parsed;
 }
 
@@ -959,6 +987,9 @@ function validateArticleBody(body, locale) {
 function validateGeneratedPost(parsed) {
   validateArticleBody(parsed.article_es, 'es');
   validateArticleBody(parsed.article_en, 'en');
+  if (!BLOG_CATEGORIES.includes(parsed.category)) {
+    throw new Error(`Generated post category must be one of: ${BLOG_CATEGORIES.join(', ')}`);
+  }
 }
 
 function isRecoverableGenerationError(message) {
@@ -1001,12 +1032,13 @@ async function generateValidatedPost(keyword, model, partnerLink = null) {
 // ---------------------------------------------------------------------------
 // Write markdown files
 // ---------------------------------------------------------------------------
-function buildMarkdown(title, excerpt, keyAnswer, coverImage, date, body) {
+function buildMarkdown(title, excerpt, keyAnswer, category, coverImage, date, body) {
   const lines = [
     '---',
     `title: ${JSON.stringify(title)}`,
     `excerpt: ${JSON.stringify(excerpt)}`,
     `keyAnswer: ${JSON.stringify(keyAnswer)}`,
+    `category: ${category}`,
     `date: "${date}"`,
     `lastReviewed: "${date}"`,
     `coverImage: "${coverImage}"`,
@@ -1028,6 +1060,7 @@ function writeMarkdownFiles(parsed, dryRun) {
         parsed.title_es,
         parsed.excerpt_es,
         parsed.keyAnswer_es,
+        parsed.category,
         parsed.coverImage,
         today,
         parsed.article_es,
@@ -1040,6 +1073,7 @@ function writeMarkdownFiles(parsed, dryRun) {
         parsed.title_en,
         parsed.excerpt_en,
         parsed.keyAnswer_en,
+        parsed.category,
         parsed.coverImage,
         today,
         parsed.article_en,

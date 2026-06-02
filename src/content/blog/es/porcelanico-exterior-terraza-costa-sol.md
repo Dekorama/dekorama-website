@@ -1,10 +1,16 @@
 ---
-title: "Suelos Porcelánicos para Terraza Exterior en la Costa del Sol: Guía Definitiva"
-excerpt: "Descubre por qué el porcelánico es ideal para tu terraza exterior en la Costa del Sol. Durabilidad, diseño y resistencia. ¡Guía completa!"
-keyAnswer: "El porcelánico exterior para terrazas en la Costa del Sol cuesta aprox. 25–60 €/m² material más colocación; Dekorama en Benalmádena asesora en antideslizante y formato."
-lastReviewed: "2026-06-02"
-date: "2026-05-21"
-coverImage: "/images/blog/porcelanico-exterior-terraza-costa-sol.png"
+title: 'Suelos Porcelánicos para Terraza Exterior en la Costa del Sol: Guía Definitiva'
+excerpt: >-
+  Descubre por qué el porcelánico es ideal para tu terraza exterior en la Costa
+  del Sol. Durabilidad, diseño y resistencia. ¡Guía completa!
+keyAnswer: >-
+  El porcelánico exterior para terrazas en la Costa del Sol cuesta aprox. 25–60
+  €/m² material más colocación; Dekorama en Benalmádena asesora en
+  antideslizante y formato.
+lastReviewed: '2026-06-02'
+date: '2026-05-21'
+coverImage: /images/blog/porcelanico-exterior-terraza-costa-sol.png
+category: materiales
 ---
 
 Elegir el suelo adecuado para tu terraza exterior en la Costa del Sol es una decisión crucial. Necesitas un material que no solo embellezca tu espacio al aire libre, sino que también soporte las exigencias del clima mediterráneo: sol intenso, humedad y, ocasionalmente, lluvias torrenciales. Los suelos porcelánicos para exterior son, sin duda, la mejor opción.

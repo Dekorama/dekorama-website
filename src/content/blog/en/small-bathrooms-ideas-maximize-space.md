@@ -1,8 +1,12 @@
 ---
-title: "Small Bathrooms: 10 Ideas to Make Yours Feel Bigger and Look Better"
-excerpt: "You don't need to knock down walls to transform a small bathroom. Discover the design tricks, materials and layout choices that professionals use to maximise every square metre."
-date: "2026-05-11"
-coverImage: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80"
+title: 'Small Bathrooms: 10 Ideas to Make Yours Feel Bigger and Look Better'
+excerpt: >-
+  You don't need to knock down walls to transform a small bathroom. Discover the
+  design tricks, materials and layout choices that professionals use to maximise
+  every square metre.
+date: '2026-05-11'
+coverImage: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80'
+category: banos
 ---
 
 A small bathroom is one of the most common renovation challenges in Spanish apartments and houses — and one of the most rewarding to solve. The good news: size matters far less than you might think. With the right layout, materials and lighting decisions, a 4 or 5 m² bathroom can feel twice as spacious and work just as well as one double the size.

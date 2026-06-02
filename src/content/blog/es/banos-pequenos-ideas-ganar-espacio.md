@@ -1,8 +1,12 @@
 ---
-title: "Baños pequeños: 10 ideas para ganar espacio y modernizar tu baño"
-excerpt: "Si tienes un baño pequeño, no necesitas derribar paredes para conseguir un resultado espectacular. Descubre los trucos de diseño, materiales y distribución que usan los profesionales."
-date: "2026-05-11"
-coverImage: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80"
+title: 'Baños pequeños: 10 ideas para ganar espacio y modernizar tu baño'
+excerpt: >-
+  Si tienes un baño pequeño, no necesitas derribar paredes para conseguir un
+  resultado espectacular. Descubre los trucos de diseño, materiales y
+  distribución que usan los profesionales.
+date: '2026-05-11'
+coverImage: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80'
+category: banos
 ---
 
 Un baño pequeño es uno de los retos más frecuentes en reformas de apartamentos y pisos en España. La buena noticia es que el tamaño importa mucho menos de lo que parece: con las decisiones correctas de distribución, materiales e iluminación, un baño de 4 o 5 m² puede parecer el doble de grande y tener exactamente la misma funcionalidad que uno de 8 m².

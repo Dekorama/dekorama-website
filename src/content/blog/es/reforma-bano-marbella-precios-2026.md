@@ -1,8 +1,11 @@
 ---
-title: "Reforma de Baño en Marbella: Precios 2026 y Guía Completa para tu Proyecto"
-excerpt: "Descubre los precios de reformas de baño en Marbella para 2026. Guía completa de factores, materiales y consejos para planificar tu proyecto con Dekorama."
-date: "2026-06-01"
-coverImage: "/images/blog/reforma-bano-marbella-precios-2026.png"
+title: 'Reforma de Baño en Marbella: Precios 2026 y Guía Completa para tu Proyecto'
+excerpt: >-
+  Descubre los precios de reformas de baño en Marbella para 2026. Guía completa
+  de factores, materiales y consejos para planificar tu proyecto con Dekorama.
+date: '2026-06-01'
+coverImage: /images/blog/reforma-bano-marbella-precios-2026.png
+category: costes
 ---
 
 Planificar la reforma de tu baño en Marbella para 2026 implica entender los costes asociados. Los precios pueden variar significativamente según el alcance del proyecto, los materiales elegidos y la complejidad de la instalación. En Dekorama, con más de 12 años de experiencia en la Costa del Sol, te ofrecemos una guía clara para que puedas presupuestar tu renovación con confianza.

@@ -15,7 +15,23 @@
     "readMore": "Leer más",
     "backToBlog": "Volver al blog",
     "postNotFound": "Entrada no encontrada",
-    "quickAnswer": "Respuesta rápida"
+    "quickAnswer": "Respuesta rápida",
+    "searchPlaceholder": "Buscar artículos…",
+    "allCategories": "Todos",
+    "resultsCount": "{count, plural, one {# artículo} other {# artículos}}",
+    "resultsCountFiltered": "{count, plural, one {# artículo} other {# artículos}} · {category}",
+    "noResults": "No hay artículos que coincidan con tu búsqueda.",
+    "noResultsReset": "Ver todos los artículos",
+    "loadMore": "Ver más",
+    "sortNewest": "Más recientes",
+    "sortOldest": "Más antiguos",
+    "categories": {
+      "reformas": "Reformas",
+      "cocinas": "Cocinas",
+      "banos": "Baños",
+      "materiales": "Materiales",
+      "costes": "Costes"
+    }
   },
   "nav": {
     "services": "Servicios",

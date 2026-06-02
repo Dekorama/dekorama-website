@@ -1,10 +1,17 @@
 ---
-title: "Cómo reformar tu apartamento para alquiler vacacional en la Costa del Sol"
-excerpt: "Guía práctica para propietarios de pisos turísticos en Málaga, Marbella y Benalmádena: materiales resistentes, distribuciones que funcionan y cómo recuperar la inversión más rápido."
-keyAnswer: "Reformar un apartamento turístico en la Costa del Sol suele recuperarse en 2–4 años si priorizas cocina, baño y suelos resistentes; Dekorama reforma y suministra materiales en Benalmádena."
-lastReviewed: "2026-06-02"
-date: "2026-05-11"
-coverImage: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80"
+title: Cómo reformar tu apartamento para alquiler vacacional en la Costa del Sol
+excerpt: >-
+  Guía práctica para propietarios de pisos turísticos en Málaga, Marbella y
+  Benalmádena: materiales resistentes, distribuciones que funcionan y cómo
+  recuperar la inversión más rápido.
+keyAnswer: >-
+  Reformar un apartamento turístico en la Costa del Sol suele recuperarse en 2–4
+  años si priorizas cocina, baño y suelos resistentes; Dekorama reforma y
+  suministra materiales en Benalmádena.
+lastReviewed: '2026-06-02'
+date: '2026-05-11'
+coverImage: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80'
+category: reformas
 ---
 
 La Costa del Sol es uno de los mercados de alquiler vacacional más activos de Europa. Málaga, Marbella, Benalmádena, Fuengirola, Torremolinos y Nerja concentran decenas de miles de apartamentos turísticos registrados, y la competencia por atraer huéspedes —y conseguir buenas valoraciones— no ha hecho más que crecer.

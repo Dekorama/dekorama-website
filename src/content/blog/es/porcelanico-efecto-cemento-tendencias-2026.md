@@ -1,8 +1,13 @@
 ---
-title: "Porcelánico Efecto Cemento: Tendencias 2026 para tu Reforma en la Costa del Sol"
-excerpt: "Descubre las tendencias de porcelánico efecto cemento para 2026. Durabilidad, estética moderna y versatilidad para tu reforma en la Costa del Sol."
-date: "2026-05-27"
-coverImage: "/images/blog/porcelanico-efecto-cemento-tendencias-2026.png"
+title: >-
+  Porcelánico Efecto Cemento: Tendencias 2026 para tu Reforma en la Costa del
+  Sol
+excerpt: >-
+  Descubre las tendencias de porcelánico efecto cemento para 2026. Durabilidad,
+  estética moderna y versatilidad para tu reforma en la Costa del Sol.
+date: '2026-05-27'
+coverImage: /images/blog/porcelanico-efecto-cemento-tendencias-2026.png
+category: materiales
 ---
 
 El porcelánico efecto cemento se consolida como una de las opciones más solicitadas en el diseño de interiores y exteriores. Su capacidad para combinar la robustez del cemento con las ventajas técnicas del porcelánico lo convierte en una elección inteligente para cualquier reforma.
