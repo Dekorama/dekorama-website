@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "research:keywords": "node scripts/keyword-research.js",
+    "seed:keywords": "node scripts/seed-keywords-queue.js",
     "generate:post": "node scripts/generate-post.js",
     "generate:post:next": "node scripts/generate-post.js --from-queue",
     "links:audit": "node scripts/link-audit.js",

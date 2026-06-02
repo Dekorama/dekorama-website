@@ -1,6 +1,6 @@
 # SEO Content Pipeline
 
-Self-hosted alternative to Soro. Uses Google Gemini Flash to generate bilingual SEO blog posts (ES + EN) from a keyword, and publishes them via GitHub Actions on a weekly schedule.
+Self-hosted alternative to Soro. Uses Google Gemini Flash to generate bilingual SEO blog posts (ES + EN) from a keyword, and publishes them via GitHub Actions on a daily schedule.
 
 ---
 
@@ -9,7 +9,7 @@ Self-hosted alternative to Soro. Uses Google Gemini Flash to generate bilingual 
 1. **Keyword research** — `keyword-research.js` queries Google Search Console for queries ranked 5–20 (near-ranking, highest ROI). Results are written to `scripts/keywords-queue.json`.
 2. **Article generation** — `generate-post.js` sends the keyword to Gemini Flash with a brand-aware system prompt. Gemini returns a JSON object with both language versions.
 3. **File writing** — The script writes two `.md` files to `src/content/blog/es/` and `src/content/blog/en/`, and appends the slug pair to `src/lib/blogSlugMap.js`.
-4. **GitHub Actions** — Runs automatically every Monday, picks the next keyword from the queue, generates a post, and opens a PR for your review before any content goes live.
+4. **GitHub Actions** — Runs automatically every day at 09:00 UTC, picks the next keyword from the queue, generates a post, and opens a PR for your review before any content goes live.
 
 ---
 
@@ -17,7 +17,7 @@ Self-hosted alternative to Soro. Uses Google Gemini Flash to generate bilingual 
 
 ### 1. Get a Gemini API key
 
-Go to [https://aistudio.google.com](https://aistudio.google.com) → Get API key. The free tier is sufficient for weekly posts.
+Go to [https://aistudio.google.com](https://aistudio.google.com) → Get API key. Monitor usage if you publish daily (free tier may need a paid plan at scale).
 
 Add it to `.env.local`:
 ```
@@ -70,6 +70,17 @@ npm install
 ---
 
 ## Usage
+
+### Seed the queue with curated topics (~400 phrases)
+
+Adds Dekorama-focused keywords (reformas, cocinas, baños, porcelánico, ciudades Costa del Sol) without duplicating existing entries:
+
+```bash
+npm run seed:keywords
+npm run seed:keywords -- --dry-run   # preview only
+```
+
+Source list: `scripts/data/keyword-seeds.js`. Re-run after editing that file to append new phrases.
 
 ### Run keyword research manually
 
@@ -139,7 +150,7 @@ Example entry:
 
 The workflow file is at `.github/workflows/generate-content.yml`.
 
-**Automatic:** Runs every Monday at 09:00 UTC. Takes the next keyword from the queue.
+**Automatic:** Runs every day at 09:00 UTC. Takes the next keyword from the queue.
 
 **Manual trigger:** Go to **Actions → Generate SEO Blog Post → Run workflow**. You can optionally type a specific keyword to override the queue.
 
