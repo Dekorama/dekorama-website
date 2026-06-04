@@ -722,10 +722,10 @@ function countWords(text) {
     .length;
 }
 
-const FAQ_HEADING_ES = /^##\s+Preguntas\s+frecuentes/i
-const FAQ_HEADING_EN = /^##\s+Frequently\s+asked\s+questions/i
-const QUICK_ANSWER_ES = /^##\s+Respuesta\s+rápida/i
-const QUICK_ANSWER_EN = /^##\s+Quick\s+answer/i
+const FAQ_HEADING_ES = /^##\s+Preguntas\s+frecuentes\b/im
+const FAQ_HEADING_EN = /^##\s+Frequently\s+asked\s+questions\b/im
+const QUICK_ANSWER_ES = /^##\s+Respuesta\s+r[aá]pida\b/im
+const QUICK_ANSWER_EN = /^##\s+Quick\s+answer\b/im
 
 function countFaqItems(body, locale) {
   const faqRe = locale === 'es' ? FAQ_HEADING_ES : FAQ_HEADING_EN
