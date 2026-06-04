@@ -124,6 +124,14 @@ export const blogSlugMap = {
   'kitchen-renovation-fuengirola-cost-tips': {
     es: 'reforma-cocina-fuengirola-presupuesto-consejos',
     en: 'kitchen-renovation-fuengirola-cost-tips',
+  },
+  'inodoros-suspendidos-ventajas-instalacion-precios': {
+    es: 'inodoros-suspendidos-ventajas-instalacion-precios',
+    en: 'wall-hung-toilets-costa-del-sol',
+  },
+  'wall-hung-toilets-costa-del-sol': {
+    es: 'inodoros-suspendidos-ventajas-instalacion-precios',
+    en: 'wall-hung-toilets-costa-del-sol',
   },}
 
 /**
