@@ -23,6 +23,7 @@
 const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
+const matter = require('gray-matter');
 
 // Load .env.local for local development (no-op in CI where env vars are set directly)
 (function loadEnvLocal() {
@@ -129,6 +130,8 @@ function parseArgs() {
     fromQueue: false,
     dryRun: false,
     noPartner: false,
+    validateFile: null,
+    validateAll: false,
     model: process.env.GEMINI_MODEL || 'gemini-2.5-flash',
   };
 
@@ -139,14 +142,21 @@ function parseArgs() {
       case '--dry-run':     opts.dryRun = true; break;
       case '--model':       opts.model = args[++i]; break;
       case '--no-partner':  opts.noPartner = true; break;
+      case '--validate-file': opts.validateFile = args[++i]; break;
+      case '--validate-all': opts.validateAll = true; break;
     }
   }
 
-  if (!opts.keyword && !opts.fromQueue) {
+  const modeCount = [opts.keyword ? 1 : 0, opts.fromQueue ? 1 : 0, opts.validateFile ? 1 : 0, opts.validateAll ? 1 : 0]
+    .reduce((sum, count) => sum + count, 0)
+
+  if (modeCount !== 1) {
     console.error('Error: provide --keyword "..." or --from-queue');
     console.error('Examples:');
     console.error('  node scripts/generate-post.js --keyword "suelos porcelanicos Marbella"');
     console.error('  node scripts/generate-post.js --from-queue');
+    console.error('  node scripts/generate-post.js --validate-file src/content/blog/es/post.md');
+    console.error('  node scripts/generate-post.js --validate-all');
     process.exit(1);
   }
 
@@ -726,15 +736,71 @@ const FAQ_HEADING_ES = /^##\s+Preguntas\s+frecuentes\b/im
 const FAQ_HEADING_EN = /^##\s+Frequently\s+asked\s+questions\b/im
 const QUICK_ANSWER_ES = /^##\s+Respuesta\s+r[aá]pida\b/im
 const QUICK_ANSWER_EN = /^##\s+Quick\s+answer\b/im
+const SPANISH_QUESTION_PREFIX = /^(?:¿|c[oó]mo\b|cu[aá]l\b|cu[aá]les\b|cu[aá]ndo\b|cu[aá]nto\b|cu[aá]nta\b|cu[aá]ntos\b|cu[aá]ntas\b|d[oó]nde\b|por\s+qu[eé]\b|qu[eé]\b|qui[eé]n\b|merece\s+la\s+pena\b|conviene\b|se\s+puede\b|vale\s+la\s+pena\b)/i
+const ENGLISH_QUESTION_PREFIX = /^(?:how\b|what\b|when\b|where\b|which\b|who\b|why\b|is\b|are\b|can\b|should\b|do\b|does\b|will\b)/i
+const KEY_ANSWER_MAX_LENGTH = 220
+const FAQ_ANSWER_MAX_WORDS = 80
 
-function countFaqItems(body, locale) {
+function getFaqSection(body, locale) {
   const faqRe = locale === 'es' ? FAQ_HEADING_ES : FAQ_HEADING_EN
   const sections = body.split(/^(?=##\s)/m)
+
   for (const section of sections) {
     if (!faqRe.test(section.split('\n')[0])) continue
-    return (section.match(/^###\s+/gm) || []).length
+    return section.trim()
   }
-  return 0
+
+  return ''
+}
+
+function countFaqItems(body, locale) {
+  const faqSection = getFaqSection(body, locale)
+  return (faqSection.match(/^###\s+/gm) || []).length
+}
+
+function getFaqAnswerWordCounts(body, locale) {
+  const faqSection = getFaqSection(body, locale)
+
+  if (!faqSection) return []
+
+  return faqSection
+    .split(/^###\s+/m)
+    .slice(1)
+    .map((item) => item.split('\n').slice(1).join(' ').replace(/\s+/g, ' ').trim())
+    .filter(Boolean)
+    .map((answer) => countWords(answer))
+}
+
+function getH2Headings(body) {
+  return (body.match(/^##\s+.+$/gm) || []).map((heading) => heading.replace(/^##\s+/, '').trim())
+}
+
+function isQuestionStyleHeading(heading, locale) {
+  if (!heading) return false
+
+  if (heading.includes('?')) return true
+
+  return locale === 'es'
+    ? SPANISH_QUESTION_PREFIX.test(heading)
+    : ENGLISH_QUESTION_PREFIX.test(heading)
+}
+
+function countQuestionStyleH2s(body, locale) {
+  const quickAnswerRe = locale === 'es' ? QUICK_ANSWER_ES : QUICK_ANSWER_EN
+  const faqRe = locale === 'es' ? FAQ_HEADING_ES : FAQ_HEADING_EN
+
+  return getH2Headings(body)
+    .filter((heading) => !quickAnswerRe.test(`## ${heading}`) && !faqRe.test(`## ${heading}`))
+    .filter((heading) => isQuestionStyleHeading(heading, locale))
+    .length
+}
+
+function isFaqLastH2Section(body, locale) {
+  const headings = body.match(/^##\s+.+$/gm) || []
+  const lastHeading = headings.at(-1) || ''
+  const faqRe = locale === 'es' ? FAQ_HEADING_ES : FAQ_HEADING_EN
+
+  return faqRe.test(lastHeading)
 }
 
 function buildFaqSection(keyword, locale) {
@@ -834,6 +900,15 @@ function ensureInternalLinks(body, locale) {
     : (body.match(/\]\(\/en\//g) || []).length;
 
   if (linkCount >= 2) return body;
+
+  const faqRe = locale === 'es' ? FAQ_HEADING_ES : FAQ_HEADING_EN
+  const faqStart = body.search(faqRe)
+
+  if (faqStart !== -1) {
+    const beforeFaq = body.slice(0, faqStart).trimEnd()
+    const faqSection = body.slice(faqStart).trimStart()
+    return `${beforeFaq}\n\n${buildInternalLinksSection(locale)}\n\n${faqSection}`
+  }
 
   return `${body.trim()}\n\n${buildInternalLinksSection(locale)}\n`;
 }
@@ -947,6 +1022,8 @@ function validateArticleBody(body, locale) {
   const hasFaq = locale === 'es' ? FAQ_HEADING_ES.test(body) : FAQ_HEADING_EN.test(body)
   const hasQuickAnswer = locale === 'es' ? QUICK_ANSWER_ES.test(body) : QUICK_ANSWER_EN.test(body)
   const faqCount = countFaqItems(body, locale)
+  const faqAnswerWordCounts = getFaqAnswerWordCounts(body, locale)
+  const questionStyleH2Count = countQuestionStyleH2s(body, locale)
   const internalLinks = locale === 'es'
     ? (body.match(/\]\(\/es\//g) || []).length
     : (body.match(/\]\(\/en\//g) || []).length;
@@ -971,12 +1048,24 @@ function validateArticleBody(body, locale) {
     throw new Error(`${label} article must include a "## Respuesta rápida" or "## Quick answer" section.`);
   }
 
+  if (questionStyleH2Count < 2) {
+    throw new Error(`${label} article must include at least 2 question-shaped H2 headings.`)
+  }
+
   if (!hasFaq) {
     throw new Error(`${label} article must end with a FAQ section.`);
   }
 
+  if (!isFaqLastH2Section(body, locale)) {
+    throw new Error(`${label} article must keep the FAQ as the final H2 section.`)
+  }
+
   if (faqCount < 3) {
     throw new Error(`${label} article must include at least 3 FAQ items (found ${faqCount}).`);
+  }
+
+  if (faqAnswerWordCounts.some((count) => count > FAQ_ANSWER_MAX_WORDS)) {
+    throw new Error(`${label} FAQ answers must stay under ${FAQ_ANSWER_MAX_WORDS} words each.`)
   }
 
   if (containsMarkdownTable(body)) {
@@ -984,9 +1073,110 @@ function validateArticleBody(body, locale) {
   }
 }
 
+function validateKeyAnswer(keyAnswer, locale) {
+  const label = locale === 'es' ? 'Spanish' : 'English'
+  const normalized = keyAnswer?.trim()
+
+  if (!normalized) {
+    throw new Error(`${label} keyAnswer is required.`)
+  }
+
+  if (normalized.length > KEY_ANSWER_MAX_LENGTH) {
+    throw new Error(`${label} keyAnswer must be ${KEY_ANSWER_MAX_LENGTH} characters or fewer.`)
+  }
+}
+
+function inferLocaleFromFilePath(filePath) {
+  const normalized = filePath.split(path.sep).join('/')
+
+  if (normalized.includes('/src/content/blog/es/')) return 'es'
+  if (normalized.includes('/src/content/blog/en/')) return 'en'
+
+  throw new Error(`Could not infer locale from path: ${filePath}`)
+}
+
+function validateBlogFrontmatter(data, locale, filePath) {
+  const label = locale === 'es' ? 'Spanish' : 'English'
+  const requiredFields = ['title', 'excerpt', 'keyAnswer', 'date', 'lastReviewed', 'category']
+
+  for (const field of requiredFields) {
+    if (typeof data[field] !== 'string' || !data[field].trim()) {
+      throw new Error(`${label} post is missing required frontmatter field "${field}" in ${filePath}.`)
+    }
+  }
+
+  validateKeyAnswer(data.keyAnswer, locale)
+
+  if (!BLOG_CATEGORIES.includes(data.category)) {
+    throw new Error(`${label} post category must be one of: ${BLOG_CATEGORIES.join(', ')} in ${filePath}.`)
+  }
+}
+
+function validateExistingMarkdownFile(filePath) {
+  const absolutePath = path.resolve(filePath)
+
+  if (!fs.existsSync(absolutePath)) {
+    throw new Error(`File not found: ${filePath}`)
+  }
+
+  const locale = inferLocaleFromFilePath(absolutePath)
+  const source = fs.readFileSync(absolutePath, 'utf8')
+  const { data, content } = matter(source)
+
+  validateBlogFrontmatter(data, locale, filePath)
+  validateArticleBody(content.trim(), locale)
+
+  return {
+    filePath,
+    locale,
+    slug: path.basename(filePath, '.md'),
+  }
+}
+
+function getAllBlogMarkdownFiles() {
+  return ['es', 'en'].flatMap((locale) => {
+    const localeDir = path.join(BLOG_DIR, locale)
+    if (!fs.existsSync(localeDir)) return []
+
+    return fs.readdirSync(localeDir)
+      .filter((filename) => filename.endsWith('.md'))
+      .map((filename) => path.join(localeDir, filename))
+  })
+}
+
+function runExistingPostValidation(opts) {
+  const targets = opts.validateAll ? getAllBlogMarkdownFiles() : [opts.validateFile]
+  const results = []
+  const failures = []
+
+  for (const target of targets) {
+    try {
+      results.push(validateExistingMarkdownFile(target))
+    } catch (error) {
+      failures.push({ target, message: error.message })
+    }
+  }
+
+  if (failures.length > 0) {
+    const summary = failures
+      .map(({ target, message }) => `- ${target}: ${message}`)
+      .join('\n')
+
+    throw new Error(`GEO validation failed for ${failures.length} file(s):\n${summary}`)
+  }
+
+  console.log(`\nValidated ${results.length} blog post${results.length === 1 ? '' : 's'} successfully.`)
+
+  for (const result of results) {
+    console.log(`- [${result.locale}] ${result.slug}`)
+  }
+}
+
 function validateGeneratedPost(parsed) {
   validateArticleBody(parsed.article_es, 'es');
   validateArticleBody(parsed.article_en, 'en');
+  validateKeyAnswer(parsed.keyAnswer_es, 'es')
+  validateKeyAnswer(parsed.keyAnswer_en, 'en')
   if (!BLOG_CATEGORIES.includes(parsed.category)) {
     throw new Error(`Generated post category must be one of: ${BLOG_CATEGORIES.join(', ')}`);
   }
@@ -1000,8 +1190,12 @@ function isRecoverableGenerationError(message) {
     'article must contain at least',
     'article must include at least',
     'article must end with a FAQ section',
+    'article must keep the FAQ as the final H2 section',
+    'article must include at least 2 question-shaped H2 headings',
+    'FAQ answers must stay under',
     'article is too short',
     'article must not include markdown tables',
+    'keyAnswer must be',
   ].some((fragment) => message.includes(fragment));
 }
 
@@ -1208,6 +1402,17 @@ function printSummary(parsed) {
 // ---------------------------------------------------------------------------
 (async () => {
   const opts = parseArgs();
+
+  if (opts.validateFile || opts.validateAll) {
+    try {
+      runExistingPostValidation(opts)
+    } catch (err) {
+      console.error(`\nValidation error: ${err.message}`)
+      process.exit(1)
+    }
+    return
+  }
+
   const keyword = opts.fromQueue ? getNextFromQueue() : opts.keyword;
 
   if (opts.dryRun) {

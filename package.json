@@ -11,6 +11,7 @@
     "seed:keywords": "node scripts/seed-keywords-queue.js",
     "generate:post": "node scripts/generate-post.js",
     "generate:post:next": "node scripts/generate-post.js --from-queue",
+    "validate:geo": "node scripts/generate-post.js --validate-all",
     "links:audit": "node scripts/link-audit.js",
     "links:find": "node scripts/find-partners.js",
     "links:status": "node scripts/find-partners.js --status"
