@@ -132,6 +132,14 @@ export const blogSlugMap = {
   'wall-hung-toilets-costa-del-sol': {
     es: 'inodoros-suspendidos-ventajas-instalacion-precios',
     en: 'wall-hung-toilets-costa-del-sol',
+  },
+  'grifos-termostaticos-ducha-ventajas-precios-costa-del-sol': {
+    es: 'grifos-termostaticos-ducha-ventajas-precios-costa-del-sol',
+    en: 'thermostatic-shower-taps-advantages-prices-costa-del-sol',
+  },
+  'thermostatic-shower-taps-advantages-prices-costa-del-sol': {
+    es: 'grifos-termostaticos-ducha-ventajas-precios-costa-del-sol',
+    en: 'thermostatic-shower-taps-advantages-prices-costa-del-sol',
   },}
 
 /**
