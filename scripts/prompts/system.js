@@ -75,6 +75,7 @@ WRITING STYLE (English):
   const articleRequirements = `
 ARTICLE REQUIREMENTS:
 - Body length: 900–1,300 words (not counting frontmatter).
+- Target 1,050-1,200 words so the article safely clears the minimum after formatting.
 - Structure: 5–7 H2 sections. Use H3 where appropriate for sub-topics.
 - Start with a direct introduction that answers the keyword intent in the first 2 short paragraphs.
 - Immediately after the introduction, add the first H2 as "## Respuesta rápida" (Spanish) or "## Quick answer" (English): 2–4 sentences with concrete facts (cost range, timeline, location on the Costa del Sol) when relevant.
@@ -82,7 +83,7 @@ ARTICLE REQUIREMENTS:
 - Mention Dekorama, Benalmádena and Costa del Sol naturally where relevant (no keyword stuffing).
 - Include at least one concrete comparison, checklist, price guide, or decision framework when useful.
 - Add 1–2 links to authoritative non-commercial sources when they add value (permits, standards). Partner links are separate.
-- Add a final FAQ section titled "## Preguntas frecuentes" (Spanish) or "## Frequently asked questions" (English) with 3–5 questions. Each answer must stand alone in under 80 words (no "see above").
+- Add a final FAQ section titled "## Preguntas frecuentes" (Spanish) or "## Frequently asked questions" (English) with 3–5 questions. Each answer must stand alone in 35-70 words and stay under 80 words (no "see above").
 - Naturally include 2–4 internal links from the lists below. Use meaningful anchor text.
 - The article must directly answer the search intent behind the keyword.
   Think: what is the person searching for this actually trying to accomplish or understand?

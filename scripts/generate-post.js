@@ -293,21 +293,27 @@ function parseSingleLocaleResponse(raw, locale) {
   };
 }
 
-function buildLocalePrompt(keyword, locale) {
+function buildLocalePrompt(keyword, locale, retryInstruction = '') {
   if (locale === 'es') {
     return `Generate a complete Spanish SEO blog post for this keyword/topic: "${keyword}"
 
 Write only the Spanish version for renovation customers on the Costa del Sol.
-Return the JSON object as specified in your instructions.`;
+Ensure the article body comfortably clears 900 words before returning the JSON.
+Keep each FAQ answer below 80 words.
+${retryInstruction ? `${retryInstruction}
+` : ''}Return the JSON object as specified in your instructions.`;
   }
 
   return `Generate a complete English SEO blog post for this keyword/topic: "${keyword}"
 
 Write only the English version for expats and international property owners on the Costa del Sol.
-Return the JSON object as specified in your instructions.`;
+Ensure the article body comfortably clears 900 words before returning the JSON.
+Keep each FAQ answer below 80 words.
+${retryInstruction ? `${retryInstruction}
+` : ''}Return the JSON object as specified in your instructions.`;
 }
 
-async function generateArticlePart(keyword, model, locale, partnerLink = null) {
+async function generateArticlePart(keyword, model, locale, partnerLink = null, retryInstruction = '') {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     throw new Error(
@@ -322,13 +328,13 @@ async function generateArticlePart(keyword, model, locale, partnerLink = null) {
     systemInstruction: buildSystemPrompt(locale, partnerLink),
     generationConfig: {
       temperature: 0.4,
-      maxOutputTokens: 4096,
+      maxOutputTokens: parseInt(process.env.GEMINI_MAX_OUTPUT_TOKENS || '8192', 10),
       responseMimeType: 'application/json',
       responseSchema: SINGLE_LOCALE_RESPONSE_SCHEMA,
     },
   });
 
-  const prompt = buildLocalePrompt(keyword, locale);
+  const prompt = buildLocalePrompt(keyword, locale, retryInstruction);
   console.log(`\nCalling Gemini (${model}) for ${locale.toUpperCase()} keyword: "${keyword}"...`);
   const startTime = Date.now();
 
@@ -340,9 +346,9 @@ async function generateArticlePart(keyword, model, locale, partnerLink = null) {
   return parseSingleLocaleResponse(raw, locale);
 }
 
-async function generateArticle(keyword, model, partnerLink = null) {
-  const spanish = await generateArticlePart(keyword, model, 'es', partnerLink);
-  const english = await generateArticlePart(keyword, model, 'en', partnerLink);
+async function generateArticle(keyword, model, partnerLink = null, retryInstructions = {}) {
+  const spanish = await generateArticlePart(keyword, model, 'es', partnerLink, retryInstructions.es || retryInstructions.both || '');
+  const english = await generateArticlePart(keyword, model, 'en', partnerLink, retryInstructions.en || retryInstructions.both || '');
 
   return {
     slug_es: spanish.slug,
@@ -1182,6 +1188,30 @@ function validateGeneratedPost(parsed) {
   }
 }
 
+function buildRetryInstructions(message) {
+  const trimmed = typeof message === 'string' ? message.trim() : ''
+
+  if (!trimmed) return {}
+
+  const match = trimmed.match(/^(Spanish|English)\s+(.+)$/)
+  const baseInstruction = (detail) => [
+    'Previous attempt failed validation.',
+    `Fix this issue explicitly: ${detail}`,
+    'Regenerate the full article so it still satisfies every other structural requirement.',
+    'Add concrete local detail instead of filler if you need more length.',
+    'Do not mention the validation issue in the final article.',
+  ].join(' ')
+
+  if (match) {
+    const [, label, detail] = match
+    return label === 'Spanish'
+      ? { es: baseInstruction(detail) }
+      : { en: baseInstruction(detail) }
+  }
+
+  return { both: baseInstruction(trimmed) }
+}
+
 function isRecoverableGenerationError(message) {
   return [
     'Gemini response is not valid JSON',
@@ -1202,10 +1232,11 @@ function isRecoverableGenerationError(message) {
 async function generateValidatedPost(keyword, model, partnerLink = null) {
   const maxAttempts = parseInt(process.env.GEMINI_GENERATION_MAX_ATTEMPTS || '3', 10);
   let lastError;
+  let retryInstructions = {};
 
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     try {
-      let parsed = await generateArticle(keyword, model, partnerLink);
+      let parsed = await generateArticle(keyword, model, partnerLink, retryInstructions);
       parsed = normalizeGeneratedPost(parsed, keyword);
       validateGeneratedPost(parsed);
       return parsed;
@@ -1216,6 +1247,7 @@ async function generateValidatedPost(keyword, model, partnerLink = null) {
         throw err;
       }
 
+      retryInstructions = buildRetryInstructions(err.message);
       console.warn(`Generation attempt ${attempt} failed (${err.message}). Retrying...`);
     }
   }
