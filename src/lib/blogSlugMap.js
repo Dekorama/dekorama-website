@@ -140,6 +140,14 @@ export const blogSlugMap = {
   'thermostatic-shower-taps-advantages-prices-costa-del-sol': {
     es: 'grifos-termostaticos-ducha-ventajas-precios-costa-del-sol',
     en: 'thermostatic-shower-taps-advantages-prices-costa-del-sol',
+  },
+  'reforma-integral-piso-torremolinos-presupuesto': {
+    es: 'reforma-integral-piso-torremolinos-presupuesto',
+    en: 'reforma-integral-torremolinos-cost',
+  },
+  'reforma-integral-torremolinos-cost': {
+    es: 'reforma-integral-piso-torremolinos-presupuesto',
+    en: 'reforma-integral-torremolinos-cost',
   },}
 
 /**
