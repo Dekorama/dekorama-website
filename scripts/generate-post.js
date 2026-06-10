@@ -970,10 +970,176 @@ function expandArticleToMinimumWords(body, locale) {
   return expanded
 }
 
+// ---------------------------------------------------------------------------
+// Deterministic structural repair helpers
+// ---------------------------------------------------------------------------
+
+/**
+ * Remove any stray H1 heading (the validator rejects these outright).
+ */
+function stripH1(body) {
+  return body.replace(/^#\s+.+$/m, '').replace(/\n{3,}/g, '\n\n').trim()
+}
+
+/**
+ * If the FAQ section has fewer than 3 items, inject extras from a built-in bank.
+ * Skips any heading whose first 20 chars already appear in the FAQ section.
+ */
+function ensureMinFaqItems(body, keyword, locale) {
+  const needed = 3 - countFaqItems(body, locale)
+  if (needed <= 0) return body
+
+  const faqRe = locale === 'es' ? FAQ_HEADING_ES : FAQ_HEADING_EN
+  const faqStart = body.search(faqRe)
+  if (faqStart === -1) return body
+
+  const afterFaqHeading = body.slice(faqStart)
+  const firstNewline = afterFaqHeading.indexOf('\n')
+  if (firstNewline === -1) return body
+
+  const bodyAfterFaqFirstLine = afterFaqHeading.slice(firstNewline + 1)
+  const nextH2Offset = bodyAfterFaqFirstLine.search(/^##\s+/m)
+  const faqEndAbsolute = nextH2Offset === -1
+    ? body.length
+    : faqStart + firstNewline + 1 + nextH2Offset
+
+  const faqSection = body.slice(faqStart, faqEndAbsolute).toLowerCase()
+
+  const extraItems = locale === 'es'
+    ? [
+        `### ¿Cuánto cuesta ${keyword}?\nEl coste depende del tamaño del espacio, la calidad de los materiales y el alcance de la obra. La mejor forma de acertar es pedir una visita y un presupuesto detallado antes de comparar opciones.`,
+        `### ¿Cuánto tiempo se tarda?\nEl plazo varía según la obra previa, la disponibilidad de materiales y si hay que tocar instalaciones. En proyectos bien planificados, definir acabados y mediciones antes de empezar ayuda a evitar retrasos.`,
+        `### ¿Trabajáis en toda la Costa del Sol?\nSí. Nuestro showroom está en Benalmádena y ejecutamos proyectos en Marbella, Fuengirola, Estepona, Torremolinos y alrededores.`,
+        `### ¿Qué materiales recomendáis?\nConviene priorizar materiales resistentes y fáciles de mantener. En Dekorama solemos valorar porcelánico, grifería fiable y acabados que soporten bien la humedad y el desgaste.`,
+      ]
+    : [
+        `### How much does ${keyword} cost?\nThe final cost depends on the size of the project, the specification level and whether plumbing, electrics or layout changes are involved. A site visit and itemised quote are the safest way to compare options.`,
+        `### How long does the work take?\nThat depends on the scope, the condition of the property and material lead times. Projects move faster when layouts, finishes and measurements are agreed before work starts on site.`,
+        `### Do you work across the Costa del Sol?\nYes. We are based in Benalmádena and carry out projects in Marbella, Fuengirola, Estepona, Torremolinos and nearby areas.`,
+        `### Which materials do you recommend?\nIn most cases, durable low-maintenance materials are the best fit. We usually look at porcelain surfaces, reliable fittings and finishes that hold up well to daily use and cleaning.`,
+      ]
+
+  const additions = extraItems
+    .filter((item) => {
+      const key = item.split('\n')[0].replace(/^###\s+/, '').toLowerCase().slice(0, 20)
+      return !faqSection.includes(key)
+    })
+    .slice(0, needed)
+    .join('\n\n')
+
+  if (!additions) return body
+
+  const beforeEnd = body.slice(0, faqEndAbsolute).trimEnd()
+  const afterEnd = body.slice(faqEndAbsolute)
+  return `${beforeEnd}\n\n${additions}\n${afterEnd}`
+}
+
+/**
+ * If the FAQ is not the last H2, extract it and move it to the end.
+ */
+function ensureFaqIsLast(body, locale) {
+  if (isFaqLastH2Section(body, locale)) return body
+
+  const faqRe = locale === 'es' ? FAQ_HEADING_ES : FAQ_HEADING_EN
+  const faqStart = body.search(faqRe)
+  if (faqStart === -1) return body
+
+  const afterFaqHeading = body.slice(faqStart)
+  const firstNewline = afterFaqHeading.indexOf('\n')
+  if (firstNewline === -1) return body
+
+  const bodyAfterFaqFirstLine = afterFaqHeading.slice(firstNewline + 1)
+  const nextH2Offset = bodyAfterFaqFirstLine.search(/^##\s+/m)
+
+  // No H2 after the FAQ content — it's already last (shouldn't reach here but guard anyway)
+  if (nextH2Offset === -1) return body
+
+  const faqEndRelative = firstNewline + 1 + nextH2Offset
+  const faqSection = afterFaqHeading.slice(0, faqEndRelative).trimEnd()
+  const afterFaqSection = afterFaqHeading.slice(faqEndRelative).trim()
+  const beforeFaq = body.slice(0, faqStart).trimEnd()
+
+  return `${beforeFaq}\n\n${afterFaqSection}\n\n${faqSection}\n`
+}
+
+/**
+ * Ensure at least 2 question-shaped H2 headings (excluding Quick Answer and FAQ).
+ * Inserts keyword-specific question H2 blocks before the FAQ.
+ */
+function ensureQuestionH2s(body, keyword, locale) {
+  const needed = 2 - countQuestionStyleH2s(body, locale)
+  if (needed <= 0) return body
+
+  const questionBlocks = locale === 'es'
+    ? [
+        { heading: `## ¿Cuánto cuesta ${keyword}?`, content: `El precio final depende del tamaño, los materiales y si la obra incluye cambios en instalaciones. En la Costa del Sol, lo más útil es pedir un presupuesto con mediciones reales.\n\nEn Dekorama ofrecemos visita técnica y presupuesto detallado sin compromiso para que puedas comparar con criterio.` },
+        { heading: `## ¿Cuánto tiempo se tarda en completar ${keyword}?`, content: `El plazo depende del alcance de la obra, el estado previo del inmueble y la disponibilidad de los materiales. Definir acabados y mediciones antes de empezar ayuda a evitar parones una vez que la reforma está en marcha.` },
+        { heading: `## ¿Cómo elegir la mejor opción para ${keyword}?`, content: `La elección depende del uso, el presupuesto y la estética que buscas. En general, conviene priorizar durabilidad frente a tendencia, y confirmar que el material elegido funciona bien con las condiciones reales del espacio.` },
+      ]
+    : [
+        { heading: `## How much does ${keyword} cost?`, content: `The final price depends on the size, the material specification and whether the project involves changes to plumbing or electrics. On the Costa del Sol, the most useful starting point is a quote based on actual site measurements.\n\nDekorama provides a technical visit and itemised quote so you can compare options properly.` },
+        { heading: `## How long does ${keyword} take to complete?`, content: `The timeline depends on the scope of work, the current condition of the property and material availability. Fixing finishes and measurements before work starts avoids unnecessary stoppages once the renovation is under way.` },
+        { heading: `## How do you choose the right option for ${keyword}?`, content: `The choice depends on how the space is used, the budget and the finish you want to achieve. As a rule, durability is more important than following trends, and the material should suit the actual conditions of the space.` },
+      ]
+
+  const existingHeadings = getH2Headings(body).map((h) => h.toLowerCase())
+  let modified = body
+  let added = 0
+
+  for (const { heading, content } of questionBlocks) {
+    if (added >= needed) break
+    const key = heading.replace(/^##\s+/, '').toLowerCase().slice(0, 18)
+    if (existingHeadings.some((h) => h.includes(key))) continue
+    modified = insertBeforeFaq(modified, `${heading}\n\n${content}`, locale)
+    added += 1
+  }
+
+  return modified
+}
+
+/**
+ * Ensure at least 5 H2 sections total.
+ * Inserts generic on-topic H2 blocks before the FAQ until the minimum is met.
+ */
+function ensureMinH2Count(body, keyword, locale) {
+  const MIN_H2 = 5
+  const current = (body.match(/^##\s+/gm) || []).length
+  const needed = MIN_H2 - current
+  if (needed <= 0) return body
+
+  const fillerBlocks = locale === 'es'
+    ? [
+        `## Qué tener en cuenta antes de decidir\n\nAntes de elegir acabados, materiales o instalaciones para ${keyword}, conviene revisar el estado actual del espacio, el presupuesto disponible y los plazos reales. Esa combinación define qué opciones son viables y cuáles no encajan con el proyecto concreto.\n\nEn Dekorama te ayudamos a valorar esas variables sin compromiso antes de cerrar nada.`,
+        `## Cómo planificar bien el proyecto\n\nUna planificación sólida empieza por cerrar mediciones, acabados e instalaciones antes de que llegue el equipo de obra. Cuando eso está decidido, los pedidos se ajustan a los plazos de suministro y la secuencia de trabajos fluye sin interrupciones.\n\nLos proyectos que más se desvían de plazo y presupuesto suelen ser los que improvisan decisiones importantes una vez iniciada la obra.`,
+        `## Opciones y tendencias actuales\n\nEn reformas de vivienda en la Costa del Sol, las tendencias van hacia acabados neutros y duraderos, formatos grandes en porcelánico y griferías de línea limpia. La clave no es seguir tendencias, sino elegir lo que aguanta bien con el uso habitual y encaja con el inmueble real.`,
+      ]
+    : [
+        `## Key factors before you decide\n\nBefore choosing finishes, materials or fittings for ${keyword}, it helps to review the current condition of the space, the available budget and realistic lead times. That combination determines which options are genuinely viable for the project.\n\nAt Dekorama we help you assess those variables before anything is confirmed.`,
+        `## How to plan the project well\n\nSolid planning starts with locking in measurements, finishes and service points before the trade team arrives. Once those decisions are made, orders can be timed to match supply lead times and the sequence of work runs smoothly.\n\nProjects that run over time and budget are usually the ones where major decisions were improvised after work had already started.`,
+        `## Current trends and popular options\n\nIn Costa del Sol home renovations, the current direction is towards neutral durable finishes, large-format porcelain and clean-line fittings. The real aim is not to follow trends but to choose materials that hold up well under daily use and suit the actual property.`,
+      ]
+
+  const existingHeadings = getH2Headings(body).map((h) => h.toLowerCase())
+  let modified = body
+
+  for (let i = 0; i < Math.min(needed, fillerBlocks.length); i += 1) {
+    const headingText = fillerBlocks[i].split('\n')[0].replace(/^##\s+/, '').toLowerCase().slice(0, 18)
+    if (existingHeadings.some((h) => h.includes(headingText))) continue
+    modified = insertBeforeFaq(modified, fillerBlocks[i], locale)
+  }
+
+  return modified
+}
+
 function repairArticleBody(body, keyword, locale) {
   let repaired = replaceMarkdownTables(body)
+  repaired = stripH1(repaired)
   repaired = ensureQuickAnswerSection(repaired, keyword, locale)
   repaired = ensureFaqSection(repaired, keyword, locale)
+  repaired = ensureMinFaqItems(repaired, keyword, locale)
+  repaired = ensureFaqIsLast(repaired, locale)
+  repaired = ensureQuestionH2s(repaired, keyword, locale)
+  repaired = ensureMinH2Count(repaired, keyword, locale)
   repaired = ensureInternalLinks(repaired, locale)
   repaired = trimFaqAnswers(repaired, locale)
   repaired = expandArticleToMinimumWords(repaired, locale)
@@ -1653,6 +1819,9 @@ module.exports = {
   FAQ_ANSWER_MAX_WORDS,
   buildRetryInstructions,
   countWords,
+  ensureMinFaqItems,
+  ensureMinH2Count,
+  ensureQuestionH2s,
   normalizeGeneratedPost,
   repairArticleBody,
   trimFaqAnswers,
