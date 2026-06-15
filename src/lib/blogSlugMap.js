@@ -148,6 +148,14 @@ export const blogSlugMap = {
   'reforma-integral-torremolinos-cost': {
     es: 'reforma-integral-piso-torremolinos-presupuesto',
     en: 'reforma-integral-torremolinos-cost',
+  },
+  'plato-ducha-resina-vs-ceramica-cual-elegir': {
+    es: 'plato-ducha-resina-vs-ceramica-cual-elegir',
+    en: 'resin-vs-ceramic-shower-tray-costa-del-sol',
+  },
+  'resin-vs-ceramic-shower-tray-costa-del-sol': {
+    es: 'plato-ducha-resina-vs-ceramica-cual-elegir',
+    en: 'resin-vs-ceramic-shower-tray-costa-del-sol',
   },}
 
 /**
