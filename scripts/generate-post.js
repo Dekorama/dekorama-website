@@ -886,11 +886,33 @@ function trimToWordLimit(text, maxWords) {
   const normalized = text.replace(/\s+/g, ' ').trim()
   if (!normalized) return normalized
 
-  const words = normalized.split(' ')
-  if (words.length <= maxWords) return normalized
+  // Use countWords (same logic as the validator) for the check so hyphenated
+  // words and markdown chars don't cause off-by-one mismatches.
+  if (countWords(normalized) <= maxWords) return normalized
 
-  const trimmed = words.slice(0, maxWords).join(' ').replace(/[,:;\-\s]+$/, '')
+  // Start with an approximation (split by space) then back off one word at a
+  // time until the validator's own counter agrees we are within the limit.
+  let words = normalized.split(' ').filter(Boolean)
+  words = words.slice(0, maxWords) // safe upper bound
+  while (words.length > 1 && countWords(words.join(' ')) > maxWords) {
+    words = words.slice(0, -1)
+  }
+
+  const trimmed = words.join(' ').replace(/[,:;\-\s]+$/, '')
   return /[.!?]$/.test(trimmed) ? trimmed : `${trimmed}.`
+}
+
+function truncateKeyAnswer(text) {
+  if (!text) return text
+  const trimmed = text.trim()
+  if (trimmed.length <= KEY_ANSWER_MAX_LENGTH) return trimmed
+  // Prefer cutting at a sentence boundary inside the limit
+  const cut = trimmed.slice(0, KEY_ANSWER_MAX_LENGTH)
+  const lastStop = Math.max(cut.lastIndexOf('.'), cut.lastIndexOf('!'), cut.lastIndexOf('?'))
+  if (lastStop > KEY_ANSWER_MAX_LENGTH * 0.5) return trimmed.slice(0, lastStop + 1).trim()
+  // Slice to KEY_ANSWER_MAX_LENGTH - 1 to leave room for the appended period,
+  // ensuring the final string is never longer than KEY_ANSWER_MAX_LENGTH chars.
+  return trimmed.slice(0, KEY_ANSWER_MAX_LENGTH - 1).trimEnd().replace(/[,:;\-\s]+$/, '') + '.'
 }
 
 function trimFaqAnswers(body, locale) {
@@ -1296,6 +1318,9 @@ function normalizeGeneratedPost(parsed, keyword) {
   if (!parsed.keyAnswer_en?.trim()) {
     parsed.keyAnswer_en = parsed.excerpt_en || parsed.title_en
   }
+  // Truncate overlong keyAnswers so validateKeyAnswer never fires on length.
+  parsed.keyAnswer_es = truncateKeyAnswer(parsed.keyAnswer_es)
+  parsed.keyAnswer_en = truncateKeyAnswer(parsed.keyAnswer_en)
   parsed.category = normalizeCategory(parsed.category, keyword);
   return parsed;
 }
@@ -1825,5 +1850,6 @@ module.exports = {
   normalizeGeneratedPost,
   repairArticleBody,
   trimFaqAnswers,
+  truncateKeyAnswer,
   validateArticleBody,
 };
