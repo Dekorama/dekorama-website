@@ -156,6 +156,14 @@ export const blogSlugMap = {
   'resin-vs-ceramic-shower-tray-costa-del-sol': {
     es: 'plato-ducha-resina-vs-ceramica-cual-elegir',
     en: 'resin-vs-ceramic-shower-tray-costa-del-sol',
+  },
+  'microcemento-bano-ventajas-costes-costa-del-sol': {
+    es: 'microcemento-bano-ventajas-costes-costa-del-sol',
+    en: 'microcement-bathroom-costa-del-sol',
+  },
+  'microcement-bathroom-costa-del-sol': {
+    es: 'microcemento-bano-ventajas-costes-costa-del-sol',
+    en: 'microcement-bathroom-costa-del-sol',
   },}
 
 /**
