@@ -164,6 +164,14 @@ export const blogSlugMap = {
   'microcement-bathroom-costa-del-sol': {
     es: 'microcemento-bano-ventajas-costes-costa-del-sol',
     en: 'microcement-bathroom-costa-del-sol',
+  },
+  'reforma-cocina-pequena-maximizar-espacio-malaga': {
+    es: 'reforma-cocina-pequena-maximizar-espacio-malaga',
+    en: 'small-kitchen-renovation-malaga',
+  },
+  'small-kitchen-renovation-malaga': {
+    es: 'reforma-cocina-pequena-maximizar-espacio-malaga',
+    en: 'small-kitchen-renovation-malaga',
   },}
 
 /**
