@@ -702,6 +702,29 @@
       "showroomTitle": "Visita nuestro showroom en Benalmádena",
       "showroomDesc": "Ven a tocar y ver nuestros porcelánicos en persona. Te asesoramos sin compromiso y te ayudamos a elegir el mejor material para tu proyecto. Fácil acceso desde Málaga, Marbella, Fuengirola, Torremolinos y toda la Costa del Sol."
     },
+    "caracas": {
+      "title": "Reformas Integrales en Caracas | Dekorama",
+      "description": "Reformas integrales, cocinas y baños a medida en Caracas, Venezuela. Mismo equipo, misma calidad que en la Costa del Sol. Presupuesto sin costo.",
+      "h1": "Reformas Integrales en Caracas, Venezuela",
+      "intro": "Llevamos la misma calidad y experiencia de nuestros proyectos en España directamente a Caracas. Cocinas a medida, baños completos y reformas integrales con materiales premium y acabados profesionales.",
+      "whyUs": "Dekorama en Venezuela: la misma confianza, en otro continente",
+      "whyUsDesc": "El mismo equipo que lleva más de 10 años transformando viviendas en la Costa del Sol opera ahora también en Caracas. Diseño personalizado, materiales de primeras marcas y gestión integral del proyecto de principio a fin.",
+      "servicesTitle": "Nuestros servicios en Caracas",
+      "zonesTitle": "Zonas de servicio en Caracas",
+      "zonesDesc": "Atendemos proyectos en Caracas y sus principales zonas residenciales: Altamira, Las Mercedes, El Hatillo, La Trinidad, Chacao, Baruta y alrededores.",
+      "phone": "+58 XXX XXX XXXX",
+      "faq": {
+        "title": "Preguntas frecuentes sobre reformas en Caracas",
+        "q1": "¿Dekorama tiene tienda física en Caracas?",
+        "a1": "Sí. Contamos con tienda física en Caracas donde puedes ver nuestros materiales en persona y recibir asesoramiento de nuestro equipo.",
+        "q2": "¿Ofrecéis los mismos servicios que en España?",
+        "a2": "Sí. Reformas integrales, cocinas a medida, baños completos y suministro de materiales premium, con el mismo estándar de calidad que en la Costa del Sol.",
+        "q3": "¿Cómo solicito presupuesto en Caracas?",
+        "a3": "Puedes contactarnos por teléfono, WhatsApp o formulario. Visitamos tu vivienda y entregamos presupuesto detallado sin costo.",
+        "q4": "¿Trabajáis proyectos residenciales y comerciales en Caracas?",
+        "a4": "Sí. Ejecutamos reformas en viviendas, apartamentos y locales comerciales en Caracas con el rigor y los acabados que nos caracterizan en España."
+      }
+    },
     "commonCTA": "Solicitar visita gratuita",
     "commonServices": {
       "service1": "Reformas integrales completas",

@@ -19,6 +19,7 @@ const staticPaths = [
   { path: '/link-exchange', priority: 0.6, changeFrequency: 'monthly' },
   // Páginas por ciudad (SEO local crítico)
   { path: '/reformas-marbella', priority: 0.95, changeFrequency: 'monthly' },
+  { path: '/reformas-caracas', priority: 0.7, changeFrequency: 'monthly' },
   { path: '/reformas-fuengirola', priority: 0.95, changeFrequency: 'monthly' },
   { path: '/reformas-estepona', priority: 0.95, changeFrequency: 'monthly' },
   { path: '/reformas-torremolinos', priority: 0.95, changeFrequency: 'monthly' },

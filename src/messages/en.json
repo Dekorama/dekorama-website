@@ -702,6 +702,29 @@
       "showroomTitle": "Visit our showroom in Benalmádena",
       "showroomDesc": "Come and see and touch our porcelain tiles in person. We advise you at no obligation and help you choose the best material for your project. Easy access from Málaga, Marbella, Fuengirola, Torremolinos and the entire Costa del Sol."
     },
+    "caracas": {
+      "title": "Full Renovations in Caracas | Dekorama",
+      "description": "Full renovations, custom kitchens and bathrooms in Caracas, Venezuela. Same team, same quality as the Costa del Sol. Free no-obligation quote.",
+      "h1": "Full Renovations in Caracas, Venezuela",
+      "intro": "We bring the same quality and experience from our Spanish projects directly to Caracas. Custom kitchens, complete bathrooms and full renovations with premium materials and professional finishes.",
+      "whyUs": "Dekorama in Venezuela: same trust, different continent",
+      "whyUsDesc": "The same team that has spent over 10 years transforming homes on the Costa del Sol now operates in Caracas too. Custom design, top-brand materials and full project management from start to finish.",
+      "servicesTitle": "Our services in Caracas",
+      "zonesTitle": "Service areas in Caracas",
+      "zonesDesc": "We cover projects across Caracas and its main residential districts: Altamira, Las Mercedes, El Hatillo, La Trinidad, Chacao, Baruta and surroundings.",
+      "phone": "+58 XXX XXX XXXX",
+      "faq": {
+        "title": "Frequently asked questions about renovations in Caracas",
+        "q1": "Does Dekorama have a physical store in Caracas?",
+        "a1": "Yes. We have a physical store in Caracas where you can see our materials in person and speak with our team.",
+        "q2": "Do you offer the same services as in Spain?",
+        "a2": "Yes. Full renovations, custom kitchens, complete bathrooms and premium material supply, to the same quality standard as on the Costa del Sol.",
+        "q3": "How do I request a quote in Caracas?",
+        "a3": "Contact us by phone, WhatsApp or form. We visit your property and provide a detailed no-obligation quote.",
+        "q4": "Do you take on residential and commercial projects in Caracas?",
+        "a4": "Yes. We deliver renovations in homes, apartments and commercial spaces in Caracas with the same precision and finishes as in Spain."
+      }
+    },
     "commonCTA": "Request free visit",
     "commonServices": {
       "service1": "Complete full renovations",
