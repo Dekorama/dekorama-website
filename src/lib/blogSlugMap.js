@@ -172,6 +172,14 @@ export const blogSlugMap = {
   'small-kitchen-renovation-malaga': {
     es: 'reforma-cocina-pequena-maximizar-espacio-malaga',
     en: 'small-kitchen-renovation-malaga',
+  },
+  'suelo-radiante-bano-instalacion-costa-del-sol': {
+    es: 'suelo-radiante-bano-instalacion-costa-del-sol',
+    en: 'underfloor-heating-bathroom-costa-del-sol',
+  },
+  'underfloor-heating-bathroom-costa-del-sol': {
+    es: 'suelo-radiante-bano-instalacion-costa-del-sol',
+    en: 'underfloor-heating-bathroom-costa-del-sol',
   },}
 
 /**
