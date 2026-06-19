@@ -180,6 +180,14 @@ export const blogSlugMap = {
   'underfloor-heating-bathroom-costa-del-sol': {
     es: 'suelo-radiante-bano-instalacion-costa-del-sol',
     en: 'underfloor-heating-bathroom-costa-del-sol',
+  },
+  'banos-accesibles-mayores-benalmadena': {
+    es: 'banos-accesibles-mayores-benalmadena',
+    en: 'accessible-bathrooms-seniors-benalmadena',
+  },
+  'accessible-bathrooms-seniors-benalmadena': {
+    es: 'banos-accesibles-mayores-benalmadena',
+    en: 'accessible-bathrooms-seniors-benalmadena',
   },}
 
 /**
