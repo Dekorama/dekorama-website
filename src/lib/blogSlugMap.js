@@ -188,6 +188,14 @@ export const blogSlugMap = {
   'accessible-bathrooms-seniors-benalmadena': {
     es: 'banos-accesibles-mayores-benalmadena',
     en: 'accessible-bathrooms-seniors-benalmadena',
+  },
+  'encimera-cocina-cuarzo-granito-elegir': {
+    es: 'encimera-cocina-cuarzo-granito-elegir',
+    en: 'quartz-vs-granite-kitchen-countertops',
+  },
+  'quartz-vs-granite-kitchen-countertops': {
+    es: 'encimera-cocina-cuarzo-granito-elegir',
+    en: 'quartz-vs-granite-kitchen-countertops',
   },}
 
 /**
