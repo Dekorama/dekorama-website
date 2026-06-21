@@ -196,6 +196,14 @@ export const blogSlugMap = {
   'quartz-vs-granite-kitchen-countertops': {
     es: 'encimera-cocina-cuarzo-granito-elegir',
     en: 'quartz-vs-granite-kitchen-countertops',
+  },
+  'griferia-dorada-cocina-lujo-costa-del-sol': {
+    es: 'griferia-dorada-cocina-lujo-costa-del-sol',
+    en: 'gold-kitchen-taps-luxury-trends-costa-del-sol',
+  },
+  'gold-kitchen-taps-luxury-trends-costa-del-sol': {
+    es: 'griferia-dorada-cocina-lujo-costa-del-sol',
+    en: 'gold-kitchen-taps-luxury-trends-costa-del-sol',
   },}
 
 /**
