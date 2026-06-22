@@ -204,6 +204,14 @@ export const blogSlugMap = {
   'gold-kitchen-taps-luxury-trends-costa-del-sol': {
     es: 'griferia-dorada-cocina-lujo-costa-del-sol',
     en: 'gold-kitchen-taps-luxury-trends-costa-del-sol',
+  },
+  'reforma-bano-estepona-precio-proceso': {
+    es: 'reforma-bano-estepona-precio-proceso',
+    en: 'estepona-bathroom-renovation-cost-process',
+  },
+  'estepona-bathroom-renovation-cost-process': {
+    es: 'reforma-bano-estepona-precio-proceso',
+    en: 'estepona-bathroom-renovation-cost-process',
   },}
 
 /**
