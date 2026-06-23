@@ -212,6 +212,14 @@ export const blogSlugMap = {
   'estepona-bathroom-renovation-cost-process': {
     es: 'reforma-bano-estepona-precio-proceso',
     en: 'estepona-bathroom-renovation-cost-process',
+  },
+  'porcelanico-gran-formato-salon-malaga-tendencias': {
+    es: 'porcelanico-gran-formato-salon-malaga-tendencias',
+    en: 'large-format-porcelain-living-room-malaga-trends',
+  },
+  'large-format-porcelain-living-room-malaga-trends': {
+    es: 'porcelanico-gran-formato-salon-malaga-tendencias',
+    en: 'large-format-porcelain-living-room-malaga-trends',
   },}
 
 /**
