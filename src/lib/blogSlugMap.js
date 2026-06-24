@@ -220,6 +220,14 @@ export const blogSlugMap = {
   'large-format-porcelain-living-room-malaga-trends': {
     es: 'porcelanico-gran-formato-salon-malaga-tendencias',
     en: 'large-format-porcelain-living-room-malaga-trends',
+  },
+  'mueble-bano-suspendido-ventajas-tendencias': {
+    es: 'mueble-bano-suspendido-ventajas-tendencias',
+    en: 'floating-bathroom-vanity-trends-2026',
+  },
+  'floating-bathroom-vanity-trends-2026': {
+    es: 'mueble-bano-suspendido-ventajas-tendencias',
+    en: 'floating-bathroom-vanity-trends-2026',
   },}
 
 /**
