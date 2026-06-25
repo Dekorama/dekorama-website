@@ -228,6 +228,14 @@ export const blogSlugMap = {
   'floating-bathroom-vanity-trends-2026': {
     es: 'mueble-bano-suspendido-ventajas-tendencias',
     en: 'floating-bathroom-vanity-trends-2026',
+  },
+  'reforma-integral-apartamento-vacacional-marbella-rentabilidad': {
+    es: 'reforma-integral-apartamento-vacacional-marbella-rentabilidad',
+    en: 'marbella-holiday-apartment-renovation-profit',
+  },
+  'marbella-holiday-apartment-renovation-profit': {
+    es: 'reforma-integral-apartamento-vacacional-marbella-rentabilidad',
+    en: 'marbella-holiday-apartment-renovation-profit',
   },}
 
 /**
