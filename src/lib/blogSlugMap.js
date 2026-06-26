@@ -236,6 +236,14 @@ export const blogSlugMap = {
   'marbella-holiday-apartment-renovation-profit': {
     es: 'reforma-integral-apartamento-vacacional-marbella-rentabilidad',
     en: 'marbella-holiday-apartment-renovation-profit',
+  },
+  'reformas-integrales-benalmadena-presupuesto-plazos': {
+    es: 'reformas-integrales-benalmadena-presupuesto-plazos',
+    en: 'full-home-renovation-benalmadena-cost-timeline',
+  },
+  'full-home-renovation-benalmadena-cost-timeline': {
+    es: 'reformas-integrales-benalmadena-presupuesto-plazos',
+    en: 'full-home-renovation-benalmadena-cost-timeline',
   },}
 
 /**
