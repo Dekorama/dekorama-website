@@ -244,6 +244,14 @@ export const blogSlugMap = {
   'full-home-renovation-benalmadena-cost-timeline': {
     es: 'reformas-integrales-benalmadena-presupuesto-plazos',
     en: 'full-home-renovation-benalmadena-cost-timeline',
+  },
+  'cuanto-cuesta-reforma-integral-benalmadena': {
+    es: 'cuanto-cuesta-reforma-integral-benalmadena',
+    en: 'home-renovation-cost-benalmadena',
+  },
+  'home-renovation-cost-benalmadena': {
+    es: 'cuanto-cuesta-reforma-integral-benalmadena',
+    en: 'home-renovation-cost-benalmadena',
   },}
 
 /**
