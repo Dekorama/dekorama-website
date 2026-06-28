@@ -252,6 +252,14 @@ export const blogSlugMap = {
   'home-renovation-cost-benalmadena': {
     es: 'cuanto-cuesta-reforma-integral-benalmadena',
     en: 'home-renovation-cost-benalmadena',
+  },
+  'empresa-reformas-integrales-benalmadena': {
+    es: 'empresa-reformas-integrales-benalmadena',
+    en: 'full-home-renovations-benalmadena',
+  },
+  'full-home-renovations-benalmadena': {
+    es: 'empresa-reformas-integrales-benalmadena',
+    en: 'full-home-renovations-benalmadena',
   },}
 
 /**
