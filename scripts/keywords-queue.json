@@ -174,8 +174,9 @@
     "keyword": "reforma integral de piso en Benalmadena",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-06-29T12:55:51.635Z"
   },
   {
     "keyword": "reforma integral de apartamento en Benalmadena",

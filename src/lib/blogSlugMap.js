@@ -260,6 +260,14 @@ export const blogSlugMap = {
   'full-home-renovations-benalmadena': {
     es: 'empresa-reformas-integrales-benalmadena',
     en: 'full-home-renovations-benalmadena',
+  },
+  'reforma-integral-piso-benalmadena': {
+    es: 'reforma-integral-piso-benalmadena',
+    en: 'full-apartment-renovation-benalmadena',
+  },
+  'full-apartment-renovation-benalmadena': {
+    es: 'reforma-integral-piso-benalmadena',
+    en: 'full-apartment-renovation-benalmadena',
   },}
 
 /**
