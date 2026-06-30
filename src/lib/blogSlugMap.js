@@ -268,6 +268,14 @@ export const blogSlugMap = {
   'full-apartment-renovation-benalmadena': {
     es: 'reforma-integral-piso-benalmadena',
     en: 'full-apartment-renovation-benalmadena',
+  },
+  'reforma-integral-apartamento-benalmadena': {
+    es: 'reforma-integral-apartamento-benalmadena',
+    en: 'apartment-renovation-benalmadena-cost',
+  },
+  'apartment-renovation-benalmadena-cost': {
+    es: 'reforma-integral-apartamento-benalmadena',
+    en: 'apartment-renovation-benalmadena-cost',
   },}
 
 /**
