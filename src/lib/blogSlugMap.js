@@ -276,6 +276,14 @@ export const blogSlugMap = {
   'apartment-renovation-benalmadena-cost': {
     es: 'reforma-integral-apartamento-benalmadena',
     en: 'apartment-renovation-benalmadena-cost',
+  },
+  'reforma-integral-villa-benalmadena': {
+    es: 'reforma-integral-villa-benalmadena',
+    en: 'villa-renovation-benalmadena-costa-del-sol',
+  },
+  'villa-renovation-benalmadena-costa-del-sol': {
+    es: 'reforma-integral-villa-benalmadena',
+    en: 'villa-renovation-benalmadena-costa-del-sol',
   },}
 
 /**
