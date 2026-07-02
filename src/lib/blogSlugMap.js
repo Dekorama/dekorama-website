@@ -284,6 +284,14 @@ export const blogSlugMap = {
   'villa-renovation-benalmadena-costa-del-sol': {
     es: 'reforma-integral-villa-benalmadena',
     en: 'villa-renovation-benalmadena-costa-del-sol',
+  },
+  'reforma-bano-completo-benalmadena-precio-2026': {
+    es: 'reforma-bano-completo-benalmadena-precio-2026',
+    en: 'bathroom-renovation-cost-benalmadena-2026',
+  },
+  'bathroom-renovation-cost-benalmadena-2026': {
+    es: 'reforma-bano-completo-benalmadena-precio-2026',
+    en: 'bathroom-renovation-cost-benalmadena-2026',
   },}
 
 /**
