@@ -292,6 +292,14 @@ export const blogSlugMap = {
   'bathroom-renovation-cost-benalmadena-2026': {
     es: 'reforma-bano-completo-benalmadena-precio-2026',
     en: 'bathroom-renovation-cost-benalmadena-2026',
+  },
+  'cuanto-cuesta-reformar-bano-benalmadena': {
+    es: 'cuanto-cuesta-reformar-bano-benalmadena',
+    en: 'bathroom-renovation-cost-benalmadena',
+  },
+  'bathroom-renovation-cost-benalmadena': {
+    es: 'cuanto-cuesta-reformar-bano-benalmadena',
+    en: 'bathroom-renovation-cost-benalmadena',
   },}
 
 /**
