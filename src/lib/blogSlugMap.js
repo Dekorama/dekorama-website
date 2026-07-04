@@ -300,6 +300,14 @@ export const blogSlugMap = {
   'bathroom-renovation-cost-benalmadena': {
     es: 'cuanto-cuesta-reformar-bano-benalmadena',
     en: 'bathroom-renovation-cost-benalmadena',
+  },
+  'diseno-bano-moderno-benalmadena': {
+    es: 'diseno-bano-moderno-benalmadena',
+    en: 'modern-bathroom-design-benalmadena',
+  },
+  'modern-bathroom-design-benalmadena': {
+    es: 'diseno-bano-moderno-benalmadena',
+    en: 'modern-bathroom-design-benalmadena',
   },}
 
 /**
