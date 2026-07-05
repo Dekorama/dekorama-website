@@ -308,6 +308,14 @@ export const blogSlugMap = {
   'modern-bathroom-design-benalmadena': {
     es: 'diseno-bano-moderno-benalmadena',
     en: 'modern-bathroom-design-benalmadena',
+  },
+  'reforma-cocina-benalmadena-presupuesto': {
+    es: 'reforma-cocina-benalmadena-presupuesto',
+    en: 'kitchen-renovation-cost-benalmadena',
+  },
+  'kitchen-renovation-cost-benalmadena': {
+    es: 'reforma-cocina-benalmadena-presupuesto',
+    en: 'kitchen-renovation-cost-benalmadena',
   },}
 
 /**
