@@ -230,8 +230,9 @@
     "keyword": "cocina a medida en Benalmadena precio",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-07-06T12:35:03.034Z"
   },
   {
     "keyword": "cocina con isla en Benalmadena ideas y coste",

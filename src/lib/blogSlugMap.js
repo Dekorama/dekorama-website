@@ -316,6 +316,14 @@ export const blogSlugMap = {
   'kitchen-renovation-cost-benalmadena': {
     es: 'reforma-cocina-benalmadena-presupuesto',
     en: 'kitchen-renovation-cost-benalmadena',
+  },
+  'cocina-a-medida-benalmadena-precio': {
+    es: 'cocina-a-medida-benalmadena-precio',
+    en: 'custom-kitchen-benalmadena-price',
+  },
+  'custom-kitchen-benalmadena-price': {
+    es: 'cocina-a-medida-benalmadena-precio',
+    en: 'custom-kitchen-benalmadena-price',
   },}
 
 /**
