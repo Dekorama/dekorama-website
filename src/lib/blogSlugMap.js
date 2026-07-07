@@ -324,6 +324,14 @@ export const blogSlugMap = {
   'custom-kitchen-benalmadena-price': {
     es: 'cocina-a-medida-benalmadena-precio',
     en: 'custom-kitchen-benalmadena-price',
+  },
+  'cocina-con-isla-benalmadena-coste-ideas': {
+    es: 'cocina-con-isla-benalmadena-coste-ideas',
+    en: 'kitchen-island-benalmadena-costa-del-sol-cost',
+  },
+  'kitchen-island-benalmadena-costa-del-sol-cost': {
+    es: 'cocina-con-isla-benalmadena-coste-ideas',
+    en: 'kitchen-island-benalmadena-costa-del-sol-cost',
   },}
 
 /**
