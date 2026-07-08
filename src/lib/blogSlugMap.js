@@ -332,6 +332,14 @@ export const blogSlugMap = {
   'kitchen-island-benalmadena-costa-del-sol-cost': {
     es: 'cocina-con-isla-benalmadena-coste-ideas',
     en: 'kitchen-island-benalmadena-costa-del-sol-cost',
+  },
+  'reformar-piso-alquiler-vacacional-benalmadena': {
+    es: 'reformar-piso-alquiler-vacacional-benalmadena',
+    en: 'renovating-apartment-holiday-rental-benalmadena',
+  },
+  'renovating-apartment-holiday-rental-benalmadena': {
+    es: 'reformar-piso-alquiler-vacacional-benalmadena',
+    en: 'renovating-apartment-holiday-rental-benalmadena',
   },}
 
 /**

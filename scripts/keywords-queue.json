@@ -246,8 +246,9 @@
     "keyword": "reformar piso para alquiler vacacional en Benalmadena",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-07-08T10:54:07.800Z"
   },
   {
     "keyword": "materiales para reforma en Benalmadena donde comprar",
