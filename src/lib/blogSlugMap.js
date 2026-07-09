@@ -340,6 +340,14 @@ export const blogSlugMap = {
   'renovating-apartment-holiday-rental-benalmadena': {
     es: 'reformar-piso-alquiler-vacacional-benalmadena',
     en: 'renovating-apartment-holiday-rental-benalmadena',
+  },
+  'materiales-reforma-benalmadena-comprar': {
+    es: 'materiales-reforma-benalmadena-comprar',
+    en: 'where-to-buy-renovation-materials-benalmadena',
+  },
+  'where-to-buy-renovation-materials-benalmadena': {
+    es: 'materiales-reforma-benalmadena-comprar',
+    en: 'where-to-buy-renovation-materials-benalmadena',
   },}
 
 /**
