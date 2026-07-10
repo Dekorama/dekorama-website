@@ -348,6 +348,14 @@ export const blogSlugMap = {
   'where-to-buy-renovation-materials-benalmadena': {
     es: 'materiales-reforma-benalmadena-comprar',
     en: 'where-to-buy-renovation-materials-benalmadena',
+  },
+  'reformas-integrales-marbella-presupuesto-plazos': {
+    es: 'reformas-integrales-marbella-presupuesto-plazos',
+    en: 'marbella-home-renovation-cost-timeline',
+  },
+  'marbella-home-renovation-cost-timeline': {
+    es: 'reformas-integrales-marbella-presupuesto-plazos',
+    en: 'marbella-home-renovation-cost-timeline',
   },}
 
 /**
