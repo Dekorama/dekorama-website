@@ -356,6 +356,14 @@ export const blogSlugMap = {
   'marbella-home-renovation-cost-timeline': {
     es: 'reformas-integrales-marbella-presupuesto-plazos',
     en: 'marbella-home-renovation-cost-timeline',
+  },
+  'cuanto-cuesta-reforma-integral-marbella': {
+    es: 'cuanto-cuesta-reforma-integral-marbella',
+    en: 'full-home-renovation-cost-marbella',
+  },
+  'full-home-renovation-cost-marbella': {
+    es: 'cuanto-cuesta-reforma-integral-marbella',
+    en: 'full-home-renovation-cost-marbella',
   },}
 
 /**
