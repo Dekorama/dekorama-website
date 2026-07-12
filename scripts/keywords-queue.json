@@ -278,8 +278,9 @@
     "keyword": "empresa de reformas integrales en Marbella",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-07-12T10:18:16.604Z"
   },
   {
     "keyword": "reforma integral de piso en Marbella",

@@ -364,6 +364,14 @@ export const blogSlugMap = {
   'full-home-renovation-cost-marbella': {
     es: 'cuanto-cuesta-reforma-integral-marbella',
     en: 'full-home-renovation-cost-marbella',
+  },
+  'empresa-reformas-integrales-marbella': {
+    es: 'empresa-reformas-integrales-marbella',
+    en: 'full-renovation-company-marbella',
+  },
+  'full-renovation-company-marbella': {
+    es: 'empresa-reformas-integrales-marbella',
+    en: 'full-renovation-company-marbella',
   },}
 
 /**
