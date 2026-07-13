@@ -372,6 +372,14 @@ export const blogSlugMap = {
   'full-renovation-company-marbella': {
     es: 'empresa-reformas-integrales-marbella',
     en: 'full-renovation-company-marbella',
+  },
+  'reforma-integral-piso-marbella': {
+    es: 'reforma-integral-piso-marbella',
+    en: 'full-home-renovation-marbella-cost',
+  },
+  'full-home-renovation-marbella-cost': {
+    es: 'reforma-integral-piso-marbella',
+    en: 'full-home-renovation-marbella-cost',
   },}
 
 /**
