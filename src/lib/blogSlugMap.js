@@ -380,6 +380,14 @@ export const blogSlugMap = {
   'full-home-renovation-marbella-cost': {
     es: 'reforma-integral-piso-marbella',
     en: 'full-home-renovation-marbella-cost',
+  },
+  'reforma-integral-apartamento-marbella': {
+    es: 'reforma-integral-apartamento-marbella',
+    en: 'marbella-apartment-full-renovation',
+  },
+  'marbella-apartment-full-renovation': {
+    es: 'reforma-integral-apartamento-marbella',
+    en: 'marbella-apartment-full-renovation',
   },}
 
 /**

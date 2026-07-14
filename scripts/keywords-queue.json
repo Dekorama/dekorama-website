@@ -294,8 +294,9 @@
     "keyword": "reforma integral de apartamento en Marbella",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-07-14T10:29:15.077Z"
   },
   {
     "keyword": "reforma integral de villa en Marbella",
