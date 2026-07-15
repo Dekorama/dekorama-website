@@ -388,6 +388,14 @@ export const blogSlugMap = {
   'marbella-apartment-full-renovation': {
     es: 'reforma-integral-apartamento-marbella',
     en: 'marbella-apartment-full-renovation',
+  },
+  'reforma-integral-villa-marbella': {
+    es: 'reforma-integral-villa-marbella',
+    en: 'full-villa-renovation-marbella-costa-del-sol',
+  },
+  'full-villa-renovation-marbella-costa-del-sol': {
+    es: 'reforma-integral-villa-marbella',
+    en: 'full-villa-renovation-marbella-costa-del-sol',
   },}
 
 /**
