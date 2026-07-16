@@ -396,6 +396,14 @@ export const blogSlugMap = {
   'full-villa-renovation-marbella-costa-del-sol': {
     es: 'reforma-integral-villa-marbella',
     en: 'full-villa-renovation-marbella-costa-del-sol',
+  },
+  'reforma-bano-completo-marbella-precio-2026': {
+    es: 'reforma-bano-completo-marbella-precio-2026',
+    en: 'marbella-bathroom-renovation-cost-2026',
+  },
+  'marbella-bathroom-renovation-cost-2026': {
+    es: 'reforma-bano-completo-marbella-precio-2026',
+    en: 'marbella-bathroom-renovation-cost-2026',
   },}
 
 /**
