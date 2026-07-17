@@ -404,6 +404,14 @@ export const blogSlugMap = {
   'marbella-bathroom-renovation-cost-2026': {
     es: 'reforma-bano-completo-marbella-precio-2026',
     en: 'marbella-bathroom-renovation-cost-2026',
+  },
+  'cuanto-cuesta-reformar-bano-marbella': {
+    es: 'cuanto-cuesta-reformar-bano-marbella',
+    en: 'bathroom-renovation-cost-marbella',
+  },
+  'bathroom-renovation-cost-marbella': {
+    es: 'cuanto-cuesta-reformar-bano-marbella',
+    en: 'bathroom-renovation-cost-marbella',
   },}
 
 /**
