@@ -412,6 +412,14 @@ export const blogSlugMap = {
   'bathroom-renovation-cost-marbella': {
     es: 'cuanto-cuesta-reformar-bano-marbella',
     en: 'bathroom-renovation-cost-marbella',
+  },
+  'diseno-bano-moderno-marbella': {
+    es: 'diseno-bano-moderno-marbella',
+    en: 'modern-bathroom-design-marbella',
+  },
+  'modern-bathroom-design-marbella': {
+    es: 'diseno-bano-moderno-marbella',
+    en: 'modern-bathroom-design-marbella',
   },}
 
 /**
