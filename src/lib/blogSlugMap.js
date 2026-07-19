@@ -420,6 +420,14 @@ export const blogSlugMap = {
   'modern-bathroom-design-marbella': {
     es: 'diseno-bano-moderno-marbella',
     en: 'modern-bathroom-design-marbella',
+  },
+  'reforma-cocina-marbella-presupuesto': {
+    es: 'reforma-cocina-marbella-presupuesto',
+    en: 'kitchen-renovation-cost-marbella',
+  },
+  'kitchen-renovation-cost-marbella': {
+    es: 'reforma-cocina-marbella-presupuesto',
+    en: 'kitchen-renovation-cost-marbella',
   },}
 
 /**
