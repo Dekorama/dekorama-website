@@ -428,6 +428,14 @@ export const blogSlugMap = {
   'kitchen-renovation-cost-marbella': {
     es: 'reforma-cocina-marbella-presupuesto',
     en: 'kitchen-renovation-cost-marbella',
+  },
+  'cocina-a-medida-marbella-precio': {
+    es: 'cocina-a-medida-marbella-precio',
+    en: 'custom-kitchen-marbella-price',
+  },
+  'custom-kitchen-marbella-price': {
+    es: 'cocina-a-medida-marbella-precio',
+    en: 'custom-kitchen-marbella-price',
   },}
 
 /**
