@@ -436,6 +436,14 @@ export const blogSlugMap = {
   'custom-kitchen-marbella-price': {
     es: 'cocina-a-medida-marbella-precio',
     en: 'custom-kitchen-marbella-price',
+  },
+  'cocina-con-isla-marbella-ideas-coste': {
+    es: 'cocina-con-isla-marbella-ideas-coste',
+    en: 'marbella-kitchen-island-ideas-cost',
+  },
+  'marbella-kitchen-island-ideas-cost': {
+    es: 'cocina-con-isla-marbella-ideas-coste',
+    en: 'marbella-kitchen-island-ideas-cost',
   },}
 
 /**
