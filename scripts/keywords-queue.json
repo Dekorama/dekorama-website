@@ -358,8 +358,9 @@
     "keyword": "reformar piso para alquiler vacacional en Marbella",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-07-22T10:57:34.360Z"
   },
   {
     "keyword": "materiales para reforma en Marbella donde comprar",

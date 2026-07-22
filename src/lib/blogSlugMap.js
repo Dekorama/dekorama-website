@@ -444,6 +444,14 @@ export const blogSlugMap = {
   'marbella-kitchen-island-ideas-cost': {
     es: 'cocina-con-isla-marbella-ideas-coste',
     en: 'marbella-kitchen-island-ideas-cost',
+  },
+  'reformar-piso-alquiler-vacacional-marbella': {
+    es: 'reformar-piso-alquiler-vacacional-marbella',
+    en: 'renovate-apartment-holiday-rental-marbella',
+  },
+  'renovate-apartment-holiday-rental-marbella': {
+    es: 'reformar-piso-alquiler-vacacional-marbella',
+    en: 'renovate-apartment-holiday-rental-marbella',
   },}
 
 /**
