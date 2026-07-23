@@ -452,6 +452,14 @@ export const blogSlugMap = {
   'renovate-apartment-holiday-rental-marbella': {
     es: 'reformar-piso-alquiler-vacacional-marbella',
     en: 'renovate-apartment-holiday-rental-marbella',
+  },
+  'materiales-reforma-marbella-comprar': {
+    es: 'materiales-reforma-marbella-comprar',
+    en: 'renovation-materials-marbella-where-to-buy',
+  },
+  'renovation-materials-marbella-where-to-buy': {
+    es: 'materiales-reforma-marbella-comprar',
+    en: 'renovation-materials-marbella-where-to-buy',
   },}
 
 /**
