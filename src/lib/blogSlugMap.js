@@ -460,6 +460,14 @@ export const blogSlugMap = {
   'renovation-materials-marbella-where-to-buy': {
     es: 'materiales-reforma-marbella-comprar',
     en: 'renovation-materials-marbella-where-to-buy',
+  },
+  'reformas-integrales-fuengirola-presupuesto-plazos': {
+    es: 'reformas-integrales-fuengirola-presupuesto-plazos',
+    en: 'full-home-renovations-fuengirola-cost',
+  },
+  'full-home-renovations-fuengirola-cost': {
+    es: 'reformas-integrales-fuengirola-presupuesto-plazos',
+    en: 'full-home-renovations-fuengirola-cost',
   },}
 
 /**
