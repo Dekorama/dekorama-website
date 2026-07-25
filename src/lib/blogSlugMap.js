@@ -468,6 +468,14 @@ export const blogSlugMap = {
   'full-home-renovations-fuengirola-cost': {
     es: 'reformas-integrales-fuengirola-presupuesto-plazos',
     en: 'full-home-renovations-fuengirola-cost',
+  },
+  'cuanto-cuesta-reforma-integral-fuengirola': {
+    es: 'cuanto-cuesta-reforma-integral-fuengirola',
+    en: 'cost-full-home-renovation-fuengirola',
+  },
+  'cost-full-home-renovation-fuengirola': {
+    es: 'cuanto-cuesta-reforma-integral-fuengirola',
+    en: 'cost-full-home-renovation-fuengirola',
   },}
 
 /**
