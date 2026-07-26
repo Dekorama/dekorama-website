@@ -476,6 +476,14 @@ export const blogSlugMap = {
   'cost-full-home-renovation-fuengirola': {
     es: 'cuanto-cuesta-reforma-integral-fuengirola',
     en: 'cost-full-home-renovation-fuengirola',
+  },
+  'empresa-reformas-integrales-fuengirola': {
+    es: 'empresa-reformas-integrales-fuengirola',
+    en: 'fuengirola-full-home-renovation-company',
+  },
+  'fuengirola-full-home-renovation-company': {
+    es: 'empresa-reformas-integrales-fuengirola',
+    en: 'fuengirola-full-home-renovation-company',
   },}
 
 /**
