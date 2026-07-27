@@ -2,9 +2,20 @@
 
 import { Link } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
+import { markets } from '@/lib/markets'
+import {
+  useActiveMarket,
+  marketHomeHref,
+  marketContactHref,
+} from '@/lib/useActiveMarket'
 
 export default function Footer() {
   const t = useTranslations('footer')
+  const marketId = useActiveMarket()
+  const isVe = marketId === 'venezuela'
+  const market = isVe ? markets.venezuela : markets.spain
+  const homeHref = marketHomeHref(marketId)
+  const contactHref = marketContactHref(marketId)
 
   return (
     <footer className="bg-black text-white py-16 px-4 sm:px-6 lg:px-8">
@@ -12,17 +23,29 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 mb-12">
           <div className="space-y-4 lg:col-span-1">
             <div>
-              <div className="text-2xl font-bold">Dekorama</div>
+              <Link href={homeHref} className="text-2xl font-bold hover:opacity-80 transition-opacity">
+                {isVe ? t('brandVe') : 'Dekorama'}
+              </Link>
             </div>
             <p className="text-gray-400 leading-relaxed text-sm">
-              {t('description')}
+              {isVe ? t('descriptionVe') : t('description')}
             </p>
-            <p className="text-gray-400 text-sm">
-              <span className="block font-medium text-gray-300 mt-2">{t('store')}</span>
-              {t('address').split('\n').map((line, i) => (
-                <span key={i}>{line}<br /></span>
-              ))}
-            </p>
+            {!isVe ? (
+              <p className="text-gray-400 text-sm">
+                <span className="block font-medium text-gray-300 mt-2">{t('store')}</span>
+                {t('address').split('\n').map((line) => (
+                  <span key={line}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
+              </p>
+            ) : (
+              <p className="text-gray-400 text-sm">
+                <span className="block font-medium text-gray-300 mt-2">{t('marketVe')}</span>
+                {t('areaVe')}
+              </p>
+            )}
           </div>
 
           <div>
@@ -57,33 +80,62 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t('cities')}</h3>
+            <h3 className="text-lg font-semibold mb-4">
+              {isVe ? t('locationsVe') : t('cities')}
+            </h3>
             <ul className="space-y-2 text-gray-400 text-sm">
-              <li>
-                <Link href="/reformas-marbella" className="hover:text-white transition-colors">
-                  {t('marbella')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/reformas-fuengirola" className="hover:text-white transition-colors">
-                  {t('fuengirola')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/reformas-estepona" className="hover:text-white transition-colors">
-                  {t('estepona')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/reformas-torremolinos" className="hover:text-white transition-colors">
-                  {t('torremolinos')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/porcelanicos-malaga" className="hover:text-white transition-colors">
-                  {t('porcelanicosMalaga')}
-                </Link>
-              </li>
+              {isVe ? (
+                <>
+                  <li>
+                    <Link href="/reformas-caracas" className="hover:text-white transition-colors">
+                      {t('caracas')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contacto-caracas" className="hover:text-white transition-colors">
+                      {t('contactCaracas')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/" className="hover:text-white transition-colors">
+                      {t('spainSite')}
+                    </Link>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <Link href="/reformas-marbella" className="hover:text-white transition-colors">
+                      {t('marbella')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/reformas-fuengirola" className="hover:text-white transition-colors">
+                      {t('fuengirola')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/reformas-estepona" className="hover:text-white transition-colors">
+                      {t('estepona')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/reformas-torremolinos" className="hover:text-white transition-colors">
+                      {t('torremolinos')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/porcelanicos-malaga" className="hover:text-white transition-colors">
+                      {t('porcelanicosMalaga')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/reformas-caracas" className="hover:text-white transition-colors">
+                      {t('caracas')}
+                    </Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
 
@@ -95,18 +147,20 @@ export default function Footer() {
                   {t('blog')}
                 </Link>
               </li>
-              <li>
-                <Link href="/#proceso" className="hover:text-white transition-colors">
-                  {t('ourProcess')}
-                </Link>
-              </li>
+              {!isVe ? (
+                <li>
+                  <Link href="/#proceso" className="hover:text-white transition-colors">
+                    {t('ourProcess')}
+                  </Link>
+                </li>
+              ) : null}
               <li>
                 <Link href="/proyectos" className="hover:text-white transition-colors">
                   {t('projects')}
                 </Link>
               </li>
               <li>
-                <Link href="/#servicios" className="hover:text-white transition-colors">
+                <Link href="/servicios" className="hover:text-white transition-colors">
                   {t('services')}
                 </Link>
               </li>
@@ -116,19 +170,38 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">{t('contact')}</h3>
             <ul className="space-y-2 text-gray-400 text-sm">
-              <li className="leading-relaxed">
-                {t('address').split('\n').map((line, i) => (
-                  <span key={i}>{line}<br /></span>
-                ))}
-              </li>
+              {!isVe ? (
+                <li className="leading-relaxed">
+                  {t('address').split('\n').map((line) => (
+                    <span key={line}>
+                      {line}
+                      <br />
+                    </span>
+                  ))}
+                </li>
+              ) : (
+                <li>
+                  <Link href={contactHref} className="hover:text-white transition-colors">
+                    {t('contactCaracas')}
+                  </Link>
+                </li>
+              )}
+              {market.phoneReady ? (
+                <li>
+                  <a
+                    href={`tel:${market.telephone}`}
+                    className="hover:text-white transition-colors"
+                  >
+                    {market.phoneDisplay}
+                  </a>
+                </li>
+              ) : null}
               <li>
-                <a href="tel:+34628571537" className="hover:text-white transition-colors">
-                  +34 628 571 537
-                </a>
-              </li>
-              <li>
-                <a href="mailto:info@dekoramagroup.com" className="hover:text-white transition-colors">
-                  info@dekoramagroup.com
+                <a
+                  href={`mailto:${market.email}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {market.email}
                 </a>
               </li>
             </ul>

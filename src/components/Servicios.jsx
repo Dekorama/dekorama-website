@@ -14,7 +14,7 @@ const serviceKeys = [
   { key: 'materiales', link: '/materiales-premium', catalogLink: '/catalogo' },
 ]
 
-export default function Servicios() {
+export default function Servicios({ hideTitle = false }) {
   const t = useTranslations('servicios')
   const imagesList = [
     images.services.reformas,
@@ -26,15 +26,17 @@ export default function Servicios() {
   return (
     <section id="servicios" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-accent/5">
       <div className="max-w-7xl mx-auto">
-        <motion.h2 
-          className="text-3xl md:text-4xl font-semibold text-black text-center mb-16 tracking-tight"
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOptions}
-          variants={fadeUp}
-        >
-          {t('title')}
-        </motion.h2>
+        {!hideTitle ? (
+          <motion.h2 
+            className="text-3xl md:text-4xl font-semibold text-black text-center mb-16 tracking-tight"
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOptions}
+            variants={fadeUp}
+          >
+            {t('title')}
+          </motion.h2>
+        ) : null}
         <motion.div 
           className="grid md:grid-cols-2 gap-8"
           initial="hidden"

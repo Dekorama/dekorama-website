@@ -5,6 +5,34 @@
     "accept": "Accept",
     "ariaLabel": "Cookie notice"
   },
+  "marketGate": {
+    "ariaLabel": "Select your country",
+    "headline": "Where is your project?",
+    "subheadline": "Choose your market. Same Dekorama quality, local contact.",
+    "badgeNew": "NEW",
+    "badgeText": "Spain and Venezuela",
+    "navHint": "Select your country to continue",
+    "spainLabel": "Spain",
+    "spainDetail": "Costa del Sol · Benalmádena",
+    "spainStatus": "Showroom open",
+    "spainCta": "Enter",
+    "spainImageAlt": "Renovated villa on the Costa del Sol",
+    "venezuelaLabel": "Venezuela",
+    "venezuelaDetail": "Caracas · 15+ years",
+    "venezuelaStatus": "Local support",
+    "venezuelaCta": "Enter",
+    "venezuelaImageAlt": "Renovation project in Caracas",
+    "switcherAria": "Country",
+    "switchSpain": "ES",
+    "switchVenezuela": "VE",
+    "switchSpainShort": "ES",
+    "switchVenezuelaShort": "VE"
+  },
+  "localeSwitcher": {
+    "ariaLabel": "Language",
+    "es": "Español",
+    "en": "English"
+  },
   "breadcrumb": {
     "home": "Home",
     "blog": "Blog"
@@ -41,13 +69,13 @@
     "blog": "Blog",
     "process": "Process",
     "contact": "Contact",
-    "freeVisit": "Complimentary visit"
+    "freeVisit": "Book your visit"
   },
   "hero": {
     "title": "Premium home renovations on the Costa del Sol",
     "subtitle": "Your trusted renovation company in Marbella, Benalmádena, Fuengirola and Torremolinos. Luxury porcelain tile, custom kitchens and bathrooms for villas and apartments.",
     "experience": "Over 10 years renovating homes in Málaga",
-    "requestConsultation": "Request free visit",
+    "requestConsultation": "Book your visit",
     "viewProjects": "View projects"
   },
   "footer": {
@@ -69,6 +97,14 @@
     "estepona": "Estepona",
     "torremolinos": "Torremolinos",
     "porcelanicosMalaga": "Porcelain Tiles Málaga",
+    "caracas": "Caracas",
+    "brandVe": "Dekorama Caracas",
+    "descriptionVe": "Full renovations, custom kitchens and bathrooms in Caracas. Over 15 years in Venezuela. Local contact by email.",
+    "marketVe": "Venezuela:",
+    "areaVe": "Caracas and residential districts",
+    "locationsVe": "Venezuela",
+    "contactCaracas": "Contact Caracas",
+    "spainSite": "Spain · Costa del Sol",
     "blog": "Blog",
     "projects": "Projects",
     "privacy": "Privacy Policy",
@@ -78,15 +114,15 @@
     "copyright": "All rights reserved."
   },
   "cta": {
-    "requestFreeVisit": "Request complimentary visit",
+    "requestFreeVisit": "Book your visit",
     "requestQuote": "Request quote",
     "viewProjects": "View projects",
     "readyToTransform": "Ready to transform your space?",
     "tellUsProject": "Tell us about your project and we'll get back to you promptly. Include as much detail as you like so we can help you better.",
     "projectInMind": "Have a project in mind?",
-    "requestVisitNoCommitment": "Request a complimentary visit and we'll advise you personally",
+    "requestVisitNoCommitment": "Book your visit and we'll advise you personally",
     "wouldYouLikeAdvice": "Would you like our advice?",
-    "freeVisitAndQuote": "Complimentary visit and detailed quote",
+    "freeVisitAndQuote": "Book your visit and get a detailed quote",
     "viewMoreArticles": "View more articles"
   },
   "form": {
@@ -102,7 +138,7 @@
       "otro": "Other"
     },
     "descriptionPlaceholder": "Describe your project or what you need (optional)",
-    "submit": "Request complimentary visit",
+    "submit": "Book your visit",
     "sending": "Sending…",
     "successTitle": "Message sent successfully.",
     "successSubtitle": "We'll get back to you as soon as possible.",
@@ -115,8 +151,8 @@
   },
   "beneficios": {
     "title": "The renovation you always wanted, no surprises",
-    "freeVisit": "Complimentary visit",
-    "freeVisitDesc": "We visit you at no cost to assess your project and advise you in person",
+    "freeVisit": "Book your visit",
+    "freeVisitDesc": "We visit you to assess your project and advise you in person",
     "perfectWork": "Perfect result or we don't leave",
     "perfectWorkDesc": "We don't consider the job done until it's perfect. Your satisfaction is our commitment",
     "budget": "Quote",
@@ -137,10 +173,16 @@
     "materiales": "Premium Materials",
     "materialesDesc": "Porcelain tiles, taps, shower trays, lighting, screens and exterior materials from top brands"
   },
+  "serviciosPage": {
+    "metaTitle": "Renovation services",
+    "metaDescription": "Full renovations, custom kitchens, complete bathrooms and premium materials on the Costa del Sol.",
+    "title": "Our services",
+    "subtitle": "Renovations, kitchens, bathrooms and premium materials. Everything you need to transform your home."
+  },
   "proceso": {
     "title": "How we work: Simple, clear, no fuss",
     "step1Title": "Initial consultation",
-    "step1Desc": "Complimentary visit to understand your needs and the space to renovate",
+    "step1Desc": "Book your visit to understand your needs and the space to renovate",
     "step2Title": "Quote",
     "step2Desc": "We present a detailed and transparent quote",
     "step3Title": "3D quote approval",
@@ -416,8 +458,8 @@
       }
     },
     "catalogo": {
-      "title": "Tiles & Materials Catalogue | Costa del Sol",
-      "description": "Online catalogue of premium renovation materials in Benalmádena and the Costa del Sol. Porcelain tiles, taps, sanitaryware, lighting and more. Dekorama.",
+      "title": "Materials catalogue",
+      "description": "Premium porcelain tiles, taps, sanitaryware and lighting for renovations in Benalmádena and the Costa del Sol.",
       "h1": "Materials that define luxury",
       "eyebrow": "Exclusive catalogue 2025–2026",
       "heroSubtitle": "A carefully curated selection of the finest European brands in porcelain tiles, taps, sanitaryware and lighting for high-end projects on the Costa del Sol.",
@@ -448,12 +490,12 @@
       "visitShowroom": "Prefer to see it in person? Visit our showroom in Benalmádena — no commitment needed."
     },
     "proyectos": {
-      "title": "Renovation Projects Costa del Sol | Dekorama",
-      "description": "Gallery of full renovation, kitchen and bathroom projects by Dekorama in Benalmádena and the Costa del Sol. Completed works.",
+      "title": "Renovation projects",
+      "description": "Gallery of full renovations, kitchens and bathrooms completed by Dekorama on the Costa del Sol.",
       "h1": "Projects that speak for us",
       "intro": "Every renovation is a unique project. These are some of the works we have carried out on the Costa del Sol.",
       "backHome": "Back to home",
-      "requestConsultation": "Request consultation"
+      "requestConsultation": "Book your visit"
     }
   },
   "imageTypes": {
@@ -579,12 +621,21 @@
     }
   },
   "contactPage": {
-    "metaTitle": "Contact | Dekorama Costa del Sol",
-    "metaDescription": "Contact Dekorama for full renovations, custom kitchens and bathrooms on the Costa del Sol. Complimentary consultation. Visit our showroom in Benalmádena.",
+    "metaTitle": "Contact",
+    "metaDescription": "Contact Dekorama in Benalmádena. Free consultation for renovations, kitchens and bathrooms on the Costa del Sol.",
     "title": "Contact",
     "subtitle": "Tell us about your project and we'll get back to you as soon as possible. Visit us at our showroom or request a complimentary consultation.",
     "infoAddress": "Address",
     "infoPhone": "Phone",
+    "infoEmail": "Email"
+  },
+  "contactPageVe": {
+    "metaTitle": "Contact Caracas",
+    "metaDescription": "Contact Dekorama Caracas by email. Over 15 years renovating in Venezuela. Free consultation.",
+    "title": "Contact Caracas",
+    "subtitle": "Email us. Local support in Caracas — email only.",
+    "channelsTitle": "Email",
+    "noLocation": "Caracas support without a published physical showroom. Reach us by email only.",
     "infoEmail": "Email"
   },
   "ciudades": {
@@ -673,7 +724,7 @@
         "q3": "Do you handle small bathrooms and compact kitchens?",
         "a3": "Yes. We optimise layout and storage in smaller coastal apartments.",
         "q4": "How do I book a visit in Torremolinos?",
-        "a4": "Call +34 628 571 537 or use the contact form. We arrange a complimentary visit at your property."
+        "a4": "Call +34 628 571 537 or use the contact form. We arrange your visit at the property."
       }
     },
     "porcelanicos": {
@@ -703,29 +754,30 @@
       "showroomDesc": "Come and see and touch our porcelain tiles in person. We advise you at no obligation and help you choose the best material for your project. Easy access from Málaga, Marbella, Fuengirola, Torremolinos and the entire Costa del Sol."
     },
     "caracas": {
-      "title": "Full Renovations in Caracas | Dekorama",
-      "description": "Full renovations, custom kitchens and bathrooms in Caracas, Venezuela. Same team, same quality as the Costa del Sol. Free no-obligation quote.",
+      "title": "Full Renovations in Caracas",
+      "description": "Full renovations, custom kitchens and bathrooms in Caracas. Over 15 years in the Venezuelan market. Design, premium materials and professional delivery.",
       "h1": "Full Renovations in Caracas, Venezuela",
-      "intro": "We bring the same quality and experience from our Spanish projects directly to Caracas. Custom kitchens, complete bathrooms and full renovations with premium materials and professional finishes.",
-      "whyUs": "Dekorama in Venezuela: same trust, different continent",
-      "whyUsDesc": "The same team that has spent over 10 years transforming homes on the Costa del Sol now operates in Caracas too. Custom design, top-brand materials and full project management from start to finish.",
+      "intro": "Over 15 years transforming homes and spaces in Caracas. Custom kitchens, complete bathrooms and full renovations with premium materials, high-end finishes and local project management.",
+      "marketBadge": "Dekorama Caracas · 15+ years in Venezuela",
+      "marketPresence": "You are on Dekorama Caracas. Local support for projects in Venezuela.",
+      "whyUs": "Local expertise. Results you can see.",
+      "whyUsDesc": "We have spent over 15 years in the Venezuelan market renovating homes, apartments and commercial spaces in Caracas. Custom design, top-brand materials and end-to-end support — with the local market knowledge that only real tenure brings.",
       "servicesTitle": "Our services in Caracas",
       "zonesTitle": "Service areas in Caracas",
       "zonesDesc": "We cover projects across Caracas and its main residential districts: Altamira, Las Mercedes, El Hatillo, La Trinidad, Chacao, Baruta and surroundings.",
-      "phone": "+58 XXX XXX XXXX",
       "faq": {
         "title": "Frequently asked questions about renovations in Caracas",
-        "q1": "Does Dekorama have a physical store in Caracas?",
-        "a1": "Yes. We have a physical store in Caracas where you can see our materials in person and speak with our team.",
-        "q2": "Do you offer the same services as in Spain?",
-        "a2": "Yes. Full renovations, custom kitchens, complete bathrooms and premium material supply, to the same quality standard as on the Costa del Sol.",
+        "q1": "How do I contact Dekorama in Caracas?",
+        "a1": "Email us at cravelo@dekoramagroup.com or use the contact form. We reply by email to advise you at no cost.",
+        "q2": "What services do you offer in Caracas?",
+        "a2": "Full renovations, custom kitchens, complete bathrooms and premium material supply and installation, backed by over 15 years of experience in Venezuela.",
         "q3": "How do I request a quote in Caracas?",
-        "a3": "Contact us by phone, WhatsApp or form. We visit your property and provide a detailed no-obligation quote.",
+        "a3": "Send your enquiry to cravelo@dekoramagroup.com or complete the contact form. We coordinate the visit and a detailed no-obligation quote.",
         "q4": "Do you take on residential and commercial projects in Caracas?",
-        "a4": "Yes. We deliver renovations in homes, apartments and commercial spaces in Caracas with the same precision and finishes as in Spain."
+        "a4": "Yes. We deliver renovations in homes, apartments and commercial spaces in Caracas with high-quality finishes and full project management."
       }
     },
-    "commonCTA": "Request free visit",
+    "commonCTA": "Book your visit",
     "commonServices": {
       "service1": "Complete full renovations",
       "service2": "Custom design kitchens",

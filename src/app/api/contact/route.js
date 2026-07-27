@@ -27,7 +27,7 @@ export async function POST(request) {
   }
 
   try {
-    const { nombre, telefono, email, tipoReforma, descripcion } = body
+    const { nombre, telefono, email, tipoReforma, descripcion, market } = body
 
     if (!nombre?.trim() || !telefono?.trim() || !email?.trim() || !tipoReforma) {
       return NextResponse.json(
@@ -61,8 +61,18 @@ export async function POST(request) {
       otro: 'Otro',
     }[tipoReforma] || tipoReforma
 
+    const marketLabel =
+      market === 'venezuela' ? 'Venezuela / Caracas' : 'España / Costa del Sol'
+    const recipientEmail =
+      market === 'venezuela'
+        ? 'cravelo@dekoramagroup.com'
+        : senderEmail
+    const recipientName =
+      market === 'venezuela' ? 'Dekorama Caracas' : senderName
+
     const htmlContent = `
       <h2>Nueva consulta desde la web</h2>
+      <p><strong>Mercado:</strong> ${escapeHtml(marketLabel)}</p>
       <p><strong>Nombre:</strong> ${escapeHtml(nombre)}</p>
       <p><strong>Teléfono:</strong> ${escapeHtml(telefono)}</p>
       <p><strong>Email:</strong> ${escapeHtml(email)}</p>
@@ -83,9 +93,9 @@ export async function POST(request) {
       },
       body: JSON.stringify({
         sender: { name: senderName, email: senderEmail },
-        to: [{ email: senderEmail, name: senderName }],
+        to: [{ email: recipientEmail, name: recipientName }],
         replyTo: { email: email.trim(), name: nombre.trim() },
-        subject: `[Web] Consulta: ${nombre.trim()} - ${tipoLabel}`,
+        subject: `[Web ${market === 'venezuela' ? 'VE' : 'ES'}] Consulta: ${nombre.trim()} - ${tipoLabel}`,
         htmlContent,
       }),
     }).finally(() => clearTimeout(timeoutId))

@@ -4,15 +4,18 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import CookieBanner from '@/components/CookieBanner'
+import MarketGate from '@/components/MarketGate'
 import GoogleTagManager from '@/components/GoogleTagManager'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import SetHtmlLang from '@/components/SetHtmlLang'
 import { metaDescription, businessDescription } from '@/lib/site'
 import { baseUrl } from '@/lib/site'
+import { markets } from '@/lib/markets'
+import { buildSiteNavigationJsonLd } from '@/lib/siteNavigation'
 
 const TITLES = {
-  es: 'Dekorama | Materiales y Reformas Integrales, Cocinas y Baños | Costa del Sol, Málaga',
-  en: "Dekorama | Materials & Full Renovations, Kitchens & Bathrooms | Costa del Sol, Málaga",
+  es: 'Dekorama | Reformas Integrales, Cocinas y Baños | Costa del Sol',
+  en: 'Dekorama | Full Renovations, Kitchens & Bathrooms | Costa del Sol',
 }
 
 const DESCRIPTIONS = {
@@ -36,7 +39,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       type: 'website',
       locale: isEn ? 'en_GB' : 'es_ES',
-      url: isEn ? `${baseUrl}/en` : baseUrl,
+      url: isEn ? `${baseUrl}/en` : `${baseUrl}/es`,
       siteName: 'Dekorama',
       title,
       description,
@@ -118,12 +121,12 @@ export default async function LocaleLayout({ children, params }) {
     '@type': 'WebSite',
     '@id': `${baseUrl}/#website`,
     name: 'Dekorama',
-    url: baseUrl,
+    alternateName: ['Dekorama Group', 'Grupo Dekorama'],
+    url: resolvedLocale === 'en' ? `${baseUrl}/en` : `${baseUrl}/es`,
     description: businessDescription,
-    publisher: {
-      '@id': `${baseUrl}/#business`,
-    },
     inLanguage: [resolvedLocale === 'en' ? 'en-GB' : 'es-ES'],
+    publisher: { '@id': `${baseUrl}/#organization` },
+    about: { '@id': `${baseUrl}/#business` },
   }
 
   const organizationJsonLd = {
@@ -132,22 +135,40 @@ export default async function LocaleLayout({ children, params }) {
     '@id': `${baseUrl}/#organization`,
     name: 'Dekorama',
     url: baseUrl,
-    logo: `${baseUrl}/dekorama-logo-cropped.svg`,
-    description: businessDescription,
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: '+34-628-571-537',
-      contactType: 'customer service',
-      email: 'info@dekoramagroup.com',
-      areaServed: ['ES', 'GB'],
-      availableLanguage: ['Spanish', 'English'],
+    logo: {
+      '@type': 'ImageObject',
+      url: `${baseUrl}/dekorama-logo-cropped.svg`,
     },
+    image: `${baseUrl}/dekorama-favicon.png`,
+    description: businessDescription,
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        telephone: '+34-628-571-537',
+        contactType: 'customer service',
+        email: 'info@dekoramagroup.com',
+        areaServed: ['ES', 'GB'],
+        availableLanguage: ['Spanish', 'English'],
+      },
+      {
+        '@type': 'ContactPoint',
+        contactType: 'customer service',
+        email: markets.venezuela.email,
+        areaServed: ['VE'],
+        availableLanguage: ['Spanish', 'English'],
+        url: `${baseUrl}/es/contacto-caracas`,
+      },
+    ],
     sameAs: [
       'https://www.instagram.com/grupodekorama',
       'https://www.facebook.com/grupodekorama',
       'https://es.pinterest.com/dekoramagroup',
     ],
   }
+
+  const siteNavigationJsonLd = buildSiteNavigationJsonLd(
+    /** @type {'es' | 'en'} */ (resolvedLocale),
+  )
 
   return (
     <>
@@ -164,6 +185,10 @@ export default async function LocaleLayout({ children, params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationJsonLd) }}
+      />
       <GoogleTagManager />
       <GoogleAnalytics />
       <NextIntlClientProvider locale={resolvedLocale} messages={messages}>
@@ -172,6 +197,7 @@ export default async function LocaleLayout({ children, params }) {
         <Footer />
         <CookieBanner />
         <WhatsAppButton />
+        <MarketGate />
       </NextIntlClientProvider>
     </>
   )

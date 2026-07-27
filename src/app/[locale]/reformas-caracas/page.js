@@ -1,12 +1,16 @@
 import { images } from '@/data/images'
 import { baseUrl } from '@/lib/site'
+import { markets, buildLocalBusinessJsonLd } from '@/lib/markets'
 import { getTranslations } from 'next-intl/server'
 import PageHeader from '@/components/PageHeader'
 import ServiceGrid from '@/components/ServiceGrid'
 import RelatedLinks from '@/components/RelatedLinks'
 import CTASection from '@/components/CTASection'
 import PageFaq from '@/components/PageFaq'
+import SetVenezuelaMarket from '@/components/SetVenezuelaMarket'
 import { getPageFaqsFromTranslations } from '@/lib/pageFaqs'
+
+const ve = markets.venezuela
 
 export async function generateMetadata({ params }) {
   const { locale } = await params
@@ -23,8 +27,8 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: `${baseUrl}/${locale}/reformas-caracas`,
       languages: {
-        'es': `${baseUrl}/es/reformas-caracas`,
-        'en': `${baseUrl}/en/reformas-caracas`,
+        es: `${baseUrl}/es/reformas-caracas`,
+        en: `${baseUrl}/en/reformas-caracas`,
       },
     },
   }
@@ -36,14 +40,21 @@ export default async function ReformasCaracasPage({ params }) {
   const tCommon = await getTranslations({ locale, namespace: 'ciudades' })
   const tCta = await getTranslations({ locale, namespace: 'cta' })
 
+  const localBusinessJsonLd = buildLocalBusinessJsonLd(ve, {
+    description:
+      locale === 'es'
+        ? 'Reformas integrales, cocinas y baños a medida en Caracas. Más de 15 años en el mercado venezolano.'
+        : 'Full renovations, custom kitchens and bathrooms in Caracas. Over 15 years in the Venezuelan market.',
+  })
+
   const serviceJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     serviceType: locale === 'es' ? 'Reformas Integrales' : 'Full Renovations',
     provider: {
       '@type': 'LocalBusiness',
-      name: 'Dekorama',
-      '@id': `${baseUrl}/#business`,
+      name: ve.name,
+      '@id': ve.businessId,
     },
     areaServed: {
       '@type': 'City',
@@ -131,11 +142,22 @@ export default async function ReformasCaracasPage({ params }) {
 
   return (
     <>
+      <SetVenezuelaMarket />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
       <div className="min-h-screen bg-white">
+        <div className="border-b border-black/10 bg-[#0c1210] text-white">
+          <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+            <p className="font-heading text-lg tracking-wide sm:text-xl">{t('marketBadge')}</p>
+            <p className="text-sm text-white/70">{t('marketPresence')}</p>
+          </div>
+        </div>
 
         {/* ── PAGE HEADER ── */}
         <PageHeader
@@ -145,11 +167,11 @@ export default async function ReformasCaracasPage({ params }) {
           ]}
           title={t('h1')}
           subtitle={t('intro')}
-          heroImage={images.hero}
+          heroImage={images.markets.caracas}
           heroImageAlt={t('h1')}
           ctaPrimary={{
             text: tCta('requestQuote'),
-            href: `/${locale}#contacto`,
+            href: `/${locale}/contacto-caracas`,
           }}
           ctaSecondary={{
             text: tCta('viewProjects'),
@@ -169,19 +191,27 @@ export default async function ReformasCaracasPage({ params }) {
         </section>
 
         {/* ── POR QUÉ ELEGIRNOS ── */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
+        <section className="relative overflow-hidden py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+          <div
+            className="pointer-events-none absolute inset-0 opacity-90"
+            style={{
+              background:
+                'linear-gradient(135deg, #0c1210 0%, #1a2420 45%, #2a1f14 100%)',
+            }}
+            aria-hidden
+          />
+          <div className="relative mx-auto max-w-4xl text-center text-white">
+            <h2 className="mb-6 font-heading text-3xl md:text-4xl">
               {t('whyUs')}
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-lg leading-relaxed text-white/75">
               {t('whyUsDesc')}
             </p>
           </div>
         </section>
 
         {/* ── ZONAS ── */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-semibold text-black mb-6">
               {t('zonesTitle')}
@@ -190,19 +220,19 @@ export default async function ReformasCaracasPage({ params }) {
               {t('zonesDesc')}
             </p>
             <p className="text-base text-gray-500">
-              {locale === 'es' ? 'Teléfono Venezuela:' : 'Venezuela phone:'}{' '}
+              {locale === 'es' ? 'Contacto Venezuela:' : 'Venezuela contact:'}{' '}
               <a
-                href={`tel:${t('phone')}`}
+                href={`mailto:${ve.email}`}
                 className="font-medium text-black hover:underline"
               >
-                {t('phone')}
+                {ve.email}
               </a>
             </p>
           </div>
         </section>
 
         {/* ── RELATED SERVICES ── */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-8 md:mb-12 text-center">
               {locale === 'es' ? 'Servicios relacionados' : 'Related services'}
@@ -220,8 +250,13 @@ export default async function ReformasCaracasPage({ params }) {
           buttons={[
             {
               text: tCta('requestFreeVisit'),
-              href: `/${locale}#contacto`,
+              href: `/${locale}/contacto-caracas`,
               variant: 'primary',
+            },
+            {
+              text: ve.email,
+              href: `mailto:${ve.email}`,
+              variant: 'secondary',
             },
           ]}
         />

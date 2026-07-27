@@ -1,7 +1,21 @@
+'use client'
+
+import { markets } from '@/lib/markets'
+import { useActiveMarket } from '@/lib/useActiveMarket'
+
+/**
+ * Floating WhatsApp — Spain only. Venezuela is email-only contact.
+ */
 export default function WhatsAppButton() {
+  const marketId = useActiveMarket()
+
+  if (marketId === 'venezuela') return null
+
+  const market = markets.spain
+
   return (
     <a
-      href="https://wa.me/34628571537"
+      href={market.whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 w-14 h-14 md:w-16 md:h-16 bg-whatsapp rounded-full flex items-center justify-center shadow-xl active:scale-95 transition-transform duration-300"

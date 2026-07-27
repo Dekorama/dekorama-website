@@ -52,7 +52,7 @@ export default function Hero() {
               transition={{ delay: 0.4 }}
             >
               <Link
-                href="/#contacto"
+                href="/contacto"
                 className="btn-primary text-center"
               >
                 {t('requestConsultation')}

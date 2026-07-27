@@ -1,17 +1,16 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
-import { useTranslations, useLocale } from 'next-intl'
-import { Link, usePathname } from '@/i18n/navigation'
-import { getSlugForLocale } from '@/lib/blogSlugMap'
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
+import MarketSwitcher from '@/components/MarketSwitcher'
+import LocaleSwitcher from '@/components/LocaleSwitcher'
+import MarketContactLink from '@/components/MarketContactLink'
+import MarketHomeLink from '@/components/MarketHomeLink'
 
 export default function Header() {
   const t = useTranslations('nav')
   const tAria = useTranslations('aria')
-  const locale = useLocale()
-  const pathname = usePathname()
-  // usePathname from next-intl already returns the pathname without the locale prefix
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -28,23 +27,11 @@ export default function Header() {
   }, [isMenuOpen])
 
   const navLinks = [
-    { label: t('services'), href: '/#servicios' },
-    // { label: t('materials'), href: '/materiales' },
+    { label: t('services'), href: '/servicios' },
     { label: t('catalog'), href: '/catalogo' },
     { label: t('projects'), href: '/proyectos' },
     { label: t('blog'), href: '/blog' },
-    { label: t('contact'), href: '/contacto' },
   ]
-
-  // Translate blog post slug when switching locales
-  const getLocalizedPathname = (targetLocale) => {
-    const blogPostMatch = pathname.match(/^\/blog\/(.+)$/)
-    if (blogPostMatch) {
-      const translatedSlug = getSlugForLocale(blogPostMatch[1], targetLocale, locale)
-      return `/blog/${translatedSlug}`
-    }
-    return pathname
-  }
 
   return (
     <header
@@ -54,19 +41,7 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16 md:h-[4.25rem]">
-          <Link
-            href="/"
-            className="flex items-center hover:opacity-80 transition-opacity shrink-0"
-          >
-            <Image
-              src="/dekorama-logo-cropped.svg"
-              alt="Dekorama"
-              width={160}
-              height={42}
-              className="h-7 sm:h-8 md:h-9 w-auto object-contain"
-              priority
-            />
-          </Link>
+          <MarketHomeLink />
 
           <nav className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
@@ -78,51 +53,24 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <div className="flex items-center gap-3">
-              <span className="flex items-center gap-1 text-sm font-medium text-gray-500">
-                <Link
-                  href={getLocalizedPathname('es')}
-                  locale="es"
-                  className={locale === 'es' ? 'text-black font-semibold' : 'hover:text-black transition-colors'}
-                  aria-current={locale === 'es' ? 'true' : undefined}
-                >
-                  ES
-                </Link>
-                <span aria-hidden>|</span>
-                <Link
-                  href={getLocalizedPathname('en')}
-                  locale="en"
-                  className={locale === 'en' ? 'text-black font-semibold' : 'hover:text-black transition-colors'}
-                  aria-current={locale === 'en' ? 'true' : undefined}
-                >
-                  EN
-                </Link>
-              </span>
-              <Link
-                href="/#contacto"
-                className="px-4 py-2 text-sm font-medium bg-black text-white hover:bg-gray-800 focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 focus-visible:ring-offset-white transition-colors rounded-sm"
-              >
+            <MarketContactLink className="text-gray-600 hover:text-black focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 rounded-sm transition-colors font-medium text-[15px]">
+              {t('contact')}
+            </MarketContactLink>
+            <div className="flex items-center gap-1">
+              <MarketSwitcher />
+              <LocaleSwitcher />
+              <MarketContactLink className="ml-2 px-4 py-2 text-sm font-medium bg-black text-white hover:bg-gray-800 focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 focus-visible:ring-offset-white transition-colors rounded-sm">
                 {t('freeVisit')}
-              </Link>
+              </MarketContactLink>
             </div>
           </nav>
 
-          <div className="flex items-center gap-2 sm:gap-3 md:hidden">
-            <span className="flex items-center gap-1 text-xs sm:text-sm">
-              <Link href={getLocalizedPathname('es')} locale="es" className={locale === 'es' ? 'font-semibold text-black' : 'text-gray-500'}>
-                ES
-              </Link>
-              <span>|</span>
-              <Link href={getLocalizedPathname('en')} locale="en" className={locale === 'en' ? 'font-semibold text-black' : 'text-gray-500'}>
-                EN
-              </Link>
-            </span>
-            <Link
-              href="/#contacto"
-              className="px-3 py-1.5 text-xs sm:text-sm font-medium bg-black text-white rounded-sm hover:bg-gray-800 transition-colors"
-            >
+          <div className="flex items-center gap-1 md:hidden">
+            <MarketSwitcher />
+            <LocaleSwitcher />
+            <MarketContactLink className="ml-1 px-3 py-1.5 text-xs sm:text-sm font-medium bg-black text-white rounded-sm hover:bg-gray-800 transition-colors">
               {t('freeVisit')}
-            </Link>
+            </MarketContactLink>
             <button
               type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -144,7 +92,6 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile menu overlay + panel */}
       <div
         className={`fixed inset-0 z-40 md:hidden transition-opacity duration-200 ${
           isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
@@ -173,15 +120,24 @@ export default function Header() {
                   {link.label}
                 </Link>
               ))}
+              <MarketContactLink
+                onClick={() => setIsMenuOpen(false)}
+                className="py-3.5 px-3 text-base font-medium text-gray-800 hover:text-black hover:bg-gray-50 rounded-lg transition-colors -mx-3"
+              >
+                {t('contact')}
+              </MarketContactLink>
             </nav>
-            <div className="mt-auto pt-6 border-t border-gray-200">
-              <Link
-                href="/#contacto"
+            <div className="mt-auto space-y-4 border-t border-gray-200 pt-6">
+              <div className="flex items-center gap-2">
+                <MarketSwitcher align="left" />
+                <LocaleSwitcher align="left" />
+              </div>
+              <MarketContactLink
                 onClick={() => setIsMenuOpen(false)}
                 className="block w-full py-3 px-4 text-center text-sm font-medium bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
               >
                 {t('freeVisit')}
-              </Link>
+              </MarketContactLink>
             </div>
           </div>
         </div>

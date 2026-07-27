@@ -5,6 +5,34 @@
     "accept": "Aceptar",
     "ariaLabel": "Aviso de cookies"
   },
+  "marketGate": {
+    "ariaLabel": "Selecciona tu país",
+    "headline": "¿Dónde está tu proyecto?",
+    "subheadline": "Elige tu mercado. Misma calidad Dekorama, contacto local.",
+    "badgeNew": "NUEVO",
+    "badgeText": "España y Venezuela",
+    "navHint": "Selecciona tu país para continuar",
+    "spainLabel": "España",
+    "spainDetail": "Costa del Sol · Benalmádena",
+    "spainStatus": "Showroom abierto",
+    "spainCta": "Entrar",
+    "spainImageAlt": "Villa reformada en la Costa del Sol",
+    "venezuelaLabel": "Venezuela",
+    "venezuelaDetail": "Caracas · +15 años",
+    "venezuelaStatus": "Atención local",
+    "venezuelaCta": "Entrar",
+    "venezuelaImageAlt": "Proyecto de reforma en Caracas",
+    "switcherAria": "País",
+    "switchSpain": "ES",
+    "switchVenezuela": "VE",
+    "switchSpainShort": "ES",
+    "switchVenezuelaShort": "VE"
+  },
+  "localeSwitcher": {
+    "ariaLabel": "Idioma",
+    "es": "Español",
+    "en": "English"
+  },
   "breadcrumb": {
     "home": "Inicio",
     "blog": "Blog"
@@ -41,13 +69,13 @@
     "blog": "Blog",
     "process": "Proceso",
     "contact": "Contacto",
-    "freeVisit": "Visita sin costo"
+    "freeVisit": "Haz tu visita"
   },
   "hero": {
     "title": "Reformas integrales y materiales de diseño en la Costa del Sol",
     "subtitle": "Tu empresa de confianza en Benalmádena, Marbella, Fuengirola y Torremolinos. Porcelánico, cocinas y baños de lujo para tu vivienda o villa.",
     "experience": "Más de 10 años reformando hogares en Málaga",
-    "requestConsultation": "Solicitar visita gratuita",
+    "requestConsultation": "Haz tu visita",
     "viewProjects": "Ver proyectos"
   },
   "footer": {
@@ -69,6 +97,14 @@
     "estepona": "Estepona",
     "torremolinos": "Torremolinos",
     "porcelanicosMalaga": "Porcelánicos Málaga",
+    "caracas": "Caracas",
+    "brandVe": "Dekorama Caracas",
+    "descriptionVe": "Reformas integrales, cocinas y baños a medida en Caracas. Más de 15 años en Venezuela. Contacto local por email.",
+    "marketVe": "Venezuela:",
+    "areaVe": "Caracas y zonas residenciales",
+    "locationsVe": "Venezuela",
+    "contactCaracas": "Contacto Caracas",
+    "spainSite": "España · Costa del Sol",
     "blog": "Blog",
     "projects": "Proyectos",
     "privacy": "Política de Privacidad",
@@ -78,15 +114,15 @@
     "copyright": "Todos los derechos reservados."
   },
   "cta": {
-    "requestFreeVisit": "Solicitar visita sin costo",
+    "requestFreeVisit": "Haz tu visita",
     "requestQuote": "Pedir presupuesto",
     "viewProjects": "Ver proyectos",
     "readyToTransform": "¿Listo para transformar tu espacio?",
     "tellUsProject": "Cuéntanos tu proyecto y te respondemos rápidamente. Incluye todos los detalles que quieras para que podamos orientarte mejor.",
     "projectInMind": "¿Tienes un proyecto en mente?",
-    "requestVisitNoCommitment": "Solicita una visita sin costo y te asesoramos personalmente",
+    "requestVisitNoCommitment": "Haz tu visita y te asesoramos personalmente",
     "wouldYouLikeAdvice": "¿Te gustaría que te asesoremos?",
-    "freeVisitAndQuote": "Visita sin costo y presupuesto detallado",
+    "freeVisitAndQuote": "Haz tu visita y recibe presupuesto detallado",
     "viewMoreArticles": "Ver más artículos"
   },
   "form": {
@@ -102,7 +138,7 @@
       "otro": "Otro"
     },
     "descriptionPlaceholder": "Describe tu proyecto o lo que necesitas (opcional)",
-    "submit": "Solicitar visita sin costo",
+    "submit": "Haz tu visita",
     "sending": "Enviando…",
     "successTitle": "Mensaje enviado correctamente.",
     "successSubtitle": "Te contestaremos lo antes posible.",
@@ -115,8 +151,8 @@
   },
   "beneficios": {
     "title": "La reforma que siempre quisiste, sin sorpresas",
-    "freeVisit": "Visita sin costo",
-    "freeVisitDesc": "Te visitamos sin costo para valorar tu proyecto y asesorarte en persona",
+    "freeVisit": "Haz tu visita",
+    "freeVisitDesc": "Te visitamos para valorar tu proyecto y asesorarte en persona",
     "perfectWork": "Obra perfecta o no salimos",
     "perfectWorkDesc": "No damos la obra por terminada hasta que quede perfecta. Tu satisfacción es nuestro compromiso",
     "budget": "Presupuesto",
@@ -137,10 +173,16 @@
     "materiales": "Materiales premium",
     "materialesDesc": "Porcelánicos, grifería, platos de ducha, iluminación, mamparas y materiales de exterior de primeras marcas"
   },
+  "serviciosPage": {
+    "metaTitle": "Servicios de reforma",
+    "metaDescription": "Reformas integrales, cocinas a medida, baños completos y materiales premium en la Costa del Sol.",
+    "title": "Nuestros servicios",
+    "subtitle": "Reformas, cocinas, baños y materiales premium. Todo lo que necesitas para transformar tu hogar."
+  },
   "proceso": {
     "title": "Cómo trabajamos: Simple, claro, sin complicaciones",
     "step1Title": "Consulta inicial",
-    "step1Desc": "Visita sin costo para conocer tus necesidades y el espacio a reformar",
+    "step1Desc": "Haz tu visita para conocer tus necesidades y el espacio a reformar",
     "step2Title": "Presupuesto",
     "step2Desc": "Te presentamos un presupuesto detallado y transparente",
     "step3Title": "Aceptación de presupuesto 3D",
@@ -416,8 +458,8 @@
       }
     },
     "catalogo": {
-      "title": "Catálogo Porcelánicos | Dekorama Costa del Sol",
-      "description": "Catálogo online de materiales premium para reformas en Benalmádena y la Costa del Sol. Porcelánicos, grifería, sanitarios, iluminación y más. Dekorama.",
+      "title": "Catálogo de materiales",
+      "description": "Porcelánicos, grifería, sanitarios e iluminación premium para reformas en Benalmádena y la Costa del Sol.",
       "h1": "Materiales que definen el lujo",
       "eyebrow": "Catálogo exclusivo 2025–2026",
       "heroSubtitle": "Una selección cuidada de las mejores marcas en porcelánicos, grifería, sanitarios e iluminación para proyectos de alta gama en la Costa del Sol.",
@@ -448,12 +490,12 @@
       "visitShowroom": "¿Prefieres verlo en persona? Visítanos en nuestro showroom en Benalmádena y te asesoramos sin compromiso."
     },
     "proyectos": {
-      "title": "Proyectos Reformas Costa del Sol | Dekorama",
-      "description": "Galería de proyectos de reformas integrales, cocinas y baños realizados por Dekorama en Benalmádena y la Costa del Sol. Obras terminadas.",
+      "title": "Proyectos de reforma",
+      "description": "Galería de reformas integrales, cocinas y baños realizados por Dekorama en la Costa del Sol.",
       "h1": "Proyectos que hablan por nosotros",
       "intro": "Cada reforma es un proyecto único. Estos son algunos de los trabajos que hemos realizado en la Costa del Sol.",
       "backHome": "Volver al inicio",
-      "requestConsultation": "Solicitar consulta"
+      "requestConsultation": "Haz tu visita"
     }
   },
   "imageTypes": {
@@ -579,12 +621,21 @@
     }
   },
   "contactPage": {
-    "metaTitle": "Contacto | Dekorama Costa del Sol",
-    "metaDescription": "Contacta con Dekorama para reformas integrales, cocinas y baños a medida en la Costa del Sol. Consulta sin costo. Visítanos en nuestro showroom en Benalmádena.",
+    "metaTitle": "Contacto",
+    "metaDescription": "Contacta con Dekorama en Benalmádena. Consulta sin costo para reformas, cocinas y baños en la Costa del Sol.",
     "title": "Contacto",
     "subtitle": "Cuéntanos tu proyecto y te responderemos lo antes posible. Visítanos en nuestro showroom o solicita una consulta sin costo.",
     "infoAddress": "Dirección",
     "infoPhone": "Teléfono",
+    "infoEmail": "Email"
+  },
+  "contactPageVe": {
+    "metaTitle": "Contacto Caracas",
+    "metaDescription": "Contacta Dekorama Caracas por email. Más de 15 años en reformas en Venezuela. Consulta sin costo.",
+    "title": "Contacto Caracas",
+    "subtitle": "Escríbenos por email. Atención local en Caracas — solo correo.",
+    "channelsTitle": "Email",
+    "noLocation": "Atención en Caracas sin showroom físico publicado. Contacto únicamente por email.",
     "infoEmail": "Email"
   },
   "ciudades": {
@@ -673,7 +724,7 @@
         "q3": "¿Hacéis baños pequeños y cocinas compactas?",
         "a3": "Sí. Optimizamos distribución y almacenaje en espacios reducidos, habituales en apartamentos de la costa.",
         "q4": "¿Cómo solicito una visita en Torremolinos?",
-        "a4": "Llama al +34 628 571 537 o usa el formulario de contacto. Concertamos visita sin costo en tu vivienda."
+        "a4": "Llama al +34 628 571 537 o usa el formulario de contacto. Concertamos tu visita en la vivienda."
       }
     },
     "porcelanicos": {
@@ -703,29 +754,30 @@
       "showroomDesc": "Ven a tocar y ver nuestros porcelánicos en persona. Te asesoramos sin compromiso y te ayudamos a elegir el mejor material para tu proyecto. Fácil acceso desde Málaga, Marbella, Fuengirola, Torremolinos y toda la Costa del Sol."
     },
     "caracas": {
-      "title": "Reformas Integrales en Caracas | Dekorama",
-      "description": "Reformas integrales, cocinas y baños a medida en Caracas, Venezuela. Mismo equipo, misma calidad que en la Costa del Sol. Presupuesto sin costo.",
+      "title": "Reformas Integrales en Caracas",
+      "description": "Reformas integrales, cocinas y baños a medida en Caracas. Más de 15 años en el mercado venezolano. Diseño, materiales premium y ejecución profesional.",
       "h1": "Reformas Integrales en Caracas, Venezuela",
-      "intro": "Llevamos la misma calidad y experiencia de nuestros proyectos en España directamente a Caracas. Cocinas a medida, baños completos y reformas integrales con materiales premium y acabados profesionales.",
-      "whyUs": "Dekorama en Venezuela: la misma confianza, en otro continente",
-      "whyUsDesc": "El mismo equipo que lleva más de 10 años transformando viviendas en la Costa del Sol opera ahora también en Caracas. Diseño personalizado, materiales de primeras marcas y gestión integral del proyecto de principio a fin.",
+      "intro": "Más de 15 años transformando viviendas y espacios en Caracas. Cocinas a medida, baños completos y reformas integrales con materiales premium, acabados de alto nivel y gestión local del proyecto.",
+      "marketBadge": "Dekorama Caracas · +15 años en Venezuela",
+      "marketPresence": "Estás en Dekorama Caracas. Atención local para proyectos en Venezuela.",
+      "whyUs": "Experiencia local. Resultados que se notan.",
+      "whyUsDesc": "Llevamos más de 15 años en el mercado venezolano reformando viviendas, apartamentos y locales en Caracas. Diseño personalizado, materiales de primeras marcas y acompañamiento de principio a fin — con el conocimiento del mercado local que solo da la trayectoria.",
       "servicesTitle": "Nuestros servicios en Caracas",
       "zonesTitle": "Zonas de servicio en Caracas",
       "zonesDesc": "Atendemos proyectos en Caracas y sus principales zonas residenciales: Altamira, Las Mercedes, El Hatillo, La Trinidad, Chacao, Baruta y alrededores.",
-      "phone": "+58 XXX XXX XXXX",
       "faq": {
         "title": "Preguntas frecuentes sobre reformas en Caracas",
-        "q1": "¿Dekorama tiene tienda física en Caracas?",
-        "a1": "Sí. Contamos con tienda física en Caracas donde puedes ver nuestros materiales en persona y recibir asesoramiento de nuestro equipo.",
-        "q2": "¿Ofrecéis los mismos servicios que en España?",
-        "a2": "Sí. Reformas integrales, cocinas a medida, baños completos y suministro de materiales premium, con el mismo estándar de calidad que en la Costa del Sol.",
+        "q1": "¿Cómo contacto con Dekorama en Caracas?",
+        "a1": "Escríbenos a cravelo@dekoramagroup.com o usa el formulario de contacto. Te respondemos por email para asesorarte sin costo.",
+        "q2": "¿Qué servicios ofrecéis en Caracas?",
+        "a2": "Reformas integrales, cocinas a medida, baños completos y suministro e instalación de materiales premium, con más de 15 años de experiencia en Venezuela.",
         "q3": "¿Cómo solicito presupuesto en Caracas?",
-        "a3": "Puedes contactarnos por teléfono, WhatsApp o formulario. Visitamos tu vivienda y entregamos presupuesto detallado sin costo.",
+        "a3": "Envía tu consulta por email a cravelo@dekoramagroup.com o completa el formulario de contacto. Coordinamos la visita y el presupuesto detallado sin costo.",
         "q4": "¿Trabajáis proyectos residenciales y comerciales en Caracas?",
-        "a4": "Sí. Ejecutamos reformas en viviendas, apartamentos y locales comerciales en Caracas con el rigor y los acabados que nos caracterizan en España."
+        "a4": "Sí. Ejecutamos reformas en viviendas, apartamentos y locales comerciales en Caracas con acabados de alta calidad y gestión integral del proyecto."
       }
     },
-    "commonCTA": "Solicitar visita gratuita",
+    "commonCTA": "Haz tu visita",
     "commonServices": {
       "service1": "Reformas integrales completas",
       "service2": "Cocinas a medida de diseño",

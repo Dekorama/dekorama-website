@@ -6,6 +6,7 @@ const LOCALES = ['es', 'en']
 
 const staticPaths = [
   { path: '', priority: 1, changeFrequency: 'weekly' },
+  { path: '/servicios', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/materiales', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/reformas-integrales', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/cocinas-a-medida', priority: 0.9, changeFrequency: 'monthly' },
@@ -15,11 +16,12 @@ const staticPaths = [
   { path: '/proyectos', priority: 0.9, changeFrequency: 'weekly' },
   { path: '/blog', priority: 0.8, changeFrequency: 'weekly' },
   { path: '/contacto', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/contacto-caracas', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/partners', priority: 0.7, changeFrequency: 'monthly' },
   { path: '/link-exchange', priority: 0.6, changeFrequency: 'monthly' },
   // Páginas por ciudad (SEO local crítico)
   { path: '/reformas-marbella', priority: 0.95, changeFrequency: 'monthly' },
-  { path: '/reformas-caracas', priority: 0.7, changeFrequency: 'monthly' },
+  { path: '/reformas-caracas', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/reformas-fuengirola', priority: 0.95, changeFrequency: 'monthly' },
   { path: '/reformas-estepona', priority: 0.95, changeFrequency: 'monthly' },
   { path: '/reformas-torremolinos', priority: 0.95, changeFrequency: 'monthly' },

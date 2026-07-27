@@ -14,12 +14,12 @@ export async function generateMetadata({ params }) {
       ? 'Trends in porcelain tile, renovations and interior design. Tips and news from Dekorama on the Costa del Sol.'
       : 'Tendencias en porcelánico, reformas y diseño de interiores. Consejos y novedades de Dekorama en la Costa del Sol.',
     openGraph: {
-      title: 'Blog | Dekorama Costa del Sol',
+      title: 'Blog | Dekorama',
       description: isEn ? 'Trends in porcelain, wood-look tile and renovations.' : 'Tendencias en porcelánico, tarima y reformas. Consejos de nuestros expertos.',
-      url: locale === 'en' ? `${baseUrl}/en/blog` : `${baseUrl}/blog`,
+      url: `${baseUrl}/${locale}/blog`,
     },
     alternates: {
-      canonical: locale === 'en' ? `${baseUrl}/en/blog` : `${baseUrl}/es/blog`,
+      canonical: `${baseUrl}/${locale}/blog`,
       languages: { es: `${baseUrl}/es/blog`, en: `${baseUrl}/en/blog` },
     },
   }
