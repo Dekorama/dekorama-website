@@ -2,7 +2,7 @@ import { images } from '@/data/images'
 import { baseUrl } from '@/lib/site'
 import { markets, buildLocalBusinessJsonLd } from '@/lib/markets'
 import { getTranslations } from 'next-intl/server'
-import PageHeader from '@/components/PageHeader'
+import Hero from '@/components/Hero'
 import ServiceGrid from '@/components/ServiceGrid'
 import RelatedLinks from '@/components/RelatedLinks'
 import CTASection from '@/components/CTASection'
@@ -152,32 +152,16 @@ export default async function ReformasCaracasPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
       <div className="min-h-screen bg-white">
-        <div className="border-b border-black/10 bg-[#0c1210] text-white">
-          <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-            <p className="font-heading text-lg tracking-wide sm:text-xl">{t('marketBadge')}</p>
-            <p className="text-sm text-white/70">{t('marketPresence')}</p>
-          </div>
-        </div>
-
-        {/* ── PAGE HEADER ── */}
-        <PageHeader
-          breadcrumbItems={[
-            { label: locale === 'es' ? 'Inicio' : 'Home', href: `/${locale}` },
-            { label: locale === 'es' ? 'Reformas Caracas' : 'Renovations Caracas', href: null },
-          ]}
+        <Hero
+          eyebrow={t('marketBadge')}
           title={t('h1')}
           subtitle={t('intro')}
-          heroImage={images.markets.caracas}
-          heroImageAlt={t('h1')}
-          ctaPrimary={{
-            text: tCta('requestQuote'),
-            href: `/${locale}/contacto-caracas`,
-          }}
-          ctaSecondary={{
-            text: tCta('viewProjects'),
-            href: `/${locale}/proyectos`,
-          }}
-          baseUrl={baseUrl}
+          image={images.markets.caracas}
+          imageAlt={t('h1')}
+          primaryHref="/contacto-caracas"
+          secondaryHref="/proyectos"
+          primaryLabel={tCta('requestQuote')}
+          secondaryLabel={tCta('viewProjects')}
         />
 
         {/* ── SERVICIOS ── */}

@@ -13,7 +13,7 @@ import HeaderDropdown, {
  * Subtle country/market dropdown (pin + short code).
  * Preference + route only — does not change Spain SEO schema.
  */
-export default function MarketSwitcher({ className = '', align = 'right' }) {
+export default function MarketSwitcher({ className = '', align = 'right', tone = 'light' }) {
   const t = useTranslations('marketGate')
   const pathname = usePathname()
   const router = useRouter()
@@ -41,6 +41,7 @@ export default function MarketSwitcher({ className = '', align = 'right' }) {
       value={triggerValue}
       className={className}
       align={align}
+      tone={tone}
     >
       {(close) => (
         <>
