@@ -398,8 +398,9 @@
     "keyword": "reforma integral de piso en Fuengirola",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-07-27T12:09:30.198Z"
   },
   {
     "keyword": "reforma integral de apartamento en Fuengirola",

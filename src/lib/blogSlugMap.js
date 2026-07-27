@@ -484,6 +484,14 @@ export const blogSlugMap = {
   'fuengirola-full-home-renovation-company': {
     es: 'empresa-reformas-integrales-fuengirola',
     en: 'fuengirola-full-home-renovation-company',
+  },
+  'reforma-integral-piso-fuengirola': {
+    es: 'reforma-integral-piso-fuengirola',
+    en: 'apartment-renovation-fuengirola',
+  },
+  'apartment-renovation-fuengirola': {
+    es: 'reforma-integral-piso-fuengirola',
+    en: 'apartment-renovation-fuengirola',
   },}
 
 /**
