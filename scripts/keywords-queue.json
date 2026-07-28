@@ -406,8 +406,9 @@
     "keyword": "reforma integral de apartamento en Fuengirola",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-07-28T11:08:43.200Z"
   },
   {
     "keyword": "reforma integral de villa en Fuengirola",
