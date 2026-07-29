@@ -500,6 +500,14 @@ export const blogSlugMap = {
   'apartment-renovation-fuengirola-costa-del-sol': {
     es: 'reforma-integral-apartamento-fuengirola',
     en: 'apartment-renovation-fuengirola-costa-del-sol',
+  },
+  'reforma-integral-villa-fuengirola': {
+    es: 'reforma-integral-villa-fuengirola',
+    en: 'villa-renovation-fuengirola-costa-del-sol',
+  },
+  'villa-renovation-fuengirola-costa-del-sol': {
+    es: 'reforma-integral-villa-fuengirola',
+    en: 'villa-renovation-fuengirola-costa-del-sol',
   },}
 
 /**
