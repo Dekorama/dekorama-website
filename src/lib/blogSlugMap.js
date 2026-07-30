@@ -508,6 +508,14 @@ export const blogSlugMap = {
   'villa-renovation-fuengirola-costa-del-sol': {
     es: 'reforma-integral-villa-fuengirola',
     en: 'villa-renovation-fuengirola-costa-del-sol',
+  },
+  'reforma-bano-completo-fuengirola-precio': {
+    es: 'reforma-bano-completo-fuengirola-precio',
+    en: 'fuengirola-bathroom-renovation-cost-2026',
+  },
+  'fuengirola-bathroom-renovation-cost-2026': {
+    es: 'reforma-bano-completo-fuengirola-precio',
+    en: 'fuengirola-bathroom-renovation-cost-2026',
   },}
 
 /**
