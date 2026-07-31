@@ -516,6 +516,14 @@ export const blogSlugMap = {
   'fuengirola-bathroom-renovation-cost-2026': {
     es: 'reforma-bano-completo-fuengirola-precio',
     en: 'fuengirola-bathroom-renovation-cost-2026',
+  },
+  'cuanto-cuesta-reformar-bano-fuengirola': {
+    es: 'cuanto-cuesta-reformar-bano-fuengirola',
+    en: 'bathroom-renovation-cost-fuengirola',
+  },
+  'bathroom-renovation-cost-fuengirola': {
+    es: 'cuanto-cuesta-reformar-bano-fuengirola',
+    en: 'bathroom-renovation-cost-fuengirola',
   },}
 
 /**
