@@ -38,7 +38,7 @@ const spainTelephone =
 
 /** Caracas — WhatsApp + call */
 const venezuelaTelephone =
-  process.env.NEXT_PUBLIC_VE_PHONE?.replace(/\s/g, '') || '+584336524'
+  process.env.NEXT_PUBLIC_VE_PHONE?.replace(/\s/g, '') || '+584144336524'
 
 /**
  * @typedef {object} MarketAddress
