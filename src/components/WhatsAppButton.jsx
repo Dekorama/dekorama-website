@@ -4,14 +4,13 @@ import { markets } from '@/lib/markets'
 import { useActiveMarket } from '@/lib/useActiveMarket'
 
 /**
- * Floating WhatsApp — Spain only. Venezuela is email-only contact.
+ * Floating WhatsApp — follows active market (Spain / Caracas).
  */
 export default function WhatsAppButton() {
   const marketId = useActiveMarket()
+  const market = markets[marketId] ?? markets.spain
 
-  if (marketId === 'venezuela') return null
-
-  const market = markets.spain
+  if (!market.phoneReady || !market.whatsappUrl) return null
 
   return (
     <a

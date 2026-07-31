@@ -3,8 +3,7 @@
 import { markets } from '@/lib/markets'
 
 /**
- * Contact channels for a market.
- * Venezuela: email only (no phone, WhatsApp, or address).
+ * Contact channels for a market (WhatsApp, phone, email when available).
  * @param {{
  *   marketId?: 'spain' | 'venezuela'
  *   showWhatsApp?: boolean

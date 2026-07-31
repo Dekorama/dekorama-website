@@ -13,8 +13,11 @@ function formatPhoneDisplay(e164) {
   if (digits.startsWith('34') && digits.length === 11) {
     return `+34 ${digits.slice(2, 5)} ${digits.slice(5, 8)} ${digits.slice(8)}`
   }
-  if (digits.startsWith('58') && digits.length >= 12) {
+  if (digits.startsWith('58') && digits.length >= 9) {
     const rest = digits.slice(2)
+    if (rest.length === 7) {
+      return `+58 ${rest.slice(0, 3)} ${rest.slice(3)}`
+    }
     return `+58 ${rest.slice(0, 3)} ${rest.slice(3, 6)} ${rest.slice(6)}`.trim()
   }
   return e164.startsWith('+') ? e164 : `+${digits}`
@@ -32,6 +35,10 @@ function toWhatsAppDigits(e164) {
 /** Spain HQ — site-wide NAP / LocalBusiness `#business` */
 const spainTelephone =
   process.env.NEXT_PUBLIC_ES_PHONE?.replace(/\s/g, '') || '+34628571537'
+
+/** Caracas — WhatsApp + call */
+const venezuelaTelephone =
+  process.env.NEXT_PUBLIC_VE_PHONE?.replace(/\s/g, '') || '+584336524'
 
 /**
  * @typedef {object} MarketAddress
@@ -81,15 +88,15 @@ export const markets = {
     },
     areaServed: ['ES', 'GB'],
   },
-  /** Caracas — email-only contact (no phone, no street address). */
+  /** Caracas — showroom by prior appointment; WhatsApp + call + email. */
   venezuela: {
     id: 'venezuela',
     businessId: `${baseUrl}/#business-caracas`,
     name: 'Dekorama Caracas',
-    telephone: '',
-    phoneDisplay: '',
-    whatsappUrl: '',
-    phoneReady: false,
+    telephone: venezuelaTelephone,
+    phoneDisplay: formatPhoneDisplay(venezuelaTelephone),
+    whatsappUrl: `https://wa.me/${toWhatsAppDigits(venezuelaTelephone)}`,
+    phoneReady: true,
     email: 'cravelo@dekoramagroup.com',
     address: {
       addressLocality: 'Caracas',

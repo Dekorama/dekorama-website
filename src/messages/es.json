@@ -229,7 +229,7 @@
     "porcelanicosMalaga": "Porcelánicos Málaga",
     "caracas": "Caracas",
     "brandVe": "Dekorama Caracas",
-    "descriptionVe": "Reformas integrales, cocinas y baños a medida en Caracas. Más de 15 años en Venezuela. Contacto local por email.",
+    "descriptionVe": "Reformas integrales, cocinas y baños a medida en Caracas. Más de 15 años en Venezuela. Showroom con cita previa.",
     "marketVe": "Venezuela:",
     "areaVe": "Caracas y zonas residenciales",
     "locationsVe": "Venezuela",
@@ -765,11 +765,14 @@
   },
   "contactPageVe": {
     "metaTitle": "Contacto Caracas",
-    "metaDescription": "Contacta Dekorama Caracas por email. Más de 15 años en reformas en Venezuela. Consulta sin costo.",
+    "metaDescription": "Contacta Dekorama Caracas por WhatsApp, teléfono o email. Showroom con cita previa. Más de 15 años en reformas en Venezuela.",
     "title": "Contacto Caracas",
-    "subtitle": "Escríbenos por email. Atención local en Caracas solo correo.",
-    "channelsTitle": "Email",
-    "noLocation": "Atención en Caracas sin showroom físico publicado. Contacto únicamente por email.",
+    "subtitle": "Cuéntanos tu proyecto y te responderemos lo antes posible. Visítanos en nuestro showroom con cita previa o solicita una consulta sin costo.",
+    "heroImageAlt": "Showroom Dekorama Caracas con materiales premium y vista a El Ávila",
+    "infoShowroom": "Showroom",
+    "infoShowroomBody": "Showroom en Caracas.\nVisitas solo con cita previa.",
+    "infoPhone": "Teléfono",
+    "infoWhatsApp": "WhatsApp",
     "infoEmail": "Email"
   },
   "ciudades": {
@@ -902,11 +905,11 @@
       "faq": {
         "title": "Preguntas frecuentes sobre reformas en Caracas",
         "q1": "¿Cómo contacto con Dekorama en Caracas?",
-        "a1": "Escríbenos a cravelo@dekoramagroup.com o usa el formulario de contacto. Te respondemos por email para asesorarte sin costo.",
+        "a1": "WhatsApp o llamada al +58 433 6524, email a cravelo@dekoramagroup.com o el formulario de contacto. Showroom con cita previa.",
         "q2": "¿Qué servicios ofrecéis en Caracas?",
         "a2": "Reformas integrales, cocinas a medida, baños completos y suministro e instalación de materiales premium, con más de 15 años de experiencia en Venezuela.",
         "q3": "¿Cómo solicito presupuesto en Caracas?",
-        "a3": "Envía tu consulta por email a cravelo@dekoramagroup.com o completa el formulario de contacto. Coordinamos la visita y el presupuesto detallado sin costo.",
+        "a3": "Escríbenos por WhatsApp, llámanos al +58 433 6524, email a cravelo@dekoramagroup.com o completa el formulario. Coordinamos visita y presupuesto sin costo.",
         "q4": "¿Trabajáis proyectos residenciales y comerciales en Caracas?",
         "a4": "Sí. Ejecutamos reformas en viviendas, apartamentos y locales comerciales en Caracas con acabados de alta calidad y gestión integral del proyecto."
       }
