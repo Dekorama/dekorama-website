@@ -8,8 +8,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { getStoredMarket, setStoredMarket } from '@/lib/marketPreference'
 import { detectMarket } from '@/lib/detectMarket'
 import { images } from '@/data/images'
-import SideRays from '@/components/SideRays'
-import ProfileCard from '@/components/ProfileCard'
 import LocaleSwitcher from '@/components/LocaleSwitcher'
 
 /**
@@ -23,15 +21,6 @@ export default function MarketGate() {
   const router = useRouter()
   const [open, setOpen] = useState(false)
   const [leaving, setLeaving] = useState(/** @type {null | 'spain' | 'venezuela'} */ (null))
-  const [enableTilt, setEnableTilt] = useState(false)
-
-  useEffect(() => {
-    const mq = window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 768px)')
-    const sync = () => setEnableTilt(mq.matches)
-    sync()
-    mq.addEventListener('change', sync)
-    return () => mq.removeEventListener('change', sync)
-  }, [])
 
   useEffect(() => {
     let cancelled = false
@@ -103,6 +92,27 @@ export default function MarketGate() {
     }, 420)
   }
 
+  const markets = [
+    {
+      id: /** @type {const} */ ('spain'),
+      label: t('spainLabel'),
+      detail: t('spainDetail'),
+      status: t('spainStatus'),
+      cta: t('spainCta'),
+      image: images.hero,
+      alt: t('spainImageAlt'),
+    },
+    {
+      id: /** @type {const} */ ('venezuela'),
+      label: t('venezuelaLabel'),
+      detail: t('venezuelaDetail'),
+      status: t('venezuelaStatus'),
+      cta: t('venezuelaCta'),
+      image: images.markets.caracas,
+      alt: t('venezuelaImageAlt'),
+    },
+  ]
+
   return (
     <AnimatePresence>
       {open ? (
@@ -111,122 +121,97 @@ export default function MarketGate() {
           role="dialog"
           aria-modal="true"
           aria-label={t('ariaLabel')}
-          className="fixed inset-0 z-[100] overflow-hidden text-white"
-          style={{
-            background:
-              'radial-gradient(ellipse 90% 60% at 70% 0%, #12161c 0%, #050505 42%, #030303 100%)',
-          }}
+          className="fixed inset-0 z-[100] flex flex-col overflow-hidden bg-white text-gray-900"
           initial={{ opacity: 0 }}
           animate={{ opacity: leaving ? 0 : 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.35 }}
         >
-          <div className="pointer-events-none absolute inset-0 z-[1]" aria-hidden>
-            <SideRays
-              speed={1.2}
-              rayColor1="#f4f7fb"
-              rayColor2="#96c8ff"
-              intensity={1.65}
-              spread={1.35}
-              origin="top-right"
-              tilt={-4}
-              saturation={0.85}
-              blend={0.62}
-              falloff={1.75}
-              opacity={0.95}
+          <motion.header
+            className="relative z-20 flex shrink-0 items-center justify-between border-b border-gray-200 px-5 py-3.5 sm:px-8 sm:py-4"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, ease: 'easeOut' }}
+          >
+            <Image
+              src="/dekorama-logo-cropped.svg"
+              alt="Dekorama"
+              width={160}
+              height={42}
+              className="h-7 w-auto object-contain sm:h-8 md:h-9"
+              priority
             />
-          </div>
+            <div className="flex items-center gap-3 sm:gap-5">
+              <p className="hidden text-[11px] uppercase tracking-[0.18em] text-gray-500 sm:block">
+                {t('navHint')}
+              </p>
+              <LocaleSwitcher tone="light" />
+            </div>
+          </motion.header>
 
-          <div
-            className="pointer-events-none absolute inset-0 z-[2]"
-            style={{
-              background:
-                'radial-gradient(ellipse 70% 50% at 50% 70%, rgba(5,5,5,0.35), transparent 70%), linear-gradient(180deg, rgba(5,5,5,0.15) 0%, rgba(5,5,5,0.55) 100%)',
-            }}
-            aria-hidden
-          />
-
-          <div className="relative z-10 flex h-[100dvh] max-h-[100dvh] flex-col">
-            <motion.header
-              className="mx-auto mt-[max(0.75rem,env(safe-area-inset-top))] flex w-[min(94%,72rem)] shrink-0 items-center justify-between rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2.5 backdrop-blur-md sm:mt-5 sm:rounded-2xl sm:px-5 sm:py-3"
-              initial={{ opacity: 0, y: -12 }}
+          <div className="relative z-10 flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain">
+            <motion.div
+              className="shrink-0 px-5 pb-6 pt-8 text-center sm:px-8 sm:pb-8 sm:pt-12"
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: 'easeOut' }}
+              transition={{ duration: 0.5, delay: 0.06 }}
             >
-              <Image
-                src="/dekorama-logo-cropped.svg"
-                alt="Dekorama"
-                width={148}
-                height={40}
-                className="h-6 w-auto object-contain brightness-0 invert sm:h-8"
-                priority
-              />
-              <div className="flex items-center gap-2 sm:gap-4">
-                <p className="hidden text-sm text-white/55 sm:block">{t('navHint')}</p>
-                <LocaleSwitcher tone="dark" />
-              </div>
-            </motion.header>
-
-            <div className="flex min-h-0 flex-1 flex-col items-center justify-start overflow-y-auto overscroll-contain px-3 pb-[max(1rem,env(safe-area-inset-bottom))] pt-4 text-center sm:justify-center sm:px-6 sm:pb-8 sm:pt-6">
-              <motion.h1
-                className="max-w-3xl font-heading text-[1.65rem] leading-[1.15] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl"
-                initial={{ opacity: 0, y: 22 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.08 }}
-              >
+              <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.28em] text-gray-500 sm:mb-3 sm:text-[11px]">
+                {t('badgeText')}
+              </p>
+              <h1 className="font-heading text-[1.85rem] font-normal leading-[1.1] tracking-tight text-black sm:text-4xl md:text-5xl lg:text-6xl">
                 {t('headline')}
-              </motion.h1>
-
-              <motion.p
-                className="mt-2 max-w-md text-[0.8125rem] leading-relaxed text-white/60 sm:mt-4 sm:max-w-xl sm:text-base"
-                initial={{ opacity: 0, y: 18 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, delay: 0.14 }}
-              >
+              </h1>
+              <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-gray-600 sm:mt-4 sm:max-w-xl sm:text-base">
                 {t('subheadline')}
-              </motion.p>
+              </p>
+            </motion.div>
 
-              <motion.div
-                className="mt-5 grid w-full max-w-3xl grid-cols-1 justify-items-center gap-4 sm:mt-8 sm:gap-6 md:mt-10 md:grid-cols-2 md:items-stretch md:gap-8"
-                initial={{ opacity: 0, y: 22 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                <ProfileCard
-                  className="pc-market"
-                  name={t('spainLabel')}
-                  title={t('spainDetail')}
-                  handle="espana"
-                  status={t('spainStatus')}
-                  contactText={t('spainCta')}
-                  avatarUrl={images.hero}
-                  miniAvatarUrl="/dekorama-favicon.png"
-                  showUserInfo
-                  enableTilt={enableTilt}
-                  enableMobileTilt={false}
-                  behindGlowEnabled={enableTilt}
-                  behindGlowColor="rgba(234, 200, 140, 0.35)"
-                  behindGlowSize="55%"
-                  onContactClick={() => choose('spain')}
-                />
-                <ProfileCard
-                  className="pc-market"
-                  name={t('venezuelaLabel')}
-                  title={t('venezuelaDetail')}
-                  handle="caracas"
-                  status={t('venezuelaStatus')}
-                  contactText={t('venezuelaCta')}
-                  avatarUrl={images.markets.caracas}
-                  miniAvatarUrl="/dekorama-favicon.png"
-                  showUserInfo
-                  enableTilt={enableTilt}
-                  enableMobileTilt={false}
-                  behindGlowEnabled={enableTilt}
-                  behindGlowColor="rgba(125, 190, 255, 0.4)"
-                  behindGlowSize="55%"
-                  onContactClick={() => choose('venezuela')}
-                />
-              </motion.div>
+            <div className="grid min-h-0 flex-1 auto-rows-fr grid-cols-1 md:grid-cols-2">
+              {markets.map((market, i) => {
+                const isDimmed = Boolean(leaving && leaving !== market.id)
+
+                return (
+                  <motion.button
+                    key={market.id}
+                    type="button"
+                    onClick={() => choose(market.id)}
+                    disabled={Boolean(leaving)}
+                    className="group relative flex min-h-[42svh] flex-col items-center justify-center overflow-hidden text-center text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-white md:min-h-0"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: isDimmed ? 0.35 : 1 }}
+                    transition={{ duration: 0.45, delay: 0.12 + i * 0.08 }}
+                    aria-label={`${market.label} — ${market.cta}`}
+                  >
+                    <Image
+                      src={market.image}
+                      alt={market.alt}
+                      fill
+                      priority
+                      className="object-cover transition-[filter] duration-500 group-hover:brightness-90"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                    <div
+                      className="absolute inset-0 bg-black/40 transition-colors duration-300 group-hover:bg-black/50"
+                      aria-hidden
+                    />
+                    <div className="relative z-10 flex flex-col items-center px-5 py-10 sm:px-8 sm:py-14">
+                      <span className="text-[10px] font-medium uppercase tracking-[0.28em] text-white/80 sm:text-[11px]">
+                        {market.status}
+                      </span>
+                      <span className="mt-2 font-heading text-3xl tracking-tight sm:text-4xl md:text-5xl">
+                        {market.label}
+                      </span>
+                      <span className="mt-2 text-[11px] uppercase tracking-[0.2em] text-white/85 sm:text-xs">
+                        {market.detail}
+                      </span>
+                      <span className="mt-6 border border-white bg-white px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-black transition-colors duration-300 group-hover:bg-transparent group-hover:text-white sm:mt-8 sm:px-8 sm:py-3.5 sm:text-xs">
+                        {market.cta}
+                      </span>
+                    </div>
+                  </motion.button>
+                )
+              })}
             </div>
           </div>
         </motion.div>
