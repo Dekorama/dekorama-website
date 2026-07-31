@@ -22,22 +22,22 @@ export default function ProyectosPage() {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <section className="section-header">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
           <Breadcrumb items={breadcrumbItems} />
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-6 tracking-tight">
+            <h1 className="mb-6 font-heading text-4xl font-normal leading-tight tracking-tight text-black md:text-5xl lg:text-6xl">
               {t('h1')}
             </h1>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-lg leading-relaxed text-gray-600">
               {t('intro')}
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-100">
+      <section className="section-editorial">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 gap-px bg-gray-200 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project, index) => {
               const title = locale === 'es' ? project.titleEs : project.titleEn
               const desc = locale === 'es' ? project.descEs : project.descEn

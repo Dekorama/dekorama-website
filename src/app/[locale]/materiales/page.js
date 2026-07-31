@@ -3,6 +3,7 @@ import { Link } from '@/i18n/navigation'
 import { baseUrl } from '@/lib/site'
 import { getTranslations } from 'next-intl/server'
 import CTAFinal from '@/components/CTAFinal'
+import PageHeader from '@/components/PageHeader'
 import { images } from '@/data/images'
 
 export async function generateMetadata({ params }) {
@@ -30,37 +31,38 @@ export async function generateMetadata({ params }) {
 export default async function MaterialesPage({ params }) {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'pages.materialesHub' })
+  const tCommon = await getTranslations({ locale, namespace: 'breadcrumb' })
 
   const collections = [
     {
       title: t('grifos.title'),
       description: t('grifos.description'),
       href: '/venta-grifos-benalmadena',
-      image: images.materials.grifos,
+      image: images.services.banos,
     },
     {
       title: t('mamparas.title'),
       description: t('mamparas.description'),
       href: '/mamparas-ducha-benalmadena',
-      image: images.materials.mamparas,
+      image: images.services.banos,
     },
     {
       title: t('sanitarios.title'),
       description: t('sanitarios.description'),
       href: '/inodoros-suspendidos-benalmadena',
-      image: images.materials.sanitarios,
+      image: images.featured.swatches[0].src,
     },
     {
       title: t('baneras.title'),
       description: t('baneras.description'),
       href: '/baneras-platos-ducha-benalmadena',
-      image: images.materials.baneras,
+      image: images.featured.swatches[3].src,
     },
     {
       title: t('porcelanicos.title'),
       description: t('porcelanicos.description'),
       href: '/porcelanicos-malaga',
-      image: images.materials.porcelanicos,
+      image: images.services.reformas,
     },
   ]
 
@@ -103,113 +105,74 @@ export default async function MaterialesPage({ params }) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
       <div className="min-h-screen bg-white">
-        <section className="bg-gray-50 px-4 pb-16 pt-8 sm:px-6 lg:px-8 md:pb-24 md:pt-16">
-          <div className="mx-auto max-w-7xl">
-            <nav className="mb-8 text-sm text-gray-500">
-              <Link href="/" className="transition-colors hover:text-black">
-                {locale === 'es' ? 'Inicio' : 'Home'}
-              </Link>
-              {' / '}
-              <span className="font-medium text-black">{locale === 'es' ? 'Materiales' : 'Materials'}</span>
-            </nav>
+        <PageHeader
+          breadcrumbItems={[
+            { label: tCommon('home'), href: `/${locale}` },
+            { label: locale === 'es' ? 'Materiales' : 'Materials', href: null },
+          ]}
+          title={t('h1')}
+          subtitle={t('intro')}
+          heroImage={images.showroom}
+          heroImageAlt={t('heroAlt')}
+          ctaPrimary={{ text: t('primaryCta'), href: '/materiales-premium' }}
+          ctaSecondary={{ text: t('secondaryCta'), href: '/#contacto' }}
+          baseUrl={baseUrl}
+        />
 
-            <div className="grid items-center gap-12 md:grid-cols-[1.1fr_0.9fr]">
-              <div className="space-y-6">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-500">
-                  {t('eyebrow')}
-                </p>
-                <h1 className="text-4xl font-bold leading-tight text-black md:text-5xl lg:text-6xl tracking-tight">
-                  {t('h1')}
-                </h1>
-                <p className="max-w-2xl text-lg leading-relaxed text-gray-600 md:text-xl">
-                  {t('intro')}
-                </p>
-                <div className="flex flex-wrap gap-3 text-sm text-gray-700">
-                  <span className="rounded-full border border-gray-300 px-4 py-2">{t('tag1')}</span>
-                  <span className="rounded-full border border-gray-300 px-4 py-2">{t('tag2')}</span>
-                  <span className="rounded-full border border-gray-300 px-4 py-2">{t('tag3')}</span>
-                </div>
-                <div className="flex flex-col gap-4 sm:flex-row">
-                  <Link href="/materiales-premium" className="btn-primary text-center">
-                    {t('primaryCta')}
-                  </Link>
-                  <Link href="/#contacto" className="btn-secondary text-center">
-                    {t('secondaryCta')}
-                  </Link>
-                </div>
-              </div>
-
-              <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-4 shadow-sm">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-gray-100">
-                  <Image
-                    src={images.materials.showroom}
-                    alt={t('heroAlt')}
-                    fill
-                    priority
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="px-4 py-16 sm:px-6 lg:px-8 md:py-24">
+        <section className="section-editorial">
           <div className="mx-auto max-w-7xl">
             <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
-                <h2 className="text-3xl font-semibold text-black md:text-4xl">{t('gridTitle')}</h2>
+                <h2 className="font-heading text-3xl font-normal tracking-tight text-black md:text-4xl">
+                  {t('gridTitle')}
+                </h2>
                 <p className="mt-3 max-w-2xl text-gray-600">{t('gridIntro')}</p>
               </div>
-              <Link href="/catalogo" className="text-sm font-semibold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-70">
+              <Link href="/catalogo" className="btn-discover">
                 {t('catalogCta')}
               </Link>
             </div>
 
             <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
               {collections.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="group overflow-hidden rounded-2xl border border-gray-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-                >
-                  <div className="relative aspect-[16/10] overflow-hidden bg-gray-50 flex items-center justify-center border-b border-gray-100">
+                <Link key={item.href} href={item.href} className="group block">
+                  <div className="relative mb-5 aspect-[16/10] overflow-hidden bg-gray-100">
                     <Image
                       src={item.image}
                       alt={item.title}
-                      width={96}
-                      height={96}
-                      className="text-gray-400 group-hover:text-black transition-colors duration-300"
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </div>
-                  <div className="space-y-4 p-6">
-                    <h3 className="text-2xl font-semibold text-black">{item.title}</h3>
-                    <p className="leading-relaxed text-gray-600">{item.description}</p>
-                    <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-black">
-                      {t('viewCategory')}
-                      <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-                    </span>
-                  </div>
+                  <h3 className="mb-2 font-heading text-2xl font-normal tracking-tight text-black">
+                    {item.title}
+                  </h3>
+                  <p className="mb-4 text-sm leading-relaxed text-gray-600">{item.description}</p>
+                  <span className="btn-discover text-[10px]">{t('viewCategory')}</span>
                 </Link>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="bg-black px-4 py-16 text-white sm:px-6 lg:px-8 md:py-24">
+        <section className="bg-charcoal px-4 py-16 text-white sm:px-6 lg:px-8 md:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 md:items-center">
             <div>
-              <h2 className="text-3xl font-semibold md:text-4xl">{t('supportTitle')}</h2>
+              <h2 className="font-heading text-3xl font-normal md:text-4xl">{t('supportTitle')}</h2>
               <p className="mt-4 max-w-2xl text-lg leading-relaxed text-gray-300">{t('supportDescription')}</p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-white/15 bg-white/5 p-6">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gray-400">{t('supportCard1Label')}</p>
+              <div className="border border-white/15 p-6">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-400">
+                  {t('supportCard1Label')}
+                </p>
                 <p className="mt-3 text-lg font-medium">{t('supportCard1Text')}</p>
               </div>
-              <div className="rounded-2xl border border-white/15 bg-white/5 p-6">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gray-400">{t('supportCard2Label')}</p>
+              <div className="border border-white/15 p-6">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-400">
+                  {t('supportCard2Label')}
+                </p>
                 <p className="mt-3 text-lg font-medium">{t('supportCard2Text')}</p>
               </div>
             </div>

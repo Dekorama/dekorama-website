@@ -54,8 +54,8 @@ export default function HeaderDropdown({
         type="button"
         className={
           onDark
-            ? 'inline-flex h-9 items-center gap-1.5 rounded-sm px-2 text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50'
-            : 'inline-flex h-9 items-center gap-1.5 rounded-sm px-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2'
+            ? 'inline-flex min-h-[44px] items-center gap-1.5 rounded-sm px-2.5 text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 sm:h-9 sm:min-h-0'
+            : 'inline-flex min-h-[44px] items-center gap-1.5 rounded-sm px-2.5 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 sm:h-9 sm:min-h-0'
         }
         aria-label={label}
         aria-haspopup="menu"
@@ -100,7 +100,7 @@ export function HeaderDropdownItem({ active = false, onSelect, children }) {
       role="menuitemradio"
       aria-checked={active}
       onClick={onSelect}
-      className={`flex w-full items-center justify-between gap-3 px-3 py-2 text-left text-sm transition-colors ${
+      className={`flex w-full min-h-[44px] items-center justify-between gap-3 px-3 py-2.5 text-left text-sm transition-colors sm:min-h-0 sm:py-2 ${
         active
           ? 'bg-gray-50 font-semibold text-black'
           : 'font-medium text-gray-600 hover:bg-gray-50 hover:text-black'

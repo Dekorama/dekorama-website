@@ -2,7 +2,6 @@ import { baseUrl } from '@/lib/site'
 
 /**
  * Primary hub pages Google may promote as brand sitelinks.
- * Keep names short and unique — Google often reuses title + meta description.
  * @param {'es' | 'en'} locale
  */
 export function getSiteNavigation(locale) {
@@ -11,16 +10,16 @@ export function getSiteNavigation(locale) {
   if (locale === 'en') {
     return [
       {
+        name: 'Materials',
+        url: `${prefix}/materiales`,
+        description:
+          'Porcelain tiles, taps, sanitaryware and premium finishes at the Benalmádena showroom.',
+      },
+      {
         name: 'Services',
         url: `${prefix}/servicios`,
         description:
           'Full renovations, custom kitchens, bathrooms and premium materials on the Costa del Sol.',
-      },
-      {
-        name: 'Catalogue',
-        url: `${prefix}/catalogo`,
-        description:
-          'Premium porcelain tiles, taps, sanitaryware and lighting for high-end renovations.',
       },
       {
         name: 'Projects',
@@ -29,16 +28,16 @@ export function getSiteNavigation(locale) {
           'Completed full renovations, kitchens and bathrooms by Dekorama on the Costa del Sol.',
       },
       {
-        name: 'Blog',
-        url: `${prefix}/blog`,
-        description:
-          'Tips and guides on renovations, kitchens, bathrooms and materials.',
-      },
-      {
         name: 'Contact',
         url: `${prefix}/contacto`,
         description:
           'Request a free consultation or visit the Benalmádena showroom.',
+      },
+      {
+        name: 'Catalogue',
+        url: `${prefix}/catalogo`,
+        description:
+          'Browse Dekorama material categories for high-end renovations.',
       },
       {
         name: 'Renovations Caracas',
@@ -51,16 +50,16 @@ export function getSiteNavigation(locale) {
 
   return [
     {
+      name: 'Materiales',
+      url: `${prefix}/materiales`,
+      description:
+        'Porcelánicos, grifería, sanitarios y acabados premium en el showroom de Benalmádena.',
+    },
+    {
       name: 'Servicios',
       url: `${prefix}/servicios`,
       description:
         'Reformas integrales, cocinas a medida, baños y materiales premium en la Costa del Sol.',
-    },
-    {
-      name: 'Catálogo',
-      url: `${prefix}/catalogo`,
-      description:
-        'Porcelánicos, grifería, sanitarios e iluminación premium para reformas de alta gama.',
     },
     {
       name: 'Proyectos',
@@ -69,16 +68,16 @@ export function getSiteNavigation(locale) {
         'Galería de reformas integrales, cocinas y baños realizados por Dekorama.',
     },
     {
-      name: 'Blog',
-      url: `${prefix}/blog`,
-      description:
-        'Guías y consejos sobre reformas, cocinas, baños y materiales.',
-    },
-    {
       name: 'Contacto',
       url: `${prefix}/contacto`,
       description:
         'Solicita consulta sin costo o visita el showroom en Benalmádena.',
+    },
+    {
+      name: 'Catálogo',
+      url: `${prefix}/catalogo`,
+      description:
+        'Explora las categorías de materiales Dekorama para reformas de alta gama.',
     },
     {
       name: 'Reformas Caracas',
@@ -91,7 +90,6 @@ export function getSiteNavigation(locale) {
 
 /**
  * SiteNavigationElement ItemList — helps crawlers map primary destinations.
- * Does not guarantee sitelinks (Google decides), but clarifies site hierarchy.
  * @param {'es' | 'en'} locale
  */
 export function buildSiteNavigationJsonLd(locale) {

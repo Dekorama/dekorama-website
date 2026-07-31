@@ -8,6 +8,7 @@ const STEP_KEYS = ['step1', 'step2', 'step3', 'step4', 'step5', 'step6']
 
 export default function Proceso() {
   const t = useTranslations('proceso')
+  const tHome = useTranslations('home')
   const pasos = STEP_KEYS.map((key, i) => ({
     numero: String(i + 1).padStart(2, '0'),
     titulo: t(`${key}Title`),
@@ -15,38 +16,44 @@ export default function Proceso() {
   }))
 
   return (
-    <section id="proceso" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <motion.h2 
-          className="text-3xl md:text-4xl font-semibold text-black text-center mb-16 tracking-tight"
+    <section id="proceso" className="section-editorial border-t border-gray-200 bg-white">
+      <div className="mx-auto max-w-4xl">
+        <motion.div
+          className="mb-10 text-center md:mb-14"
           initial="hidden"
           whileInView="visible"
           viewport={viewportOptions}
           variants={fadeUp}
         >
-          {t('title')}
-        </motion.h2>
+          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-gray-500">
+            {tHome('processEyebrow')}
+          </p>
+          <h2 className="font-heading text-2xl font-normal tracking-tight text-black sm:text-3xl md:text-4xl">
+            {t('title')}
+          </h2>
+        </motion.div>
         <div className="relative">
-          <div className="absolute left-8 md:left-12 top-0 bottom-0 w-0.5 bg-gray-300 hidden md:block" aria-hidden />
-          <motion.div 
-            className="space-y-12 md:space-y-16"
+          <div
+            className="absolute bottom-0 left-6 top-0 hidden w-px bg-gray-200 md:left-8 md:block"
+            aria-hidden
+          />
+          <motion.div
+            className="space-y-10 md:space-y-14"
             initial="hidden"
             whileInView="visible"
             viewport={viewportOptions}
             variants={staggerContainer}
           >
             {pasos.map((paso, index) => (
-              <motion.div 
-                key={index} 
-                className="relative flex items-start gap-6 md:gap-8"
-                variants={staggerItem}
-              >
-                <div className="flex-shrink-0 w-16 md:w-24 h-16 md:h-24 rounded-full bg-black text-white flex items-center justify-center text-xl md:text-2xl font-bold z-10 border-4 border-white shadow-lg">
+              <motion.div key={index} className="relative flex items-start gap-4 sm:gap-6 md:gap-10" variants={staggerItem}>
+                <div className="z-10 flex h-11 w-11 flex-shrink-0 items-center justify-center border border-black bg-white text-[11px] font-semibold tracking-[0.1em] text-black sm:h-12 sm:w-12 sm:text-xs md:h-16 md:w-16 md:text-sm">
                   {paso.numero}
                 </div>
-                <div className="flex-1 pt-2">
-                  <h3 className="text-2xl font-semibold text-black mb-3 tracking-tight">{paso.titulo}</h3>
-                  <p className="text-gray-600 leading-relaxed">{paso.descripcion}</p>
+                <div className="min-w-0 flex-1 pt-1 md:pt-3">
+                  <h3 className="mb-2 text-base font-semibold tracking-tight text-black sm:text-lg md:text-xl">
+                    {paso.titulo}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-gray-600 md:text-base">{paso.descripcion}</p>
                 </div>
               </motion.div>
             ))}

@@ -1,18 +1,16 @@
-// Unsplash stock images - interior design, renovations
-const UNSPLASH_BASE = 'https://images.unsplash.com'
-
+// Local + curated imagery for luxury editorial homepage
 export const images = {
-  // Hero: villa mediterránea de lujo — Costa del Sol
-  hero: `${UNSPLASH_BASE}/photo-1512917774080-9991f1c4c750?w=1200&q=80&fm=webp`,
+  hero: '/images/hero/stone-interior.png',
+  showroom: '/dekorama-showroom.jpeg',
+  heroProjects: '/projects/e59151b0-a5f9-4aa9-af26-001acb7cf228.JPG',
   markets: {
-    // Full-bleed tropical / city atmosphere for Venezuela market gate + Caracas hero
-    caracas: `${UNSPLASH_BASE}/photo-1600596542815-ffad4c1539a9?w=1400&q=80&fm=webp`,
+    caracas: '/images/hero/caracas-interior.png',
   },
   services: {
-    reformas: `${UNSPLASH_BASE}/photo-1600585154340-be6161a56a0c?w=800&q=80&fm=webp`,
-    cocinas: `${UNSPLASH_BASE}/photo-1556911220-bff31c812dba?w=800&q=80&fm=webp`,
-    banos: `${UNSPLASH_BASE}/photo-1552321554-5fefe8c9ef14?w=800&q=80&fm=webp`,
-    materiales: `${UNSPLASH_BASE}/photo-1615873968403-89e068629265?w=800&q=80&fm=webp`,
+    reformas: '/projects/d186be42-96ed-478c-8d60-b47a9999e22c.JPG',
+    cocinas: '/projects/e59151b0-a5f9-4aa9-af26-001acb7cf228.JPG',
+    banos: '/projects/11327553-54c1-4dd1-971a-584a1a900c26.JPG',
+    materiales: '/dekorama-showroom.jpeg',
   },
   materials: {
     showroom: '/icons/showroom.svg',
@@ -22,13 +20,58 @@ export const images = {
     baneras: '/icons/baneras.svg',
     porcelanicos: '/icons/porcelanicos.svg',
   },
-  // Galería: solo tipo de proyecto, sin ubicaciones. Imágenes que cargan bien.
+  spaces: [
+    {
+      src: '/projects/11327553-54c1-4dd1-971a-584a1a900c26.JPG',
+      href: '/banos-completos',
+      labelKey: 'bathroom',
+    },
+    {
+      src: '/projects/e59151b0-a5f9-4aa9-af26-001acb7cf228.JPG',
+      href: '/cocinas-a-medida',
+      labelKey: 'kitchen',
+    },
+    {
+      src: '/projects/e1285439-5aa9-4fb2-901d-4517e75ee052.JPG',
+      href: '/reformas-integrales',
+      labelKey: 'fullRenovation',
+    },
+  ],
+  dual: {
+    materials: '/dekorama-showroom.jpeg',
+    projects: '/projects/7b0ff048-2281-4c10-9205-91cffa277bc6.JPG',
+  },
+  featured: {
+    main: '/projects/d186be42-96ed-478c-8d60-b47a9999e22c.JPG',
+    swatches: [
+      {
+        src: '/images/swatches/porcelanico.png',
+        href: '/porcelanicos-malaga',
+        labelKey: 'swatch1',
+      },
+      {
+        src: '/images/swatches/griferia.png',
+        href: '/venta-grifos-benalmadena',
+        labelKey: 'swatch2',
+      },
+      {
+        src: '/images/swatches/mamparas.png',
+        href: '/mamparas-ducha-benalmadena',
+        labelKey: 'swatch3',
+      },
+      {
+        src: '/images/swatches/platos.png',
+        href: '/baneras-platos-ducha-benalmadena',
+        labelKey: 'swatch4',
+      },
+    ],
+  },
   gallery: [
-    { src: `${UNSPLASH_BASE}/photo-1600585154340-be6161a56a0c?w=600&q=80&fm=webp`, tipo: 'Reforma integral' },
-    { src: `${UNSPLASH_BASE}/photo-1600210492486-724fe5c67fb0?w=600&q=80&fm=webp`, tipo: 'Cocina a medida' },
-    { src: `${UNSPLASH_BASE}/photo-1552321554-5fefe8c9ef14?w=600&q=80&fm=webp`, tipo: 'Baño completo' },
-    { src: `${UNSPLASH_BASE}/photo-1600566753086-00f18fb6b3ea?w=600&q=80&fm=webp`, tipo: 'Reforma integral' },
-    { src: `${UNSPLASH_BASE}/photo-1600585154526-990dced4db0d?w=600&q=80&fm=webp`, tipo: 'Diseño de interiores' },
-    { src: `${UNSPLASH_BASE}/photo-1600573472592-401b489a3cdc?w=600&q=80&fm=webp`, tipo: 'Baño de diseño' },
+    { src: '/projects/d186be42-96ed-478c-8d60-b47a9999e22c.JPG', tipo: 'Reforma integral' },
+    { src: '/projects/e59151b0-a5f9-4aa9-af26-001acb7cf228.JPG', tipo: 'Cocina a medida' },
+    { src: '/projects/11327553-54c1-4dd1-971a-584a1a900c26.JPG', tipo: 'Baño completo' },
+    { src: '/projects/e1285439-5aa9-4fb2-901d-4517e75ee052.JPG', tipo: 'Reforma integral' },
+    { src: '/projects/7b0ff048-2281-4c10-9205-91cffa277bc6.JPG', tipo: 'Diseño de interiores' },
+    { src: '/projects/b18c568b-75d1-407d-a8d6-287bb2fa4299.JPG', tipo: 'Baño de diseño' },
   ],
 }

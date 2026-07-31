@@ -28,7 +28,7 @@ export default function BlogPostCard({
     <Link
       href={`/blog/${post.slug}`}
       locale={locale}
-      className={`group block bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-md hover:border-gray-300 transition-all duration-300 ${
+      className={`group block overflow-hidden border border-gray-200 bg-white transition-colors duration-300 hover:border-gray-400 ${
         isFeatured ? 'md:grid md:grid-cols-2 md:gap-0' : ''
       }`}
     >
@@ -54,14 +54,14 @@ export default function BlogPostCard({
         )}
       </div>
       <div className={isFeatured ? 'p-6 md:p-10 flex flex-col justify-center' : 'p-6 md:p-8'}>
-        <span className="inline-block text-xs font-semibold tracking-widest uppercase text-gray-500 mb-2 border border-gray-300 px-2 py-0.5 w-fit">
+        <span className="mb-2 inline-block w-fit text-[10px] font-semibold uppercase tracking-[0.18em] text-gray-500">
           {categoryLabel}
         </span>
         <time dateTime={post.date} className="text-sm text-gray-500 font-medium">
           {formatDate(post.date)}
         </time>
         <h2
-          className={`mt-2 font-semibold text-black group-hover:text-gray-700 transition-colors line-clamp-2 ${
+          className={`mt-2 font-heading font-normal text-black transition-opacity group-hover:opacity-70 line-clamp-2 ${
             isFeatured ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'
           }`}
         >
@@ -74,17 +74,8 @@ export default function BlogPostCard({
         >
           {post.excerpt}
         </p>
-        <span className="mt-4 inline-flex items-center text-sm font-medium text-black group-hover:underline">
+        <span className="btn-discover mt-5 text-[10px]">
           {readMoreLabel}
-          <svg
-            className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
         </span>
       </div>
     </Link>

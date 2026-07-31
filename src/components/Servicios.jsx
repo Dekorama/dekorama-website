@@ -24,11 +24,11 @@ export default function Servicios({ hideTitle = false }) {
   ]
 
   return (
-    <section id="servicios" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-accent/5">
-      <div className="max-w-7xl mx-auto">
+    <section id="servicios" className="section-editorial bg-white">
+      <div className="mx-auto max-w-7xl">
         {!hideTitle ? (
-          <motion.h2 
-            className="text-3xl md:text-4xl font-semibold text-black text-center mb-16 tracking-tight"
+          <motion.h2
+            className="mb-14 text-center font-heading text-3xl font-normal tracking-tight text-black md:mb-16 md:text-4xl"
             initial="hidden"
             whileInView="visible"
             viewport={viewportOptions}
@@ -37,85 +37,42 @@ export default function Servicios({ hideTitle = false }) {
             {t('title')}
           </motion.h2>
         ) : null}
-        <motion.div 
-          className="grid md:grid-cols-2 gap-8"
+        <motion.div
+          className="grid gap-10 md:grid-cols-2 md:gap-8"
           initial="hidden"
           whileInView="visible"
           viewport={viewportOptions}
           variants={staggerContainer}
         >
-          {serviceKeys.map((svc, index) =>
-            svc.catalogLink ? (
-              <motion.div
-                key={svc.key}
-                className="card group h-full flex flex-col"
-                variants={staggerItem}
-              >
-                <Link href={svc.link} className="block flex-shrink-0">
-                  <div className="relative h-64 overflow-hidden rounded-lg">
-                    <Image
-                      src={imagesList[index]}
-                      alt={t(`${svc.key}`)}
-                      fill
-                      className="object-cover transition-opacity duration-300 group-hover:opacity-90"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
-                </Link>
-                <div className="flex-1 flex flex-col pt-6">
-                  <h3 className="text-2xl font-semibold text-black mb-3 tracking-tight">{t(svc.key)}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed flex-1">{t(`${svc.key}Desc`)}</p>
-                  <div className="flex flex-wrap gap-4">
-                    <Link
-                      href={svc.link}
-                      className="text-black font-medium inline-flex items-center gap-2 hover:gap-4 transition-all duration-300"
-                    >
-                      {t('viewMore')}
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </Link>
-                    <Link
-                      href={svc.catalogLink}
-                      className="text-gray-600 font-medium inline-flex items-center gap-2 hover:text-black hover:gap-4 transition-all duration-300"
-                    >
-                      {t('viewCatalog')}
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </Link>
-                  </div>
-                </div>
-              </motion.div>
-            ) : (
-              <motion.div key={svc.key} variants={staggerItem}>
-              <Link
-                href={svc.link}
-                className="card-interactive group h-full flex flex-col cursor-pointer"
-              >
-                <div className="relative h-64 overflow-hidden flex-shrink-0 rounded-lg">
-                  <Image
-                    src={imagesList[index]}
-                    alt={t(svc.key)}
-                    fill
-                    className="object-cover transition-opacity duration-300 group-hover:opacity-90"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
-                <div className="flex-1 flex flex-col pt-6">
-                  <h3 className="text-2xl font-semibold text-black mb-3 tracking-tight">{t(svc.key)}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed flex-1">{t(`${svc.key}Desc`)}</p>
-                  <span className="text-black font-medium inline-flex items-center gap-2 group-hover:gap-4 transition-all duration-300">
-                    {t('viewMore')}
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </span>
-                </div>
+          {serviceKeys.map((svc, index) => (
+            <motion.div key={svc.key} variants={staggerItem} className="group flex h-full flex-col">
+              <Link href={svc.link} className="relative mb-5 block aspect-[16/10] overflow-hidden">
+                <Image
+                  src={imagesList[index]}
+                  alt={t(svc.key)}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </Link>
-              </motion.div>
-            )
-          )}
+              <h3 className="mb-3 font-heading text-2xl font-normal tracking-tight text-black">
+                {t(svc.key)}
+              </h3>
+              <p className="mb-5 flex-1 text-sm leading-relaxed text-gray-600 md:text-base">
+                {t(`${svc.key}Desc`)}
+              </p>
+              <div className="flex flex-wrap gap-5">
+                <Link href={svc.link} className="btn-discover text-[10px]">
+                  {t('viewMore')}
+                </Link>
+                {svc.catalogLink ? (
+                  <Link href={svc.catalogLink} className="btn-discover text-[10px] text-gray-500 border-gray-400">
+                    {t('viewCatalog')}
+                  </Link>
+                ) : null}
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>

@@ -1,35 +1,36 @@
 import { Link } from '@/i18n/navigation'
-import Image from 'next/image'
-import { images } from '@/data/images'
 import { baseUrl } from '@/lib/site'
 import { getTranslations } from 'next-intl/server'
 import PageHeader from '@/components/PageHeader'
-import ServiceGrid from '@/components/ServiceGrid'
 import RelatedLinks from '@/components/RelatedLinks'
 import CTASection from '@/components/CTASection'
+import { productImages, buildRelatedLinks } from '@/data/productPages'
+
+const HERO = productImages.grifos
 
 export async function generateMetadata({ params }) {
   const { locale } = await params
-  const t = await getTranslations({ locale })
-  
+  const isEs = locale === 'es'
+
   return {
-    title: locale === 'es' 
-      ? 'Venta Grifos Grohe y Roca Benalmádena | Tienda Dekorama Málaga'
-      : 'Grohe and Roca Taps Sale Benalmádena | Dekorama Store Málaga',
-    description: locale === 'es'
-      ? 'Tienda de grifos en Benalmádena. Venta de grifos Grohe, Hansgrohe y Roca para baño y cocina. Grifos de lavabo, ducha, bañera. Showroom físico. Instalación opcional.'
-      : 'Taps store in Benalmádena. Sale of Grohe, Hansgrohe and Roca taps for bathroom and kitchen. Basin, shower, bathtub taps. Physical showroom. Optional installation.',
+    title: isEs
+      ? 'Venta Grifos Cristina Neve Tres Gessi Benalmádena | Tienda Dekorama Málaga'
+      : 'Cristina Neve Tres Gessi Taps Sale Benalmádena | Dekorama Store Málaga',
+    description: isEs
+      ? 'Tienda de grifos en Benalmádena. Venta de grifos Cristina, Neve, Tres, Gessi y Roca para baño y cocina. Showroom físico. Instalación opcional.'
+      : 'Taps store in Benalmádena. Sale of Cristina, Neve, Tres, Gessi and Roca taps for bathroom and kitchen. Physical showroom. Optional installation.',
     openGraph: {
-      title: locale === 'es' ? 'Venta Grifos Benalmádena - Grohe, Roca, Hansgrohe' : 'Taps Sale Benalmádena - Grohe, Roca, Hansgrohe',
-      description: locale === 'es' ? 'Tienda de grifería premium en Benalmádena' : 'Premium taps store in Benalmádena',
+      title: isEs ? 'Venta Grifos Benalmádena' : 'Taps Sale Benalmádena',
+      description: isEs ? 'Tienda de grifería premium en Benalmádena' : 'Premium taps store in Benalmádena',
       url: `/${locale}/venta-grifos-benalmadena`,
+      images: [{ url: HERO }],
     },
-    alternates: { 
+    alternates: {
       canonical: `${baseUrl}/${locale}/venta-grifos-benalmadena`,
       languages: {
-        'es': `${baseUrl}/es/venta-grifos-benalmadena`,
-        'en': `${baseUrl}/en/venta-grifos-benalmadena`,
-      }
+        es: `${baseUrl}/es/venta-grifos-benalmadena`,
+        en: `${baseUrl}/en/venta-grifos-benalmadena`,
+      },
     },
   }
 }
@@ -38,280 +39,232 @@ export default async function VentaGrifosPage({ params }) {
   const { locale } = await params
   const tCta = await getTranslations({ locale, namespace: 'cta' })
   const tCommon = await getTranslations({ locale, namespace: 'breadcrumb' })
-  
+  const isEs = locale === 'es'
+
   const productJsonLd = {
     '@context': 'https://schema.org',
     '@type': ['Product', 'Service'],
-    name: locale === 'es' ? 'Grifos Grohe y Roca' : 'Grohe and Roca Taps',
-    description: locale === 'es' 
-      ? 'Venta de grifos Grohe, Hansgrohe y Roca en Benalmádena. Grifos de lavabo, ducha, bañera y cocina.'
-      : 'Sale of Grohe, Hansgrohe and Roca taps in Benalmádena. Basin, shower, bathtub and kitchen taps.',
-    category: locale === 'es' ? 'Grifería' : 'Taps',
+    name: isEs ? 'Grifos Cristina, Neve, Tres y Gessi' : 'Cristina, Neve, Tres and Gessi Taps',
+    description: isEs
+      ? 'Venta de grifos Cristina Grifería, Neve, Tres, Gessi y Roca en Benalmádena.'
+      : 'Sale of Cristina Grifería, Neve, Tres, Gessi and Roca taps in Benalmádena.',
     brand: [
-      { '@type': 'Brand', 'name': 'Grohe' },
-      { '@type': 'Brand', 'name': 'Hansgrohe' },
-      { '@type': 'Brand', 'name': 'Roca' }
+      { '@type': 'Brand', name: 'Cristina Grifería' },
+      { '@type': 'Brand', name: 'Neve' },
+      { '@type': 'Brand', name: 'Tres' },
+      { '@type': 'Brand', name: 'Gessi' },
+      { '@type': 'Brand', name: 'Roca' },
     ],
     offers: {
       '@type': 'AggregateOffer',
       priceCurrency: 'EUR',
       availability: 'https://schema.org/InStock',
-      seller: {
-        '@type': 'LocalBusiness',
-        name: 'Dekorama',
-        '@id': `${baseUrl}/#business`,
-      },
+      seller: { '@type': 'LocalBusiness', name: 'Dekorama', '@id': `${baseUrl}/#business` },
     },
-    additionalType: 'Service',
-    serviceType: locale === 'es' ? 'Instalación de grifería' : 'Taps installation',
-    provider: {
-      '@type': 'LocalBusiness',
-      name: 'Dekorama',
-      '@id': `${baseUrl}/#business`,
-    },
-    image: images.materials.grifos,
+    image: `${baseUrl}${HERO}`,
   }
 
-  const caracteristicas = [
+  const features = [
     {
-      title: locale === 'es' ? 'Showroom físico' : 'Physical showroom',
-      description: locale === 'es'
-        ? 'Ven a nuestra tienda en Benalmádena, prueba los grifos, compara acabados y recibe asesoramiento experto.'
-        : 'Come to our Benalmádena store, test the taps, compare finishes and receive expert advice.',
+      title: isEs ? 'Showroom físico' : 'Physical showroom',
+      description: isEs
+        ? 'Prueba los grifos, compara acabados y recibe asesoramiento en Benalmádena.'
+        : 'Test taps, compare finishes and get advice in Benalmádena.',
     },
     {
-      title: locale === 'es' ? 'Mejor precio garantizado' : 'Best price guaranteed',
-      description: locale === 'es'
-        ? 'Trabajamos directamente con fabricantes. Si encuentras un precio mejor, te lo igualamos.'
-        : "We work directly with manufacturers. If you find a better price, we'll match it.",
+      title: isEs ? 'Mejor precio' : 'Best price',
+      description: isEs
+        ? 'Trabajamos con fabricantes. Si encuentras mejor precio, te lo igualamos.'
+        : 'We work with manufacturers. If you find a better price, we match it.',
     },
     {
-      title: locale === 'es' ? 'Directo de fábrica' : 'Direct from factory',
-      description: locale === 'es'
-        ? 'Trabajamos bajo pedido directo de fábrica para asegurar acabados y referencias exactas. Plazo habitual de entrega: 7-14 días.'
-        : 'We work with direct factory orders to secure the exact finish and reference. Typical delivery time: 7-14 days.',
+      title: isEs ? 'Directo de fábrica' : 'Direct from factory',
+      description: isEs
+        ? 'Pedido directo para acabados exactos. Entrega habitual 7–14 días.'
+        : 'Direct orders for exact finishes. Typical delivery 7–14 days.',
     },
     {
-      title: locale === 'es' ? 'Instalación profesional opcional' : 'Optional professional installation',
-      description: locale === 'es'
-        ? 'Si lo prefieres, instalamos los grifos con garantía total. También ofrecemos reforma completa de baño o cocina.'
-        : 'If you prefer, we install the taps with full warranty. We also offer complete bathroom or kitchen renovation.',
+      title: isEs ? 'Instalación opcional' : 'Optional installation',
+      description: isEs
+        ? 'Instalamos con garantía. También reforma completa de baño o cocina.'
+        : 'We install with warranty. Full bathroom or kitchen renovation available.',
     },
   ]
 
-  const relatedServices = [
+  const types = [
     {
-      title: locale === 'es' ? 'Baños Completos' : 'Complete Bathrooms',
-      description: locale === 'es' ? 'Reforma integral de tu baño con acabados premium' : 'Complete bathroom renovation with premium finishes',
-      href: `/${locale}/banos-completos`,
-      image: images.services.banos,
+      title: isEs ? 'Grifos de lavabo' : 'Basin taps',
+      desc: isEs
+        ? 'Monomando, bimando, altos o de caño bajo. Cromo, negro mate, dorado.'
+        : 'Single-lever, dual-handle, high or low spout. Chrome, matt black, gold.',
     },
     {
-      title: locale === 'es' ? 'Materiales Premium' : 'Premium Materials',
-      description: locale === 'es' ? 'Grifería, sanitarios, iluminación y más' : 'Taps, sanitaryware, lighting and more',
-      href: `/${locale}/materiales-premium`,
-      image: images.services.materiales,
+      title: isEs ? 'Grifos de ducha' : 'Shower taps',
+      desc: isEs
+        ? 'Termostáticos empotrados o de superficie. Con o sin ducha de mano.'
+        : 'Thermostatic concealed or surface-mounted. With or without hand shower.',
     },
     {
-      title: locale === 'es' ? 'Mamparas de Ducha' : 'Shower Screens',
-      description: locale === 'es' ? 'Profiltek, GME, Kassandra. Vidrio templado 8mm' : 'Profiltek, GME, Kassandra. 8mm tempered glass',
-      href: `/${locale}/mamparas-ducha-benalmadena`,
-      image: images.materials.mamparas,
+      title: isEs ? 'Grifos de bañera' : 'Bathtub taps',
+      desc: isEs
+        ? 'Cascada, empotrados o de repisa. Diseños modernos y clásicos.'
+        : 'Waterfall, concealed or deck-mounted. Modern and classic designs.',
+    },
+    {
+      title: isEs ? 'Grifos de cocina' : 'Kitchen taps',
+      desc: isEs
+        ? 'Extraíbles, caño alto, con ducha. Filtrado integrado disponible.'
+        : 'Pull-out, high spout, with spray. Integrated filtering available.',
+    },
+  ]
+
+  const brands = [
+    {
+      brand: 'Cristina Grifería',
+      desc: isEs
+        ? 'Diseño italiano. Acabados premium y colecciones contemporáneas.'
+        : 'Italian design. Premium finishes and contemporary collections.',
+    },
+    {
+      brand: 'Neve',
+      desc: isEs
+        ? 'Grifería de diseño. Estética cuidada y alta durabilidad.'
+        : 'Design taps. Refined aesthetics and high durability.',
+    },
+    {
+      brand: 'Tres',
+      desc: isEs
+        ? 'Grifería española. Diseño, calidad y acabados exclusivos.'
+        : 'Spanish taps. Design, quality and exclusive finishes.',
+    },
+    {
+      brand: 'Gessi',
+      desc: isEs
+        ? 'Lujo italiano. Piezas icónicas para baños de alto standing.'
+        : 'Italian luxury. Iconic pieces for high-end bathrooms.',
+    },
+    {
+      brand: 'Roca',
+      desc: isEs
+        ? 'Referencia española. Excelente relación calidad-precio.'
+        : 'Leading Spanish brand. Excellent value for money.',
     },
   ]
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
-      
+
       <div className="min-h-screen bg-white">
-      
-      {/* ── PAGE HEADER ── */}
-      <PageHeader
-        breadcrumbItems={[
-          { label: tCommon('home'), href: `/${locale}` },
-          { label: locale === 'es' ? 'Grifos' : 'Taps', href: null }
-        ]}
-        title={locale === 'es' ? 'Venta de Grifos en Benalmádena' : 'Taps Sale in Benalmádena'}
-        subtitle={locale === 'es'
-          ? 'Grifos Grohe, Hansgrohe y Roca en nuestro showroom de Benalmádena. Amplia selección de grifos de lavabo, ducha termostáticos, bañera y cocina extraíbles.'
-          : 'Grohe, Hansgrohe and Roca taps in our Benalmádena showroom. Wide selection of basin, thermostatic shower, bathtub and pull-out kitchen taps.'
-        }
-        heroImage={images.materials.grifos}
-        heroImageAlt={locale === 'es' ? 'Grifos Grohe y Roca Benalmádena' : 'Grohe and Roca taps Benalmádena'}
-        ctaPrimary={{
-          text: locale === 'es' ? 'Visitar tienda o pedir presupuesto' : 'Visit store or request quote',
-          href: `/${locale}#contacto`
-        }}
-        ctaSecondary={{
-          text: locale === 'es' ? 'Ver materiales premium' : 'View premium materials',
-          href: `/${locale}/materiales-premium`
-        }}
-        baseUrl={baseUrl}
-      />
+        <PageHeader
+          breadcrumbItems={[
+            { label: tCommon('home'), href: `/${locale}` },
+            { label: isEs ? 'Grifos' : 'Taps', href: null },
+          ]}
+          title={isEs ? 'Venta de Grifos en Benalmádena' : 'Taps Sale in Benalmádena'}
+          subtitle={
+            isEs
+              ? 'Cristina Grifería, Neve, Tres, Gessi y Roca en nuestro showroom. Lavabo, ducha termostática, bañera y cocina.'
+              : 'Cristina Grifería, Neve, Tres, Gessi and Roca in our showroom. Basin, thermostatic shower, bathtub and kitchen.'
+          }
+          heroImage={HERO}
+          heroImageAlt={isEs ? 'Grifería premium Benalmádena' : 'Premium taps Benalmádena'}
+          ctaPrimary={{
+            text: isEs ? 'Haz tu visita' : 'Book your visit',
+            href: `/${locale}/contacto`,
+          }}
+          ctaSecondary={{
+            text: isEs ? 'Ver materiales' : 'View materials',
+            href: '/materiales-premium',
+          }}
+          baseUrl={baseUrl}
+        />
 
-      {/* ── POR QUÉ ELEGIRNOS ── */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-12 md:mb-16">
-            {locale === 'es' ? '¿Por qué comprar en Dekorama?' : 'Why buy at Dekorama?'}
-          </h2>
-          <ServiceGrid items={caracteristicas} columns={4} />
-        </div>
-      </section>
-
-        {/* Tipos de grifos */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-12">
-              {locale === 'es' ? 'Tipos de grifos disponibles' : 'Available tap types'}
+        <section className="section-editorial border-b border-gray-200">
+          <div className="mx-auto max-w-7xl">
+            <h2 className="mb-12 text-center font-heading text-3xl font-normal tracking-tight text-black md:text-4xl">
+              {isEs ? '¿Por qué comprar en Dekorama?' : 'Why buy at Dekorama?'}
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  title: locale === 'es' ? 'Grifos de lavabo' : 'Basin taps',
-                  desc: locale === 'es' 
-                    ? 'Monomando, bimando, altos, de caño bajo. Acabados cromados, negro mate, dorados.'
-                    : 'Single-lever, dual-handle, high, low-spout. Chrome, matt black, gold finishes.'
-                },
-                {
-                  title: locale === 'es' ? 'Grifos de ducha' : 'Shower taps',
-                  desc: locale === 'es'
-                    ? 'Termostáticos con regulación de temperatura. Empotrados o de superficie. Con o sin ducha de mano.'
-                    : 'Thermostatic with temperature control. Concealed or surface-mounted. With or without hand shower.'
-                },
-                {
-                  title: locale === 'es' ? 'Grifos de bañera' : 'Bathtub taps',
-                  desc: locale === 'es'
-                    ? 'Cascada, empotrados, de repisa. Con inversor para ducha de mano. Diseños modernos y clásicos.'
-                    : 'Waterfall, concealed, deck-mounted. With diverter for hand shower. Modern and classic designs.'
-                },
-                {
-                  title: locale === 'es' ? 'Grifos de cocina' : 'Kitchen taps',
-                  desc: locale === 'es'
-                    ? 'Extraíbles con manguera, caño alto, con ducha. Sistemas de filtrado integrado disponibles.'
-                    : 'Pull-out with hose, high spout, with spray. Integrated filtering systems available.'
-                },
-              ].map((item, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg">
-                  <h3 className="text-2xl font-semibold text-black mb-3">{item.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+            <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+              {features.map((item) => (
+                <div key={item.title} className="border-t border-gray-300 pt-8">
+                  <h3 className="mb-3 text-lg font-semibold tracking-tight text-black">{item.title}</h3>
+                  <p className="text-sm leading-relaxed text-gray-600">{item.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Marcas */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-6">
-              {locale === 'es' ? 'Trabajamos con las mejores marcas' : 'We work with the best brands'}
-            </h2>
-            <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-              {locale === 'es'
-                ? 'Calidad alemana y española garantizada. Grifos con garantía del fabricante de hasta 5 años.'
-                : 'Guaranteed German and Spanish quality. Taps with manufacturer\'s warranty of up to 5 years.'
-              }
+        <section className="section-editorial bg-gray-bg">
+          <div className="mx-auto max-w-7xl">
+            <p className="mb-3 text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-gray-500">
+              {isEs ? 'Colección' : 'Collection'}
             </p>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  brand: 'Grohe',
-                  desc: locale === 'es'
-                    ? 'Marca alemana líder mundial. Tecnología CoolTouch y EcoJoy para ahorro de agua.'
-                    : 'Leading German brand worldwide. CoolTouch and EcoJoy technology for water savings.'
-                },
-                {
-                  brand: 'Hansgrohe',
-                  desc: locale === 'es'
-                    ? 'Diseño y tecnología alemana. Sistemas termostáticos de máxima precisión.'
-                    : 'German design and technology. High-precision thermostatic systems.'
-                },
-                {
-                  brand: 'Roca',
-                  desc: locale === 'es'
-                    ? 'Marca española de referencia. Excelente relación calidad-precio. Amplio catálogo.'
-                    : 'Leading Spanish brand. Excellent value for money. Extensive catalogue.'
-                },
-              ].map((item, index) => (
-                <div key={index} className="bg-white p-8 rounded-lg text-center">
-                  <h3 className="text-2xl font-bold text-black mb-3">{item.brand}</h3>
-                  <p className="text-gray-600">{item.desc}</p>
+            <h2 className="mb-12 text-center font-heading text-3xl font-normal tracking-tight text-black md:text-4xl">
+              {isEs ? 'Tipos de grifos disponibles' : 'Available tap types'}
+            </h2>
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              {types.map((item) => (
+                <article key={item.title}>
+                  <h3 className="mb-3 font-heading text-xl font-normal tracking-tight text-black">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-gray-600">{item.desc}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-editorial">
+          <div className="mx-auto max-w-5xl text-center">
+            <h2 className="mb-4 font-heading text-3xl font-normal tracking-tight text-black md:text-4xl">
+              {isEs ? 'Trabajamos con las mejores marcas' : 'We work with the best brands'}
+            </h2>
+            <p className="mx-auto mb-12 max-w-2xl text-gray-600">
+              {isEs
+                ? 'Diseño italiano y español. Garantía del fabricante de hasta 5 años.'
+                : 'Italian and Spanish design. Manufacturer warranty up to 5 years.'}
+            </p>
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+              {brands.map((item) => (
+                <div key={item.brand} className="border-t border-gray-200 pt-8">
+                  <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-black">
+                    {item.brand}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-gray-600">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Ventajas */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-12">
-              {locale === 'es' ? 'También te puede interesar' : 'You might also be interested in'}
+        <section className="section-editorial border-y border-gray-200 bg-gray-bg">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-4 font-heading text-3xl font-normal tracking-tight text-black md:text-4xl">
+              {isEs ? 'Visita nuestro showroom' : 'Visit our showroom'}
             </h2>
-            <div className="space-y-6">
-              {[
-                {
-                  title: locale === 'es' ? 'Mamparas de ducha' : 'Shower screens',
-                  desc: locale === 'es'
-                    ? 'Profiltek, GME, Kassandra. Vidrio templado 8mm. Fijas, correderas, angulares.'
-                    : 'Profiltek, GME, Kassandra. 8mm tempered glass. Fixed, sliding, corner.'
-                },
-                {
-                  title: locale === 'es' ? 'Inodoros suspendidos' : 'Wall-hung toilets',
-                  desc: locale === 'es'
-                    ? 'Roca, Duravit. Descarga dual eco. Instalación profesional disponible.'
-                    : 'Roca, Duravit. Eco dual flush. Professional installation available.'
-                },
-                {
-                  title: locale === 'es' ? 'Bañeras y platos de ducha' : 'Bathtubs and shower trays',
-                  desc: locale === 'es'
-                    ? 'Roca, Fiora, Kaldewei. Todas las medidas. Instalación incluida.'
-                    : 'Roca, Fiora, Kaldewei. All sizes. Installation included.'
-                },
-                {
-                  title: locale === 'es' ? 'Reforma completa de baño' : 'Complete bathroom renovation',
-                  desc: locale === 'es'
-                    ? 'Reforma llave en mano con instalación de todos los materiales.'
-                    : 'Turnkey renovation with installation of all materials.'
-                },
-              ].map((item, index) => (
-                <div key={index} className="flex gap-4 items-start">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold">
-                    {index + 1}
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-semibold text-black mb-2">{item.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <p className="mb-8 text-gray-600">
+              {isEs
+                ? 'Compara acabados en persona en Benalmádena y te ayudamos a elegir la grifería ideal.'
+                : 'Compare finishes in person in Benalmádena and we help you choose the right taps.'}
+            </p>
+            <Link href={`/${locale}/contacto`} className="btn-primary">
+              {tCta('requestFreeVisit')}
+            </Link>
           </div>
         </section>
 
-        {/* ── RELATED SERVICES ── */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-black mb-8 md:mb-12 text-center">
-              {locale === 'es' ? 'Servicios relacionados' : 'Related services'}
-            </h2>
-            <RelatedLinks links={relatedServices} />
-          </div>
-        </section>
+        <RelatedLinks
+          title={isEs ? 'Servicios relacionados' : 'Related services'}
+          links={buildRelatedLinks(/** @type {'es'|'en'} */ (locale), ['banos', 'mamparas', 'baneras'])}
+        />
 
-        {/* ── CTA FINAL ── */}
         <CTASection
           title={tCta('readyToTransform')}
           description={tCta('freeVisitAndQuote')}
-          buttons={[
-            {
-              text: tCta('requestFreeVisit'),
-              href: `/${locale}#contacto`,
-              variant: 'primary'
-            }
-          ]}
+          buttons={[{ text: tCta('requestFreeVisit'), href: `/${locale}/contacto`, variant: 'primary' }]}
         />
       </div>
     </>

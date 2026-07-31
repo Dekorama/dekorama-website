@@ -1,9 +1,9 @@
-# Dekorama Design System - Premium Minimalist
+# Dekorama Design System - Luxury Editorial
 
 ## Design Principles
 
 1. **Generous Whitespace** - Let content breathe with ample padding and spacing
-2. **Subtle Elegance** - Minimal shadows, refined typography, soft interactions
+2. **Editorial luxury** - White chrome, hairline rules, full-bleed photography (Artistic Tile–inspired)
 3. **Consistency First** - Every page follows the same structural patterns
 4. **Accessibility Always** - Clear focus states, proper contrast, semantic markup
 5. **Performance Aware** - Optimize images, minimize animations, fast loading
@@ -15,14 +15,15 @@
 ### Primary Colors
 ```
 Black:        #000000    (headings, primary text, buttons, borders)
-White:        #FFFFFF    (backgrounds, button text on dark)
+White:        #FFFFFF    (chrome backgrounds, button text on dark)
+Charcoal:     #1A1A1A    (footer)
 ```
 
 ### Gray Scale
 ```
 gray-50:      #F9FAFB    (light backgrounds, subtle sections)
 gray-bg:      #F5F5F5    (section backgrounds - alias for gray-50)
-gray-300:     #D1D5DB    (borders, dividers)
+gray-300:     #D1D5DB    (hairlines, dividers, search underline)
 gray-400:     #9CA3AF    (placeholder text)
 gray-500:     #6B7280    (secondary text, muted elements)
 gray-600:     #4B5563    (subtitles, descriptions)
@@ -50,6 +51,8 @@ yellow-500:   #F59E0B    (star ratings filled)
 - **Black/White dominance** - 80% of UI uses black/white/gray
 - **Accent sparingly** - Use #6B5344 for strategic highlights only (max 10% of design)
 - **Gray hierarchy** - gray-700 (body), gray-600 (subtitles), gray-500 (muted)
+- **Chrome** - Sticky white two-tier header; dark charcoal footer
+- **Nav** - All-caps tracked sans (`.nav-link`); Discover-style underline CTAs (`.btn-discover`)
 
 ---
 

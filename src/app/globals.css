@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --site-header-h: 4.5rem;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -22,20 +26,40 @@
      ============================================ */
   
   .btn-primary {
-    @apply px-8 py-4 
-           bg-black text-white text-sm font-semibold 
-           rounded-sm 
+    @apply px-8 py-3.5
+           bg-black text-white text-xs font-semibold uppercase tracking-[0.18em]
+           rounded-none
            transition-colors duration-300
            hover:bg-gray-800 
            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2;
   }
 
   .btn-secondary {
-    @apply px-8 py-4 
-           border-2 border-black text-black text-sm font-semibold 
-           rounded-sm 
+    @apply px-8 py-3.5
+           border border-black text-black text-xs font-semibold uppercase tracking-[0.18em]
+           rounded-none
            transition-all duration-300
            hover:bg-black hover:text-white 
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2;
+  }
+
+  .btn-discover {
+    @apply inline-flex items-center gap-2
+           text-xs font-semibold uppercase tracking-[0.22em] text-black
+           border-b border-black pb-0.5
+           transition-opacity duration-300 hover:opacity-60
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2;
+  }
+
+  .nav-link {
+    @apply text-[11px] sm:text-xs font-medium uppercase tracking-[0.2em] text-gray-900
+           transition-opacity duration-200 hover:opacity-55
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2;
+  }
+
+  .utility-link {
+    @apply text-[11px] font-normal text-gray-600 tracking-wide
+           transition-colors duration-200 hover:text-black
            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2;
   }
 
@@ -53,18 +77,18 @@
   
   .card {
     @apply bg-white p-8 md:p-10
-           rounded-lg 
-           shadow-sm 
-           transition-shadow duration-300
-           hover:shadow-md;
+           rounded-none
+           border border-gray-200
+           transition-colors duration-300
+           hover:border-gray-400;
   }
 
   .card-interactive {
     @apply bg-white p-8 md:p-10
-           rounded-lg 
-           shadow-sm 
-           transition-all duration-300
-           hover:shadow-md 
+           rounded-none
+           border border-gray-200
+           transition-colors duration-300
+           hover:border-gray-400
            cursor-pointer;
   }
 
@@ -73,9 +97,14 @@
      ============================================ */
   
   .section-header {
-    @apply bg-gray-50 
-           pt-20 pb-16 md:pt-32 md:pb-24 
-           px-4 sm:px-6 lg:px-8;
+    @apply bg-white
+           pt-20 pb-12 md:pt-32 md:pb-24 
+           px-4 sm:px-6 lg:px-8
+           border-b border-gray-200;
+  }
+
+  .section-editorial {
+    @apply py-16 md:py-24 px-4 sm:px-6 lg:px-8;
   }
 
   .cta-section {
@@ -111,7 +140,7 @@
      ============================================ */
   
   .breadcrumb-nav {
-    @apply text-sm text-gray-500 mb-8;
+    @apply mb-8 text-[11px] uppercase tracking-[0.14em] text-gray-500;
   }
 
   .breadcrumb-link {
@@ -140,7 +169,11 @@
   }
 
   section {
-    scroll-margin-top: 80px;
+    scroll-margin-top: calc(var(--site-header-h, 7.5rem) + 0.75rem);
+  }
+
+  .site-header-offset {
+    scroll-margin-top: calc(var(--site-header-h, 7.5rem) + 0.75rem);
   }
 
   /* Typography utilities */

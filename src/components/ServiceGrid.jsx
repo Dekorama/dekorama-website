@@ -37,28 +37,19 @@ export default function ServiceGrid({ items = [], className = '' }) {
       viewport={viewportOptions}
       variants={staggerContainer}
     >
-      {items.map((item, index) => (
-        <motion.div 
+          {items.map((item, index) => (
+        <motion.div
           key={index}
-          className="card"
+          className="border-t border-gray-200 pt-8"
           variants={staggerItem}
         >
-          {/* Icon */}
-          {item.icon && (
-            <div className="w-16 h-16 flex items-center justify-center mb-6 text-black">
-              {item.icon}
-            </div>
-          )}
+          {item.icon ? (
+            <div className="mb-5 flex h-12 w-12 items-center justify-center text-black">{item.icon}</div>
+          ) : null}
 
-          {/* Title */}
-          <h3 className="text-2xl font-semibold text-black mb-4 tracking-tight">
-            {item.title}
-          </h3>
+          <h3 className="mb-3 text-xl font-semibold tracking-tight text-black">{item.title}</h3>
 
-          {/* Description */}
-          <p className="text-gray-600 leading-relaxed">
-            {item.description}
-          </p>
+          <p className="leading-relaxed text-gray-600">{item.description}</p>
         </motion.div>
       ))}
     </motion.div>

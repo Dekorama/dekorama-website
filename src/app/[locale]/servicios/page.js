@@ -41,7 +41,8 @@ export default async function ServiciosPage({ params }) {
         ]}
         title={t('title')}
         subtitle={t('subtitle')}
-        centered
+        heroImage="/projects/d186be42-96ed-478c-8d60-b47a9999e22c.JPG"
+        heroImageAlt={t('title')}
         baseUrl={baseUrl}
       />
 

@@ -57,10 +57,10 @@ export default function CTAFinal({ marketId = 'spain' }) {
   }
 
   return (
-    <section id="contacto" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-bg">
-      <div className="max-w-4xl mx-auto">
+    <section id="contacto" className="section-editorial border-t border-gray-200 bg-white">
+      <div className="mx-auto max-w-4xl">
         <motion.h2 
-          className="text-3xl md:text-4xl font-semibold text-black text-center mb-4 tracking-tight"
+          className="mb-4 text-center font-heading text-3xl font-normal tracking-tight text-black md:text-4xl"
           initial="hidden"
           whileInView="visible"
           viewport={viewportOptions}

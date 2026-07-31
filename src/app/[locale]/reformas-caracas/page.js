@@ -3,9 +3,14 @@ import { baseUrl } from '@/lib/site'
 import { markets, buildLocalBusinessJsonLd } from '@/lib/markets'
 import { getTranslations } from 'next-intl/server'
 import Hero from '@/components/Hero'
-import ServiceGrid from '@/components/ServiceGrid'
-import RelatedLinks from '@/components/RelatedLinks'
-import CTASection from '@/components/CTASection'
+import FeaturedSpaces from '@/components/home/FeaturedSpaces'
+import QuoteStrip from '@/components/home/QuoteStrip'
+import TwoColShowroom from '@/components/home/TwoColShowroom'
+import FeaturedMaterial from '@/components/home/FeaturedMaterial'
+import DualLandscape from '@/components/home/DualLandscape'
+import CaracasZones from '@/components/home/CaracasZones'
+import Proceso from '@/components/Proceso'
+import CTAFinal from '@/components/CTAFinal'
 import PageFaq from '@/components/PageFaq'
 import SetVenezuelaMarket from '@/components/SetVenezuelaMarket'
 import { getPageFaqsFromTranslations } from '@/lib/pageFaqs'
@@ -23,6 +28,7 @@ export async function generateMetadata({ params }) {
       title: t('title'),
       description: t('description'),
       url: `/${locale}/reformas-caracas`,
+      images: [{ url: images.markets.caracas }],
     },
     alternates: {
       canonical: `${baseUrl}/${locale}/reformas-caracas`,
@@ -37,8 +43,6 @@ export async function generateMetadata({ params }) {
 export default async function ReformasCaracasPage({ params }) {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'ciudades.caracas' })
-  const tCommon = await getTranslations({ locale, namespace: 'ciudades' })
-  const tCta = await getTranslations({ locale, namespace: 'cta' })
 
   const localBusinessJsonLd = buildLocalBusinessJsonLd(ve, {
     description:
@@ -66,79 +70,10 @@ export default async function ReformasCaracasPage({ params }) {
         addressCountry: 'VE',
       },
     },
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: locale === 'es' ? 'Servicios de Reforma en Caracas' : 'Renovation Services in Caracas',
-      itemListElement: [
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: locale === 'es' ? 'Reformas integrales completas' : 'Complete full renovations',
-            description: locale === 'es'
-              ? 'Reforma completa de viviendas y apartamentos en Caracas con diseño personalizado'
-              : 'Complete renovation of homes and apartments in Caracas with custom design',
-          },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: locale === 'es' ? 'Cocinas a medida de diseño' : 'Custom design kitchens',
-          },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: locale === 'es' ? 'Baños completos con materiales premium' : 'Complete bathrooms with premium materials',
-          },
-        },
-      ],
-    },
+    image: `${baseUrl}${images.markets.caracas}`,
   }
 
   const faqs = getPageFaqsFromTranslations((key) => t(key), { has: (key) => t.has(key) })
-
-  const caracteristicas = [
-    {
-      title: tCommon('commonServices.service1'),
-      description: '',
-    },
-    {
-      title: tCommon('commonServices.service2'),
-      description: '',
-    },
-    {
-      title: tCommon('commonServices.service3'),
-      description: '',
-    },
-    {
-      title: tCommon('commonServices.service4'),
-      description: '',
-    },
-  ]
-
-  const relatedServices = [
-    {
-      title: locale === 'es' ? 'Reformas Integrales' : 'Full Renovations',
-      description: locale === 'es' ? 'Reforma completa de tu hogar' : 'Complete renovation of your home',
-      href: `/${locale}/reformas-integrales`,
-      image: images.services.reformas,
-    },
-    {
-      title: locale === 'es' ? 'Cocinas a Medida' : 'Custom Kitchens',
-      description: locale === 'es' ? 'Diseños exclusivos con materiales de calidad' : 'Exclusive designs with quality materials',
-      href: `/${locale}/cocinas-a-medida`,
-      image: images.services.cocinas,
-    },
-    {
-      title: locale === 'es' ? 'Baños Completos' : 'Complete Bathrooms',
-      description: locale === 'es' ? 'Reforma integral de tu baño con acabados premium' : 'Complete bathroom renovation with premium finishes',
-      href: `/${locale}/banos-completos`,
-      image: images.services.banos,
-    },
-  ]
 
   return (
     <>
@@ -151,99 +86,18 @@ export default async function ReformasCaracasPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
+
       <div className="min-h-screen bg-white">
-        <Hero
-          eyebrow={t('marketBadge')}
-          title={t('h1')}
-          subtitle={t('intro')}
-          image={images.markets.caracas}
-          imageAlt={t('h1')}
-          primaryHref="/contacto-caracas"
-          secondaryHref="/proyectos"
-          primaryLabel={tCta('requestQuote')}
-          secondaryLabel={tCta('viewProjects')}
-        />
-
-        {/* ── SERVICIOS ── */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-12 md:mb-16">
-              {t('servicesTitle')}
-            </h2>
-            <ServiceGrid items={caracteristicas} columns={4} />
-          </div>
-        </section>
-
-        {/* ── POR QUÉ ELEGIRNOS ── */}
-        <section className="relative overflow-hidden py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-          <div
-            className="pointer-events-none absolute inset-0 opacity-90"
-            style={{
-              background:
-                'linear-gradient(135deg, #0c1210 0%, #1a2420 45%, #2a1f14 100%)',
-            }}
-            aria-hidden
-          />
-          <div className="relative mx-auto max-w-4xl text-center text-white">
-            <h2 className="mb-6 font-heading text-3xl md:text-4xl">
-              {t('whyUs')}
-            </h2>
-            <p className="text-lg leading-relaxed text-white/75">
-              {t('whyUsDesc')}
-            </p>
-          </div>
-        </section>
-
-        {/* ── ZONAS ── */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-semibold text-black mb-6">
-              {t('zonesTitle')}
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              {t('zonesDesc')}
-            </p>
-            <p className="text-base text-gray-500">
-              {locale === 'es' ? 'Contacto Venezuela:' : 'Venezuela contact:'}{' '}
-              <a
-                href={`mailto:${ve.email}`}
-                className="font-medium text-black hover:underline"
-              >
-                {ve.email}
-              </a>
-            </p>
-          </div>
-        </section>
-
-        {/* ── RELATED SERVICES ── */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-black mb-8 md:mb-12 text-center">
-              {locale === 'es' ? 'Servicios relacionados' : 'Related services'}
-            </h2>
-            <RelatedLinks links={relatedServices} />
-          </div>
-        </section>
-
+        <Hero variant="caracas" />
+        <FeaturedSpaces />
+        <QuoteStrip variant="caracas" />
+        <TwoColShowroom variant="caracas" />
+        <FeaturedMaterial />
+        <DualLandscape variant="caracas" />
+        <CaracasZones />
+        <Proceso />
         <PageFaq title={t('faq.title')} faqs={faqs} />
-
-        {/* ── CTA FINAL ── */}
-        <CTASection
-          title={tCta('readyToTransform')}
-          description={tCta('freeVisitAndQuote')}
-          buttons={[
-            {
-              text: tCta('requestFreeVisit'),
-              href: `/${locale}/contacto-caracas`,
-              variant: 'primary',
-            },
-            {
-              text: ve.email,
-              href: `mailto:${ve.email}`,
-              variant: 'secondary',
-            },
-          ]}
-        />
+        <CTAFinal marketId="venezuela" />
       </div>
     </>
   )

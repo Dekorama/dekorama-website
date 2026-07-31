@@ -7,46 +7,7 @@ import { motion } from 'framer-motion'
 import { fadeUp, heroText, viewportOptions } from '@/lib/animations'
 
 /**
- * PageHeader Component - Unified Header for All Pages
- * 
- * Provides consistent page headers with breadcrumbs, titles, descriptions,
- * optional hero images, and CTAs. Supports multiple layout variants.
- * 
- * @param {Array} breadcrumbItems - Breadcrumb navigation items
- * @param {string} title - Page title (h1)
- * @param {string} subtitle - Optional subtitle/description
- * @param {string} heroImage - Optional hero image URL
- * @param {string} heroImageAlt - Alt text for hero image
- * @param {Object} ctaPrimary - Primary CTA: { text, href }
- * @param {Object} ctaSecondary - Secondary CTA: { text, href }
- * @param {boolean} centered - Center content (no image layout)
- * @param {string} baseUrl - Base URL for structured data
- * @param {string} className - additional CSS classes
- * 
- * @example
- * // Split layout with image
- * <PageHeader 
- *   breadcrumbItems={[
- *     { label: 'Home', href: '/es' },
- *     { label: 'Cocinas', href: null }
- *   ]}
- *   title="Cocinas a Medida"
- *   subtitle="Diseñamos la cocina de tus sueños"
- *   heroImage="/images/cocinas.jpg"
- *   heroImageAlt="Cocina moderna"
- *   ctaPrimary={{ text: 'Solicitar Presupuesto', href: '/contacto' }}
- *   ctaSecondary={{ text: 'Ver Proyectos', href: '/proyectos' }}
- *   baseUrl="https://www.dekoramagroup.com"
- * />
- * 
- * @example
- * // Centered layout without image
- * <PageHeader 
- *   breadcrumbItems={[{ label: 'Home', href: '/es' }, { label: 'Contacto', href: null }]}
- *   title="Contacto"
- *   subtitle="Estamos aquí para ayudarte"
- *   centered
- * />
+ * Unified page header — editorial luxury chrome.
  */
 export default function PageHeader({
   breadcrumbItems = [],
@@ -58,30 +19,22 @@ export default function PageHeader({
   ctaSecondary,
   centered = false,
   baseUrl = 'https://www.dekoramagroup.com',
-  className = ''
+  className = '',
 }) {
-  // Generate structured data for breadcrumbs
-  const structuredData = breadcrumbItems.length > 0 
-    ? generateBreadcrumbSchema(breadcrumbItems, baseUrl)
-    : null
+  const structuredData =
+    breadcrumbItems.length > 0 ? generateBreadcrumbSchema(breadcrumbItems, baseUrl) : null
 
-  // Centered layout (no image)
   if (centered || !heroImage) {
     return (
       <section className={`section-header ${className}`}>
-        <div className="max-w-7xl mx-auto">
-          {/* Breadcrumb */}
-          {breadcrumbItems.length > 0 && (
-            <Breadcrumb 
-              items={breadcrumbItems} 
-              structuredData={structuredData}
-            />
-          )}
+        <div className="mx-auto max-w-7xl">
+          {breadcrumbItems.length > 0 ? (
+            <Breadcrumb items={breadcrumbItems} structuredData={structuredData} />
+          ) : null}
 
-          {/* Centered Content */}
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 tracking-tight"
+          <div className="mx-auto max-w-3xl text-center">
+            <motion.h1
+              className="mb-5 font-heading text-3xl font-normal tracking-tight text-black sm:mb-6 sm:text-4xl md:text-5xl lg:text-6xl"
               initial="hidden"
               whileInView="visible"
               viewport={viewportOptions}
@@ -89,10 +42,10 @@ export default function PageHeader({
             >
               {title}
             </motion.h1>
-            
-            {subtitle && (
-              <motion.p 
-                className="text-xl text-gray-600 leading-relaxed mb-10"
+
+            {subtitle ? (
+              <motion.p
+                className="mb-10 text-lg leading-relaxed text-gray-600 md:text-xl"
                 initial="hidden"
                 whileInView="visible"
                 viewport={viewportOptions}
@@ -101,28 +54,27 @@ export default function PageHeader({
               >
                 {subtitle}
               </motion.p>
-            )}
+            ) : null}
 
-            {/* CTAs */}
             {(ctaPrimary || ctaSecondary) && (
-              <motion.div 
-                className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              <motion.div
+                className="flex flex-col items-center justify-center gap-4 sm:flex-row"
                 initial="hidden"
                 whileInView="visible"
                 viewport={viewportOptions}
                 variants={heroText}
                 transition={{ delay: 0.2 }}
               >
-                {ctaPrimary && (
+                {ctaPrimary ? (
                   <Link href={ctaPrimary.href} className="btn-primary">
                     {ctaPrimary.text}
                   </Link>
-                )}
-                {ctaSecondary && (
-                  <Link href={ctaSecondary.href} className="btn-secondary">
+                ) : null}
+                {ctaSecondary ? (
+                  <Link href={ctaSecondary.href} className="btn-discover">
                     {ctaSecondary.text}
                   </Link>
-                )}
+                ) : null}
               </motion.div>
             )}
           </div>
@@ -131,24 +83,27 @@ export default function PageHeader({
     )
   }
 
-  // Split layout with image
   return (
-    <section className={`section-header ${className}`}>
-      <div className="max-w-7xl mx-auto">
-        {/* Breadcrumb */}
-        {breadcrumbItems.length > 0 && (
-          <Breadcrumb 
-            items={breadcrumbItems} 
-            structuredData={structuredData}
-          />
-        )}
-
-        {/* Split Layout Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column: Content */}
-          <div>
-            <motion.h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 tracking-tight"
+    <section className={`bg-white ${className}`}>
+      <div className="relative h-[42vh] min-h-[280px] max-h-[480px] w-full overflow-hidden">
+        <Image
+          src={heroImage}
+          alt={heroImageAlt}
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/25 to-black/20" aria-hidden />
+        <div className="absolute inset-0 flex flex-col justify-end px-4 pb-10 sm:px-6 lg:px-8">
+          <div className="mx-auto w-full max-w-7xl">
+            {breadcrumbItems.length > 0 ? (
+              <div className="mb-4 [&_a]:text-white/70 [&_a:hover]:text-white [&_nav]:mb-0 [&_span]:text-white/90">
+                <Breadcrumb items={breadcrumbItems} structuredData={structuredData} />
+              </div>
+            ) : null}
+            <motion.h1
+              className="mb-3 font-heading text-[1.75rem] font-normal leading-tight tracking-tight text-white sm:text-3xl md:text-5xl lg:text-6xl"
               initial="hidden"
               whileInView="visible"
               viewport={viewportOptions}
@@ -156,10 +111,9 @@ export default function PageHeader({
             >
               {title}
             </motion.h1>
-            
-            {subtitle && (
-              <motion.p 
-                className="text-xl text-gray-600 leading-relaxed mb-10"
+            {subtitle ? (
+              <motion.p
+                className="mb-6 max-w-2xl text-sm leading-relaxed text-white/85 sm:text-base md:text-lg"
                 initial="hidden"
                 whileInView="visible"
                 viewport={viewportOptions}
@@ -168,50 +122,35 @@ export default function PageHeader({
               >
                 {subtitle}
               </motion.p>
-            )}
-
-            {/* CTAs */}
+            ) : null}
             {(ctaPrimary || ctaSecondary) && (
-              <motion.div 
-                className="flex flex-col sm:flex-row gap-4"
+              <motion.div
+                className="flex w-full max-w-xs flex-col gap-4 sm:max-w-none sm:flex-row"
                 initial="hidden"
                 whileInView="visible"
                 viewport={viewportOptions}
-                variants={heroText}
-                transition={{ delay: 0.2 }}
+                variants={fadeUp}
+                transition={{ delay: 0.15 }}
               >
-                {ctaPrimary && (
-                  <Link href={ctaPrimary.href} className="btn-primary">
+                {ctaPrimary ? (
+                  <Link
+                    href={ctaPrimary.href}
+                    className="inline-flex min-h-[48px] items-center justify-center border border-white bg-white px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.18em] text-black transition-colors hover:bg-transparent hover:text-white sm:px-8"
+                  >
                     {ctaPrimary.text}
                   </Link>
-                )}
-                {ctaSecondary && (
-                  <Link href={ctaSecondary.href} className="btn-secondary">
+                ) : null}
+                {ctaSecondary ? (
+                  <Link
+                    href={ctaSecondary.href}
+                    className="inline-flex items-center justify-center border-b border-white pb-0.5 text-xs font-semibold uppercase tracking-[0.22em] text-white transition-opacity hover:opacity-70"
+                  >
                     {ctaSecondary.text}
                   </Link>
-                )}
+                ) : null}
               </motion.div>
             )}
           </div>
-
-          {/* Right Column: Hero Image */}
-          <motion.div 
-            className="relative aspect-[4/3] lg:aspect-[3/2] rounded-xl overflow-hidden"
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportOptions}
-            variants={fadeUp}
-            transition={{ delay: 0.2 }}
-          >
-            <Image
-              src={heroImage}
-              alt={heroImageAlt}
-              fill
-              className="object-cover"
-              priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 640px"
-            />
-          </motion.div>
         </div>
       </div>
     </section>
