@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server'
 import { baseUrl } from '@/lib/site'
-import Breadcrumb, { generateBreadcrumbSchema } from '@/components/Breadcrumb'
+import PageHeader from '@/components/PageHeader'
 
 const AVISO_SECTIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -30,41 +30,30 @@ export default async function AvisoLegalPage({ params }) {
     day: 'numeric',
   })
 
-  const breadcrumbItems = [
-    { label: tCommon('home'), href: `/${locale}` },
-    { label: ta('title'), href: null }
-  ]
-
-  const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbItems, baseUrl)
-
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+    <div className="min-h-screen bg-white pb-20">
+      <PageHeader
+        breadcrumbItems={[
+          { label: tCommon('home'), href: `/${locale}` },
+          { label: ta('title'), href: null },
+        ]}
+        title={ta('title')}
+        subtitle={`${t('lastUpdated')}: ${dateStr}`}
+        baseUrl={baseUrl}
       />
-      <div className="min-h-screen bg-white pb-20">
-        <section className="section-header">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Breadcrumb items={breadcrumbItems} />
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-8 tracking-tight">{ta('title')}</h1>
-            <p className="text-gray-600 mb-8 leading-relaxed">
-              {t('lastUpdated')}: {dateStr}
-            </p>
-          </div>
-        </section>
 
-        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="space-y-8 text-gray-700 leading-relaxed">
-            {AVISO_SECTIONS.map((n) => (
-              <section key={n}>
-                <h2 className="text-2xl font-semibold text-black mt-10 mb-4">{ta(`s${n}Title`)}</h2>
-                <p>{ta(`s${n}Body`)}</p>
-              </section>
-            ))}
-          </div>
-        </article>
-      </div>
-    </>
+      <article className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="space-y-8 text-gray-700 leading-relaxed">
+          {AVISO_SECTIONS.map((n) => (
+            <section key={n}>
+              <h2 className="mt-10 mb-4 font-heading text-2xl font-normal tracking-tight text-black">
+                {ta(`s${n}Title`)}
+              </h2>
+              <p>{ta(`s${n}Body`)}</p>
+            </section>
+          ))}
+        </div>
+      </article>
+    </div>
   )
 }

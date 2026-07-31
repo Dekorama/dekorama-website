@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server'
 import { baseUrl } from '@/lib/site'
-import Breadcrumb, { generateBreadcrumbSchema } from '@/components/Breadcrumb'
+import PageHeader from '@/components/PageHeader'
 
 export async function generateMetadata({ params }) {
   const { locale } = await Promise.resolve(params)
@@ -28,45 +28,39 @@ export default async function CookiesPage({ params }) {
     day: 'numeric',
   })
 
-  const breadcrumbItems = [
-    { label: tCommon('home'), href: `/${locale}` },
-    { label: tc('title'), href: null }
-  ]
-
-  const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbItems, baseUrl)
-
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
     <div className="min-h-screen bg-white pb-20">
-      <section className="section-header">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumb items={breadcrumbItems} />
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-8 tracking-tight">{tc('title')}</h1>
-          <p className="text-gray-600 mb-8 leading-relaxed">
-            {t('lastUpdated')}: {dateStr}
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        breadcrumbItems={[
+          { label: tCommon('home'), href: `/${locale}` },
+          { label: tc('title'), href: null },
+        ]}
+        title={tc('title')}
+        subtitle={`${t('lastUpdated')}: ${dateStr}`}
+        baseUrl={baseUrl}
+      />
 
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <article className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="space-y-8 text-gray-700 leading-relaxed">
           <section>
-            <h2 className="text-2xl font-semibold text-black mt-10 mb-4">{tc('s1Title')}</h2>
+            <h2 className="mt-10 mb-4 font-heading text-2xl font-normal tracking-tight text-black">
+              {tc('s1Title')}
+            </h2>
             <p>{tc('s1Body')}</p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-black mt-10 mb-4">{tc('s2Title')}</h2>
+            <h2 className="mt-10 mb-4 font-heading text-2xl font-normal tracking-tight text-black">
+              {tc('s2Title')}
+            </h2>
             <p>{tc('s2Body')}</p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-black mt-10 mb-4">{tc('s3Title')}</h2>
-            <ul className="list-disc pl-6 space-y-2">
+            <h2 className="mt-10 mb-4 font-heading text-2xl font-normal tracking-tight text-black">
+              {tc('s3Title')}
+            </h2>
+            <ul className="list-disc space-y-2 pl-6">
               <li>{tc('s3Item1')}</li>
               <li>{tc('s3Item2')}</li>
               <li>{tc('s3Item3')}</li>
@@ -74,28 +68,35 @@ export default async function CookiesPage({ params }) {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-black mt-10 mb-4">{tc('s4Title')}</h2>
+            <h2 className="mt-10 mb-4 font-heading text-2xl font-normal tracking-tight text-black">
+              {tc('s4Title')}
+            </h2>
             <p>{tc('s4Body')}</p>
             <p className="mt-4">{tc('s4Body2')}</p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-black mt-10 mb-4">{tc('s5Title')}</h2>
+            <h2 className="mt-10 mb-4 font-heading text-2xl font-normal tracking-tight text-black">
+              {tc('s5Title')}
+            </h2>
             <p>{tc('s5Body')}</p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-black mt-10 mb-4">{tc('s6Title')}</h2>
+            <h2 className="mt-10 mb-4 font-heading text-2xl font-normal tracking-tight text-black">
+              {tc('s6Title')}
+            </h2>
             <p>{tc('s6Body')}</p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-black mt-10 mb-4">{tc('s7Title')}</h2>
+            <h2 className="mt-10 mb-4 font-heading text-2xl font-normal tracking-tight text-black">
+              {tc('s7Title')}
+            </h2>
             <p>{tc('s7Body')}</p>
           </section>
         </div>
       </article>
     </div>
-    </>
   )
 }
