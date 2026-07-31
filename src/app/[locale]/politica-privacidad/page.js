@@ -2,6 +2,8 @@ import { getTranslations } from 'next-intl/server'
 import { baseUrl } from '@/lib/site'
 import Breadcrumb, { generateBreadcrumbSchema } from '@/components/Breadcrumb'
 
+const PRIVACY_SECTIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
 export async function generateMetadata({ params }) {
   const { locale } = await Promise.resolve(params)
   const t = await getTranslations('legal.privacy')
@@ -41,61 +43,28 @@ export default async function PoliticaPrivacidadPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-    <div className="min-h-screen bg-white pb-20">
-      <section className="section-header">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumb items={breadcrumbItems} />
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-8 tracking-tight">{tp('title')}</h1>
-          <p className="text-gray-600 mb-8 leading-relaxed">
-            {t('lastUpdated')}: {dateStr}
-          </p>
-        </div>
-      </section>
+      <div className="min-h-screen bg-white pb-20">
+        <section className="section-header">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Breadcrumb items={breadcrumbItems} />
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-8 tracking-tight">{tp('title')}</h1>
+            <p className="text-gray-600 mb-8 leading-relaxed">
+              {t('lastUpdated')}: {dateStr}
+            </p>
+          </div>
+        </section>
 
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="prose prose-gray max-w-none space-y-8 text-gray-700 leading-relaxed">
-          <section>
-            <h2 className="text-2xl font-semibold text-black mt-10 mb-4">{tp('s1Title')}</h2>
-            <p>{tp('s1Body')}</p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-black mt-10 mb-4">{tp('s2Title')}</h2>
-            <p>{tp('s2Body')}</p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-black mt-10 mb-4">{tp('s3Title')}</h2>
-            <p>{tp('s3Body')}</p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-black mt-10 mb-4">{tp('s4Title')}</h2>
-            <p>{tp('s4Body')}</p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-black mt-10 mb-4">{tp('s5Title')}</h2>
-            <p>{tp('s5Body')}</p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-black mt-10 mb-4">{tp('s6Title')}</h2>
-            <p>{tp('s6Body')}</p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-black mt-10 mb-4">{tp('s7Title')}</h2>
-            <p>{tp('s7Body')}</p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-black mt-10 mb-4">{tp('s8Title')}</h2>
-            <p>{tp('s8Body')}</p>
-          </section>
-        </div>
-      </article>
-    </div>
+        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="prose prose-gray max-w-none space-y-8 text-gray-700 leading-relaxed">
+            {PRIVACY_SECTIONS.map((n) => (
+              <section key={n}>
+                <h2 className="text-2xl font-semibold text-black mt-10 mb-4">{tp(`s${n}Title`)}</h2>
+                <p>{tp(`s${n}Body`)}</p>
+              </section>
+            ))}
+          </div>
+        </article>
+      </div>
     </>
   )
 }
