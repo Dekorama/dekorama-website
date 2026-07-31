@@ -1,14 +1,15 @@
 'use client'
 
-import { useEffect, useId, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTranslations } from 'next-intl'
-import { Link, usePathname, useRouter } from '@/i18n/navigation'
+import { Link, usePathname } from '@/i18n/navigation'
 import MarketSwitcher from '@/components/MarketSwitcher'
 import LocaleSwitcher from '@/components/LocaleSwitcher'
 import MarketContactLink from '@/components/MarketContactLink'
 import MarketHomeLink from '@/components/MarketHomeLink'
 import MegaMenu from '@/components/MegaMenu'
+import NavSearch from '@/components/NavSearch'
 import { megaNavItems } from '@/data/megaNav'
 import { markets } from '@/lib/markets'
 import { useActiveMarket } from '@/lib/useActiveMarket'
@@ -17,20 +18,16 @@ export default function Header() {
   const t = useTranslations('nav')
   const tMega = useTranslations('megaNav')
   const tAria = useTranslations('aria')
-  const router = useRouter()
   const pathname = usePathname()
   const marketId = useActiveMarket()
   const market = marketId === 'venezuela' ? markets.venezuela : markets.spain
   const [activeMenu, setActiveMenu] = useState(/** @type {string | null} */ (null))
   const [isMobileOpen, setIsMobileOpen] = useState(false)
   const [mobileExpanded, setMobileExpanded] = useState(/** @type {string | null} */ (null))
-  const [searchQuery, setSearchQuery] = useState('')
   const [mounted, setMounted] = useState(false)
   const headerRef = useRef(/** @type {HTMLElement | null} */ (null))
   const menuButtonRef = useRef(/** @type {HTMLButtonElement | null} */ (null))
   const drawerRef = useRef(/** @type {HTMLDivElement | null} */ (null))
-  const searchId = useId()
-  const mobileSearchId = useId()
   const closeTimer = useRef(/** @type {ReturnType<typeof setTimeout> | null} */ (null))
 
   useEffect(() => {
@@ -137,13 +134,6 @@ export default function Header() {
     setMobileExpanded(null)
   }
 
-  const handleSearch = (/** @type {import('react').FormEvent} */ e) => {
-    e.preventDefault()
-    const q = searchQuery.trim()
-    closeMobile()
-    router.push(q ? `/catalogo?q=${encodeURIComponent(q)}` : '/catalogo')
-  }
-
   const activeItem = megaNavItems.find((item) => item.id === activeMenu) ?? null
 
   const mobileDrawer =
@@ -191,33 +181,10 @@ export default function Header() {
           </div>
 
           <div className="shrink-0 border-b border-gray-100 px-4 py-3 sm:px-5">
-            <form onSubmit={handleSearch} className="relative">
-              <label htmlFor={mobileSearchId} className="sr-only">
-                {t('search')}
-              </label>
-              <input
-                id={mobileSearchId}
-                type="search"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder={t('search')}
-                className="w-full border-0 border-b border-gray-300 bg-transparent py-2.5 pr-10 font-heading text-base text-gray-700 placeholder:text-gray-400 focus:border-black focus:outline-none focus:ring-0"
-              />
-              <button
-                type="submit"
-                className="absolute right-0 top-1/2 flex min-h-[44px] min-w-[44px] -translate-y-1/2 items-center justify-center text-gray-500"
-                aria-label={t('search')}
-              >
-                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14z"
-                  />
-                </svg>
-              </button>
-            </form>
+            <NavSearch
+              onNavigate={closeMobile}
+              inputClassName="w-full border-0 border-b border-gray-300 bg-transparent py-2.5 pr-10 font-heading text-base text-gray-700 placeholder:text-gray-400 focus:border-black focus:outline-none focus:ring-0"
+            />
           </div>
 
           <nav className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-2 sm:px-5" aria-label="Mobile">
@@ -422,33 +389,10 @@ export default function Header() {
             ))}
           </nav>
 
-          <form onSubmit={handleSearch} className="relative w-40 shrink-0 xl:w-56">
-            <label htmlFor={searchId} className="sr-only">
-              {t('search')}
-            </label>
-            <input
-              id={searchId}
-              type="search"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder={t('search')}
-              className="w-full border-0 border-b border-gray-300 bg-transparent py-1.5 pr-8 font-heading text-sm text-gray-700 placeholder:text-gray-400 focus:border-black focus:outline-none focus:ring-0"
-            />
-            <button
-              type="submit"
-              className="absolute right-0 top-1/2 -translate-y-1/2 text-gray-500 hover:text-black"
-              aria-label={t('search')}
-            >
-              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14z"
-                />
-              </svg>
-            </button>
-          </form>
+          <NavSearch
+            className="w-40 shrink-0 xl:w-56"
+            onOpen={() => setActiveMenu(null)}
+          />
         </div>
 
         {activeItem ? (

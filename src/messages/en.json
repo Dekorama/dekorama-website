@@ -73,7 +73,12 @@
     "call": "Call",
     "aboutShowroom": "Showroom",
     "partners": "Partners",
-    "search": "Search"
+    "search": "Search",
+    "searchResults": "Search results",
+    "searchNoResults": "No results. Try another term.",
+    "searchViewAll": "View in catalogue: “{query}”",
+    "searchQueryLabel": "Results for “{query}”",
+    "searchClear": "Clear search"
   },
   "megaNav": {
     "material": "Material",

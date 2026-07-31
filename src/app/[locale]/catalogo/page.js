@@ -6,6 +6,7 @@ import { getTranslations } from 'next-intl/server'
 import PageHeader from '@/components/PageHeader'
 import CTASection from '@/components/CTASection'
 import { images } from '@/data/images'
+import { CATALOG_SEARCH_KEYWORDS, matchesSearch } from '@/lib/siteSearch'
 
 export async function generateMetadata({ params }) {
   const { locale } = await params
@@ -38,10 +39,19 @@ const MATERIAL_CATEGORIES = [
   { key: 'exterior', image: images.dual.projects, href: '/materiales-premium' },
 ]
 
-export default async function CatalogoPage({ params }) {
+export default async function CatalogoPage({ params, searchParams }) {
   const { locale } = await params
+  const resolvedSearch = await searchParams
+  const rawQuery = typeof resolvedSearch?.q === 'string' ? resolvedSearch.q : ''
+  const query = rawQuery.trim()
+
   const t = await getTranslations({ locale, namespace: 'pages.catalogo' })
   const tCommon = await getTranslations({ locale, namespace: 'breadcrumb' })
+  const tNav = await getTranslations({ locale, namespace: 'nav' })
+
+  const categories = MATERIAL_CATEGORIES.filter(({ key }) =>
+    matchesSearch(query, t(`categories.${key}`), CATALOG_SEARCH_KEYWORDS[key] ?? []),
+  )
 
   return (
     <div className="min-h-screen bg-white">
@@ -68,31 +78,48 @@ export default async function CatalogoPage({ params }) {
               {t('materialsTitle')}
             </h2>
             <p className="leading-relaxed text-gray-600">{t('materialsSubtitle')}</p>
+            {query ? (
+              <p className="mt-4 flex flex-wrap items-center gap-3 text-sm text-gray-700">
+                <span>{tNav('searchQueryLabel', { query })}</span>
+                <Link href="/catalogo" className="underline underline-offset-4 hover:text-black">
+                  {tNav('searchClear')}
+                </Link>
+              </p>
+            ) : null}
           </div>
 
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5">
-            {MATERIAL_CATEGORIES.map(({ key, image, href }) => (
-              <Link
-                key={key}
-                href={href}
-                className="group relative aspect-square overflow-hidden bg-gray-100"
-              >
-                <Image
-                  src={image}
-                  alt={t(`categories.${key}`)}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 50vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-black/40 transition-colors duration-300 group-hover:bg-black/50" />
-                <div className="absolute inset-0 flex items-end p-5 md:p-6">
-                  <span className="text-sm font-semibold uppercase tracking-[0.14em] text-white md:text-base">
-                    {t(`categories.${key}`)}
-                  </span>
-                </div>
+          {categories.length === 0 ? (
+            <div className="py-12 text-center">
+              <p className="mb-6 text-lg text-gray-600">{tNav('searchNoResults')}</p>
+              <Link href="/catalogo" className="btn-secondary inline-flex">
+                {tNav('searchClear')}
               </Link>
-            ))}
-          </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5">
+              {categories.map(({ key, image, href }) => (
+                <Link
+                  key={key}
+                  href={href}
+                  className="group relative aspect-square overflow-hidden bg-gray-100"
+                >
+                  <Image
+                    src={image}
+                    alt={t(`categories.${key}`)}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-black/40 transition-colors duration-300 group-hover:bg-black/50" />
+                  <div className="absolute inset-0 flex items-end p-5 md:p-6">
+                    <span className="text-sm font-semibold uppercase tracking-[0.14em] text-white md:text-base">
+                      {t(`categories.${key}`)}
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
