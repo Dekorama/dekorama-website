@@ -153,8 +153,8 @@
     "title": "The renovation you always wanted, no surprises",
     "freeVisit": "Book your visit",
     "freeVisitDesc": "We visit you to assess your project and advise you in person",
-    "perfectWork": "Perfect result or we don't leave",
-    "perfectWorkDesc": "We don't consider the job done until it's perfect. Your satisfaction is our commitment",
+    "perfectWork": "Quality finishes",
+    "perfectWorkDesc": "We care for every detail and review delivery with you. Your satisfaction is our commitment",
     "budget": "Quote",
     "budgetDesc": "Detailed and transparent quote so you know exactly what you're investing in",
     "budget3d": "3D quote approval",
@@ -192,7 +192,7 @@
     "step5Title": "Execution",
     "step5Desc": "Our team works with precision and care, meeting the agreed deadlines",
     "step6Title": "Handover",
-    "step6Desc": "Final review with you. We don't consider the job done until it's perfect"
+    "step6Desc": "Final review with you to check finishes and details before handover"
   },
   "testimonios": {
     "title": "What our clients say",
@@ -286,7 +286,7 @@
         "item3Title": "Premium materials",
         "item3Desc": "We work with top brands in porcelain tiles, taps, lighting and carpentry",
         "item4Title": "Satisfaction guarantee",
-        "item4Desc": "We don't consider the job done until it's perfect and you're 100% satisfied"
+        "item4Desc": "Final review with you and a commitment to quality finishes on every project"
       },
       "fases": {
         "title": "Phases of a Full Renovation",

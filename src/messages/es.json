@@ -153,8 +153,8 @@
     "title": "La reforma que siempre quisiste, sin sorpresas",
     "freeVisit": "Haz tu visita",
     "freeVisitDesc": "Te visitamos para valorar tu proyecto y asesorarte en persona",
-    "perfectWork": "Obra perfecta o no salimos",
-    "perfectWorkDesc": "No damos la obra por terminada hasta que quede perfecta. Tu satisfacción es nuestro compromiso",
+    "perfectWork": "Acabados de calidad",
+    "perfectWorkDesc": "Cuidamos cada detalle y revisamos contigo la entrega. Tu satisfacción es nuestro compromiso",
     "budget": "Presupuesto",
     "budgetDesc": "Presupuesto detallado y transparente para que sepas exactamente en qué inviertes",
     "budget3d": "Aceptación de presupuesto 3D",
@@ -192,7 +192,7 @@
     "step5Title": "Ejecución",
     "step5Desc": "Nuestro equipo trabaja con precisión y limpieza, respetando los plazos acordados",
     "step6Title": "Entrega",
-    "step6Desc": "Revisión final contigo. No damos la obra por terminada hasta que quede perfecta"
+    "step6Desc": "Revisión final contigo para comprobar acabados y detalles antes de la entrega"
   },
   "testimonios": {
     "title": "Lo que dicen nuestros clientes",
@@ -286,7 +286,7 @@
         "item3Title": "Materiales premium",
         "item3Desc": "Trabajamos con primeras marcas de porcelánicos, grifería, iluminación y carpintería",
         "item4Title": "Garantía de satisfacción",
-        "item4Desc": "No damos la obra por terminada hasta que quede perfecta y estés 100% satisfecho"
+        "item4Desc": "Revisión final contigo y compromiso con acabados de calidad en cada proyecto"
       },
       "fases": {
         "title": "Fases de una Reforma Integral",
