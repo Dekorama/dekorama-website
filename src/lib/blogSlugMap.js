@@ -524,6 +524,14 @@ export const blogSlugMap = {
   'bathroom-renovation-cost-fuengirola': {
     es: 'cuanto-cuesta-reformar-bano-fuengirola',
     en: 'bathroom-renovation-cost-fuengirola',
+  },
+  'diseno-bano-moderno-fuengirola': {
+    es: 'diseno-bano-moderno-fuengirola',
+    en: 'modern-bathroom-design-fuengirola',
+  },
+  'modern-bathroom-design-fuengirola': {
+    es: 'diseno-bano-moderno-fuengirola',
+    en: 'modern-bathroom-design-fuengirola',
   },}
 
 /**
