@@ -532,6 +532,14 @@ export const blogSlugMap = {
   'modern-bathroom-design-fuengirola': {
     es: 'diseno-bano-moderno-fuengirola',
     en: 'modern-bathroom-design-fuengirola',
+  },
+  'reforma-cocina-fuengirola-presupuesto': {
+    es: 'reforma-cocina-fuengirola-presupuesto',
+    en: 'kitchen-renovation-cost-fuengirola',
+  },
+  'kitchen-renovation-cost-fuengirola': {
+    es: 'reforma-cocina-fuengirola-presupuesto',
+    en: 'kitchen-renovation-cost-fuengirola',
   },}
 
 /**
