@@ -540,6 +540,14 @@ export const blogSlugMap = {
   'kitchen-renovation-cost-fuengirola': {
     es: 'reforma-cocina-fuengirola-presupuesto',
     en: 'kitchen-renovation-cost-fuengirola',
+  },
+  'cocina-a-medida-fuengirola-precio': {
+    es: 'cocina-a-medida-fuengirola-precio',
+    en: 'custom-kitchen-cost-fuengirola',
+  },
+  'custom-kitchen-cost-fuengirola': {
+    es: 'cocina-a-medida-fuengirola-precio',
+    en: 'custom-kitchen-cost-fuengirola',
   },}
 
 /**
