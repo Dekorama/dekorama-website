@@ -548,6 +548,14 @@ export const blogSlugMap = {
   'custom-kitchen-cost-fuengirola': {
     es: 'cocina-a-medida-fuengirola-precio',
     en: 'custom-kitchen-cost-fuengirola',
+  },
+  'cocina-con-isla-fuengirola-ideas-coste': {
+    es: 'cocina-con-isla-fuengirola-ideas-coste',
+    en: 'kitchen-island-fuengirola-ideas-cost',
+  },
+  'kitchen-island-fuengirola-ideas-cost': {
+    es: 'cocina-con-isla-fuengirola-ideas-coste',
+    en: 'kitchen-island-fuengirola-ideas-cost',
   },}
 
 /**
