@@ -81,7 +81,7 @@ Elegir la empresa de reformas correcta es tan importante como definir el presupu
 *   **Calidad de los materiales:** Pregunta sobre los proveedores y la calidad de los [materiales premium](/es/materiales-premium) que utilizan. En Dekorama, trabajamos con las mejores marcas.
 *   **Servicio post-reforma:** Es un plus contar con un servicio de atención para cualquier eventualidad tras la finalización de la obra.
 
-Dekorama es tu socio de confianza para [reformas en Marbella](/es/reformas-marbella), [reformas en Fuengirola](/es/reformas-fuengirola), [reformas en Estepona](/es/reformas-estepona), [reformas en Torremolinos](/es/reformas-torremolinos) y, por supuesto, en Benalmádena, donde se encuentra nuestra sede.
+Dekorama es tu socio de confianza para [reformas integrales en Benalmádena](/es/reformas-benalmadena), [reformas en Marbella](/es/reformas-marbella), [Fuengirola](/es/reformas-fuengirola), [Estepona](/es/reformas-estepona) y [Torremolinos](/es/reformas-torremolinos), con sede y showroom en Benalmádena.
 
 ## Preguntas frecuentes
 

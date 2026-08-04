@@ -6,6 +6,8 @@ import { getTranslations } from 'next-intl/server'
 import PageHeader from '@/components/PageHeader'
 import RelatedLinks from '@/components/RelatedLinks'
 import CTASection from '@/components/CTASection'
+import PageFaq from '@/components/PageFaq'
+import { getPageFaqsFromTranslations } from '@/lib/pageFaqs'
 
 const HERO = '/images/porcelanicos/hero.png'
 
@@ -72,15 +74,17 @@ export default async function PorcelanicosMalagaPage({ params }) {
     { title: t('ventaja3'), description: t('ventaja3Desc') },
   ]
 
+  const faqs = getPageFaqsFromTranslations((key) => t(key), { has: (key) => t.has(key) })
+
   const relatedServices = [
     {
-      title: isEs ? 'Materiales Premium' : 'Premium Materials',
+      title: isEs ? 'Reformas Benalmádena' : 'Renovations Benalmádena',
       description: isEs
-        ? 'Grifería, sanitarios, iluminación y más'
-        : 'Taps, sanitaryware, lighting and more',
-      href: '/materiales-premium',
+        ? 'Empresa de reformas con showroom local'
+        : 'Renovation company with local showroom',
+      href: '/reformas-benalmadena',
       image: '/images/porcelanicos/materiales.png',
-      imageAlt: isEs ? 'Showroom de materiales' : 'Materials showroom',
+      imageAlt: isEs ? 'Reformas Benalmádena' : 'Renovations Benalmádena',
     },
     {
       title: isEs ? 'Baños Completos' : 'Complete Bathrooms',
@@ -213,6 +217,16 @@ export default async function PorcelanicosMalagaPage({ params }) {
           </div>
         </section>
 
+        {/* Local SEO */}
+        <section className="section-editorial">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-4 font-heading text-3xl font-normal tracking-tight text-black md:text-4xl">
+              {t('localTitle')}
+            </h2>
+            <p className="text-sm leading-relaxed text-gray-600 md:text-base">{t('localDesc')}</p>
+          </div>
+        </section>
+
         {/* Showroom CTA */}
         <section className="relative overflow-hidden">
           <div className="absolute inset-0">
@@ -254,6 +268,8 @@ export default async function PorcelanicosMalagaPage({ params }) {
           title={isEs ? 'Servicios relacionados' : 'Related services'}
           links={relatedServices}
         />
+
+        <PageFaq title={t('faq.title')} faqs={faqs} />
 
         <CTASection
           title={tCta('projectInMind')}

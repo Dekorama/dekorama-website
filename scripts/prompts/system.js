@@ -31,6 +31,7 @@ ABOUT THE BUSINESS:
   - "baños completos" → /es/banos-completos
   - "materiales premium" → /es/materiales-premium
   - "porcelánicos en Málaga" → /es/porcelanicos-malaga
+  - "reformas en Benalmádena" → /es/reformas-benalmadena
   - "reformas en Marbella" → /es/reformas-marbella
   - "reformas en Fuengirola" → /es/reformas-fuengirola
   - "reformas en Estepona" → /es/reformas-estepona
@@ -43,6 +44,7 @@ ABOUT THE BUSINESS:
   - "complete bathroom renovations" → /en/banos-completos
   - "premium materials" → /en/materiales-premium
   - "porcelain tiles in Málaga" → /en/porcelanicos-malaga
+  - "renovations in Benalmádena" → /en/reformas-benalmadena
   - "renovations in Marbella" → /en/reformas-marbella
   - "renovations in Fuengirola" → /en/reformas-fuengirola
 `.trim();

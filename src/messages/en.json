@@ -205,7 +205,7 @@
     "viewProjects": "View materials"
   },
   "footer": {
-    "description": "Materials for renovation and finishes on the Costa del Sol: porcelain tiles, taps, shower trays, lighting, screens and more. Full renovations, custom kitchens and bathrooms. Over 10 years of experience.",
+    "description": "Materials for renovation and finishes on the Costa del Sol: porcelain tiles, taps, shower trays, lighting, screens and more. Full renovations, custom kitchens and bathrooms. Over 12 years of experience.",
     "store": "Store:",
     "address": "Las Ventas, Avenida Tivoli, 17\nShopping Centre, Unit 5\n29631 Benalmádena, Málaga",
     "services": "Services",
@@ -500,7 +500,7 @@
       "porque": {
         "title": "Why trust us for your bathroom?",
         "item1Title": "Bathroom specialists",
-        "item1Desc": "Over 10 years designing and renovating bathrooms on the Costa del Sol",
+        "item1Desc": "Over 12 years designing and renovating bathrooms on the Costa del Sol",
         "item2Title": "Exclusive porcelain tiles",
         "item2Desc": "NADIS, MUSEUM, TAU, PORCELANITE DOS, HARMONY, APARICI... The best collections within your reach",
         "item3Title": "Premium taps and sanitaryware",
@@ -618,7 +618,7 @@
       "stats": {
         "refs": "200+",
         "refsLabel": "Exclusive references",
-        "years": "10+",
+        "years": "12+",
         "yearsLabel": "Years of experience",
         "brands": "Top brands",
         "brandsLabel": "Europe's finest brands",
@@ -784,14 +784,47 @@
     "infoEmail": "Email"
   },
   "ciudades": {
+    "benalmadena": {
+      "title": "Full Renovations Benalmádena | Dekorama",
+      "description": "Full renovation company in Benalmádena with our own showroom. Kitchens, bathrooms and complete home renovation. Fixed quote and free visit on the Costa del Sol.",
+      "h1": "Full Renovations in Benalmádena",
+      "intro": "We are Dekorama: showroom and renovation company in Benalmádena. We design and deliver full renovations, custom kitchens and complete bathrooms with top-brand materials — no middlemen.",
+      "whyUs": "Your renovation company based in Benalmádena",
+      "whyUsDesc": "Over 12 years renovating homes in Benalmádena and the Costa del Sol. Our Avenida Tivoli showroom lets you choose porcelain, taps and finishes before work starts. One team for design, supply and installation.",
+      "servicesTitle": "Our services in Benalmádena",
+      "showroomTitle": "Showroom and builds from Benalmádena",
+      "showroomDesc": "At Las Ventas, Avenida Tivoli 17 (Shopping Centre, Unit 5) you can see and touch real materials. We coordinate the works at your Benalmádena home or anywhere nearby on the coast.",
+      "priceGuide": "As a guide, a full renovation in Benalmádena often sits between €400 and €900+/m² depending on specification. Kitchen or bathroom only: typical timelines 3–8 weeks. Fixed quote after visit and measurements.",
+      "projectsTitle": "Typical projects in Benalmádena",
+      "projectsDesc": "We renovate flats in Arroyo de la Miel, apartments near Puerto Marina, chalets in Torrequebrada and homes in Benalmádena Pueblo. We also refresh bathrooms and kitchens for holiday lets with durable materials and realistic schedules.",
+      "zonesTitle": "Service areas in Benalmádena",
+      "zonesDesc": "Arroyo de la Miel, Benalmádena Pueblo, Torrequebrada, Puerto Marina, Torremuelle, Bil-Bil, Santa Águeda, Higuerón and Benalmádena Costa developments. Also Marbella, Fuengirola, Torremolinos and Estepona.",
+      "faq": {
+        "title": "Frequently asked questions about renovations in Benalmádena",
+        "q1": "How much does a full renovation cost in Benalmádena?",
+        "a1": "It depends on size and specification. Roughly €400–900/m² or more for luxury finishes. After a visit we provide a fixed quote with no surprises.",
+        "q2": "What does a full renovation include?",
+        "a2": "Design, demolition, installations, masonry, kitchens and bathrooms, flooring, painting and finishes. We coordinate trades and materials from our showroom.",
+        "q3": "Where is your showroom in Benalmádena?",
+        "a3": "Las Ventas, Avenida Tivoli 17, Shopping Centre Unit 5, 29631 Benalmádena. Mon–Fri 09:00–18:00, Sat 10:00–14:00. Tel. +34 628 571 537.",
+        "q4": "Do I need a building licence in Benalmádena?",
+        "a4": "Yes, if layout, structure or installations change. We advise and handle paperwork with Benalmádena Town Hall.",
+        "q5": "How long does a renovation take in Benalmádena?",
+        "a5": "Kitchen or bathroom: about 3–8 weeks. Full home renovation: usually 2–6 months depending on size and scope.",
+        "q6": "Can I buy materials only without building work?",
+        "a6": "Yes. The showroom sells porcelain, taps, screens and sanitaryware with advice, with or without installation."
+      }
+    },
     "marbella": {
       "title": "Full Renovations Marbella | Dekorama",
       "description": "Luxury full renovations in Marbella. Kitchens, bathrooms and interior design with premium materials. Complimentary quote for your villa or apartment.",
       "h1": "Full Renovations in Marbella",
       "intro": "Specialists in high-end renovations in Marbella and surroundings. We transform villas, apartments and commercial spaces with exclusive design and top-brand materials.",
       "whyUs": "Your trusted renovation company in Marbella",
-      "whyUsDesc": "Over 10 years executing projects in Marbella, Puerto Banús, Nueva Andalucía and San Pedro Alcántara. We know the particularities of the luxury market in the area and work to the highest quality standards.",
+      "whyUsDesc": "Over 12 years executing projects in Marbella, Puerto Banús, Nueva Andalucía and San Pedro Alcántara. We know the particularities of the luxury market in the area and work to the highest quality standards from our Benalmádena showroom.",
       "servicesTitle": "Our services in Marbella",
+      "projectsTitle": "Projects and cases in Marbella",
+      "projectsDesc": "We renovate villas in Nueva Andalucía and the Golden Mile, apartments in Puerto Banús and homes in Elviria or Las Chapas. We combine premium finishes, large-format porcelain and custom kitchens with realistic timelines for primary and second homes.",
       "zonesTitle": "Service areas in Marbella",
       "zonesDesc": "Marbella Centre, Puerto Banús, Nueva Andalucía, San Pedro Alcántara, Golden Mile, Sierra Blanca, Las Chapas, Elviria and the entire east and west of Marbella.",
       "faq": {
@@ -803,7 +836,11 @@
         "q3": "How long does a renovation take in Marbella?",
         "a3": "It depends on scope. A kitchen or bathroom may take 3–6 weeks; a full renovation often needs several months.",
         "q4": "Do you coordinate trades and materials?",
-        "a4": "Yes. We manage masonry, installations, carpentry and supply of tiles, taps and finishes from a single point of contact."
+        "a4": "Yes. We manage masonry, installations, carpentry and supply of tiles, taps and finishes from a single point of contact.",
+        "q5": "How much does a full renovation cost in Marbella?",
+        "a5": "High-end projects often sit above €700–1,000/m² depending on specification. After a visit we provide a fixed quote.",
+        "q6": "Do you handle building licences in Marbella?",
+        "a6": "Yes. We advise on major or minor licences by scope and coordinate documentation with the Town Hall."
       }
     },
     "fuengirola": {
@@ -896,7 +933,20 @@
       "ventaja3": "Great variety of designs",
       "ventaja3Desc": "Wood, stone, cement, marble imitations. Any style is possible.",
       "showroomTitle": "Visit our showroom in Benalmádena",
-      "showroomDesc": "Come and see and touch our porcelain tiles in person. We advise you at no obligation and help you choose the best material for your project. Easy access from Málaga, Marbella, Fuengirola, Torremolinos and the entire Costa del Sol."
+      "showroomDesc": "Come and see and touch our porcelain tiles in person. We advise you at no obligation and help you choose the best material for your project. Easy access from Málaga, Marbella, Fuengirola, Torremolinos and the entire Costa del Sol.",
+      "localTitle": "Porcelain tiles in Benalmádena, Málaga and the Costa del Sol",
+      "localDesc": "Looking for porcelain tiles in Benalmádena or Málaga? Our showroom is the starting point: top European brands, full-size samples and advice for floors, bathrooms and kitchens. We also supply and install in Marbella and along the coast.",
+      "faq": {
+        "title": "Frequently asked questions about porcelain tiles",
+        "q1": "Where can I buy porcelain tiles in Benalmádena or Málaga?",
+        "a1": "At the Dekorama showroom in Benalmádena (Avenida Tivoli 17). See European brands, formats and finishes, with no-obligation advice.",
+        "q2": "Which porcelain brands do you stock?",
+        "a2": "NADIS, MUSEUM, TAU, PORCELANITE DOS, HARMONY, APARICI, ROCA and VIVES, among other top brands.",
+        "q3": "Do you sell materials only or also install?",
+        "a3": "Both. Buy materials alone or book supply and installation as part of a bathroom, kitchen or full renovation.",
+        "q4": "Do you have large-format and wood-effect porcelain?",
+        "a4": "Yes. Large-format collections (up to 120x280 cm), wood and marble effects, and non-slip outdoor ranges."
+      }
     },
     "caracas": {
       "title": "Full Renovations in Caracas",

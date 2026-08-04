@@ -146,7 +146,7 @@ export default function Footer() {
               ) : (
                 <>
                   <li>
-                    <Link href="/contacto" className="hover:text-white">
+                    <Link href="/reformas-benalmadena" className="hover:text-white">
                       {t('benalmadena')}
                     </Link>
                   </li>
@@ -166,8 +166,18 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
+                    <Link href="/reformas-torremolinos" className="hover:text-white">
+                      {t('torremolinos')}
+                    </Link>
+                  </li>
+                  <li>
                     <Link href="/reformas-caracas" className="hover:text-white">
                       {t('caracas')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contacto" className="hover:text-white">
+                      {t('contact')}
                     </Link>
                   </li>
                 </>

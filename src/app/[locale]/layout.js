@@ -77,7 +77,7 @@ export default async function LocaleLayout({ children, params }) {
     logo: `${baseUrl}/dekorama-logo-cropped.svg`,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Avenida Tivoli, 17, Centro Comercial, Local 5',
+      streetAddress: 'Las Ventas, Avenida Tivoli, 17, Centro Comercial, Local 5',
       addressLocality: 'Benalmádena',
       postalCode: '29631',
       addressRegion: 'Málaga',
@@ -144,7 +144,7 @@ export default async function LocaleLayout({ children, params }) {
     contactPoint: [
       {
         '@type': 'ContactPoint',
-        telephone: '+34-628-571-537',
+        telephone: '+34628571537',
         contactType: 'customer service',
         email: 'info@dekoramagroup.com',
         areaServed: ['ES', 'GB'],

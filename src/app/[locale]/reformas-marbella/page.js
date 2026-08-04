@@ -107,10 +107,20 @@ export default async function ReformasMarbellaPage({ params }) {
 
   const relatedServices = [
     {
-      title: locale === 'es' ? 'Reformas Integrales' : 'Full Renovations',
-      description: locale === 'es' ? 'Reforma completa de tu hogar' : 'Complete renovation of your home',
-      href: `/${locale}/reformas-integrales`,
+      title: locale === 'es' ? 'Reformas Benalmádena' : 'Renovations Benalmádena',
+      description: locale === 'es'
+        ? 'Showroom y sede en Benalmádena'
+        : 'Showroom and HQ in Benalmádena',
+      href: `/${locale}/reformas-benalmadena`,
       image: images.services.reformas,
+    },
+    {
+      title: locale === 'es' ? 'Porcelánicos Málaga' : 'Porcelain Tiles Málaga',
+      description: locale === 'es'
+        ? 'Primera marcas para suelos y baños'
+        : 'Top brands for floors and bathrooms',
+      href: `/${locale}/porcelanicos-malaga`,
+      image: images.services.materiales,
     },
     {
       title: locale === 'es' ? 'Cocinas a Medida' : 'Custom Kitchens',
@@ -177,8 +187,20 @@ export default async function ReformasMarbellaPage({ params }) {
         </div>
       </section>
 
-      {/* ── ZONAS ── */}
+      {/* ── PROYECTOS ── */}
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-semibold text-black mb-6 text-center">
+            {t('projectsTitle')}
+          </h2>
+          <p className="text-lg text-gray-600 leading-relaxed text-center">
+            {t('projectsDesc')}
+          </p>
+        </div>
+      </section>
+
+      {/* ── ZONAS ── */}
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-semibold text-black mb-6 text-center">
             {t('zonesTitle')}
@@ -190,7 +212,7 @@ export default async function ReformasMarbellaPage({ params }) {
       </section>
 
       {/* ── RELATED SERVICES ── */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-black mb-8 md:mb-12 text-center">
             {locale === 'es' ? 'Servicios relacionados' : 'Related services'}

@@ -57,6 +57,48 @@ See rows in the CSV template. Replace or extend from GSC “high impressions, lo
 - `sameAs` social URLs consistent with live profiles
 - 5–10 local citations with identical NAP
 
+### GBP + directories checklist (Benalmádena / Marbella / porcelánicos)
+
+Canonical NAP (copy exactly everywhere):
+
+- Name: Dekorama
+- Address: Las Ventas, Avenida Tivoli, 17, Centro Comercial, Local 5, 29631 Benalmádena, Málaga, Spain
+- Phone: +34 628 571 537
+- Website: https://www.dekoramagroup.com
+- Hours: Mon–Fri 09:00–18:00, Sat 10:00–14:00
+- Experience claim: 12+ years (never 10 or 20)
+
+**Google Business Profile**
+
+- [ ] Primary category: Contractor / Reformas (or local equivalent: Building renovation service)
+- [ ] Secondary: Tile store / Bathroom supply store / Kitchen supply store (as available)
+- [ ] Service areas: Benalmádena, Marbella, Fuengirola, Estepona, Torremolinos, Málaga
+- [ ] Description matches [`businessDescription`](../src/lib/site.js) / GBP text
+- [ ] Products/services list: reformas integrales, cocinas, baños, porcelánicos, grifería
+- [ ] Photos: showroom exterior, interior, projects (monthly refresh)
+- [ ] Weekly post linking to money pages: `/es/reformas-benalmadena`, `/es/reformas-marbella`, `/es/porcelanicos-malaga`
+- [ ] Ask finished clients for reviews that mention city + service (e.g. “reforma integral Benalmádena”)
+- [ ] Reply to every review within 7 days
+
+**Directories (same NAP)**
+
+- [ ] Habitissimo
+- [ ] Cronoshare
+- [ ] Poblanas / local Málaga listings
+- [ ] Apple Maps / Bing Places if missing
+- [ ] Instagram / Facebook / Pinterest bio address + phone match NAP
+
+**Ads (optional short-term)**
+
+- [ ] Exact-match campaigns only if budget allows: `reformas integrales benalmadena`, `reformas marbella`, `porcelanicos malaga`
+- [ ] Landing URLs = money pages above (not homepage)
+
+**Measure**
+
+- [ ] GSC: impressions/CTR for those queries; confirm `/es/reformas-benalmadena` indexed
+- [ ] GBP Insights: calls, direction requests, website clicks
+- [ ] Monthly AI audit per template in this playbook
+
 ## Machine-readable assets
 
 - [`public/llms.txt`](../public/llms.txt) — canonical business facts for AI crawlers (refresh quarterly)

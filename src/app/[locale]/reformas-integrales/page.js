@@ -87,22 +87,34 @@ export default async function ReformasIntegralesPage({ params }) {
 
   const relatedServices = [
     {
+      title: locale === 'es' ? 'Reformas Benalmádena' : 'Renovations Benalmádena',
+      description: locale === 'es'
+        ? 'Showroom y sede en Benalmádena'
+        : 'Showroom and HQ in Benalmádena',
+      href: `/${locale}/reformas-benalmadena`,
+      image: images.services.reformas,
+    },
+    {
+      title: locale === 'es' ? 'Reformas Marbella' : 'Renovations Marbella',
+      description: locale === 'es'
+        ? 'Villas y apartamentos en Marbella'
+        : 'Villas and apartments in Marbella',
+      href: `/${locale}/reformas-marbella`,
+      image: images.services.banos,
+    },
+    {
+      title: locale === 'es' ? 'Porcelánicos Málaga' : 'Porcelain Tiles Málaga',
+      description: locale === 'es'
+        ? 'Primera marcas en showroom'
+        : 'Top brands in our showroom',
+      href: `/${locale}/porcelanicos-malaga`,
+      image: images.services.materiales,
+    },
+    {
       title: locale === 'es' ? 'Cocinas a Medida' : 'Custom Kitchens',
       description: locale === 'es' ? 'Diseños exclusivos con materiales de calidad' : 'Exclusive designs with quality materials',
       href: `/${locale}/cocinas-a-medida`,
       image: images.services.cocinas,
-    },
-    {
-      title: locale === 'es' ? 'Baños Completos' : 'Complete Bathrooms',
-      description: locale === 'es' ? 'Reforma integral de tu baño con acabados premium' : 'Complete bathroom renovation with premium finishes',
-      href: `/${locale}/banos-completos`,
-      image: images.services.banos,
-    },
-    {
-      title: locale === 'es' ? 'Materiales Premium' : 'Premium Materials',
-      description: locale === 'es' ? 'Grifería, sanitarios, iluminación y más' : 'Taps, sanitaryware, lighting and more',
-      href: `/${locale}/materiales-premium`,
-      image: images.services.materiales,
     },
   ]
 

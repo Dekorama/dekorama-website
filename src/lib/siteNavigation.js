@@ -40,6 +40,12 @@ export function getSiteNavigation(locale) {
           'Browse Dekorama material categories for high-end renovations.',
       },
       {
+        name: 'Renovations Benalmádena',
+        url: `${prefix}/reformas-benalmadena`,
+        description:
+          'Full renovations in Benalmádena with local showroom and 12+ years of experience.',
+      },
+      {
         name: 'Renovations Caracas',
         url: `${prefix}/reformas-caracas`,
         description:
@@ -78,6 +84,12 @@ export function getSiteNavigation(locale) {
       url: `${prefix}/catalogo`,
       description:
         'Explora las categorías de materiales Dekorama para reformas de alta gama.',
+    },
+    {
+      name: 'Reformas Benalmádena',
+      url: `${prefix}/reformas-benalmadena`,
+      description:
+        'Reformas integrales en Benalmádena con showroom propio y más de 12 años de experiencia.',
     },
     {
       name: 'Reformas Caracas',

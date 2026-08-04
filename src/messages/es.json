@@ -205,7 +205,7 @@
     "viewProjects": "Ver materiales"
   },
   "footer": {
-    "description": "Materiales para reforma y acabados en la Costa del Sol: porcelánicos, grifería, platos de ducha, iluminación, mamparas y más. Reformas integrales, cocinas y baños de diseño. Más de 10 años de experiencia.",
+    "description": "Materiales para reforma y acabados en la Costa del Sol: porcelánicos, grifería, platos de ducha, iluminación, mamparas y más. Reformas integrales, cocinas y baños de diseño. Más de 12 años de experiencia.",
     "store": "Tienda:",
     "address": "Las Ventas, Avenida Tivoli, 17\nCentro Comercial, Local 5\n29631 Benalmádena, Málaga",
     "services": "Servicios",
@@ -500,7 +500,7 @@
       "porque": {
         "title": "¿Por qué confiar en nosotros para tu baño?",
         "item1Title": "Especialistas en baño",
-        "item1Desc": "Más de 10 años diseñando y reformando baños en la Costa del Sol",
+        "item1Desc": "Más de 12 años diseñando y reformando baños en la Costa del Sol",
         "item2Title": "Porcelánicos exclusivos",
         "item2Desc": "NADIS, MUSEUM, TAU, PORCELANITE DOS, HARMONY, APARICI... Las mejores colecciones a tu alcance",
         "item3Title": "Grifería y sanitarios premium",
@@ -618,7 +618,7 @@
       "stats": {
         "refs": "200+",
         "refsLabel": "Referencias exclusivas",
-        "years": "10+",
+        "years": "12+",
         "yearsLabel": "Años de experiencia",
         "brands": "Top marcas",
         "brandsLabel": "Las mejores marcas europeas",
@@ -784,14 +784,47 @@
     "infoEmail": "Email"
   },
   "ciudades": {
+    "benalmadena": {
+      "title": "Reformas Integrales Benalmádena | Dekorama",
+      "description": "Empresa de reformas integrales en Benalmádena con showroom propio. Cocinas, baños y reforma completa. Presupuesto cerrado y visita gratuita en Costa del Sol.",
+      "h1": "Reformas Integrales en Benalmádena",
+      "intro": "Somos Dekorama: showroom y empresa de reformas en Benalmádena. Diseñamos y ejecutamos reformas integrales, cocinas a medida y baños completos con materiales de primeras marcas, sin intermediarios.",
+      "whyUs": "Tu empresa de reformas con sede en Benalmádena",
+      "whyUsDesc": "Más de 12 años reformando viviendas en Benalmádena y la Costa del Sol. Nuestro showroom en Avenida Tivoli te permite elegir porcelánico, grifería y acabados antes de empezar la obra. Un solo equipo para diseño, suministro e instalación.",
+      "servicesTitle": "Nuestros servicios en Benalmádena",
+      "showroomTitle": "Showroom y obra desde Benalmádena",
+      "showroomDesc": "En Las Ventas, Avenida Tivoli 17 (Centro Comercial, Local 5) puedes ver y tocar materiales reales. Coordinamos la obra en tu vivienda de Benalmádena o de cualquier punto cercano de la costa.",
+      "priceGuide": "Como orientación, una reforma integral en Benalmádena suele situarse entre 400 € y más de 900 €/m² según calidades. Cocina o baño sueltos: plazos típicos de 3–8 semanas. Presupuesto cerrado tras visita y mediciones.",
+      "projectsTitle": "Proyectos habituales en Benalmádena",
+      "projectsDesc": "Reformamos pisos en Arroyo de la Miel, apartamentos cerca de Puerto Marina, chalets en Torrequebrada y viviendas en Benalmádena Pueblo. También actualizamos baños y cocinas para alquiler vacacional con materiales resistentes y plazos realistas.",
+      "zonesTitle": "Zonas de actuación en Benalmádena",
+      "zonesDesc": "Arroyo de la Miel, Benalmádena Pueblo, Torrequebrada, Puerto Marina, Torremuelle, Bil-Bil, Santa Águeda, Higuerón y urbanizaciones de Benalmádena Costa. También Marbella, Fuengirola, Torremolinos y Estepona.",
+      "faq": {
+        "title": "Preguntas frecuentes sobre reformas en Benalmádena",
+        "q1": "¿Cuánto cuesta una reforma integral en Benalmádena?",
+        "a1": "Depende de metros y calidades. Orientativamente 400–900 €/m² o más en acabados de lujo. Tras visita entregamos presupuesto cerrado sin sorpresas.",
+        "q2": "¿Qué incluye una reforma integral?",
+        "a2": "Diseño, demolición, instalaciones, albañilería, cocinas y baños, suelos, pintura y acabados. Coordinamos gremios y materiales desde nuestro showroom.",
+        "q3": "¿Dónde está vuestro showroom en Benalmádena?",
+        "a3": "Las Ventas, Avenida Tivoli 17, Centro Comercial Local 5, 29631 Benalmádena. Lun–Vie 09:00–18:00, Sáb 10:00–14:00. Tel. +34 628 571 537.",
+        "q4": "¿Necesito licencia de obra en Benalmádena?",
+        "a4": "Sí, si hay cambios de distribución, estructura o instalaciones. Te asesoramos y gestionamos los trámites con el Ayuntamiento de Benalmádena.",
+        "q5": "¿Cuánto tarda una reforma en Benalmádena?",
+        "a5": "Cocina o baño: unas 3–8 semanas. Reforma integral completa: normalmente 2–6 meses según metros y alcance.",
+        "q6": "¿También vendéis solo materiales sin obra?",
+        "a6": "Sí. En el showroom vendemos porcelánicos, grifería, mamparas y sanitarios con asesoramiento, con o sin instalación."
+      }
+    },
     "marbella": {
       "title": "Reformas Integrales Marbella | Dekorama",
       "description": "Reformas integrales de lujo en Marbella. Cocinas, baños y diseño de interiores con materiales premium. Presupuesto sin costo para tu villa o apartamento.",
       "h1": "Reformas Integrales en Marbella",
       "intro": "Especialistas en reformas de alto standing en Marbella y alrededores. Transformamos villas, apartamentos y espacios comerciales con diseño exclusivo y materiales de primeras marcas.",
       "whyUs": "Tu empresa de reformas de confianza en Marbella",
-      "whyUsDesc": "Más de 10 años ejecutando proyectos en Marbella, Puerto Banús, Nueva Andalucía y San Pedro Alcántara. Conocemos las particularidades del mercado de lujo de la zona y trabajamos con los más altos estándares de calidad.",
+      "whyUsDesc": "Más de 12 años ejecutando proyectos en Marbella, Puerto Banús, Nueva Andalucía y San Pedro Alcántara. Conocemos las particularidades del mercado de lujo de la zona y trabajamos con los más altos estándares de calidad desde nuestro showroom en Benalmádena.",
       "servicesTitle": "Nuestros servicios en Marbella",
+      "projectsTitle": "Proyectos y casos en Marbella",
+      "projectsDesc": "Reformamos villas en Nueva Andalucía y la Milla de Oro, apartamentos en Puerto Banús y viviendas en Elviria o Las Chapas. Combinamos acabados premium, porcelánico de gran formato y cocinas a medida con plazos realistas para residencia habitual y segunda vivienda.",
       "zonesTitle": "Zonas de actuación en Marbella",
       "zonesDesc": "Centro de Marbella, Puerto Banús, Nueva Andalucía, San Pedro Alcántara, Golden Mile, Sierra Blanca, Las Chapas, Elviria y toda la zona este y oeste de Marbella.",
       "faq": {
@@ -803,7 +836,11 @@
         "q3": "¿Cuánto tarda una reforma en Marbella?",
         "a3": "Depende del alcance. Una cocina o baño puede llevar 3–6 semanas; una reforma integral completa suele necesitar varios meses.",
         "q4": "¿Coordináis gremios y materiales?",
-        "a4": "Sí. Gestionamos albañilería, instalaciones, carpintería y suministro de porcelánico, grifería y acabados desde un solo interlocutor."
+        "a4": "Sí. Gestionamos albañilería, instalaciones, carpintería y suministro de porcelánico, grifería y acabados desde un solo interlocutor.",
+        "q5": "¿Cuánto cuesta una reforma integral en Marbella?",
+        "a5": "En proyectos de alto standing suele situarse por encima de 700–1.000 €/m² según calidades. Tras visita entregamos presupuesto cerrado.",
+        "q6": "¿Gestionáis licencias de obra en Marbella?",
+        "a6": "Sí. Te asesoramos sobre licencia mayor o menor según el alcance y coordinamos la documentación con el Ayuntamiento."
       }
     },
     "fuengirola": {
@@ -896,7 +933,20 @@
       "ventaja3": "Gran variedad de diseños",
       "ventaja3Desc": "Imitaciones de madera, piedra, cemento, mármol. Cualquier estilo es posible.",
       "showroomTitle": "Visita nuestro showroom en Benalmádena",
-      "showroomDesc": "Ven a tocar y ver nuestros porcelánicos en persona. Te asesoramos sin compromiso y te ayudamos a elegir el mejor material para tu proyecto. Fácil acceso desde Málaga, Marbella, Fuengirola, Torremolinos y toda la Costa del Sol."
+      "showroomDesc": "Ven a tocar y ver nuestros porcelánicos en persona. Te asesoramos sin compromiso y te ayudamos a elegir el mejor material para tu proyecto. Fácil acceso desde Málaga, Marbella, Fuengirola, Torremolinos y toda la Costa del Sol.",
+      "localTitle": "Porcelánicos en Benalmádena, Málaga y Costa del Sol",
+      "localDesc": "Si buscas porcelánicos en Benalmádena o Málaga, nuestro showroom es el punto de partida: stocks de primeras marcas, muestras a tamaño real y asesoramiento para suelos, baños y cocinas. También suministramos e instalamos en Marbella y el resto de la costa.",
+      "faq": {
+        "title": "Preguntas frecuentes sobre porcelánicos",
+        "q1": "¿Dónde comprar porcelánicos en Benalmádena o Málaga?",
+        "a1": "En el showroom Dekorama de Benalmádena (Avenida Tivoli 17). Verás marcas europeas, formatos y acabados, y te asesoramos sin compromiso.",
+        "q2": "¿Qué marcas de porcelánico trabajáis?",
+        "a2": "NADIS, MUSEUM, TAU, PORCELANITE DOS, HARMONY, APARICI, ROCA y VIVES, entre otras primeras marcas.",
+        "q3": "¿Vendéis solo material o también instaláis?",
+        "a3": "Ambas opciones. Puedes comprar material o contratar suministro e instalación dentro de una reforma de baño, cocina o integral.",
+        "q4": "¿Tenéis porcelánico gran formato e imitación madera?",
+        "a4": "Sí. Colecciones de gran formato (hasta 120x280 cm), imitación madera, mármol y exteriores antideslizantes."
+      }
     },
     "caracas": {
       "title": "Reformas Integrales en Caracas",

@@ -76,7 +76,7 @@ export const markets = {
     phoneReady: true,
     email: 'info@dekoramagroup.com',
     address: {
-      streetAddress: 'Avenida Tivoli, 17, Centro Comercial, Local 5',
+      streetAddress: 'Las Ventas, Avenida Tivoli, 17, Centro Comercial, Local 5',
       addressLocality: 'Benalmádena',
       postalCode: '29631',
       addressRegion: 'Málaga',

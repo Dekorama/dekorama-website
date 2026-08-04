@@ -72,7 +72,7 @@ Delays can occur due to permit approvals, material availability, or unforeseen s
 Selecting the right company for your full home renovation in Benalmádena is the most critical decision. Consider these points when evaluating potential partners:
 
 ### Experience and Portfolio
-Look for companies with a proven track record in [renovations in Marbella](/en/reformas-marbella), Benalmádena, and [renovations in Fuengirola](/en/reformas-fuengirola). Review their portfolio of completed projects to assess the quality of their work and ensure their style aligns with your vision. Dekorama brings over 12 years of industry experience to every project.
+Look for companies with a proven track record in [renovations in Benalmádena](/en/reformas-benalmadena), [renovations in Marbella](/en/reformas-marbella), and [renovations in Fuengirola](/en/reformas-fuengirola). Review their portfolio of completed projects to assess the quality of their work and ensure their style aligns with your vision. Dekorama brings over 12 years of industry experience to every project.
 
 ### Transparency and Contracts
 Ensure the company provides a detailed contract outlining the scope of work, timeline, payment schedule, and warranties. All costs should be transparent, with no hidden fees. A clear contract protects both parties and sets expectations.
@@ -101,4 +101,4 @@ A reputable renovation company will provide detailed specifications for all mate
 Payment structures usually involve an initial deposit, followed by staged payments tied to project milestones (e.g., completion of demolition, plumbing, tiling). A final payment is made upon successful completion and handover. Always ensure the payment schedule is clearly outlined in your contract.
 
 ### What if I have language barriers with the renovation team?
-Choosing a company experienced with international clients, like Dekorama, can mitigate language barriers. They often have English-speaking project managers or staff who can ensure clear communication throughout the renovation process, providing updates and addressing concerns effectively. Ready to transform your property in Benalmádena or elsewhere on the Costa del Sol? Contact Dekorama today for a consultation. Our experienced team is ready to discuss your vision for [full home renovations on the Costa del Sol](/en/reformas-integrales) and provide a detailed.
+Choosing a company experienced with international clients, like Dekorama, can mitigate language barriers. They often have English-speaking project managers or staff who can ensure clear communication throughout the renovation process, providing updates and addressing concerns effectively. Ready to transform your property in Benalmádena? Start with our [full renovations in Benalmádena](/en/reformas-benalmadena) page or explore [full home renovations on the Costa del Sol](/en/reformas-integrales) and request a detailed quote.
