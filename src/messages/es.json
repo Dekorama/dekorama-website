@@ -40,6 +40,9 @@
   "blog": {
     "title": "Blog",
     "subtitle": "Tendencias en porcelánico, reformas y diseño de interiores. Consejos y novedades de nuestro equipo.",
+    "heroAlt": "Interior de diseño con materiales premium Dekorama",
+    "primaryCta": "Haz tu visita",
+    "secondaryCta": "Ver proyectos",
     "readMore": "Leer más",
     "backToBlog": "Volver al blog",
     "postNotFound": "Entrada no encontrada",

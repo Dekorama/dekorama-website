@@ -40,6 +40,9 @@
   "blog": {
     "title": "Blog",
     "subtitle": "Trends in porcelain tile, renovations and interior design. Tips and news from our team.",
+    "heroAlt": "Designer interior with premium Dekorama materials",
+    "primaryCta": "Book your visit",
+    "secondaryCta": "View projects",
     "readMore": "Read more",
     "backToBlog": "Back to blog",
     "postNotFound": "Post not found",

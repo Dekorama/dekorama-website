@@ -1,7 +1,8 @@
 import { getTranslations } from 'next-intl/server'
 import { getPosts } from '@/lib/blog'
 import { baseUrl } from '@/lib/site'
-import Breadcrumb, { generateBreadcrumbSchema } from '@/components/Breadcrumb'
+import { images } from '@/data/images'
+import PageHeader from '@/components/PageHeader'
 import CTASection from '@/components/CTASection'
 import BlogListing from '@/components/blog/BlogListing'
 
@@ -34,32 +35,24 @@ export default async function BlogPage({ params }) {
 
   const breadcrumbItems = [
     { label: tCommon('home'), href: `/${locale}` },
-    { label: tCommon('blog'), href: null }
+    { label: tCommon('blog'), href: null },
   ]
 
-  const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbItems, baseUrl)
-
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
     <div className="min-h-screen bg-white">
-      <section className="section-header">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumb items={breadcrumbItems} />
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4 tracking-tight">
-            {t('title')}
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl leading-relaxed">
-            {t('subtitle')}
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        breadcrumbItems={breadcrumbItems}
+        title={t('title')}
+        subtitle={t('subtitle')}
+        heroImage={images.hero}
+        heroImageAlt={t('heroAlt')}
+        ctaPrimary={{ text: t('primaryCta'), href: '/#contacto' }}
+        ctaSecondary={{ text: t('secondaryCta'), href: '/proyectos' }}
+        baseUrl={baseUrl}
+      />
 
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="section-editorial">
+        <div className="mx-auto max-w-7xl">
           <BlogListing posts={posts} locale={locale} />
         </div>
       </section>
@@ -71,11 +64,10 @@ export default async function BlogPage({ params }) {
           {
             text: tCta('requestFreeVisit'),
             href: `/${locale}#contacto`,
-            variant: 'primary'
-          }
+            variant: 'primary',
+          },
         ]}
       />
     </div>
-    </>
   )
 }
