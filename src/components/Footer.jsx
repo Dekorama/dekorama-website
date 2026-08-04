@@ -79,16 +79,6 @@ export default function Footer() {
                   {t('catalog')}
                 </Link>
               </li>
-              <li>
-                <Link href="/porcelanicos-malaga" className="hover:text-white">
-                  {t('porcelanicosMalaga')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/venta-grifos-benalmadena" className="hover:text-white">
-                  {t('griferia')}
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -97,11 +87,6 @@ export default function Footer() {
               {t('services')}
             </h3>
             <ul className="space-y-2.5 text-sm text-gray-400">
-              <li>
-                <Link href="/reformas-integrales" className="hover:text-white">
-                  {t('reformas')}
-                </Link>
-              </li>
               <li>
                 <Link href="/cocinas-a-medida" className="hover:text-white">
                   {t('cocinas')}
@@ -113,8 +98,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/servicios" className="hover:text-white">
-                  {t('services')}
+                <Link href="/reformas-integrales" className="hover:text-white">
+                  {t('reformas')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/proyectos" className="hover:text-white">
+                  {t('projects')}
+                </Link>
+              </li>
+              <li>
+                <Link href={contactHref} className="hover:text-white">
+                  {t('contact')}
                 </Link>
               </li>
             </ul>

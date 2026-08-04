@@ -130,7 +130,7 @@ export default async function ReformasIntegralesPage({ params }) {
       <PageHeader
         breadcrumbItems={[
           { label: tCommon('home'), href: `/${locale}` },
-          { label: locale === 'es' ? 'Reformas Integrales' : 'Full Renovations', href: null }
+          { label: locale === 'es' ? 'Reformas' : 'Renovations', href: null }
         ]}
         title={t('h1')}
         subtitle={t('intro')}

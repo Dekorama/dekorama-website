@@ -118,7 +118,7 @@ export default async function CocinasMedidaPage({ params }) {
       <PageHeader
         breadcrumbItems={[
           { label: tCommon('home'), href: `/${locale}` },
-          { label: locale === 'es' ? 'Cocinas a Medida' : 'Custom Kitchens', href: null }
+          { label: locale === 'es' ? 'Cocinas' : 'Kitchens', href: null }
         ]}
         title={t('h1')}
         subtitle={t('intro')}

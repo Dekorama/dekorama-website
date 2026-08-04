@@ -5,7 +5,8 @@ import Image from 'next/image'
 import { projects } from '@/data/projects'
 import { useTranslations } from 'next-intl'
 import { useLocale } from 'next-intl'
-import Breadcrumb from '@/components/Breadcrumb'
+import Breadcrumb, { generateBreadcrumbSchema } from '@/components/Breadcrumb'
+import { baseUrl } from '@/lib/site'
 
 export default function ProyectosPage() {
   const t = useTranslations('pages.proyectos')
@@ -15,15 +16,16 @@ export default function ProyectosPage() {
 
   const breadcrumbItems = [
     { label: tCommon('home'), href: `/${locale}` },
-    { label: t('h1'), href: null }
+    { label: t('h1'), href: null },
   ]
+  const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbItems, baseUrl)
 
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
       <section className="section-header">
         <div className="mx-auto max-w-7xl">
-          <Breadcrumb items={breadcrumbItems} />
+          <Breadcrumb items={breadcrumbItems} structuredData={breadcrumbSchema} />
           <div className="max-w-3xl">
             <h1 className="mb-6 font-heading text-4xl font-normal leading-tight tracking-tight text-black md:text-5xl lg:text-6xl">
               {t('h1')}

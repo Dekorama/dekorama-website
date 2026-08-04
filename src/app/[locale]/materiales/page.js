@@ -108,7 +108,7 @@ export default async function MaterialesPage({ params }) {
         <PageHeader
           breadcrumbItems={[
             { label: tCommon('home'), href: `/${locale}` },
-            { label: locale === 'es' ? 'Materiales' : 'Materials', href: null },
+            { label: t('h1'), href: null },
           ]}
           title={t('h1')}
           subtitle={t('intro')}

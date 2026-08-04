@@ -120,7 +120,7 @@ export default async function BanosCompletosPage({ params }) {
       <PageHeader
         breadcrumbItems={[
           { label: tCommon('home'), href: `/${locale}` },
-          { label: locale === 'es' ? 'Baños Completos' : 'Complete Bathrooms', href: null }
+          { label: locale === 'es' ? 'Baños' : 'Bathrooms', href: null }
         ]}
         title={t('h1')}
         subtitle={t('intro')}

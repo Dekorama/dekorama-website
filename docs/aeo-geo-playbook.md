@@ -99,6 +99,17 @@ Canonical NAP (copy exactly everywhere):
 - [ ] GBP Insights: calls, direction requests, website clicks
 - [ ] Monthly AI audit per template in this playbook
 
+## Brand sitelinks — post-deploy GSC checklist
+
+Organic sitelinks are algorithmic (cannot request them). After deploy of brand hubs:
+
+- [ ] GSC → Performance → Queries: filter `dekorama`, `dekorama group`, `grupo dekorama`
+- [ ] Note impressions + CTR for exact brand query (baseline for sitelinks eligibility)
+- [ ] GSC → Pages: confirm hubs indexed — `/es/cocinas-a-medida`, `/es/banos-completos`, `/es/materiales`, `/es/reformas-integrales`, `/es/proyectos`, `/es/contacto`
+- [ ] Brand name consistent: web title, GBP, Instagram/Facebook (`Dekorama` / `Grupo Dekorama`)
+- [ ] Re-check branded SERP in 4–8 weeks (incognito); sitelinks may lag authority + query volume
+- [ ] Do not expect Porcelanosa-style sitelinks until branded search volume and engagement rise
+
 ## Machine-readable assets
 
 - [`public/llms.txt`](../public/llms.txt) — canonical business facts for AI crawlers (refresh quarterly)

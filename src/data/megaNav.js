@@ -52,10 +52,11 @@ export const megaNavItems = [
       {
         titleKey: 'colSpaces',
         links: [
-          { labelKey: 'bathroom', href: '/banos-completos' },
           { labelKey: 'kitchen', href: '/cocinas-a-medida' },
+          { labelKey: 'bathroom', href: '/banos-completos' },
           { labelKey: 'fullRenovation', href: '/reformas-integrales' },
           { labelKey: 'showroom', href: '/materiales' },
+          { labelKey: 'projects', href: '/proyectos' },
         ],
       },
     ],
@@ -73,10 +74,10 @@ export const megaNavItems = [
       {
         titleKey: 'colServices',
         links: [
-          { labelKey: 'reformas', href: '/reformas-integrales' },
           { labelKey: 'cocinas', href: '/cocinas-a-medida' },
           { labelKey: 'banos', href: '/banos-completos' },
-          { labelKey: 'premiumMaterials', href: '/materiales-premium' },
+          { labelKey: 'reformas', href: '/reformas-integrales' },
+          { labelKey: 'allMaterials', href: '/materiales' },
           { labelKey: 'allServices', href: '/servicios' },
         ],
       },

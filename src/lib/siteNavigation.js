@@ -1,7 +1,8 @@
 import { baseUrl } from '@/lib/site'
 
 /**
- * Primary hub pages Google may promote as brand sitelinks.
+ * Primary brand hub pages Google may promote as sitelinks.
+ * Keep to 5–6 category destinations (not city SEO pages).
  * @param {'es' | 'en'} locale
  */
 export function getSiteNavigation(locale) {
@@ -10,22 +11,34 @@ export function getSiteNavigation(locale) {
   if (locale === 'en') {
     return [
       {
+        name: 'Kitchens',
+        url: `${prefix}/cocinas-a-medida`,
+        description:
+          'Custom kitchen design, manufacture and installation on the Costa del Sol.',
+      },
+      {
+        name: 'Bathrooms',
+        url: `${prefix}/banos-completos`,
+        description:
+          'Complete bathroom renovations with premium tiles, taps and finishes.',
+      },
+      {
         name: 'Materials',
         url: `${prefix}/materiales`,
         description:
           'Porcelain tiles, taps, sanitaryware and premium finishes at the Benalmádena showroom.',
       },
       {
-        name: 'Services',
-        url: `${prefix}/servicios`,
+        name: 'Renovations',
+        url: `${prefix}/reformas-integrales`,
         description:
-          'Full renovations, custom kitchens, bathrooms and premium materials on the Costa del Sol.',
+          'Full home renovations with custom design and professional execution.',
       },
       {
         name: 'Projects',
         url: `${prefix}/proyectos`,
         description:
-          'Completed full renovations, kitchens and bathrooms by Dekorama on the Costa del Sol.',
+          'Completed full renovations, kitchens and bathrooms by Dekorama.',
       },
       {
         name: 'Contact',
@@ -33,28 +46,22 @@ export function getSiteNavigation(locale) {
         description:
           'Request a free consultation or visit the Benalmádena showroom.',
       },
-      {
-        name: 'Catalogue',
-        url: `${prefix}/catalogo`,
-        description:
-          'Browse Dekorama material categories for high-end renovations.',
-      },
-      {
-        name: 'Renovations Benalmádena',
-        url: `${prefix}/reformas-benalmadena`,
-        description:
-          'Full renovations in Benalmádena with local showroom and 12+ years of experience.',
-      },
-      {
-        name: 'Renovations Caracas',
-        url: `${prefix}/reformas-caracas`,
-        description:
-          'Full renovations in Caracas with over 15 years in the Venezuelan market.',
-      },
     ]
   }
 
   return [
+    {
+      name: 'Cocinas',
+      url: `${prefix}/cocinas-a-medida`,
+      description:
+        'Diseño, fabricación e instalación de cocinas a medida en la Costa del Sol.',
+    },
+    {
+      name: 'Baños',
+      url: `${prefix}/banos-completos`,
+      description:
+        'Reformas de baños completos con porcelánicos, grifería y acabados premium.',
+    },
     {
       name: 'Materiales',
       url: `${prefix}/materiales`,
@@ -62,10 +69,10 @@ export function getSiteNavigation(locale) {
         'Porcelánicos, grifería, sanitarios y acabados premium en el showroom de Benalmádena.',
     },
     {
-      name: 'Servicios',
-      url: `${prefix}/servicios`,
+      name: 'Reformas',
+      url: `${prefix}/reformas-integrales`,
       description:
-        'Reformas integrales, cocinas a medida, baños y materiales premium en la Costa del Sol.',
+        'Reformas integrales con diseño a medida y ejecución profesional.',
     },
     {
       name: 'Proyectos',
@@ -74,28 +81,10 @@ export function getSiteNavigation(locale) {
         'Galería de reformas integrales, cocinas y baños realizados por Dekorama.',
     },
     {
-      name: 'Contáctanos',
+      name: 'Contacto',
       url: `${prefix}/contacto`,
       description:
         'Solicita consulta sin costo o visita el showroom en Benalmádena.',
-    },
-    {
-      name: 'Catálogo',
-      url: `${prefix}/catalogo`,
-      description:
-        'Explora las categorías de materiales Dekorama para reformas de alta gama.',
-    },
-    {
-      name: 'Reformas Benalmádena',
-      url: `${prefix}/reformas-benalmadena`,
-      description:
-        'Reformas integrales en Benalmádena con showroom propio y más de 12 años de experiencia.',
-    },
-    {
-      name: 'Reformas Caracas',
-      url: `${prefix}/reformas-caracas`,
-      description:
-        'Reformas integrales en Caracas. Más de 15 años en el mercado venezolano.',
     },
   ]
 }
