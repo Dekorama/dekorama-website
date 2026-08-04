@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server'
 import { baseUrl } from '@/lib/site'
-import PageHeader from '@/components/PageHeader'
+import LegalDocument, { LegalSection } from '@/components/LegalDocument'
 
 const AVISO_SECTIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -23,6 +23,7 @@ export default async function AvisoLegalPage({ params }) {
   const { locale } = await Promise.resolve(params)
   const t = await getTranslations('legal')
   const ta = await getTranslations('legal.aviso')
+  const tFooter = await getTranslations('footer')
   const tCommon = await getTranslations('breadcrumb')
   const dateStr = new Date().toLocaleDateString(locale === 'en' ? 'en-GB' : 'es-ES', {
     year: 'numeric',
@@ -31,29 +32,26 @@ export default async function AvisoLegalPage({ params }) {
   })
 
   return (
-    <div className="min-h-screen bg-white pb-20">
-      <PageHeader
-        breadcrumbItems={[
-          { label: tCommon('home'), href: `/${locale}` },
-          { label: ta('title'), href: null },
-        ]}
-        title={ta('title')}
-        subtitle={`${t('lastUpdated')}: ${dateStr}`}
-        baseUrl={baseUrl}
-      />
-
-      <article className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="space-y-8 text-gray-700 leading-relaxed">
-          {AVISO_SECTIONS.map((n) => (
-            <section key={n}>
-              <h2 className="mt-10 mb-4 font-heading text-2xl font-normal tracking-tight text-black">
-                {ta(`s${n}Title`)}
-              </h2>
-              <p>{ta(`s${n}Body`)}</p>
-            </section>
-          ))}
-        </div>
-      </article>
-    </div>
+    <LegalDocument
+      breadcrumbItems={[
+        { label: tCommon('home'), href: `/${locale}` },
+        { label: ta('title'), href: null },
+      ]}
+      title={ta('title')}
+      lastUpdatedLabel={t('lastUpdated')}
+      dateStr={dateStr}
+      relatedTitle={t('relatedTitle')}
+      relatedLinks={[
+        { href: '/politica-privacidad', label: tFooter('privacy') },
+        { href: '/cookies', label: tFooter('cookies') },
+        { href: '/contacto', label: tFooter('contact') },
+      ]}
+    >
+      {AVISO_SECTIONS.map((n) => (
+        <LegalSection key={n} title={ta(`s${n}Title`)}>
+          <p>{ta(`s${n}Body`)}</p>
+        </LegalSection>
+      ))}
+    </LegalDocument>
   )
 }
