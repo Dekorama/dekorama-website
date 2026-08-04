@@ -1,5 +1,6 @@
 import { Link } from '@/i18n/navigation'
 import { baseUrl } from '@/lib/site'
+import { buildProductJsonLd } from '@/lib/productSchema'
 import { getTranslations } from 'next-intl/server'
 import PageHeader from '@/components/PageHeader'
 import RelatedLinks from '@/components/RelatedLinks'
@@ -43,9 +44,8 @@ export default async function BanerasPlatosDuchaPage({ params }) {
   const tCommon = await getTranslations({ locale, namespace: 'breadcrumb' })
   const isEs = locale === 'es'
 
-  const productJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': ['Product', 'Service'],
+  const productJsonLd = buildProductJsonLd({
+    type: ['Product', 'Service'],
     name: isEs ? 'Bañeras y Platos de Ducha' : 'Bathtubs and Shower Trays',
     description: isEs
       ? 'Venta de bañeras y platos Roca, Hidrobox, Hidronatur, Fiora y Kaldewei en Benalmádena.'
@@ -57,14 +57,9 @@ export default async function BanerasPlatosDuchaPage({ params }) {
       { '@type': 'Brand', name: 'Fiora' },
       { '@type': 'Brand', name: 'Kaldewei' },
     ],
-    offers: {
-      '@type': 'AggregateOffer',
-      priceCurrency: 'EUR',
-      availability: 'https://schema.org/InStock',
-      seller: { '@type': 'LocalBusiness', name: 'Dekorama', '@id': `${baseUrl}/#business` },
-    },
-    image: `${baseUrl}${HERO}`,
-  }
+    imagePath: HERO,
+    offerKey: 'baneras',
+  })
 
   const features = [
     {

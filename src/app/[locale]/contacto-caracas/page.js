@@ -43,6 +43,10 @@ export default async function ContactoCaracasPage({ params }) {
         subtitle={t('subtitle')}
         heroImage="/images/hero/caracas-showroom.png"
         heroImageAlt={t('heroImageAlt')}
+        ctaSecondary={{
+          text: t('scrollToForm'),
+          href: '#contacto',
+        }}
         baseUrl={baseUrl}
       />
 

@@ -7,6 +7,25 @@ import { motion } from 'framer-motion'
 import { fadeUp, heroText, viewportOptions } from '@/lib/animations'
 
 /**
+ * @param {{ href: string, text: string, className: string }} props
+ */
+function HeaderCta({ href, text, className }) {
+  if (href.startsWith('#')) {
+    return (
+      <a href={href} className={className}>
+        {text}
+      </a>
+    )
+  }
+
+  return (
+    <Link href={href} className={className}>
+      {text}
+    </Link>
+  )
+}
+
+/**
  * Unified page header — editorial luxury chrome.
  */
 export default function PageHeader({
@@ -66,14 +85,10 @@ export default function PageHeader({
                 transition={{ delay: 0.2 }}
               >
                 {ctaPrimary ? (
-                  <Link href={ctaPrimary.href} className="btn-primary">
-                    {ctaPrimary.text}
-                  </Link>
+                  <HeaderCta href={ctaPrimary.href} text={ctaPrimary.text} className="btn-primary" />
                 ) : null}
                 {ctaSecondary ? (
-                  <Link href={ctaSecondary.href} className="btn-discover">
-                    {ctaSecondary.text}
-                  </Link>
+                  <HeaderCta href={ctaSecondary.href} text={ctaSecondary.text} className="btn-discover" />
                 ) : null}
               </motion.div>
             )}
@@ -133,20 +148,18 @@ export default function PageHeader({
                 transition={{ delay: 0.15 }}
               >
                 {ctaPrimary ? (
-                  <Link
+                  <HeaderCta
                     href={ctaPrimary.href}
+                    text={ctaPrimary.text}
                     className="inline-flex min-h-[48px] items-center justify-center border border-white bg-white px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.18em] text-black transition-colors hover:bg-transparent hover:text-white sm:px-8"
-                  >
-                    {ctaPrimary.text}
-                  </Link>
+                  />
                 ) : null}
                 {ctaSecondary ? (
-                  <Link
+                  <HeaderCta
                     href={ctaSecondary.href}
+                    text={ctaSecondary.text}
                     className="inline-flex items-center justify-center border-b border-white pb-0.5 text-xs font-semibold uppercase tracking-[0.22em] text-white transition-opacity hover:opacity-70"
-                  >
-                    {ctaSecondary.text}
-                  </Link>
+                  />
                 ) : null}
               </motion.div>
             )}

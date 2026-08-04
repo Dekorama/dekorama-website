@@ -1,5 +1,6 @@
 import { Link } from '@/i18n/navigation'
 import { baseUrl } from '@/lib/site'
+import { buildProductJsonLd } from '@/lib/productSchema'
 import { getTranslations } from 'next-intl/server'
 import PageHeader from '@/components/PageHeader'
 import RelatedLinks from '@/components/RelatedLinks'
@@ -41,9 +42,8 @@ export default async function MamparasDuchaPage({ params }) {
   const tCommon = await getTranslations({ locale, namespace: 'breadcrumb' })
   const isEs = locale === 'es'
 
-  const productJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': ['Product', 'Service'],
+  const productJsonLd = buildProductJsonLd({
+    type: ['Product', 'Service'],
     name: isEs ? 'Mamparas de Ducha y Bañera' : 'Shower and Bathtub Screens',
     description: isEs
       ? 'Venta de mamparas Profiltek, Spazia y Castel en Benalmádena.'
@@ -53,14 +53,9 @@ export default async function MamparasDuchaPage({ params }) {
       { '@type': 'Brand', name: 'Spazia' },
       { '@type': 'Brand', name: 'Castel' },
     ],
-    offers: {
-      '@type': 'AggregateOffer',
-      priceCurrency: 'EUR',
-      availability: 'https://schema.org/InStock',
-      seller: { '@type': 'LocalBusiness', name: 'Dekorama', '@id': `${baseUrl}/#business` },
-    },
-    image: `${baseUrl}${HERO}`,
-  }
+    imagePath: HERO,
+    offerKey: 'mamparas',
+  })
 
   const features = [
     {

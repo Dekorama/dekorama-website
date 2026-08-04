@@ -68,7 +68,7 @@ export function getSiteNavigation(locale) {
         'Galería de reformas integrales, cocinas y baños realizados por Dekorama.',
     },
     {
-      name: 'Contacto',
+      name: 'Contáctanos',
       url: `${prefix}/contacto`,
       description:
         'Solicita consulta sin costo o visita el showroom en Benalmádena.',

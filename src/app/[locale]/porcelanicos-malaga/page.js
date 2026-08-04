@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { baseUrl } from '@/lib/site'
+import { buildProductJsonLd } from '@/lib/productSchema'
 import { getTranslations } from 'next-intl/server'
 import PageHeader from '@/components/PageHeader'
 import RelatedLinks from '@/components/RelatedLinks'
@@ -56,24 +57,14 @@ export default async function PorcelanicosMalagaPage({ params }) {
   const tCta = await getTranslations({ locale, namespace: 'cta' })
   const isEs = locale === 'es'
 
-  const productJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
+  const productJsonLd = buildProductJsonLd({
+    type: 'Product',
     name: isEs ? 'Porcelánicos Premium' : 'Premium Porcelain Tiles',
     description: t('intro'),
     brand: { '@type': 'Brand', name: 'Dekorama' },
-    offers: {
-      '@type': 'AggregateOffer',
-      priceCurrency: 'EUR',
-      availability: 'https://schema.org/InStock',
-      seller: {
-        '@type': 'LocalBusiness',
-        name: 'Dekorama',
-        '@id': `${baseUrl}/#business`,
-      },
-    },
-    image: `${baseUrl}${HERO}`,
-  }
+    imagePath: HERO,
+    offerKey: 'porcelanicos',
+  })
 
   const advantages = [
     { title: t('ventaja1'), description: t('ventaja1Desc') },

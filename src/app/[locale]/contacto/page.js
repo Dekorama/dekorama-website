@@ -47,6 +47,10 @@ export default async function ContactoPage({ params }) {
             ? 'Showroom Dekorama en Benalmádena'
             : 'Dekorama Showroom in Benalmádena'
         }
+        ctaSecondary={{
+          text: t('scrollToForm'),
+          href: '#contacto',
+        }}
         baseUrl={baseUrl}
       />
 

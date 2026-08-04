@@ -1,5 +1,6 @@
 import { Link } from '@/i18n/navigation'
 import { baseUrl } from '@/lib/site'
+import { buildProductJsonLd } from '@/lib/productSchema'
 import { getTranslations } from 'next-intl/server'
 import PageHeader from '@/components/PageHeader'
 import RelatedLinks from '@/components/RelatedLinks'
@@ -41,9 +42,8 @@ export default async function VentaGrifosPage({ params }) {
   const tCommon = await getTranslations({ locale, namespace: 'breadcrumb' })
   const isEs = locale === 'es'
 
-  const productJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': ['Product', 'Service'],
+  const productJsonLd = buildProductJsonLd({
+    type: ['Product', 'Service'],
     name: isEs ? 'Grifos Cristina, Neve, Tres y Gessi' : 'Cristina, Neve, Tres and Gessi Taps',
     description: isEs
       ? 'Venta de grifos Cristina Grifería, Neve, Tres, Gessi y Roca en Benalmádena.'
@@ -55,14 +55,9 @@ export default async function VentaGrifosPage({ params }) {
       { '@type': 'Brand', name: 'Gessi' },
       { '@type': 'Brand', name: 'Roca' },
     ],
-    offers: {
-      '@type': 'AggregateOffer',
-      priceCurrency: 'EUR',
-      availability: 'https://schema.org/InStock',
-      seller: { '@type': 'LocalBusiness', name: 'Dekorama', '@id': `${baseUrl}/#business` },
-    },
-    image: `${baseUrl}${HERO}`,
-  }
+    imagePath: HERO,
+    offerKey: 'grifos',
+  })
 
   const features = [
     {

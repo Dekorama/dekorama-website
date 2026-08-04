@@ -68,11 +68,11 @@
     "projects": "Proyectos",
     "blog": "Blog",
     "process": "Proceso",
-    "contact": "Contacto",
+    "contact": "Contáctanos",
     "freeVisit": "Haz tu visita",
     "call": "Llamar",
     "aboutShowroom": "Showroom",
-    "partners": "Partners",
+    "partners": "Colaboradores",
     "search": "Buscar",
     "searchResults": "Resultados de búsqueda",
     "searchNoResults": "Sin resultados. Prueba otra palabra.",
@@ -110,7 +110,7 @@
     "allServices": "Todos los servicios",
     "projects": "Proyectos",
     "blog": "Blog",
-    "partners": "Partners",
+    "partners": "Colaboradores",
     "benalmadena": "Benalmádena",
     "marbella": "Marbella",
     "fuengirola": "Fuengirola",
@@ -214,7 +214,7 @@
     "cities": "Ubicaciones",
     "company": "Empresa",
     "ourProcess": "Nuestro proceso",
-    "contact": "Contacto",
+    "contact": "Contáctanos",
     "scheduleVisit": "Pedir cita",
     "joinConversation": "Síguenos",
     "reformas": "Reformas Integrales",
@@ -233,7 +233,7 @@
     "marketVe": "Venezuela:",
     "areaVe": "Caracas y zonas residenciales",
     "locationsVe": "Venezuela",
-    "contactCaracas": "Contacto Caracas",
+    "contactCaracas": "Contáctanos Caracas",
     "spainSite": "España · Costa del Sol",
     "blog": "Blog",
     "projects": "Proyectos",
@@ -244,7 +244,7 @@
     "copyright": "Todos los derechos reservados.",
     "griferia": "Grifería",
     "benalmadena": "Benalmádena",
-    "partners": "Partners"
+    "partners": "Colaboradores"
   },
   "cta": {
     "requestFreeVisit": "Haz tu visita",
@@ -649,11 +649,11 @@
   },
   "partners": {
     "meta": {
-      "title": "Programa de Partners B2B | Dekorama Group",
-      "description": "Únete al programa de partners de Dekorama. Comisiones por ventas, catálogo premium y soporte dedicado para arquitectos, interioristas y reformistas en la Costa del Sol."
+      "title": "Programa de Colaboradores B2B | Dekorama Group",
+      "description": "Únete al programa de colaboradores de Dekorama. Comisiones por ventas, catálogo premium y soporte dedicado para arquitectos, interioristas y reformistas en la Costa del Sol."
     },
     "hero": {
-      "eyebrow": "Programa de Partners B2B",
+      "eyebrow": "Programa de Colaboradores B2B",
       "title": "Tú recomiendas. Nosotros suministramos. Tú cobras.",
       "subtitle": "Sin papeleo. Sin riesgo. Comisiones automáticas en cada proyecto de tus clientes.",
       "audience": "Arquitectos · Interioristas · Reformistas · Profesionales del Sector",
@@ -674,10 +674,10 @@
       "feature2Title": "Showroom físico en Benalmádena",
       "feature2Desc": "Espacio de inspiración donde tus clientes pueden ver y tocar los materiales. La experiencia táctil es el mejor argumento de venta.",
       "feature3Title": "Respuesta en menos de 2 horas",
-      "feature3Desc": "Velocidad de respuesta garantizada para cada lead referido por nuestros partners. Tu reputación es la nuestra."
+      "feature3Desc": "Velocidad de respuesta garantizada para cada lead referido por nuestros colaboradores. Tu reputación es la nuestra."
     },
     "benefits": {
-      "title": "Beneficios del programa de partners",
+      "title": "Beneficios del programa de colaboradores",
       "b1Title": "Comisión por ventas",
       "b1Desc": "Gana en cada compra de tus clientes referidos, de forma automática.",
       "b2Title": "Sin inversión",
@@ -716,10 +716,10 @@
       "disclaimer": "Estimación orientativa. La comisión real se calcula sobre el volumen real de compras verificado mensualmente."
     },
     "howTo": {
-      "title": "Cómo convertirse en partner",
-      "step1Title": "Contacta con nosotros",
+      "title": "Cómo convertirse en colaborador",
+      "step1Title": "Contáctanos",
       "step1Desc": "Reserva una llamada de 15 minutos o envíanos un mensaje con tu perfil profesional.",
-      "step2Title": "Alta como Partner",
+      "step2Title": "Alta como colaborador",
       "step2Desc": "Proceso en 3 pasos. Sin burocracia. Acceso inmediato al catálogo completo.",
       "step3Title": "Recomienda a tus clientes",
       "step3Desc": "Tu cliente visita el showroom o solicita presupuesto online con tu referencia.",
@@ -727,7 +727,7 @@
       "step4Desc": "Informe automático el día 1 de cada mes. Transferencia puntual. Total transparencia."
     },
     "tools": {
-      "title": "Herramientas para partners",
+      "title": "Herramientas para colaboradores",
       "t1Title": "Informe mensual de comisiones",
       "t1Desc": "Email automático el día 1 de cada mes con detalle de comisiones, proyectos activos y proyección del mes siguiente.",
       "t2Title": "Formación técnica de producto",
@@ -761,19 +761,21 @@
     }
   },
   "contactPage": {
-    "metaTitle": "Contacto",
-    "metaDescription": "Contacta con Dekorama en Benalmádena. Consulta sin costo para reformas, cocinas y baños en la Costa del Sol.",
-    "title": "Contacto",
+    "metaTitle": "Contáctanos",
+    "metaDescription": "Contáctanos en Dekorama Benalmádena. Consulta sin costo para reformas, cocinas y baños en la Costa del Sol.",
+    "title": "Contáctanos",
     "subtitle": "Cuéntanos tu proyecto y te responderemos lo antes posible. Visítanos en nuestro showroom o solicita una consulta sin costo.",
+    "scrollToForm": "Ir al formulario",
     "infoAddress": "Dirección",
     "infoPhone": "Teléfono",
     "infoEmail": "Email"
   },
   "contactPageVe": {
-    "metaTitle": "Contacto Caracas",
-    "metaDescription": "Contacta Dekorama Caracas por WhatsApp, teléfono o email. Showroom con cita previa. Más de 15 años en reformas en Venezuela.",
-    "title": "Contacto Caracas",
+    "metaTitle": "Contáctanos Caracas",
+    "metaDescription": "Contáctanos en Dekorama Caracas por WhatsApp, teléfono o email. Showroom con cita previa. Más de 15 años en reformas en Venezuela.",
+    "title": "Contáctanos Caracas",
     "subtitle": "Cuéntanos tu proyecto y te responderemos lo antes posible. Visítanos en nuestro showroom con cita previa o solicita una consulta sin costo.",
+    "scrollToForm": "Ir al formulario",
     "heroImageAlt": "Showroom Dekorama Caracas con materiales premium y vista a El Ávila",
     "infoShowroom": "Showroom",
     "infoShowroomBody": "Showroom en Caracas.\nVisitas solo con cita previa.",

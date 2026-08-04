@@ -1,5 +1,6 @@
 import { Link } from '@/i18n/navigation'
 import { baseUrl } from '@/lib/site'
+import { buildProductJsonLd } from '@/lib/productSchema'
 import { getTranslations } from 'next-intl/server'
 import PageHeader from '@/components/PageHeader'
 import RelatedLinks from '@/components/RelatedLinks'
@@ -41,9 +42,8 @@ export default async function InodorosSuspendidosPage({ params }) {
   const tCommon = await getTranslations({ locale, namespace: 'breadcrumb' })
   const isEs = locale === 'es'
 
-  const productJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': ['Product', 'Service'],
+  const productJsonLd = buildProductJsonLd({
+    type: ['Product', 'Service'],
     name: isEs ? 'Inodoros Suspendidos y de Suelo' : 'Wall-hung and Floor-standing Toilets',
     description: isEs
       ? 'Venta de inodoros Geberit, Tece, Duravit y Villeroy & Boch en Benalmádena.'
@@ -54,14 +54,9 @@ export default async function InodorosSuspendidosPage({ params }) {
       { '@type': 'Brand', name: 'Duravit' },
       { '@type': 'Brand', name: 'Villeroy & Boch' },
     ],
-    offers: {
-      '@type': 'AggregateOffer',
-      priceCurrency: 'EUR',
-      availability: 'https://schema.org/InStock',
-      seller: { '@type': 'LocalBusiness', name: 'Dekorama', '@id': `${baseUrl}/#business` },
-    },
-    image: `${baseUrl}${HERO}`,
-  }
+    imagePath: HERO,
+    offerKey: 'inodoros',
+  })
 
   const features = [
     {
