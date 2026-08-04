@@ -47,7 +47,7 @@ export default async function ReformasCaracasPage({ params }) {
   const localBusinessJsonLd = buildLocalBusinessJsonLd(ve, {
     description:
       locale === 'es'
-        ? 'Reformas integrales, cocinas y baños a medida en Caracas. Más de 15 años en el mercado venezolano.'
+        ? 'Reformas integrales, cocinas y baños a medida en Caracas. Más de 20 años en el mercado venezolano.'
         : 'Full renovations, custom kitchens and bathrooms in Caracas. Over 15 years in the Venezuelan market.',
   })
 
