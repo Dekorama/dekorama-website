@@ -470,8 +470,9 @@
     "keyword": "reformar piso para alquiler vacacional en Fuengirola",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-08-05T11:11:23.234Z"
   },
   {
     "keyword": "materiales para reforma en Fuengirola donde comprar",

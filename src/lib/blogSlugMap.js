@@ -556,6 +556,14 @@ export const blogSlugMap = {
   'kitchen-island-fuengirola-ideas-cost': {
     es: 'cocina-con-isla-fuengirola-ideas-coste',
     en: 'kitchen-island-fuengirola-ideas-cost',
+  },
+  'reformar-piso-alquiler-vacacional-fuengirola': {
+    es: 'reformar-piso-alquiler-vacacional-fuengirola',
+    en: 'renovate-apartment-holiday-rental-fuengirola',
+  },
+  'renovate-apartment-holiday-rental-fuengirola': {
+    es: 'reformar-piso-alquiler-vacacional-fuengirola',
+    en: 'renovate-apartment-holiday-rental-fuengirola',
   },}
 
 /**
