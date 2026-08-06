@@ -564,6 +564,14 @@ export const blogSlugMap = {
   'renovate-apartment-holiday-rental-fuengirola': {
     es: 'reformar-piso-alquiler-vacacional-fuengirola',
     en: 'renovate-apartment-holiday-rental-fuengirola',
+  },
+  'materiales-reforma-fuengirola-donde-comprar': {
+    es: 'materiales-reforma-fuengirola-donde-comprar',
+    en: 'renovation-materials-fuengirola-where-to-buy',
+  },
+  'renovation-materials-fuengirola-where-to-buy': {
+    es: 'materiales-reforma-fuengirola-donde-comprar',
+    en: 'renovation-materials-fuengirola-where-to-buy',
   },}
 
 /**
