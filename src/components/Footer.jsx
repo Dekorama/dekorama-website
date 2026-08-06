@@ -9,6 +9,7 @@ import {
   marketHomeHref,
   marketContactHref,
 } from '@/lib/useActiveMarket'
+import { marketMaterialsHref, marketCatalogHref } from '@/lib/materialRoutes'
 
 export default function Footer() {
   const t = useTranslations('footer')
@@ -17,6 +18,8 @@ export default function Footer() {
   const market = isVe ? markets.venezuela : markets.spain
   const homeHref = marketHomeHref(marketId)
   const contactHref = marketContactHref(marketId)
+  const materialsHref = marketMaterialsHref(marketId)
+  const catalogHref = marketCatalogHref(marketId)
 
   return (
     <footer className="bg-charcoal text-white">
@@ -70,12 +73,12 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2.5 text-sm text-gray-400">
               <li>
-                <Link href="/materiales" className="hover:text-white">
+                <Link href={materialsHref} className="hover:text-white">
                   {t('materiales')}
                 </Link>
               </li>
               <li>
-                <Link href="/catalogo" className="hover:text-white">
+                <Link href={catalogHref} className="hover:text-white">
                   {t('catalog')}
                 </Link>
               </li>

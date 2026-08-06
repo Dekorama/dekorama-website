@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import { usePathname, useRouter } from '@/i18n/navigation'
 import { setStoredMarket } from '@/lib/marketPreference'
 import { useActiveMarket, isVenezuelaPath } from '@/lib/useActiveMarket'
+import { remapMaterialsPathForMarket } from '@/lib/materialRoutes'
 import HeaderDropdown, {
   HeaderDropdownItem,
   PinIcon,
@@ -25,6 +26,13 @@ export default function MarketSwitcher({ className = '', align = 'right', tone =
    */
   const select = (next) => {
     setStoredMarket(next)
+
+    const remapped = remapMaterialsPathForMarket(pathname, next)
+    if (remapped) {
+      router.push(remapped)
+      return
+    }
+
     if (next === 'venezuela' && !isVenezuelaPath(pathname)) {
       router.push('/reformas-caracas')
       return

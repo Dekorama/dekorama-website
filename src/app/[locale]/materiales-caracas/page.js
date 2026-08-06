@@ -4,10 +4,10 @@ import MaterialesHubView, {
 
 export async function generateMetadata({ params }) {
   const { locale } = await params
-  return generateMaterialesHubMetadata({ locale, marketId: 'spain' })
+  return generateMaterialesHubMetadata({ locale, marketId: 'venezuela' })
 }
 
-export default async function MaterialesPage({ params }) {
+export default async function MaterialesCaracasPage({ params }) {
   const { locale } = await params
-  return <MaterialesHubView locale={locale} marketId="spain" />
+  return <MaterialesHubView locale={locale} marketId="venezuela" />
 }

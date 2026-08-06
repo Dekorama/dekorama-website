@@ -62,6 +62,8 @@ const venezuelaTelephone =
  * @property {MarketAddress} address
  * @property {{ latitude: number, longitude: number }} geo
  * @property {string[]} areaServed
+ * @property {string} locality — city/showroom label for shared copy ({locality})
+ * @property {string} region — area label for shared copy ({region})
  */
 
 /** @type {{ spain: Market, venezuela: Market }} */
@@ -87,6 +89,8 @@ export const markets = {
       longitude: -4.5164,
     },
     areaServed: ['ES', 'GB'],
+    locality: 'Benalmádena',
+    region: 'Costa del Sol',
   },
   /** Caracas — showroom by prior appointment; WhatsApp + call + email. */
   venezuela: {
@@ -107,7 +111,17 @@ export const markets = {
       longitude: -66.9036,
     },
     areaServed: ['VE'],
+    locality: 'Caracas',
+    region: 'Caracas',
   },
+}
+
+/**
+ * @param {import('@/lib/marketPreference').MarketId} marketId
+ * @returns {Market}
+ */
+export function getMarket(marketId) {
+  return marketId === 'venezuela' ? markets.venezuela : markets.spain
 }
 
 /**

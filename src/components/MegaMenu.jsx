@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
+import { resolveMaterialHref } from '@/lib/materialRoutes'
+import { useActiveMarket } from '@/lib/useActiveMarket'
 
 /**
  * Full-width mega menu panel for a nav category.
@@ -15,6 +17,12 @@ import { motion, AnimatePresence } from 'framer-motion'
  */
 export default function MegaMenu({ item, open, onClose }) {
   const t = useTranslations('megaNav')
+  const market = useActiveMarket()
+
+  /**
+   * @param {string} href
+   */
+  const hrefFor = (href) => resolveMaterialHref(href, market)
 
   return (
     <AnimatePresence>
@@ -43,7 +51,7 @@ export default function MegaMenu({ item, open, onClose }) {
                     {col.links.map((link) => (
                       <li key={link.href + link.labelKey}>
                         <Link
-                          href={link.href}
+                          href={hrefFor(link.href)}
                           onClick={onClose}
                           className="text-sm text-gray-600 transition-colors hover:text-black"
                         >
@@ -63,7 +71,7 @@ export default function MegaMenu({ item, open, onClose }) {
 
             {item.featured ? (
               <Link
-                href={item.featured.href}
+                href={hrefFor(item.featured.href)}
                 onClick={onClose}
                 className="group relative aspect-[16/10] overflow-hidden sm:aspect-square lg:col-span-4"
               >

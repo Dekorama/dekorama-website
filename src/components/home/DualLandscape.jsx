@@ -17,10 +17,10 @@ export default function DualLandscape({ variant = 'spain' }) {
   const items = isCaracas
     ? [
         {
-          image: images.services.reformas,
-          title: t('dualServices'),
-          sub: t('dualServicesSub'),
-          href: '/servicios',
+          image: images.dual.materials,
+          title: t('dualMaterials'),
+          sub: t('dualMaterialsSub'),
+          href: '/materiales-caracas',
         },
         {
           image: images.dual.projects,

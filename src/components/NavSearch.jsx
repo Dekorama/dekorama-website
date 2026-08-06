@@ -4,6 +4,8 @@ import { useEffect, useId, useMemo, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link, useRouter } from '@/i18n/navigation'
 import { getSearchEntries, searchSite } from '@/lib/siteSearch'
+import { useActiveMarket } from '@/lib/useActiveMarket'
+import { resolveMaterialHref, marketCatalogHref } from '@/lib/materialRoutes'
 
 const DEBOUNCE_MS = 150
 const MAX_RESULTS = 8
@@ -20,6 +22,7 @@ export default function NavSearch({ className = '', inputClassName = '', onNavig
   const t = useTranslations('nav')
   const tMega = useTranslations('megaNav')
   const router = useRouter()
+  const market = useActiveMarket()
   const inputId = useId()
   const listId = useId()
   const rootRef = useRef(/** @type {HTMLDivElement | null} */ (null))
@@ -35,10 +38,15 @@ export default function NavSearch({ className = '', inputClassName = '', onNavig
     return () => window.clearTimeout(timer)
   }, [query])
 
-  const results = useMemo(
-    () => searchSite(entries, (key) => tMega(key), debounced, MAX_RESULTS),
-    [entries, debounced, tMega],
-  )
+  const results = useMemo(() => {
+    const raw = searchSite(entries, (key) => tMega(key), debounced, MAX_RESULTS)
+    return raw.map((item) => ({
+      ...item,
+      href: resolveMaterialHref(item.href, market),
+    }))
+  }, [entries, debounced, tMega, market])
+
+  const catalogHref = marketCatalogHref(market)
 
   useEffect(() => {
     setActiveIndex(results.length ? 0 : -1)
@@ -66,7 +74,7 @@ export default function NavSearch({ className = '', inputClassName = '', onNavig
     e.preventDefault()
     const q = query.trim()
     if (!q) {
-      go('/catalogo')
+      go(catalogHref)
       return
     }
     if (activeIndex >= 0 && results[activeIndex]) {
@@ -77,7 +85,7 @@ export default function NavSearch({ className = '', inputClassName = '', onNavig
       go(results[0].href)
       return
     }
-    go(`/catalogo?q=${encodeURIComponent(q)}`)
+    go(`${catalogHref}${catalogHref.includes('?') ? '&' : '?'}q=${encodeURIComponent(q)}`)
   }
 
   const onKeyDown = (/** @type {import('react').KeyboardEvent<HTMLInputElement>} */ e) => {
@@ -190,7 +198,7 @@ export default function NavSearch({ className = '', inputClassName = '', onNavig
           )}
           {query.trim() ? (
             <Link
-              href={`/catalogo?q=${encodeURIComponent(query.trim())}`}
+              href={`${catalogHref}${catalogHref.includes('?') ? '&' : '?'}q=${encodeURIComponent(query.trim())}`}
               onClick={() => {
                 setOpen(false)
                 onNavigate?.()

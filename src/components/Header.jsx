@@ -13,6 +13,7 @@ import NavSearch from '@/components/NavSearch'
 import { megaNavItems } from '@/data/megaNav'
 import { markets } from '@/lib/markets'
 import { useActiveMarket } from '@/lib/useActiveMarket'
+import { resolveMaterialHref, marketCatalogHref } from '@/lib/materialRoutes'
 
 export default function Header() {
   const t = useTranslations('nav')
@@ -21,6 +22,8 @@ export default function Header() {
   const pathname = usePathname()
   const marketId = useActiveMarket()
   const market = marketId === 'venezuela' ? markets.venezuela : markets.spain
+  const hrefFor = (/** @type {string} */ href) => resolveMaterialHref(href, marketId)
+  const catalogHref = marketCatalogHref(marketId)
   const [activeMenu, setActiveMenu] = useState(/** @type {string | null} */ (null))
   const [isMobileOpen, setIsMobileOpen] = useState(false)
   const [mobileExpanded, setMobileExpanded] = useState(/** @type {string | null} */ (null))
@@ -224,7 +227,7 @@ export default function Header() {
                             {col.links.map((link) => (
                               <li key={link.href + link.labelKey}>
                                 <Link
-                                  href={link.href}
+                                  href={hrefFor(link.href)}
                                   onClick={closeMobile}
                                   className="flex min-h-[44px] items-center text-[15px] text-gray-600 transition-colors hover:text-black"
                                 >
@@ -237,7 +240,7 @@ export default function Header() {
                       ))}
                       {item.featured ? (
                         <Link
-                          href={item.featured.href}
+                          href={hrefFor(item.featured.href)}
                           onClick={closeMobile}
                           className="inline-flex min-h-[44px] items-center text-xs font-semibold uppercase tracking-[0.18em] text-black underline underline-offset-4"
                         >
@@ -252,7 +255,7 @@ export default function Header() {
 
             <div className="space-y-0.5 border-b border-gray-100 py-2">
               <Link
-                href="/catalogo"
+                href={catalogHref}
                 onClick={closeMobile}
                 className="flex min-h-[48px] items-center text-xs font-semibold uppercase tracking-[0.18em] text-gray-900"
               >

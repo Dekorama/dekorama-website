@@ -6,8 +6,19 @@ import {
   getStoredMarket,
   isMarketId,
 } from '@/lib/marketPreference'
+import {
+  marketContactHref,
+  marketHomeHref,
+} from '@/lib/materialRoutes'
 
-const VE_PATHS = ['/reformas-caracas', '/contacto-caracas']
+export { marketContactHref, marketHomeHref }
+
+const VE_PATHS = [
+  '/reformas-caracas',
+  '/contacto-caracas',
+  '/materiales-caracas',
+  '/materiales-premium-caracas',
+]
 
 /**
  * @param {string} pathname
@@ -50,20 +61,3 @@ export function useActiveMarket() {
   return market
 }
 
-/**
- * Home href for current market.
- * @param {'spain' | 'venezuela'} market
- * @returns {string}
- */
-export function marketHomeHref(market) {
-  return market === 'venezuela' ? '/reformas-caracas' : '/'
-}
-
-/**
- * Contact href for current market.
- * @param {'spain' | 'venezuela'} market
- * @returns {string}
- */
-export function marketContactHref(market) {
-  return market === 'venezuela' ? '/contacto-caracas' : '/contacto'
-}
