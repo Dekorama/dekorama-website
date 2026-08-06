@@ -603,11 +603,13 @@
     },
     "catalogo": {
       "title": "Catálogo de materiales",
-      "description": "Porcelánicos, grifería, sanitarios e iluminación premium para reformas en Benalmádena y la Costa del Sol.",
+      "description": "Catálogos PDF por país y marca: porcelánicos, grifería y materiales premium para España y Venezuela.",
       "h1": "Materiales que definen el lujo",
       "eyebrow": "Catálogo exclusivo 2025–2026",
-      "heroSubtitle": "Una selección cuidada de las mejores marcas en porcelánicos, grifería, sanitarios e iluminación para proyectos de alta gama en la Costa del Sol.",
+      "heroSubtitle": "Explora los catálogos de nuestras marcas por país. Ábrelos online o descárgalos cuando quieras.",
       "intro": "Explora nuestra selección de porcelánicos, grifería, sanitarios, platos de ducha, iluminación y materiales de exterior. Las mejores marcas al mejor precio.",
+      "pdfsTitle": "Catálogos por país y marca",
+      "pdfsSubtitle": "Filtra por mercado y marca. Visualiza el PDF en la web o descárgalo a tu dispositivo.",
       "materialsTitle": "Nuestra selección de materiales",
       "materialsSubtitle": "Cada categoría cuenta con más de 50 referencias de las mejores marcas europeas.",
       "categories": {
@@ -617,6 +619,28 @@
         "lighting": "Iluminación",
         "bathroom": "Mobiliario de Baño",
         "exterior": "Exteriores"
+      },
+      "countries": {
+        "spain": "España",
+        "venezuela": "Venezuela"
+      },
+      "filters": {
+        "country": "País",
+        "brand": "Marca",
+        "allBrands": "Todas",
+        "results": "{count, plural, =0 {Sin catálogos} one {# catálogo} other {# catálogos}}",
+        "empty": "No hay catálogos con estos filtros."
+      },
+      "actions": {
+        "view": "Ver catálogo",
+        "download": "Descargar",
+        "open": "Abrir PDF"
+      },
+      "viewer": {
+        "back": "Volver al catálogo",
+        "fallback": "En este dispositivo el PDF se abre mejor en una pestaña nueva o descargándolo.",
+        "metaTitle": "Catálogo PDF",
+        "metaDescription": "Catálogo {brand} ({country}). Visualízalo online o descárgalo."
       },
       "statsTitle": "Dekorama en números",
       "stats": {
@@ -629,9 +653,10 @@
         "advice": "Asesoramiento",
         "adviceLabel": "Personalizado y sin costo"
       },
-      "cta": "Ver catálogo online",
-      "ctaSubtitle": "Accede al catálogo completo con referencias, acabados y precios.",
-      "visitShowroom": "¿Prefieres verlo en persona? Visítanos en nuestro showroom en Benalmádena y te asesoramos sin compromiso."
+      "cta": "Ver catálogos",
+      "ctaSubtitle": "¿Prefieres asesoramiento personalizado? Escríbenos o visita el showroom.",
+      "ctaContact": "Contactar",
+      "visitShowroom": "¿Prefieres verlo en persona?"
     },
     "proyectos": {
       "title": "Proyectos",

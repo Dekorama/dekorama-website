@@ -1,10 +1,11 @@
-const CATALOG_LINK = 'https://docsend.com/view/vbk8cc9avqdkmjnw'
+import { Suspense } from 'react'
 import { baseUrl } from '@/lib/site'
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 import PageHeader from '@/components/PageHeader'
 import CTASection from '@/components/CTASection'
+import CatalogLibrary from '@/components/catalog/CatalogLibrary'
 import { images } from '@/data/images'
 import { CATALOG_SEARCH_KEYWORDS, matchesSearch } from '@/lib/siteSearch'
 
@@ -66,12 +67,51 @@ export default async function CatalogoPage({ params, searchParams }) {
         heroImageAlt={t('categories.tiles')}
         ctaPrimary={{
           text: t('cta'),
-          href: CATALOG_LINK,
+          href: '#catalogos',
         }}
         baseUrl={baseUrl}
       />
 
-      <section className="section-editorial bg-white">
+      <section id="catalogos" className="section-editorial scroll-mt-24 bg-white">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 max-w-xl">
+            <h2 className="mb-4 font-heading text-3xl font-normal tracking-tight text-black md:text-4xl">
+              {t('pdfsTitle')}
+            </h2>
+            <p className="leading-relaxed text-gray-600">{t('pdfsSubtitle')}</p>
+          </div>
+
+          <Suspense
+            fallback={
+              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                {[0, 1, 2].map((i) => (
+                  <div key={i} className="aspect-[3/4] animate-pulse bg-gray-100" />
+                ))}
+              </div>
+            }
+          >
+            <CatalogLibrary initialQuery={query} />
+          </Suspense>
+        </div>
+      </section>
+
+      <section className="bg-charcoal px-4 py-16 sm:px-6 md:py-24 lg:px-8">
+        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 sm:grid-cols-2 md:gap-10">
+          {[
+            { value: t('stats.refs'), label: t('stats.refsLabel') },
+            { value: t('stats.years'), label: t('stats.yearsLabel') },
+            { value: t('stats.brands'), label: t('stats.brandsLabel') },
+            { value: t('stats.advice'), label: t('stats.adviceLabel') },
+          ].map(({ value, label }) => (
+            <div key={label} className="border border-white/15 p-10 text-center md:p-12">
+              <span className="font-heading text-3xl text-white md:text-4xl lg:text-5xl">{value}</span>
+              <span className="mt-4 block text-sm leading-relaxed text-white/80 md:text-base">{label}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-editorial bg-gray-50">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 max-w-xl">
             <h2 className="mb-4 font-heading text-3xl font-normal tracking-tight text-black md:text-4xl">
@@ -123,29 +163,13 @@ export default async function CatalogoPage({ params, searchParams }) {
         </div>
       </section>
 
-      <section className="bg-charcoal px-4 py-16 sm:px-6 md:py-24 lg:px-8">
-        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 sm:grid-cols-2 md:gap-10">
-          {[
-            { value: t('stats.refs'), label: t('stats.refsLabel') },
-            { value: t('stats.years'), label: t('stats.yearsLabel') },
-            { value: t('stats.brands'), label: t('stats.brandsLabel') },
-            { value: t('stats.advice'), label: t('stats.adviceLabel') },
-          ].map(({ value, label }) => (
-            <div key={label} className="border border-white/15 p-10 text-center md:p-12">
-              <span className="font-heading text-3xl text-white md:text-4xl lg:text-5xl">{value}</span>
-              <span className="mt-4 block text-sm leading-relaxed text-white/80 md:text-base">{label}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
       <CTASection
-        title={t('cta')}
+        title={t('visitShowroom')}
         description={t('ctaSubtitle')}
         buttons={[
           {
-            text: t('cta'),
-            href: CATALOG_LINK,
+            text: t('ctaContact'),
+            href: `/${locale}/contacto`,
             variant: 'primary',
           },
         ]}

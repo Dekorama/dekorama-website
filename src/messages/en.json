@@ -603,11 +603,13 @@
     },
     "catalogo": {
       "title": "Materials catalogue",
-      "description": "Premium porcelain tiles, taps, sanitaryware and lighting for renovations in Benalmádena and the Costa del Sol.",
+      "description": "PDF catalogues by country and brand: porcelain, taps and premium materials for Spain and Venezuela.",
       "h1": "Materials that define luxury",
       "eyebrow": "Exclusive catalogue 2025–2026",
-      "heroSubtitle": "A carefully curated selection of the finest European brands in porcelain tiles, taps, sanitaryware and lighting for high-end projects on the Costa del Sol.",
+      "heroSubtitle": "Browse our brand catalogues by country. Open them online or download anytime.",
       "intro": "Explore our selection of porcelain tiles, taps, sanitaryware, shower trays, lighting and exterior materials. The best brands at the best price.",
+      "pdfsTitle": "Catalogues by country and brand",
+      "pdfsSubtitle": "Filter by market and brand. View the PDF in your browser or download it to your device.",
       "materialsTitle": "Our materials selection",
       "materialsSubtitle": "Each category features over 50 references from Europe's leading brands.",
       "categories": {
@@ -617,6 +619,28 @@
         "lighting": "Lighting",
         "bathroom": "Bathroom Furniture",
         "exterior": "Outdoor & Exterior"
+      },
+      "countries": {
+        "spain": "Spain",
+        "venezuela": "Venezuela"
+      },
+      "filters": {
+        "country": "Country",
+        "brand": "Brand",
+        "allBrands": "All",
+        "results": "{count, plural, =0 {No catalogues} one {# catalogue} other {# catalogues}}",
+        "empty": "No catalogues match these filters."
+      },
+      "actions": {
+        "view": "View catalogue",
+        "download": "Download",
+        "open": "Open PDF"
+      },
+      "viewer": {
+        "back": "Back to catalogue",
+        "fallback": "On this device the PDF opens best in a new tab or by downloading it.",
+        "metaTitle": "PDF catalogue",
+        "metaDescription": "{brand} catalogue ({country}). View online or download."
       },
       "statsTitle": "Dekorama in numbers",
       "stats": {
@@ -629,9 +653,10 @@
         "advice": "Advice",
         "adviceLabel": "Personal & complimentary"
       },
-      "cta": "View online catalogue",
-      "ctaSubtitle": "Access the full catalogue with references, finishes and pricing.",
-      "visitShowroom": "Prefer to see it in person? Visit our showroom in Benalmádena — no commitment needed."
+      "cta": "Browse catalogues",
+      "ctaSubtitle": "Prefer personal advice? Get in touch or visit the showroom.",
+      "ctaContact": "Contact us",
+      "visitShowroom": "Prefer to see it in person?"
     },
     "proyectos": {
       "title": "Projects",
