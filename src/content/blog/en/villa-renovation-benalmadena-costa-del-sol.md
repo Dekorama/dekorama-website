@@ -44,7 +44,7 @@ The cost of a full villa renovation in Benalmádena varies significantly based o
 It is always advisable to obtain detailed, itemised quotes from reputable companies. Dekorama provides transparent pricing and comprehensive project management for [full home renovations on the Costa del Sol](/en/reformas-integrales).
 
 ## The Renovation Process: Step-by-Step with Dekorama
-Undertaking a full villa renovation might seem daunting, especially for expats unfamiliar with local procedures. At Dekorama, we streamline the process, guiding you from initial concept to final completion. Our 12+ years of experience on the Costa del Sol ensures a smooth and efficient project.
+Undertaking a full villa renovation might seem daunting, especially for expats unfamiliar with local procedures. At Dekorama, we streamline the process, guiding you from initial concept to final completion. Our 20+ years of experience on the Costa del Sol ensures a smooth and efficient project.
 
 Here is a typical breakdown of the renovation journey:
 

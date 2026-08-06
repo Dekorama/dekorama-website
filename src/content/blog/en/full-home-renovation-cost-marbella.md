@@ -67,7 +67,7 @@ The duration of a full home renovation in Marbella is another critical aspect to
 
 *   **Small Apartment (60-80 sqm):** 3-5 months
 *   **Medium-Sized Apartment/Townhouse (80-150 sqm):** 4-7 months
-*   **Large Villa (150+ sqm):** 6-12+ months
+*   **Large Villa (150+ sqm):** 6-20+ months
 
 These estimates include time for planning, obtaining permits, material procurement, and the actual construction work. Factors that can extend the timeline include:
 

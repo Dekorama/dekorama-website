@@ -66,7 +66,7 @@ The timeline for a full home renovation in Fuengirola depends on the project's c
 While reputable companies strive for efficiency, delays can occur due to permit processing times, unexpected structural issues, or material delivery. Choosing a company with strong project management skills and clear communication helps mitigate these issues. They should keep you informed and offer solutions to keep the project moving forward.
 
 ## The DEKORAMA Difference: Your Trusted Partner in Fuengirola
-At DEKORAMA, we understand that a full home renovation is a significant investment, especially for those navigating the process from abroad. Our 12+ years of experience in Benalmádena and across the Costa del Sol, including [renovations in Fuengirola](/en/reformas-fuengirola) and [renovations in Marbella](/en/reformas-marbella), mean we bring unparalleled local expertise and a commitment to quality.
+At DEKORAMA, we understand that a full home renovation is a significant investment, especially for those navigating the process from abroad. Our 20+ years of experience in Benalmádena and across the Costa del Sol, including [renovations in Fuengirola](/en/reformas-fuengirola) and [renovations in Marbella](/en/reformas-marbella), mean we bring unparalleled local expertise and a commitment to quality.
 
 We offer a complete, end-to-end service, ensuring every detail is handled with precision and care. From the initial design concept to the selection of high-quality materials and the final handover, our team manages the entire process. We pride ourselves on transparent communication, adherence to budgets, and delivering exceptional results that exceed expectations. Our goal is to make your renovation journey as stress-free and rewarding as possible.
 

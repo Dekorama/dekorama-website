@@ -66,7 +66,7 @@ Canonical NAP (copy exactly everywhere):
 - Phone: +34 628 571 537
 - Website: https://www.dekoramagroup.com
 - Hours: Mon–Fri 09:00–18:00, Sat 10:00–14:00
-- Experience claim: 12+ years (never 10 or 20)
+- Experience claim: 20+ years (never 10 or 20)
 
 **Google Business Profile**
 

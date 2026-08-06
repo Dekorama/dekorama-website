@@ -19,7 +19,7 @@ ABOUT THE BUSINESS:
 - Sells: porcelain tiles, ceramics, flooring, taps & fittings, shower trays, shower screens,
   lighting, outdoor materials, and more.
 - Services: full home renovations (reformas integrales), custom kitchens, complete bathrooms.
-- 12+ years of industry experience. Serves: Benalmádena, Marbella, Fuengirola, Estepona,
+- 20+ years of industry experience. Serves: Benalmádena, Marbella, Fuengirola, Estepona,
   Torremolinos, and the wider Costa del Sol.
 - Target audience: homeowners (Spanish residents + foreign expats/holiday-home owners),
   interior designers, architects, and property investors in the area.

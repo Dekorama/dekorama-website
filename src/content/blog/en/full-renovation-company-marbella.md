@@ -70,7 +70,7 @@ Ask for references from previous clients and check online reviews. Speaking dire
 
 ## The Renovation Process with DEKORAMA
 
-At DEKORAMA, we believe in a structured and transparent process to ensure your full renovation project in Marbella is smooth and successful. Our 12+ years of experience guide every step, from initial concept to final handover.
+At DEKORAMA, we believe in a structured and transparent process to ensure your full renovation project in Marbella is smooth and successful. Our 20+ years of experience guide every step, from initial concept to final handover.
 
 ### Initial Consultation and Design
 

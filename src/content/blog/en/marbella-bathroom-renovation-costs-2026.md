@@ -56,7 +56,7 @@ These estimates include materials, labour, and basic project management. Always 
 
 ## The Renovation Process: What to Expect with DEKORAMA
 
-At DEKORAMA, we streamline the renovation process to make it as stress-free as possible for our clients, whether you are a local resident or an international property owner. Our 12+ years of experience on the Costa del Sol means we understand the nuances of local projects.
+At DEKORAMA, we streamline the renovation process to make it as stress-free as possible for our clients, whether you are a local resident or an international property owner. Our 20+ years of experience on the Costa del Sol means we understand the nuances of local projects.
 
 1.  **Initial Consultation**: We discuss your vision, needs, and budget. This helps us understand the scope of your [complete bathroom renovations](/en/banos-completos).
 2.  **Design and Material Selection**: Our team assists you in choosing the perfect [premium materials](/en/materiales-premium), fixtures, and finishes from our extensive showroom. We help you visualise the final result.

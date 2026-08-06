@@ -73,7 +73,7 @@ The duration of your kitchen renovation project is another important considerati
 
 *   **Minor Cosmetic Updates**: 2-4 weeks. This involves painting, replacing cabinet doors, or installing new flooring without altering the layout.
 *   **Mid-Range Renovations**: 4-8 weeks. This includes new cabinets, countertops, appliances, and potentially minor layout adjustments.
-*   **Major Renovations with Structural Changes**: 8-12+ weeks. Projects involving wall removal, significant layout changes, or extensive plumbing and electrical work will take longer. Custom orders for materials can also extend this timeline.
+*   **Major Renovations with Structural Changes**: 8-20+ weeks. Projects involving wall removal, significant layout changes, or extensive plumbing and electrical work will take longer. Custom orders for materials can also extend this timeline.
 
 Factors like material delivery times, permit approval processes, and the complexity of the design can all influence the overall duration. A well-organised project managed by an experienced company helps minimise delays.
 

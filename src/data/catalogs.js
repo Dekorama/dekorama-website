@@ -1,4 +1,3 @@
-import { images } from '@/data/images'
 import { matchesSearch, normalizeSearch } from '@/lib/siteSearch'
 
 /**
@@ -27,7 +26,7 @@ export const CATALOGS = [
     country: 'spain',
     file: '/catalogs/spain/harmony.pdf',
     category: 'tiles',
-    cover: images.featured.swatches[0].src,
+    cover: '/images/catalogs/harmony.png',
     keywords: ['harmony', 'porcelanico', 'porcelánico', 'tile', 'tiles', 'spain', 'españa'],
   },
   {
@@ -38,18 +37,18 @@ export const CATALOGS = [
     country: 'spain',
     file: '/catalogs/spain/museum.pdf',
     category: 'tiles',
-    cover: images.services.reformas,
+    cover: '/images/catalogs/museum.png',
     keywords: ['museum', 'porcelanico', 'porcelánico', 'tile', 'tiles', 'spain', 'españa'],
   },
   {
     slug: 'nadis',
     brand: 'Nadis',
     brandKey: 'nadis',
-    title: 'Nadis',
+    title: 'Nadis Design',
     country: 'spain',
     file: '/catalogs/spain/nadis.pdf',
     category: 'tiles',
-    cover: images.featured.main,
+    cover: '/images/catalogs/nadis.png',
     keywords: ['nadis', 'porcelanico', 'porcelánico', 'tile', 'tiles', 'spain', 'españa'],
   },
   {
@@ -60,7 +59,7 @@ export const CATALOGS = [
     country: 'spain',
     file: '/catalogs/spain/neve.pdf',
     category: 'taps',
-    cover: images.featured.swatches[1].src,
+    cover: '/images/catalogs/neve.png',
     keywords: ['neve', 'griferia', 'grifería', 'tap', 'taps', 'faucet', 'spain', 'españa'],
   },
   {
@@ -71,7 +70,7 @@ export const CATALOGS = [
     country: 'spain',
     file: '/catalogs/spain/porcelanite-dos.pdf',
     category: 'tiles',
-    cover: images.dual.projects,
+    cover: '/images/catalogs/porcelanite-dos.png',
     keywords: [
       'porcelanite',
       'porcelanite dos',
@@ -91,7 +90,7 @@ export const CATALOGS = [
     country: 'venezuela',
     file: '/catalogs/venezuela/europa-griferias-1.pdf',
     category: 'taps',
-    cover: images.featured.swatches[1].src,
+    cover: '/images/catalogs/europa-griferias-1.png',
     keywords: [
       'europa',
       'europa griferias',
@@ -112,7 +111,7 @@ export const CATALOGS = [
     country: 'venezuela',
     file: '/catalogs/venezuela/europa-griferias-2.pdf',
     category: 'taps',
-    cover: images.services.banos,
+    cover: '/images/catalogs/europa-griferias-2.png',
     keywords: [
       'europa',
       'europa griferias',
@@ -129,11 +128,11 @@ export const CATALOGS = [
     slug: 'kubo',
     brand: 'Kubo',
     brandKey: 'kubo',
-    title: 'Kubo',
+    title: 'Kubo Bath & Home',
     country: 'venezuela',
     file: '/catalogs/venezuela/kubo.pdf',
     category: 'bathroom',
-    cover: images.services.cocinas,
+    cover: '/images/catalogs/kubo.png',
     keywords: ['kubo', 'baño', 'bano', 'bathroom', 'mobiliario', 'venezuela', 'caracas'],
   },
 ]
