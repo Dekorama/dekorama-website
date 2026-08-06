@@ -63,8 +63,8 @@ export default async function CatalogoPage({ params, searchParams }) {
         ]}
         title={t('h1')}
         subtitle={t('heroSubtitle')}
-        heroImage={images.showroom}
-        heroImageAlt={t('categories.tiles')}
+        heroImage={images.catalogo}
+        heroImageAlt={t('h1')}
         ctaPrimary={{
           text: t('cta'),
           href: '#catalogos',

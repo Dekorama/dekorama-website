@@ -2,6 +2,7 @@
 export const images = {
   hero: '/images/hero/stone-interior.png',
   showroom: '/dekorama-showroom.jpeg',
+  catalogo: '/images/hero/catalogo-hero.png',
   heroProjects: '/projects/e59151b0-a5f9-4aa9-af26-001acb7cf228.JPG',
   markets: {
     caracas: '/images/hero/caracas-interior.png',
