@@ -22,11 +22,11 @@ export const megaNavItems = [
       {
         titleKey: 'colMaterials',
         links: [
-          { labelKey: 'porcelanicos', href: '/porcelanicos-malaga' },
-          { labelKey: 'griferia', href: '/venta-grifos-benalmadena' },
-          { labelKey: 'mamparas', href: '/mamparas-ducha-benalmadena' },
-          { labelKey: 'sanitarios', href: '/inodoros-suspendidos-benalmadena' },
-          { labelKey: 'baneras', href: '/baneras-platos-ducha-benalmadena' },
+          { labelKey: 'porcelanicos', href: '/porcelanicos' },
+          { labelKey: 'griferia', href: '/griferia' },
+          { labelKey: 'mamparas', href: '/mamparas' },
+          { labelKey: 'sanitarios', href: '/sanitarios' },
+          { labelKey: 'baneras', href: '/baneras-platos-ducha' },
         ],
       },
       {

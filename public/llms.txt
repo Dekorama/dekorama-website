@@ -46,14 +46,14 @@ Services: full home renovations (reformas integrales), custom kitchens, complete
 - Custom kitchens: https://www.dekoramagroup.com/es/cocinas-a-medida
 - Complete bathrooms: https://www.dekoramagroup.com/es/banos-completos
 - Premium materials showroom: https://www.dekoramagroup.com/es/materiales-premium
-- Porcelain tiles Málaga: https://www.dekoramagroup.com/es/porcelanicos-malaga
+- Porcelain tiles Málaga: https://www.dekoramagroup.com/es/porcelanicos
 - Renovations Marbella: https://www.dekoramagroup.com/es/reformas-marbella
 - Renovations Fuengirola: https://www.dekoramagroup.com/es/reformas-fuengirola
 - Renovations Estepona: https://www.dekoramagroup.com/es/reformas-estepona
 - Renovations Torremolinos: https://www.dekoramagroup.com/es/reformas-torremolinos
 - Renovations Caracas: https://www.dekoramagroup.com/es/reformas-caracas
-- Taps Benalmádena: https://www.dekoramagroup.com/es/venta-grifos-benalmadena
-- Shower screens Benalmádena: https://www.dekoramagroup.com/es/mamparas-ducha-benalmadena
+- Taps Benalmádena: https://www.dekoramagroup.com/es/griferia
+- Shower screens Benalmádena: https://www.dekoramagroup.com/es/mamparas
 - Blog (guides and costs): https://www.dekoramagroup.com/es/blog
 - Contact Spain: https://www.dekoramagroup.com/es/contacto
 - Contact Caracas: https://www.dekoramagroup.com/es/contacto-caracas
@@ -65,7 +65,7 @@ Services: full home renovations (reformas integrales), custom kitchens, complete
 - Custom kitchens: https://www.dekoramagroup.com/en/cocinas-a-medida
 - Complete bathrooms: https://www.dekoramagroup.com/en/banos-completos
 - Premium materials: https://www.dekoramagroup.com/en/materiales-premium
-- Porcelain tiles Málaga: https://www.dekoramagroup.com/en/porcelanicos-malaga
+- Porcelain tiles Málaga: https://www.dekoramagroup.com/en/porcelanicos
 - Renovations Marbella: https://www.dekoramagroup.com/en/reformas-marbella
 - Renovations Caracas: https://www.dekoramagroup.com/en/reformas-caracas
 - Blog: https://www.dekoramagroup.com/en/blog

@@ -28,12 +28,11 @@ const staticPaths = [
   { path: '/reformas-fuengirola', priority: 0.95, changeFrequency: 'monthly' },
   { path: '/reformas-estepona', priority: 0.95, changeFrequency: 'monthly' },
   { path: '/reformas-torremolinos', priority: 0.95, changeFrequency: 'monthly' },
-  { path: '/porcelanicos-malaga', priority: 0.9, changeFrequency: 'monthly' },
-  // Productos Benalmádena
-  { path: '/venta-grifos-benalmadena', priority: 0.85, changeFrequency: 'monthly' },
-  { path: '/mamparas-ducha-benalmadena', priority: 0.85, changeFrequency: 'monthly' },
-  { path: '/inodoros-suspendidos-benalmadena', priority: 0.85, changeFrequency: 'monthly' },
-  { path: '/baneras-platos-ducha-benalmadena', priority: 0.85, changeFrequency: 'monthly' },
+  { path: '/porcelanicos', priority: 0.9, changeFrequency: 'monthly' },
+  { path: '/griferia', priority: 0.85, changeFrequency: 'monthly' },
+  { path: '/mamparas', priority: 0.85, changeFrequency: 'monthly' },
+  { path: '/sanitarios', priority: 0.85, changeFrequency: 'monthly' },
+  { path: '/baneras-platos-ducha', priority: 0.85, changeFrequency: 'monthly' },
   // Páginas legales
   { path: '/politica-privacidad', priority: 0.3, changeFrequency: 'yearly' },
   { path: '/aviso-legal', priority: 0.3, changeFrequency: 'yearly' },

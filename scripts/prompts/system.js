@@ -30,7 +30,7 @@ ABOUT THE BUSINESS:
   - "cocinas a medida" → /es/cocinas-a-medida
   - "baños completos" → /es/banos-completos
   - "materiales premium" → /es/materiales-premium
-  - "porcelánicos en Málaga" → /es/porcelanicos-malaga
+  - "porcelánicos en Málaga" → /es/porcelanicos
   - "reformas en Benalmádena" → /es/reformas-benalmadena
   - "reformas en Marbella" → /es/reformas-marbella
   - "reformas en Fuengirola" → /es/reformas-fuengirola
@@ -43,7 +43,7 @@ ABOUT THE BUSINESS:
   - "custom kitchens" → /en/cocinas-a-medida
   - "complete bathroom renovations" → /en/banos-completos
   - "premium materials" → /en/materiales-premium
-  - "porcelain tiles in Málaga" → /en/porcelanicos-malaga
+  - "porcelain tiles in Málaga" → /en/porcelanicos
   - "renovations in Benalmádena" → /en/reformas-benalmadena
   - "renovations in Marbella" → /en/reformas-marbella
   - "renovations in Fuengirola" → /en/reformas-fuengirola

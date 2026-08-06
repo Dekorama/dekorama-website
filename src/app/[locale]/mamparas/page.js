@@ -15,22 +15,22 @@ export async function generateMetadata({ params }) {
 
   return {
     title: isEs
-      ? 'Mamparas Ducha Benalmádena | Profiltek Spazia Castel | Dekorama'
-      : 'Shower Screens Benalmádena | Profiltek Spazia Castel | Dekorama',
+      ? 'Mamparas de Ducha | Profiltek Spazia Castel | Dekorama'
+      : 'Shower Screens | Profiltek Spazia Castel | Dekorama',
     description: isEs
-      ? 'Venta de mamparas de ducha y bañera en Benalmádena. Profiltek, Spazia, Castel. Vidrio templado 8mm. Showroom físico. Instalación opcional.'
-      : 'Sale of shower and bathtub screens in Benalmádena. Profiltek, Spazia, Castel. 8mm tempered glass. Physical showroom. Optional installation.',
+      ? 'Venta de mamparas de ducha y bañera. Profiltek, Spazia, Castel. Vidrio templado 8mm. Showroom físico. Instalación opcional.'
+      : 'Sale of shower and bathtub screens. Profiltek, Spazia, Castel. 8mm tempered glass. Physical showroom. Optional installation.',
     openGraph: {
-      title: isEs ? 'Mamparas Ducha Benalmádena' : 'Shower Screens Benalmádena',
+      title: isEs ? 'Mamparas de ducha' : 'Shower screens',
       description: isEs ? 'Venta e instalación de mamparas premium' : 'Sale and installation of premium shower screens',
-      url: `/${locale}/mamparas-ducha-benalmadena`,
+      url: `/${locale}/mamparas`,
       images: [{ url: HERO }],
     },
     alternates: {
-      canonical: `${baseUrl}/${locale}/mamparas-ducha-benalmadena`,
+      canonical: `${baseUrl}/${locale}/mamparas`,
       languages: {
-        es: `${baseUrl}/es/mamparas-ducha-benalmadena`,
-        en: `${baseUrl}/en/mamparas-ducha-benalmadena`,
+        es: `${baseUrl}/es/mamparas`,
+        en: `${baseUrl}/en/mamparas`,
       },
     },
   }
@@ -39,15 +39,14 @@ export async function generateMetadata({ params }) {
 export default async function MamparasDuchaPage({ params }) {
   const { locale } = await params
   const tCta = await getTranslations({ locale, namespace: 'cta' })
-  const tCommon = await getTranslations({ locale, namespace: 'breadcrumb' })
   const isEs = locale === 'es'
 
   const productJsonLd = buildProductJsonLd({
     type: ['Product', 'Service'],
     name: isEs ? 'Mamparas de Ducha y Bañera' : 'Shower and Bathtub Screens',
     description: isEs
-      ? 'Venta de mamparas Profiltek, Spazia y Castel en Benalmádena.'
-      : 'Sale of Profiltek, Spazia and Castel screens in Benalmádena.',
+      ? 'Venta de mamparas Profiltek, Spazia y Castel.'
+      : 'Sale of Profiltek, Spazia and Castel screens.',
     brand: [
       { '@type': 'Brand', name: 'Profiltek' },
       { '@type': 'Brand', name: 'Spazia' },
@@ -147,18 +146,14 @@ export default async function MamparasDuchaPage({ params }) {
 
       <div className="min-h-screen bg-white">
         <PageHeader
-          breadcrumbItems={[
-            { label: tCommon('home'), href: `/${locale}` },
-            { label: isEs ? 'Mamparas de Ducha' : 'Shower Screens', href: null },
-          ]}
-          title={isEs ? 'Mamparas de Ducha en Benalmádena' : 'Shower Screens in Benalmádena'}
+          title={isEs ? 'Mamparas de ducha' : 'Shower screens'}
           subtitle={
             isEs
               ? 'Profiltek, Spazia y Castel. Vidrio templado 8mm con tratamiento antical. Fijas, correderas, angulares y plegables.'
               : 'Profiltek, Spazia and Castel. 8mm tempered glass with anti-lime treatment. Fixed, sliding, corner and folding.'
           }
           heroImage={HERO}
-          heroImageAlt={isEs ? 'Mamparas de ducha Benalmádena' : 'Shower screens Benalmádena'}
+          heroImageAlt={isEs ? 'Mamparas de ducha' : 'Shower screens'}
           ctaPrimary={{
             text: isEs ? 'Haz tu visita' : 'Book your visit',
             href: `/${locale}/contacto`,
@@ -266,8 +261,8 @@ export default async function MamparasDuchaPage({ params }) {
             </h2>
             <p className="mb-8 text-gray-600">
               {isEs
-                ? 'Ven a ver mamparas reales en Benalmádena. Medición a domicilio sin compromiso.'
-                : 'See real screens in Benalmádena. Home measurement with no obligation.'}
+                ? 'Ven a ver mamparas reales en nuestro showroom. Medición a domicilio sin compromiso.'
+                : 'See real screens in our showroom. Home measurement with no obligation.'}
             </p>
             <Link href={`/${locale}/contacto`} className="btn-primary">
               {tCta('requestFreeVisit')}

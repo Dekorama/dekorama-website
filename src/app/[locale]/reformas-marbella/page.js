@@ -119,7 +119,7 @@ export default async function ReformasMarbellaPage({ params }) {
       description: locale === 'es'
         ? 'Primera marcas para suelos y baños'
         : 'Top brands for floors and bathrooms',
-      href: `/${locale}/porcelanicos-malaga`,
+      href: `/${locale}/porcelanicos`,
       image: images.services.materiales,
     },
     {

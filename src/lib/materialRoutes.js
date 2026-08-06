@@ -47,18 +47,18 @@ export function marketCatalogHref(market) {
   return market === 'venezuela' ? '/catalogo?pais=venezuela' : '/catalogo?pais=spain'
 }
 
-/** Spain SEO category paths → Caracas catalog (shared product range, locality URL). */
-const SPAIN_CATEGORY_TO_CATALOG = {
-  '/porcelanicos-malaga': '/catalogo?pais=venezuela',
-  '/venta-grifos-benalmadena': '/catalogo?pais=venezuela',
-  '/mamparas-ducha-benalmadena': '/catalogo?pais=venezuela',
-  '/inodoros-suspendidos-benalmadena': '/catalogo?pais=venezuela',
-  '/baneras-platos-ducha-benalmadena': '/catalogo?pais=venezuela',
+/** Shared category pages (no city in path) — same for all markets. */
+export const MATERIAL_CATEGORY_HREFS = {
+  porcelanicos: '/porcelanicos',
+  grifos: '/griferia',
+  mamparas: '/mamparas',
+  sanitarios: '/sanitarios',
+  baneras: '/baneras-platos-ducha',
 }
 
 /**
  * Remap a materials-related href for the active market.
- * Spain keeps city SEO; Caracas uses locality materials + catalog.
+ * Category pages are shared; hubs differ by locality.
  * @param {string} href
  * @param {MarketId} market
  * @returns {string}
@@ -75,34 +75,21 @@ export function resolveMaterialHref(href, market) {
   if (href === '/catalogo' || href.startsWith('/catalogo?')) {
     return marketCatalogHref('venezuela')
   }
-  if (SPAIN_CATEGORY_TO_CATALOG[href]) {
-    return SPAIN_CATEGORY_TO_CATALOG[href]
-  }
   return href
 }
 
 /**
  * Category cards for materials hub.
- * @param {MarketId} market
+ * @param {MarketId} _market
  * @returns {{ key: string, href: string }[]}
  */
-export function getMaterialHubCategories(market) {
-  if (market === 'venezuela') {
-    return [
-      { key: 'grifos', href: '/catalogo?pais=venezuela' },
-      { key: 'mamparas', href: '/catalogo?pais=venezuela' },
-      { key: 'sanitarios', href: '/catalogo?pais=venezuela' },
-      { key: 'baneras', href: '/catalogo?pais=venezuela' },
-      { key: 'porcelanicos', href: '/catalogo?pais=venezuela' },
-    ]
-  }
-
+export function getMaterialHubCategories(_market) {
   return [
-    { key: 'grifos', href: '/venta-grifos-benalmadena' },
-    { key: 'mamparas', href: '/mamparas-ducha-benalmadena' },
-    { key: 'sanitarios', href: '/inodoros-suspendidos-benalmadena' },
-    { key: 'baneras', href: '/baneras-platos-ducha-benalmadena' },
-    { key: 'porcelanicos', href: '/porcelanicos-malaga' },
+    { key: 'grifos', href: MATERIAL_CATEGORY_HREFS.grifos },
+    { key: 'mamparas', href: MATERIAL_CATEGORY_HREFS.mamparas },
+    { key: 'sanitarios', href: MATERIAL_CATEGORY_HREFS.sanitarios },
+    { key: 'baneras', href: MATERIAL_CATEGORY_HREFS.baneras },
+    { key: 'porcelanicos', href: MATERIAL_CATEGORY_HREFS.porcelanicos },
   ]
 }
 
@@ -113,25 +100,13 @@ export function getMaterialHubCategories(market) {
  */
 export function getMaterialPremiumCategories(market) {
   const hub = marketMaterialsHref(market)
-  const catalog = marketCatalogHref(market)
-
-  if (market === 'venezuela') {
-    return [
-      { key: 'porcelanicos', href: catalog },
-      { key: 'griferia', href: catalog },
-      { key: 'ducha', href: catalog },
-      { key: 'iluminacion', href: hub },
-      { key: 'mamparas', href: catalog },
-      { key: 'exterior', href: hub },
-    ]
-  }
 
   return [
-    { key: 'porcelanicos', href: '/porcelanicos-malaga' },
-    { key: 'griferia', href: '/venta-grifos-benalmadena' },
-    { key: 'ducha', href: '/baneras-platos-ducha-benalmadena' },
+    { key: 'porcelanicos', href: MATERIAL_CATEGORY_HREFS.porcelanicos },
+    { key: 'griferia', href: MATERIAL_CATEGORY_HREFS.grifos },
+    { key: 'ducha', href: MATERIAL_CATEGORY_HREFS.baneras },
     { key: 'iluminacion', href: hub },
-    { key: 'mamparas', href: '/mamparas-ducha-benalmadena' },
+    { key: 'mamparas', href: MATERIAL_CATEGORY_HREFS.mamparas },
     { key: 'exterior', href: hub },
   ]
 }

@@ -47,22 +47,22 @@ export const images = {
     swatches: [
       {
         src: '/images/swatches/porcelanico.png',
-        href: '/porcelanicos-malaga',
+        href: '/porcelanicos',
         labelKey: 'swatch1',
       },
       {
         src: '/images/swatches/griferia.png',
-        href: '/venta-grifos-benalmadena',
+        href: '/griferia',
         labelKey: 'swatch2',
       },
       {
         src: '/images/swatches/mamparas.png',
-        href: '/mamparas-ducha-benalmadena',
+        href: '/mamparas',
         labelKey: 'swatch3',
       },
       {
         src: '/images/swatches/platos.png',
-        href: '/baneras-platos-ducha-benalmadena',
+        href: '/baneras-platos-ducha',
         labelKey: 'swatch4',
       },
     ],

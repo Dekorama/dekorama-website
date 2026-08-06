@@ -32,9 +32,9 @@ export async function generateMetadata({ params }) {
 }
 
 const MATERIAL_CATEGORIES = [
-  { key: 'tiles', image: images.services.reformas, href: '/porcelanicos-malaga' },
-  { key: 'taps', image: images.featured.swatches[1].src, href: '/venta-grifos-benalmadena' },
-  { key: 'sanitaryware', image: images.featured.swatches[0].src, href: '/inodoros-suspendidos-benalmadena' },
+  { key: 'tiles', image: images.services.reformas, href: '/porcelanicos' },
+  { key: 'taps', image: images.featured.swatches[1].src, href: '/griferia' },
+  { key: 'sanitaryware', image: images.featured.swatches[0].src, href: '/sanitarios' },
   { key: 'lighting', image: images.services.cocinas, href: '/materiales' },
   { key: 'bathroom', image: images.services.banos, href: '/banos-completos' },
   { key: 'exterior', image: images.dual.projects, href: '/materiales-premium' },

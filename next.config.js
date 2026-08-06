@@ -27,6 +27,32 @@ const nextConfig = {
         destination: 'https://www.dekoramagroup.com/:path*',
         permanent: true,
       },
+      // Legacy city SEO category URLs → generic category pages
+      {
+        source: '/:locale/porcelanicos-malaga',
+        destination: '/:locale/porcelanicos',
+        permanent: true,
+      },
+      {
+        source: '/:locale/venta-grifos-benalmadena',
+        destination: '/:locale/griferia',
+        permanent: true,
+      },
+      {
+        source: '/:locale/mamparas-ducha-benalmadena',
+        destination: '/:locale/mamparas',
+        permanent: true,
+      },
+      {
+        source: '/:locale/inodoros-suspendidos-benalmadena',
+        destination: '/:locale/sanitarios',
+        permanent: true,
+      },
+      {
+        source: '/:locale/baneras-platos-ducha-benalmadena',
+        destination: '/:locale/baneras-platos-ducha',
+        permanent: true,
+      },
     ]
   },
 }

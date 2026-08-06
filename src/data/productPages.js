@@ -44,7 +44,7 @@ export function buildRelatedLinks(locale, keys) {
       description: isEs
         ? 'Profiltek, Spazia, Castel. Vidrio templado 8mm'
         : 'Profiltek, Spazia, Castel. 8mm tempered glass',
-      href: '/mamparas-ducha-benalmadena',
+      href: '/mamparas',
       image: productImages.mamparas,
       imageAlt: isEs ? 'Mamparas de ducha' : 'Shower screens',
     },
@@ -53,7 +53,7 @@ export function buildRelatedLinks(locale, keys) {
       description: isEs
         ? 'Cristina, Neve, Tres, Gessi. Múltiples acabados'
         : 'Cristina, Neve, Tres, Gessi. Multiple finishes',
-      href: '/venta-grifos-benalmadena',
+      href: '/griferia',
       image: productImages.grifos,
       imageAlt: isEs ? 'Grifería premium' : 'Premium taps',
     },
@@ -62,7 +62,7 @@ export function buildRelatedLinks(locale, keys) {
       description: isEs
         ? 'Roca, Hidrobox, Hidronatur. Todas las medidas'
         : 'Roca, Hidrobox, Hidronatur. All sizes',
-      href: '/baneras-platos-ducha-benalmadena',
+      href: '/baneras-platos-ducha',
       image: productImages.baneras,
       imageAlt: isEs ? 'Bañeras y platos' : 'Baths and trays',
     },
@@ -71,7 +71,7 @@ export function buildRelatedLinks(locale, keys) {
       description: isEs
         ? 'Inodoros Geberit, Tece, Duravit, Villeroy & Boch'
         : 'Geberit, Tece, Duravit, Villeroy & Boch toilets',
-      href: '/inodoros-suspendidos-benalmadena',
+      href: '/sanitarios',
       image: productImages.sanitarios,
       imageAlt: isEs ? 'Sanitarios' : 'Sanitaryware',
     },
@@ -80,7 +80,7 @@ export function buildRelatedLinks(locale, keys) {
       description: isEs
         ? 'Suelos y revestimientos de primeras marcas'
         : 'Floor and wall tiles from leading brands',
-      href: '/porcelanicos-malaga',
+      href: '/porcelanicos',
       image: productImages.porcelanicos,
       imageAlt: isEs ? 'Porcelánicos' : 'Porcelain tiles',
     },

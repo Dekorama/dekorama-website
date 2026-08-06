@@ -113,7 +113,7 @@ export default async function MaterialesPremiumView({ locale, marketId }) {
       href:
         marketId === 'venezuela'
           ? catalogHref
-          : '/porcelanicos-malaga',
+          : '/porcelanicos',
       image: '/images/porcelanicos/hero.png',
       imageAlt: isEs ? 'Porcelánicos' : 'Porcelain tiles',
     },

@@ -39,14 +39,14 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: `/${locale}/porcelanicos-malaga`,
+      url: `/${locale}/porcelanicos`,
       images: [{ url: HERO, width: 1920, height: 1080, alt: t('h1') }],
     },
     alternates: {
-      canonical: `${baseUrl}/${locale}/porcelanicos-malaga`,
+      canonical: `${baseUrl}/${locale}/porcelanicos`,
       languages: {
-        es: `${baseUrl}/es/porcelanicos-malaga`,
-        en: `${baseUrl}/en/porcelanicos-malaga`,
+        es: `${baseUrl}/es/porcelanicos`,
+        en: `${baseUrl}/en/porcelanicos`,
       },
     },
   }
@@ -55,7 +55,6 @@ export async function generateMetadata({ params }) {
 export default async function PorcelanicosMalagaPage({ params }) {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'ciudades.porcelanicos' })
-  const tCommon = await getTranslations({ locale, namespace: 'breadcrumb' })
   const tCta = await getTranslations({ locale, namespace: 'cta' })
   const isEs = locale === 'es'
 
@@ -78,13 +77,13 @@ export default async function PorcelanicosMalagaPage({ params }) {
 
   const relatedServices = [
     {
-      title: isEs ? 'Reformas Benalmádena' : 'Renovations Benalmádena',
+      title: isEs ? 'Reformas Integrales' : 'Full Renovations',
       description: isEs
         ? 'Empresa de reformas con showroom local'
         : 'Renovation company with local showroom',
-      href: '/reformas-benalmadena',
+      href: '/reformas-integrales',
       image: '/images/porcelanicos/materiales.png',
-      imageAlt: isEs ? 'Reformas Benalmádena' : 'Renovations Benalmádena',
+      imageAlt: isEs ? 'Reformas integrales' : 'Full renovations',
     },
     {
       title: isEs ? 'Baños Completos' : 'Complete Bathrooms',
@@ -115,13 +114,6 @@ export default async function PorcelanicosMalagaPage({ params }) {
 
       <div className="min-h-screen bg-white">
         <PageHeader
-          breadcrumbItems={[
-            { label: tCommon('home'), href: `/${locale}` },
-            {
-              label: isEs ? 'Porcelánicos Málaga' : 'Porcelain Tiles Málaga',
-              href: null,
-            },
-          ]}
           title={t('h1')}
           subtitle={t('intro')}
           heroImage={HERO}

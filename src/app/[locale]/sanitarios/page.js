@@ -15,22 +15,22 @@ export async function generateMetadata({ params }) {
 
   return {
     title: isEs
-      ? 'Inodoros Suspendidos Benalmádena | Geberit Tece | Venta e Instalación'
-      : 'Wall-hung Toilets Benalmádena | Geberit Tece | Sale and Installation',
+      ? 'Sanitarios e Inodoros | Geberit Tece Duravit | Dekorama'
+      : 'Sanitaryware & Toilets | Geberit Tece Duravit | Dekorama',
     description: isEs
-      ? 'Venta de inodoros suspendidos y de suelo en Benalmádena. Geberit, Tece, Duravit, Villeroy & Boch. Showroom físico. Instalación opcional.'
-      : 'Sale of wall-hung and floor-standing toilets in Benalmádena. Geberit, Tece, Duravit, Villeroy & Boch. Physical showroom. Optional installation.',
+      ? 'Venta de inodoros suspendidos y de suelo. Geberit, Tece, Duravit, Villeroy & Boch. Showroom físico. Instalación opcional.'
+      : 'Sale of wall-hung and floor-standing toilets. Geberit, Tece, Duravit, Villeroy & Boch. Physical showroom. Optional installation.',
     openGraph: {
-      title: isEs ? 'Inodoros Suspendidos Benalmádena' : 'Wall-hung Toilets Benalmádena',
+      title: isEs ? 'Sanitarios' : 'Sanitaryware',
       description: isEs ? 'Venta e instalación de inodoros premium' : 'Sale and installation of premium toilets',
-      url: `/${locale}/inodoros-suspendidos-benalmadena`,
+      url: `/${locale}/sanitarios`,
       images: [{ url: HERO }],
     },
     alternates: {
-      canonical: `${baseUrl}/${locale}/inodoros-suspendidos-benalmadena`,
+      canonical: `${baseUrl}/${locale}/sanitarios`,
       languages: {
-        es: `${baseUrl}/es/inodoros-suspendidos-benalmadena`,
-        en: `${baseUrl}/en/inodoros-suspendidos-benalmadena`,
+        es: `${baseUrl}/es/sanitarios`,
+        en: `${baseUrl}/en/sanitarios`,
       },
     },
   }
@@ -39,15 +39,14 @@ export async function generateMetadata({ params }) {
 export default async function InodorosSuspendidosPage({ params }) {
   const { locale } = await params
   const tCta = await getTranslations({ locale, namespace: 'cta' })
-  const tCommon = await getTranslations({ locale, namespace: 'breadcrumb' })
   const isEs = locale === 'es'
 
   const productJsonLd = buildProductJsonLd({
     type: ['Product', 'Service'],
     name: isEs ? 'Inodoros Suspendidos y de Suelo' : 'Wall-hung and Floor-standing Toilets',
     description: isEs
-      ? 'Venta de inodoros Geberit, Tece, Duravit y Villeroy & Boch en Benalmádena.'
-      : 'Sale of Geberit, Tece, Duravit and Villeroy & Boch toilets in Benalmádena.',
+      ? 'Venta de inodoros Geberit, Tece, Duravit y Villeroy & Boch.'
+      : 'Sale of Geberit, Tece, Duravit and Villeroy & Boch toilets.',
     brand: [
       { '@type': 'Brand', name: 'Geberit' },
       { '@type': 'Brand', name: 'Tece' },
@@ -62,8 +61,8 @@ export default async function InodorosSuspendidosPage({ params }) {
     {
       title: isEs ? 'Showroom físico' : 'Physical showroom',
       description: isEs
-        ? 'Modelos en exposición y asesoramiento experto en Benalmádena.'
-        : 'Models on display and expert advice in Benalmádena.',
+        ? 'Modelos en exposición y asesoramiento experto en nuestro showroom.'
+        : 'Models on display and expert advice in our showroom.',
     },
     {
       title: isEs ? 'Instalación profesional' : 'Professional installation',
@@ -114,18 +113,14 @@ export default async function InodorosSuspendidosPage({ params }) {
 
       <div className="min-h-screen bg-white">
         <PageHeader
-          breadcrumbItems={[
-            { label: tCommon('home'), href: `/${locale}` },
-            { label: isEs ? 'Inodoros' : 'Toilets', href: null },
-          ]}
-          title={isEs ? 'Inodoros en Benalmádena' : 'Toilets in Benalmádena'}
+          title={isEs ? 'Sanitarios' : 'Sanitaryware'}
           subtitle={
             isEs
               ? 'Suspendidos y de suelo. Geberit, Tece, Duravit, Villeroy & Boch. Descarga dual 3/6L para máximo ahorro.'
               : 'Wall-hung and floor-standing. Geberit, Tece, Duravit, Villeroy & Boch. Dual flush 3/6L for maximum savings.'
           }
           heroImage={HERO}
-          heroImageAlt={isEs ? 'Sanitarios Benalmádena' : 'Sanitaryware Benalmádena'}
+          heroImageAlt={isEs ? 'Sanitarios' : 'Sanitaryware'}
           ctaPrimary={{
             text: isEs ? 'Haz tu visita' : 'Book your visit',
             href: `/${locale}/contacto`,
@@ -204,8 +199,8 @@ export default async function InodorosSuspendidosPage({ params }) {
             </h2>
             <p className="mb-8 text-gray-600">
               {isEs
-                ? 'Compara modelos en Benalmádena y te asesoramos sobre instalación y reforma.'
-                : 'Compare models in Benalmádena and get advice on installation and renovation.'}
+                ? 'Compara modelos en nuestro showroom y te asesoramos sobre instalación y reforma.'
+                : 'Compare models in our showroom and get advice on installation and renovation.'}
             </p>
             <Link href={`/${locale}/contacto`} className="btn-primary">
               {tCta('requestFreeVisit')}

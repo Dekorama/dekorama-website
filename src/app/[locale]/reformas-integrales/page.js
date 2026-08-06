@@ -107,7 +107,7 @@ export default async function ReformasIntegralesPage({ params }) {
       description: locale === 'es'
         ? 'Primera marcas en showroom'
         : 'Top brands in our showroom',
-      href: `/${locale}/porcelanicos-malaga`,
+      href: `/${locale}/porcelanicos`,
       image: images.services.materiales,
     },
     {

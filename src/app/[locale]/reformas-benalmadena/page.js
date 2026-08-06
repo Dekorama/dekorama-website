@@ -108,7 +108,7 @@ export default async function ReformasBenalmadenaPage({ params }) {
       description: isEs
         ? 'Primera marcas en nuestro showroom'
         : 'Top brands in our showroom',
-      href: `/${locale}/porcelanicos-malaga`,
+      href: `/${locale}/porcelanicos`,
       image: images.services.materiales,
     },
     {

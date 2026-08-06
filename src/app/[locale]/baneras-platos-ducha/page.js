@@ -15,24 +15,24 @@ export async function generateMetadata({ params }) {
 
   return {
     title: isEs
-      ? 'Bañeras Acrílicas y Platos Ducha Benalmádena | Roca Hidrobox Dekorama'
-      : 'Acrylic Bathtubs and Shower Trays Benalmádena | Roca Hidrobox Dekorama',
+      ? 'Bañeras y Platos de Ducha | Roca Hidrobox | Dekorama'
+      : 'Bathtubs and Shower Trays | Roca Hidrobox | Dekorama',
     description: isEs
-      ? 'Venta de bañeras y platos de ducha en Benalmádena. Roca, Hidrobox, Hidronatur, Fiora, Kaldewei. Instalación opcional. Showroom físico.'
-      : 'Sale of bathtubs and shower trays in Benalmádena. Roca, Hidrobox, Hidronatur, Fiora, Kaldewei. Optional installation. Physical showroom.',
+      ? 'Venta de bañeras y platos de ducha. Roca, Hidrobox, Hidronatur, Fiora, Kaldewei. Instalación opcional. Showroom físico.'
+      : 'Sale of bathtubs and shower trays. Roca, Hidrobox, Hidronatur, Fiora, Kaldewei. Optional installation. Physical showroom.',
     openGraph: {
-      title: isEs ? 'Bañeras y Platos Ducha Benalmádena' : 'Bathtubs and Shower Trays Benalmádena',
+      title: isEs ? 'Bañeras y platos de ducha' : 'Bathtubs and shower trays',
       description: isEs
         ? 'Venta e instalación de bañeras y platos premium'
         : 'Sale and installation of premium bathtubs and trays',
-      url: `/${locale}/baneras-platos-ducha-benalmadena`,
+      url: `/${locale}/baneras-platos-ducha`,
       images: [{ url: HERO }],
     },
     alternates: {
-      canonical: `${baseUrl}/${locale}/baneras-platos-ducha-benalmadena`,
+      canonical: `${baseUrl}/${locale}/baneras-platos-ducha`,
       languages: {
-        es: `${baseUrl}/es/baneras-platos-ducha-benalmadena`,
-        en: `${baseUrl}/en/baneras-platos-ducha-benalmadena`,
+        es: `${baseUrl}/es/baneras-platos-ducha`,
+        en: `${baseUrl}/en/baneras-platos-ducha`,
       },
     },
   }
@@ -41,15 +41,14 @@ export async function generateMetadata({ params }) {
 export default async function BanerasPlatosDuchaPage({ params }) {
   const { locale } = await params
   const tCta = await getTranslations({ locale, namespace: 'cta' })
-  const tCommon = await getTranslations({ locale, namespace: 'breadcrumb' })
   const isEs = locale === 'es'
 
   const productJsonLd = buildProductJsonLd({
     type: ['Product', 'Service'],
     name: isEs ? 'Bañeras y Platos de Ducha' : 'Bathtubs and Shower Trays',
     description: isEs
-      ? 'Venta de bañeras y platos Roca, Hidrobox, Hidronatur, Fiora y Kaldewei en Benalmádena.'
-      : 'Sale of Roca, Hidrobox, Hidronatur, Fiora and Kaldewei bathtubs and shower trays in Benalmádena.',
+      ? 'Venta de bañeras y platos Roca, Hidrobox, Hidronatur, Fiora y Kaldewei.'
+      : 'Sale of Roca, Hidrobox, Hidronatur, Fiora and Kaldewei bathtubs and shower trays.',
     brand: [
       { '@type': 'Brand', name: 'Roca' },
       { '@type': 'Brand', name: 'Hidrobox' },
@@ -163,15 +162,7 @@ export default async function BanerasPlatosDuchaPage({ params }) {
 
       <div className="min-h-screen bg-white">
         <PageHeader
-          breadcrumbItems={[
-            { label: tCommon('home'), href: `/${locale}` },
-            { label: isEs ? 'Bañeras y Platos' : 'Baths & Trays', href: null },
-          ]}
-          title={
-            isEs
-              ? 'Bañeras y Platos de Ducha en Benalmádena'
-              : 'Bathtubs and Shower Trays in Benalmádena'
-          }
+          title={isEs ? 'Bañeras y platos de ducha' : 'Bathtubs and shower trays'}
           subtitle={
             isEs
               ? 'Roca, Hidrobox, Hidronatur, Fiora, Kaldewei. Bañeras acrílicas y fundición. Platos de resina, carga mineral y porcelánico.'
@@ -185,7 +176,7 @@ export default async function BanerasPlatosDuchaPage({ params }) {
           }}
           ctaSecondary={{
             text: isEs ? 'Ver mamparas' : 'View screens',
-            href: '/mamparas-ducha-benalmadena',
+            href: '/mamparas',
           }}
           baseUrl={baseUrl}
         />
@@ -308,8 +299,8 @@ export default async function BanerasPlatosDuchaPage({ params }) {
             </h2>
             <p className="mb-8 text-gray-600">
               {isEs
-                ? 'Compara bañeras y platos en Benalmádena. Te ayudamos con medidas e instalación.'
-                : 'Compare baths and trays in Benalmádena. We help with sizing and installation.'}
+                ? 'Compara bañeras y platos en nuestro showroom. Te ayudamos con medidas e instalación.'
+                : 'Compare baths and trays in our showroom. We help with sizing and installation.'}
             </p>
             <Link href={`/${locale}/contacto`} className="btn-primary">
               {tCta('requestFreeVisit')}

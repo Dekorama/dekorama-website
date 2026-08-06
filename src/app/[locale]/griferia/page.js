@@ -15,22 +15,22 @@ export async function generateMetadata({ params }) {
 
   return {
     title: isEs
-      ? 'Venta Grifos Cristina Neve Tres Gessi Benalmádena | Tienda Dekorama Málaga'
-      : 'Cristina Neve Tres Gessi Taps Sale Benalmádena | Dekorama Store Málaga',
+      ? 'Grifería Premium | Cristina Neve Tres Gessi | Dekorama'
+      : 'Premium Taps | Cristina Neve Tres Gessi | Dekorama',
     description: isEs
-      ? 'Tienda de grifos en Benalmádena. Venta de grifos Cristina, Neve, Tres, Gessi y Roca para baño y cocina. Showroom físico. Instalación opcional.'
-      : 'Taps store in Benalmádena. Sale of Cristina, Neve, Tres, Gessi and Roca taps for bathroom and kitchen. Physical showroom. Optional installation.',
+      ? 'Venta de grifos Cristina, Neve, Tres, Gessi y Roca para baño y cocina. Showroom físico. Instalación opcional.'
+      : 'Sale of Cristina, Neve, Tres, Gessi and Roca taps for bathroom and kitchen. Physical showroom. Optional installation.',
     openGraph: {
-      title: isEs ? 'Venta Grifos Benalmádena' : 'Taps Sale Benalmádena',
-      description: isEs ? 'Tienda de grifería premium en Benalmádena' : 'Premium taps store in Benalmádena',
-      url: `/${locale}/venta-grifos-benalmadena`,
+      title: isEs ? 'Grifería premium' : 'Premium taps',
+      description: isEs ? 'Tienda de grifería premium' : 'Premium taps store',
+      url: `/${locale}/griferia`,
       images: [{ url: HERO }],
     },
     alternates: {
-      canonical: `${baseUrl}/${locale}/venta-grifos-benalmadena`,
+      canonical: `${baseUrl}/${locale}/griferia`,
       languages: {
-        es: `${baseUrl}/es/venta-grifos-benalmadena`,
-        en: `${baseUrl}/en/venta-grifos-benalmadena`,
+        es: `${baseUrl}/es/griferia`,
+        en: `${baseUrl}/en/griferia`,
       },
     },
   }
@@ -39,15 +39,14 @@ export async function generateMetadata({ params }) {
 export default async function VentaGrifosPage({ params }) {
   const { locale } = await params
   const tCta = await getTranslations({ locale, namespace: 'cta' })
-  const tCommon = await getTranslations({ locale, namespace: 'breadcrumb' })
   const isEs = locale === 'es'
 
   const productJsonLd = buildProductJsonLd({
     type: ['Product', 'Service'],
     name: isEs ? 'Grifos Cristina, Neve, Tres y Gessi' : 'Cristina, Neve, Tres and Gessi Taps',
     description: isEs
-      ? 'Venta de grifos Cristina Grifería, Neve, Tres, Gessi y Roca en Benalmádena.'
-      : 'Sale of Cristina Grifería, Neve, Tres, Gessi and Roca taps in Benalmádena.',
+      ? 'Venta de grifos Cristina Grifería, Neve, Tres, Gessi y Roca.'
+      : 'Sale of Cristina Grifería, Neve, Tres, Gessi and Roca taps.',
     brand: [
       { '@type': 'Brand', name: 'Cristina Grifería' },
       { '@type': 'Brand', name: 'Neve' },
@@ -63,8 +62,8 @@ export default async function VentaGrifosPage({ params }) {
     {
       title: isEs ? 'Showroom físico' : 'Physical showroom',
       description: isEs
-        ? 'Prueba los grifos, compara acabados y recibe asesoramiento en Benalmádena.'
-        : 'Test taps, compare finishes and get advice in Benalmádena.',
+        ? 'Prueba los grifos, compara acabados y recibe asesoramiento en nuestro showroom.'
+        : 'Test taps, compare finishes and get advice in our showroom.',
     },
     {
       title: isEs ? 'Mejor precio' : 'Best price',
@@ -152,18 +151,14 @@ export default async function VentaGrifosPage({ params }) {
 
       <div className="min-h-screen bg-white">
         <PageHeader
-          breadcrumbItems={[
-            { label: tCommon('home'), href: `/${locale}` },
-            { label: isEs ? 'Grifos' : 'Taps', href: null },
-          ]}
-          title={isEs ? 'Venta de Grifos en Benalmádena' : 'Taps Sale in Benalmádena'}
+          title={isEs ? 'Grifería' : 'Taps'}
           subtitle={
             isEs
               ? 'Cristina Grifería, Neve, Tres, Gessi y Roca en nuestro showroom. Lavabo, ducha termostática, bañera y cocina.'
               : 'Cristina Grifería, Neve, Tres, Gessi and Roca in our showroom. Basin, thermostatic shower, bathtub and kitchen.'
           }
           heroImage={HERO}
-          heroImageAlt={isEs ? 'Grifería premium Benalmádena' : 'Premium taps Benalmádena'}
+          heroImageAlt={isEs ? 'Grifería premium' : 'Premium taps'}
           ctaPrimary={{
             text: isEs ? 'Haz tu visita' : 'Book your visit',
             href: `/${locale}/contacto`,
@@ -242,8 +237,8 @@ export default async function VentaGrifosPage({ params }) {
             </h2>
             <p className="mb-8 text-gray-600">
               {isEs
-                ? 'Compara acabados en persona en Benalmádena y te ayudamos a elegir la grifería ideal.'
-                : 'Compare finishes in person in Benalmádena and we help you choose the right taps.'}
+                ? 'Compara acabados en persona en nuestro showroom y te ayudamos a elegir la grifería ideal.'
+                : 'Compare finishes in person in our showroom and we help you choose the right taps.'}
             </p>
             <Link href={`/${locale}/contacto`} className="btn-primary">
               {tCta('requestFreeVisit')}
