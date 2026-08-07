@@ -572,6 +572,14 @@ export const blogSlugMap = {
   'renovation-materials-fuengirola-where-to-buy': {
     es: 'materiales-reforma-fuengirola-donde-comprar',
     en: 'renovation-materials-fuengirola-where-to-buy',
+  },
+  'reformas-integrales-estepona-presupuesto-plazos': {
+    es: 'reformas-integrales-estepona-presupuesto-plazos',
+    en: 'estepona-full-home-renovation-cost-timeline',
+  },
+  'estepona-full-home-renovation-cost-timeline': {
+    es: 'reformas-integrales-estepona-presupuesto-plazos',
+    en: 'estepona-full-home-renovation-cost-timeline',
   },}
 
 /**
