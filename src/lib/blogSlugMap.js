@@ -580,6 +580,14 @@ export const blogSlugMap = {
   'estepona-full-home-renovation-cost-timeline': {
     es: 'reformas-integrales-estepona-presupuesto-plazos',
     en: 'estepona-full-home-renovation-cost-timeline',
+  },
+  'cuanto-cuesta-reforma-integral-estepona': {
+    es: 'cuanto-cuesta-reforma-integral-estepona',
+    en: 'estepona-full-home-renovation-cost',
+  },
+  'estepona-full-home-renovation-cost': {
+    es: 'cuanto-cuesta-reforma-integral-estepona',
+    en: 'estepona-full-home-renovation-cost',
   },}
 
 /**
