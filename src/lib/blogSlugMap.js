@@ -588,6 +588,14 @@ export const blogSlugMap = {
   'estepona-full-home-renovation-cost': {
     es: 'cuanto-cuesta-reforma-integral-estepona',
     en: 'estepona-full-home-renovation-cost',
+  },
+  'empresa-reformas-integrales-estepona': {
+    es: 'empresa-reformas-integrales-estepona',
+    en: 'full-home-renovations-estepona',
+  },
+  'full-home-renovations-estepona': {
+    es: 'empresa-reformas-integrales-estepona',
+    en: 'full-home-renovations-estepona',
   },}
 
 /**
