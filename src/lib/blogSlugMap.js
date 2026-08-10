@@ -596,6 +596,14 @@ export const blogSlugMap = {
   'full-home-renovations-estepona': {
     es: 'empresa-reformas-integrales-estepona',
     en: 'full-home-renovations-estepona',
+  },
+  'reforma-integral-piso-estepona': {
+    es: 'reforma-integral-piso-estepona',
+    en: 'full-flat-renovation-estepona-cost',
+  },
+  'full-flat-renovation-estepona-cost': {
+    es: 'reforma-integral-piso-estepona',
+    en: 'full-flat-renovation-estepona-cost',
   },}
 
 /**
