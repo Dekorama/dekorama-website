@@ -1,5 +1,6 @@
 import { Suspense } from 'react'
 import { baseUrl } from '@/lib/site'
+import { pageAlternates } from '@/lib/seo'
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
@@ -21,13 +22,7 @@ export async function generateMetadata({ params }) {
       description: t('description'),
       url: `/${locale}/catalogo`,
     },
-    alternates: {
-      canonical: `${baseUrl}/${locale}/catalogo`,
-      languages: {
-        es: `${baseUrl}/es/catalogo`,
-        en: `${baseUrl}/en/catalogo`,
-      },
-    },
+    alternates: pageAlternates(locale, '/catalogo'),
   }
 }
 

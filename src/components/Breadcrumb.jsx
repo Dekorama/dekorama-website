@@ -1,4 +1,15 @@
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
+
+/**
+ * Strip locale prefix so next-intl Link does not double-prefix.
+ * @param {string} href
+ * @returns {string}
+ */
+function toI18nHref(href) {
+  if (!href || href.startsWith('http') || href.startsWith('#')) return href
+  const stripped = href.replace(/^\/(es|en)(?=\/|$)/, '')
+  return stripped || '/'
+}
 
 /**
  * Breadcrumb Navigation Component
@@ -41,14 +52,13 @@ export default function Breadcrumb({ items = [], structuredData = null }) {
         <ol className="flex items-center flex-wrap">
           {items.map((item, index) => {
             const isLast = index === items.length - 1
-            const isHome = index === 0
 
             return (
               <li key={index} className="flex items-center">
                 {/* Link or current page text */}
                 {!isLast && item.href ? (
                   <Link 
-                    href={item.href}
+                    href={toI18nHref(item.href)}
                     className="breadcrumb-link"
                   >
                     {item.label}

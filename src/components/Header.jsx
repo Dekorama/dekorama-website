@@ -378,9 +378,9 @@ export default function Header() {
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-3.5 xl:gap-8 lg:px-8">
           <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 xl:gap-x-9" aria-label="Main">
             {megaNavItems.map((item) => (
-              <button
+              <Link
                 key={item.id}
-                type="button"
+                href={hrefFor(item.hubHref)}
                 className={`nav-link ${activeMenu === item.id ? 'opacity-55' : ''}`}
                 onMouseEnter={() => openMenu(item.id)}
                 onFocus={() => openMenu(item.id)}
@@ -388,7 +388,7 @@ export default function Header() {
                 aria-haspopup="true"
               >
                 {tMega(item.labelKey)}
-              </button>
+              </Link>
             ))}
           </nav>
 

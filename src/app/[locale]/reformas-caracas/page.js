@@ -1,5 +1,6 @@
 import { images } from '@/data/images'
 import { baseUrl } from '@/lib/site'
+import { pageAlternates } from '@/lib/seo'
 import { markets, buildLocalBusinessJsonLd } from '@/lib/markets'
 import { getTranslations } from 'next-intl/server'
 import Hero from '@/components/Hero'
@@ -30,13 +31,7 @@ export async function generateMetadata({ params }) {
       url: `/${locale}/reformas-caracas`,
       images: [{ url: images.markets.caracas }],
     },
-    alternates: {
-      canonical: `${baseUrl}/${locale}/reformas-caracas`,
-      languages: {
-        es: `${baseUrl}/es/reformas-caracas`,
-        en: `${baseUrl}/en/reformas-caracas`,
-      },
-    },
+    alternates: pageAlternates(locale, '/reformas-caracas'),
   }
 }
 

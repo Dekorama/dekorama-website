@@ -1,19 +1,16 @@
 import { getTranslations } from 'next-intl/server'
 import { baseUrl } from '@/lib/site'
+import { pageAlternates } from '@/lib/seo'
 import LegalDocument, { LegalSection, LegalList } from '@/components/LegalDocument'
 
 export async function generateMetadata({ params }) {
   const { locale } = await Promise.resolve(params)
   const t = await getTranslations('legal.cookies')
-  const canonical = locale === 'en' ? `${baseUrl}/en/cookies` : `${baseUrl}/es/cookies`
   return {
     title: t('title'),
     description: t('description'),
     robots: { index: true, follow: true },
-    alternates: {
-      canonical,
-      languages: { es: `${baseUrl}/es/cookies`, en: `${baseUrl}/en/cookies` },
-    },
+    alternates: pageAlternates(locale, '/cookies'),
   }
 }
 

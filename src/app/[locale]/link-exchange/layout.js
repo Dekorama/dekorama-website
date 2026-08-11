@@ -8,6 +8,7 @@ export async function generateMetadata({ params }) {
   return {
     title: t('title'),
     description: t('description'),
+    robots: { index: false, follow: false },
     openGraph: {
       title: t('title'),
       description: t('description'),

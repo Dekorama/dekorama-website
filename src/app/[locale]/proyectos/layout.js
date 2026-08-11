@@ -1,4 +1,5 @@
 import { baseUrl } from '@/lib/site'
+import { pageAlternates } from '@/lib/seo'
 import { getTranslations } from 'next-intl/server'
 
 export async function generateMetadata({ params }) {
@@ -13,13 +14,7 @@ export async function generateMetadata({ params }) {
       description: t('description'),
       url: `/${locale}/proyectos`,
     },
-    alternates: { 
-      canonical: `${baseUrl}/${locale}/proyectos`,
-      languages: {
-        'es': `${baseUrl}/es/proyectos`,
-        'en': `${baseUrl}/en/proyectos`,
-      }
-    },
+    alternates: pageAlternates(locale, '/proyectos'),
   }
 }
 

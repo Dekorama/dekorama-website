@@ -1,10 +1,20 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import Breadcrumb, { generateBreadcrumbSchema } from './Breadcrumb'
 import { motion } from 'framer-motion'
 import { fadeUp, heroText, viewportOptions } from '@/lib/animations'
+
+/**
+ * @param {string} href
+ * @returns {string}
+ */
+function toI18nHref(href) {
+  if (!href || href.startsWith('http') || href.startsWith('#')) return href
+  const stripped = href.replace(/^\/(es|en)(?=\/|$)/, '')
+  return stripped || '/'
+}
 
 /**
  * @param {{ href: string, text: string, className: string }} props
@@ -19,7 +29,7 @@ function HeaderCta({ href, text, className }) {
   }
 
   return (
-    <Link href={href} className={className}>
+    <Link href={toI18nHref(href)} className={className}>
       {text}
     </Link>
   )

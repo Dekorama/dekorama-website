@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server'
 import { baseUrl } from '@/lib/site'
+import { pageAlternates } from '@/lib/seo'
 import { markets } from '@/lib/markets'
 import CTAFinal from '@/components/CTAFinal'
 import PageHeader from '@/components/PageHeader'
@@ -7,19 +8,11 @@ import PageHeader from '@/components/PageHeader'
 export async function generateMetadata({ params }) {
   const { locale } = await Promise.resolve(params)
   const t = await getTranslations('contactPage')
-  const canonical =
-    locale === 'en' ? `${baseUrl}/en/contacto` : `${baseUrl}/es/contacto`
   return {
     title: t('metaTitle'),
     description: t('metaDescription'),
     robots: { index: true, follow: true },
-    alternates: {
-      canonical,
-      languages: {
-        es: `${baseUrl}/es/contacto`,
-        en: `${baseUrl}/en/contacto`,
-      },
-    },
+    alternates: pageAlternates(locale, '/contacto'),
   }
 }
 

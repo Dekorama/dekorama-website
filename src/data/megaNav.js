@@ -8,6 +8,7 @@
 /** @typedef {{
  *   id: string
  *   labelKey: string
+ *   hubHref: string
  *   columns: MegaColumn[]
  *   featured?: { href: string, image: string, labelKey: string, altKey: string }
  *   blurbKey?: string
@@ -18,6 +19,7 @@ export const megaNavItems = [
   {
     id: 'material',
     labelKey: 'material',
+    hubHref: '/materiales',
     columns: [
       {
         titleKey: 'colMaterials',
@@ -48,6 +50,7 @@ export const megaNavItems = [
   {
     id: 'espacios',
     labelKey: 'espacios',
+    hubHref: '/proyectos',
     columns: [
       {
         titleKey: 'colSpaces',
@@ -70,6 +73,7 @@ export const megaNavItems = [
   {
     id: 'servicios',
     labelKey: 'servicios',
+    hubHref: '/servicios',
     columns: [
       {
         titleKey: 'colServices',
@@ -86,6 +90,7 @@ export const megaNavItems = [
   {
     id: 'inspiracion',
     labelKey: 'inspiracion',
+    hubHref: '/proyectos',
     columns: [
       {
         titleKey: 'colInspiration',
@@ -107,6 +112,7 @@ export const megaNavItems = [
   {
     id: 'ubicaciones',
     labelKey: 'ubicaciones',
+    hubHref: '/contacto',
     columns: [
       {
         titleKey: 'colLocations',

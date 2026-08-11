@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server'
 import { baseUrl } from '@/lib/site'
+import { pageAlternates } from '@/lib/seo'
 import PageHeader from '@/components/PageHeader'
 import Servicios from '@/components/Servicios'
 import CTASection from '@/components/CTASection'
@@ -16,13 +17,7 @@ export async function generateMetadata({ params }) {
       description: t('metaDescription'),
       url: `/${locale}/servicios`,
     },
-    alternates: {
-      canonical: `${baseUrl}/${locale}/servicios`,
-      languages: {
-        es: `${baseUrl}/es/servicios`,
-        en: `${baseUrl}/en/servicios`,
-      },
-    },
+    alternates: pageAlternates(locale, '/servicios'),
   }
 }
 

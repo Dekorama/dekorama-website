@@ -2,6 +2,7 @@ import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { images } from '@/data/images'
 import { baseUrl } from '@/lib/site'
+import { pageAlternates } from '@/lib/seo'
 import { getTranslations } from 'next-intl/server'
 import PageHeader from '@/components/PageHeader'
 import ServiceGrid from '@/components/ServiceGrid'
@@ -22,13 +23,7 @@ export async function generateMetadata({ params }) {
       description: t('description'),
       url: `/${locale}/reformas-integrales`,
     },
-    alternates: { 
-      canonical: `${baseUrl}/${locale}/reformas-integrales`,
-      languages: {
-        'es': `${baseUrl}/es/reformas-integrales`,
-        'en': `${baseUrl}/en/reformas-integrales`,
-      }
-    },
+    alternates: pageAlternates(locale, '/reformas-integrales'),
   }
 }
 

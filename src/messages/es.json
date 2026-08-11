@@ -156,10 +156,13 @@
     "processEyebrow": "Proceso",
     "heroSlide1Title": "Hecho para cada espacio",
     "heroSlide1Cta": "Descubrir",
+    "heroSlide1Alt": "Interior de lujo con piedra natural y chimenea lineal en Benalmádena",
     "heroSlide2Title": "Showroom Benalmádena",
     "heroSlide2Cta": "Visitar",
+    "heroSlide2Alt": "Showroom Dekorama en Benalmádena, porcelánicos y acabados premium",
     "heroSlide3Title": "Proyectos reales",
     "heroSlide3Cta": "Ver galería",
+    "heroSlide3Alt": "Proyecto de reforma integral Dekorama en la Costa del Sol",
     "viewMaterials": "Ver materiales"
   },
   "heroCaracas": {
@@ -194,10 +197,13 @@
     "zonesCta": "Escribirnos",
     "heroSlide1Title": "Reformas integrales en Caracas",
     "heroSlide1Cta": "Descubrir",
+    "heroSlide1Alt": "Interior de lujo con piedra natural y vista a El Ávila, Caracas",
     "heroSlide2Title": "Cocinas a medida",
     "heroSlide2Cta": "Ver cocinas",
+    "heroSlide2Alt": "Cocina a medida premium instalada por Dekorama en Caracas",
     "heroSlide3Title": "Baños y proyectos reales",
     "heroSlide3Cta": "Ver galería",
+    "heroSlide3Alt": "Baño premium y reforma integral Dekorama en Caracas",
     "processEyebrow": "Proceso"
   },
   "hero": {

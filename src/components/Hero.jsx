@@ -22,21 +22,21 @@ export default function Hero({ variant = 'spain' }) {
     ? [
         {
           image: images.markets.caracas,
-          alt: 'Interior de lujo con piedra natural y vista a El Ávila, Caracas',
+          alt: tHome('heroSlide1Alt'),
           title: tHome('heroSlide1Title'),
           cta: tHome('heroSlide1Cta'),
           href: '/servicios',
         },
         {
           image: images.services.cocinas,
-          alt: 'Cocina a medida Caracas',
+          alt: tHome('heroSlide2Alt'),
           title: tHome('heroSlide2Title'),
           cta: tHome('heroSlide2Cta'),
           href: '/cocinas-a-medida',
         },
         {
           image: images.services.banos,
-          alt: 'Baño premium Caracas',
+          alt: tHome('heroSlide3Alt'),
           title: tHome('heroSlide3Title'),
           cta: tHome('heroSlide3Cta'),
           href: '/proyectos',
@@ -45,21 +45,21 @@ export default function Hero({ variant = 'spain' }) {
     : [
         {
           image: images.hero,
-          alt: 'Interior de lujo con piedra natural y chimenea lineal',
+          alt: tHome('heroSlide1Alt'),
           title: tHome('heroSlide1Title'),
           cta: tHome('heroSlide1Cta'),
           href: '/materiales',
         },
         {
           image: images.showroom,
-          alt: 'Showroom Dekorama Benalmádena',
+          alt: tHome('heroSlide2Alt'),
           title: tHome('heroSlide2Title'),
           cta: tHome('heroSlide2Cta'),
           href: '/contacto',
         },
         {
           image: images.heroProjects,
-          alt: 'Proyecto de reforma Dekorama',
+          alt: tHome('heroSlide3Alt'),
           title: tHome('heroSlide3Title'),
           cta: tHome('heroSlide3Cta'),
           href: '/proyectos',

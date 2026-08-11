@@ -187,7 +187,6 @@ export default function MarketGate() {
                       src={market.image}
                       alt={market.alt}
                       fill
-                      priority
                       className="object-cover transition-[filter] duration-500 group-hover:brightness-90"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />

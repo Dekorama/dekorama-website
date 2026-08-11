@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { getTranslations } from 'next-intl/server'
 import { baseUrl } from '@/lib/site'
+import { pageAlternates } from '@/lib/seo'
 import CatalogPdfViewer from '@/components/catalog/CatalogPdfViewer'
 import { getCatalogBySlug } from '@/data/catalogs'
 
@@ -29,13 +30,7 @@ export async function generateMetadata({ params }) {
       description,
       url: `/${locale}/catalogo/${catalog.slug}`,
     },
-    alternates: {
-      canonical: `${baseUrl}/${locale}/catalogo/${catalog.slug}`,
-      languages: {
-        es: `${baseUrl}/es/catalogo/${catalog.slug}`,
-        en: `${baseUrl}/en/catalogo/${catalog.slug}`,
-      },
-    },
+    alternates: pageAlternates(locale, `/catalogo/${catalog.slug}`),
   }
 }
 

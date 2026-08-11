@@ -10,18 +10,20 @@ const AI_CRAWLERS = [
   'Applebot-Extended',
 ]
 
+const DISALLOW = ['/api/', '/partners', '/link-exchange']
+
 /** @returns {import('next').MetadataRoute.Robots} */
 export default function robots() {
   const defaultRule = {
     userAgent: '*',
     allow: '/',
-    disallow: ['/api/'],
+    disallow: DISALLOW,
   }
 
   const aiRules = AI_CRAWLERS.map((userAgent) => ({
     userAgent,
     allow: '/',
-    disallow: ['/api/'],
+    disallow: DISALLOW,
   }))
 
   return {

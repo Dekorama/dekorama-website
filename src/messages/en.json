@@ -156,10 +156,13 @@
     "processEyebrow": "Process",
     "heroSlide1Title": "Made for every space",
     "heroSlide1Cta": "Discover",
+    "heroSlide1Alt": "Luxury interior with natural stone and linear fireplace in Benalmádena",
     "heroSlide2Title": "Benalmádena showroom",
     "heroSlide2Cta": "Visit",
+    "heroSlide2Alt": "Dekorama showroom in Benalmádena with premium porcelain and finishes",
     "heroSlide3Title": "Real projects",
     "heroSlide3Cta": "View gallery",
+    "heroSlide3Alt": "Full renovation project by Dekorama on the Costa del Sol",
     "viewMaterials": "View materials"
   },
   "heroCaracas": {
@@ -194,10 +197,13 @@
     "zonesCta": "Email us",
     "heroSlide1Title": "Full renovations in Caracas",
     "heroSlide1Cta": "Discover",
+    "heroSlide1Alt": "Luxury interior with natural stone and El Ávila views, Caracas",
     "heroSlide2Title": "Custom kitchens",
     "heroSlide2Cta": "View kitchens",
+    "heroSlide2Alt": "Premium custom kitchen installed by Dekorama in Caracas",
     "heroSlide3Title": "Bathrooms and real projects",
     "heroSlide3Cta": "View gallery",
+    "heroSlide3Alt": "Premium bathroom and full renovation by Dekorama in Caracas",
     "processEyebrow": "Process"
   },
   "hero": {

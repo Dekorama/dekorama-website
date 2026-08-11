@@ -1,5 +1,6 @@
 import { images } from '@/data/images'
 import { baseUrl } from '@/lib/site'
+import { pageAlternates } from '@/lib/seo'
 import { getTranslations } from 'next-intl/server'
 import PageHeader from '@/components/PageHeader'
 import ServiceGrid from '@/components/ServiceGrid'
@@ -20,13 +21,7 @@ export async function generateMetadata({ params }) {
       description: t('description'),
       url: `/${locale}/reformas-benalmadena`,
     },
-    alternates: {
-      canonical: `${baseUrl}/${locale}/reformas-benalmadena`,
-      languages: {
-        es: `${baseUrl}/es/reformas-benalmadena`,
-        en: `${baseUrl}/en/reformas-benalmadena`,
-      },
-    },
+    alternates: pageAlternates(locale, '/reformas-benalmadena'),
   }
 }
 

@@ -9,6 +9,13 @@ export const businessDescription =
 /** URL base del sitio para canonical, OG y sitemap */
 export const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dekoramagroup.com'
 
+/** Official social profiles (Organization / LocalBusiness sameAs + footer). */
+export const socialProfiles = [
+  'https://www.instagram.com/grupodekorama',
+  'https://www.facebook.com/grupodekorama',
+  'https://www.pinterest.com/dekoramagroup',
+]
+
 const META_DESCRIPTION_MAX_LENGTH = 155
 
 /**

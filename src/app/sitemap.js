@@ -1,8 +1,12 @@
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dekoramagroup.com'
 
 import { getPostSlugs, getPostLastModified } from '@/lib/blog'
+import { CATALOGS } from '@/data/catalogs'
 
 const LOCALES = ['es', 'en']
+
+/** Stable lastModified for static marketing URLs (avoids sitemap churn). */
+const STATIC_LAST_MODIFIED = new Date('2026-08-11')
 
 const staticPaths = [
   { path: '', priority: 1, changeFrequency: 'weekly' },
@@ -19,8 +23,6 @@ const staticPaths = [
   { path: '/blog', priority: 0.8, changeFrequency: 'weekly' },
   { path: '/contacto', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/contacto-caracas', priority: 0.8, changeFrequency: 'monthly' },
-  { path: '/partners', priority: 0.7, changeFrequency: 'monthly' },
-  { path: '/link-exchange', priority: 0.6, changeFrequency: 'monthly' },
   // Páginas por ciudad (SEO local crítico)
   { path: '/reformas-benalmadena', priority: 0.95, changeFrequency: 'monthly' },
   { path: '/reformas-marbella', priority: 0.95, changeFrequency: 'monthly' },
@@ -41,6 +43,7 @@ const staticPaths = [
 
 /** @returns {import('next').MetadataRoute.Sitemap} */
 export default function sitemap() {
+  /** @type {import('next').MetadataRoute.Sitemap} */
   const entries = []
 
   for (const locale of LOCALES) {
@@ -48,19 +51,27 @@ export default function sitemap() {
     for (const { path, priority, changeFrequency } of staticPaths) {
       entries.push({
         url: `${BASE_URL}${prefix}${path}`,
-        lastModified: new Date(),
+        lastModified: STATIC_LAST_MODIFIED,
         changeFrequency,
         priority,
       })
     }
-    
-    // Get locale-specific slugs
+
+    for (const catalog of CATALOGS) {
+      entries.push({
+        url: `${BASE_URL}${prefix}/catalogo/${catalog.slug}`,
+        lastModified: STATIC_LAST_MODIFIED,
+        changeFrequency: 'monthly',
+        priority: 0.7,
+      })
+    }
+
     const slugs = getPostSlugs(locale)
     for (const slug of slugs) {
       const lastMod = getPostLastModified(locale, slug)
       entries.push({
         url: `${BASE_URL}${prefix}/blog/${slug}`,
-        lastModified: lastMod ? new Date(lastMod) : new Date(),
+        lastModified: lastMod ? new Date(lastMod) : STATIC_LAST_MODIFIED,
         changeFrequency: 'monthly',
         priority: 0.7,
       })

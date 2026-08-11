@@ -2,7 +2,7 @@ import { baseUrl } from '@/lib/site'
 
 /**
  * Primary brand hub pages Google may promote as sitelinks.
- * Keep to 5–6 category destinations (not city SEO pages).
+ * Keep to category destinations (not city SEO pages).
  * @param {'es' | 'en'} locale
  */
 export function getSiteNavigation(locale) {
@@ -10,6 +10,12 @@ export function getSiteNavigation(locale) {
 
   if (locale === 'en') {
     return [
+      {
+        name: 'Porcelain tiles',
+        url: `${prefix}/porcelanicos`,
+        description:
+          'Premium porcelain tiles for floors and walls at the Benalmádena showroom.',
+      },
       {
         name: 'Kitchens',
         url: `${prefix}/cocinas-a-medida`,
@@ -50,6 +56,12 @@ export function getSiteNavigation(locale) {
   }
 
   return [
+    {
+      name: 'Porcelánicos',
+      url: `${prefix}/porcelanicos`,
+      description:
+        'Porcelánicos premium para suelos y paredes en el showroom de Benalmádena.',
+    },
     {
       name: 'Cocinas',
       url: `${prefix}/cocinas-a-medida`,

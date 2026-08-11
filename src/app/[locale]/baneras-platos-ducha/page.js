@@ -1,5 +1,6 @@
 import { Link } from '@/i18n/navigation'
 import { baseUrl } from '@/lib/site'
+import { pageAlternates } from '@/lib/seo'
 import { buildProductJsonLd } from '@/lib/productSchema'
 import { getTranslations } from 'next-intl/server'
 import PageHeader from '@/components/PageHeader'
@@ -28,13 +29,7 @@ export async function generateMetadata({ params }) {
       url: `/${locale}/baneras-platos-ducha`,
       images: [{ url: HERO }],
     },
-    alternates: {
-      canonical: `${baseUrl}/${locale}/baneras-platos-ducha`,
-      languages: {
-        es: `${baseUrl}/es/baneras-platos-ducha`,
-        en: `${baseUrl}/en/baneras-platos-ducha`,
-      },
-    },
+    alternates: pageAlternates(locale, '/baneras-platos-ducha'),
   }
 }
 

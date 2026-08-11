@@ -67,7 +67,7 @@ export default function Footer() {
             )}
           </div>
 
-          <div>
+          <nav aria-label={t('products')}>
             <h3 className="mb-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-white">
               {t('products')}
             </h3>
@@ -83,9 +83,9 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </nav>
 
-          <div>
+          <nav aria-label={t('services')}>
             <h3 className="mb-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-white">
               {t('services')}
             </h3>
@@ -116,9 +116,9 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </nav>
 
-          <div>
+          <nav aria-label={isVe ? t('locationsVe') : t('cities')}>
             <h3 className="mb-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-white">
               {isVe ? t('locationsVe') : t('cities')}
             </h3>
@@ -181,9 +181,9 @@ export default function Footer() {
                 </>
               )}
             </ul>
-          </div>
+          </nav>
 
-          <div>
+          <nav aria-label={t('company')}>
             <h3 className="mb-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-white">
               {t('company')}
             </h3>
@@ -251,7 +251,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://pin.it/ff8KYuTWP"
+                href="https://www.pinterest.com/dekoramagroup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-9 w-9 items-center justify-center border border-white/25 transition-colors hover:border-white"
@@ -262,7 +262,7 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-          </div>
+          </nav>
         </div>
 
         <div className="flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 text-sm text-gray-500 md:flex-row md:items-center">

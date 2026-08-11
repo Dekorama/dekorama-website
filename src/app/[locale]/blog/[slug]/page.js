@@ -5,6 +5,7 @@ import { getTranslations } from 'next-intl/server'
 import { getPostBySlug, getPostSlugs } from '@/lib/blog'
 import { getSlugForLocale } from '@/lib/blogSlugMap'
 import { baseUrl } from '@/lib/site'
+import { pageAlternatesForLocales } from '@/lib/seo'
 import { buildFaqPageJsonLd } from '@/lib/faqSchema'
 import BlogAnswerBox from '@/components/BlogAnswerBox'
 import BlogFaqSection from '@/components/BlogFaqSection'
@@ -31,8 +32,10 @@ export async function generateMetadata({ params }) {
 
   const esSlug = getSlugForLocale(slug, 'es', locale)
   const enSlug = getSlugForLocale(slug, 'en', locale)
-
-  const canonicalUrl = locale === 'en' ? `${baseUrl}/en/blog/${slug}` : `${baseUrl}/es/blog/${slug}`
+  const alternates = pageAlternatesForLocales(locale, {
+    es: `/blog/${esSlug}`,
+    en: `/blog/${enSlug}`,
+  })
 
   return {
     title: post.title,
@@ -40,15 +43,9 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: `${post.title} | Blog Dekorama`,
       description: post.excerpt,
-      url: canonicalUrl,
+      url: alternates.canonical,
     },
-    alternates: {
-      canonical: canonicalUrl,
-      languages: {
-        es: `${baseUrl}/es/blog/${esSlug}`,
-        en: `${baseUrl}/en/blog/${enSlug}`,
-      },
-    },
+    alternates,
   }
 }
 

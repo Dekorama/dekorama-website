@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server'
 import { baseUrl } from '@/lib/site'
+import { pageAlternates } from '@/lib/seo'
 import LegalDocument, { LegalSection } from '@/components/LegalDocument'
 
 const AVISO_SECTIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -7,15 +8,11 @@ const AVISO_SECTIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 export async function generateMetadata({ params }) {
   const { locale } = await Promise.resolve(params)
   const t = await getTranslations('legal.aviso')
-  const canonical = locale === 'en' ? `${baseUrl}/en/aviso-legal` : `${baseUrl}/es/aviso-legal`
   return {
     title: t('title'),
     description: t('description'),
     robots: { index: true, follow: true },
-    alternates: {
-      canonical,
-      languages: { es: `${baseUrl}/es/aviso-legal`, en: `${baseUrl}/en/aviso-legal` },
-    },
+    alternates: pageAlternates(locale, '/aviso-legal'),
   }
 }
 

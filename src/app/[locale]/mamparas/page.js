@@ -1,5 +1,6 @@
 import { Link } from '@/i18n/navigation'
 import { baseUrl } from '@/lib/site'
+import { pageAlternates } from '@/lib/seo'
 import { buildProductJsonLd } from '@/lib/productSchema'
 import { getTranslations } from 'next-intl/server'
 import PageHeader from '@/components/PageHeader'
@@ -26,13 +27,7 @@ export async function generateMetadata({ params }) {
       url: `/${locale}/mamparas`,
       images: [{ url: HERO }],
     },
-    alternates: {
-      canonical: `${baseUrl}/${locale}/mamparas`,
-      languages: {
-        es: `${baseUrl}/es/mamparas`,
-        en: `${baseUrl}/en/mamparas`,
-      },
-    },
+    alternates: pageAlternates(locale, '/mamparas'),
   }
 }
 

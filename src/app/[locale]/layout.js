@@ -1,4 +1,5 @@
 import '../globals.css'
+import { Playfair_Display, DM_Sans } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -7,11 +8,22 @@ import CookieBanner from '@/components/CookieBanner'
 import MarketGate from '@/components/MarketGate'
 import GoogleTagManager from '@/components/GoogleTagManager'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
-import SetHtmlLang from '@/components/SetHtmlLang'
-import { metaDescription, businessDescription } from '@/lib/site'
-import { baseUrl } from '@/lib/site'
-import { markets } from '@/lib/markets'
+import { metaDescription, businessDescription, baseUrl, socialProfiles } from '@/lib/site'
+import { markets, buildLocalBusinessJsonLd } from '@/lib/markets'
 import { buildSiteNavigationJsonLd } from '@/lib/siteNavigation'
+import { pageAlternates } from '@/lib/seo'
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-heading',
+})
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-sans',
+})
 
 const TITLES = {
   es: 'Dekorama | Reformas Integrales, Cocinas y Baños | Costa del Sol',
@@ -47,10 +59,7 @@ export async function generateMetadata({ params }) {
     },
     twitter: { card: 'summary_large_image', title, description },
     robots: { index: true, follow: true },
-    alternates: {
-      canonical: isEn ? `${baseUrl}/en` : `${baseUrl}/es`,
-      languages: { es: `${baseUrl}/es`, en: `${baseUrl}/en` },
-    },
+    alternates: pageAlternates(locale, ''),
   }
 }
 
@@ -62,32 +71,15 @@ export default async function LocaleLayout({ children, params }) {
   const { locale } = await Promise.resolve(params)
   const resolvedLocale = locale && ['es', 'en'].includes(locale) ? locale : 'es'
   const messages = (await import(`@/messages/${resolvedLocale}.json`)).default
+  const spain = markets.spain
+  const venezuela = markets.venezuela
 
   const localBusinessJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': `${baseUrl}/#business`,
-    name: 'Dekorama',
-    description: businessDescription,
-    url: baseUrl,
-    telephone: '+34628571537',
-    email: 'info@dekoramagroup.com',
+    ...buildLocalBusinessJsonLd(spain, { description: businessDescription }),
+    url: resolvedLocale === 'en' ? `${baseUrl}/en` : `${baseUrl}/es`,
     priceRange: '€€',
     image: `${baseUrl}/dekorama-favicon.png`,
     logo: `${baseUrl}/dekorama-logo-cropped.svg`,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Las Ventas, Avenida Tivoli, 17, Centro Comercial, Local 5',
-      addressLocality: 'Benalmádena',
-      postalCode: '29631',
-      addressRegion: 'Málaga',
-      addressCountry: 'ES',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 36.5971,
-      longitude: -4.5164,
-    },
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
@@ -108,12 +100,8 @@ export default async function LocaleLayout({ children, params }) {
       reviewCount: '53',
       bestRating: '5',
     },
-    sameAs: [
-      'https://www.dekoramagroup.com',
-      'https://www.instagram.com/grupodekorama',
-      'https://www.facebook.com/grupodekorama',
-      'https://es.pinterest.com/dekoramagroup',
-    ],
+    sameAs: socialProfiles,
+    parentOrganization: { '@id': `${baseUrl}/#organization` },
   }
 
   const websiteJsonLd = {
@@ -126,7 +114,15 @@ export default async function LocaleLayout({ children, params }) {
     description: businessDescription,
     inLanguage: [resolvedLocale === 'en' ? 'en-GB' : 'es-ES'],
     publisher: { '@id': `${baseUrl}/#organization` },
-    about: { '@id': `${baseUrl}/#business` },
+    about: { '@id': spain.businessId },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${baseUrl}/${resolvedLocale}/catalogo?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
   }
 
   const organizationJsonLd = {
@@ -144,26 +140,27 @@ export default async function LocaleLayout({ children, params }) {
     contactPoint: [
       {
         '@type': 'ContactPoint',
-        telephone: '+34628571537',
+        telephone: spain.telephone,
         contactType: 'customer service',
-        email: 'info@dekoramagroup.com',
-        areaServed: ['ES', 'GB'],
+        email: spain.email,
+        areaServed: spain.areaServed,
         availableLanguage: ['Spanish', 'English'],
       },
       {
         '@type': 'ContactPoint',
+        telephone: venezuela.telephone,
         contactType: 'customer service',
-        email: markets.venezuela.email,
-        areaServed: ['VE'],
+        email: venezuela.email,
+        areaServed: venezuela.areaServed,
         availableLanguage: ['Spanish', 'English'],
         url: `${baseUrl}/es/contacto-caracas`,
       },
     ],
-    sameAs: [
-      'https://www.instagram.com/grupodekorama',
-      'https://www.facebook.com/grupodekorama',
-      'https://es.pinterest.com/dekoramagroup',
+    department: [
+      { '@id': spain.businessId },
+      { '@id': venezuela.businessId },
     ],
+    sameAs: socialProfiles,
   }
 
   const siteNavigationJsonLd = buildSiteNavigationJsonLd(
@@ -171,34 +168,39 @@ export default async function LocaleLayout({ children, params }) {
   )
 
   return (
-    <>
-      <SetHtmlLang locale={locale} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationJsonLd) }}
-      />
-      <GoogleTagManager />
-      <GoogleAnalytics />
-      <NextIntlClientProvider locale={resolvedLocale} messages={messages}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <CookieBanner />
-        <WhatsAppButton />
-        <MarketGate />
-      </NextIntlClientProvider>
-    </>
+    <html
+      lang={resolvedLocale}
+      className={`${playfair.variable} ${dmSans.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="min-h-screen bg-white font-sans antialiased text-black">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationJsonLd) }}
+        />
+        <GoogleTagManager />
+        <GoogleAnalytics />
+        <NextIntlClientProvider locale={resolvedLocale} messages={messages}>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <CookieBanner />
+          <WhatsAppButton />
+          <MarketGate />
+        </NextIntlClientProvider>
+      </body>
+    </html>
   )
 }

@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { getTranslations } from 'next-intl/server'
 import { baseUrl } from '@/lib/site'
+import { pageAlternates } from '@/lib/seo'
 import { getMarket } from '@/lib/markets'
 import {
   getMaterialHubCategories,
@@ -43,13 +44,7 @@ export async function generateMaterialesHubMetadata({ locale, marketId }) {
       description: t('description', vars),
       url: `/${locale}${path}`,
     },
-    alternates: {
-      canonical: `${baseUrl}/${locale}${path}`,
-      languages: {
-        es: `${baseUrl}/es${path}`,
-        en: `${baseUrl}/en${path}`,
-      },
-    },
+    alternates: pageAlternates(locale, path),
   }
 }
 

@@ -2,6 +2,7 @@ import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { images } from '@/data/images'
 import { baseUrl } from '@/lib/site'
+import { pageAlternates } from '@/lib/seo'
 import { getTranslations } from 'next-intl/server'
 import PageHeader from '@/components/PageHeader'
 import ServiceGrid from '@/components/ServiceGrid'
@@ -22,13 +23,7 @@ export async function generateMetadata({ params }) {
       description: t('description'),
       url: `/${locale}/reformas-marbella`,
     },
-    alternates: { 
-      canonical: `${baseUrl}/${locale}/reformas-marbella`,
-      languages: {
-        'es': `${baseUrl}/es/reformas-marbella`,
-        'en': `${baseUrl}/en/reformas-marbella`,
-      }
-    },
+    alternates: pageAlternates(locale, '/reformas-marbella'),
   }
 }
 

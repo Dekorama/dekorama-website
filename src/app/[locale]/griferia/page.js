@@ -1,5 +1,6 @@
 import { Link } from '@/i18n/navigation'
 import { baseUrl } from '@/lib/site'
+import { pageAlternates } from '@/lib/seo'
 import { buildProductJsonLd } from '@/lib/productSchema'
 import { getTranslations } from 'next-intl/server'
 import PageHeader from '@/components/PageHeader'
@@ -26,13 +27,7 @@ export async function generateMetadata({ params }) {
       url: `/${locale}/griferia`,
       images: [{ url: HERO }],
     },
-    alternates: {
-      canonical: `${baseUrl}/${locale}/griferia`,
-      languages: {
-        es: `${baseUrl}/es/griferia`,
-        en: `${baseUrl}/en/griferia`,
-      },
-    },
+    alternates: pageAlternates(locale, '/griferia'),
   }
 }
 

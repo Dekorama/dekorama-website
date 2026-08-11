@@ -1,6 +1,7 @@
 import { Link } from '@/i18n/navigation'
 import { getTranslations } from 'next-intl/server'
 import { baseUrl } from '@/lib/site'
+import { pageAlternates } from '@/lib/seo'
 import { getMarket } from '@/lib/markets'
 import {
   getMaterialPremiumCategories,
@@ -37,13 +38,7 @@ export async function generateMaterialesPremiumMetadata({ locale, marketId }) {
       url: `/${locale}${path}`,
       images: [{ url: HERO }],
     },
-    alternates: {
-      canonical: `${baseUrl}/${locale}${path}`,
-      languages: {
-        es: `${baseUrl}/es${path}`,
-        en: `${baseUrl}/en${path}`,
-      },
-    },
+    alternates: pageAlternates(locale, path),
   }
 }
 

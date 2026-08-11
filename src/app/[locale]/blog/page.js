@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server'
 import { getPosts } from '@/lib/blog'
 import { baseUrl } from '@/lib/site'
+import { pageAlternates } from '@/lib/seo'
 import { images } from '@/data/images'
 import PageHeader from '@/components/PageHeader'
 import CTASection from '@/components/CTASection'
@@ -19,10 +20,7 @@ export async function generateMetadata({ params }) {
       description: isEn ? 'Trends in porcelain, wood-look tile and renovations.' : 'Tendencias en porcelánico, tarima y reformas. Consejos de nuestros expertos.',
       url: `${baseUrl}/${locale}/blog`,
     },
-    alternates: {
-      canonical: `${baseUrl}/${locale}/blog`,
-      languages: { es: `${baseUrl}/es/blog`, en: `${baseUrl}/en/blog` },
-    },
+    alternates: pageAlternates(locale, '/blog'),
   }
 }
 

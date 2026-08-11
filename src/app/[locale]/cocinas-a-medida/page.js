@@ -2,6 +2,7 @@ import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { images } from '@/data/images'
 import { baseUrl } from '@/lib/site'
+import { pageAlternates } from '@/lib/seo'
 import { getTranslations } from 'next-intl/server'
 import PageHeader from '@/components/PageHeader'
 import ServiceGrid from '@/components/ServiceGrid'
@@ -22,13 +23,7 @@ export async function generateMetadata({ params }) {
       description: t('description'),
       url: `/${locale}/cocinas-a-medida`,
     },
-    alternates: { 
-      canonical: `${baseUrl}/${locale}/cocinas-a-medida`,
-      languages: {
-        'es': `${baseUrl}/es/cocinas-a-medida`,
-        'en': `${baseUrl}/en/cocinas-a-medida`,
-      }
-    },
+    alternates: pageAlternates(locale, '/cocinas-a-medida'),
   }
 }
 

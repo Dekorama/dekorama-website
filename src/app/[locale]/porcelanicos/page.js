@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { baseUrl } from '@/lib/site'
+import { pageAlternates } from '@/lib/seo'
 import { buildProductJsonLd } from '@/lib/productSchema'
 import { getTranslations } from 'next-intl/server'
 import PageHeader from '@/components/PageHeader'
@@ -42,13 +43,7 @@ export async function generateMetadata({ params }) {
       url: `/${locale}/porcelanicos`,
       images: [{ url: HERO, width: 1920, height: 1080, alt: t('h1') }],
     },
-    alternates: {
-      canonical: `${baseUrl}/${locale}/porcelanicos`,
-      languages: {
-        es: `${baseUrl}/es/porcelanicos`,
-        en: `${baseUrl}/en/porcelanicos`,
-      },
-    },
+    alternates: pageAlternates(locale, '/porcelanicos'),
   }
 }
 
