@@ -518,8 +518,9 @@
     "keyword": "reforma integral de apartamento en Estepona",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-08-11T09:49:11.741Z"
   },
   {
     "keyword": "reforma integral de villa en Estepona",

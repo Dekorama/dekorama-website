@@ -604,6 +604,14 @@ export const blogSlugMap = {
   'full-flat-renovation-estepona-cost': {
     es: 'reforma-integral-piso-estepona',
     en: 'full-flat-renovation-estepona-cost',
+  },
+  'reforma-integral-apartamento-estepona': {
+    es: 'reforma-integral-apartamento-estepona',
+    en: 'apartment-renovation-estepona-costa-del-sol',
+  },
+  'apartment-renovation-estepona-costa-del-sol': {
+    es: 'reforma-integral-apartamento-estepona',
+    en: 'apartment-renovation-estepona-costa-del-sol',
   },}
 
 /**
