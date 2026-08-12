@@ -612,6 +612,14 @@ export const blogSlugMap = {
   'apartment-renovation-estepona-costa-del-sol': {
     es: 'reforma-integral-apartamento-estepona',
     en: 'apartment-renovation-estepona-costa-del-sol',
+  },
+  'reforma-integral-villa-estepona': {
+    es: 'reforma-integral-villa-estepona',
+    en: 'villa-renovation-estepona-costa-del-sol',
+  },
+  'villa-renovation-estepona-costa-del-sol': {
+    es: 'reforma-integral-villa-estepona',
+    en: 'villa-renovation-estepona-costa-del-sol',
   },}
 
 /**
