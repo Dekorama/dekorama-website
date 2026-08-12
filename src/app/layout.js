@@ -1,7 +1,8 @@
-import { baseUrl } from '@/lib/site'
+import { baseUrl, metaDescription } from '@/lib/site'
 
 export const metadata = {
   metadataBase: new URL(baseUrl),
+  description: metaDescription,
   icons: {
     icon: '/dekorama-favicon.png',
     apple: '/dekorama-favicon.png',

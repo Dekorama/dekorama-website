@@ -9,6 +9,7 @@ import { fadeUp, viewportOptions } from '@/lib/animations'
 
 export default function FeaturedMaterial() {
   const t = useTranslations('home')
+  const tMega = useTranslations('megaNav')
 
   return (
     <section className="section-editorial border-y border-gray-200 bg-gray-bg">
@@ -22,10 +23,10 @@ export default function FeaturedMaterial() {
         >
           <Image
             src={images.featured.main}
-            alt={t('featuredTitle')}
+            alt={tMega('featuredMaterialAlt')}
             fill
             className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 50vw"
+            sizes="(max-width: 1024px) 92vw, 50vw"
           />
         </motion.div>
 
@@ -50,10 +51,10 @@ export default function FeaturedMaterial() {
                 <div className="relative mb-2.5 aspect-square overflow-hidden bg-gray-100 sm:mb-3">
                   <Image
                     src={swatch.src}
-                    alt={t(swatch.labelKey)}
+                    alt=""
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 640px) 45vw, 220px"
+                    sizes="(max-width: 640px) 42vw, 220px"
                   />
                 </div>
                 <p className="text-sm text-gray-800">{t(swatch.labelKey)}</p>

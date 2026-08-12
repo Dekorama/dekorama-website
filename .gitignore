@@ -26,3 +26,9 @@ yarn-error.log*
 
 # Vercel
 .vercel
+
+# Lighthouse reports
+.lighthouse/
+*.report.html
+*.report.json
+

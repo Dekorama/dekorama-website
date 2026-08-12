@@ -8,8 +8,10 @@ import MarketSwitcher from '@/components/MarketSwitcher'
 import LocaleSwitcher from '@/components/LocaleSwitcher'
 import MarketContactLink from '@/components/MarketContactLink'
 import MarketHomeLink from '@/components/MarketHomeLink'
-import MegaMenu from '@/components/MegaMenu'
+import dynamic from 'next/dynamic'
 import NavSearch from '@/components/NavSearch'
+
+const MegaMenu = dynamic(() => import('@/components/MegaMenu'), { ssr: false })
 import { megaNavItems } from '@/data/megaNav'
 import { markets } from '@/lib/markets'
 import { useActiveMarket } from '@/lib/useActiveMarket'

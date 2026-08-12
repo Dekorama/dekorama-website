@@ -48,10 +48,10 @@ export default function FeaturedSpaces() {
               <Link href={space.href} className="group relative block aspect-[4/5] overflow-hidden sm:aspect-[3/4]">
                 <Image
                   src={space.src}
-                  alt={tMega(LABEL_KEYS[space.labelKey] || space.labelKey)}
+                  alt=""
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 92vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                 <span className="absolute bottom-5 left-0 right-0 px-3 text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-white sm:bottom-6 sm:text-xs">

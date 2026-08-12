@@ -116,6 +116,7 @@ export default function NavSearch({ className = '', inputClassName = '', onNavig
         <input
           id={inputId}
           type="search"
+          role="combobox"
           value={query}
           autoComplete="off"
           autoCorrect="off"
@@ -144,7 +145,7 @@ export default function NavSearch({ className = '', inputClassName = '', onNavig
         />
         <button
           type="submit"
-          className="absolute right-0 top-1/2 flex min-h-[44px] min-w-[44px] -translate-y-1/2 items-center justify-center text-gray-500 hover:text-black lg:min-h-0 lg:min-w-0"
+          className="absolute right-0 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center text-gray-500 hover:text-black"
           aria-label={t('search')}
         >
           <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>

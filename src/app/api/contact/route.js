@@ -11,9 +11,6 @@ export async function POST(request) {
   try {
     body = await request.json()
   } catch (parseErr) {
-    // #region agent log
-    fetch('http://127.0.0.1:7358/ingest/e0cc4f80-704d-47b2-bed7-313bb0f2835c',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'6ab708'},body:JSON.stringify({sessionId:'6ab708',location:'route.js:parse',message:'body parse failed',data:{name:parseErr?.name,message:parseErr?.message},hypothesisId:'H4',timestamp:Date.now()})}).catch(()=>{});
-    // #endregion
     return NextResponse.json(
       { error: 'Cuerpo de la petición inválido o vacío.' },
       { status: 400 }
@@ -37,16 +34,10 @@ export async function POST(request) {
     }
 
     const apiKey = process.env.BREVO_API_KEY
-    // #region agent log
-    fetch('http://127.0.0.1:7358/ingest/e0cc4f80-704d-47b2-bed7-313bb0f2835c',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'6ab708'},body:JSON.stringify({sessionId:'6ab708',location:'route.js:env',message:'env check',data:{hasApiKey:!!apiKey},hypothesisId:'H1',timestamp:Date.now()})}).catch(()=>{});
-    // #endregion
     const senderEmail = process.env.BREVO_SENDER_EMAIL || 'admin@dekoramagroup.com'
     const senderName = process.env.BREVO_SENDER_NAME || 'Dekorama Web'
 
     if (!apiKey) {
-      // #region agent log
-      fetch('http://127.0.0.1:7358/ingest/e0cc4f80-704d-47b2-bed7-313bb0f2835c',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'6ab708'},body:JSON.stringify({sessionId:'6ab708',location:'route.js:no-api-key',message:'returning 500 no api key',data:{},hypothesisId:'H1',timestamp:Date.now()})}).catch(()=>{});
-      // #endregion
       console.error('BREVO_API_KEY no está configurada')
       return NextResponse.json(
         { error: 'Error de configuración. Inténtelo más tarde.' },
@@ -100,15 +91,8 @@ export async function POST(request) {
       }),
     }).finally(() => clearTimeout(timeoutId))
 
-    // #region agent log
-    fetch('http://127.0.0.1:7358/ingest/e0cc4f80-704d-47b2-bed7-313bb0f2835c',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'6ab708'},body:JSON.stringify({sessionId:'6ab708',location:'route.js:brevo-response',message:'brevo response',data:{ok:res.ok,status:res.status},hypothesisId:'H2',timestamp:Date.now()})}).catch(()=>{});
-    // #endregion
-
     if (!res.ok) {
       const errData = await res.json().catch(() => ({}))
-      // #region agent log
-      fetch('http://127.0.0.1:7358/ingest/e0cc4f80-704d-47b2-bed7-313bb0f2835c',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'6ab708'},body:JSON.stringify({sessionId:'6ab708',location:'route.js:brevo-err',message:'brevo error body',data:{status:res.status,message:errData?.message,code:errData?.code},hypothesisId:'H2',timestamp:Date.now()})}).catch(()=>{});
-      // #endregion
       console.error('Brevo API error:', res.status, JSON.stringify(errData))
       const status = res.status >= 500 ? 502 : 500
       const isDev = process.env.NODE_ENV === 'development'
@@ -126,9 +110,6 @@ export async function POST(request) {
 
     return NextResponse.json({ success: true })
   } catch (err) {
-    // #region agent log
-    fetch('http://127.0.0.1:7358/ingest/e0cc4f80-704d-47b2-bed7-313bb0f2835c',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'6ab708'},body:JSON.stringify({sessionId:'6ab708',location:'route.js:catch',message:'handler exception',data:{name:err?.name,message:err?.message},hypothesisId:'H3',timestamp:Date.now()})}).catch(()=>{});
-    // #endregion
     const isTimeout = err?.name === 'AbortError'
     console.error('Contact API error:', isTimeout ? 'Brevo timeout' : err)
     const isDev = process.env.NODE_ENV === 'development'

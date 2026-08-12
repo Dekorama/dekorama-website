@@ -3,11 +3,8 @@ import { Playfair_Display, DM_Sans } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import WhatsAppButton from '@/components/WhatsAppButton'
-import CookieBanner from '@/components/CookieBanner'
-import MarketGate from '@/components/MarketGate'
+import DeferredChrome from '@/components/DeferredChrome'
 import GoogleTagManager from '@/components/GoogleTagManager'
-import GoogleAnalytics from '@/components/GoogleAnalytics'
 import { metaDescription, businessDescription, baseUrl, socialProfiles } from '@/lib/site'
 import { markets, buildLocalBusinessJsonLd } from '@/lib/markets'
 import { buildSiteNavigationJsonLd } from '@/lib/siteNavigation'
@@ -15,14 +12,20 @@ import { pageAlternates } from '@/lib/seo'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
+  weight: ['400', '500'],
   display: 'swap',
   variable: '--font-heading',
+  preload: false,
+  adjustFontFallback: true,
 })
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
+  weight: ['400', '500', '600'],
   display: 'swap',
   variable: '--font-sans',
+  preload: false,
+  adjustFontFallback: true,
 })
 
 const TITLES = {
@@ -73,6 +76,7 @@ export default async function LocaleLayout({ children, params }) {
   const messages = (await import(`@/messages/${resolvedLocale}.json`)).default
   const spain = markets.spain
   const venezuela = markets.venezuela
+  const description = DESCRIPTIONS[resolvedLocale] || DESCRIPTIONS.es
 
   const localBusinessJsonLd = {
     ...buildLocalBusinessJsonLd(spain, { description: businessDescription }),
@@ -173,6 +177,16 @@ export default async function LocaleLayout({ children, params }) {
       className={`${playfair.variable} ${dmSans.variable}`}
       suppressHydrationWarning
     >
+      <head>
+        <meta name="description" content={description} />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero/stone-interior-lcp-1280.avif"
+          type="image/avif"
+          fetchPriority="high"
+        />
+      </head>
       <body className="min-h-screen bg-white font-sans antialiased text-black">
         <script
           type="application/ld+json"
@@ -191,14 +205,11 @@ export default async function LocaleLayout({ children, params }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationJsonLd) }}
         />
         <GoogleTagManager />
-        <GoogleAnalytics />
         <NextIntlClientProvider locale={resolvedLocale} messages={messages}>
           <Header />
           <main>{children}</main>
           <Footer />
-          <CookieBanner />
-          <WhatsAppButton />
-          <MarketGate />
+          <DeferredChrome />
         </NextIntlClientProvider>
       </body>
     </html>

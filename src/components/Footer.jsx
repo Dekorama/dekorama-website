@@ -265,21 +265,21 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 text-sm text-gray-500 md:flex-row md:items-center">
+        <div className="flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 text-sm text-gray-400 md:flex-row md:items-center">
           <div>
             © {new Date().getFullYear()} Dekorama. {t('copyright')}
           </div>
           <div className="flex flex-wrap gap-5">
-            <Link href="/politica-privacidad" className="hover:text-white">
+            <Link href="/politica-privacidad" className="text-gray-400 hover:text-white">
               {t('privacy')}
             </Link>
-            <Link href="/aviso-legal" className="hover:text-white">
+            <Link href="/aviso-legal" className="text-gray-400 hover:text-white">
               {t('legal')}
             </Link>
-            <Link href="/cookies" className="hover:text-white">
+            <Link href="/cookies" className="text-gray-400 hover:text-white">
               {t('cookies')}
             </Link>
-            <a href="/llms.txt" className="hover:text-white">
+            <a href="/llms.txt" className="text-gray-400 hover:text-white">
               {t('llmsGuide')}
             </a>
           </div>

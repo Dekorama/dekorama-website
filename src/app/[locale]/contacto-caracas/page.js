@@ -35,7 +35,7 @@ export default async function ContactoCaracasPage({ params }) {
         breadcrumbItems={breadcrumbItems}
         title={t('title')}
         subtitle={t('subtitle')}
-        heroImage="/images/hero/caracas-showroom.png"
+        heroImage="/images/hero/caracas-showroom.jpg"
         heroImageAlt={t('heroImageAlt')}
         ctaSecondary={{
           text: t('scrollToForm'),

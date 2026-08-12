@@ -61,10 +61,10 @@ export default function DualLandscape({ variant = 'spain' }) {
           >
             <Image
               src={item.image}
-              alt={item.title}
+              alt=""
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="(max-width: 768px) 100vw, 50vw"
+              sizes="(max-width: 768px) 92vw, 50vw"
             />
             <div className="absolute inset-0 bg-black/35 transition-colors group-hover:bg-black/45" />
             <div className="absolute inset-0 flex flex-col items-center justify-center px-5 text-center text-white sm:px-6">

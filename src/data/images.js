@@ -1,11 +1,11 @@
 // Local + curated imagery for luxury editorial homepage
 export const images = {
-  hero: '/images/hero/stone-interior.png',
+  hero: '/images/hero/stone-interior.jpg',
   showroom: '/dekorama-showroom.jpeg',
-  catalogo: '/images/hero/catalogo-hero.png',
+  catalogo: '/images/hero/catalogo-hero.jpg',
   heroProjects: '/projects/e59151b0-a5f9-4aa9-af26-001acb7cf228.JPG',
   markets: {
-    caracas: '/images/hero/caracas-interior.png',
+    caracas: '/images/hero/caracas-interior.jpg',
   },
   services: {
     reformas: '/projects/d186be42-96ed-478c-8d60-b47a9999e22c.JPG',

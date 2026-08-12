@@ -102,39 +102,61 @@ export default function CTAFinal({ marketId = 'spain' }) {
           transition={{ delay: 0.2 }}
         >
           <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <label htmlFor="nombre" className="sr-only">
+                {t('name')}
+              </label>
+              <input
+                id="nombre"
+                type="text"
+                name="nombre"
+                placeholder={t('name')}
+                value={formData.nombre}
+                onChange={handleChange}
+                className="input-field"
+                required
+                disabled={status === 'loading'}
+              />
+            </div>
+            <div>
+              <label htmlFor="telefono" className="sr-only">
+                {t('phone')}
+              </label>
+              <input
+                id="telefono"
+                type="tel"
+                name="telefono"
+                placeholder={t('phone')}
+                value={formData.telefono}
+                onChange={handleChange}
+                className="input-field"
+                required
+                disabled={status === 'loading'}
+              />
+            </div>
+          </div>
+          <div>
+            <label htmlFor="email" className="sr-only">
+              {t('email')}
+            </label>
             <input
-              type="text"
-              name="nombre"
-              placeholder={t('name')}
-              value={formData.nombre}
-              onChange={handleChange}
-              className="input-field"
-              required
-              disabled={status === 'loading'}
-            />
-            <input
-              type="tel"
-              name="telefono"
-              placeholder={t('phone')}
-              value={formData.telefono}
+              id="email"
+              type="email"
+              name="email"
+              placeholder={t('email')}
+              value={formData.email}
               onChange={handleChange}
               className="input-field"
               required
               disabled={status === 'loading'}
             />
           </div>
-            <input
-              type="email"
-              name="email"
-              placeholder={t('email')}
-              value={formData.email}
-            onChange={handleChange}
-            className="input-field"
-            required
-            disabled={status === 'loading'}
-          />
-            <div className="relative">
+          <div className="relative">
+            <label htmlFor="tipoReforma" className="sr-only">
+              {t('projectTypeOptions.placeholder')}
+            </label>
             <select
+              id="tipoReforma"
               name="tipoReforma"
               value={formData.tipoReforma}
               onChange={handleChange}
@@ -148,7 +170,7 @@ export default function CTAFinal({ marketId = 'spain' }) {
                 </option>
               ))}
             </select>
-            <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">
+            <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-gray-500" aria-hidden>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
@@ -156,7 +178,7 @@ export default function CTAFinal({ marketId = 'spain' }) {
           </div>
           <div>
             <label htmlFor="descripcion" className="sr-only">
-              Descripción del proyecto
+              {t('descriptionPlaceholder')}
             </label>
             <textarea
               id="descripcion"
