@@ -21,21 +21,23 @@ export default function PageFaq({ title, faqs, className = '' }) {
         />
       )}
       <section
-        className={`py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 ${className}`.trim()}
+        className={`section-editorial border-t border-gray-200 bg-gray-bg ${className}`.trim()}
         aria-labelledby="page-faq-heading"
       >
-        <div className="max-w-3xl mx-auto">
+        <div className="mx-auto max-w-3xl">
           <h2
             id="page-faq-heading"
-            className="text-2xl md:text-3xl font-bold text-black mb-8 md:mb-10"
+            className="mb-8 font-heading text-2xl font-normal tracking-tight text-black sm:text-3xl md:mb-10 md:text-4xl"
           >
             {title}
           </h2>
           <dl className="space-y-8">
             {faqs.map(({ question, answer }) => (
-              <div key={question}>
-                <dt className="text-lg font-semibold text-black mb-2">{question}</dt>
-                <dd className="text-gray-600 leading-relaxed">{answer}</dd>
+              <div key={question} className="border-t border-gray-300 pt-6">
+                <dt className="mb-2 text-base font-semibold tracking-tight text-black sm:text-lg">
+                  {question}
+                </dt>
+                <dd className="text-sm leading-relaxed text-gray-600 md:text-base">{answer}</dd>
               </div>
             ))}
           </dl>

@@ -8,7 +8,7 @@ export const images = {
     caracas: '/images/hero/caracas-interior.jpg',
   },
   services: {
-    reformas: '/projects/d186be42-96ed-478c-8d60-b47a9999e22c.JPG',
+    reformas: '/projects/e1285439-5aa9-4fb2-901d-4517e75ee052.JPG',
     cocinas: '/projects/e59151b0-a5f9-4aa9-af26-001acb7cf228.JPG',
     banos: '/projects/11327553-54c1-4dd1-971a-584a1a900c26.JPG',
     materiales: '/dekorama-showroom.jpeg',
