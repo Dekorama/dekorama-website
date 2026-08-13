@@ -620,6 +620,14 @@ export const blogSlugMap = {
   'villa-renovation-estepona-costa-del-sol': {
     es: 'reforma-integral-villa-estepona',
     en: 'villa-renovation-estepona-costa-del-sol',
+  },
+  'reforma-bano-completo-estepona-precio-2026': {
+    es: 'reforma-bano-completo-estepona-precio-2026',
+    en: 'complete-bathroom-renovation-cost-estepona-2026',
+  },
+  'complete-bathroom-renovation-cost-estepona-2026': {
+    es: 'reforma-bano-completo-estepona-precio-2026',
+    en: 'complete-bathroom-renovation-cost-estepona-2026',
   },}
 
 /**
