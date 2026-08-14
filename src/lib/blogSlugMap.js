@@ -628,6 +628,14 @@ export const blogSlugMap = {
   'complete-bathroom-renovation-cost-estepona-2026': {
     es: 'reforma-bano-completo-estepona-precio-2026',
     en: 'complete-bathroom-renovation-cost-estepona-2026',
+  },
+  'cuanto-cuesta-reformar-bano-estepona': {
+    es: 'cuanto-cuesta-reformar-bano-estepona',
+    en: 'how-much-does-bathroom-renovation-cost-estepona',
+  },
+  'how-much-does-bathroom-renovation-cost-estepona': {
+    es: 'cuanto-cuesta-reformar-bano-estepona',
+    en: 'how-much-does-bathroom-renovation-cost-estepona',
   },}
 
 /**
