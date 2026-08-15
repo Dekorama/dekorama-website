@@ -636,6 +636,14 @@ export const blogSlugMap = {
   'how-much-does-bathroom-renovation-cost-estepona': {
     es: 'cuanto-cuesta-reformar-bano-estepona',
     en: 'how-much-does-bathroom-renovation-cost-estepona',
+  },
+  'diseno-bano-moderno-estepona': {
+    es: 'diseno-bano-moderno-estepona',
+    en: 'modern-bathroom-design-estepona',
+  },
+  'modern-bathroom-design-estepona': {
+    es: 'diseno-bano-moderno-estepona',
+    en: 'modern-bathroom-design-estepona',
   },}
 
 /**
