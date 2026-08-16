@@ -644,6 +644,14 @@ export const blogSlugMap = {
   'modern-bathroom-design-estepona': {
     es: 'diseno-bano-moderno-estepona',
     en: 'modern-bathroom-design-estepona',
+  },
+  'reforma-cocina-estepona-presupuesto': {
+    es: 'reforma-cocina-estepona-presupuesto',
+    en: 'kitchen-renovation-cost-estepona',
+  },
+  'kitchen-renovation-cost-estepona': {
+    es: 'reforma-cocina-estepona-presupuesto',
+    en: 'kitchen-renovation-cost-estepona',
   },}
 
 /**
