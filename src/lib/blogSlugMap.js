@@ -652,6 +652,14 @@ export const blogSlugMap = {
   'kitchen-renovation-cost-estepona': {
     es: 'reforma-cocina-estepona-presupuesto',
     en: 'kitchen-renovation-cost-estepona',
+  },
+  'cocina-a-medida-estepona-precio': {
+    es: 'cocina-a-medida-estepona-precio',
+    en: 'custom-kitchen-estepona-price-guide',
+  },
+  'custom-kitchen-estepona-price-guide': {
+    es: 'cocina-a-medida-estepona-precio',
+    en: 'custom-kitchen-estepona-price-guide',
   },}
 
 /**
