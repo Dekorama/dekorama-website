@@ -660,6 +660,14 @@ export const blogSlugMap = {
   'custom-kitchen-estepona-price-guide': {
     es: 'cocina-a-medida-estepona-precio',
     en: 'custom-kitchen-estepona-price-guide',
+  },
+  'cocina-isla-estepona-ideas-coste': {
+    es: 'cocina-isla-estepona-ideas-coste',
+    en: 'kitchen-island-estepona-cost-ideas',
+  },
+  'kitchen-island-estepona-cost-ideas': {
+    es: 'cocina-isla-estepona-ideas-coste',
+    en: 'kitchen-island-estepona-cost-ideas',
   },}
 
 /**
