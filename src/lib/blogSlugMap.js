@@ -668,6 +668,14 @@ export const blogSlugMap = {
   'kitchen-island-estepona-cost-ideas': {
     es: 'cocina-isla-estepona-ideas-coste',
     en: 'kitchen-island-estepona-cost-ideas',
+  },
+  'reformar-piso-alquiler-vacacional-estepona': {
+    es: 'reformar-piso-alquiler-vacacional-estepona',
+    en: 'renovating-apartment-holiday-rental-estepona',
+  },
+  'renovating-apartment-holiday-rental-estepona': {
+    es: 'reformar-piso-alquiler-vacacional-estepona',
+    en: 'renovating-apartment-holiday-rental-estepona',
   },}
 
 /**
