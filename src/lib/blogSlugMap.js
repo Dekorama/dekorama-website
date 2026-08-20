@@ -676,6 +676,14 @@ export const blogSlugMap = {
   'renovating-apartment-holiday-rental-estepona': {
     es: 'reformar-piso-alquiler-vacacional-estepona',
     en: 'renovating-apartment-holiday-rental-estepona',
+  },
+  'materiales-reforma-estepona-donde-comprar': {
+    es: 'materiales-reforma-estepona-donde-comprar',
+    en: 'materiales-renovacion-estepona-comprar',
+  },
+  'materiales-renovacion-estepona-comprar': {
+    es: 'materiales-reforma-estepona-donde-comprar',
+    en: 'materiales-renovacion-estepona-comprar',
   },}
 
 /**
