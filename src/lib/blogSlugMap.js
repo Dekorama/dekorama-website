@@ -684,6 +684,14 @@ export const blogSlugMap = {
   'materiales-renovacion-estepona-comprar': {
     es: 'materiales-reforma-estepona-donde-comprar',
     en: 'materiales-renovacion-estepona-comprar',
+  },
+  'reformas-integrales-torremolinos-presupuesto-plazos': {
+    es: 'reformas-integrales-torremolinos-presupuesto-plazos',
+    en: 'full-home-renovations-torremolinos-cost',
+  },
+  'full-home-renovations-torremolinos-cost': {
+    es: 'reformas-integrales-torremolinos-presupuesto-plazos',
+    en: 'full-home-renovations-torremolinos-cost',
   },}
 
 /**
