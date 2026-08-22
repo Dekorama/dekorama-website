@@ -692,6 +692,14 @@ export const blogSlugMap = {
   'full-home-renovations-torremolinos-cost': {
     es: 'reformas-integrales-torremolinos-presupuesto-plazos',
     en: 'full-home-renovations-torremolinos-cost',
+  },
+  'cuanto-cuesta-reforma-integral-torremolinos': {
+    es: 'cuanto-cuesta-reforma-integral-torremolinos',
+    en: 'cost-full-home-renovation-torremolinos',
+  },
+  'cost-full-home-renovation-torremolinos': {
+    es: 'cuanto-cuesta-reforma-integral-torremolinos',
+    en: 'cost-full-home-renovation-torremolinos',
   },}
 
 /**
