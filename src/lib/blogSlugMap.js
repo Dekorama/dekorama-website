@@ -700,6 +700,14 @@ export const blogSlugMap = {
   'cost-full-home-renovation-torremolinos': {
     es: 'cuanto-cuesta-reforma-integral-torremolinos',
     en: 'cost-full-home-renovation-torremolinos',
+  },
+  'empresa-reformas-integrales-torremolinos': {
+    es: 'empresa-reformas-integrales-torremolinos',
+    en: 'full-home-renovation-company-torremolinos',
+  },
+  'full-home-renovation-company-torremolinos': {
+    es: 'empresa-reformas-integrales-torremolinos',
+    en: 'full-home-renovation-company-torremolinos',
   },}
 
 /**
