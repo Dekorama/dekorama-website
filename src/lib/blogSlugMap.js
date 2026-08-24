@@ -708,6 +708,14 @@ export const blogSlugMap = {
   'full-home-renovation-company-torremolinos': {
     es: 'empresa-reformas-integrales-torremolinos',
     en: 'full-home-renovation-company-torremolinos',
+  },
+  'reforma-integral-piso-torremolinos': {
+    es: 'reforma-integral-piso-torremolinos',
+    en: 'full-apartment-renovation-torremolinos-cost',
+  },
+  'full-apartment-renovation-torremolinos-cost': {
+    es: 'reforma-integral-piso-torremolinos',
+    en: 'full-apartment-renovation-torremolinos-cost',
   },}
 
 /**
