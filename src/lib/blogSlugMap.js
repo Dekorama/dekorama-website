@@ -716,6 +716,14 @@ export const blogSlugMap = {
   'full-apartment-renovation-torremolinos-cost': {
     es: 'reforma-integral-piso-torremolinos',
     en: 'full-apartment-renovation-torremolinos-cost',
+  },
+  'reforma-integral-apartamento-torremolinos': {
+    es: 'reforma-integral-apartamento-torremolinos',
+    en: 'apartment-renovation-torremolinos-costa-del-sol',
+  },
+  'apartment-renovation-torremolinos-costa-del-sol': {
+    es: 'reforma-integral-apartamento-torremolinos',
+    en: 'apartment-renovation-torremolinos-costa-del-sol',
   },}
 
 /**
