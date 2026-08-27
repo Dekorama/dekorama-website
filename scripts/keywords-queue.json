@@ -646,8 +646,9 @@
     "keyword": "reforma bano completo Torremolinos precio 2026",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-08-27T19:19:58.809Z"
   },
   {
     "keyword": "cuanto cuesta reformar un bano en Torremolinos",

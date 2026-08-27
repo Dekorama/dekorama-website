@@ -732,6 +732,14 @@ export const blogSlugMap = {
   'villa-renovation-torremolinos-costa-del-sol': {
     es: 'reforma-integral-villa-torremolinos',
     en: 'villa-renovation-torremolinos-costa-del-sol',
+  },
+  'reforma-bano-completo-torremolinos-precio-2026': {
+    es: 'reforma-bano-completo-torremolinos-precio-2026',
+    en: 'bathroom-renovation-cost-torremolinos-2026',
+  },
+  'bathroom-renovation-cost-torremolinos-2026': {
+    es: 'reforma-bano-completo-torremolinos-precio-2026',
+    en: 'bathroom-renovation-cost-torremolinos-2026',
   },}
 
 /**
