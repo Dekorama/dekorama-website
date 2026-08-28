@@ -740,6 +740,14 @@ export const blogSlugMap = {
   'bathroom-renovation-cost-torremolinos-2026': {
     es: 'reforma-bano-completo-torremolinos-precio-2026',
     en: 'bathroom-renovation-cost-torremolinos-2026',
+  },
+  'cuanto-cuesta-reformar-bano-torremolinos': {
+    es: 'cuanto-cuesta-reformar-bano-torremolinos',
+    en: 'cost-renovate-bathroom-torremolinos',
+  },
+  'cost-renovate-bathroom-torremolinos': {
+    es: 'cuanto-cuesta-reformar-bano-torremolinos',
+    en: 'cost-renovate-bathroom-torremolinos',
   },}
 
 /**
