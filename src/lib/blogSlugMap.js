@@ -748,6 +748,14 @@ export const blogSlugMap = {
   'cost-renovate-bathroom-torremolinos': {
     es: 'cuanto-cuesta-reformar-bano-torremolinos',
     en: 'cost-renovate-bathroom-torremolinos',
+  },
+  'diseno-bano-moderno-torremolinos': {
+    es: 'diseno-bano-moderno-torremolinos',
+    en: 'modern-bathroom-design-torremolinos',
+  },
+  'modern-bathroom-design-torremolinos': {
+    es: 'diseno-bano-moderno-torremolinos',
+    en: 'modern-bathroom-design-torremolinos',
   },}
 
 /**
