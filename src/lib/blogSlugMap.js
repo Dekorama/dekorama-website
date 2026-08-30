@@ -756,6 +756,14 @@ export const blogSlugMap = {
   'modern-bathroom-design-torremolinos': {
     es: 'diseno-bano-moderno-torremolinos',
     en: 'modern-bathroom-design-torremolinos',
+  },
+  'reforma-cocina-torremolinos-presupuesto': {
+    es: 'reforma-cocina-torremolinos-presupuesto',
+    en: 'kitchen-renovation-cost-torremolinos',
+  },
+  'kitchen-renovation-cost-torremolinos': {
+    es: 'reforma-cocina-torremolinos-presupuesto',
+    en: 'kitchen-renovation-cost-torremolinos',
   },}
 
 /**
