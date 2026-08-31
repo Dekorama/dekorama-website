@@ -678,8 +678,9 @@
     "keyword": "cocina a medida en Torremolinos precio",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-08-31T16:28:42.836Z"
   },
   {
     "keyword": "cocina con isla en Torremolinos ideas y coste",

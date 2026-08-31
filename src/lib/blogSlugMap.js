@@ -764,6 +764,14 @@ export const blogSlugMap = {
   'kitchen-renovation-cost-torremolinos': {
     es: 'reforma-cocina-torremolinos-presupuesto',
     en: 'kitchen-renovation-cost-torremolinos',
+  },
+  'cocina-a-medida-torremolinos-precio': {
+    es: 'cocina-a-medida-torremolinos-precio',
+    en: 'custom-kitchen-torremolinos-price-guide',
+  },
+  'custom-kitchen-torremolinos-price-guide': {
+    es: 'cocina-a-medida-torremolinos-precio',
+    en: 'custom-kitchen-torremolinos-price-guide',
   },}
 
 /**
