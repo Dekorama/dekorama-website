@@ -772,6 +772,14 @@ export const blogSlugMap = {
   'custom-kitchen-torremolinos-price-guide': {
     es: 'cocina-a-medida-torremolinos-precio',
     en: 'custom-kitchen-torremolinos-price-guide',
+  },
+  'cocina-isla-torremolinos-ideas-coste': {
+    es: 'cocina-isla-torremolinos-ideas-coste',
+    en: 'kitchen-island-torremolinos-ideas-cost',
+  },
+  'kitchen-island-torremolinos-ideas-cost': {
+    es: 'cocina-isla-torremolinos-ideas-coste',
+    en: 'kitchen-island-torremolinos-ideas-cost',
   },}
 
 /**

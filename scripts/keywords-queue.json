@@ -686,8 +686,9 @@
     "keyword": "cocina con isla en Torremolinos ideas y coste",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-09-01T13:46:11.482Z"
   },
   {
     "keyword": "reformar piso para alquiler vacacional en Torremolinos",
