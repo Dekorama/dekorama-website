@@ -780,6 +780,14 @@ export const blogSlugMap = {
   'kitchen-island-torremolinos-ideas-cost': {
     es: 'cocina-isla-torremolinos-ideas-coste',
     en: 'kitchen-island-torremolinos-ideas-cost',
+  },
+  'reformar-piso-alquiler-vacacional-torremolinos': {
+    es: 'reformar-piso-alquiler-vacacional-torremolinos',
+    en: 'torremolinos-holiday-rental-renovation',
+  },
+  'torremolinos-holiday-rental-renovation': {
+    es: 'reformar-piso-alquiler-vacacional-torremolinos',
+    en: 'torremolinos-holiday-rental-renovation',
   },}
 
 /**

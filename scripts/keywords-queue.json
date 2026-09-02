@@ -694,8 +694,9 @@
     "keyword": "reformar piso para alquiler vacacional en Torremolinos",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-09-02T13:02:47.702Z"
   },
   {
     "keyword": "materiales para reforma en Torremolinos donde comprar",
