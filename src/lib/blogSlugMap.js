@@ -788,6 +788,14 @@ export const blogSlugMap = {
   'torremolinos-holiday-rental-renovation': {
     es: 'reformar-piso-alquiler-vacacional-torremolinos',
     en: 'torremolinos-holiday-rental-renovation',
+  },
+  'materiales-reforma-torremolinos-comprar': {
+    es: 'materiales-reforma-torremolinos-comprar',
+    en: 'renovation-materials-torremolinos-where-to-buy',
+  },
+  'renovation-materials-torremolinos-where-to-buy': {
+    es: 'materiales-reforma-torremolinos-comprar',
+    en: 'renovation-materials-torremolinos-where-to-buy',
   },}
 
 /**
