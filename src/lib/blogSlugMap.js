@@ -796,6 +796,14 @@ export const blogSlugMap = {
   'renovation-materials-torremolinos-where-to-buy': {
     es: 'materiales-reforma-torremolinos-comprar',
     en: 'renovation-materials-torremolinos-where-to-buy',
+  },
+  'reformas-integrales-malaga-presupuesto-plazos': {
+    es: 'reformas-integrales-malaga-presupuesto-plazos',
+    en: 'full-home-renovations-malaga-cost-timeline',
+  },
+  'full-home-renovations-malaga-cost-timeline': {
+    es: 'reformas-integrales-malaga-presupuesto-plazos',
+    en: 'full-home-renovations-malaga-cost-timeline',
   },}
 
 /**
