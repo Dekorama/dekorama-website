@@ -804,6 +804,14 @@ export const blogSlugMap = {
   'full-home-renovations-malaga-cost-timeline': {
     es: 'reformas-integrales-malaga-presupuesto-plazos',
     en: 'full-home-renovations-malaga-cost-timeline',
+  },
+  'cuanto-cuesta-reforma-integral-malaga': {
+    es: 'cuanto-cuesta-reforma-integral-malaga',
+    en: 'cost-full-home-renovation-malaga',
+  },
+  'cost-full-home-renovation-malaga': {
+    es: 'cuanto-cuesta-reforma-integral-malaga',
+    en: 'cost-full-home-renovation-malaga',
   },}
 
 /**
