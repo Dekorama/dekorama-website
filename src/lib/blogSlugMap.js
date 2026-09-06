@@ -812,6 +812,14 @@ export const blogSlugMap = {
   'cost-full-home-renovation-malaga': {
     es: 'cuanto-cuesta-reforma-integral-malaga',
     en: 'cost-full-home-renovation-malaga',
+  },
+  'empresa-reformas-integrales-malaga': {
+    es: 'empresa-reformas-integrales-malaga',
+    en: 'full-home-renovation-companies-malaga',
+  },
+  'full-home-renovation-companies-malaga': {
+    es: 'empresa-reformas-integrales-malaga',
+    en: 'full-home-renovation-companies-malaga',
   },}
 
 /**

@@ -726,8 +726,9 @@
     "keyword": "empresa de reformas integrales en Malaga",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-09-06T12:26:39.103Z"
   },
   {
     "keyword": "reforma integral de piso en Malaga",
