@@ -820,6 +820,14 @@ export const blogSlugMap = {
   'full-home-renovation-companies-malaga': {
     es: 'empresa-reformas-integrales-malaga',
     en: 'full-home-renovation-companies-malaga',
+  },
+  'reforma-integral-piso-malaga': {
+    es: 'reforma-integral-piso-malaga',
+    en: 'full-apartment-renovation-malaga',
+  },
+  'full-apartment-renovation-malaga': {
+    es: 'reforma-integral-piso-malaga',
+    en: 'full-apartment-renovation-malaga',
   },}
 
 /**
