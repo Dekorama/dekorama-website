@@ -742,8 +742,9 @@
     "keyword": "reforma integral de apartamento en Malaga",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-09-08T13:09:13.424Z"
   },
   {
     "keyword": "reforma integral de villa en Malaga",
