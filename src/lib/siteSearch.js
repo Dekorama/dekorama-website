@@ -83,6 +83,9 @@ export const CATALOG_SEARCH_KEYWORDS = {
     'museum',
     'nadis',
     'porcelanite',
+    'demanti',
+    'grupo stone',
+    'stone',
   ],
   taps: [
     'griferia',
