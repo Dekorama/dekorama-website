@@ -86,6 +86,8 @@ export const CATALOG_SEARCH_KEYWORDS = {
     'demanti',
     'grupo stone',
     'stone',
+    'neolith',
+    'polished',
   ],
   taps: [
     'griferia',
