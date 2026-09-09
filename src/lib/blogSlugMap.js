@@ -836,6 +836,14 @@ export const blogSlugMap = {
   'full-apartment-renovation-malaga-costa-del-sol': {
     es: 'reforma-integral-apartamento-malaga',
     en: 'full-apartment-renovation-malaga-costa-del-sol',
+  },
+  'reforma-integral-villa-malaga': {
+    es: 'reforma-integral-villa-malaga',
+    en: 'villa-renovation-costa-del-sol-malaga',
+  },
+  'villa-renovation-costa-del-sol-malaga': {
+    es: 'reforma-integral-villa-malaga',
+    en: 'villa-renovation-costa-del-sol-malaga',
   },}
 
 /**
