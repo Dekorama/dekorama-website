@@ -844,6 +844,14 @@ export const blogSlugMap = {
   'villa-renovation-costa-del-sol-malaga': {
     es: 'reforma-integral-villa-malaga',
     en: 'villa-renovation-costa-del-sol-malaga',
+  },
+  'reforma-bano-completo-malaga-precio-2026': {
+    es: 'reforma-bano-completo-malaga-precio-2026',
+    en: 'bathroom-renovation-cost-malaga-2026',
+  },
+  'bathroom-renovation-cost-malaga-2026': {
+    es: 'reforma-bano-completo-malaga-precio-2026',
+    en: 'bathroom-renovation-cost-malaga-2026',
   },}
 
 /**
