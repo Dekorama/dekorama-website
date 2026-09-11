@@ -852,6 +852,14 @@ export const blogSlugMap = {
   'bathroom-renovation-cost-malaga-2026': {
     es: 'reforma-bano-completo-malaga-precio-2026',
     en: 'bathroom-renovation-cost-malaga-2026',
+  },
+  'cuanto-cuesta-reformar-bano-malaga': {
+    es: 'cuanto-cuesta-reformar-bano-malaga',
+    en: 'cost-bathroom-renovation-malaga',
+  },
+  'cost-bathroom-renovation-malaga': {
+    es: 'cuanto-cuesta-reformar-bano-malaga',
+    en: 'cost-bathroom-renovation-malaga',
   },}
 
 /**
