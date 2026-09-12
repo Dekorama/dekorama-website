@@ -860,6 +860,14 @@ export const blogSlugMap = {
   'cost-bathroom-renovation-malaga': {
     es: 'cuanto-cuesta-reformar-bano-malaga',
     en: 'cost-bathroom-renovation-malaga',
+  },
+  'diseno-bano-moderno-malaga': {
+    es: 'diseno-bano-moderno-malaga',
+    en: 'modern-bathroom-design-malaga-costa-del-sol',
+  },
+  'modern-bathroom-design-malaga-costa-del-sol': {
+    es: 'diseno-bano-moderno-malaga',
+    en: 'modern-bathroom-design-malaga-costa-del-sol',
   },}
 
 /**
