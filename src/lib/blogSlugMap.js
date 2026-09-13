@@ -868,6 +868,14 @@ export const blogSlugMap = {
   'modern-bathroom-design-malaga-costa-del-sol': {
     es: 'diseno-bano-moderno-malaga',
     en: 'modern-bathroom-design-malaga-costa-del-sol',
+  },
+  'reforma-cocina-malaga-presupuesto': {
+    es: 'reforma-cocina-malaga-presupuesto',
+    en: 'kitchen-renovation-cost-malaga-budget',
+  },
+  'kitchen-renovation-cost-malaga-budget': {
+    es: 'reforma-cocina-malaga-presupuesto',
+    en: 'kitchen-renovation-cost-malaga-budget',
   },}
 
 /**
