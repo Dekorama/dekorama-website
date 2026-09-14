@@ -876,6 +876,14 @@ export const blogSlugMap = {
   'kitchen-renovation-cost-malaga-budget': {
     es: 'reforma-cocina-malaga-presupuesto',
     en: 'kitchen-renovation-cost-malaga-budget',
+  },
+  'cocina-a-medida-malaga-precio': {
+    es: 'cocina-a-medida-malaga-precio',
+    en: 'custom-kitchen-cost-malaga',
+  },
+  'custom-kitchen-cost-malaga': {
+    es: 'cocina-a-medida-malaga-precio',
+    en: 'custom-kitchen-cost-malaga',
   },}
 
 /**

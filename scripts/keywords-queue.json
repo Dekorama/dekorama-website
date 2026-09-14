@@ -790,8 +790,9 @@
     "keyword": "cocina a medida en Malaga precio",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-09-14T15:20:40.391Z"
   },
   {
     "keyword": "cocina con isla en Malaga ideas y coste",
