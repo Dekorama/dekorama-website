@@ -3,7 +3,7 @@ import { getTranslations } from 'next-intl/server'
 import { baseUrl } from '@/lib/site'
 import { pageAlternates } from '@/lib/seo'
 import CatalogPdfViewer from '@/components/catalog/CatalogPdfViewer'
-import { getCatalogBySlug } from '@/data/catalogs'
+import { CATALOGS, getCatalogBySlug } from '@/data/catalogs'
 
 /**
  * @param {{ params: Promise<{ locale: string, slug: string }> }} props
@@ -60,16 +60,7 @@ export default async function CatalogoViewerPage({ params }) {
 
 export function generateStaticParams() {
   const locales = ['es', 'en']
-  const slugs = [
-    'harmony',
-    'museum',
-    'nadis',
-    'neve',
-    'porcelanite-dos',
-    'europa-griferias-1',
-    'europa-griferias-2',
-    'kubo',
-  ]
-
-  return locales.flatMap((locale) => slugs.map((slug) => ({ locale, slug })))
+  return locales.flatMap((locale) =>
+    CATALOGS.map((catalog) => ({ locale, slug: catalog.slug })),
+  )
 }
