@@ -1,7 +1,7 @@
 import { images } from '@/data/images'
 import { baseUrl } from '@/lib/site'
 import { pageAlternates } from '@/lib/seo'
-import { markets, buildLocalBusinessJsonLd } from '@/lib/markets'
+import { markets } from '@/lib/markets'
 import { getTranslations } from 'next-intl/server'
 import Hero from '@/components/Hero'
 import FeaturedSpaces from '@/components/home/FeaturedSpaces'
@@ -39,13 +39,6 @@ export default async function ReformasCaracasPage({ params }) {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'ciudades.caracas' })
 
-  const localBusinessJsonLd = buildLocalBusinessJsonLd(ve, {
-    description:
-      locale === 'es'
-        ? 'Reformas integrales, cocinas y baños a medida en Caracas. Más de 20 años en el mercado venezolano.'
-        : 'Full renovations, custom kitchens and bathrooms in Caracas. Over 15 years in the Venezuelan market.',
-  })
-
   const serviceJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -73,10 +66,6 @@ export default async function ReformasCaracasPage({ params }) {
   return (
     <>
       <SetVenezuelaMarket />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}

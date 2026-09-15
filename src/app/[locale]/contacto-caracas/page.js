@@ -3,8 +3,10 @@ import { baseUrl } from '@/lib/site'
 import { pageAlternates } from '@/lib/seo'
 import { markets } from '@/lib/markets'
 import CTAFinal from '@/components/CTAFinal'
+import PageFaq from '@/components/PageFaq'
 import PageHeader from '@/components/PageHeader'
 import SetVenezuelaMarket from '@/components/SetVenezuelaMarket'
+import { getPageFaqsFromTranslations } from '@/lib/pageFaqs'
 
 export async function generateMetadata({ params }) {
   const { locale } = await Promise.resolve(params)
@@ -27,6 +29,8 @@ export default async function ContactoCaracasPage({ params }) {
     { label: tCommon('home'), href: `/${locale}` },
     { label: t('title'), href: null },
   ]
+
+  const faqs = getPageFaqsFromTranslations((key) => t(key), { has: (key) => t.has(key) })
 
   return (
     <div className="min-h-screen bg-white">
@@ -95,6 +99,8 @@ export default async function ContactoCaracasPage({ params }) {
           </div>
         </div>
       </section>
+
+      <PageFaq title={t('faq.title')} faqs={faqs} />
 
       <CTAFinal marketId="venezuela" />
     </div>

@@ -807,16 +807,25 @@
   },
   "contactPageVe": {
     "metaTitle": "Contact Caracas",
-    "metaDescription": "Contact Dekorama Caracas by WhatsApp, phone or email. Showroom by appointment. Over 15 years renovating in Venezuela.",
+    "metaDescription": "Contact Dekorama Caracas by WhatsApp, phone or email. Showroom by appointment. Over 20 years renovating in Venezuela.",
     "title": "Contact Caracas",
     "subtitle": "Tell us about your project and we'll get back to you as soon as possible. Visit our showroom by appointment or request a complimentary consultation.",
     "scrollToForm": "Go to form",
     "heroImageAlt": "Dekorama Caracas showroom with premium materials and El Ávila views",
     "infoShowroom": "Showroom",
-    "infoShowroomBody": "Showroom in Caracas.\nVisits by prior appointment only.",
+    "infoShowroomBody": "Showroom in Caracas, Venezuela.\nVisits by prior appointment only.",
     "infoPhone": "Phone",
     "infoWhatsApp": "WhatsApp",
-    "infoEmail": "Email"
+    "infoEmail": "Email",
+    "faq": {
+      "title": "Frequently asked questions · Dekorama Caracas",
+      "q1": "Does Dekorama have a presence in Caracas?",
+      "a1": "Yes. Dekorama operates in Caracas, Venezuela, with a showroom by prior appointment and a local team. Contact: WhatsApp or phone +58 414 433 6524 and email cravelo@dekoramagroup.com.",
+      "q2": "Where is Dekorama located besides Caracas?",
+      "a2": "Dekorama (Grupo Dekorama) runs two operations: Caracas, Venezuela, and the store and showroom in Benalmádena, Málaga, on the Costa del Sol (Spain).",
+      "q3": "How do I book a visit to the Caracas showroom?",
+      "a3": "Message us on WhatsApp at +58 414 433 6524 or submit the form and we'll arrange a date and time. The Caracas showroom operates by prior appointment only."
+    }
   },
   "ciudades": {
     "benalmadena": {
@@ -985,26 +994,30 @@
     },
     "caracas": {
       "title": "Full Renovations in Caracas",
-      "description": "Full renovations, custom kitchens and bathrooms in Caracas. Over 15 years in the Venezuelan market. Design, premium materials and professional delivery.",
+      "description": "Full renovations, custom kitchens and bathrooms in Caracas. Over 20 years in the Venezuelan market. Design, premium materials and professional delivery.",
       "h1": "Full Renovations in Caracas, Venezuela",
-      "intro": "Over 15 years transforming homes and spaces in Caracas. Custom kitchens, complete bathrooms and full renovations with premium materials, high-end finishes and local project management.",
-      "marketBadge": "Dekorama Caracas · 15+ years in Venezuela",
+      "intro": "Over 20 years transforming homes and spaces in Caracas. Custom kitchens, complete bathrooms and full renovations with premium materials, high-end finishes and local project management.",
+      "marketBadge": "Dekorama Caracas · 20+ years in Venezuela",
       "marketPresence": "You are on Dekorama Caracas. Local support for projects in Venezuela.",
       "whyUs": "Local expertise. Results you can see.",
-      "whyUsDesc": "We have spent over 15 years in the Venezuelan market renovating homes, apartments and commercial spaces in Caracas. Custom design, top-brand materials and end-to-end support — with the local market knowledge that only real tenure brings.",
+      "whyUsDesc": "We have spent over 20 years in the Venezuelan market renovating homes, apartments and commercial spaces in Caracas. Custom design, top-brand materials and end-to-end support — with the local market knowledge that only real tenure brings.",
       "servicesTitle": "Our services in Caracas",
       "zonesTitle": "Service areas in Caracas",
       "zonesDesc": "We cover projects across Caracas and its main residential districts: Altamira, Las Mercedes, El Hatillo, La Trinidad, Chacao, Baruta and surroundings.",
       "faq": {
         "title": "Frequently asked questions about renovations in Caracas",
-        "q1": "How do I contact Dekorama in Caracas?",
-        "a1": "WhatsApp or call +58 414 433 6524, email cravelo@dekoramagroup.com or use the contact form. Showroom by prior appointment.",
-        "q2": "What services do you offer in Caracas?",
-        "a2": "Full renovations, custom kitchens, complete bathrooms and premium material supply and installation, backed by over 15 years of experience in Venezuela.",
-        "q3": "How do I request a quote in Caracas?",
-        "a3": "Message us on WhatsApp, call +58 414 433 6524, email cravelo@dekoramagroup.com or complete the form. We coordinate the visit and a no-obligation quote.",
-        "q4": "Do you take on residential and commercial projects in Caracas?",
-        "a4": "Yes. We deliver renovations in homes, apartments and commercial spaces in Caracas with high-quality finishes and full project management."
+        "q1": "Is Dekorama in Caracas, Venezuela?",
+        "a1": "Yes. Dekorama operates in Caracas, Venezuela, with over 20 years in the Venezuelan market: full renovations, custom kitchens, complete bathrooms and premium materials. Showroom in Caracas by prior appointment, with local contact on WhatsApp or by phone at +58 414 433 6524.",
+        "q2": "Is Dekorama a Spanish or a Venezuelan company?",
+        "a2": "Dekorama (Grupo Dekorama) operates in both countries: showroom and store in Benalmádena, Málaga (Costa del Sol, Spain) and its own operation in Caracas, Venezuela. A project in Caracas is handled by the local Dekorama Caracas team.",
+        "q3": "How do I contact Dekorama in Caracas?",
+        "a3": "WhatsApp or call +58 414 433 6524, email cravelo@dekoramagroup.com or use the contact form. Showroom by prior appointment.",
+        "q4": "What services do you offer in Caracas?",
+        "a4": "Full renovations, custom kitchens, complete bathrooms and premium material supply and installation, backed by over 20 years of experience in Venezuela.",
+        "q5": "How do I request a quote in Caracas?",
+        "a5": "Message us on WhatsApp, call +58 414 433 6524, email cravelo@dekoramagroup.com or complete the form. We coordinate the visit and a no-obligation quote.",
+        "q6": "Do you take on residential and commercial projects in Caracas?",
+        "a6": "Yes. We deliver renovations in homes, apartments and commercial spaces across Caracas — Altamira, Las Mercedes, Chacao, Baruta, El Hatillo and La Trinidad — with high-quality finishes and full project management."
       }
     },
     "commonCTA": "Book your visit",

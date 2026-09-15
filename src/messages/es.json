@@ -813,10 +813,19 @@
     "scrollToForm": "Ir al formulario",
     "heroImageAlt": "Showroom Dekorama Caracas con materiales premium y vista a El Ávila",
     "infoShowroom": "Showroom",
-    "infoShowroomBody": "Showroom en Caracas.\nVisitas solo con cita previa.",
+    "infoShowroomBody": "Showroom en Caracas, Venezuela.\nVisitas solo con cita previa.",
     "infoPhone": "Teléfono",
     "infoWhatsApp": "WhatsApp",
-    "infoEmail": "Email"
+    "infoEmail": "Email",
+    "faq": {
+      "title": "Preguntas frecuentes · Dekorama Caracas",
+      "q1": "¿Dekorama tiene presencia en Caracas?",
+      "a1": "Sí. Dekorama opera en Caracas, Venezuela, con showroom con cita previa y equipo local. Contacto: WhatsApp o llamada al +58 414 433 6524 y email cravelo@dekoramagroup.com.",
+      "q2": "¿Dónde está Dekorama además de Caracas?",
+      "a2": "Dekorama (Grupo Dekorama) tiene dos operaciones: Caracas, Venezuela, y la tienda y showroom de Benalmádena, Málaga, en la Costa del Sol (España).",
+      "q3": "¿Cómo agendo una visita al showroom de Caracas?",
+      "a3": "Escríbenos por WhatsApp al +58 414 433 6524 o envía el formulario y coordinamos día y hora. El showroom de Caracas atiende solo con cita previa."
+    }
   },
   "ciudades": {
     "benalmadena": {
@@ -997,14 +1006,18 @@
       "zonesDesc": "Atendemos proyectos en Caracas y sus principales zonas residenciales: Altamira, Las Mercedes, El Hatillo, La Trinidad, Chacao, Baruta y alrededores.",
       "faq": {
         "title": "Preguntas frecuentes sobre reformas en Caracas",
-        "q1": "¿Cómo contacto con Dekorama en Caracas?",
-        "a1": "WhatsApp o llamada al +58 414 433 6524, email a cravelo@dekoramagroup.com o el formulario de contacto. Showroom con cita previa.",
-        "q2": "¿Qué servicios ofrecéis en Caracas?",
-        "a2": "Reformas integrales, cocinas a medida, baños completos y suministro e instalación de materiales premium, con más de 20 años de experiencia en Venezuela.",
-        "q3": "¿Cómo solicito presupuesto en Caracas?",
-        "a3": "Escríbenos por WhatsApp, llámanos al +58 414 433 6524, email a cravelo@dekoramagroup.com o completa el formulario. Coordinamos visita y presupuesto sin costo.",
-        "q4": "¿Trabajáis proyectos residenciales y comerciales en Caracas?",
-        "a4": "Sí. Ejecutamos reformas en viviendas, apartamentos y locales comerciales en Caracas con acabados de alta calidad y gestión integral del proyecto."
+        "q1": "¿Dekorama está en Caracas, Venezuela?",
+        "a1": "Sí. Dekorama tiene operación en Caracas, Venezuela, con más de 20 años en el mercado venezolano: reformas integrales, cocinas a medida, baños completos y materiales premium. Showroom en Caracas con cita previa y contacto local por WhatsApp o llamada al +58 414 433 6524.",
+        "q2": "¿Dekorama es una empresa española o venezolana?",
+        "a2": "Dekorama (Grupo Dekorama) opera en los dos países: tienda y showroom en Benalmádena, Málaga (Costa del Sol, España) y operación propia en Caracas, Venezuela. Un proyecto en Caracas se gestiona con el equipo local de Dekorama Caracas.",
+        "q3": "¿Cómo contacto con Dekorama en Caracas?",
+        "a3": "WhatsApp o llamada al +58 414 433 6524, email a cravelo@dekoramagroup.com o el formulario de contacto. Showroom con cita previa.",
+        "q4": "¿Qué servicios ofrecéis en Caracas?",
+        "a4": "Reformas integrales, cocinas a medida, baños completos y suministro e instalación de materiales premium, con más de 20 años de experiencia en Venezuela.",
+        "q5": "¿Cómo solicito presupuesto en Caracas?",
+        "a5": "Escríbenos por WhatsApp, llámanos al +58 414 433 6524, email a cravelo@dekoramagroup.com o completa el formulario. Coordinamos visita y presupuesto sin costo.",
+        "q6": "¿Trabajáis proyectos residenciales y comerciales en Caracas?",
+        "a6": "Sí. Ejecutamos reformas en viviendas, apartamentos y locales comerciales en Caracas — Altamira, Las Mercedes, Chacao, Baruta, El Hatillo y La Trinidad — con acabados de alta calidad y gestión integral del proyecto."
       }
     },
     "commonCTA": "Haz tu visita",

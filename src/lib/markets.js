@@ -62,6 +62,9 @@ const venezuelaTelephone =
  * @property {MarketAddress} address
  * @property {{ latitude: number, longitude: number }} geo
  * @property {string[]} areaServed
+ * @property {string[]} alternateNames — brand variants for schema `alternateName`
+ * @property {string[]} serviceZones — districts/towns listed in schema `areaServed`
+ * @property {string} [wikidataId] — city entity, disambiguates the location for answer engines
  * @property {string} locality — city/showroom label for shared copy ({locality})
  * @property {string} region — area label for shared copy ({region})
  */
@@ -89,6 +92,16 @@ export const markets = {
       longitude: -4.5164,
     },
     areaServed: ['ES', 'GB'],
+    alternateNames: ['Grupo Dekorama', 'Dekorama Benalmádena', 'Dekorama Costa del Sol'],
+    serviceZones: [
+      'Benalmádena',
+      'Torremolinos',
+      'Fuengirola',
+      'Marbella',
+      'Estepona',
+      'Málaga',
+    ],
+    wikidataId: 'https://www.wikidata.org/wiki/Q1492462',
     locality: 'Benalmádena',
     region: 'Costa del Sol',
   },
@@ -104,6 +117,7 @@ export const markets = {
     email: 'cravelo@dekoramagroup.com',
     address: {
       addressLocality: 'Caracas',
+      addressRegion: 'Distrito Capital',
       addressCountry: 'VE',
     },
     geo: {
@@ -111,6 +125,20 @@ export const markets = {
       longitude: -66.9036,
     },
     areaServed: ['VE'],
+    alternateNames: [
+      'Dekorama Venezuela',
+      'Grupo Dekorama Caracas',
+      'Dekorama',
+    ],
+    serviceZones: [
+      'Altamira',
+      'Las Mercedes',
+      'Chacao',
+      'Baruta',
+      'El Hatillo',
+      'La Trinidad',
+    ],
+    wikidataId: 'https://www.wikidata.org/wiki/Q1533',
     locality: 'Caracas',
     region: 'Caracas',
   },
@@ -147,12 +175,29 @@ export function buildLocalBusinessJsonLd(market, opts = {}) {
     address.addressRegion = market.address.addressRegion
   }
 
+  const countryName = market.address.addressCountry === 'VE' ? 'Venezuela' : 'España'
+
+  /** @type {Record<string, unknown>} */
+  const city = {
+    '@type': 'City',
+    name: market.address.addressLocality,
+    containedInPlace: {
+      '@type': 'Country',
+      name: countryName,
+      addressCountry: market.address.addressCountry,
+    },
+  }
+  if (market.wikidataId) {
+    city.sameAs = market.wikidataId
+  }
+
   /** @type {Record<string, unknown>} */
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     '@id': market.businessId,
     name: market.name,
+    alternateName: market.alternateNames,
     url:
       market.id === 'venezuela'
         ? `${baseUrl}/es/reformas-caracas`
@@ -164,15 +209,19 @@ export function buildLocalBusinessJsonLd(market, opts = {}) {
       latitude: market.geo.latitude,
       longitude: market.geo.longitude,
     },
-    areaServed: {
-      '@type': 'City',
-      name: market.address.addressLocality,
-      containedInPlace: {
-        '@type': 'Country',
-        name: market.address.addressCountry === 'VE' ? 'Venezuela' : market.address.addressCountry,
-        addressCountry: market.address.addressCountry,
-      },
-    },
+    areaServed: [
+      city,
+      ...market.serviceZones.map((zone) => ({
+        '@type': 'Place',
+        name: zone,
+        containedInPlace: {
+          '@type': 'City',
+          name: market.address.addressLocality,
+        },
+      })),
+    ],
+    knowsLanguage: ['es', 'en'],
+    parentOrganization: { '@id': `${baseUrl}/#organization` },
   }
 
   if (market.phoneReady && market.telephone) {

@@ -5,7 +5,14 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import DeferredChrome from '@/components/DeferredChrome'
 import GoogleTagManager from '@/components/GoogleTagManager'
-import { metaDescription, businessDescription, baseUrl, socialProfiles } from '@/lib/site'
+import {
+  metaDescription,
+  businessDescription,
+  organizationDescription,
+  venezuelaBusinessDescription,
+  baseUrl,
+  socialProfiles,
+} from '@/lib/site'
 import { markets, buildLocalBusinessJsonLd } from '@/lib/markets'
 import { buildSiteNavigationJsonLd } from '@/lib/siteNavigation'
 import { pageAlternates } from '@/lib/seo'
@@ -108,6 +115,17 @@ export default async function LocaleLayout({ children, params }) {
     parentOrganization: { '@id': `${baseUrl}/#organization` },
   }
 
+  // Emitido en todo el sitio: sin este nodo, el `department` de Venezuela
+  // queda como referencia huérfana y la marca se lee como Spain-only.
+  const venezuelaBusinessJsonLd = {
+    ...buildLocalBusinessJsonLd(venezuela, { description: venezuelaBusinessDescription }),
+    telephone: venezuela.telephone,
+    image: `${baseUrl}/dekorama-favicon.png`,
+    logo: `${baseUrl}/dekorama-logo-cropped.svg`,
+    availableLanguage: ['Spanish', 'English'],
+    sameAs: socialProfiles,
+  }
+
   const websiteJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
@@ -115,7 +133,7 @@ export default async function LocaleLayout({ children, params }) {
     name: 'Dekorama',
     alternateName: ['Dekorama Group', 'Grupo Dekorama'],
     url: resolvedLocale === 'en' ? `${baseUrl}/en` : `${baseUrl}/es`,
-    description: businessDescription,
+    description: organizationDescription,
     inLanguage: [resolvedLocale === 'en' ? 'en-GB' : 'es-ES'],
     publisher: { '@id': `${baseUrl}/#organization` },
     about: { '@id': spain.businessId },
@@ -134,13 +152,27 @@ export default async function LocaleLayout({ children, params }) {
     '@type': 'Organization',
     '@id': `${baseUrl}/#organization`,
     name: 'Dekorama',
+    alternateName: ['Grupo Dekorama', 'Dekorama Caracas', 'Dekorama Venezuela'],
     url: baseUrl,
     logo: {
       '@type': 'ImageObject',
       url: `${baseUrl}/dekorama-logo-cropped.svg`,
     },
     image: `${baseUrl}/dekorama-favicon.png`,
-    description: businessDescription,
+    description: organizationDescription,
+    location: [{ '@id': spain.businessId }, { '@id': venezuela.businessId }],
+    areaServed: [
+      {
+        '@type': 'Country',
+        name: 'España',
+        addressCountry: 'ES',
+      },
+      {
+        '@type': 'Country',
+        name: 'Venezuela',
+        addressCountry: 'VE',
+      },
+    ],
     contactPoint: [
       {
         '@type': 'ContactPoint',
@@ -191,6 +223,10 @@ export default async function LocaleLayout({ children, params }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(venezuelaBusinessJsonLd) }}
         />
         <script
           type="application/ld+json"
