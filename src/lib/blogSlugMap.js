@@ -884,6 +884,14 @@ export const blogSlugMap = {
   'custom-kitchen-cost-malaga': {
     es: 'cocina-a-medida-malaga-precio',
     en: 'custom-kitchen-cost-malaga',
+  },
+  'cocina-con-isla-malaga-ideas-coste': {
+    es: 'cocina-con-isla-malaga-ideas-coste',
+    en: 'kitchen-island-malaga-cost-ideas',
+  },
+  'kitchen-island-malaga-cost-ideas': {
+    es: 'cocina-con-isla-malaga-ideas-coste',
+    en: 'kitchen-island-malaga-cost-ideas',
   },}
 
 /**
