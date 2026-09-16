@@ -806,8 +806,9 @@
     "keyword": "reformar piso para alquiler vacacional en Malaga",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-09-16T13:49:32.083Z"
   },
   {
     "keyword": "materiales para reforma en Malaga donde comprar",

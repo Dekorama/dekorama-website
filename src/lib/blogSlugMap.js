@@ -892,6 +892,14 @@ export const blogSlugMap = {
   'kitchen-island-malaga-cost-ideas': {
     es: 'cocina-con-isla-malaga-ideas-coste',
     en: 'kitchen-island-malaga-cost-ideas',
+  },
+  'reformar-piso-alquiler-vacacional-malaga': {
+    es: 'reformar-piso-alquiler-vacacional-malaga',
+    en: 'renovate-apartment-holiday-rental-malaga',
+  },
+  'renovate-apartment-holiday-rental-malaga': {
+    es: 'reformar-piso-alquiler-vacacional-malaga',
+    en: 'renovate-apartment-holiday-rental-malaga',
   },}
 
 /**
