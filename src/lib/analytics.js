@@ -76,4 +76,6 @@ export function trackEvent(eventName, params = {}) {
   if (typeof window === 'undefined') return
   ensureDataLayer()
   window.dataLayer.push({ event: eventName, ...params })
+  const gtag = getGtag()
+  if (gtag) gtag('event', eventName, params)
 }

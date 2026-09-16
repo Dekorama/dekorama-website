@@ -5,9 +5,7 @@ import Script from 'next/script'
 import {
   COOKIE_CONSENT_EVENT,
   COOKIE_CONSENT_KEY,
-  ensureDataLayer,
   readCookieConsent,
-  updateAnalyticsConsent,
 } from '@/lib/analytics'
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-5HRSQRQK'
@@ -22,35 +20,29 @@ function scheduleIdle(fn) {
   return () => window.clearTimeout(id)
 }
 
-/**
- * Consent Mode v2 defaults (denied) before GTM, then load GTM always.
- * Accepted → analytics_storage granted. Rejected / no choice → denied (cookieless).
- */
 export default function GoogleTagManager() {
   const [enabled, setEnabled] = useState(false)
 
   useEffect(() => {
     if (typeof window === 'undefined') return undefined
 
-    ensureDataLayer()
-    const consent = readCookieConsent()
-    if (consent === 'accepted') {
-      updateAnalyticsConsent('granted')
-    } else if (consent === 'rejected') {
-      updateAnalyticsConsent('denied')
+    let cancelIdle = () => {}
+
+    const enable = () => {
+      cancelIdle()
+      cancelIdle = scheduleIdle(() => setEnabled(true))
     }
 
-    let cancelIdle = scheduleIdle(() => setEnabled(true))
+    if (readCookieConsent() === 'accepted') {
+      enable()
+      return () => cancelIdle()
+    }
 
     const onStorage = (/** @type {StorageEvent} */ event) => {
-      if (event.key !== COOKIE_CONSENT_KEY) return
-      if (event.newValue === 'accepted') updateAnalyticsConsent('granted')
-      else if (event.newValue === 'rejected') updateAnalyticsConsent('denied')
+      if (event.key === COOKIE_CONSENT_KEY && event.newValue === 'accepted') enable()
     }
     const onConsent = () => {
-      const next = readCookieConsent()
-      if (next === 'accepted') updateAnalyticsConsent('granted')
-      else if (next === 'rejected') updateAnalyticsConsent('denied')
+      if (readCookieConsent() === 'accepted') enable()
     }
 
     window.addEventListener('storage', onStorage)
@@ -62,63 +54,32 @@ export default function GoogleTagManager() {
     }
   }, [])
 
+  if (!enabled) return null
+
   return (
     <>
       <Script
-        id="gtm-consent-default"
-        strategy="beforeInteractive"
+        id="gtm-script"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-window.gtag = gtag;
-gtag('consent', 'default', {
-  ad_storage: 'denied',
-  ad_user_data: 'denied',
-  ad_personalization: 'denied',
-  analytics_storage: 'denied',
-  wait_for_update: 500
-});
-try {
-  var c = localStorage.getItem('${COOKIE_CONSENT_KEY}');
-  if (c === 'accepted') {
-    gtag('consent', 'update', {
-      ad_storage: 'granted',
-      ad_user_data: 'granted',
-      ad_personalization: 'granted',
-      analytics_storage: 'granted'
-    });
-  }
-} catch (e) {}
-          `.trim(),
-        }}
-      />
-      {enabled ? (
-        <>
-          <Script
-            id="gtm-script"
-            strategy="lazyOnload"
-            dangerouslySetInnerHTML={{
-              __html: `
 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','${GTM_ID}');
-              `.trim(),
-            }}
-          />
-          <noscript>
-            <iframe
-              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-              height="0"
-              width="0"
-              style={{ display: 'none', visibility: 'hidden' }}
-              title="Google Tag Manager"
-            />
-          </noscript>
-        </>
-      ) : null}
+          `.trim(),
+        }}
+      />
+      <noscript>
+        <iframe
+          src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+          height="0"
+          width="0"
+          style={{ display: 'none', visibility: 'hidden' }}
+          title="Google Tag Manager"
+        />
+      </noscript>
     </>
   )
 }

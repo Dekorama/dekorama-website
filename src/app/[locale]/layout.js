@@ -5,6 +5,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import DeferredChrome from '@/components/DeferredChrome'
 import GoogleTagManager from '@/components/GoogleTagManager'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 import {
   metaDescription,
   businessDescription,
@@ -241,6 +242,7 @@ export default async function LocaleLayout({ children, params }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationJsonLd) }}
         />
         <GoogleTagManager />
+        <GoogleAnalytics />
         <NextIntlClientProvider locale={resolvedLocale} messages={messages}>
           <Header />
           <main>{children}</main>
