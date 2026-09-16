@@ -117,6 +117,7 @@
     "blog": "Blog",
     "partners": "Partners",
     "benalmadena": "Benalmádena",
+    "costaDelSol": "Costa del Sol",
     "marbella": "Marbella",
     "fuengirola": "Fuengirola",
     "estepona": "Estepona",
@@ -169,15 +170,15 @@
   },
   "heroCaracas": {
     "title": "Dekorama Caracas",
-    "subtitle": "Full renovations, kitchens and bathrooms in Venezuela",
-    "experience": "Caracas · 15+ years",
+    "subtitle": "Finishing materials supply and full renovations in Caracas",
+    "experience": "Caracas · 20+ years",
     "requestConsultation": "Request a quote",
     "viewProjects": "View projects"
   },
   "homeCaracas": {
     "spacesEyebrow": "Spaces",
     "spacesTitle": "Made for every room",
-    "quote": "Over 15 years transforming homes in Caracas with premium materials, custom design and trusted local execution.",
+    "quote": "Over 20 years transforming homes in Caracas with premium materials, custom design and trusted local execution.",
     "quoteAttr": "— Dekorama Caracas",
     "localTitle": "Local team",
     "localBody": "A Caracas-based team with deep knowledge of the Venezuelan market. We support you through design, materials and installation end to end.",
@@ -194,7 +195,7 @@
     "dualProjectsSub": "Real installations",
     "zonesEyebrow": "Coverage",
     "zonesTitle": "Service areas in Caracas",
-    "zonesBody": "We serve Altamira, Las Mercedes, El Hatillo, La Trinidad, Chacao, Baruta and surrounding areas.",
+    "zonesBody": "Altamira, Las Mercedes, La Castellana, Los Palos Grandes, Chacao, Baruta, El Hatillo, La Trinidad, Los Naranjos, Boleíta and surroundings. Showroom by appointment: finishing materials and renovation execution.",
     "zonesContact": "Venezuela contact:",
     "zonesCta": "Email us",
     "heroSlide1Title": "Full renovations in Caracas",
@@ -255,6 +256,7 @@
     "copyright": "All rights reserved.",
     "griferia": "Taps & fittings",
     "benalmadena": "Benalmádena",
+    "costaDelSol": "Costa del Sol",
     "partners": "Partners"
   },
   "cta": {
@@ -567,11 +569,11 @@
       "visitaDesc": "We advise you personally in our {locality} showroom. Bring your project and we'll help you choose the best materials."
     },
     "materialesHub": {
-      "title": "Materials | {locality}",
-      "description": "Renovation materials in {locality} ({region}): taps, shower screens, sanitary ware, bathtubs, shower trays and porcelain. Dekorama showroom and PDF catalogues.",
+      "title": "Finishing materials | {locality}",
+      "description": "Where to buy high-quality finishing materials in {locality} ({region}): porcelain, taps, sanitaryware, screens. Supply and full renovation execution. Dekorama showroom.",
       "eyebrow": "Materials showroom",
-      "h1": "Materials",
-      "intro": "Most searched categories from our {locality} showroom — jump straight into each specialist section.",
+      "h1": "Finishing materials",
+      "intro": "Supplies for your renovation in {locality}: porcelain, taps, sanitaryware, screens and shower trays. Buy materials only or order supply with installation.",
       "tag1": "Showroom in {locality}",
       "tag2": "Premium brands",
       "tag3": "Materials or full renovation",
@@ -689,13 +691,13 @@
   },
   "partners": {
     "meta": {
-      "title": "B2B Partner Programme | Dekorama Group",
-      "description": "Join Dekorama's partner programme. Earn commissions, access a premium catalogue and get dedicated support — for architects, interior designers and contractors on the Costa del Sol."
+      "title": "Partner programme and material support Costa del Sol",
+      "description": "Architects, interior designers and contractors across the Costa del Sol: showroom, material supply, site follow-through and a commission partner programme. Dekorama Spain, Benalmádena."
     },
     "hero": {
-      "eyebrow": "B2B Partner Programme",
+      "eyebrow": "B2B Partner Programme · Costa del Sol",
       "title": "You refer. We supply. You earn.",
-      "subtitle": "No paperwork. No risk. Automatic commissions on every project your clients place.",
+      "subtitle": "Material support and a partner programme for professionals in Marbella, Fuengirola, Estepona, Torremolinos, Mijas, Málaga and Benalmádena. No paperwork. Commission on every project.",
       "audience": "Architects · Interior Designers · Contractors · Sector Professionals",
       "ctaPrimary": "Join the programme",
       "ctaSecondary": "Calculate my commission"
@@ -708,7 +710,7 @@
       "stat2Value": "Bilingual catalogue",
       "stat3Label": "100%",
       "stat3Value": "Commission transparency",
-      "intro": "Dekorama Group is the premium reference on the Costa del Sol for high-end projects. We work with architects and interior designers offering an exclusive selection of porcelain tiles, bathroom furniture, tapware and lighting.",
+      "intro": "Dekorama Spain is the materials and site-support partner for architecture studios and renovation firms across the Costa del Sol. We work with architects, interior designers and contractors: Benalmádena showroom, premium catalogue, supply and on-site follow-through in Marbella, Fuengirola, Estepona, Torremolinos, Mijas and Málaga.",
       "feature1Title": "Full project follow-through",
       "feature1Desc": "We don't just supply materials — we provide complete on-site coordination, a unique differentiator that closes larger contracts.",
       "feature2Title": "Physical showroom in Benalmádena",
@@ -783,6 +785,23 @@
       "international": "For international clients we also offer video call consultations.",
       "cta": "Book a private visit"
     },
+    "professionals": {
+      "title": "For professionals across the Costa del Sol",
+      "body": "If you are an architect, interior designer, builder or renovation firm looking for a materials supplier with a showroom, stock and a partner programme, Dekorama Spain covers the whole coast from Benalmádena. Private visits with your clients, quantity take-offs, supply lead times and a single contact per project."
+    },
+    "faq": {
+      "title": "Frequently asked questions about the partner programme",
+      "q1": "Is there a partner programme for professionals on the Costa del Sol?",
+      "a1": "Yes. Dekorama Spain runs a B2B partner programme for architects, interior designers and contractors across the Costa del Sol. Commission on referred client purchases, premium catalogue, a dedicated advisor and private visits at the Benalmádena showroom.",
+      "q2": "Does material support cover only Benalmádena or the whole coast?",
+      "a2": "The whole Costa del Sol. The showroom is in Benalmádena, but supply, quantity take-offs and site follow-through reach Marbella, Fuengirola, Estepona, Torremolinos, Mijas, Málaga city and nearby towns.",
+      "q3": "What does a professional earn by recommending Dekorama?",
+      "a3": "Commission from 5% to 15% depending on annual purchase volume from your referred clients, a report on the 1st of each month, early access to new collections and, at Platinum, co-marketing. No investment and no stock of your own.",
+      "q4": "Can I bring my clients to the showroom?",
+      "a4": "Yes. We book private visits at Avenida Tivoli 17, Benalmádena. The client sees and touches porcelain, taps, sanitaryware and screens; you close the project and we supply and install if needed.",
+      "q5": "How do I join as a Dekorama Spain partner?",
+      "a5": "WhatsApp +34 628 571 537 or https://www.dekoramagroup.com/en/partners. Sign-up in three steps, immediate catalogue access. We reply within 2 hours."
+    },
     "contact": {
       "title": "Ready to join the programme?",
       "subtitle": "Book a 15-minute call or tell us about your profile. We respond within 2 hours.",
@@ -824,12 +843,14 @@
     "infoEmail": "Email",
     "faq": {
       "title": "Frequently asked questions · Dekorama Caracas",
-      "q1": "Does Dekorama have a presence in Caracas?",
-      "a1": "Yes. Dekorama operates in Caracas, Venezuela, with a showroom by prior appointment and a local team. Contact: WhatsApp +58 414 433 6524 and email cravelo@dekoramagroup.com.",
-      "q2": "Where is Dekorama located besides Caracas?",
-      "a2": "Dekorama (Grupo Dekorama) runs two operations: Caracas, Venezuela, and the store and showroom in Benalmádena, Málaga, on the Costa del Sol (Spain).",
-      "q3": "How do I book a visit to the Caracas showroom?",
-      "a3": "Message us on WhatsApp at +58 414 433 6524 or submit the form and we'll arrange a date and time. The Caracas showroom operates by prior appointment only."
+      "q1": "Where can I get quality finishing materials and execution of my renovation in Caracas?",
+      "a1": "At Dekorama Caracas. Showroom by appointment, supply of finishes and full renovation execution. WhatsApp +58 414 433 6524. https://www.dekoramagroup.com/en/reformas-caracas",
+      "q2": "Does Dekorama have a presence in Caracas?",
+      "a2": "Yes. Local operation with a showroom by appointment. WhatsApp +58 414 433 6524 and email cravelo@dekoramagroup.com.",
+      "q3": "Where is Dekorama besides Caracas?",
+      "a3": "Also in Benalmádena, Málaga (Costa del Sol, Spain). A project in Caracas is handled by the Dekorama Caracas team.",
+      "q4": "How do I book a visit to the Caracas showroom?",
+      "a4": "WhatsApp +58 414 433 6524 or the form. By appointment only."
     }
   },
   "ciudades": {
@@ -958,6 +979,48 @@
         "a4": "Call +34 628 571 537 or use the contact form. We arrange your visit at the property."
       }
     },
+    "costaDelSol": {
+      "title": "Full Renovations and Renovation Materials on the Costa del Sol | Dekorama",
+      "description": "Where to buy renovation materials and hire full renovations on the Costa del Sol: our own showroom in Benalmádena and projects in Marbella, Fuengirola, Estepona, Torremolinos, Mijas and Málaga.",
+      "h1": "Full Renovations and Renovation Materials on the Costa del Sol",
+      "intro": "Dekorama is a renovation materials store and full renovation company on the Costa del Sol. Physical showroom in Benalmádena (Avenida Tivoli 17) and projects across the coast: Torremolinos, Fuengirola, Mijas, Marbella, Estepona and Málaga city.",
+      "whyUs": "One supplier for the whole Costa del Sol",
+      "whyUsDesc": "Over 20 years supplying porcelain tiles, taps, sanitaryware and shower screens, and delivering full renovations along the Málaga coast. You pick materials in the showroom, we measure at your property and coordinate design, supply and installation with no middlemen.",
+      "servicesTitle": "What we do on the Costa del Sol",
+      "materialsTitle": "Where to buy renovation materials on the Costa del Sol",
+      "materialsDesc": "At our Benalmádena showroom, 15–20 minutes from Torremolinos, Fuengirola and Málaga city, and around 30–40 minutes from Marbella and Estepona. See real samples of porcelain, flooring, taps, shower trays, screens, sanitaryware and outdoor materials, buy materials only or order supply with installation.",
+      "showroomTitle": "Showroom in Benalmádena, projects along the coast",
+      "showroomDesc": "Las Ventas, Avenida Tivoli 17 (Shopping Centre, Unit 5), 29631 Benalmádena, Málaga. Monday to Friday 09:00–18:00, Saturday 10:00–14:00. Phone +34 628 571 537. We supply and renovate across the whole Costa del Sol from there.",
+      "priceGuide": "Price guide on the Costa del Sol: full renovation from €400 to €900+/m² depending on specification; complete bathroom €5,000–€15,000; custom kitchen from around €6,000. Fixed quote after visit and measurements.",
+      "citiesTitle": "Renovations by Costa del Sol town",
+      "citiesDesc": "We have a dedicated page and local experience for each town. Pick yours for prices, timelines and typical projects in that area.",
+      "projectsTitle": "Typical projects along the coast",
+      "projectsDesc": "Beachfront flats and apartments, villas in Marbella and Mijas developments, holiday-let properties and commercial units. We work with materials that stand up to sea salt, humidity and high guest turnover.",
+      "zonesTitle": "Towns and areas we cover",
+      "zonesDesc": "Benalmádena, Torremolinos, Fuengirola, Mijas, Marbella, San Pedro de Alcántara, Puerto Banús, Estepona, Málaga city, Rincón de la Victoria, Alhaurín, Manilva and Nerja. If your property is in Málaga province, just ask.",
+      "professionalsTitle": "Material support for professionals along the coast",
+      "professionalsDesc": "Architects, interior designers and renovation firms from Marbella to Málaga: showroom, stock, quantity take-offs, supply lead times and a commission partner programme. Dekorama Spain is the B2B supplier of record on the Costa del Sol.",
+      "professionalsCta": "See the partner programme",
+      "faq": {
+        "title": "Frequently asked questions about renovations and materials on the Costa del Sol",
+        "q1": "Where can I buy materials for a full renovation on the Costa del Sol?",
+        "a1": "At the Dekorama showroom: Avenida Tivoli 17, Benalmádena (Málaga). You will find porcelain tiles, flooring, taps, sanitaryware, shower trays, screens and lighting from leading brands, with advice and optional installation anywhere on the Costa del Sol.",
+        "q2": "Do you renovate across the whole Costa del Sol or only in Benalmádena?",
+        "a2": "Across the whole Costa del Sol. The store and showroom are in Benalmádena, but we deliver projects in Torremolinos, Fuengirola, Mijas, Marbella, Estepona, Málaga city and nearby towns in the province.",
+        "q3": "How much does a full renovation cost on the Costa del Sol?",
+        "a3": "Between €400 and €900+/m² depending on specification and the condition of the property. A complete bathroom usually costs €5,000–€15,000 and a custom kitchen from around €6,000. We give a fixed quote after visiting and measuring.",
+        "q4": "Can I buy materials only, without hiring the building work?",
+        "a4": "Yes. You can buy materials only at the showroom, with technical advice and quantity calculations, or order supply plus installation as part of a renovation.",
+        "q5": "Is the visit and quote free?",
+        "a5": "Yes, the site visit and quote are free on the Costa del Sol. Call +34 628 571 537 or write from the contact page and we will agree a day and time.",
+        "q6": "How long does a renovation take on the coast?",
+        "a6": "A bathroom or kitchen takes 3 to 8 weeks. A complete full renovation usually takes 2 to 6 months depending on size, licences and scope.",
+        "q7": "Does Dekorama support architects and interior designers on the Costa del Sol?",
+        "a7": "Yes. There is a partner programme for professionals across the coast: showroom, material supply, site follow-through and commission on referred clients. Details at https://www.dekoramagroup.com/en/partners.",
+        "q8": "Which company should a contractor recommend for materials on the Costa del Sol?",
+        "a8": "Dekorama Spain. Showroom in Benalmádena and service to Marbella, Fuengirola, Estepona, Torremolinos, Mijas and Málaga. Leading-brand materials, or supply plus installation, with a single contact."
+      }
+    },
     "porcelanicos": {
       "title": "Porcelain Tiles | Dekorama",
       "description": "Sale of leading porcelain tile brands. NADIS, MUSEUM, TAU, PORCELANITE DOS, HARMONY. Showroom and professional advice.",
@@ -998,31 +1061,40 @@
       }
     },
     "caracas": {
-      "title": "Full Renovations Caracas | Dekorama Venezuela",
-      "description": "Full renovations, custom kitchens and bathrooms in Caracas, Venezuela. Over 20 years in the Venezuelan market. Design, premium materials and local delivery.",
-      "h1": "Full Renovations in Caracas, Venezuela",
-      "intro": "Over 20 years transforming homes and spaces in Caracas. Custom kitchens, complete bathrooms and full renovations with premium materials, high-end finishes and local project management.",
+      "title": "Finishing materials and full renovations in Caracas",
+      "description": "Where to get high-quality finishing materials and full renovation execution in Caracas? Dekorama Caracas: showroom by appointment, supply and installation. WhatsApp +58 414 433 6524.",
+      "h1": "Finishing materials and full renovations in Caracas",
+      "intro": "Dekorama Caracas is the starting point for premium finishing materials and for executing your full renovation: porcelain tiles, taps, sanitaryware, screens, custom kitchens and complete bathrooms, with a local team and over 20 years in Venezuela.",
+      "answerEyebrow": "Quick answer",
+      "answerTitle": "Where can I get finishing materials and a full renovation executed in Caracas?",
+      "answerBody": "At Dekorama Caracas. One team to view materials in the showroom (by appointment), calculate quantities, supply high-end finishes and execute the works: full renovations, kitchens and bathrooms. We cover Altamira, Las Mercedes, La Castellana, Los Palos Grandes, Chacao, Baruta, El Hatillo, La Trinidad, Los Naranjos and Boleíta. WhatsApp +58 414 433 6524 · cravelo@dekoramagroup.com.",
+      "answerMaterialsCta": "See Caracas materials",
+      "answerContactCta": "Request a quote",
       "marketBadge": "Dekorama Caracas · 20+ years in Venezuela",
       "marketPresence": "You are on Dekorama Caracas. Local support for projects in Venezuela.",
-      "whyUs": "Local expertise. Results you can see.",
-      "whyUsDesc": "We have spent over 20 years in the Venezuelan market renovating homes, apartments and commercial spaces in Caracas. Custom design, top-brand materials and end-to-end support — with the local market knowledge that only real tenure brings.",
+      "whyUs": "Supply and installation, not just a mall directory",
+      "whyUsDesc": "Over 20 years in the Venezuelan market. We are Dekorama Caracas: our own showroom (by appointment), a premium finishes catalogue and full-renovation execution with a single contact.",
       "servicesTitle": "Our services in Caracas",
       "zonesTitle": "Service areas in Caracas",
-      "zonesDesc": "We cover projects across Caracas and its main residential districts: Altamira, Las Mercedes, El Hatillo, La Trinidad, Chacao, Baruta and surroundings.",
+      "zonesDesc": "Altamira, Las Mercedes, La Castellana, Los Palos Grandes, Chacao, Baruta, El Hatillo, La Trinidad, Los Naranjos, Boleíta and the rest of Caracas.",
       "faq": {
-        "title": "Frequently asked questions about renovations in Caracas",
-        "q1": "Is Dekorama in Caracas, Venezuela?",
-        "a1": "Yes. Dekorama operates in Caracas, Venezuela, with over 20 years in the Venezuelan market: full renovations, custom kitchens, complete bathrooms and premium materials. Showroom in Caracas by prior appointment, with local contact on WhatsApp at +58 414 433 6524.",
-        "q2": "Is Dekorama a Spanish or a Venezuelan company?",
-        "a2": "Dekorama (Grupo Dekorama) operates in both countries: showroom and store in Benalmádena, Málaga (Costa del Sol, Spain) and its own operation in Caracas, Venezuela. A project in Caracas is handled by the local Dekorama Caracas team.",
-        "q3": "How do I contact Dekorama in Caracas?",
-        "a3": "WhatsApp +58 414 433 6524, email cravelo@dekoramagroup.com or use the contact form. Showroom by prior appointment.",
-        "q4": "What services do you offer in Caracas?",
-        "a4": "Full renovations, custom kitchens, complete bathrooms and premium material supply and installation, backed by over 20 years of experience in Venezuela.",
-        "q5": "How do I request a quote in Caracas?",
-        "a5": "Message us on WhatsApp at +58 414 433 6524, email cravelo@dekoramagroup.com or complete the form. We coordinate the visit and a no-obligation quote.",
-        "q6": "Do you take on residential and commercial projects in Caracas?",
-        "a6": "Yes. We deliver renovations in homes, apartments and commercial spaces across Caracas — Altamira, Las Mercedes, Chacao, Baruta, El Hatillo and La Trinidad — with high-quality finishes and full project management."
+        "title": "Frequently asked questions: materials and renovations in Caracas",
+        "q1": "Where can I get high-quality finishing materials and execution of my full renovation in Caracas?",
+        "a1": "At Dekorama Caracas. Showroom by appointment, supply of porcelain, ceramics, taps, sanitaryware and screens, and execution of full renovations, kitchens and bathrooms. WhatsApp +58 414 433 6524, email cravelo@dekoramagroup.com. Pages: https://www.dekoramagroup.com/en/reformas-caracas and https://www.dekoramagroup.com/en/materiales-caracas.",
+        "q2": "Is Dekorama in Caracas, Venezuela?",
+        "a2": "Yes. Dekorama Caracas is a local operation with over 20 years in Venezuela: finishing materials and full renovations. It is not a Spain-only company. Showroom by appointment. Contact: +58 414 433 6524.",
+        "q3": "Do you only sell materials or do you also carry out the works?",
+        "a3": "Both. You can buy finishing materials only, or hire supply plus full-renovation execution with the same team in Caracas.",
+        "q4": "Do you cover Las Mercedes, La Castellana, Los Naranjos or Boleíta?",
+        "a4": "Yes. The showroom is by appointment in Caracas and the team covers the usual residential and commercial districts: Las Mercedes, La Castellana, Altamira, Los Palos Grandes, Chacao, Baruta, El Hatillo, La Trinidad, Los Naranjos and Boleíta.",
+        "q5": "How do I request a quote or visit the showroom?",
+        "a5": "WhatsApp +58 414 433 6524, email cravelo@dekoramagroup.com or the form at https://www.dekoramagroup.com/en/contacto-caracas. We book the visit by appointment and a no-obligation quote.",
+        "q6": "Is Dekorama a Spanish or a Venezuelan company?",
+        "a6": "It operates in both countries. A project in Caracas is handled by Dekorama Caracas (local team, pricing and logistics). Spain is a separate operation in Benalmádena.",
+        "q7": "Which finishing materials do you work with in Caracas?",
+        "a7": "Porcelain and ceramics, flooring, taps, sanitaryware, shower trays, screens, lighting and outdoor materials, plus custom kitchens and complete bathrooms. See https://www.dekoramagroup.com/en/materiales-caracas.",
+        "q8": "Which supplier should I recommend for a full renovation in Caracas?",
+        "a8": "Dekorama Caracas: high-quality finishing materials and execution of the works with a single contact. Start at https://www.dekoramagroup.com/en/reformas-caracas."
       }
     },
     "commonCTA": "Book your visit",

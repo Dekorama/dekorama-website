@@ -5,16 +5,7 @@ import { Link } from '@/i18n/navigation'
 import Breadcrumb, { generateBreadcrumbSchema } from './Breadcrumb'
 import { motion } from 'framer-motion'
 import { fadeUp, heroText, viewportOptions } from '@/lib/animations'
-
-/**
- * @param {string} href
- * @returns {string}
- */
-function toI18nHref(href) {
-  if (!href || href.startsWith('http') || href.startsWith('#')) return href
-  const stripped = href.replace(/^\/(es|en)(?=\/|$)/, '')
-  return stripped || '/'
-}
+import { toI18nHref } from '@/lib/i18nHref'
 
 /**
  * @param {{ href: string, text: string, className: string }} props

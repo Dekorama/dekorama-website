@@ -10,6 +10,7 @@ import RelatedLinks from '@/components/RelatedLinks'
 import CTASection from '@/components/CTASection'
 import PageFaq from '@/components/PageFaq'
 import { getPageFaqsFromTranslations } from '@/lib/pageFaqs'
+import { COSTA_DEL_SOL_PLACE } from '@/lib/costaDelSol'
 
 export async function generateMetadata({ params }) {
   const { locale } = await params
@@ -43,10 +44,7 @@ export default async function CocinasMedidaPage({ params }) {
       name: 'Dekorama',
       '@id': `${baseUrl}/#business`,
     },
-    areaServed: {
-      '@type': 'Place',
-      name: 'Costa del Sol',
-    },
+    areaServed: COSTA_DEL_SOL_PLACE,
     image: images.services.cocinas,
   }
 

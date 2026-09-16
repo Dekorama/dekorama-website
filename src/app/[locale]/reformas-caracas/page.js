@@ -1,8 +1,9 @@
 import { images } from '@/data/images'
 import { baseUrl } from '@/lib/site'
 import { pageAlternates } from '@/lib/seo'
-import { markets } from '@/lib/markets'
+import { buildCaracasServiceJsonLd } from '@/lib/caracas'
 import { getTranslations } from 'next-intl/server'
+import { Link } from '@/i18n/navigation'
 import Hero from '@/components/Hero'
 import FeaturedSpaces from '@/components/home/FeaturedSpaces'
 import QuoteStrip from '@/components/home/QuoteStrip'
@@ -15,8 +16,6 @@ import CTAFinal from '@/components/CTAFinal'
 import PageFaq from '@/components/PageFaq'
 import SetVenezuelaMarket from '@/components/SetVenezuelaMarket'
 import { getPageFaqsFromTranslations } from '@/lib/pageFaqs'
-
-const ve = markets.venezuela
 
 export async function generateMetadata({ params }) {
   const { locale } = await params
@@ -40,24 +39,7 @@ export default async function ReformasCaracasPage({ params }) {
   const t = await getTranslations({ locale, namespace: 'ciudades.caracas' })
 
   const serviceJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    serviceType: locale === 'es' ? 'Reformas Integrales' : 'Full Renovations',
-    provider: {
-      '@type': 'LocalBusiness',
-      name: ve.name,
-      '@id': ve.businessId,
-    },
-    areaServed: {
-      '@type': 'City',
-      name: 'Caracas',
-      '@id': 'https://www.wikidata.org/wiki/Q1533',
-      containedInPlace: {
-        '@type': 'Country',
-        name: 'Venezuela',
-        addressCountry: 'VE',
-      },
-    },
+    ...buildCaracasServiceJsonLd(locale, t('description')),
     image: `${baseUrl}${images.markets.caracas}`,
   }
 
@@ -73,6 +55,25 @@ export default async function ReformasCaracasPage({ params }) {
 
       <div className="min-h-screen bg-white">
         <Hero variant="caracas" />
+        <section className="section-editorial border-b border-gray-200 bg-white">
+          <div className="mx-auto max-w-3xl">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-gray-500">
+              {t('answerEyebrow')}
+            </p>
+            <h2 className="mb-4 font-heading text-2xl font-normal tracking-tight text-black sm:text-3xl">
+              {t('answerTitle')}
+            </h2>
+            <p className="mb-6 text-base leading-relaxed text-gray-600 md:text-lg">{t('answerBody')}</p>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Link href="/materiales-caracas" className="btn-primary text-center">
+                {t('answerMaterialsCta')}
+              </Link>
+              <Link href="/contacto-caracas" className="btn-discover text-center">
+                {t('answerContactCta')}
+              </Link>
+            </div>
+          </div>
+        </section>
         <FeaturedSpaces />
         <QuoteStrip variant="caracas" />
         <TwoColShowroom variant="caracas" />

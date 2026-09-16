@@ -16,7 +16,7 @@ export const organizationDescription =
 
 /** Descripción del negocio en Caracas (LocalBusiness Venezuela). */
 export const venezuelaBusinessDescription =
-  'Dekorama Caracas: reformas integrales, cocinas a medida y baños completos en Caracas, Venezuela. Más de 20 años en el mercado venezolano. Showroom con cita previa y atención local en Altamira, Las Mercedes, Chacao, Baruta, El Hatillo y La Trinidad.'
+  'Dekorama Caracas: suministro de materiales de acabado de alta calidad y ejecución de reformas integrales en Caracas, Venezuela. Porcelánicos, grifería, sanitarios, mamparas, cocinas a medida y baños completos. Más de 20 años en el mercado venezolano. Showroom con cita previa. Altamira, Las Mercedes, La Castellana, Chacao, Baruta, El Hatillo, La Trinidad, Los Naranjos y Boleíta.'
 
 /** URL base del sitio para canonical, OG y sitemap */
 export const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.dekoramagroup.com'

@@ -14,8 +14,11 @@ import {
 } from '@/lib/materialRoutes'
 import CTAFinal from '@/components/CTAFinal'
 import PageHeader from '@/components/PageHeader'
+import PageFaq from '@/components/PageFaq'
 import SetVenezuelaMarket from '@/components/SetVenezuelaMarket'
 import { images } from '@/data/images'
+import { buildCaracasServiceJsonLd } from '@/lib/caracas'
+import { getPageFaqsFromTranslations } from '@/lib/pageFaqs'
 
 /** @typedef {import('@/lib/marketPreference').MarketId} MarketId */
 
@@ -57,6 +60,7 @@ export default async function MaterialesHubView({ locale, marketId }) {
   const vars = { locality: market.locality, region: market.region }
   const t = await getTranslations({ locale, namespace: 'pages.materialesHub' })
   const tCommon = await getTranslations({ locale, namespace: 'breadcrumb' })
+  const tCaracas = await getTranslations({ locale, namespace: 'ciudades.caracas' })
   const path = materialsPath(marketId)
   const premiumHref = marketMaterialsPremiumHref(marketId)
   const catalogHref = marketCatalogHref(marketId)
@@ -113,11 +117,28 @@ export default async function MaterialesHubView({ locale, marketId }) {
     ],
   }
 
+  const caracasFaqs =
+    marketId === 'venezuela'
+      ? getPageFaqsFromTranslations(
+          (key) => tCaracas(key),
+          { has: (key) => tCaracas.has(key) },
+        )
+      : []
+  const caracasServiceJsonLd =
+    marketId === 'venezuela' ? buildCaracasServiceJsonLd(locale, t('description', vars)) : null
+
   return (
     <>
       {marketId === 'venezuela' ? <SetVenezuelaMarket /> : null}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+
+      {caracasServiceJsonLd ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(caracasServiceJsonLd) }}
+        />
+      ) : null}
 
       <div className="min-h-screen bg-white">
         <PageHeader
@@ -195,6 +216,10 @@ export default async function MaterialesHubView({ locale, marketId }) {
             </div>
           </div>
         </section>
+
+        {caracasFaqs.length > 0 ? (
+          <PageFaq title={tCaracas('faq.title')} faqs={caracasFaqs} />
+        ) : null}
 
         <CTAFinal marketId={marketId} />
       </div>

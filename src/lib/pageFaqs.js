@@ -8,7 +8,7 @@ export function getPageFaqsFromTranslations(t, options = {}) {
   const { has } = options
   const faqs = []
 
-  for (let i = 1; i <= 6; i += 1) {
+  for (let i = 1; i <= 8; i += 1) {
     const qKey = `faq.q${i}`
     const aKey = `faq.a${i}`
     if (has && !has(qKey)) break

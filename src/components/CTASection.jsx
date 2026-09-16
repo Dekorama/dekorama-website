@@ -1,4 +1,5 @@
 import { Link } from '@/i18n/navigation'
+import { toI18nHref } from '@/lib/i18nHref'
 
 /**
  * Bottom CTA band — charcoal editorial style.
@@ -32,7 +33,7 @@ export default function CTASection({ title, description, buttons = [], className
                   : 'px-8 py-3.5 bg-white text-black text-xs font-semibold uppercase tracking-[0.18em] transition-colors duration-300 hover:bg-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black'
 
               return (
-                <Link key={index} href={button.href} className={buttonClass}>
+                <Link key={index} href={toI18nHref(button.href)} className={buttonClass}>
                   {button.text}
                 </Link>
               )

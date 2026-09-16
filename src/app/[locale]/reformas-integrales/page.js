@@ -9,6 +9,7 @@ import RelatedLinks from '@/components/RelatedLinks'
 import CTAFinal from '@/components/CTAFinal'
 import PageFaq from '@/components/PageFaq'
 import { getPageFaqsFromTranslations } from '@/lib/pageFaqs'
+import { COSTA_DEL_SOL_PLACE } from '@/lib/costaDelSol'
 
 export async function generateMetadata({ params }) {
   const { locale } = await params
@@ -44,10 +45,7 @@ export default async function ReformasIntegralesPage({ params }) {
       name: 'Dekorama',
       '@id': `${baseUrl}/#business`,
     },
-    areaServed: {
-      '@type': 'Place',
-      name: 'Costa del Sol',
-    },
+    areaServed: COSTA_DEL_SOL_PLACE,
     image: images.services.reformas,
   }
 
@@ -97,6 +95,14 @@ export default async function ReformasIntegralesPage({ params }) {
   ]
 
   const relatedServices = [
+    {
+      title: isEs ? 'Reformas Costa del Sol' : 'Renovations Costa del Sol',
+      description: isEs
+        ? 'Materiales y reformas integrales en toda la Costa del Sol'
+        : 'Materials and full renovations across the Costa del Sol',
+      href: '/reformas-costa-del-sol',
+      image: images.services.reformas,
+    },
     {
       title: isEs ? 'Reformas Benalmádena' : 'Renovations Benalmádena',
       description: isEs ? 'Showroom y sede en Benalmádena' : 'Showroom and HQ in Benalmádena',

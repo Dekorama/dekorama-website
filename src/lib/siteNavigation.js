@@ -47,6 +47,12 @@ export function getSiteNavigation(locale) {
           'Completed full renovations, kitchens and bathrooms by Dekorama.',
       },
       {
+        name: 'Partners',
+        url: `${prefix}/partners`,
+        description:
+          'Material support and partner programme for architects, designers and contractors on the Costa del Sol.',
+      },
+      {
         name: 'Contact',
         url: `${prefix}/contacto`,
         description:
@@ -91,6 +97,12 @@ export function getSiteNavigation(locale) {
       url: `${prefix}/proyectos`,
       description:
         'Galería de reformas integrales, cocinas y baños realizados por Dekorama.',
+    },
+    {
+      name: 'Partners',
+      url: `${prefix}/partners`,
+      description:
+        'Apoyo en materiales y programa de colaboradores para arquitectos, interioristas y reformistas de la Costa del Sol.',
     },
     {
       name: 'Contacto',

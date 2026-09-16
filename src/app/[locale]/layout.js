@@ -14,6 +14,7 @@ import {
   socialProfiles,
 } from '@/lib/site'
 import { markets, buildLocalBusinessJsonLd } from '@/lib/markets'
+import { COSTA_DEL_SOL_PLACE } from '@/lib/costaDelSol'
 import { buildSiteNavigationJsonLd } from '@/lib/siteNavigation'
 import { pageAlternates } from '@/lib/seo'
 
@@ -166,6 +167,7 @@ export default async function LocaleLayout({ children, params }) {
         name: 'España',
         addressCountry: 'ES',
       },
+      COSTA_DEL_SOL_PLACE,
       {
         '@type': 'Country',
         name: 'Venezuela',

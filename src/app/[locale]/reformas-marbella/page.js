@@ -10,6 +10,7 @@ import RelatedLinks from '@/components/RelatedLinks'
 import CTASection from '@/components/CTASection'
 import PageFaq from '@/components/PageFaq'
 import { getPageFaqsFromTranslations } from '@/lib/pageFaqs'
+import { buildTownAreaServed } from '@/lib/costaDelSol'
 
 export async function generateMetadata({ params }) {
   const { locale } = await params
@@ -42,11 +43,7 @@ export default async function ReformasMarbellaPage({ params }) {
       name: 'Dekorama',
       '@id': `${baseUrl}/#business`,
     },
-    areaServed: {
-      '@type': 'City',
-      name: 'Marbella',
-      '@id': 'https://www.wikidata.org/wiki/Q15088',
-    },
+    areaServed: buildTownAreaServed('Marbella'),
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Servicios de Reforma en Marbella',
@@ -101,6 +98,14 @@ export default async function ReformasMarbellaPage({ params }) {
   ]
 
   const relatedServices = [
+    {
+      title: locale === 'es' ? 'Reformas Costa del Sol' : 'Renovations Costa del Sol',
+      description: locale === 'es'
+        ? 'Materiales y reformas integrales en toda la Costa del Sol'
+        : 'Materials and full renovations across the Costa del Sol',
+      href: '/reformas-costa-del-sol',
+      image: images.services.reformas,
+    },
     {
       title: locale === 'es' ? 'Reformas Benalmádena' : 'Renovations Benalmádena',
       description: locale === 'es'

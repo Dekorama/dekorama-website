@@ -497,6 +497,36 @@ export default function PartnersPage() {
         </div>
       </section>
 
+      <section className="section-editorial border-t border-gray-200 bg-gray-bg">
+        <div className="mx-auto max-w-4xl text-center">
+          <SectionHeading title={t('professionals.title')} subtitle={t('professionals.body')} />
+        </div>
+      </section>
+
+      <section
+        className="section-editorial border-t border-gray-200 bg-white"
+        aria-labelledby="partners-faq-heading"
+      >
+        <div className="mx-auto max-w-3xl">
+          <h2
+            id="partners-faq-heading"
+            className="mb-8 font-heading text-2xl font-normal tracking-tight text-black sm:text-3xl md:mb-10 md:text-4xl"
+          >
+            {t('faq.title')}
+          </h2>
+          <dl className="space-y-8">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <div key={i} className="border-t border-gray-300 pt-6">
+                <dt className="mb-2 text-base font-semibold tracking-tight text-black sm:text-lg">
+                  {t(`faq.q${i}`)}
+                </dt>
+                <dd className="text-sm leading-relaxed text-gray-600 md:text-base">{t(`faq.a${i}`)}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
       {/* Contact */}
       <section id="contacto-partners" className="cta-section">
         <div className="mx-auto max-w-3xl text-center">

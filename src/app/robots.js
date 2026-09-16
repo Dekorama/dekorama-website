@@ -23,7 +23,7 @@ const AI_CRAWLERS = [
   'CCBot',
 ]
 
-const DISALLOW = ['/api/', '/partners', '/link-exchange']
+const DISALLOW = ['/api/', '/link-exchange']
 
 /** @returns {import('next').MetadataRoute.Robots} */
 export default function robots() {

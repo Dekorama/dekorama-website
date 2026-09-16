@@ -8,6 +8,7 @@ import RelatedLinks from '@/components/RelatedLinks'
 import CTASection from '@/components/CTASection'
 import PageFaq from '@/components/PageFaq'
 import { getPageFaqsFromTranslations } from '@/lib/pageFaqs'
+import { buildTownAreaServed } from '@/lib/costaDelSol'
 
 export async function generateMetadata({ params }) {
   const { locale } = await params
@@ -41,11 +42,7 @@ export default async function ReformasBenalmadenaPage({ params }) {
       name: 'Dekorama',
       '@id': `${baseUrl}/#business`,
     },
-    areaServed: {
-      '@type': 'City',
-      name: 'Benalmádena',
-      '@id': 'https://www.wikidata.org/wiki/Q492532',
-    },
+    areaServed: buildTownAreaServed('Benalmádena'),
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: isEs
@@ -92,6 +89,14 @@ export default async function ReformasBenalmadenaPage({ params }) {
   ]
 
   const relatedServices = [
+    {
+      title: isEs ? 'Reformas Costa del Sol' : 'Renovations Costa del Sol',
+      description: isEs
+        ? 'Materiales y reformas integrales en toda la Costa del Sol'
+        : 'Materials and full renovations across the Costa del Sol',
+      href: '/reformas-costa-del-sol',
+      image: images.services.reformas,
+    },
     {
       title: isEs ? 'Reformas Integrales' : 'Full Renovations',
       description: isEs ? 'Reforma completa de tu hogar' : 'Complete renovation of your home',

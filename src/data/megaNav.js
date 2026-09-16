@@ -118,6 +118,7 @@ export const megaNavItems = [
         titleKey: 'colLocations',
         links: [
           { labelKey: 'benalmadena', href: '/contacto' },
+          { labelKey: 'costaDelSol', href: '/reformas-costa-del-sol' },
           { labelKey: 'marbella', href: '/reformas-marbella' },
           { labelKey: 'fuengirola', href: '/reformas-fuengirola' },
           { labelKey: 'estepona', href: '/reformas-estepona' },

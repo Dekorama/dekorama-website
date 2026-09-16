@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { motion } from 'framer-motion'
 import { staggerContainer, staggerItem, viewportOptions } from '@/lib/animations'
+import { toI18nHref } from '@/lib/i18nHref'
 
 /**
  * Related links as editorial mini-hero tiles.
@@ -34,7 +35,7 @@ export default function RelatedLinks({ title, links = [], className = '' }) {
         >
           {links.map((link, index) => (
             <motion.div key={link.href || index} variants={staggerItem}>
-              <Link href={link.href} className="group block">
+              <Link href={toI18nHref(link.href)} className="group block">
                 {link.image ? (
                   <div className="relative mb-5 aspect-[4/5] overflow-hidden bg-gray-100">
                     <Image

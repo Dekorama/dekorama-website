@@ -10,6 +10,7 @@ import RelatedLinks from '@/components/RelatedLinks'
 import CTASection from '@/components/CTASection'
 import PageFaq from '@/components/PageFaq'
 import { getPageFaqsFromTranslations } from '@/lib/pageFaqs'
+import { buildTownAreaServed } from '@/lib/costaDelSol'
 
 export async function generateMetadata({ params }) {
   const { locale } = await params
@@ -42,11 +43,7 @@ export default async function ReformasEsteponaPage({ params }) {
       name: 'Dekorama',
       '@id': `${baseUrl}/#business`,
     },
-    areaServed: {
-      '@type': 'City',
-      name: 'Estepona',
-      '@id': 'https://www.wikidata.org/wiki/Q15088',
-    },
+    areaServed: buildTownAreaServed('Estepona'),
   }
 
   const faqs = getPageFaqsFromTranslations((key) => t(key), { has: (key) => t.has(key) })
@@ -71,6 +68,14 @@ export default async function ReformasEsteponaPage({ params }) {
   ]
 
   const relatedServices = [
+    {
+      title: locale === 'es' ? 'Reformas Costa del Sol' : 'Renovations Costa del Sol',
+      description: locale === 'es'
+        ? 'Materiales y reformas integrales en toda la Costa del Sol'
+        : 'Materials and full renovations across the Costa del Sol',
+      href: '/reformas-costa-del-sol',
+      image: images.services.reformas,
+    },
     {
       title: locale === 'es' ? 'Reformas Integrales' : 'Full Renovations',
       description: locale === 'es' ? 'Reforma completa de tu hogar' : 'Complete renovation of your home',

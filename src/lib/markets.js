@@ -1,4 +1,5 @@
 import { baseUrl } from '@/lib/site'
+import { COSTA_DEL_SOL_PLACE, TOWN_WIKIDATA } from '@/lib/costaDelSol'
 
 /**
  * Format E.164 into a readable display string.
@@ -66,6 +67,7 @@ const venezuelaTelephone =
  * @property {string[]} alternateNames — brand variants for schema `alternateName`
  * @property {string[]} serviceZones — districts/towns listed in schema `areaServed`
  * @property {string} [wikidataId] — city entity, disambiguates the location for answer engines
+ * @property {Record<string, unknown>} [regionPlace] — region node wrapping the service zones
  * @property {string} locality — city/showroom label for shared copy ({locality})
  * @property {string} region — area label for shared copy ({region})
  */
@@ -99,11 +101,13 @@ export const markets = {
       'Benalmádena',
       'Torremolinos',
       'Fuengirola',
+      'Mijas',
       'Marbella',
       'Estepona',
       'Málaga',
     ],
-    wikidataId: 'https://www.wikidata.org/wiki/Q1492462',
+    wikidataId: 'https://www.wikidata.org/wiki/Q488869',
+    regionPlace: COSTA_DEL_SOL_PLACE,
     locality: 'Benalmádena',
     region: 'Costa del Sol',
   },
@@ -136,10 +140,14 @@ export const markets = {
     serviceZones: [
       'Altamira',
       'Las Mercedes',
+      'La Castellana',
+      'Los Palos Grandes',
       'Chacao',
       'Baruta',
       'El Hatillo',
       'La Trinidad',
+      'Los Naranjos',
+      'Boleíta',
     ],
     wikidataId: 'https://www.wikidata.org/wiki/Q1533',
     locality: 'Caracas',
@@ -214,14 +222,24 @@ export function buildLocalBusinessJsonLd(market, opts = {}) {
     },
     areaServed: [
       city,
-      ...market.serviceZones.map((zone) => ({
-        '@type': 'Place',
-        name: zone,
-        containedInPlace: {
-          '@type': 'City',
-          name: market.address.addressLocality,
-        },
-      })),
+      ...(market.regionPlace ? [market.regionPlace] : []),
+      // Zones sit inside the region (Marbella is not inside Benalmádena); markets
+      // without a region keep the city as the parent for their districts.
+      ...market.serviceZones.map((zone) => {
+        /** @type {Record<string, unknown>} */
+        const place = {
+          '@type': market.regionPlace ? 'City' : 'Place',
+          name: zone,
+          containedInPlace: market.regionPlace || {
+            '@type': 'City',
+            name: market.address.addressLocality,
+          },
+        }
+        if (market.regionPlace && TOWN_WIKIDATA[zone]) {
+          place.sameAs = TOWN_WIKIDATA[zone]
+        }
+        return place
+      }),
     ],
     knowsLanguage: ['es', 'en'],
     parentOrganization: { '@id': `${baseUrl}/#organization` },

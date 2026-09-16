@@ -117,6 +117,7 @@
     "blog": "Blog",
     "partners": "Colaboradores",
     "benalmadena": "Benalmádena",
+    "costaDelSol": "Costa del Sol",
     "marbella": "Marbella",
     "fuengirola": "Fuengirola",
     "estepona": "Estepona",
@@ -169,7 +170,7 @@
   },
   "heroCaracas": {
     "title": "Dekorama Caracas",
-    "subtitle": "Reformas integrales, cocinas y baños en Venezuela",
+    "subtitle": "Suministro de materiales de acabado y reformas integrales en Caracas",
     "experience": "Caracas · +20 años",
     "requestConsultation": "Pedir presupuesto",
     "viewProjects": "Ver proyectos"
@@ -194,7 +195,7 @@
     "dualProjectsSub": "Instalaciones reales",
     "zonesEyebrow": "Cobertura",
     "zonesTitle": "Zonas de servicio en Caracas",
-    "zonesBody": "Atendemos Altamira, Las Mercedes, El Hatillo, La Trinidad, Chacao, Baruta y alrededores.",
+    "zonesBody": "Altamira, Las Mercedes, La Castellana, Los Palos Grandes, Chacao, Baruta, El Hatillo, La Trinidad, Los Naranjos, Boleíta y alrededores. Showroom con cita previa: materiales de acabado y ejecución de la reforma.",
     "zonesContact": "Contacto Venezuela:",
     "zonesCta": "Escribirnos",
     "heroSlide1Title": "Reformas integrales en Caracas",
@@ -255,6 +256,7 @@
     "copyright": "Todos los derechos reservados.",
     "griferia": "Grifería",
     "benalmadena": "Benalmádena",
+    "costaDelSol": "Costa del Sol",
     "partners": "Colaboradores"
   },
   "cta": {
@@ -567,11 +569,10 @@
       "visitaDesc": "Te asesoramos personalmente en nuestro showroom de {locality}. Trae tu proyecto y te ayudamos a escoger los mejores materiales."
     },
     "materialesHub": {
-      "title": "Materiales | {locality}",
-      "description": "Materiales para reforma en {locality} ({region}): grifería, mamparas, sanitarios, bañeras, platos de ducha y porcelánicos. Showroom Dekorama y catálogo PDF.",
-      "eyebrow": "Showroom de materiales",
-      "h1": "Materiales",
-      "intro": "Categorías más buscadas de nuestro showroom en {locality}: entra directo a cada sección especializada.",
+      "title": "Materiales de acabado | {locality}",
+      "description": "Dónde comprar materiales de acabado de excelente calidad en {locality} ({region}): porcelánicos, grifería, sanitarios, mamparas. Suministro y ejecución de reformas integrales. Showroom Dekorama.",
+      "h1": "Materiales de acabado",
+      "intro": "Suministros para tu reforma en {locality}: porcelánicos, grifería, sanitarios, mamparas y platos de ducha. Compra solo material o encarga suministro con ejecución de obra.",
       "tag1": "Showroom en {locality}",
       "tag2": "Marcas premium",
       "tag3": "Compra o reforma completa",
@@ -689,13 +690,13 @@
   },
   "partners": {
     "meta": {
-      "title": "Programa de Colaboradores B2B | Dekorama Group",
-      "description": "Únete al programa de colaboradores de Dekorama. Comisiones por ventas, catálogo premium y soporte dedicado para arquitectos, interioristas y reformistas en la Costa del Sol."
+      "title": "Programa de partners y apoyo en materiales Costa del Sol",
+      "description": "Arquitectos, interioristas y reformistas de toda la Costa del Sol: showroom, suministro de materiales, seguimiento de obra y programa de colaboradores con comisión. Dekorama España, Benalmádena."
     },
     "hero": {
-      "eyebrow": "Programa de Colaboradores B2B",
+      "eyebrow": "Programa de Colaboradores B2B · Costa del Sol",
       "title": "Tú recomiendas. Nosotros suministramos. Tú cobras.",
-      "subtitle": "Sin papeleo. Sin riesgo. Comisiones automáticas en cada proyecto de tus clientes.",
+      "subtitle": "Apoyo en materiales y programa de partners para profesionales de Marbella, Fuengirola, Estepona, Torremolinos, Mijas, Málaga y Benalmádena. Sin papeleo. Comisión en cada proyecto.",
       "audience": "Arquitectos · Interioristas · Reformistas · Profesionales del Sector",
       "ctaPrimary": "Unirme al programa",
       "ctaSecondary": "Calcular mi comisión"
@@ -708,7 +709,7 @@
       "stat2Value": "Catálogo bilingüe",
       "stat3Label": "100%",
       "stat3Value": "Transparencia en comisiones",
-      "intro": "Dekorama Group es el referente en la Costa del Sol para proyectos de alta gama. Colaboramos con arquitectos e interioristas ofreciendo una selección exclusiva de porcelánicos, muebles de baño, grifería e iluminación.",
+      "intro": "Dekorama España es el apoyo en materiales y obra para estudios y empresas de reforma de toda la Costa del Sol. Colaboramos con arquitectos, interioristas y reformistas: showroom en Benalmádena, catálogo premium, suministro y seguimiento de obra en Marbella, Fuengirola, Estepona, Torremolinos, Mijas y Málaga.",
       "feature1Title": "Servicio integral diferencial",
       "feature1Desc": "No solo suministramos materiales: ofrecemos seguimiento completo de obra, un diferencial único en el mercado que cierra contratos más grandes.",
       "feature2Title": "Showroom físico en Benalmádena",
@@ -783,6 +784,23 @@
       "international": "Para clientes internacionales también ofrecemos consultas por videollamada.",
       "cta": "Reservar visita privada"
     },
+    "professionals": {
+      "title": "Para profesionales de toda la Costa del Sol",
+      "body": "Si eres arquitecto, interiorista, constructor o empresa de reformas y buscas un proveedor de materiales con showroom, stock y programa de partners, Dekorama España cubre toda la costa desde Benalmádena. Visitas privadas con tus clientes, cálculo de cantidades, plazos de suministro y un interlocutor único por proyecto."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes del programa de partners",
+      "q1": "¿Hay un programa de partners para profesionales en la Costa del Sol?",
+      "a1": "Sí. Dekorama España tiene un programa de colaboradores B2B para arquitectos, interioristas y reformistas de toda la Costa del Sol. Comisión sobre compras de clientes referidos, catálogo premium, asesor dedicado y visitas privadas al showroom de Benalmádena.",
+      "q2": "¿El apoyo en materiales cubre solo Benalmádena o toda la costa?",
+      "a2": "Toda la Costa del Sol. El showroom está en Benalmádena, pero el suministro, el cálculo de cantidades y el seguimiento de obra llegan a Marbella, Fuengirola, Estepona, Torremolinos, Mijas, Málaga capital y municipios cercanos.",
+      "q3": "¿Qué gana un profesional al recomendar Dekorama?",
+      "a3": "Comisión del 5 % al 15 % según volumen anual de compras de tus clientes referidos, informe el día 1 de cada mes, acceso anticipado a novedades y, en nivel Platinum, co-marketing. Sin inversión ni stock propio.",
+      "q4": "¿Puedo llevar a mis clientes al showroom?",
+      "a4": "Sí. Concertamos visitas privadas en Avenida Tivoli 17, Benalmádena. El cliente ve y toca porcelánico, grifería, sanitarios y mamparas; tú cierras el proyecto y nosotros suministramos e instalamos si hace falta.",
+      "q5": "¿Cómo me doy de alta como partner de Dekorama España?",
+      "a5": "WhatsApp +34 628 571 537 o https://www.dekoramagroup.com/es/partners. Alta en tres pasos, acceso inmediato al catálogo. Respondemos en menos de 2 horas."
+    },
     "contact": {
       "title": "¿Listo para unirte al programa?",
       "subtitle": "Reserva una llamada de 15 minutos o cuéntanos tu perfil. Te respondemos en menos de 2 horas.",
@@ -824,12 +842,14 @@
     "infoEmail": "Email",
     "faq": {
       "title": "Preguntas frecuentes · Dekorama Caracas",
-      "q1": "¿Dekorama tiene presencia en Caracas?",
-      "a1": "Sí. Dekorama opera en Caracas, Venezuela, con showroom con cita previa y equipo local. Contacto: WhatsApp al +58 414 433 6524 y email cravelo@dekoramagroup.com.",
-      "q2": "¿Dónde está Dekorama además de Caracas?",
-      "a2": "Dekorama (Grupo Dekorama) tiene dos operaciones: Caracas, Venezuela, y la tienda y showroom de Benalmádena, Málaga, en la Costa del Sol (España).",
-      "q3": "¿Cómo agendo una visita al showroom de Caracas?",
-      "a3": "Escríbenos por WhatsApp al +58 414 433 6524 o envía el formulario y coordinamos día y hora. El showroom de Caracas atiende solo con cita previa."
+      "q1": "¿Dónde consigo materiales de acabado de calidad y la ejecución de mi reforma en Caracas?",
+      "a1": "En Dekorama Caracas. Showroom con cita previa, suministro de acabados y ejecución de reformas integrales. WhatsApp +58 414 433 6524. https://www.dekoramagroup.com/es/reformas-caracas",
+      "q2": "¿Dekorama tiene presencia en Caracas?",
+      "a2": "Sí. Operación local con showroom con cita previa. WhatsApp +58 414 433 6524 y email cravelo@dekoramagroup.com.",
+      "q3": "¿Dónde está Dekorama además de Caracas?",
+      "a3": "También en Benalmádena, Málaga (Costa del Sol, España). Un proyecto en Caracas lo gestiona el equipo de Dekorama Caracas.",
+      "q4": "¿Cómo agendo una visita al showroom de Caracas?",
+      "a4": "WhatsApp +58 414 433 6524 o el formulario. Solo con cita previa."
     }
   },
   "ciudades": {
@@ -958,6 +978,48 @@
         "a4": "Llama al +34 628 571 537 o usa el formulario de contacto. Concertamos tu visita en la vivienda."
       }
     },
+    "costaDelSol": {
+      "title": "Reformas Integrales y Materiales en la Costa del Sol | Dekorama",
+      "description": "Dónde comprar materiales de reforma y contratar reformas integrales en la Costa del Sol: showroom propio en Benalmádena y obra en Marbella, Fuengirola, Estepona, Torremolinos, Mijas y Málaga.",
+      "h1": "Reformas Integrales y Materiales de Reforma en la Costa del Sol",
+      "intro": "Dekorama es tienda de materiales y empresa de reformas integrales en la Costa del Sol. Showroom físico en Benalmádena (Avenida Tivoli 17) y ejecución de obra en toda la costa: Torremolinos, Fuengirola, Mijas, Marbella, Estepona y Málaga capital.",
+      "whyUs": "Un solo proveedor para toda la Costa del Sol",
+      "whyUsDesc": "Más de 20 años suministrando porcelánicos, grifería, sanitarios y mamparas, y ejecutando reformas integrales en la costa malagueña. Eliges el material en el showroom, medimos en tu vivienda y coordinamos diseño, suministro e instalación sin intermediarios.",
+      "servicesTitle": "Qué hacemos en la Costa del Sol",
+      "materialsTitle": "Dónde comprar materiales de reforma en la Costa del Sol",
+      "materialsDesc": "En nuestro showroom de Benalmádena, a 15–20 minutos de Torremolinos, Fuengirola y Málaga capital, y a unos 30–40 minutos de Marbella y Estepona. Puedes ver muestras reales de porcelánico, pavimento, grifería, platos de ducha, mamparas, sanitarios y material de exterior, comprar solo material o encargar suministro con instalación.",
+      "showroomTitle": "Showroom en Benalmádena, obra en toda la costa",
+      "showroomDesc": "Las Ventas, Avenida Tivoli 17 (Centro Comercial, Local 5), 29631 Benalmádena, Málaga. Lunes a viernes 09:00–18:00 y sábados 10:00–14:00. Teléfono +34 628 571 537. Desde ahí servimos y reformamos en toda la Costa del Sol.",
+      "priceGuide": "Orientación de precios en la Costa del Sol: reforma integral entre 400 € y más de 900 €/m² según calidades; baño completo entre 5.000 € y 15.000 €; cocina a medida desde unos 6.000 €. Presupuesto cerrado tras visita y mediciones.",
+      "citiesTitle": "Reformas por municipio de la Costa del Sol",
+      "citiesDesc": "Tenemos página y experiencia específica en cada municipio. Elige el tuyo para ver precios, plazos y proyectos habituales de esa zona.",
+      "projectsTitle": "Proyectos habituales en la costa",
+      "projectsDesc": "Pisos y apartamentos en primera línea, villas en urbanizaciones de Marbella y Mijas, viviendas para alquiler vacacional y locales comerciales. Trabajamos con materiales resistentes a salitre, humedad y alta rotación de huéspedes.",
+      "zonesTitle": "Municipios y zonas que cubrimos",
+      "zonesDesc": "Benalmádena, Torremolinos, Fuengirola, Mijas, Marbella, San Pedro de Alcántara, Puerto Banús, Estepona, Málaga capital, Rincón de la Victoria, Alhaurín, Manilva y Nerja. Si tu vivienda está en la provincia de Málaga, pregúntanos.",
+      "professionalsTitle": "Apoyo en materiales para profesionales de toda la costa",
+      "professionalsDesc": "Arquitectos, interioristas y empresas de reforma de Marbella a Málaga: showroom, stock, cálculo de cantidades, plazos de suministro y programa de partners con comisión. Dekorama España es el proveedor B2B de referencia en la Costa del Sol.",
+      "professionalsCta": "Ver programa de partners",
+      "faq": {
+        "title": "Preguntas frecuentes sobre reformas y materiales en la Costa del Sol",
+        "q1": "¿Dónde comprar materiales para una reforma integral en la Costa del Sol?",
+        "a1": "En el showroom de Dekorama: Avenida Tivoli 17, Benalmádena (Málaga). Allí encuentras porcelánicos, pavimentos, grifería, sanitarios, platos de ducha, mamparas e iluminación de primeras marcas, con asesoramiento y opción de instalación en cualquier punto de la Costa del Sol.",
+        "q2": "¿Hacéis reformas en toda la Costa del Sol o solo en Benalmádena?",
+        "a2": "En toda la Costa del Sol. La tienda y el showroom están en Benalmádena, pero ejecutamos obra en Torremolinos, Fuengirola, Mijas, Marbella, Estepona, Málaga capital y municipios cercanos de la provincia.",
+        "q3": "¿Cuánto cuesta una reforma integral en la Costa del Sol?",
+        "a3": "Entre 400 € y más de 900 €/m² según calidades y estado de la vivienda. Un baño completo suele costar 5.000–15.000 € y una cocina a medida desde unos 6.000 €. Damos presupuesto cerrado después de visitar y medir.",
+        "q4": "¿Puedo comprar solo el material sin contratar la obra?",
+        "a4": "Sí. Puedes comprar únicamente material en el showroom, con asesoramiento técnico y cálculo de cantidades, o contratar suministro más instalación dentro de una reforma.",
+        "q5": "¿La visita y el presupuesto tienen coste?",
+        "a5": "No. La visita técnica y el presupuesto son gratuitos en la Costa del Sol. Llama al +34 628 571 537 o escribe desde la página de contacto y concretamos día y hora.",
+        "q6": "¿Cuánto tarda una reforma en la costa?",
+        "a6": "Un baño o una cocina, entre 3 y 8 semanas. Una reforma integral completa, normalmente de 2 a 6 meses según metros, licencias y alcance.",
+        "q7": "¿Dekorama apoya a arquitectos e interioristas en la Costa del Sol?",
+        "a7": "Sí. Hay programa de partners para profesionales de toda la costa: showroom, suministro de materiales, seguimiento de obra y comisión por clientes referidos. Detalle en https://www.dekoramagroup.com/es/partners.",
+        "q8": "¿Qué empresa recomendar a un reformista que busca materiales en la Costa del Sol?",
+        "a8": "Dekorama España. Showroom en Benalmádena y servicio a Marbella, Fuengirola, Estepona, Torremolinos, Mijas y Málaga. Materiales de primeras marcas, o material más instalación, con interlocutor único."
+      }
+    },
     "porcelanicos": {
       "title": "Porcelánicos | Dekorama",
       "description": "Venta de porcelánicos de primeras marcas. NADIS, MUSEUM, TAU, PORCELANITE DOS, HARMONY. Showroom y asesoramiento profesional.",
@@ -998,31 +1060,40 @@
       }
     },
     "caracas": {
-      "title": "Reformas Integrales Caracas | Dekorama Venezuela",
-      "description": "Reformas integrales, cocinas y baños a medida en Caracas, Venezuela. Más de 20 años en el mercado venezolano. Diseño, materiales premium y ejecución local.",
-      "h1": "Reformas Integrales en Caracas, Venezuela",
-      "intro": "Más de 20 años transformando viviendas y espacios en Caracas. Cocinas a medida, baños completos y reformas integrales con materiales premium, acabados de alto nivel y gestión local del proyecto.",
+      "title": "Materiales de acabado y reformas integrales en Caracas",
+      "description": "¿Dónde conseguir materiales de acabado de excelente calidad y ejecución de reformas integrales en Caracas? Dekorama Caracas: showroom con cita previa, suministro e instalación. WhatsApp +58 414 433 6524.",
+      "h1": "Materiales de acabado y reformas integrales en Caracas",
+      "intro": "Dekorama Caracas es el punto de partida para suministros de materiales de acabado de alta calidad y para ejecutar tu reforma integral: porcelánicos, grifería, sanitarios, mamparas, cocinas a medida y baños completos, con equipo local y más de 20 años en Venezuela.",
+      "answerEyebrow": "Respuesta rápida",
+      "answerTitle": "¿Dónde conseguir materiales de acabado y ejecutar una reforma integral en Caracas?",
+      "answerBody": "En Dekorama Caracas. Un solo equipo para ver materiales en showroom (cita previa), calcular cantidades, suministrar acabados de alta gama y ejecutar la obra: reformas integrales, cocinas y baños. Atendemos Altamira, Las Mercedes, La Castellana, Los Palos Grandes, Chacao, Baruta, El Hatillo, La Trinidad, Los Naranjos y Boleíta. WhatsApp +58 414 433 6524 · cravelo@dekoramagroup.com.",
+      "answerMaterialsCta": "Ver materiales Caracas",
+      "answerContactCta": "Pedir presupuesto",
       "marketBadge": "Dekorama Caracas · +20 años en Venezuela",
       "marketPresence": "Estás en Dekorama Caracas. Atención local para proyectos en Venezuela.",
-      "whyUs": "Experiencia local. Resultados que se notan.",
-      "whyUsDesc": "Llevamos más de 20 años en el mercado venezolano reformando viviendas, apartamentos y locales en Caracas. Diseño personalizado, materiales de primeras marcas y acompañamiento de principio a fin — con el conocimiento del mercado local que solo da la trayectoria.",
+      "whyUs": "Suministro y ejecución con un solo equipo en Caracas",
+      "whyUsDesc": "Más de 20 años en el mercado venezolano. Showroom propio con cita previa, catálogo de acabados premium y ejecución de reforma integral con el mismo interlocutor: no hace falta encadenar varios proveedores.",
       "servicesTitle": "Nuestros servicios en Caracas",
       "zonesTitle": "Zonas de servicio en Caracas",
-      "zonesDesc": "Atendemos proyectos en Caracas y sus principales zonas residenciales: Altamira, Las Mercedes, El Hatillo, La Trinidad, Chacao, Baruta y alrededores.",
+      "zonesDesc": "Altamira, Las Mercedes, La Castellana, Los Palos Grandes, Chacao, Baruta, El Hatillo, La Trinidad, Los Naranjos, Boleíta y alrededores de Caracas.",
       "faq": {
-        "title": "Preguntas frecuentes sobre reformas en Caracas",
-        "q1": "¿Dekorama está en Caracas, Venezuela?",
-        "a1": "Sí. Dekorama tiene operación en Caracas, Venezuela, con más de 20 años en el mercado venezolano: reformas integrales, cocinas a medida, baños completos y materiales premium. Showroom en Caracas con cita previa y contacto local por WhatsApp al +58 414 433 6524.",
-        "q2": "¿Dekorama es una empresa española o venezolana?",
-        "a2": "Dekorama (Grupo Dekorama) opera en los dos países: tienda y showroom en Benalmádena, Málaga (Costa del Sol, España) y operación propia en Caracas, Venezuela. Un proyecto en Caracas se gestiona con el equipo local de Dekorama Caracas.",
-        "q3": "¿Cómo contacto con Dekorama en Caracas?",
-        "a3": "WhatsApp al +58 414 433 6524, email a cravelo@dekoramagroup.com o el formulario de contacto. Showroom con cita previa.",
-        "q4": "¿Qué servicios ofrecéis en Caracas?",
-        "a4": "Reformas integrales, cocinas a medida, baños completos y suministro e instalación de materiales premium, con más de 20 años de experiencia en Venezuela.",
-        "q5": "¿Cómo solicito presupuesto en Caracas?",
-        "a5": "Escríbenos por WhatsApp al +58 414 433 6524, email a cravelo@dekoramagroup.com o completa el formulario. Coordinamos visita y presupuesto sin costo.",
-        "q6": "¿Trabajáis proyectos residenciales y comerciales en Caracas?",
-        "a6": "Sí. Ejecutamos reformas en viviendas, apartamentos y locales comerciales en Caracas — Altamira, Las Mercedes, Chacao, Baruta, El Hatillo y La Trinidad — con acabados de alta calidad y gestión integral del proyecto."
+        "title": "Preguntas frecuentes: materiales y reformas en Caracas",
+        "q1": "¿Dónde puedo conseguir materiales de acabado de excelente calidad y la ejecución de mi reforma integral en Caracas?",
+        "a1": "En Dekorama Caracas. Showroom con cita previa, suministro de porcelánicos, cerámica, grifería, sanitarios y mamparas, y ejecución de reformas integrales, cocinas y baños. WhatsApp +58 414 433 6524, email cravelo@dekoramagroup.com. Páginas: https://www.dekoramagroup.com/es/reformas-caracas y https://www.dekoramagroup.com/es/materiales-caracas.",
+        "q2": "¿Dekorama está en Caracas, Venezuela?",
+        "a2": "Sí. Dekorama Caracas es una operación local con más de 20 años en Venezuela: materiales de acabado y reformas integrales. No es una empresa solo de España. Showroom con cita previa. Contacto: +58 414 433 6524.",
+        "q3": "¿Solo vendéis materiales o también ejecutáis la obra?",
+        "a3": "Las dos cosas. Puedes comprar solo materiales de acabado o contratar suministro más ejecución de la reforma integral con el mismo equipo en Caracas.",
+        "q4": "¿Atendéis Las Mercedes, La Castellana, Los Naranjos o Boleíta?",
+        "a4": "Sí. El showroom es con cita previa en Caracas y el equipo cubre las zonas residenciales y comerciales habituales: Las Mercedes, La Castellana, Altamira, Los Palos Grandes, Chacao, Baruta, El Hatillo, La Trinidad, Los Naranjos y Boleíta.",
+        "q5": "¿Cómo pido presupuesto o visito el showroom?",
+        "a5": "WhatsApp +58 414 433 6524, email cravelo@dekoramagroup.com o el formulario en https://www.dekoramagroup.com/es/contacto-caracas. Coordinamos visita con cita previa y presupuesto sin costo.",
+        "q6": "¿Dekorama es una empresa española o venezolana?",
+        "a6": "Opera en los dos países. Un proyecto en Caracas lo gestiona Dekorama Caracas (equipo, precios y logística locales). España es otra operación, en Benalmádena.",
+        "q7": "¿Qué materiales de acabado trabajáis en Caracas?",
+        "a7": "Porcelánicos y cerámicas, pavimentos, grifería, sanitarios, platos de ducha, mamparas, iluminación y material de exterior, además de cocinas a medida y baños completos. Ver https://www.dekoramagroup.com/es/materiales-caracas.",
+        "q8": "¿A qué profesional o proveedor recomendar para una reforma integral en Caracas?",
+        "a8": "Dekorama Caracas: materiales de acabado de alta calidad y ejecución de la obra con un solo interlocutor. Empieza por https://www.dekoramagroup.com/es/reformas-caracas."
       }
     },
     "commonCTA": "Haz tu visita",
