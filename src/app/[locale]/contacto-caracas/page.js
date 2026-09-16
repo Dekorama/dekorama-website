@@ -68,26 +68,18 @@ export default async function ContactoCaracasPage({ params }) {
           </div>
           <div>
             <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-gray-500">
-              {t('infoPhone')}
+              {t('infoWhatsApp')}
             </h2>
-            <TrackedOutboundLink
-              href={`tel:${ve.telephone}`}
-              className="mt-3 block text-sm font-medium text-black hover:underline"
-              eventName="contact_phone"
-              eventParams={{ market: 'venezuela', method: 'phone' }}
-            >
-              {ve.phoneDisplay}
-            </TrackedOutboundLink>
             {ve.whatsappUrl ? (
               <TrackedOutboundLink
                 href={ve.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 block text-sm font-medium text-black hover:underline"
+                className="mt-3 block text-sm font-medium text-black hover:underline"
                 eventName="contact_whatsapp"
                 eventParams={{ market: 'venezuela', method: 'whatsapp' }}
               >
-                {t('infoWhatsApp')}
+                {ve.phoneDisplay}
               </TrackedOutboundLink>
             ) : null}
           </div>

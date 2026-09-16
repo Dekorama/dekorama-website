@@ -46,7 +46,7 @@ export default function ContactChannels({
         </a>
       ) : null}
 
-      {phoneReady ? (
+      {phoneReady && market.callEnabled ? (
         <a
           href={`tel:${market.telephone}`}
           className="flex items-center gap-3 text-gray-700 hover:text-black focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 rounded-full transition-colors"

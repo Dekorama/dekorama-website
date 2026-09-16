@@ -208,10 +208,22 @@ export default function Footer() {
                   {t('contact')}
                 </Link>
               </li>
-              {market.phoneReady ? (
+              {market.phoneReady && market.callEnabled ? (
                 <li>
                   <a href={`tel:${market.telephone}`} className="hover:text-white">
                     {market.phoneDisplay}
+                  </a>
+                </li>
+              ) : null}
+              {market.phoneReady && !market.callEnabled && market.whatsappUrl ? (
+                <li>
+                  <a
+                    href={market.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white"
+                  >
+                    WhatsApp {market.phoneDisplay}
                   </a>
                 </li>
               ) : null}

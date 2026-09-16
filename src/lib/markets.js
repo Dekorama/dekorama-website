@@ -36,7 +36,7 @@ function toWhatsAppDigits(e164) {
 const spainTelephone =
   process.env.NEXT_PUBLIC_ES_PHONE?.replace(/\s/g, '') || '+34628571537'
 
-/** Caracas — WhatsApp + call */
+/** Caracas — WhatsApp (no call CTA) */
 const venezuelaTelephone =
   process.env.NEXT_PUBLIC_VE_PHONE?.replace(/\s/g, '') || '+584144336524'
 
@@ -58,6 +58,7 @@ const venezuelaTelephone =
  * @property {string} phoneDisplay
  * @property {string} whatsappUrl
  * @property {boolean} phoneReady
+ * @property {boolean} callEnabled — `tel:` CTA; Venezuela is WhatsApp-only
  * @property {string} email
  * @property {MarketAddress} address
  * @property {{ latitude: number, longitude: number }} geo
@@ -79,6 +80,7 @@ export const markets = {
     phoneDisplay: formatPhoneDisplay(spainTelephone),
     whatsappUrl: `https://wa.me/${toWhatsAppDigits(spainTelephone)}`,
     phoneReady: true,
+    callEnabled: true,
     email: 'info@dekoramagroup.com',
     address: {
       streetAddress: 'Las Ventas, Avenida Tivoli, 17, Centro Comercial, Local 5',
@@ -105,7 +107,7 @@ export const markets = {
     locality: 'Benalmádena',
     region: 'Costa del Sol',
   },
-  /** Caracas — showroom by prior appointment; WhatsApp + call + email. */
+  /** Caracas — showroom by prior appointment; WhatsApp + email. */
   venezuela: {
     id: 'venezuela',
     businessId: `${baseUrl}/#business-caracas`,
@@ -114,6 +116,7 @@ export const markets = {
     phoneDisplay: formatPhoneDisplay(venezuelaTelephone),
     whatsappUrl: `https://wa.me/${toWhatsAppDigits(venezuelaTelephone)}`,
     phoneReady: true,
+    callEnabled: false,
     email: 'cravelo@dekoramagroup.com',
     address: {
       addressLocality: 'Caracas',

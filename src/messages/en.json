@@ -75,6 +75,7 @@
     "contact": "Contact",
     "freeVisit": "Book your visit",
     "call": "Call",
+    "whatsapp": "WhatsApp",
     "aboutShowroom": "Showroom",
     "partners": "Partners",
     "search": "Search",
@@ -824,7 +825,7 @@
     "faq": {
       "title": "Frequently asked questions · Dekorama Caracas",
       "q1": "Does Dekorama have a presence in Caracas?",
-      "a1": "Yes. Dekorama operates in Caracas, Venezuela, with a showroom by prior appointment and a local team. Contact: WhatsApp or phone +58 414 433 6524 and email cravelo@dekoramagroup.com.",
+      "a1": "Yes. Dekorama operates in Caracas, Venezuela, with a showroom by prior appointment and a local team. Contact: WhatsApp +58 414 433 6524 and email cravelo@dekoramagroup.com.",
       "q2": "Where is Dekorama located besides Caracas?",
       "a2": "Dekorama (Grupo Dekorama) runs two operations: Caracas, Venezuela, and the store and showroom in Benalmádena, Málaga, on the Costa del Sol (Spain).",
       "q3": "How do I book a visit to the Caracas showroom?",
@@ -1011,15 +1012,15 @@
       "faq": {
         "title": "Frequently asked questions about renovations in Caracas",
         "q1": "Is Dekorama in Caracas, Venezuela?",
-        "a1": "Yes. Dekorama operates in Caracas, Venezuela, with over 20 years in the Venezuelan market: full renovations, custom kitchens, complete bathrooms and premium materials. Showroom in Caracas by prior appointment, with local contact on WhatsApp or by phone at +58 414 433 6524.",
+        "a1": "Yes. Dekorama operates in Caracas, Venezuela, with over 20 years in the Venezuelan market: full renovations, custom kitchens, complete bathrooms and premium materials. Showroom in Caracas by prior appointment, with local contact on WhatsApp at +58 414 433 6524.",
         "q2": "Is Dekorama a Spanish or a Venezuelan company?",
         "a2": "Dekorama (Grupo Dekorama) operates in both countries: showroom and store in Benalmádena, Málaga (Costa del Sol, Spain) and its own operation in Caracas, Venezuela. A project in Caracas is handled by the local Dekorama Caracas team.",
         "q3": "How do I contact Dekorama in Caracas?",
-        "a3": "WhatsApp or call +58 414 433 6524, email cravelo@dekoramagroup.com or use the contact form. Showroom by prior appointment.",
+        "a3": "WhatsApp +58 414 433 6524, email cravelo@dekoramagroup.com or use the contact form. Showroom by prior appointment.",
         "q4": "What services do you offer in Caracas?",
         "a4": "Full renovations, custom kitchens, complete bathrooms and premium material supply and installation, backed by over 20 years of experience in Venezuela.",
         "q5": "How do I request a quote in Caracas?",
-        "a5": "Message us on WhatsApp, call +58 414 433 6524, email cravelo@dekoramagroup.com or complete the form. We coordinate the visit and a no-obligation quote.",
+        "a5": "Message us on WhatsApp at +58 414 433 6524, email cravelo@dekoramagroup.com or complete the form. We coordinate the visit and a no-obligation quote.",
         "q6": "Do you take on residential and commercial projects in Caracas?",
         "a6": "Yes. We deliver renovations in homes, apartments and commercial spaces across Caracas — Altamira, Las Mercedes, Chacao, Baruta, El Hatillo and La Trinidad — with high-quality finishes and full project management."
       }

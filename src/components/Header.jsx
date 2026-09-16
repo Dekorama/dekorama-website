@@ -25,6 +25,10 @@ export default function Header() {
   const pathname = usePathname()
   const marketId = useActiveMarket()
   const market = marketId === 'venezuela' ? markets.venezuela : markets.spain
+  const canCall = market.phoneReady && market.callEnabled
+  const whatsappContact = Boolean(
+    market.phoneReady && !market.callEnabled && market.whatsappUrl,
+  )
   const hrefFor = (/** @type {string} */ href) => resolveMaterialHref(href, marketId)
   const catalogHref = marketCatalogHref(marketId)
   const [activeMenu, setActiveMenu] = useState(/** @type {string | null} */ (null))
@@ -281,9 +285,9 @@ export default function Header() {
           </nav>
 
           <div className="shrink-0 space-y-4 border-t border-gray-100 px-4 py-5 sm:px-5">
-            {(market.phoneReady || market.email) && (
+            {(canCall || whatsappContact || market.email) && (
               <div className="text-sm text-gray-600">
-                {market.phoneReady ? (
+                {canCall ? (
                   <a
                     href={`tel:${market.telephone}`}
                     className="font-medium text-gray-900 hover:underline"
@@ -297,6 +301,23 @@ export default function Header() {
                     }
                   >
                     {t('call')}: {market.phoneDisplay}
+                  </a>
+                ) : whatsappContact ? (
+                  <a
+                    href={market.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-gray-900 hover:underline"
+                    onClick={() =>
+                      trackEvent('contact_whatsapp', {
+                        market: marketId,
+                        method: 'whatsapp',
+                        placement: 'mobile_menu',
+                        link_url: market.whatsappUrl,
+                      })
+                    }
+                  >
+                    {t('whatsapp')}: {market.phoneDisplay}
                   </a>
                 ) : (
                   <a
@@ -344,7 +365,7 @@ export default function Header() {
         <div className="mx-auto grid max-w-7xl grid-cols-[1fr_auto] items-center gap-2 px-4 py-2.5 sm:gap-3 sm:px-6 sm:py-3 lg:grid-cols-[1fr_auto_1fr] lg:px-8">
           {/* Left utilities — desktop only */}
           <div className="hidden min-w-0 items-center gap-2 text-[11px] text-gray-600 lg:flex">
-            {market.phoneReady ? (
+            {canCall ? (
               <a
                 href={`tel:${market.telephone}`}
                 className="utility-link truncate"
@@ -358,6 +379,23 @@ export default function Header() {
                 }
               >
                 {t('call')}: {market.phoneDisplay}
+              </a>
+            ) : whatsappContact ? (
+              <a
+                href={market.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="utility-link truncate"
+                onClick={() =>
+                  trackEvent('contact_whatsapp', {
+                    market: marketId,
+                    method: 'whatsapp',
+                    placement: 'header_utility',
+                    link_url: market.whatsappUrl,
+                  })
+                }
+              >
+                {t('whatsapp')}: {market.phoneDisplay}
               </a>
             ) : (
               <span className="utility-link truncate">{market.email}</span>
