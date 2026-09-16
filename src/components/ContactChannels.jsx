@@ -1,6 +1,7 @@
 'use client'
 
 import { markets } from '@/lib/markets'
+import { trackEvent } from '@/lib/analytics'
 
 /**
  * Contact channels for a market (WhatsApp, phone, email when available).
@@ -28,6 +29,13 @@ export default function ContactChannels({
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-3 text-gray-700 hover:text-black focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 rounded-full transition-colors"
+          onClick={() =>
+            trackEvent('contact_whatsapp', {
+              market: marketId,
+              method: 'whatsapp',
+              link_url: market.whatsappUrl,
+            })
+          }
         >
           <div className="w-12 h-12 rounded-full bg-whatsapp flex items-center justify-center transition-colors duration-300">
             <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
@@ -42,6 +50,13 @@ export default function ContactChannels({
         <a
           href={`tel:${market.telephone}`}
           className="flex items-center gap-3 text-gray-700 hover:text-black focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 rounded-full transition-colors"
+          onClick={() =>
+            trackEvent('contact_phone', {
+              market: marketId,
+              method: 'phone',
+              link_url: `tel:${market.telephone}`,
+            })
+          }
         >
           <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center transition-colors duration-300">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
@@ -55,6 +70,13 @@ export default function ContactChannels({
       <a
         href={`mailto:${market.email}`}
         className="flex items-center gap-3 text-gray-700 hover:text-black focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 rounded-full transition-colors"
+        onClick={() =>
+          trackEvent('contact_email', {
+            market: marketId,
+            method: 'email',
+            link_url: `mailto:${market.email}`,
+          })
+        }
       >
         <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center transition-colors duration-300">
           <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>

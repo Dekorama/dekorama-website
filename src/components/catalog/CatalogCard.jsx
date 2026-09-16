@@ -1,6 +1,9 @@
+'use client'
+
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { getCatalogDownloadName } from '@/data/catalogs'
+import { trackEvent } from '@/lib/analytics'
 
 /**
  * @typedef {import('@/data/catalogs').CatalogItem} CatalogItem
@@ -11,6 +14,20 @@ import { getCatalogDownloadName } from '@/data/catalogs'
  * @property {string} viewLabel
  * @property {string} downloadLabel
  */
+
+/**
+ * @param {CatalogItem} catalog
+ */
+function trackCatalogDownload(catalog) {
+  trackEvent('file_download', {
+    file_name: getCatalogDownloadName(catalog),
+    file_extension: 'pdf',
+    link_url: catalog.file,
+    catalog_slug: catalog.slug,
+    catalog_country: catalog.country,
+    brand: catalog.brand,
+  })
+}
 
 /**
  * @param {CatalogCardProps} props
@@ -58,6 +75,7 @@ export default function CatalogCard({ catalog, countryLabel, viewLabel, download
           href={catalog.file}
           download={downloadName}
           className="btn-secondary inline-flex min-h-11 flex-1 items-center justify-center px-4 text-center text-[11px] tracking-[0.14em] sm:flex-none"
+          onClick={() => trackCatalogDownload(catalog)}
         >
           {downloadLabel}
         </a>

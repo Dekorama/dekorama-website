@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation'
 import { getTranslations } from 'next-intl/server'
-import { baseUrl } from '@/lib/site'
 import { pageAlternates } from '@/lib/seo'
 import CatalogPdfViewer from '@/components/catalog/CatalogPdfViewer'
 import { CATALOGS, getCatalogBySlug } from '@/data/catalogs'
@@ -17,10 +16,16 @@ export async function generateMetadata({ params }) {
   const countryLabel =
     catalog.country === 'spain' ? t('countries.spain') : t('countries.venezuela')
   const title = `${catalog.title} — ${t('viewer.metaTitle')}`
-  const description = t('viewer.metaDescription', {
-    brand: catalog.brand,
-    country: countryLabel,
-  })
+  const description =
+    catalog.country === 'venezuela'
+      ? t('viewer.metaDescriptionVe', {
+          brand: catalog.brand,
+          title: catalog.title,
+        })
+      : t('viewer.metaDescription', {
+          brand: catalog.brand,
+          country: countryLabel,
+        })
 
   return {
     title,
@@ -45,6 +50,10 @@ export default async function CatalogoViewerPage({ params }) {
   const t = await getTranslations({ locale, namespace: 'pages.catalogo' })
   const countryLabel =
     catalog.country === 'spain' ? t('countries.spain') : t('countries.venezuela')
+  const intro =
+    catalog.country === 'venezuela'
+      ? t('viewer.introVe', { brand: catalog.brand })
+      : t('viewer.introEs', { brand: catalog.brand, country: countryLabel })
 
   return (
     <CatalogPdfViewer
@@ -54,6 +63,7 @@ export default async function CatalogoViewerPage({ params }) {
       openLabel={t('actions.open')}
       fallbackLabel={t('viewer.fallback')}
       countryLabel={countryLabel}
+      intro={intro}
     />
   )
 }

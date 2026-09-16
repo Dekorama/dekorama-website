@@ -1,8 +1,9 @@
 {
   "cookieBanner": {
-    "message": "We use cookies to improve your experience. By continuing, you accept our",
+    "message": "We use optional analytics cookies to improve the site. See our",
     "policyLink": "cookie policy",
     "accept": "Accept",
+    "reject": "Reject",
     "ariaLabel": "Cookie notice"
   },
   "marketGate": {
@@ -566,7 +567,7 @@
     },
     "materialesHub": {
       "title": "Materials | {locality}",
-      "description": "Discover the materials we sell in our {locality} showroom: taps, shower screens, sanitary ware, bathtubs, shower trays and porcelain tiles. Direct access to each category.",
+      "description": "Renovation materials in {locality} ({region}): taps, shower screens, sanitary ware, bathtubs, shower trays and porcelain. Dekorama showroom and PDF catalogues.",
       "eyebrow": "Materials showroom",
       "h1": "Materials",
       "intro": "Most searched categories from our {locality} showroom — jump straight into each specialist section.",
@@ -646,7 +647,10 @@
         "back": "Back to catalogue",
         "fallback": "On this device the PDF opens best in a new tab or by downloading it.",
         "metaTitle": "PDF catalogue",
-        "metaDescription": "{brand} catalogue ({country}). View online or download."
+        "metaDescription": "{brand} catalogue ({country}). View online or download.",
+        "metaDescriptionVe": "{title} catalogue from {brand} for Caracas and Venezuela. Dekorama Caracas materials — view online or download the PDF.",
+        "introEs": "{brand} catalogue available at Dekorama ({country}). Browse references, formats and finishes; download the PDF or open it in a new tab.",
+        "introVe": "{brand} catalogue for the Venezuelan market (Caracas). References and finishes with Dekorama Caracas — view the PDF or download it for your project."
       },
       "statsTitle": "Dekorama in numbers",
       "stats": {
@@ -806,8 +810,8 @@
     "infoEmail": "Email"
   },
   "contactPageVe": {
-    "metaTitle": "Contact Caracas",
-    "metaDescription": "Contact Dekorama Caracas by WhatsApp, phone or email. Showroom by appointment. Over 20 years renovating in Venezuela.",
+    "metaTitle": "Contact Dekorama Caracas | WhatsApp & showroom",
+    "metaDescription": "Contact Dekorama Caracas: WhatsApp +58 414 433 6524, email and showroom by appointment. Renovations, kitchens and bathrooms in Caracas, Venezuela.",
     "title": "Contact Caracas",
     "subtitle": "Tell us about your project and we'll get back to you as soon as possible. Visit our showroom by appointment or request a complimentary consultation.",
     "scrollToForm": "Go to form",
@@ -993,8 +997,8 @@
       }
     },
     "caracas": {
-      "title": "Full Renovations in Caracas",
-      "description": "Full renovations, custom kitchens and bathrooms in Caracas. Over 20 years in the Venezuelan market. Design, premium materials and professional delivery.",
+      "title": "Full Renovations Caracas | Dekorama Venezuela",
+      "description": "Full renovations, custom kitchens and bathrooms in Caracas, Venezuela. Over 20 years in the Venezuelan market. Design, premium materials and local delivery.",
       "h1": "Full Renovations in Caracas, Venezuela",
       "intro": "Over 20 years transforming homes and spaces in Caracas. Custom kitchens, complete bathrooms and full renovations with premium materials, high-end finishes and local project management.",
       "marketBadge": "Dekorama Caracas · 20+ years in Venezuela",

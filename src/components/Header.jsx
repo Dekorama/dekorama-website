@@ -16,6 +16,7 @@ import { megaNavItems } from '@/data/megaNav'
 import { markets } from '@/lib/markets'
 import { useActiveMarket } from '@/lib/useActiveMarket'
 import { resolveMaterialHref, marketCatalogHref } from '@/lib/materialRoutes'
+import { trackEvent } from '@/lib/analytics'
 
 export default function Header() {
   const t = useTranslations('nav')
@@ -283,11 +284,33 @@ export default function Header() {
             {(market.phoneReady || market.email) && (
               <div className="text-sm text-gray-600">
                 {market.phoneReady ? (
-                  <a href={`tel:${market.telephone}`} className="font-medium text-gray-900 hover:underline">
+                  <a
+                    href={`tel:${market.telephone}`}
+                    className="font-medium text-gray-900 hover:underline"
+                    onClick={() =>
+                      trackEvent('contact_phone', {
+                        market: marketId,
+                        method: 'phone',
+                        placement: 'mobile_menu',
+                        link_url: `tel:${market.telephone}`,
+                      })
+                    }
+                  >
                     {t('call')}: {market.phoneDisplay}
                   </a>
                 ) : (
-                  <a href={`mailto:${market.email}`} className="font-medium text-gray-900 hover:underline">
+                  <a
+                    href={`mailto:${market.email}`}
+                    className="font-medium text-gray-900 hover:underline"
+                    onClick={() =>
+                      trackEvent('contact_email', {
+                        market: marketId,
+                        method: 'email',
+                        placement: 'mobile_menu',
+                        link_url: `mailto:${market.email}`,
+                      })
+                    }
+                  >
                     {market.email}
                   </a>
                 )}
@@ -322,7 +345,18 @@ export default function Header() {
           {/* Left utilities — desktop only */}
           <div className="hidden min-w-0 items-center gap-2 text-[11px] text-gray-600 lg:flex">
             {market.phoneReady ? (
-              <a href={`tel:${market.telephone}`} className="utility-link truncate">
+              <a
+                href={`tel:${market.telephone}`}
+                className="utility-link truncate"
+                onClick={() =>
+                  trackEvent('contact_phone', {
+                    market: marketId,
+                    method: 'phone',
+                    placement: 'header_utility',
+                    link_url: `tel:${market.telephone}`,
+                  })
+                }
+              >
                 {t('call')}: {market.phoneDisplay}
               </a>
             ) : (

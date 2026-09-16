@@ -1,11 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import { Link } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import { fadeUp, viewportOptions } from '@/lib/animations'
 import ContactChannels from '@/components/ContactChannels'
+import { trackEvent } from '@/lib/analytics'
 
 const TIPO_REFORMA_OPTIONS = [
   { value: '', labelKey: 'placeholder' },
@@ -44,6 +44,10 @@ export default function CTAFinal({ marketId = 'spain' }) {
         setErrorMessage(data.error || t('errorGeneric'))
         return
       }
+      trackEvent('generate_lead', {
+        market: marketId,
+        project_type: formData.tipoReforma || 'unspecified',
+      })
       setStatus('success')
       setFormData({ nombre: '', telefono: '', email: '', tipoReforma: '', descripcion: '' })
     } catch {

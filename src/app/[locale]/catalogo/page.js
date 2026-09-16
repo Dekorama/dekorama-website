@@ -7,6 +7,7 @@ import { getTranslations } from 'next-intl/server'
 import PageHeader from '@/components/PageHeader'
 import CTASection from '@/components/CTASection'
 import CatalogLibrary from '@/components/catalog/CatalogLibrary'
+import CatalogSearchBeacon from '@/components/catalog/CatalogSearchBeacon'
 import { images } from '@/data/images'
 import { CATALOG_SEARCH_KEYWORDS, matchesSearch } from '@/lib/siteSearch'
 
@@ -51,6 +52,7 @@ export default async function CatalogoPage({ params, searchParams }) {
 
   return (
     <div className="min-h-screen bg-white">
+      {query ? <CatalogSearchBeacon query={query} /> : null}
       <PageHeader
         breadcrumbItems={[
           { label: tCommon('home'), href: `/${locale}` },

@@ -6,6 +6,7 @@ import { Link, useRouter } from '@/i18n/navigation'
 import { getSearchEntries, searchSite } from '@/lib/siteSearch'
 import { useActiveMarket } from '@/lib/useActiveMarket'
 import { resolveMaterialHref, marketCatalogHref } from '@/lib/materialRoutes'
+import { trackEvent } from '@/lib/analytics'
 
 const DEBOUNCE_MS = 150
 const MAX_RESULTS = 8
@@ -77,6 +78,11 @@ export default function NavSearch({ className = '', inputClassName = '', onNavig
       go(catalogHref)
       return
     }
+    trackEvent('view_search_results', {
+      search_term: q,
+      search_location: 'nav',
+      result_count: results.length,
+    })
     if (activeIndex >= 0 && results[activeIndex]) {
       go(results[activeIndex].href)
       return

@@ -1,8 +1,9 @@
 {
   "cookieBanner": {
-    "message": "Usamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra",
+    "message": "Usamos cookies analíticas opcionales para mejorar el sitio. Consulta nuestra",
     "policyLink": "política de cookies",
     "accept": "Aceptar",
+    "reject": "Rechazar",
     "ariaLabel": "Aviso de cookies"
   },
   "marketGate": {
@@ -566,7 +567,7 @@
     },
     "materialesHub": {
       "title": "Materiales | {locality}",
-      "description": "Descubre los materiales que vendemos en nuestro showroom de {locality}: grifos, mamparas, sanitarios, bañeras, platos de ducha y porcelánicos. Acceso directo a cada categoría.",
+      "description": "Materiales para reforma en {locality} ({region}): grifería, mamparas, sanitarios, bañeras, platos de ducha y porcelánicos. Showroom Dekorama y catálogo PDF.",
       "eyebrow": "Showroom de materiales",
       "h1": "Materiales",
       "intro": "Categorías más buscadas de nuestro showroom en {locality}: entra directo a cada sección especializada.",
@@ -646,7 +647,10 @@
         "back": "Volver al catálogo",
         "fallback": "En este dispositivo el PDF se abre mejor en una pestaña nueva o descargándolo.",
         "metaTitle": "Catálogo PDF",
-        "metaDescription": "Catálogo {brand} ({country}). Visualízalo online o descárgalo."
+        "metaDescription": "Catálogo {brand} ({country}). Visualízalo online o descárgalo.",
+        "metaDescriptionVe": "Catálogo {title} de {brand} para Caracas y Venezuela. Materiales Dekorama Caracas — ábrelo online o descárgalo en PDF.",
+        "introEs": "Catálogo {brand} disponible en Dekorama ({country}). Consulta referencias, formatos y acabados; descarga el PDF o ábrelo en una pestaña nueva.",
+        "introVe": "Catálogo {brand} para el mercado venezolano (Caracas). Referencias y acabados disponibles con Dekorama Caracas — visualiza el PDF o descárgalo para tu proyecto."
       },
       "statsTitle": "Dekorama en números",
       "stats": {
@@ -806,8 +810,8 @@
     "infoEmail": "Email"
   },
   "contactPageVe": {
-    "metaTitle": "Contáctanos Caracas",
-    "metaDescription": "Contáctanos en Dekorama Caracas por WhatsApp, teléfono o email. Showroom con cita previa. Más de 20 años en reformas en Venezuela.",
+    "metaTitle": "Contacto Dekorama Caracas | WhatsApp y showroom",
+    "metaDescription": "Contacto Dekorama Caracas: WhatsApp +58 414 433 6524, email y showroom con cita previa. Reformas, cocinas y baños en Caracas, Venezuela.",
     "title": "Contáctanos Caracas",
     "subtitle": "Cuéntanos tu proyecto y te responderemos lo antes posible. Visítanos en nuestro showroom con cita previa o solicita una consulta sin costo.",
     "scrollToForm": "Ir al formulario",
@@ -993,8 +997,8 @@
       }
     },
     "caracas": {
-      "title": "Reformas Integrales en Caracas",
-      "description": "Reformas integrales, cocinas y baños a medida en Caracas. Más de 20 años en el mercado venezolano. Diseño, materiales premium y ejecución profesional.",
+      "title": "Reformas Integrales Caracas | Dekorama Venezuela",
+      "description": "Reformas integrales, cocinas y baños a medida en Caracas, Venezuela. Más de 20 años en el mercado venezolano. Diseño, materiales premium y ejecución local.",
       "h1": "Reformas Integrales en Caracas, Venezuela",
       "intro": "Más de 20 años transformando viviendas y espacios en Caracas. Cocinas a medida, baños completos y reformas integrales con materiales premium, acabados de alto nivel y gestión local del proyecto.",
       "marketBadge": "Dekorama Caracas · +20 años en Venezuela",

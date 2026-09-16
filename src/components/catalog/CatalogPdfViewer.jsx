@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from '@/i18n/navigation'
 import { getCatalogDownloadName } from '@/data/catalogs'
+import { trackEvent } from '@/lib/analytics'
 
 /**
  * @typedef {import('@/data/catalogs').CatalogItem} CatalogItem
@@ -14,7 +15,22 @@ import { getCatalogDownloadName } from '@/data/catalogs'
  * @property {string} openLabel
  * @property {string} fallbackLabel
  * @property {string} countryLabel
+ * @property {string} [intro]
  */
+
+/**
+ * @param {CatalogItem} catalog
+ */
+function trackCatalogDownload(catalog) {
+  trackEvent('file_download', {
+    file_name: getCatalogDownloadName(catalog),
+    file_extension: 'pdf',
+    link_url: catalog.file,
+    catalog_slug: catalog.slug,
+    catalog_country: catalog.country,
+    brand: catalog.brand,
+  })
+}
 
 /**
  * Sticky toolbar + PDF embed with mobile-friendly fallbacks.
@@ -27,6 +43,7 @@ export default function CatalogPdfViewer({
   openLabel,
   fallbackLabel,
   countryLabel,
+  intro,
 }) {
   const [showFallback, setShowFallback] = useState(false)
   const downloadName = getCatalogDownloadName(catalog)
@@ -67,6 +84,7 @@ export default function CatalogPdfViewer({
               href={catalog.file}
               download={downloadName}
               className="btn-primary inline-flex min-h-11 flex-1 items-center justify-center px-4 text-[11px] tracking-[0.14em] sm:flex-none"
+              onClick={() => trackCatalogDownload(catalog)}
             >
               {downloadLabel}
             </a>
@@ -81,6 +99,14 @@ export default function CatalogPdfViewer({
           </div>
         </div>
       </header>
+
+      {intro ? (
+        <div className="border-b border-gray-100 bg-white">
+          <p className="mx-auto max-w-7xl px-4 py-3 text-sm leading-relaxed text-gray-600 sm:px-6 lg:px-8">
+            {intro}
+          </p>
+        </div>
+      ) : null}
 
       <div className="relative flex-1 bg-gray-100">
         {showFallback ? (
@@ -99,6 +125,7 @@ export default function CatalogPdfViewer({
                 href={catalog.file}
                 download={downloadName}
                 className="btn-secondary inline-flex min-h-12 items-center justify-center px-8"
+                onClick={() => trackCatalogDownload(catalog)}
               >
                 {downloadLabel}
               </a>

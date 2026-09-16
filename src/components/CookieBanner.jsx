@@ -3,27 +3,38 @@
 import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
-
-const STORAGE_KEY = 'dekorama-cookie-consent'
+import {
+  COOKIE_CONSENT_KEY,
+  persistCookieConsent,
+  updateAnalyticsConsent,
+} from '@/lib/analytics'
 
 export default function CookieBanner() {
   const t = useTranslations('cookieBanner')
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const consent = typeof window !== 'undefined' && localStorage.getItem(STORAGE_KEY)
+    if (typeof window === 'undefined') return
+    const consent = localStorage.getItem(COOKIE_CONSENT_KEY)
     if (!consent) setVisible(true)
   }, [])
 
   const accept = () => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem(STORAGE_KEY, 'accepted')
-      setVisible(false)
-      window.dispatchEvent(new Event('dekorama-cookie-consent'))
-      if (window.dataLayer) {
-        window.dataLayer.push({ event: 'cookie_consent_accepted' })
-      }
-    }
+    if (typeof window === 'undefined') return
+    persistCookieConsent('accepted')
+    updateAnalyticsConsent('granted')
+    setVisible(false)
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({ event: 'cookie_consent_accepted' })
+  }
+
+  const reject = () => {
+    if (typeof window === 'undefined') return
+    persistCookieConsent('rejected')
+    updateAnalyticsConsent('denied')
+    setVisible(false)
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({ event: 'cookie_consent_rejected' })
   }
 
   if (!visible) return null
@@ -42,13 +53,22 @@ export default function CookieBanner() {
           </Link>
           .
         </p>
-        <button
-          type="button"
-          onClick={accept}
-          className="flex-shrink-0 px-6 py-2.5 bg-white text-black font-medium hover:bg-gray-100 transition-colors rounded-sm"
-        >
-          {t('accept')}
-        </button>
+        <div className="flex w-full shrink-0 flex-col gap-2 sm:w-auto sm:flex-row">
+          <button
+            type="button"
+            onClick={reject}
+            className="flex-shrink-0 px-6 py-2.5 border border-white/40 text-white font-medium hover:bg-white/10 transition-colors rounded-sm"
+          >
+            {t('reject')}
+          </button>
+          <button
+            type="button"
+            onClick={accept}
+            className="flex-shrink-0 px-6 py-2.5 bg-white text-black font-medium hover:bg-gray-100 transition-colors rounded-sm"
+          >
+            {t('accept')}
+          </button>
+        </div>
       </div>
     </div>
   )

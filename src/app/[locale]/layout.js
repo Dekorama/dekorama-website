@@ -83,7 +83,6 @@ export default async function LocaleLayout({ children, params }) {
   const messages = (await import(`@/messages/${resolvedLocale}.json`)).default
   const spain = markets.spain
   const venezuela = markets.venezuela
-  const description = DESCRIPTIONS[resolvedLocale] || DESCRIPTIONS.es
 
   const localBusinessJsonLd = {
     ...buildLocalBusinessJsonLd(spain, { description: businessDescription }),
@@ -210,7 +209,6 @@ export default async function LocaleLayout({ children, params }) {
       suppressHydrationWarning
     >
       <head>
-        <meta name="description" content={description} />
         <link
           rel="preload"
           as="image"

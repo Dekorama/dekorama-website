@@ -4,6 +4,7 @@ import { pageAlternates } from '@/lib/seo'
 import { markets } from '@/lib/markets'
 import CTAFinal from '@/components/CTAFinal'
 import PageHeader from '@/components/PageHeader'
+import TrackedOutboundLink from '@/components/TrackedOutboundLink'
 
 export async function generateMetadata({ params }) {
   const { locale } = await Promise.resolve(params)
@@ -66,23 +67,27 @@ export default async function ContactoPage({ params }) {
             <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-gray-500">
               {t('infoPhone')}
             </h2>
-            <a
+            <TrackedOutboundLink
               href={`tel:${es.telephone}`}
               className="mt-3 block text-sm font-medium text-black hover:underline"
+              eventName="contact_phone"
+              eventParams={{ market: 'spain', method: 'phone' }}
             >
               {es.phoneDisplay}
-            </a>
+            </TrackedOutboundLink>
           </div>
           <div>
             <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-gray-500">
               {t('infoEmail')}
             </h2>
-            <a
+            <TrackedOutboundLink
               href={`mailto:${es.email}`}
               className="mt-3 block text-sm font-medium text-black hover:underline"
+              eventName="contact_email"
+              eventParams={{ market: 'spain', method: 'email' }}
             >
               {es.email}
-            </a>
+            </TrackedOutboundLink>
           </div>
         </div>
       </section>

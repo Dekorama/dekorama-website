@@ -6,6 +6,7 @@ import CTAFinal from '@/components/CTAFinal'
 import PageFaq from '@/components/PageFaq'
 import PageHeader from '@/components/PageHeader'
 import SetVenezuelaMarket from '@/components/SetVenezuelaMarket'
+import TrackedOutboundLink from '@/components/TrackedOutboundLink'
 import { getPageFaqsFromTranslations } from '@/lib/pageFaqs'
 
 export async function generateMetadata({ params }) {
@@ -69,33 +70,39 @@ export default async function ContactoCaracasPage({ params }) {
             <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-gray-500">
               {t('infoPhone')}
             </h2>
-            <a
+            <TrackedOutboundLink
               href={`tel:${ve.telephone}`}
               className="mt-3 block text-sm font-medium text-black hover:underline"
+              eventName="contact_phone"
+              eventParams={{ market: 'venezuela', method: 'phone' }}
             >
               {ve.phoneDisplay}
-            </a>
+            </TrackedOutboundLink>
             {ve.whatsappUrl ? (
-              <a
+              <TrackedOutboundLink
                 href={ve.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-2 block text-sm font-medium text-black hover:underline"
+                eventName="contact_whatsapp"
+                eventParams={{ market: 'venezuela', method: 'whatsapp' }}
               >
                 {t('infoWhatsApp')}
-              </a>
+              </TrackedOutboundLink>
             ) : null}
           </div>
           <div>
             <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-gray-500">
               {t('infoEmail')}
             </h2>
-            <a
+            <TrackedOutboundLink
               href={`mailto:${ve.email}`}
               className="mt-3 block text-sm font-medium text-black hover:underline"
+              eventName="contact_email"
+              eventParams={{ market: 'venezuela', method: 'email' }}
             >
               {ve.email}
-            </a>
+            </TrackedOutboundLink>
           </div>
         </div>
       </section>
