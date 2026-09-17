@@ -900,6 +900,14 @@ export const blogSlugMap = {
   'renovate-apartment-holiday-rental-malaga': {
     es: 'reformar-piso-alquiler-vacacional-malaga',
     en: 'renovate-apartment-holiday-rental-malaga',
+  },
+  'materiales-reforma-malaga-donde-comprar': {
+    es: 'materiales-reforma-malaga-donde-comprar',
+    en: 'renovation-materials-malaga-costa-del-sol',
+  },
+  'renovation-materials-malaga-costa-del-sol': {
+    es: 'materiales-reforma-malaga-donde-comprar',
+    en: 'renovation-materials-malaga-costa-del-sol',
   },}
 
 /**
