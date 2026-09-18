@@ -908,6 +908,14 @@ export const blogSlugMap = {
   'renovation-materials-malaga-costa-del-sol': {
     es: 'materiales-reforma-malaga-donde-comprar',
     en: 'renovation-materials-malaga-costa-del-sol',
+  },
+  'reformas-integrales-mijas-presupuesto-plazos': {
+    es: 'reformas-integrales-mijas-presupuesto-plazos',
+    en: 'full-home-renovation-cost-timeline-mijas',
+  },
+  'full-home-renovation-cost-timeline-mijas': {
+    es: 'reformas-integrales-mijas-presupuesto-plazos',
+    en: 'full-home-renovation-cost-timeline-mijas',
   },}
 
 /**
