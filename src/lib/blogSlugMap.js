@@ -916,6 +916,14 @@ export const blogSlugMap = {
   'full-home-renovation-cost-timeline-mijas': {
     es: 'reformas-integrales-mijas-presupuesto-plazos',
     en: 'full-home-renovation-cost-timeline-mijas',
+  },
+  'cuanto-cuesta-reforma-integral-mijas': {
+    es: 'cuanto-cuesta-reforma-integral-mijas',
+    en: 'full-home-renovation-cost-mijas',
+  },
+  'full-home-renovation-cost-mijas': {
+    es: 'cuanto-cuesta-reforma-integral-mijas',
+    en: 'full-home-renovation-cost-mijas',
   },}
 
 /**
