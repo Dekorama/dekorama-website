@@ -924,6 +924,14 @@ export const blogSlugMap = {
   'full-home-renovation-cost-mijas': {
     es: 'cuanto-cuesta-reforma-integral-mijas',
     en: 'full-home-renovation-cost-mijas',
+  },
+  'empresa-reformas-integrales-mijas': {
+    es: 'empresa-reformas-integrales-mijas',
+    en: 'mijas-full-renovation-company',
+  },
+  'mijas-full-renovation-company': {
+    es: 'empresa-reformas-integrales-mijas',
+    en: 'mijas-full-renovation-company',
   },}
 
 /**
