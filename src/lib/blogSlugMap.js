@@ -932,6 +932,14 @@ export const blogSlugMap = {
   'mijas-full-renovation-company': {
     es: 'empresa-reformas-integrales-mijas',
     en: 'mijas-full-renovation-company',
+  },
+  'reforma-integral-piso-mijas': {
+    es: 'reforma-integral-piso-mijas',
+    en: 'apartment-renovation-mijas-cost',
+  },
+  'apartment-renovation-mijas-cost': {
+    es: 'reforma-integral-piso-mijas',
+    en: 'apartment-renovation-mijas-cost',
   },}
 
 /**
