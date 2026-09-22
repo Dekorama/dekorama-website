@@ -940,6 +940,14 @@ export const blogSlugMap = {
   'apartment-renovation-mijas-cost': {
     es: 'reforma-integral-piso-mijas',
     en: 'apartment-renovation-mijas-cost',
+  },
+  'reforma-integral-apartamento-mijas': {
+    es: 'reforma-integral-apartamento-mijas',
+    en: 'apartment-renovation-mijas-costa-del-sol',
+  },
+  'apartment-renovation-mijas-costa-del-sol': {
+    es: 'reforma-integral-apartamento-mijas',
+    en: 'apartment-renovation-mijas-costa-del-sol',
   },}
 
 /**
