@@ -862,8 +862,9 @@
     "keyword": "reforma integral de villa en Mijas",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-09-23T13:56:34.450Z"
   },
   {
     "keyword": "reforma bano completo Mijas precio 2026",
