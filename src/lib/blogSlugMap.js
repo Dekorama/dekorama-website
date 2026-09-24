@@ -956,6 +956,14 @@ export const blogSlugMap = {
   'villa-renovation-mijas-costa-del-sol': {
     es: 'reforma-integral-villa-mijas',
     en: 'villa-renovation-mijas-costa-del-sol',
+  },
+  'reforma-bano-completo-mijas-precio-2026': {
+    es: 'reforma-bano-completo-mijas-precio-2026',
+    en: 'complete-bathroom-renovation-mijas-cost-2026',
+  },
+  'complete-bathroom-renovation-mijas-cost-2026': {
+    es: 'reforma-bano-completo-mijas-precio-2026',
+    en: 'complete-bathroom-renovation-mijas-cost-2026',
   },}
 
 /**
