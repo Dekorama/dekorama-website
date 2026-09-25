@@ -964,6 +964,14 @@ export const blogSlugMap = {
   'complete-bathroom-renovation-mijas-cost-2026': {
     es: 'reforma-bano-completo-mijas-precio-2026',
     en: 'complete-bathroom-renovation-mijas-cost-2026',
+  },
+  'cuanto-cuesta-reformar-bano-mijas': {
+    es: 'cuanto-cuesta-reformar-bano-mijas',
+    en: 'bathroom-renovation-cost-mijas',
+  },
+  'bathroom-renovation-cost-mijas': {
+    es: 'cuanto-cuesta-reformar-bano-mijas',
+    en: 'bathroom-renovation-cost-mijas',
   },}
 
 /**
