@@ -972,6 +972,14 @@ export const blogSlugMap = {
   'bathroom-renovation-cost-mijas': {
     es: 'cuanto-cuesta-reformar-bano-mijas',
     en: 'bathroom-renovation-cost-mijas',
+  },
+  'diseno-bano-moderno-mijas': {
+    es: 'diseno-bano-moderno-mijas',
+    en: 'modern-bathroom-design-mijas',
+  },
+  'modern-bathroom-design-mijas': {
+    es: 'diseno-bano-moderno-mijas',
+    en: 'modern-bathroom-design-mijas',
   },}
 
 /**
