@@ -980,6 +980,14 @@ export const blogSlugMap = {
   'modern-bathroom-design-mijas': {
     es: 'diseno-bano-moderno-mijas',
     en: 'modern-bathroom-design-mijas',
+  },
+  'reforma-cocina-mijas-presupuesto': {
+    es: 'reforma-cocina-mijas-presupuesto',
+    en: 'kitchen-renovation-cost-mijas',
+  },
+  'kitchen-renovation-cost-mijas': {
+    es: 'reforma-cocina-mijas-presupuesto',
+    en: 'kitchen-renovation-cost-mijas',
   },}
 
 /**
