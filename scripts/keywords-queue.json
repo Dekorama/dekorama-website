@@ -902,8 +902,9 @@
     "keyword": "cocina a medida en Mijas precio",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-09-28T17:07:46.762Z"
   },
   {
     "keyword": "cocina con isla en Mijas ideas y coste",

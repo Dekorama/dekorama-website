@@ -988,6 +988,14 @@ export const blogSlugMap = {
   'kitchen-renovation-cost-mijas': {
     es: 'reforma-cocina-mijas-presupuesto',
     en: 'kitchen-renovation-cost-mijas',
+  },
+  'cocina-a-medida-mijas-precio': {
+    es: 'cocina-a-medida-mijas-precio',
+    en: 'custom-kitchen-mijas-price',
+  },
+  'custom-kitchen-mijas-price': {
+    es: 'cocina-a-medida-mijas-precio',
+    en: 'custom-kitchen-mijas-price',
   },}
 
 /**
