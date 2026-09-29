@@ -996,6 +996,14 @@ export const blogSlugMap = {
   'custom-kitchen-mijas-price': {
     es: 'cocina-a-medida-mijas-precio',
     en: 'custom-kitchen-mijas-price',
+  },
+  'cocina-con-isla-mijas-ideas-coste': {
+    es: 'cocina-con-isla-mijas-ideas-coste',
+    en: 'kitchen-island-mijas-ideas-cost',
+  },
+  'kitchen-island-mijas-ideas-cost': {
+    es: 'cocina-con-isla-mijas-ideas-coste',
+    en: 'kitchen-island-mijas-ideas-cost',
   },}
 
 /**
