@@ -1004,6 +1004,14 @@ export const blogSlugMap = {
   'kitchen-island-mijas-ideas-cost': {
     es: 'cocina-con-isla-mijas-ideas-coste',
     en: 'kitchen-island-mijas-ideas-cost',
+  },
+  'reformar-piso-alquiler-vacacional-mijas': {
+    es: 'reformar-piso-alquiler-vacacional-mijas',
+    en: 'renovate-property-holiday-rental-mijas',
+  },
+  'renovate-property-holiday-rental-mijas': {
+    es: 'reformar-piso-alquiler-vacacional-mijas',
+    en: 'renovate-property-holiday-rental-mijas',
   },}
 
 /**
