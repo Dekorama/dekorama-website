@@ -1012,6 +1012,14 @@ export const blogSlugMap = {
   'renovate-property-holiday-rental-mijas': {
     es: 'reformar-piso-alquiler-vacacional-mijas',
     en: 'renovate-property-holiday-rental-mijas',
+  },
+  'materiales-reforma-mijas-donde-comprar': {
+    es: 'materiales-reforma-mijas-donde-comprar',
+    en: 'renovation-materials-mijas-costa-del-sol',
+  },
+  'renovation-materials-mijas-costa-del-sol': {
+    es: 'materiales-reforma-mijas-donde-comprar',
+    en: 'renovation-materials-mijas-costa-del-sol',
   },}
 
 /**
