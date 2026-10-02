@@ -1020,6 +1020,14 @@ export const blogSlugMap = {
   'renovation-materials-mijas-costa-del-sol': {
     es: 'materiales-reforma-mijas-donde-comprar',
     en: 'renovation-materials-mijas-costa-del-sol',
+  },
+  'reformas-integrales-nerja-presupuesto-plazos': {
+    es: 'reformas-integrales-nerja-presupuesto-plazos',
+    en: 'nerja-full-home-renovation-cost-timeline',
+  },
+  'nerja-full-home-renovation-cost-timeline': {
+    es: 'reformas-integrales-nerja-presupuesto-plazos',
+    en: 'nerja-full-home-renovation-cost-timeline',
   },}
 
 /**
