@@ -1028,6 +1028,14 @@ export const blogSlugMap = {
   'nerja-full-home-renovation-cost-timeline': {
     es: 'reformas-integrales-nerja-presupuesto-plazos',
     en: 'nerja-full-home-renovation-cost-timeline',
+  },
+  'cuanto-cuesta-reforma-integral-nerja': {
+    es: 'cuanto-cuesta-reforma-integral-nerja',
+    en: 'cost-full-home-renovation-nerja',
+  },
+  'cost-full-home-renovation-nerja': {
+    es: 'cuanto-cuesta-reforma-integral-nerja',
+    en: 'cost-full-home-renovation-nerja',
   },}
 
 /**
