@@ -1036,6 +1036,14 @@ export const blogSlugMap = {
   'cost-full-home-renovation-nerja': {
     es: 'cuanto-cuesta-reforma-integral-nerja',
     en: 'cost-full-home-renovation-nerja',
+  },
+  'empresa-reformas-integrales-nerja': {
+    es: 'empresa-reformas-integrales-nerja',
+    en: 'full-home-renovations-nerja-company',
+  },
+  'full-home-renovations-nerja-company': {
+    es: 'empresa-reformas-integrales-nerja',
+    en: 'full-home-renovations-nerja-company',
   },}
 
 /**
