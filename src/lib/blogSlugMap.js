@@ -1044,6 +1044,14 @@ export const blogSlugMap = {
   'full-home-renovations-nerja-company': {
     es: 'empresa-reformas-integrales-nerja',
     en: 'full-home-renovations-nerja-company',
+  },
+  'reforma-integral-piso-nerja': {
+    es: 'reforma-integral-piso-nerja',
+    en: 'flat-renovation-nerja-costa-del-sol',
+  },
+  'flat-renovation-nerja-costa-del-sol': {
+    es: 'reforma-integral-piso-nerja',
+    en: 'flat-renovation-nerja-costa-del-sol',
   },}
 
 /**

@@ -958,8 +958,9 @@
     "keyword": "reforma integral de piso en Nerja",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-10-05T17:32:23.252Z"
   },
   {
     "keyword": "reforma integral de apartamento en Nerja",
