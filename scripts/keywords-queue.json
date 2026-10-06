@@ -966,8 +966,9 @@
     "keyword": "reforma integral de apartamento en Nerja",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-10-06T15:32:25.137Z"
   },
   {
     "keyword": "reforma integral de villa en Nerja",
