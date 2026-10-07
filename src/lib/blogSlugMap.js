@@ -1060,6 +1060,14 @@ export const blogSlugMap = {
   'apartment-renovation-nerja-cost-guide': {
     es: 'reforma-integral-apartamento-nerja',
     en: 'apartment-renovation-nerja-cost-guide',
+  },
+  'reforma-integral-villa-nerja': {
+    es: 'reforma-integral-villa-nerja',
+    en: 'villa-renovation-nerja-costa-del-sol',
+  },
+  'villa-renovation-nerja-costa-del-sol': {
+    es: 'reforma-integral-villa-nerja',
+    en: 'villa-renovation-nerja-costa-del-sol',
   },}
 
 /**
