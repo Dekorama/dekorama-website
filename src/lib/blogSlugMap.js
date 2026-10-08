@@ -1068,6 +1068,14 @@ export const blogSlugMap = {
   'villa-renovation-nerja-costa-del-sol': {
     es: 'reforma-integral-villa-nerja',
     en: 'villa-renovation-nerja-costa-del-sol',
+  },
+  'reforma-bano-completo-nerja-precio-2026': {
+    es: 'reforma-bano-completo-nerja-precio-2026',
+    en: 'complete-bathroom-renovation-nerja-cost-2026',
+  },
+  'complete-bathroom-renovation-nerja-cost-2026': {
+    es: 'reforma-bano-completo-nerja-precio-2026',
+    en: 'complete-bathroom-renovation-nerja-cost-2026',
   },}
 
 /**
