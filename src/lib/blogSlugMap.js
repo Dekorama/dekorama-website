@@ -1076,6 +1076,14 @@ export const blogSlugMap = {
   'complete-bathroom-renovation-nerja-cost-2026': {
     es: 'reforma-bano-completo-nerja-precio-2026',
     en: 'complete-bathroom-renovation-nerja-cost-2026',
+  },
+  'cuanto-cuesta-reformar-un-bano-nerja': {
+    es: 'cuanto-cuesta-reformar-un-bano-nerja',
+    en: 'bathroom-renovation-cost-nerja',
+  },
+  'bathroom-renovation-cost-nerja': {
+    es: 'cuanto-cuesta-reformar-un-bano-nerja',
+    en: 'bathroom-renovation-cost-nerja',
   },}
 
 /**
