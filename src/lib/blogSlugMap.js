@@ -1084,6 +1084,14 @@ export const blogSlugMap = {
   'bathroom-renovation-cost-nerja': {
     es: 'cuanto-cuesta-reformar-un-bano-nerja',
     en: 'bathroom-renovation-cost-nerja',
+  },
+  'diseno-bano-moderno-nerja': {
+    es: 'diseno-bano-moderno-nerja',
+    en: 'modern-bathroom-design-nerja',
+  },
+  'modern-bathroom-design-nerja': {
+    es: 'diseno-bano-moderno-nerja',
+    en: 'modern-bathroom-design-nerja',
   },}
 
 /**
