@@ -1092,6 +1092,14 @@ export const blogSlugMap = {
   'modern-bathroom-design-nerja': {
     es: 'diseno-bano-moderno-nerja',
     en: 'modern-bathroom-design-nerja',
+  },
+  'reforma-cocina-nerja-presupuesto': {
+    es: 'reforma-cocina-nerja-presupuesto',
+    en: 'kitchen-renovation-cost-nerja',
+  },
+  'kitchen-renovation-cost-nerja': {
+    es: 'reforma-cocina-nerja-presupuesto',
+    en: 'kitchen-renovation-cost-nerja',
   },}
 
 /**
