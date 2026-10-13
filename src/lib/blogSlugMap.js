@@ -1100,6 +1100,14 @@ export const blogSlugMap = {
   'kitchen-renovation-cost-nerja': {
     es: 'reforma-cocina-nerja-presupuesto',
     en: 'kitchen-renovation-cost-nerja',
+  },
+  'cocina-a-medida-nerja-precio': {
+    es: 'cocina-a-medida-nerja-precio',
+    en: 'custom-kitchen-nerja-price',
+  },
+  'custom-kitchen-nerja-price': {
+    es: 'cocina-a-medida-nerja-precio',
+    en: 'custom-kitchen-nerja-price',
   },}
 
 /**
