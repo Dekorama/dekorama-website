@@ -1108,6 +1108,14 @@ export const blogSlugMap = {
   'custom-kitchen-nerja-price': {
     es: 'cocina-a-medida-nerja-precio',
     en: 'custom-kitchen-nerja-price',
+  },
+  'cocina-con-isla-nerja-ideas-coste': {
+    es: 'cocina-con-isla-nerja-ideas-coste',
+    en: 'kitchen-island-nerja-ideas-cost',
+  },
+  'kitchen-island-nerja-ideas-cost': {
+    es: 'cocina-con-isla-nerja-ideas-coste',
+    en: 'kitchen-island-nerja-ideas-cost',
   },}
 
 /**
