@@ -1116,6 +1116,14 @@ export const blogSlugMap = {
   'kitchen-island-nerja-ideas-cost': {
     es: 'cocina-con-isla-nerja-ideas-coste',
     en: 'kitchen-island-nerja-ideas-cost',
+  },
+  'reformar-piso-alquiler-vacacional-nerja': {
+    es: 'reformar-piso-alquiler-vacacional-nerja',
+    en: 'renovating-apartment-holiday-rental-nerja',
+  },
+  'renovating-apartment-holiday-rental-nerja': {
+    es: 'reformar-piso-alquiler-vacacional-nerja',
+    en: 'renovating-apartment-holiday-rental-nerja',
   },}
 
 /**
