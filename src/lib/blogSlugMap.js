@@ -1124,6 +1124,14 @@ export const blogSlugMap = {
   'renovating-apartment-holiday-rental-nerja': {
     es: 'reformar-piso-alquiler-vacacional-nerja',
     en: 'renovating-apartment-holiday-rental-nerja',
+  },
+  'materiales-reforma-nerja-donde-comprar': {
+    es: 'materiales-reforma-nerja-donde-comprar',
+    en: 'renovation-materials-nerja-where-to-buy',
+  },
+  'renovation-materials-nerja-where-to-buy': {
+    es: 'materiales-reforma-nerja-donde-comprar',
+    en: 'renovation-materials-nerja-where-to-buy',
   },}
 
 /**
