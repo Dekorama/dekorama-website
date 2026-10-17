@@ -1132,6 +1132,14 @@ export const blogSlugMap = {
   'renovation-materials-nerja-where-to-buy': {
     es: 'materiales-reforma-nerja-donde-comprar',
     en: 'renovation-materials-nerja-where-to-buy',
+  },
+  'reformas-integrales-ronda-presupuesto-plazos': {
+    es: 'reformas-integrales-ronda-presupuesto-plazos',
+    en: 'ronda-full-home-renovation-cost-timeline',
+  },
+  'ronda-full-home-renovation-cost-timeline': {
+    es: 'reformas-integrales-ronda-presupuesto-plazos',
+    en: 'ronda-full-home-renovation-cost-timeline',
   },}
 
 /**
