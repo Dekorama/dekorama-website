@@ -1140,6 +1140,14 @@ export const blogSlugMap = {
   'ronda-full-home-renovation-cost-timeline': {
     es: 'reformas-integrales-ronda-presupuesto-plazos',
     en: 'ronda-full-home-renovation-cost-timeline',
+  },
+  'cuanto-cuesta-reforma-integral-ronda': {
+    es: 'cuanto-cuesta-reforma-integral-ronda',
+    en: 'cost-full-home-renovation-ronda',
+  },
+  'cost-full-home-renovation-ronda': {
+    es: 'cuanto-cuesta-reforma-integral-ronda',
+    en: 'cost-full-home-renovation-ronda',
   },}
 
 /**
