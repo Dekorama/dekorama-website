@@ -1062,8 +1062,9 @@
     "keyword": "empresa de reformas integrales en Ronda",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-10-19T15:58:09.087Z"
   },
   {
     "keyword": "reforma integral de piso en Ronda",

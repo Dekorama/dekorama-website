@@ -1148,6 +1148,14 @@ export const blogSlugMap = {
   'cost-full-home-renovation-ronda': {
     es: 'cuanto-cuesta-reforma-integral-ronda',
     en: 'cost-full-home-renovation-ronda',
+  },
+  'empresa-reformas-integrales-ronda': {
+    es: 'empresa-reformas-integrales-ronda',
+    en: 'full-home-renovations-costa-del-sol',
+  },
+  'full-home-renovations-costa-del-sol': {
+    es: 'empresa-reformas-integrales-ronda',
+    en: 'full-home-renovations-costa-del-sol',
   },}
 
 /**
