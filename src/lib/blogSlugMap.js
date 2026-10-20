@@ -1156,6 +1156,14 @@ export const blogSlugMap = {
   'full-home-renovations-costa-del-sol': {
     es: 'empresa-reformas-integrales-ronda',
     en: 'full-home-renovations-costa-del-sol',
+  },
+  'reforma-integral-piso-ronda': {
+    es: 'reforma-integral-piso-ronda',
+    en: 'apartment-renovation-ronda-costa-del-sol',
+  },
+  'apartment-renovation-ronda-costa-del-sol': {
+    es: 'reforma-integral-piso-ronda',
+    en: 'apartment-renovation-ronda-costa-del-sol',
   },}
 
 /**

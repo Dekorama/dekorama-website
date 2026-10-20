@@ -1070,8 +1070,9 @@
     "keyword": "reforma integral de piso en Ronda",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-10-20T13:57:10.701Z"
   },
   {
     "keyword": "reforma integral de apartamento en Ronda",
