@@ -1164,6 +1164,14 @@ export const blogSlugMap = {
   'apartment-renovation-ronda-costa-del-sol': {
     es: 'reforma-integral-piso-ronda',
     en: 'apartment-renovation-ronda-costa-del-sol',
+  },
+  'reforma-integral-apartamento-ronda-2': {
+    es: 'reforma-integral-apartamento-ronda-2',
+    en: 'apartment-renovation-ronda-costa-del-sol-2',
+  },
+  'apartment-renovation-ronda-costa-del-sol-2': {
+    es: 'reforma-integral-apartamento-ronda-2',
+    en: 'apartment-renovation-ronda-costa-del-sol-2',
   },}
 
 /**
