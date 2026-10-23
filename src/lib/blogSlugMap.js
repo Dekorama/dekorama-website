@@ -1180,6 +1180,14 @@ export const blogSlugMap = {
   'villa-renovation-ronda-costa-del-sol': {
     es: 'reforma-integral-villa-ronda',
     en: 'villa-renovation-ronda-costa-del-sol',
+  },
+  'reforma-bano-completo-ronda-precio': {
+    es: 'reforma-bano-completo-ronda-precio',
+    en: 'ronda-bathroom-renovation-cost-2026',
+  },
+  'ronda-bathroom-renovation-cost-2026': {
+    es: 'reforma-bano-completo-ronda-precio',
+    en: 'ronda-bathroom-renovation-cost-2026',
   },}
 
 /**
