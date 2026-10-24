@@ -1188,6 +1188,14 @@ export const blogSlugMap = {
   'ronda-bathroom-renovation-cost-2026': {
     es: 'reforma-bano-completo-ronda-precio',
     en: 'ronda-bathroom-renovation-cost-2026',
+  },
+  'cuanto-cuesta-reformar-bano-ronda': {
+    es: 'cuanto-cuesta-reformar-bano-ronda',
+    en: 'bathroom-renovation-cost-ronda-costa-del-sol',
+  },
+  'bathroom-renovation-cost-ronda-costa-del-sol': {
+    es: 'cuanto-cuesta-reformar-bano-ronda',
+    en: 'bathroom-renovation-cost-ronda-costa-del-sol',
   },}
 
 /**

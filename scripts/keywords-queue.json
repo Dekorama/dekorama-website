@@ -1102,8 +1102,9 @@
     "keyword": "cuanto cuesta reformar un bano en Ronda",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-10-24T12:59:31.442Z"
   },
   {
     "keyword": "diseno de bano moderno en Ronda",
