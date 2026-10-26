@@ -1196,6 +1196,14 @@ export const blogSlugMap = {
   'bathroom-renovation-cost-ronda-costa-del-sol': {
     es: 'cuanto-cuesta-reformar-bano-ronda',
     en: 'bathroom-renovation-cost-ronda-costa-del-sol',
+  },
+  'diseno-bano-moderno-ronda': {
+    es: 'diseno-bano-moderno-ronda',
+    en: 'modern-bathroom-design-ronda',
+  },
+  'modern-bathroom-design-ronda': {
+    es: 'diseno-bano-moderno-ronda',
+    en: 'modern-bathroom-design-ronda',
   },}
 
 /**
