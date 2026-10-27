@@ -1204,6 +1204,14 @@ export const blogSlugMap = {
   'modern-bathroom-design-ronda': {
     es: 'diseno-bano-moderno-ronda',
     en: 'modern-bathroom-design-ronda',
+  },
+  'reforma-cocina-ronda-presupuesto': {
+    es: 'reforma-cocina-ronda-presupuesto',
+    en: 'kitchen-renovation-cost-ronda-expats',
+  },
+  'kitchen-renovation-cost-ronda-expats': {
+    es: 'reforma-cocina-ronda-presupuesto',
+    en: 'kitchen-renovation-cost-ronda-expats',
   },}
 
 /**
