@@ -1212,6 +1212,14 @@ export const blogSlugMap = {
   'kitchen-renovation-cost-ronda-expats': {
     es: 'reforma-cocina-ronda-presupuesto',
     en: 'kitchen-renovation-cost-ronda-expats',
+  },
+  'cocina-a-medida-ronda-precio': {
+    es: 'cocina-a-medida-ronda-precio',
+    en: 'custom-kitchen-ronda-costa-del-sol',
+  },
+  'custom-kitchen-ronda-costa-del-sol': {
+    es: 'cocina-a-medida-ronda-precio',
+    en: 'custom-kitchen-ronda-costa-del-sol',
   },}
 
 /**

@@ -1126,8 +1126,9 @@
     "keyword": "cocina a medida en Ronda precio",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-10-28T15:35:38.851Z"
   },
   {
     "keyword": "cocina con isla en Ronda ideas y coste",
