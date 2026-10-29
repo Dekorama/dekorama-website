@@ -1220,6 +1220,14 @@ export const blogSlugMap = {
   'custom-kitchen-ronda-costa-del-sol': {
     es: 'cocina-a-medida-ronda-precio',
     en: 'custom-kitchen-ronda-costa-del-sol',
+  },
+  'cocina-con-isla-ronda-ideas-coste': {
+    es: 'cocina-con-isla-ronda-ideas-coste',
+    en: 'kitchen-island-ideas-cost-ronda-costa-del-sol',
+  },
+  'kitchen-island-ideas-cost-ronda-costa-del-sol': {
+    es: 'cocina-con-isla-ronda-ideas-coste',
+    en: 'kitchen-island-ideas-cost-ronda-costa-del-sol',
   },}
 
 /**

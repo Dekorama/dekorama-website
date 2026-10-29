@@ -1134,8 +1134,9 @@
     "keyword": "cocina con isla en Ronda ideas y coste",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-10-29T15:42:14.558Z"
   },
   {
     "keyword": "reformar piso para alquiler vacacional en Ronda",
