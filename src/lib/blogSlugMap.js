@@ -1228,6 +1228,14 @@ export const blogSlugMap = {
   'kitchen-island-ideas-cost-ronda-costa-del-sol': {
     es: 'cocina-con-isla-ronda-ideas-coste',
     en: 'kitchen-island-ideas-cost-ronda-costa-del-sol',
+  },
+  'reformar-piso-alquiler-vacacional-ronda': {
+    es: 'reformar-piso-alquiler-vacacional-ronda',
+    en: 'renovating-apartment-holiday-rental-ronda',
+  },
+  'renovating-apartment-holiday-rental-ronda': {
+    es: 'reformar-piso-alquiler-vacacional-ronda',
+    en: 'renovating-apartment-holiday-rental-ronda',
   },}
 
 /**

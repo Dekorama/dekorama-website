@@ -1142,8 +1142,9 @@
     "keyword": "reformar piso para alquiler vacacional en Ronda",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-10-30T15:24:49.392Z"
   },
   {
     "keyword": "materiales para reforma en Ronda donde comprar",
