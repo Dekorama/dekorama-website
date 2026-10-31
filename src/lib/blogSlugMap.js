@@ -1236,6 +1236,14 @@ export const blogSlugMap = {
   'renovating-apartment-holiday-rental-ronda': {
     es: 'reformar-piso-alquiler-vacacional-ronda',
     en: 'renovating-apartment-holiday-rental-ronda',
+  },
+  'materiales-reforma-ronda-donde-comprar': {
+    es: 'materiales-reforma-ronda-donde-comprar',
+    en: 'renovation-materials-ronda-costa-del-sol',
+  },
+  'renovation-materials-ronda-costa-del-sol': {
+    es: 'materiales-reforma-ronda-donde-comprar',
+    en: 'renovation-materials-ronda-costa-del-sol',
   },}
 
 /**
