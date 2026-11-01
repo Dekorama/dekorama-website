@@ -1244,6 +1244,14 @@ export const blogSlugMap = {
   'renovation-materials-ronda-costa-del-sol': {
     es: 'materiales-reforma-ronda-donde-comprar',
     en: 'renovation-materials-ronda-costa-del-sol',
+  },
+  'reformas-integrales-manilva-presupuesto-plazos': {
+    es: 'reformas-integrales-manilva-presupuesto-plazos',
+    en: 'manilva-full-home-renovation-cost-time',
+  },
+  'manilva-full-home-renovation-cost-time': {
+    es: 'reformas-integrales-manilva-presupuesto-plazos',
+    en: 'manilva-full-home-renovation-cost-time',
   },}
 
 /**
