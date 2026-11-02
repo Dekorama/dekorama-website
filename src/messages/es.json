@@ -688,6 +688,20 @@
     "Exteriores": "Exteriores",
     "Proyecto comercial": "Proyecto comercial"
   },
+  "collaboratorsPage": {
+    "meta": {
+      "title": "Colaboradores | Dekorama",
+      "description": "Estudios y profesionales con los que colaboramos. Conoce a aireformas, estudio de interiorismo y reforma integral en Madrid."
+    },
+    "title": "Colaboradores",
+    "subtitle": "Profesionales y estudios con los que compartimos criterio, materiales y proyectos.",
+    "intro": "En Dekorama trabajamos con equipos de confianza que complementan nuestro catálogo y nuestra experiencia en reformas. Aquí destacamos algunas de esas colaboraciones.",
+    "visitWebsite": "Visitar web",
+    "aireformas": {
+      "name": "aireformas",
+      "description": "Estudio de interiorismo y reforma integral en Madrid. Unifican diseño, obra, mobiliario a medida y climatización en un solo proyecto, con espacios pensados al detalle desde la primera visita hasta la entrega."
+    }
+  },
   "partners": {
     "meta": {
       "title": "Programa de partners y apoyo en materiales Costa del Sol",

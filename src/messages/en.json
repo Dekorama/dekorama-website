@@ -257,7 +257,7 @@
     "griferia": "Taps & fittings",
     "benalmadena": "Benalmádena",
     "costaDelSol": "Costa del Sol",
-    "partners": "Partners"
+    "partners": "Collaborators"
   },
   "cta": {
     "requestFreeVisit": "Book your visit",
@@ -688,6 +688,20 @@
     "Baño de diseño": "Designer Bathroom",
     "Exteriores": "Outdoor & Exterior",
     "Proyecto comercial": "Commercial Project"
+  },
+  "collaboratorsPage": {
+    "meta": {
+      "title": "Collaborators | Dekorama",
+      "description": "Studios and professionals we work with. Meet aireformas — interior design and full renovation studio in Madrid."
+    },
+    "title": "Collaborators",
+    "subtitle": "Trusted studios and professionals we align with on materials, craft and renovation projects.",
+    "intro": "At Dekorama we work with teams that complement our catalogue and our renovation expertise. Here are some of those collaborations.",
+    "visitWebsite": "Visit website",
+    "aireformas": {
+      "name": "aireformas",
+      "description": "Interior design and full renovation studio in Madrid. They combine design, build, bespoke furniture and climate systems in one project — spaces planned in detail from the first visit through to handover."
+    }
   },
   "partners": {
     "meta": {

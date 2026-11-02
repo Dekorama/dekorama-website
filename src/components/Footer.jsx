@@ -204,7 +204,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/partners" className="hover:text-white">
+                <Link href="/colaboradores" className="hover:text-white">
                   {t('partners')}
                 </Link>
               </li>
