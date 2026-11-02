@@ -1252,6 +1252,14 @@ export const blogSlugMap = {
   'manilva-full-home-renovation-cost-time': {
     es: 'reformas-integrales-manilva-presupuesto-plazos',
     en: 'manilva-full-home-renovation-cost-time',
+  },
+  'cuanto-cuesta-reforma-integral-manilva': {
+    es: 'cuanto-cuesta-reforma-integral-manilva',
+    en: 'full-home-renovation-cost-manilva',
+  },
+  'full-home-renovation-cost-manilva': {
+    es: 'cuanto-cuesta-reforma-integral-manilva',
+    en: 'full-home-renovation-cost-manilva',
   },}
 
 /**
