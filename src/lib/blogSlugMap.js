@@ -1260,6 +1260,14 @@ export const blogSlugMap = {
   'full-home-renovation-cost-manilva': {
     es: 'cuanto-cuesta-reforma-integral-manilva',
     en: 'full-home-renovation-cost-manilva',
+  },
+  'empresa-reformas-integrales-manilva': {
+    es: 'empresa-reformas-integrales-manilva',
+    en: 'full-home-renovation-company-manilva',
+  },
+  'full-home-renovation-company-manilva': {
+    es: 'empresa-reformas-integrales-manilva',
+    en: 'full-home-renovation-company-manilva',
   },}
 
 /**
