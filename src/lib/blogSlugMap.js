@@ -1268,6 +1268,14 @@ export const blogSlugMap = {
   'full-home-renovation-company-manilva': {
     es: 'empresa-reformas-integrales-manilva',
     en: 'full-home-renovation-company-manilva',
+  },
+  'reforma-integral-piso-manilva': {
+    es: 'reforma-integral-piso-manilva',
+    en: 'apartment-renovation-manilva-costa-del-sol',
+  },
+  'apartment-renovation-manilva-costa-del-sol': {
+    es: 'reforma-integral-piso-manilva',
+    en: 'apartment-renovation-manilva-costa-del-sol',
   },}
 
 /**
