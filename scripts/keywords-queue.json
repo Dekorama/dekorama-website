@@ -1190,8 +1190,9 @@
     "keyword": "reforma integral de apartamento en Manilva",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-11-05T16:56:15.294Z"
   },
   {
     "keyword": "reforma integral de villa en Manilva",

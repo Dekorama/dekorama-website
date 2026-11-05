@@ -1276,6 +1276,14 @@ export const blogSlugMap = {
   'apartment-renovation-manilva-costa-del-sol': {
     es: 'reforma-integral-piso-manilva',
     en: 'apartment-renovation-manilva-costa-del-sol',
+  },
+  'reforma-integral-apartamento-manilva-2': {
+    es: 'reforma-integral-apartamento-manilva-2',
+    en: 'apartment-renovation-manilva-costa-del-sol-2',
+  },
+  'apartment-renovation-manilva-costa-del-sol-2': {
+    es: 'reforma-integral-apartamento-manilva-2',
+    en: 'apartment-renovation-manilva-costa-del-sol-2',
   },}
 
 /**
