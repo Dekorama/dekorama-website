@@ -1292,6 +1292,14 @@ export const blogSlugMap = {
   'villa-renovation-manilva-cost': {
     es: 'reforma-integral-villa-manilva',
     en: 'villa-renovation-manilva-cost',
+  },
+  'reforma-bano-completo-manilva-precio-2026': {
+    es: 'reforma-bano-completo-manilva-precio-2026',
+    en: 'bathroom-renovation-cost-manilva-2026',
+  },
+  'bathroom-renovation-cost-manilva-2026': {
+    es: 'reforma-bano-completo-manilva-precio-2026',
+    en: 'bathroom-renovation-cost-manilva-2026',
   },}
 
 /**

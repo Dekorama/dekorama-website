@@ -1206,8 +1206,9 @@
     "keyword": "reforma bano completo Manilva precio 2026",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-11-07T15:16:37.640Z"
   },
   {
     "keyword": "cuanto cuesta reformar un bano en Manilva",
