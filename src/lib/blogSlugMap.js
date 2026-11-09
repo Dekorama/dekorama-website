@@ -1308,6 +1308,14 @@ export const blogSlugMap = {
   'bathroom-renovation-cost-manilva': {
     es: 'cuanto-cuesta-reformar-bano-manilva',
     en: 'bathroom-renovation-cost-manilva',
+  },
+  'diseno-bano-moderno-manilva': {
+    es: 'diseno-bano-moderno-manilva',
+    en: 'modern-bathroom-design-manilva',
+  },
+  'modern-bathroom-design-manilva': {
+    es: 'diseno-bano-moderno-manilva',
+    en: 'modern-bathroom-design-manilva',
   },}
 
 /**
