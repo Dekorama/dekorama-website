@@ -1316,6 +1316,14 @@ export const blogSlugMap = {
   'modern-bathroom-design-manilva': {
     es: 'diseno-bano-moderno-manilva',
     en: 'modern-bathroom-design-manilva',
+  },
+  'reforma-cocina-manilva-presupuesto': {
+    es: 'reforma-cocina-manilva-presupuesto',
+    en: 'kitchen-renovation-cost-manilva',
+  },
+  'kitchen-renovation-cost-manilva': {
+    es: 'reforma-cocina-manilva-presupuesto',
+    en: 'kitchen-renovation-cost-manilva',
   },}
 
 /**
