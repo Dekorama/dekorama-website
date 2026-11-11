@@ -1324,6 +1324,14 @@ export const blogSlugMap = {
   'kitchen-renovation-cost-manilva': {
     es: 'reforma-cocina-manilva-presupuesto',
     en: 'kitchen-renovation-cost-manilva',
+  },
+  'cocina-a-medida-manilva-precio': {
+    es: 'cocina-a-medida-manilva-precio',
+    en: 'custom-kitchen-manilva-price',
+  },
+  'custom-kitchen-manilva-price': {
+    es: 'cocina-a-medida-manilva-precio',
+    en: 'custom-kitchen-manilva-price',
   },}
 
 /**
