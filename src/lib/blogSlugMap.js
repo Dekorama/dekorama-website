@@ -1332,6 +1332,14 @@ export const blogSlugMap = {
   'custom-kitchen-manilva-price': {
     es: 'cocina-a-medida-manilva-precio',
     en: 'custom-kitchen-manilva-price',
+  },
+  'cocina-con-isla-manilva-ideas-coste': {
+    es: 'cocina-con-isla-manilva-ideas-coste',
+    en: 'kitchen-island-manilva-ideas-cost',
+  },
+  'kitchen-island-manilva-ideas-cost': {
+    es: 'cocina-con-isla-manilva-ideas-coste',
+    en: 'kitchen-island-manilva-ideas-cost',
   },}
 
 /**
