@@ -1254,8 +1254,9 @@
     "keyword": "reformar piso para alquiler vacacional en Manilva",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-11-13T16:51:06.993Z"
   },
   {
     "keyword": "materiales para reforma en Manilva donde comprar",

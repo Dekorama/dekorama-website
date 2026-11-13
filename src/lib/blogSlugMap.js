@@ -1340,6 +1340,14 @@ export const blogSlugMap = {
   'kitchen-island-manilva-ideas-cost': {
     es: 'cocina-con-isla-manilva-ideas-coste',
     en: 'kitchen-island-manilva-ideas-cost',
+  },
+  'reformar-piso-alquiler-vacacional-manilva': {
+    es: 'reformar-piso-alquiler-vacacional-manilva',
+    en: 'renovate-apartment-holiday-rental-manilva',
+  },
+  'renovate-apartment-holiday-rental-manilva': {
+    es: 'reformar-piso-alquiler-vacacional-manilva',
+    en: 'renovate-apartment-holiday-rental-manilva',
   },}
 
 /**
