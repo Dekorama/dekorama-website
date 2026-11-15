@@ -1348,6 +1348,14 @@ export const blogSlugMap = {
   'renovate-apartment-holiday-rental-manilva': {
     es: 'reformar-piso-alquiler-vacacional-manilva',
     en: 'renovate-apartment-holiday-rental-manilva',
+  },
+  'materiales-reforma-manilva-donde-comprar': {
+    es: 'materiales-reforma-manilva-donde-comprar',
+    en: 'renovation-materials-manilva-costa-del-sol',
+  },
+  'renovation-materials-manilva-costa-del-sol': {
+    es: 'materiales-reforma-manilva-donde-comprar',
+    en: 'renovation-materials-manilva-costa-del-sol',
   },}
 
 /**
