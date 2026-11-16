@@ -1356,6 +1356,14 @@ export const blogSlugMap = {
   'renovation-materials-manilva-costa-del-sol': {
     es: 'materiales-reforma-manilva-donde-comprar',
     en: 'renovation-materials-manilva-costa-del-sol',
+  },
+  'reformas-integrales-san-pedro-alcantara-presupuesto': {
+    es: 'reformas-integrales-san-pedro-alcantara-presupuesto',
+    en: 'full-home-renovations-san-pedro-alcantara-cost',
+  },
+  'full-home-renovations-san-pedro-alcantara-cost': {
+    es: 'reformas-integrales-san-pedro-alcantara-presupuesto',
+    en: 'full-home-renovations-san-pedro-alcantara-cost',
   },}
 
 /**
