@@ -1286,8 +1286,9 @@
     "keyword": "empresa de reformas integrales en San Pedro de Alcantara",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-11-18T17:41:09.752Z"
   },
   {
     "keyword": "reforma integral de piso en San Pedro de Alcantara",

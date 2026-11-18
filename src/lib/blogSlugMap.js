@@ -1372,6 +1372,14 @@ export const blogSlugMap = {
   'cost-full-home-renovation-san-pedro-alcantara': {
     es: 'cuanto-cuesta-reforma-integral-san-pedro',
     en: 'cost-full-home-renovation-san-pedro-alcantara',
+  },
+  'empresa-reformas-integrales-san-pedro-alcantara': {
+    es: 'empresa-reformas-integrales-san-pedro-alcantara',
+    en: 'san-pedro-alcantara-full-home-renovations',
+  },
+  'san-pedro-alcantara-full-home-renovations': {
+    es: 'empresa-reformas-integrales-san-pedro-alcantara',
+    en: 'san-pedro-alcantara-full-home-renovations',
   },}
 
 /**
