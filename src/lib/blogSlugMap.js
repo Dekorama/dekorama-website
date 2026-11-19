@@ -1380,6 +1380,14 @@ export const blogSlugMap = {
   'san-pedro-alcantara-full-home-renovations': {
     es: 'empresa-reformas-integrales-san-pedro-alcantara',
     en: 'san-pedro-alcantara-full-home-renovations',
+  },
+  'reforma-integral-piso-san-pedro-alcantara': {
+    es: 'reforma-integral-piso-san-pedro-alcantara',
+    en: 'full-home-renovation-san-pedro-alcantara',
+  },
+  'full-home-renovation-san-pedro-alcantara': {
+    es: 'reforma-integral-piso-san-pedro-alcantara',
+    en: 'full-home-renovation-san-pedro-alcantara',
   },}
 
 /**
