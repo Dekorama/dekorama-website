@@ -1302,8 +1302,9 @@
     "keyword": "reforma integral de apartamento en San Pedro de Alcantara",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-11-20T17:25:10.795Z"
   },
   {
     "keyword": "reforma integral de villa en San Pedro de Alcantara",
