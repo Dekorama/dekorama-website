@@ -1396,6 +1396,14 @@ export const blogSlugMap = {
   'apartment-renovation-san-pedro-alcantara': {
     es: 'reforma-integral-apartamento-san-pedro-alcantara',
     en: 'apartment-renovation-san-pedro-alcantara',
+  },
+  'reforma-integral-villa-san-pedro-alcantara': {
+    es: 'reforma-integral-villa-san-pedro-alcantara',
+    en: 'villa-renovation-san-pedro-alcantara',
+  },
+  'villa-renovation-san-pedro-alcantara': {
+    es: 'reforma-integral-villa-san-pedro-alcantara',
+    en: 'villa-renovation-san-pedro-alcantara',
   },}
 
 /**
