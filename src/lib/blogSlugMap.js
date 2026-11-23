@@ -1404,6 +1404,14 @@ export const blogSlugMap = {
   'villa-renovation-san-pedro-alcantara': {
     es: 'reforma-integral-villa-san-pedro-alcantara',
     en: 'villa-renovation-san-pedro-alcantara',
+  },
+  'reforma-bano-san-pedro-alcantara-precio': {
+    es: 'reforma-bano-san-pedro-alcantara-precio',
+    en: 'bathroom-renovation-san-pedro-alcantara-cost',
+  },
+  'bathroom-renovation-san-pedro-alcantara-cost': {
+    es: 'reforma-bano-san-pedro-alcantara-precio',
+    en: 'bathroom-renovation-san-pedro-alcantara-cost',
   },}
 
 /**

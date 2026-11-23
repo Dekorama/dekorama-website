@@ -1318,8 +1318,9 @@
     "keyword": "reforma bano completo San Pedro de Alcantara precio 2026",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-11-23T20:41:05.228Z"
   },
   {
     "keyword": "cuanto cuesta reformar un bano en San Pedro de Alcantara",
