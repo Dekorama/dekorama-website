@@ -1412,6 +1412,14 @@ export const blogSlugMap = {
   'bathroom-renovation-san-pedro-alcantara-cost': {
     es: 'reforma-bano-san-pedro-alcantara-precio',
     en: 'bathroom-renovation-san-pedro-alcantara-cost',
+  },
+  'cuanto-cuesta-reformar-bano-san-pedro': {
+    es: 'cuanto-cuesta-reformar-bano-san-pedro',
+    en: 'bathroom-renovation-cost-san-pedro',
+  },
+  'bathroom-renovation-cost-san-pedro': {
+    es: 'cuanto-cuesta-reformar-bano-san-pedro',
+    en: 'bathroom-renovation-cost-san-pedro',
   },}
 
 /**

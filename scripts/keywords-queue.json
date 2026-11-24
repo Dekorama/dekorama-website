@@ -1326,8 +1326,9 @@
     "keyword": "cuanto cuesta reformar un bano en San Pedro de Alcantara",
     "locale": "both",
     "added": "2026-06-02",
-    "status": "pending",
-    "source": "seed"
+    "status": "done",
+    "source": "seed",
+    "processedAt": "2026-11-24T19:47:25.023Z"
   },
   {
     "keyword": "diseno de bano moderno en San Pedro de Alcantara",
