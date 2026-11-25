@@ -1420,6 +1420,14 @@ export const blogSlugMap = {
   'bathroom-renovation-cost-san-pedro': {
     es: 'cuanto-cuesta-reformar-bano-san-pedro',
     en: 'bathroom-renovation-cost-san-pedro',
+  },
+  'diseno-bano-moderno-san-pedro-alcantara': {
+    es: 'diseno-bano-moderno-san-pedro-alcantara',
+    en: 'modern-bathroom-design-san-pedro',
+  },
+  'modern-bathroom-design-san-pedro': {
+    es: 'diseno-bano-moderno-san-pedro-alcantara',
+    en: 'modern-bathroom-design-san-pedro',
   },}
 
 /**
