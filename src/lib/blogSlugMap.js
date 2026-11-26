@@ -1428,6 +1428,14 @@ export const blogSlugMap = {
   'modern-bathroom-design-san-pedro': {
     es: 'diseno-bano-moderno-san-pedro-alcantara',
     en: 'modern-bathroom-design-san-pedro',
+  },
+  'reforma-cocina-san-pedro-alcantara-presupuesto': {
+    es: 'reforma-cocina-san-pedro-alcantara-presupuesto',
+    en: 'kitchen-renovation-cost-san-pedro-alcantara',
+  },
+  'kitchen-renovation-cost-san-pedro-alcantara': {
+    es: 'reforma-cocina-san-pedro-alcantara-presupuesto',
+    en: 'kitchen-renovation-cost-san-pedro-alcantara',
   },}
 
 /**
