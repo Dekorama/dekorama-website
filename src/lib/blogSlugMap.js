@@ -1436,6 +1436,14 @@ export const blogSlugMap = {
   'kitchen-renovation-cost-san-pedro-alcantara': {
     es: 'reforma-cocina-san-pedro-alcantara-presupuesto',
     en: 'kitchen-renovation-cost-san-pedro-alcantara',
+  },
+  'cocina-a-medida-san-pedro-alcantara-precio': {
+    es: 'cocina-a-medida-san-pedro-alcantara-precio',
+    en: 'custom-kitchen-cost-san-pedro-alcantara',
+  },
+  'custom-kitchen-cost-san-pedro-alcantara': {
+    es: 'cocina-a-medida-san-pedro-alcantara-precio',
+    en: 'custom-kitchen-cost-san-pedro-alcantara',
   },}
 
 /**
